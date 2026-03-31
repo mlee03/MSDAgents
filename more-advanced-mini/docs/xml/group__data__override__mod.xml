@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__data__override__mod" kind="group">
+    <compoundname>data_override_mod</compoundname>
+    <title>data_override_mod</title>
+    <innerclass refid="interfacedata__override__mod_1_1data__override" prot="private">data_override_mod::data_override</innerclass>
+    <innerclass refid="interfacedata__override__mod_1_1data__override__ug" prot="private">data_override_mod::data_override_ug</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__data__override__mod_1ga503cd67ba9d516ee629dbce5f66ac7ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public data_override_mod::data_override_init</definition>
+        <argsstring>(Atm_domain_in, Ocean_domain_in, Ice_domain_in, Land_domain_in, Land_domainUG_in, mode)</argsstring>
+        <name>data_override_init</name>
+        <param>
+          <type>Atm_domain_in</type>
+          <defname>Atm_domain_in</defname>
+        </param>
+        <param>
+          <type>Ocean_domain_in</type>
+          <defname>Ocean_domain_in</defname>
+        </param>
+        <param>
+          <type>Ice_domain_in</type>
+          <defname>Ice_domain_in</defname>
+        </param>
+        <param>
+          <type>Land_domain_in</type>
+          <defname>Land_domain_in</defname>
+        </param>
+        <param>
+          <type>Land_domainUG_in</type>
+          <defname>Land_domainUG_in</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <briefdescription>
+<para>Initialize <ref refid="interfacedata__override__mod_1_1data__override" kindref="compound">data_override</ref>. Users should call data_override_init before calling <ref refid="interfacedata__override__mod_1_1data__override" kindref="compound">data_override</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine should be called in coupler_init after (ocean/atmos/land/ice)_model_init have been called.</para><para>data_override_init can be called more than once. In one call the user can pass up to 4 domains of component models. At least one domain must be present in any call. The real precision of initialized domains can be specified via the optional mode argument. If no mode is specified, both r4 and r8 modes are initialized.</para><para>Data_table is initialized with default values in DATA_OVERRIDE_INIT_IMPL_. Users should provide &quot;real&quot; values that will override the default values. Real values can be specified in either data_table or data_table.yaml. Each line of data_table contains one data_entry. Items of data_entry are comma-separated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">atm_domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atmosphere domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ocean_domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ocean domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ice_domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ice domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">land_domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Land domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">land_domainug_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Land domain, unstructured grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Real precision of initialized domains. Possible values are r4_kind or r8_kind. If omitted, both r4 and r8 modes are initialized. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/data_override/data_override.F90" line="120" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/data_override/data_override.F90" bodystart="121" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="group__data__override__mod_1gae6a3ddf1fdbcd12f51b04211c9b406bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public data_override_mod::data_override_unset_domains</definition>
+        <argsstring>(unset_Atm, unset_Ocean, unset_Ice, unset_Land, must_be_set)</argsstring>
+        <name>data_override_unset_domains</name>
+        <param>
+          <type>unset_Atm</type>
+          <defname>unset_Atm</defname>
+        </param>
+        <param>
+          <type>unset_Ocean</type>
+          <defname>unset_Ocean</defname>
+        </param>
+        <param>
+          <type>unset_Ice</type>
+          <defname>unset_Ice</defname>
+        </param>
+        <param>
+          <type>unset_Land</type>
+          <defname>unset_Land</defname>
+        </param>
+        <param>
+          <type>must_be_set</type>
+          <defname>must_be_set</defname>
+        </param>
+        <briefdescription>
+<para>Unset domains that had previously been set for use by <ref refid="interfacedata__override__mod_1_1data__override" kindref="compound">data_override</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine deallocates any data override domains that have been set.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">unset_land</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true to unset the respective domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">must_be_set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to false to suppress the error when attempting to unset an uninitialized domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/data_override/data_override.F90" line="160" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/data_override/data_override.F90" bodystart="162" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Routines to get data in a file whose path is described in a user-provided data_table and do spatial and temporal interpolation if necessary to convert data to model&apos;s grid and time. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Z. Liang, M.J. Harrison, M. Winton</para></simplesect>
+Before using <ref refid="group__data__override" kindref="compound">Data Override</ref> a data_table must be created with the following entries: gridname, fieldname_code, fieldname_file, file_name, ongrid, factor.</para><para>More explainations about data_table entries can be found in the source code (defining <ref refid="structdata__type" kindref="compound">data_type</ref>)</para><para>If user wants to override fieldname_code with a const, set fieldname_file in data_table = &quot;&quot; and factor = const</para><para>If user wants to override fieldname_code with data from a file, set fieldname_file = name in the netCDF data file, factor then will be for unit conversion (=1 if no conversion required)</para><para>A field can be overridden globally (by default) or users can specify one or two regions in which <ref refid="interfacedata__override__mod_1_1data__override" kindref="compound">data_override</ref> will take place, field values outside the region will not be affected. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

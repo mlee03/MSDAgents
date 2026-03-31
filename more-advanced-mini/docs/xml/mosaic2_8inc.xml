@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="mosaic2_8inc" kind="file" language="Fortran">
+    <compoundname>mosaic2.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mosaic2_8inc_1a624e59608585be23d54a7426c6f83988" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine calc_mosaic_grid_area_</definition>
+        <argsstring>(lon, lat, area)</argsstring>
+        <name>calc_mosaic_grid_area_</name>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <briefdescription>
+<para>Calculate grid cell area. Calculate the grid cell area. The purpose of this routine is to make sure the consistency between model grid area and exchange grid area. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>geographical longitude of grid cell vertices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>geographical latitude of grid cell vertices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>grid cell area. <linebreak/>
+Example usage: call calc_mosaic_grid_area(lon, lat, area) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" line="87" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" bodystart="88" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="mosaic2_8inc_1a3a44eac3430b890e93d45e09cee81c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine calc_mosaic_grid_great_circle_area_</definition>
+        <argsstring>(lon, lat, area)</argsstring>
+        <name>calc_mosaic_grid_great_circle_area_</name>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <briefdescription>
+<para>Calculate grid cell area using great cirlce algorithm Calculate the grid cell area. The purpose of this routine is to make sure the consistency between model grid area and exchange grid area. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>geographical longitude of grid cell vertices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>geographical latitude of grid cell vertices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>grid cell area. <linebreak/>
+Example usage: call calc_mosaic_grid_great_circle_area(lon, lat, area) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" line="118" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" bodystart="119" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="mosaic2_8inc_1a4a31a38f645d319e11522e61c0f68945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_mosaic_xgrid_</definition>
+        <argsstring>(fileobj, i1, j1, i2, j2, area, ibegin, iend)</argsstring>
+        <name>get_mosaic_xgrid_</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>i1</type>
+          <defname>i1</defname>
+        </param>
+        <param>
+          <type>j1</type>
+          <defname>j1</defname>
+        </param>
+        <param>
+          <type>i2</type>
+          <defname>i2</defname>
+        </param>
+        <param>
+          <type>j2</type>
+          <defname>j2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>ibegin</type>
+          <defname>ibegin</defname>
+        </param>
+        <param>
+          <type>iend</type>
+          <defname>iend</defname>
+        </param>
+        <briefdescription>
+<para>Get exchange grid information from mosaic xgrid file. Example usage: </para>        </briefdescription>
+        <detaileddescription>
+<para>call get_mosaic_xgrid(fileobj, nxgrid, i1, j1, i2, j2, area) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" bodystart="27" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="mosaic2_8inc_1ad8392ba91cef429dc108d81fc9e85216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function is_inside_polygon_</definition>
+        <argsstring>(lon1, lat1, lon2, lat2)</argsstring>
+        <name>is_inside_polygon_</name>
+        <param>
+          <type>lon1</type>
+          <defname>lon1</defname>
+        </param>
+        <param>
+          <type>lat1</type>
+          <defname>lat1</defname>
+        </param>
+        <param>
+          <type>lon2</type>
+          <defname>lon2</defname>
+        </param>
+        <param>
+          <type>lat2</type>
+          <defname>lat2</defname>
+        </param>
+        <briefdescription>
+<para>This function check if a point (lon1,lat1) is inside a polygon (lon2(:), lat2(:)) lon1, lat1, lon2, lat2 are in radians. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>inside_a_polygon function only accepts r8_kind real variables </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" line="143" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc" bodystart="144" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!&gt;<sp/>@brief<sp/>Get<sp/>exchange<sp/>grid<sp/>information<sp/>from<sp/>mosaic<sp/>xgrid<sp/>file.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>Example<sp/>usage:</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>get_mosaic_xgrid(fileobj,<sp/>nxgrid,<sp/>i1,<sp/>j1,<sp/>i2,<sp/>j2,<sp/>area)</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">get_mosaic_xgrid_(fileobj,<sp/>i1,<sp/>j1,<sp/>i2,<sp/>j2,<sp/>area,<sp/>ibegin,<sp/>iend)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/>!&gt;<sp/>The<sp/>file<sp/>that<sp/>contains<sp/>exchange<sp/>grid<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>i1(:),<sp/>j1(:),<sp/>i2(:),<sp/>j2(:)</highlight><highlight class="comment"><sp/>!&gt;<sp/>i<sp/>and<sp/>j<sp/>indices<sp/>for<sp/>grids<sp/>1<sp/>and<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>area(:)</highlight><highlight class="comment"><sp/>!&gt;<sp/>area<sp/>of<sp/>the<sp/>exchange<sp/>grid.<sp/>The<sp/>area<sp/>is<sp/>scaled<sp/>to</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>represent<sp/>unit<sp/>earth<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>ibegin,<sp/>iend</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>start(4),<sp/>nread(4),<sp/>istart</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">dimension(2,<sp/>size(i1(:)))</highlight><highlight class="normal"><sp/>::<sp/>tile1_cell,<sp/>tile2_cell</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nxgrid,<sp/>n</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>garea</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>get_global_area</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>garea<sp/>=<sp/>get_global_area()<sp/></highlight><highlight class="comment">!&lt;<sp/>get_global_area<sp/>returns<sp/>a<sp/>r8_kind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>When<sp/>start<sp/>and<sp/>nread<sp/>present,<sp/>make<sp/>sure<sp/>nread(1)<sp/>is<sp/>the<sp/>same<sp/>as<sp/>the<sp/>size<sp/>of<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(ibegin)<sp/>.and.<sp/></highlight><highlight class="keyword">present</highlight><highlight class="normal">(iend))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>istart<sp/>=<sp/>ibegin</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nxgrid<sp/>=<sp/>iend<sp/>-<sp/>ibegin<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nxgrid<sp/>.NE.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(i1(:)))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>.NE.</highlight><highlight class="stringliteral">&quot;get_mosaic_xgrid:<sp/>nxgrid<sp/><sp/>size(i1(:))&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nxgrid<sp/>.NE.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(j1(:)))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>.NE.</highlight><highlight class="stringliteral">&quot;get_mosaic_xgrid:<sp/>nxgrid<sp/><sp/>size(j1(:))&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nxgrid<sp/>.NE.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(i2(:)))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>.NE.</highlight><highlight class="stringliteral">&quot;get_mosaic_xgrid:<sp/>nxgrid<sp/><sp/>size(i2(:))&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nxgrid<sp/>.NE.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(j2(:)))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>.NE.</highlight><highlight class="stringliteral">&quot;get_mosaic_xgrid:<sp/>nxgrid<sp/><sp/>size(j2(:))&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nxgrid<sp/>.NE.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(area(:)))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>.NE.</highlight><highlight class="stringliteral">&quot;get_mosaic_xgrid:<sp/>nxgrid<sp/><sp/>size(area(:))&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>istart<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nxgrid<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(i1(:))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>start<sp/><sp/>=<sp/>1;<sp/>nread<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>start(1)<sp/>=<sp/>istart;<sp/>nread(1)<sp/>=<sp/>nxgrid</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;xgrid_area&apos;</highlight><highlight class="normal">,<sp/>area,<sp/>corner=start,<sp/>edge_lengths=nread)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>start<sp/>=<sp/>1;<sp/>nread<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>nread(1)<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>start(2)<sp/>=<sp/>istart;<sp/>nread(2)<sp/>=<sp/>nxgrid</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;tile1_cell&apos;</highlight><highlight class="normal">,<sp/>tile1_cell,<sp/>corner=start,<sp/>edge_lengths=nread)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;tile2_cell&apos;</highlight><highlight class="normal">,<sp/>tile2_cell,<sp/>corner=start,<sp/>edge_lengths=nread)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>1,<sp/>nxgrid</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i1(n)<sp/>=<sp/>int(tile1_cell(1,n))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j1(n)<sp/>=<sp/>int(tile1_cell(2,n))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i2(n)<sp/>=<sp/>int(tile2_cell(1,n))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j2(n)<sp/>=<sp/>int(tile2_cell(2,n))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>area(n)<sp/>=<sp/></highlight><highlight class="keywordtype">real(<sp/>real(area(n)</highlight><highlight class="normal">,r8_kind)/garea,<sp/>FMS_MOS_KIND_<sp/>)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">get_mosaic_xgrid_</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Calculate<sp/>grid<sp/>cell<sp/>area.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Calculate<sp/>the<sp/>grid<sp/>cell<sp/>area.<sp/>The<sp/>purpose<sp/>of<sp/>this<sp/>routine<sp/>is<sp/>to<sp/>make</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/>!!<sp/>sure<sp/>the<sp/>consistency<sp/>between<sp/>model<sp/>grid<sp/>area<sp/>and<sp/>exchange<sp/>grid<sp/>area.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param<sp/>lon<sp/>geographical<sp/>longitude<sp/>of<sp/>grid<sp/>cell<sp/>vertices.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param<sp/>lat<sp/>geographical<sp/>latitude<sp/>of<sp/>grid<sp/>cell<sp/>vertices.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param[inout]<sp/>area<sp/>grid<sp/>cell<sp/>area.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/>!&gt;<sp/>&lt;br&gt;Example<sp/>usage:</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>calc_mosaic_grid_area(lon,<sp/>lat,<sp/>area)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">calc_mosaic_grid_area_(lon,<sp/>lat,<sp/>area)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>lon</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>lat</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>area</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>nlon,<sp/>nlat</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>area_r8(size(area,1),size(area,2))</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlon<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(area,1)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlat<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(area,2)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>make<sp/>sure<sp/>size<sp/>of<sp/>lon,<sp/>lat<sp/>and<sp/>area<sp/>are<sp/>consitency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lon,1)<sp/>.NE.<sp/>nlon+1<sp/>.OR.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lat,1)<sp/>.NE.<sp/>nlon+1<sp/>)<sp/>&amp;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;mosaic_mod:<sp/>size(lon,1)<sp/>and<sp/>size(lat,1)<sp/>should<sp/>equal<sp/>to<sp/>size(area,1)+1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lon,2)<sp/>.NE.<sp/>nlat+1<sp/>.OR.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lat,2)<sp/>.NE.<sp/>nlat+1<sp/>)<sp/>&amp;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;mosaic_mod:<sp/>size(lon,2)<sp/>and<sp/>size(lat,2)<sp/>should<sp/>equal<sp/>to<sp/>size(area,2)+1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>get_grid_area<sp/>only<sp/>accepts<sp/>double<sp/>precision<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_grid_area(<sp/>nlon,<sp/>nlat,<sp/></highlight><highlight class="keywordtype">real(lon,r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real(lat,r8_kind)</highlight><highlight class="normal">,<sp/>area_r8)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>area=</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(area_r8,FMS_MOS_KIND_)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">calc_mosaic_grid_area_</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Calculate<sp/>grid<sp/>cell<sp/>area<sp/>using<sp/>great<sp/>cirlce<sp/>algorithm</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Calculate<sp/>the<sp/>grid<sp/>cell<sp/>area.<sp/>The<sp/>purpose<sp/>of<sp/>this<sp/>routine<sp/>is<sp/>to<sp/>make</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/>!!<sp/>sure<sp/>the<sp/>consistency<sp/>between<sp/>model<sp/>grid<sp/>area<sp/>and<sp/>exchange<sp/>grid<sp/>area.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param<sp/>lon<sp/>geographical<sp/>longitude<sp/>of<sp/>grid<sp/>cell<sp/>vertices.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param<sp/>lat<sp/>geographical<sp/>latitude<sp/>of<sp/>grid<sp/>cell<sp/>vertices.</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param[inout]<sp/>area<sp/>grid<sp/>cell<sp/>area.</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/>!&gt;<sp/>&lt;br&gt;Example<sp/>usage:</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>calc_mosaic_grid_great_circle_area(lon,<sp/>lat,<sp/>area)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">calc_mosaic_grid_great_circle_area_(lon,<sp/>lat,<sp/>area)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>lon</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>lat</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>area</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>nlon,<sp/>nlat</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>area_r8(size(area,1),size(area,2))</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlon<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(area,1)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlat<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(area,2)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>make<sp/>sure<sp/>size<sp/>of<sp/>lon,<sp/>lat<sp/>and<sp/>area<sp/>are<sp/>consitency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lon,1)<sp/>.NE.<sp/>nlon+1<sp/>.OR.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lat,1)<sp/>.NE.<sp/>nlon+1<sp/>)<sp/>&amp;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;mosaic_mod:<sp/>size(lon,1)<sp/>and<sp/>size(lat,1)<sp/>should<sp/>equal<sp/>to<sp/>size(area,1)+1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lon,2)<sp/>.NE.<sp/>nlat+1<sp/>.OR.<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lat,2)<sp/>.NE.<sp/>nlat+1<sp/>)<sp/>&amp;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;mosaic_mod:<sp/>size(lon,2)<sp/>and<sp/>size(lat,2)<sp/>should<sp/>equal<sp/>to<sp/>size(area,2)+1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>get_grid_great_circle_area<sp/>only<sp/>accepts<sp/>r8_kind<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_grid_great_circle_area(<sp/>nlon,<sp/>nlat,<sp/></highlight><highlight class="keywordtype">real(lon,r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real(lat,r8_kind)</highlight><highlight class="normal">,<sp/>area_r8)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>area=</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(area_r8,<sp/>FMS_MOS_KIND_)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">calc_mosaic_grid_great_circle_area_</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!#####################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/>!&gt;<sp/>This<sp/>function<sp/>check<sp/>if<sp/>a<sp/>point<sp/>(lon1,lat1)<sp/>is<sp/>inside<sp/>a<sp/>polygon<sp/>(lon2(:),<sp/>lat2(:))</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/>!!<sp/>lon1,<sp/>lat1,<sp/>lon2,<sp/>lat2<sp/>are<sp/>in<sp/>radians.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>function<sp/></highlight><highlight class="normal">is_inside_polygon_(lon1,<sp/>lat1,<sp/>lon2,<sp/>lat2<sp/>)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>lon1,<sp/>lat1</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=FMS_MOS_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>lon2(:),<sp/>lat2(:)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>IS_INSIDE_POLYGON_</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>npts,<sp/>isinside</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>inside_a_polygon</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>npts<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(lon2(:))</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>inside_a_polygon<sp/>function<sp/>only<sp/>accepts<sp/>r8_kind<sp/>real<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>isinside<sp/>=<sp/>inside_a_polygon(</highlight><highlight class="keywordtype">real(lon1,r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real(lat1,r8_kind)</highlight><highlight class="normal">,<sp/>npts,<sp/></highlight><highlight class="keywordtype">real(lon2,r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(lat2,r8_kind))</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isinside<sp/>==<sp/>1)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_inside_polygon_<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_inside_polygon_<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">is_inside_polygon_</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="164"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/mosaic2/include/mosaic2.inc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacediag__manager__mod_1_1register__diag__field" kind="interface" language="Fortran" prot="private">
+    <compoundname>diag_manager_mod::register_diag_field</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacediag__manager__mod_1_1register__diag__field_1a69ecdea9c0dbbf56101c62ab39c7e094" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function register_diag_field_array</definition>
+        <argsstring>(module_name, field_name, axes, init_time, long_name, units, missing_value, range, mask_variant, standard_name, verbose, do_not_log, err_msg, interp_method, tile_count, area, volume, realm, multiple_send_data)</argsstring>
+        <name>register_diag_field_array</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>range</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <param>
+          <type>multiple_send_data</type>
+          <defname>multiple_send_data</defname>
+        </param>
+        <briefdescription>
+<para>Registers an array field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index for subsequent call to <ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module where the field comes from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ids corresponding to the variable axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to start writing data from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long_name to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units to add as a variable_attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to add a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard_name to name the variable in the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Print more information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If TRUE, field information is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error_msg from call</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to be used when regridding the field in post-processing. Valid options are &quot;conserve_order1&quot;, &quot;conserve_order2&quot;, and &quot;none&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current tile number</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the area field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the volume field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the modeling_realm attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">multiple_send_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if send data is called, multiple times for the same time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" line="431" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" bodystart="434" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacediag__manager__mod_1_1register__diag__field_1a51b9bc87a8687075c22788164c9689d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function register_diag_field_scalar</definition>
+        <argsstring>(module_name, field_name, init_time, long_name, units, missing_value, range, standard_name, do_not_log, err_msg, area, volume, realm, multiple_send_data)</argsstring>
+        <name>register_diag_field_scalar</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>range</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <param>
+          <type>multiple_send_data</type>
+          <defname>multiple_send_data</defname>
+        </param>
+        <briefdescription>
+<para>Registers a scalar field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index for subsequent call to <ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module where the field comes from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to start writing data from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long_name to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units to add as a variable_attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard_name to name the variable in the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to add a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If TRUE, field information is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error_msg from call</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the area field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the volume field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the modeling_realm attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">multiple_send_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if send data is called, multiple times for the same time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" line="381" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" bodystart="384" bodyend="426"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Register a diagnostic field for a given module. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" line="355" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_manager.F90" bodystart="355" bodyend="357"/>
+    <listofallmembers>
+      <member refid="interfacediag__manager__mod_1_1register__diag__field_1a69ecdea9c0dbbf56101c62ab39c7e094" prot="private" virt="non-virtual"><scope>diag_manager_mod::register_diag_field</scope><name>register_diag_field_array</name></member>
+      <member refid="interfacediag__manager__mod_1_1register__diag__field_1a51b9bc87a8687075c22788164c9689d4" prot="private" virt="non-virtual"><scope>diag_manager_mod::register_diag_field</scope><name>register_diag_field_scalar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structfield__manager__mod_1_1field__mgr__type" kind="type" language="Fortran" prot="private">
+    <compoundname>field_manager_mod::field_mgr_type</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structfield__manager__mod_1_1field__mgr__type_1a4c996824d8c8f9b1b8259fa5640426c2" prot="private" static="no" mutable="no">
+        <type>character(len=fm_string_len)</type>
+        <definition>character(len=fm_string_len) field_name</definition>
+        <argsstring></argsstring>
+        <name>field_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="449" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="449" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1field__mgr__type_1aaf4745c074d3c86c13911c7ff9d98164" prot="private" static="no" mutable="no">
+        <type>character(len=fm_field_name_len)</type>
+        <definition>character(len=fm_field_name_len) field_type</definition>
+        <argsstring></argsstring>
+        <name>field_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="448" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="448" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1field__mgr__type_1acaded284f5929e7d89ed176457384399" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structfield__manager__mod_1_1method__type" kindref="compound">method_type</ref>), dimension(:), allocatable</type>
+        <definition>type(method_type), dimension(:), allocatable methods</definition>
+        <argsstring></argsstring>
+        <name>methods</name>
+        <briefdescription>
+<para>methods associated with this field name </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="451" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="451" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1field__mgr__type_1aa28b7897d65131a0db76ed955ccbbf77" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="450" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="450" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1field__mgr__type_1ae835abe322e0125c4fcb646c3061f9f5" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_methods</definition>
+        <argsstring></argsstring>
+        <name>num_methods</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="450" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="450" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private type for internal use. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="666">
+        <label>character(len=fm_field_name_len)</label>
+      </node>
+      <node id="664">
+        <label>method_type</label>
+        <link refid="structfield__manager__mod_1_1method__type"/>
+        <childnode refid="665" relation="usage">
+          <edgelabel>method_control</edgelabel>
+          <edgelabel>method_type</edgelabel>
+          <edgelabel>method_name</edgelabel>
+        </childnode>
+      </node>
+      <node id="663">
+        <label>field_mgr_type</label>
+        <link refid="structfield__manager__mod_1_1field__mgr__type"/>
+        <childnode refid="664" relation="usage">
+          <edgelabel>methods</edgelabel>
+        </childnode>
+        <childnode refid="666" relation="usage">
+          <edgelabel>field_type</edgelabel>
+        </childnode>
+        <childnode refid="667" relation="usage">
+          <edgelabel>num_methods</edgelabel>
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="665" relation="usage">
+          <edgelabel>field_name</edgelabel>
+        </childnode>
+      </node>
+      <node id="667">
+        <label>integer</label>
+      </node>
+      <node id="665">
+        <label>character(len=fm_string_len)</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="447" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="447" bodyend="452"/>
+    <listofallmembers>
+      <member refid="structfield__manager__mod_1_1field__mgr__type_1a4c996824d8c8f9b1b8259fa5640426c2" prot="private" virt="non-virtual"><scope>field_manager_mod::field_mgr_type</scope><name>field_name</name></member>
+      <member refid="structfield__manager__mod_1_1field__mgr__type_1aaf4745c074d3c86c13911c7ff9d98164" prot="private" virt="non-virtual"><scope>field_manager_mod::field_mgr_type</scope><name>field_type</name></member>
+      <member refid="structfield__manager__mod_1_1field__mgr__type_1acaded284f5929e7d89ed176457384399" prot="private" virt="non-virtual"><scope>field_manager_mod::field_mgr_type</scope><name>methods</name></member>
+      <member refid="structfield__manager__mod_1_1field__mgr__type_1aa28b7897d65131a0db76ed955ccbbf77" prot="private" virt="non-virtual"><scope>field_manager_mod::field_mgr_type</scope><name>model</name></member>
+      <member refid="structfield__manager__mod_1_1field__mgr__type_1ae835abe322e0125c4fcb646c3061f9f5" prot="private" virt="non-virtual"><scope>field_manager_mod::field_mgr_type</scope><name>num_methods</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

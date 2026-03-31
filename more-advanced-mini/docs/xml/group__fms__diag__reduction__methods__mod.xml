@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__fms__diag__reduction__methods__mod" kind="group">
+    <compoundname>fms_diag_reduction_methods_mod</compoundname>
+    <title>fms_diag_reduction_methods_mod</title>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1do__time__max" prot="private">fms_diag_reduction_methods_mod::do_time_max</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1do__time__min" prot="private">fms_diag_reduction_methods_mod::do_time_min</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1do__time__sum__update" prot="private">fms_diag_reduction_methods_mod::do_time_sum_update</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1sum__mask" prot="private">fms_diag_reduction_methods_mod::sum_mask</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1sum__mask__variant" prot="private">fms_diag_reduction_methods_mod::sum_mask_variant</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1sum__no__mask" prot="private">fms_diag_reduction_methods_mod::sum_no_mask</innerclass>
+    <innerclass refid="interfacefms__diag__reduction__methods__mod_1_1time__update__done" prot="private">fms_diag_reduction_methods_mod::time_update_done</innerclass>
+    <innernamespace refid="namespacefms__diag__reduction__methods__mod">fms_diag_reduction_methods_mod</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1gaab42b0a5ef10a32107c53de62a3aaa4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=128) function, public</type>
+        <definition>pure character(len=128) function, public fms_diag_reduction_methods_mod::check_indices_order</definition>
+        <argsstring>(is_in, ie_in, js_in, je_in)</argsstring>
+        <name>check_indices_order</name>
+        <param>
+          <type>is_in</type>
+          <defname>is_in</defname>
+        </param>
+        <param>
+          <type>ie_in</type>
+          <defname>ie_in</defname>
+        </param>
+        <param>
+          <type>js_in</type>
+          <defname>js_in</defname>
+        </param>
+        <param>
+          <type>je_in</type>
+          <defname>je_in</defname>
+        </param>
+        <briefdescription>
+<para>Checks improper combinations of is, ie, js, and je. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The error message, empty string if no errors were found </para></simplesect>
+<simplesect kind="note"><para>accept_data works in either one or another of two modes.<orderedlist>
+<listitem><para>Input field is a window (e.g. FMS physics)</para></listitem><listitem><para>Input field includes halo data It cannot handle a window of data that has halos. (A field with no windows or halos can be thought of as a special case of either mode.) The logic for indexing is quite different for these two modes, but is not clearly separated. If both the beggining and ending indices are present, then field is assumed to have halos. If only beggining indices are present, then field is assumed to be a window. </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="par"><title></title><para>There are a number of ways a user could mess up this logic, depending on the combination of presence/absence of is,ie,js,je. The checks below should catch improper combinations.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">je_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices passed to fms_diag_accept_data()</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An error message used only for testing purpose!!! </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" line="109" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" bodystart="111" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1gae3ff7d51d3098bd4a359d75131f14f44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_max_r4</definition>
+        <argsstring></argsstring>
+        <name>do_time_max_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga6d6b7fdee1dacd6ce7785d822055dfa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_max_r8</definition>
+        <argsstring></argsstring>
+        <name>do_time_max_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga8e65a414088aaebb6f60af9341c6d860" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_min_r4</definition>
+        <argsstring></argsstring>
+        <name>do_time_min_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1gae8ddae40e15dcd638c8e7e474f2abf53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_min_r8</definition>
+        <argsstring></argsstring>
+        <name>do_time_min_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga06e3ad7ee12940a03bb5298884c9fcde" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_none_r4</definition>
+        <argsstring></argsstring>
+        <name>do_time_none_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga642d93ee0491310142c3902e34e44f98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_none_r8</definition>
+        <argsstring></argsstring>
+        <name>do_time_none_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga869f57d295fc2a73e751fe737cee2357" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_sum_update_r4</definition>
+        <argsstring></argsstring>
+        <name>do_time_sum_update_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga90fc3b077636947f259d38031a16e3e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_time_sum_update_r8</definition>
+        <argsstring></argsstring>
+        <name>do_time_sum_update_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga87277cd4ca459e1ff96310a6468ceaac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, dimension(:,:,:,:), allocatable, public</type>
+        <definition>logical function, dimension(:,:,:,:), allocatable, public fms_diag_reduction_methods_mod::init_mask</definition>
+        <argsstring>(rmask, mask, field)</argsstring>
+        <name>init_mask</name>
+        <param>
+          <type>rmask</type>
+          <defname>rmask</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <briefdescription>
+<para>Sets the logical mask based on mask or rmask. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical mask</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The location of the mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rmask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The masking values</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field_data</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mask </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" line="140" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" bodystart="142" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga093b557daf2481fe825eabf53b28ca10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure real(kind=r8_kind) function, public</type>
+        <definition>pure real(kind=r8_kind) function, public fms_diag_reduction_methods_mod::set_weight</definition>
+        <argsstring>(weight)</argsstring>
+        <name>set_weight</name>
+        <param>
+          <type>weight</type>
+          <defname>weight</defname>
+        </param>
+        <briefdescription>
+<para>Sets the weight based on the weight passed into send_data (1.0_r8_kind if the weight is not passed in) The weight will be saved as an r8 and converted to r4 as needed. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>weight to use when averaging</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The weight use when averaging </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" line="167" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_reduction_methods.F90" bodystart="169" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga4900338d2e7a4d7f0b8360b07ab44290" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_mask_r4</definition>
+        <argsstring></argsstring>
+        <name>sum_mask_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga0ebcb993e2ac070d8cf2d36661455fe3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_mask_r8</definition>
+        <argsstring></argsstring>
+        <name>sum_mask_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga3ef35c0ecd3959e3a83403ac48310f44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_mask_variant_r4</definition>
+        <argsstring></argsstring>
+        <name>sum_mask_variant_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1gaff3582a039460e9fdef09e6ff5bfb79b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_mask_variant_r8</definition>
+        <argsstring></argsstring>
+        <name>sum_mask_variant_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga9cc9fdd4c9b7fe0fb8bf3e984fb88c87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_no_mask_r4</definition>
+        <argsstring></argsstring>
+        <name>sum_no_mask_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1gafb3a9bc41cf9483cb78bcda481522bf5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_no_mask_r8</definition>
+        <argsstring></argsstring>
+        <name>sum_no_mask_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga77ba8c71865d7e9d8764e15cd4c1432d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_update_done_r4</definition>
+        <argsstring></argsstring>
+        <name>sum_update_done_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__reduction__methods__mod_1ga29cec86e3fc2fddcf3bffadcb94edef0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_update_done_r8</definition>
+        <argsstring></argsstring>
+        <name>sum_update_done_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>fms_diag_reduction_methods_mod contains routines that are meant to be used for error checking and setting up to do the reduction methods </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

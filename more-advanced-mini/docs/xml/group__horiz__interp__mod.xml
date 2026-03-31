@@ -1,0 +1,1071 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__horiz__interp__mod" kind="group">
+    <compoundname>horiz_interp_mod</compoundname>
+    <title>horiz_interp_mod</title>
+    <innerclass refid="interfacehoriz__interp__mod_1_1horiz__interp" prot="private">horiz_interp_mod::horiz_interp</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="246" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="246" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__mod_1gaa5cc5243028451aaa7a84ed7f1dbe1d4" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical reproduce_siena</definition>
+        <argsstring></argsstring>
+        <name>reproduce_siena</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Set reproduce_siena = .true. to reproduce siena results. Set reproduce_siena = .false. to decrease truncation error in routine poly_area in file mosaic_util.c. The truncation error of second order conservative remapping might be big for high resolution grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="235" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="235" bodyend="235"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga71c4d841bd2523e874d019eb55f68ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_base_2d_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose, mask_in, mask_out, missing_value, missing_permit, err_msg, new_missing_handle)</argsstring>
+        <name>horiz_interp_base_2d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>new_missing_handle</type>
+          <defname>new_missing_handle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="427" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="430" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga513465ea4cc2f2a25651982a134e3bbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_base_3d_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose, mask_in, mask_out, missing_value, missing_permit, err_msg)</argsstring>
+        <name>horiz_interp_base_3d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Overload of interface HORIZ_INTERP_BASE_2D_ uses 3d arrays for data and mask this allows for multiple interpolations with one call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="472" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="474" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga01331e97bf44a5092a0a174a71b0029a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;horiz_interp_type&quot; variables. Must be called before reinitializing with <ref refid="interfacehoriz__interp__mod_1_1horiz__interp__new" kindref="compound">horiz_interp_new</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to <ref refid="interfacehoriz__interp__mod_1_1horiz__interp__new" kindref="compound">horiz_interp_new</ref>. The input variable must have allocated arrays. The returned variable will contain deallocated arrays </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="285" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="286" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gaf77c64ca3f1413639ab8cf1b70788712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_end</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_end</name>
+        <briefdescription>
+<para>Dummy routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="315" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gacdf98c1cb99d01572520e76a7e39069d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_init</name>
+        <briefdescription>
+<para>Initialize module and writes version number to logfile.out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="255" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga8d367a32e6a53302066832f44ecaf152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_new_1d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, interp_method, num_nbrs, max_dist, src_modulo, grid_at_center, mask_in, mask_out)</argsstring>
+        <name>horiz_interp_new_1d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>grid_at_center</type>
+          <defname>grid_at_center</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dummy variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">mask_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dummy variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="21" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="24" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gacc840a245d709255a3729c8af84c4f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_new_1d_dst_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, interp_method, num_nbrs, max_dist, src_modulo, mask_in, mask_out, is_latlon_in)</argsstring>
+        <name>horiz_interp_new_1d_dst_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>is_latlon_in</type>
+          <defname>is_latlon_in</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="348" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="350" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga1ae545e66f54de2dd059e5550049555d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_new_1d_src_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, interp_method, num_nbrs, max_dist, src_modulo, grid_at_center, mask_in, mask_out, is_latlon_out)</argsstring>
+        <name>horiz_interp_new_1d_src_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>grid_at_center</type>
+          <defname>grid_at_center</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>is_latlon_out</type>
+          <defname>is_latlon_out</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_nbrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>minimum number of neighbors </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="157" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga0e58f87b824e47db3fdbc2ac6f135a37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_new_2d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, interp_method, num_nbrs, max_dist, src_modulo, mask_in, mask_out, is_latlon_in, is_latlon_out)</argsstring>
+        <name>horiz_interp_new_2d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>is_latlon_in</type>
+          <defname>is_latlon_in</defname>
+        </param>
+        <param>
+          <type>is_latlon_out</type>
+          <defname>is_latlon_out</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="272" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="275" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga875d77105492576a70025fb8bb222791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_read_weights_</definition>
+        <argsstring>(Interp, weight_filename, lon_out, lat_out, lon_in, lat_in, weight_file_source, interp_method, isw, iew, jsw, jew, nglon, nglat)</argsstring>
+        <name>horiz_interp_read_weights_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>weight_filename</type>
+          <defname>weight_filename</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>weight_file_source</type>
+          <defname>weight_file_source</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>isw</type>
+          <defname>isw</defname>
+        </param>
+        <param>
+          <type>iew</type>
+          <defname>iew</defname>
+        </param>
+        <param>
+          <type>jsw</type>
+          <defname>jsw</defname>
+        </param>
+        <param>
+          <type>jew</type>
+          <defname>jew</defname>
+        </param>
+        <param>
+          <type>nglon</type>
+          <defname>nglon</defname>
+        </param>
+        <param>
+          <type>nglat</type>
+          <defname>nglat</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine for reading a weight file and use it to fill in the horiz interp type for the bilinear interpolation method. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horiz interp time to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the weight file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output (model) latitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output (model) longitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input (data) latitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input (data) longitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_file_source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the weight file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to use</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting and ending indices of the compute domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nglon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of longitudes in the global domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nglat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of latitudes in the globl domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="845" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="847" bodyend="888"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga2cb6a2ab6941c8f9a11ab62735f80194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_solo_1d_</definition>
+        <argsstring>(data_in, lon_in, lat_in, lon_out, lat_out, data_out, verbose, mask_in, mask_out, interp_method, missing_value, missing_permit, num_nbrs, max_dist, src_modulo, grid_at_center)</argsstring>
+        <name>horiz_interp_solo_1d_</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>grid_at_center</type>
+          <defname>grid_at_center</defname>
+        </param>
+        <briefdescription>
+<para>Interpolates from a rectangular grid to rectangular grid. interp_method can be the value conservative, bilinear or spherical. horiz_interp_new don&apos;t need to be called before calling this routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="529" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="533" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga034a7573db2d81e006d1f5e8862061da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_solo_1d_dst_</definition>
+        <argsstring>(data_in, lon_in, lat_in, lon_out, lat_out, data_out, verbose, mask_in, mask_out, interp_method, missing_value, missing_permit, num_nbrs, max_dist, src_modulo)</argsstring>
+        <name>horiz_interp_solo_1d_dst_</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <briefdescription>
+<para>interpolates from any grid to rectangular longitude/latitude grid. interp_method should be &quot;spherical&quot;. horiz_interp_new don&apos;t need to be called before calling this routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="685" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="688" bodyend="732"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gab5935b7a2f98d04c9e90e542e463800d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_solo_1d_src_</definition>
+        <argsstring>(data_in, lon_in, lat_in, lon_out, lat_out, data_out, verbose, mask_in, mask_out, interp_method, missing_value, missing_permit, num_nbrs, max_dist, src_modulo, grid_at_center)</argsstring>
+        <name>horiz_interp_solo_1d_src_</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>grid_at_center</type>
+          <defname>grid_at_center</defname>
+        </param>
+        <briefdescription>
+<para>Interpolates from a uniformly spaced grid to any output grid. interp_method can be the value &quot;onservative&quot;,&quot;bilinear&quot; or &quot;spherical&quot;. horiz_interp_new don&apos;t need to be called before calling this routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="569" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="573" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga9c7c25187f846d2f3848bd10a0d48886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_solo_2d_</definition>
+        <argsstring>(data_in, lon_in, lat_in, lon_out, lat_out, data_out, verbose, mask_in, mask_out, interp_method, missing_value, missing_permit, num_nbrs, max_dist, src_modulo)</argsstring>
+        <name>horiz_interp_solo_2d_</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>num_nbrs</type>
+          <defname>num_nbrs</defname>
+        </param>
+        <param>
+          <type>max_dist</type>
+          <defname>max_dist</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <briefdescription>
+<para>Interpolates from any grid to any grid. interp_method should be &quot;spherical&quot; horiz_interp_new don&apos;t need to be called before calling this routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="626" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="629" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gafcc4dedb2c178675bd9895ccd94592b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_solo_old_</definition>
+        <argsstring>(data_in, wb, sb, dx, dy, lon_out, lat_out, data_out, verbose, mask_in, mask_out)</argsstring>
+        <name>horiz_interp_solo_old_</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>wb</type>
+          <defname>wb</defname>
+        </param>
+        <param>
+          <type>sb</type>
+          <defname>sb</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>dy</type>
+          <defname>dy</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <briefdescription>
+<para>Overloaded version of interface horiz_interp_solo_2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Global input data stored from west to east (1st dimension), south to north (2nd dimension)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">wb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude (radians) that correspond to western-most boundary of grid box j=1 in array data_in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude (radians) that correspond to western-most boundary of grid box j=1 in array data_in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid spacing (in radians) for the longitude axis (first dimension) for the input data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid spacing (in radians) for the latitude axis (first dimension) for the input data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude edges (in radians) for output data grid boxes. The values are for adjacent grid boxes and must increase in value. If there are MLON grid boxes there must be MLON+1 edge values</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude edges (in radians) for output data grid boxes. The values are for adjacent grid boxes and may increase or decrease in value. If there are NLAT grid boxes there must be NLAT+1 edge values</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output data on the output grid defined by grid box </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="738" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="741" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga7ea62d5ab33308f597406f496b9cd378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function is_lat_lon_</definition>
+        <argsstring>(lon, lat)</argsstring>
+        <name>is_lat_lon_</name>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" line="803" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp.inc" bodystart="804" bodyend="840"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Performs spatial interpolation between grids. </para>    </briefdescription>
+    <detaileddescription>
+<para>Creates a 1D horiz_interp_type with the given parameters.</para><para><simplesect kind="author"><para>Zhi Liang, Bruce Wyman</para></simplesect>
+This module can interpolate data from any logically rectangular grid to any logically rectangular grid. Four interpolation schems are used here: conservative, bilinear, bicubic and inverse of square distance weighted. The four interpolation schemes are implemented separately in horiz_interp_conserver_mod, horiz_interp_blinear_mod, horiz_interp_bicubic_mod and horiz_interp_spherical_mod. bicubic interpolation requires the source grid is regular lon/lat grid. User can choose the interpolation method in the public interface <ref refid="interfacehoriz__interp__mod_1_1horiz__interp__new" kindref="compound">horiz_interp_new</ref> through optional argument interp_method, with acceptable value &quot;conservative&quot;, &quot;bilinear&quot;, &quot;bicubic&quot; and &quot;spherical&quot;. The default value is &quot;conservative&quot;. There is an optional mask field for missing input data. An optional output mask field may be used in conjunction with the input mask to show where output data exists. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

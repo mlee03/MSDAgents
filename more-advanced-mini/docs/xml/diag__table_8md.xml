@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="diag__table_8md" kind="file" language="Markdown">
+    <compoundname>diag_table.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@ingroup<sp/>diag_manager</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>The<sp/>Diagnostic<sp/>Manager<sp/>Table</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>_diagnostics<sp/>table_<sp/>(`diag_table`)<sp/>allows<sp/>users<sp/>to<sp/>specify<sp/>output<sp/>fields<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">sampling<sp/>rates<sp/>at<sp/>run<sp/>time.<sp/><sp/>The<sp/>`diag_table`<sp/>file<sp/>consists<sp/>of<sp/>comma-separated</highlight></codeline>
+<codeline><highlight class="normal">ASCII<sp/>values.<sp/><sp/>The<sp/>`diag_table`<sp/>has<sp/>three<sp/>sections:<sp/>**Global**,<sp/>**File**,<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">**Field**<sp/>sections.<sp/><sp/>The<sp/>**Global**<sp/>section<sp/>must<sp/>be<sp/>the<sp/>first<sp/>two<sp/>lines<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">file,<sp/>whereas<sp/>the<sp/>**File**<sp/>and<sp/>**Field**<sp/>sections<sp/>can<sp/>be<sp/>inter<sp/>mixed<sp/>to<sp/>allow</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>file<sp/>to<sp/>be<sp/>organized<sp/>as<sp/>desired.<sp/>Comments<sp/>can<sp/>be<sp/>added<sp/>to<sp/>the<sp/>`diag_table`</highlight></codeline>
+<codeline><highlight class="normal">file<sp/>by<sp/>using<sp/>the<sp/>hash<sp/>symbol<sp/>(`#`)<sp/>as<sp/>the<sp/>first<sp/>character<sp/>in<sp/>the<sp/>line.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>errors<sp/>in<sp/>the<sp/>`diag_table`<sp/>will<sp/>throw<sp/>a<sp/>FMS<sp/>`FATAL`<sp/>error.<sp/><sp/>The<sp/>[FRE<sp/>NCtools</highlight></codeline>
+<codeline><highlight class="normal">suite](https://github.com/NOAA-GFDL/FRE-NCtools)<sp/>contains<sp/>the<sp/>utility,</highlight></codeline>
+<codeline><highlight class="normal">`diag_table_chk`<sp/>to<sp/>check<sp/>the<sp/>`diag_table`<sp/>for<sp/>errors.<sp/><sp/>A<sp/>brief<sp/>usage<sp/>statement</highlight></codeline>
+<codeline><highlight class="normal">can<sp/>be<sp/>obtained<sp/>by<sp/>running<sp/>`diag_table_chk<sp/>--help`,<sp/>and<sp/>a<sp/>more<sp/>in-depth</highlight></codeline>
+<codeline><highlight class="normal">description<sp/>of<sp/>the<sp/>command<sp/>and<sp/>options<sp/>can<sp/>be<sp/>viewed<sp/>with<sp/>the<sp/>command<sp/>`perldoc</highlight></codeline>
+<codeline><highlight class="normal">diag_table_chk`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Global<sp/>Section</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>two<sp/>lines<sp/>of<sp/>the<sp/>`diag_table`<sp/>must<sp/>contain<sp/>a<sp/>_title_<sp/>#and<sp/>the<sp/>_base</highlight></codeline>
+<codeline><highlight class="normal">date_<sp/>of<sp/>the<sp/>experiment<sp/>respectively.<sp/><sp/>The<sp/>_title_<sp/>must<sp/>be<sp/>a<sp/>Fortran</highlight></codeline>
+<codeline><highlight class="normal">`CHARACTER`<sp/>string.<sp/><sp/>The<sp/>_base<sp/>date_<sp/>is<sp/>the<sp/>reference<sp/>time<sp/>used<sp/>for<sp/>the<sp/>#time</highlight></codeline>
+<codeline><highlight class="normal">units,<sp/>and<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>or<sp/>equal<sp/>to<sp/>the<sp/>model<sp/>start<sp/>time.<sp/>The<sp/>#_base</highlight></codeline>
+<codeline><highlight class="normal">date_<sp/>consists<sp/>of<sp/>six<sp/>space-separated<sp/>integers<sp/>in<sp/>the<sp/>following<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">year<sp/>month<sp/>day<sp/>hour<sp/>minute<sp/>second</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>Section</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">File<sp/>lines<sp/>contain<sp/>6<sp/>required<sp/>and<sp/>5<sp/>optional<sp/>fields<sp/>(optional<sp/>fields<sp/>are</highlight></codeline>
+<codeline><highlight class="normal">surrounded<sp/>with<sp/>square<sp/>brackets<sp/>([]).<sp/><sp/>File<sp/>lines<sp/>can<sp/>be<sp/>intermixed<sp/>with<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">field<sp/>lines,<sp/>but<sp/>the<sp/>file<sp/>must<sp/>be<sp/>defined<sp/>before<sp/>any<sp/>fields<sp/>that<sp/>are<sp/>to<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">written<sp/>to<sp/>the<sp/>file.<sp/><sp/>File<sp/>lines<sp/>have<sp/>the<sp/>following<sp/>format:&lt;BR<sp/>/&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;file_name&quot;,<sp/>output_freq,<sp/>&quot;output_freq_units&quot;,<sp/>file_format,<sp/>&quot;time_axis_units&quot;,<sp/>&quot;time_axis_name&quot;<sp/>[,<sp/>new_file_freq,<sp/>&quot;new_file_freq_units&quot;[,<sp/>&quot;start_time&quot;[,<sp/>file_duration,<sp/>&quot;file_duration_units&quot;]]]</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">with<sp/>the<sp/>following<sp/>descriptions<sp/>and<sp/>Fortran<sp/>types.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>file_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Output<sp/>file<sp/>name<sp/>without<sp/>the<sp/>trailing<sp/>`.nc`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>single<sp/>file<sp/>description<sp/>can<sp/>produce<sp/>multiple<sp/>files<sp/>using<sp/>special<sp/>time<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">suffix<sp/>keywords.<sp/><sp/>This<sp/>time<sp/>string<sp/>will<sp/>append<sp/>the<sp/>time<sp/>strings<sp/>to<sp/>the<sp/>base<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">name<sp/>each<sp/>time<sp/>a<sp/>new<sp/>file<sp/>is<sp/>opened.<sp/><sp/>The<sp/>syntax<sp/>for<sp/>the<sp/>time<sp/>string<sp/>suffix</highlight></codeline>
+<codeline><highlight class="normal">keywords<sp/>are<sp/>`%#tt`<sp/>Where<sp/>`#`<sp/>is<sp/>a<sp/>mandatory<sp/>single<sp/>digit<sp/>number<sp/>specifying<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">width<sp/>of<sp/>the<sp/>field,<sp/>and<sp/>`tt`<sp/>can<sp/>be<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`yr`<sp/>&amp;ndash;<sp/>Years\</highlight></codeline>
+<codeline><highlight class="normal">`mo`<sp/>&amp;ndash;<sp/>Months\</highlight></codeline>
+<codeline><highlight class="normal">`dy`<sp/>&amp;ndash;<sp/>Days\</highlight></codeline>
+<codeline><highlight class="normal">`hr`<sp/>&amp;ndash;<sp/>Hours\</highlight></codeline>
+<codeline><highlight class="normal">`mi`<sp/>&amp;ndash;<sp/>Minutes\</highlight></codeline>
+<codeline><highlight class="normal">`sc`<sp/>&amp;ndash;<sp/>Seconds</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Thus,<sp/>a<sp/>file<sp/>name<sp/>of<sp/>`file2_yr_dy%1yr%3dy`<sp/>will<sp/>have<sp/>a<sp/>base<sp/>file<sp/>name<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">`file2_yr_dy_1_001`<sp/>if<sp/>the<sp/>file<sp/>is<sp/>created<sp/>on<sp/>year<sp/>1<sp/>day<sp/>1<sp/>of<sp/>the<sp/>model<sp/>run.</highlight></codeline>
+<codeline><highlight class="normal">**_NOTE:_**<sp/>The<sp/>time<sp/>suffix<sp/>keywords<sp/>must<sp/>be<sp/>used<sp/>if<sp/>the<sp/>optional<sp/>fields</highlight></codeline>
+<codeline><highlight class="normal">`new_file_freq`<sp/>and<sp/>`new_file_freq_units`<sp/>are<sp/>used,<sp/>otherwise<sp/>a<sp/>FMS<sp/>`FATAL`</highlight></codeline>
+<codeline><highlight class="normal">error<sp/>will<sp/>occur.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`INTEGER<sp/>::<sp/>output_freq`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">How<sp/>often<sp/>to<sp/>write<sp/>fields<sp/>to<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`&gt;<sp/>0`<sp/>&amp;ndash;<sp/>Output<sp/>frequency<sp/>in<sp/>`output_freq_units`.\</highlight></codeline>
+<codeline><highlight class="normal">`=<sp/>0`<sp/>&amp;ndash;<sp/>Output<sp/>frequency<sp/>every<sp/>time<sp/>set.<sp/>(`output_freq_units`<sp/>is<sp/>ignored.)\</highlight></codeline>
+<codeline><highlight class="normal">`=-1`<sp/>&amp;ndash;<sp/>Output<sp/>at<sp/>end<sp/>of<sp/>run<sp/>only.<sp/>(`output_freq_units`<sp/>is<sp/>ignored.)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=10)<sp/>::<sp/>output_freq_units`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Time<sp/>units<sp/>for<sp/>output.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>time<sp/>units<sp/>can<sp/>be<sp/>one<sp/>of:<sp/>`years`,<sp/>`months`,<sp/>`days`,<sp/>`minutes`,<sp/>`hours`,<sp/>or</highlight></codeline>
+<codeline><highlight class="normal">`seconds`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`INTEGER<sp/>::<sp/>file_format`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Output<sp/>file<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Currently<sp/>only<sp/>the<sp/>_netCDF_<sp/>(value<sp/>of<sp/>`1`)<sp/>file<sp/>format<sp/>is<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=10)<sp/>::<sp/>time_axis_units`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Time<sp/>units<sp/>for<sp/>the<sp/>output<sp/>file<sp/>time<sp/>axis.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>time<sp/>units<sp/>can<sp/>be<sp/>one<sp/>of:<sp/>`years`,<sp/>`months`,<sp/>`days`,<sp/>`minutes`,<sp/>`hours`,<sp/>or</highlight></codeline>
+<codeline><highlight class="normal">`seconds`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>time_axis_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Axis<sp/>name<sp/>for<sp/>the<sp/>output<sp/>file<sp/>time<sp/>axis.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>character<sp/>string<sp/>must<sp/>contain<sp/>the<sp/>case<sp/>insensitive<sp/>string<sp/>`&quot;time&quot;`.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`INTEGER,<sp/>OPTIONAL<sp/>::<sp/>new_file_freq`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Frequency<sp/>for<sp/>closing<sp/>the<sp/>existing<sp/>file,<sp/>and<sp/>creating<sp/>a<sp/>new<sp/>file<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">`new_file_freq_units`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=10),<sp/>OPTIONAL<sp/>::<sp/>new_file_freq_units`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Time<sp/>units<sp/>for<sp/>creating<sp/>a<sp/>new<sp/>file.<sp/><sp/>Can<sp/>be<sp/>either<sp/>`years`,<sp/>`months`,<sp/>`days`,</highlight></codeline>
+<codeline><highlight class="normal">`minutes`,<sp/>`hours`,<sp/>or<sp/>`seconds`.<sp/><sp/>**_NOTE:_**<sp/>If<sp/>the<sp/>`new_file_freq`<sp/>field<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">present,<sp/>then<sp/>this<sp/>field<sp/>must<sp/>also<sp/>be<sp/>present.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=25),<sp/>OPTIONAL<sp/>::<sp/>start_time`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Time<sp/>to<sp/>start<sp/>the<sp/>file<sp/>for<sp/>the<sp/>first<sp/>time.<sp/><sp/>The<sp/>format<sp/>of<sp/>this<sp/>string<sp/>is<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">same<sp/>as<sp/>the<sp/>_global<sp/>date_.<sp/><sp/>**_NOTE:_**<sp/>The<sp/>`new_file_freq`<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>`new_file_freq_units`<sp/>fields<sp/>must<sp/>be<sp/>present<sp/>to<sp/>use<sp/>this<sp/>field.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`INTEGER,<sp/>OPTIONAL<sp/>::<sp/>file_duration`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">How<sp/>long<sp/>file<sp/>should<sp/>receive<sp/>data<sp/>after<sp/>start<sp/>time<sp/>in<sp/>`file_duration_units`.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>optional<sp/>field<sp/>can<sp/>only<sp/>be<sp/>used<sp/>if<sp/>the<sp/>`start_time`<sp/>field<sp/>is<sp/>present.<sp/><sp/>If</highlight></codeline>
+<codeline><highlight class="normal">this<sp/>field<sp/>is<sp/>absent,<sp/>then<sp/>the<sp/>file<sp/>duration<sp/>will<sp/>be<sp/>equal<sp/>to<sp/>the<sp/>frequency<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">creating<sp/>new<sp/>files.<sp/><sp/>**_NOTE:_**<sp/>The<sp/>`file_duration_units`<sp/>field<sp/>must</highlight></codeline>
+<codeline><highlight class="normal">also<sp/>be<sp/>present<sp/>if<sp/>this<sp/>field<sp/>is<sp/>present.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=10),<sp/>OPTIONAL<sp/>::<sp/>file_duration_units`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">File<sp/>duration<sp/>units.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Units<sp/>can<sp/>be<sp/>one<sp/>of<sp/>`years`,<sp/>`months`,<sp/>`days`,<sp/>`minutes`,</highlight></codeline>
+<codeline><highlight class="normal">`hours`,<sp/>or<sp/>`seconds`.<sp/><sp/>**_NOTE:_**<sp/>If<sp/>the<sp/>`file_duration`<sp/>field<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">present,<sp/>then<sp/>this<sp/>field<sp/>must<sp/>also<sp/>be<sp/>present.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Field<sp/>Section</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Field<sp/>lines<sp/>contain<sp/>8<sp/>fields.<sp/><sp/>Field<sp/>lines<sp/>can<sp/>be<sp/>intermixed<sp/>with<sp/>file<sp/>lines.</highlight></codeline>
+<codeline><highlight class="normal">Fields<sp/>line<sp/>can<sp/>contain<sp/>fields<sp/>that<sp/>are<sp/>not<sp/>written<sp/>to<sp/>any<sp/>files.<sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>these<sp/>fields<sp/>is<sp/>`null`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Field<sp/>lines<sp/>have<sp/>the<sp/>following<sp/>format:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;module_name&quot;,<sp/>&quot;field_name&quot;,<sp/>&quot;output_name&quot;,<sp/>&quot;file_name&quot;,<sp/>&quot;time_sampling&quot;,<sp/>&quot;reduction_method&quot;,<sp/>&quot;regional_section&quot;,<sp/>packing</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">with<sp/>the<sp/>following<sp/>descriptions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>module_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Module<sp/>that<sp/>contains<sp/>the<sp/>`field_name`<sp/>variable.<sp/><sp/>(e.g.<sp/>`atmos_mod`,<sp/>`land_mod`)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>field_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Module<sp/>variable<sp/>name<sp/>that<sp/>has<sp/>data<sp/>to<sp/>be<sp/>written<sp/>to<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>output_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Name<sp/>of<sp/>the<sp/>field<sp/>as<sp/>written<sp/>in<sp/>`file_name`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=128)<sp/>::<sp/>file_name`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Name<sp/>of<sp/>the<sp/>file<sp/>where<sp/>the<sp/>field<sp/>is<sp/>to<sp/>be<sp/>written.<sp/>**_Note:_**<sp/>The<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">`file_name`<sp/>must<sp/>be<sp/>defined<sp/>first.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=50)<sp/>::<sp/>time_sampling`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Currently<sp/>not<sp/>used.<sp/><sp/>Please<sp/>use<sp/>the<sp/>string<sp/>`&quot;all&quot;`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=50)<sp/>::<sp/>reduction_method`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>data<sp/>reduction<sp/>method<sp/>to<sp/>perform<sp/>prior<sp/>to<sp/>writing<sp/>data<sp/>to<sp/>disk.<sp/><sp/>Valid</highlight></codeline>
+<codeline><highlight class="normal">options<sp/>are<sp/>(redundant<sp/>names<sp/>are<sp/>separated<sp/>with<sp/>commas):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`.TRUE.`,<sp/>`&quot;average&quot;`,<sp/>`&quot;avg&quot;`,<sp/>`&quot;mean&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Average<sp/>from<sp/>the<sp/>last<sp/>time<sp/>written<sp/>to<sp/>the<sp/>current<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`.FALSE.`,<sp/>`&quot;none&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">No<sp/>reduction<sp/>performed.<sp/><sp/>Write<sp/>current<sp/>time<sp/>step<sp/>value<sp/>only.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`&quot;rms&quot;`</highlight></codeline>
+<codeline><highlight class="normal">Calculate<sp/>the<sp/>root<sp/>mean<sp/>square<sp/>from<sp/>the<sp/>last<sp/>time<sp/>written<sp/>to<sp/>the<sp/>current<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`&quot;pow##&quot;`</highlight></codeline>
+<codeline><highlight class="normal">Calculate<sp/>the<sp/>mean<sp/>of<sp/>the<sp/>power<sp/>`##`<sp/>from<sp/>the<sp/>last<sp/>time<sp/>written<sp/>to<sp/>the<sp/>current<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`&quot;min&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Minimum<sp/>value<sp/>from<sp/>last<sp/>write<sp/>to<sp/>current<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`&quot;max&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Maximum<sp/>value<sp/>from<sp/>last<sp/>write<sp/>to<sp/>current<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>`&quot;diurnal##&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`##`<sp/>diurnal<sp/>averages</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`CHARACTER(len=50)<sp/>::<sp/>regional_section`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Bounds<sp/>of<sp/>the<sp/>regional<sp/>section<sp/>to<sp/>capture.<sp/><sp/>A<sp/>value<sp/>of<sp/>`none`<sp/>indicates<sp/>a<sp/>global</highlight></codeline>
+<codeline><highlight class="normal">region.<sp/><sp/>The<sp/>regional<sp/>section<sp/>has<sp/>the<sp/>following<sp/>format:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">lat_min,<sp/>lat_max,<sp/>lon_min,<sp/>lon_max,<sp/>vert_min,<sp/>vert_max</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Use<sp/>`vert_min<sp/>=<sp/>-1`<sp/>and<sp/>`vert_max<sp/>=<sp/>-1`<sp/>to<sp/>get<sp/>the<sp/>entire<sp/>vertical<sp/>axis.</highlight></codeline>
+<codeline><highlight class="normal">**_Note:_**<sp/>Currently,<sp/>the<sp/>defined<sp/>region<sp/>_MUST_<sp/>be<sp/>confined<sp/>to<sp/>a<sp/>single</highlight></codeline>
+<codeline><highlight class="normal">tile.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`INTEGER<sp/>::<sp/>packing`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Fortran<sp/>number<sp/>`KIND`<sp/>of<sp/>the<sp/>data<sp/>written.<sp/><sp/>Valid<sp/>values:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`=<sp/>1`<sp/>&amp;ndash;<sp/>double<sp/>precision\</highlight></codeline>
+<codeline><highlight class="normal">`=<sp/>2`<sp/>&amp;ndash;<sp/>float\</highlight></codeline>
+<codeline><highlight class="normal">`=<sp/>4`<sp/>&amp;ndash;<sp/>packed<sp/>16-bit<sp/>integers\</highlight></codeline>
+<codeline><highlight class="normal">`=<sp/>8`<sp/>&amp;ndash;<sp/>packed<sp/>1-byte<sp/>(not<sp/>tested).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Sample<sp/>Diagnostic<sp/>Manager<sp/>Table</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;diag<sp/>manager<sp/>test&quot;</highlight></codeline>
+<codeline><highlight class="normal">1999<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>End<sp/>the<sp/>Global<sp/>Section</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Output<sp/>Files</highlight></codeline>
+<codeline><highlight class="normal">&quot;10_days&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10,<sp/>&quot;days&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline><highlight class="normal">&quot;file1_hr%hr3&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5,<sp/>&quot;days&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;Time&quot;,<sp/>15,<sp/>&quot;days&quot;</highlight></codeline>
+<codeline><highlight class="normal">&quot;file2_yr_dy%yr1%dy3&quot;,<sp/><sp/>5,<sp/>&quot;days&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;Time&quot;,<sp/>10,<sp/>&quot;days&quot;,<sp/>&quot;1<sp/>1<sp/>7<sp/>0<sp/>0<sp/>0&quot;</highlight></codeline>
+<codeline><highlight class="normal">&quot;file3_yr_dy%yr1%dy3&quot;,<sp/><sp/>5,<sp/>&quot;days&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;Time&quot;,<sp/>20,<sp/>&quot;days&quot;,<sp/>&quot;1<sp/>1<sp/>7<sp/>0<sp/>0<sp/>0&quot;,<sp/>5,<sp/>&quot;years&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Output<sp/>Variable</highlight></codeline>
+<codeline><highlight class="normal">&quot;ice_mod&quot;,<sp/>&quot;ice&quot;,<sp/>&quot;ice&quot;,<sp/>&quot;10_days&quot;,<sp/>&quot;all&quot;,<sp/>.false.,<sp/>&quot;none&quot;,<sp/>2</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>File<sp/>and<sp/>Field</highlight></codeline>
+<codeline><highlight class="normal">temp_local,<sp/>1,<sp/>&quot;days&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline><highlight class="normal">&quot;ocean_mod&quot;,<sp/>&quot;temp&quot;,<sp/>&quot;temp&quot;,<sp/>&quot;temp_local&quot;,<sp/>&quot;all&quot;,<sp/>.FALSE.,<sp/>&quot;5<sp/>259.5<sp/>-59.5<sp/>59.5<sp/>1<sp/>1&quot;,<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/docs/diag_table.md"/>
+  </compounddef>
+</doxygen>

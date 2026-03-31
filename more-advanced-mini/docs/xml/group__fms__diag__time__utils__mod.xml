@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__fms__diag__time__utils__mod" kind="group">
+    <compoundname>fms_diag_time_utils_mod</compoundname>
+    <title>fms_diag_time_utils_mod</title>
+    <innernamespace refid="namespacefms__diag__time__utils__mod">fms_diag_time_utils_mod</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__time__utils__mod_1ga8b22ae5eb9ea096e2c480251dfc48e43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(time_type) function</type>
+        <definition>type(time_type) function fms_diag_time_utils_mod::diag_clock_time_inc</definition>
+        <argsstring>(time, output_freq, output_units, err_msg)</argsstring>
+        <name>diag_clock_time_inc</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>output_freq</type>
+          <defname>output_freq</defname>
+        </param>
+        <param>
+          <type>output_units</type>
+          <defname>output_units</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Determine the next time data/file is to be written based on the frequency and units using the clock. For example, if doing daily averages and the input time is day1_hour3, the output time will be day2_hour0. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the next time data/file is to be written</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output frequency number value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output frequency unit.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function error message. An empty string indicates the next output time was found successfully. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" line="65" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" bodystart="66" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__utils__mod_1gac7ddcdbb33f76dafc7b6f4450e4563a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(time_type) function</type>
+        <definition>type(time_type) function fms_diag_time_utils_mod::diag_forecast_time_inc</definition>
+        <argsstring>(time, output_freq, output_units, err_msg)</argsstring>
+        <name>diag_forecast_time_inc</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>output_freq</type>
+          <defname>output_freq</defname>
+        </param>
+        <param>
+          <type>output_units</type>
+          <defname>output_units</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Determine the next time data/file is to be written based on the frequency and units using forecast time. For example, if doing daily averages and the input time is day1_hour3, the output time will be day2_hour3. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the next time data/file is to be written</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output frequency number value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output frequency unit.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function error message. An empty string indicates the next output time was found successfully. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" line="125" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" bodystart="126" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__utils__mod_1gaff8a9c2d8a6f6bfaaeb93dafcccaaf02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real function, public</type>
+        <definition>real function, public fms_diag_time_utils_mod::get_date_dif</definition>
+        <argsstring>(t2, t1, units)</argsstring>
+        <name>get_date_dif</name>
+        <param>
+          <type>t2</type>
+          <defname>t2</defname>
+        </param>
+        <param>
+          <type>t1</type>
+          <defname>t1</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <briefdescription>
+<para>Return the difference between two times in units. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Real get_data_dif</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Most recent time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">t1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Most distant time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unit of return value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" line="355" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" bodystart="356" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__utils__mod_1ga8091aa56a402388482b590284e7125cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function, public</type>
+        <definition>character(len=128) function, public fms_diag_time_utils_mod::get_time_string</definition>
+        <argsstring>(filename, current_time)</argsstring>
+        <name>get_time_string</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>current_time</type>
+          <defname>current_time</defname>
+        </param>
+        <briefdescription>
+<para>This function determines a string based on current time. This string is used as suffix in output file name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Character(len=128) get_time_string</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">current_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" line="214" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" bodystart="215" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__utils__mod_1gafaa2fe33e4c7b9cd004b3236da0f0a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_time_utils_mod::set_time_type</definition>
+        <argsstring>(time_int, time)</argsstring>
+        <name>set_time_type</name>
+        <param>
+          <type>time_int</type>
+          <defname>time_int</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Sets up a time_type based on 6 member array of integers defining the [year month day hour min sec]. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time_int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time in the format [year month day hour min second]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time converted to the time_type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" line="389" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_utils.F90" bodystart="390" bodyend="418"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>fms_diag_time_utils contains functions and subroutines necessary for the <computeroutput>diag_manager_mod</computeroutput> related to time handling. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Uriel Ramirez </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

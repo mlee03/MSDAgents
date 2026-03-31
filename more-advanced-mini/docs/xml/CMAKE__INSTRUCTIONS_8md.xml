@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CMAKE__INSTRUCTIONS_8md" kind="file" language="Markdown">
+    <compoundname>CMAKE_INSTRUCTIONS.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">\page<sp/>cmake<sp/>Building<sp/>with<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Instructions<sp/>for<sp/>building<sp/>FMS<sp/>with<sp/>cmake</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>Configuring<sp/>the<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Environment<sp/>Variables</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>For<sp/>GNU<sp/>compilers<sp/>on<sp/>Linux<sp/>with<sp/>the<sp/>bash<sp/>shell:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>FC=mpifort</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>CC=mpicc</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>For<sp/>Intel<sp/>Compilers<sp/>on<sp/>Linux<sp/>with<sp/>the<sp/>bash<sp/>shell:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>FC=mpiifort</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>CC=mpiicc</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">MPI<sp/>compiler<sp/>wrappers<sp/>may<sp/>be<sp/>named<sp/>different<sp/>on<sp/>your<sp/>system,<sp/>so<sp/>its<sp/>best<sp/>to<sp/>ensure<sp/>the<sp/>compiler<sp/>commands<sp/>work<sp/>prior<sp/>to<sp/>being<sp/>set.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>NetCDF<sp/>is<sp/>provided<sp/>via<sp/>the<sp/>`nc-config`<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>NetCDF_ROOT=`nc-config<sp/>--prefix`</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">It&apos;s<sp/>best<sp/>to<sp/>create<sp/>a<sp/>build<sp/>directory<sp/>inside<sp/>of<sp/>the<sp/>FMS<sp/>folder<sp/>to<sp/>avoid<sp/>building<sp/>on<sp/>top<sp/>of<sp/>the<sp/>source<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>that<sp/>is<sp/>done,<sp/>CMake<sp/>can<sp/>be<sp/>ran<sp/>to<sp/>generate<sp/>the<sp/>necessary<sp/>build<sp/>files:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>[-DWITH_YAML=on]<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Setting<sp/>a<sp/>Build<sp/>Type</highlight></codeline>
+<codeline><highlight class="normal">CMake<sp/>uses<sp/>&quot;build<sp/>types&quot;<sp/>to<sp/>set<sp/>compiler<sp/>flags.<sp/>By<sp/>default<sp/>(.ie<sp/>no<sp/>-DCMAKE_BUILD_TYPE=&quot;Type&quot;<sp/>argument<sp/>when<sp/>cmake<sp/>is<sp/>run),<sp/>it<sp/>will<sp/>use<sp/>the<sp/>&quot;Release&quot;<sp/>build<sp/>type<sp/>which<sp/>corresponds<sp/>the<sp/>the<sp/>prod/opt<sp/>flags<sp/>used<sp/>by<sp/>the<sp/>GFDL<sp/>mkmf<sp/>templates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Similarly<sp/>&quot;Repro&quot;<sp/>and<sp/>&quot;Debug&quot;<sp/>also<sp/>correspond<sp/>to<sp/>whatever<sp/>options<sp/>would<sp/>be<sp/>set<sp/>by<sp/>theircorresponding<sp/>mkmf<sp/>template<sp/>files.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>reproduce<sp/>the<sp/>old<sp/>behavior<sp/>for<sp/>the<sp/>cmake<sp/>build<sp/>(2025.03<sp/>and<sp/>prior),<sp/>the<sp/>&quot;ReleaseUFS&quot;<sp/>and<sp/>&quot;DebugUFS&quot;<sp/>will<sp/>use<sp/>the<sp/>same<sp/>flags<sp/>as<sp/>before.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>open<sp/>an<sp/>issue<sp/>in<sp/>the<sp/>FMS<sp/>repository<sp/>if<sp/>you<sp/>have<sp/>any<sp/>issues<sp/>or<sp/>would<sp/>like<sp/>to<sp/>request<sp/>any<sp/>changes<sp/>to<sp/>the<sp/>current<sp/>build<sp/>type<sp/>options.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Setting<sp/>custom<sp/>flags</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>override<sp/>the<sp/>default<sp/>compiler<sp/>flags,<sp/>you<sp/>can<sp/>set<sp/>them<sp/>via<sp/>CMake<sp/>arguments:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-DCMAKE_BUILD_TYPE=&quot;NoFlags&quot;<sp/>-DCMAKE_C_FLAGS=&quot;&lt;c<sp/>flags&gt;&quot;<sp/>-DCMAKE_Fortran_FLAGS=&quot;&lt;fortran<sp/>flags&gt;&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">By<sp/>using<sp/>the<sp/>&quot;NoFlags&quot;<sp/>build<sp/>type,<sp/>only<sp/>necessary<sp/>compilation<sp/>flags<sp/>will<sp/>be<sp/>added<sp/>besides<sp/>what<sp/>is<sp/>set<sp/>via<sp/>the<sp/>cmake<sp/>arguments.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>Build<sp/>and<sp/>install<sp/>FMS<sp/>with<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">`&lt;prefix&gt;`<sp/>is<sp/>the<sp/>full<sp/>install<sp/>directory<sp/>for<sp/>FMS<sp/>provided<sp/>by<sp/>user</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>FMS</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>-p<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-DCMAKE_INSTALL_PREFIX=&lt;prefix&gt;<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>-j</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>User<sp/>configurable<sp/>options:</highlight></codeline>
+<codeline><highlight class="normal">By<sp/>default,<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>`OpenMP`<sp/>enabled<sp/>and<sp/>delivered<sp/>in<sp/>static<sp/>library<sp/>files.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">FMS<sp/>has<sp/>mixed<sp/>precision<sp/>real<sp/>support<sp/>for<sp/>most<sp/>interfaces.<sp/>By<sp/>default,<sp/>one<sp/>library<sp/>will<sp/>be<sp/>created,</highlight></codeline>
+<codeline><highlight class="normal">`libfms`,<sp/>that<sp/>is<sp/>compiled<sp/>with<sp/>r8<sp/>defaults<sp/>but<sp/>also<sp/>contains<sp/>overloaded<sp/>r4<sp/>routines.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>64BIT<sp/>and<sp/>32BIT<sp/>precision<sp/>options<sp/>will<sp/>build<sp/>distinct<sp/>libraries<sp/>when<sp/>enabled<sp/>with<sp/>the<sp/>given<sp/>default</highlight></codeline>
+<codeline><highlight class="normal">real<sp/>size,<sp/>libfms_r4<sp/>or<sp/>libfms_r8.<sp/>These<sp/>option<sp/>are<sp/>provided<sp/>for<sp/>backwards<sp/>compatibility,<sp/>but<sp/>are<sp/>no<sp/>longer</highlight></codeline>
+<codeline><highlight class="normal">supported<sp/>by<sp/>our<sp/>development<sp/>team,<sp/>since<sp/>mixed<sp/>precision<sp/>can<sp/>now<sp/>be<sp/>used<sp/>with<sp/>a<sp/>single<sp/>library.</highlight></codeline>
+<codeline><highlight class="normal">Unit<sp/>tests<sp/>currently<sp/>only<sp/>work<sp/>when<sp/>no<sp/>precision<sp/>option<sp/>is<sp/>specified.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>build<sp/>options<sp/>are<sp/>available:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-DOPENMP<sp/><sp/><sp/><sp/><sp/><sp/>&quot;Build<sp/>FMS<sp/>with<sp/>OpenMP<sp/>support&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:<sp/>ON</highlight></codeline>
+<codeline><highlight class="normal">-D32BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Build<sp/>32-bit<sp/>(r4)<sp/>FMS<sp/>library&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:<sp/>OFF</highlight></codeline>
+<codeline><highlight class="normal">-D64BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Build<sp/>64-bit<sp/>(r8)<sp/>FMS<sp/>library&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:<sp/>OFF</highlight></codeline>
+<codeline><highlight class="normal">-DFPIC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Build<sp/>with<sp/>position<sp/>independent<sp/>code&quot;<sp/>DEFAULT:<sp/>OFF</highlight></codeline>
+<codeline><highlight class="normal">-DSHARED_LIBS<sp/>&quot;Build<sp/>shared/dynamic<sp/>libraries&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:<sp/>OFF</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-DCONSTANTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Build<sp/>with<sp/>&lt;X&gt;<sp/>constants<sp/>parameter<sp/>definitions&quot;<sp/><sp/><sp/><sp/><sp/>DEFAULT:GFDL<sp/><sp/>OPTIONS:GFS|GEOS|GFDL</highlight></codeline>
+<codeline><highlight class="normal">-DINTERNAL_FILE_NML<sp/><sp/><sp/><sp/><sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-DINTERNAL_FILE_NML&quot;<sp/><sp/><sp/><sp/><sp/>DEFAULT:<sp/>ON</highlight></codeline>
+<codeline><highlight class="normal">-DENABLE_QUAD_PRECISION<sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-DENABLE_QUAD_PRECISION&quot;<sp/>DEFAULT:<sp/>ON</highlight></codeline>
+<codeline><highlight class="normal">-DPORTABLE_KINDS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-DPORTABLE_KINDS&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:OFF</highlight></codeline>
+<codeline><highlight class="normal">-DGFS_PHYS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-DGFS_PHYS&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:OFF</highlight></codeline>
+<codeline><highlight class="normal">-DLARGEFILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-Duse_LARGEFILE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:OFF</highlight></codeline>
+<codeline><highlight class="normal">-DWITH_YAML<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Enable<sp/>compiler<sp/>definition<sp/>-Duse_yaml&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFAULT:OFF</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>Installation<sp/>structure</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>the<sp/>above<sp/>command<sp/>finishes,<sp/>the<sp/>`&lt;prefix&gt;`<sp/>will<sp/>have<sp/>an<sp/>`include`<sp/>and<sp/>a<sp/>`lib`<sp/>directory.<sp/>The<sp/>`lib<sp/>`<sp/>directory<sp/>will<sp/>have<sp/>these<sp/>files:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">libfms.a</highlight></codeline>
+<codeline><highlight class="normal">cmake/fms/fms-targets.cmake</highlight></codeline>
+<codeline><highlight class="normal">cmake/fms/fms-targets-release.cmake</highlight></codeline>
+<codeline><highlight class="normal">cmake/fms/fms-config.cmake</highlight></codeline>
+<codeline><highlight class="normal">cmake/fms/fms-config-version.cmake</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>Using<sp/>FMS<sp/>in<sp/>your<sp/>application</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">FMS<sp/>built<sp/>with<sp/>`cmake`<sp/>provides<sp/>transient<sp/>targets<sp/>with<sp/>its<sp/>package<sp/>configuration.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>be<sp/>able<sp/>to<sp/>look<sp/>for<sp/>FMS<sp/>in<sp/>your<sp/>application,<sp/>set<sp/>the<sp/>following<sp/>environment<sp/>variable:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>FMS_ROOT=&lt;prefix&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">where<sp/>`&lt;prefix&gt;`<sp/>is<sp/>the<sp/>full<sp/>path<sp/>to<sp/>FMS<sp/>installation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>find<sp/>FMS<sp/>in<sp/>your<sp/>application<sp/>`CMakeLists.txt`:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">find_package(FMS)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>link<sp/>your<sp/>application<sp/>with<sp/>FMS<sp/>library:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(appName<sp/>FMS::fms_r4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>application<sp/>does<sp/>not<sp/>provide<sp/>a<sp/>means<sp/>to<sp/>locate<sp/>the<sp/>NetCDF<sp/>installation<sp/>via<sp/>cmake,<sp/>this<sp/>may<sp/>help:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-DCMAKE_MODULE_PATH=&lt;FMS_SRC_DIR&gt;/cmake</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/CMAKE_INSTRUCTIONS.md"/>
+  </compounddef>
+</doxygen>

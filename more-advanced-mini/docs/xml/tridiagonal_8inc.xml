@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="tridiagonal_8inc" kind="file" language="Fortran">
+    <compoundname>tridiagonal.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__tridiagonal__mod_1gae1b633515f297c96ed4059239629ffb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine tri_invert_</definition>
+        <argsstring>(x, d, a, b, c, store_both_kinds)</argsstring>
+        <name>tri_invert_</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>d</type>
+          <defname>d</defname>
+        </param>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>c</type>
+          <defname>c</defname>
+        </param>
+        <param>
+          <type>store_both_kinds</type>
+          <defname>store_both_kinds</defname>
+        </param>
+        <briefdescription>
+<para>Sets up and solves the tridiagonal system of equations. </para>        </briefdescription>
+        <detaileddescription>
+<para>For simplicity, A and C are assumed to be dimensioned the same size as B, D, and X, although any input values for A(N) and C(1) are ignored. There are no checks to make sure the sizes agree.</para><para>The value of A(N) is modified on output, and B and C are unchanged.</para><para>For mixed precision, this routine uses the kind size macro(FMS_TRID_KIND_) to determine which module variables are used/stored. This means a,b, and c values will only be stored for calls of the same real kind value unless store_both_kinds is present and .true..</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solution to the tridiagonal system of equations</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right-hand side term, see the schematic above.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side terms(see schematic on module page). If not provided, values from last call are used</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>store_both_kinds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Will save module state variables for both kind types in order to be used in subsequent calls with either kind. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/tridiagonal/include/tridiagonal.inc" line="33" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/tridiagonal/include/tridiagonal.inc" bodystart="34" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>tridiagonal_mod</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>@brief<sp/>Sets<sp/>up<sp/>and<sp/>solves<sp/>the<sp/>tridiagonal<sp/>system<sp/>of<sp/>equations</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!&gt;<sp/>For<sp/>simplicity,<sp/>A<sp/>and<sp/>C<sp/>are<sp/>assumed<sp/>to<sp/>be<sp/>dimensioned<sp/>the<sp/>same<sp/>size</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/>as<sp/>B,<sp/>D,<sp/>and<sp/>X,<sp/>although<sp/>any<sp/>input<sp/>values<sp/>for<sp/>A(N)<sp/>and<sp/>C(1)<sp/>are<sp/>ignored.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/>There<sp/>are<sp/>no<sp/>checks<sp/>to<sp/>make<sp/>sure<sp/>the<sp/>sizes<sp/>agree.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">!!<sp/>The<sp/>value<sp/>of<sp/>A(N)<sp/>is<sp/>modified<sp/>on<sp/>output,<sp/>and<sp/>B<sp/>and<sp/>C<sp/>are<sp/>unchanged.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!!<sp/>For<sp/>mixed<sp/>precision,<sp/>this<sp/>routine<sp/>uses<sp/>the<sp/>kind<sp/>size<sp/>macro(FMS_TRID_KIND_)<sp/>to<sp/>determine</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">!!<sp/>which<sp/>module<sp/>variables<sp/>are<sp/>used/stored.<sp/>This<sp/>means<sp/>a,b,<sp/>and<sp/>c<sp/>values<sp/>will<sp/>only<sp/>be<sp/>stored<sp/>for<sp/>calls</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">!!<sp/>of<sp/>the<sp/>same<sp/>real<sp/>kind<sp/>value<sp/>unless<sp/>store_both_kinds<sp/>is<sp/>present<sp/>and<sp/>.true..</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__tridiagonal__mod_1gae1b633515f297c96ed4059239629ffb5" kindref="member">tri_invert_</ref>(x,d,a,b,c,<sp/>store_both_kinds)</highlight></codeline>
+<codeline lineno="34" refid="group__tridiagonal__mod_1gae1b633515f297c96ed4059239629ffb5" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_TRID_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>x</highlight><highlight class="comment"><sp/>!&lt;<sp/>Solution<sp/>to<sp/>the<sp/>tridiagonal<sp/>system<sp/>of<sp/>equations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_TRID_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>d</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>right-hand<sp/>side<sp/>term,<sp/>see<sp/>the<sp/>schematic<sp/>above.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_TRID_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>a,b,c</highlight><highlight class="comment"><sp/>!&lt;<sp/>Left<sp/>hand<sp/>side<sp/>terms(see<sp/>schematic<sp/>on<sp/>module<sp/>page).</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>If<sp/>not<sp/>provided,<sp/>values<sp/>from<sp/>last<sp/>call<sp/>are<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>store_both_kinds</highlight><highlight class="comment"><sp/>!&lt;<sp/>Will<sp/>save<sp/>module<sp/>state</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>variables<sp/>for<sp/>both<sp/>kind<sp/>types<sp/>in<sp/>order<sp/>to<sp/>be<sp/>used<sp/>in</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>subsequent<sp/>calls<sp/>with<sp/>either<sp/>kind.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_TRID_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(x,1),size(x,2),size(x,3))</highlight><highlight class="normal"><sp/>::<sp/>f</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>kindl<sp/>=<sp/>fms_trid_kind_</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>k</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(a))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!$OMP<sp/>SINGLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_var<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(trid_real_type%e))<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(trid_real_type%e)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(trid_real_type%g))<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(trid_real_type%g)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(trid_real_type%bb))<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(trid_real_type%bb)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(trid_real_type%cc))<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(trid_real_type%cc)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(trid_real_type%e<sp/>(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,1),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,2),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)))</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(trid_real_type%g<sp/>(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,1),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,2),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)))</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(trid_real_type%bb(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,1),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,2)))</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(trid_real_type%cc(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,1),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,2),</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!$OMP<sp/>END<sp/>SINGLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trid_real_type%e(:,:,1)<sp/>=<sp/>-<sp/>a(:,:,1)<sp/>/<sp/>b(:,:,1)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(:,:,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3))<sp/>=<sp/>0.0_kindl</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/><sp/>k=<sp/>2,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trid_real_type%g(:,:,k)<sp/>=<sp/>1.0_kindl/(b(:,:,k)+c(:,:,k)*trid_real_type%e(:,:,k-1))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trid_real_type%e(:,:,k)<sp/>=<sp/>-<sp/>a(:,:,k)*<sp/>trid_real_type%g(:,:,k)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trid_real_type%cc<sp/>=<sp/>c</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trid_real_type%bb<sp/>=<sp/>1.0_kindl/b(:,:,1)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(.not.init_var)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;tri_invert:<sp/>a,b,and<sp/>c<sp/>args<sp/>not<sp/>provided<sp/>or<sp/>previously<sp/>calculated.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>f(:,:,1)<sp/>=<sp/><sp/>d(:,:,1)*trid_real_type%bb</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k=<sp/>2,<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(:,:,k)<sp/>=<sp/>(d(:,:,k)<sp/>-<sp/>trid_real_type%cc(:,:,k)*f(:,:,k-1))*trid_real_type%g(:,:,k)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>x(:,:,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3))<sp/>=<sp/>f(:,:,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3))</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(x,3)-1,1,-1</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x(:,:,k)<sp/>=<sp/>trid_real_type%e(:,:,k)*x(:,:,k+1)+f(:,:,k)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>stores<sp/>both<sp/>kind<sp/>values<sp/>for<sp/>subsequent<sp/>calculations<sp/>if<sp/>running<sp/>with<sp/>option</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">present</highlight><highlight class="normal">(store_both_kinds))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>store_both_kinds<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>fms_trid_kind_<sp/>.eq.<sp/>r8_kind)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r4%e<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%e,<sp/>r4_kind)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r4%g<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%g,<sp/>r4_kind)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r4%cc<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%cc,<sp/>r4_kind)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r4%bb<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%bb,<sp/>r4_kind)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_tridiagonal_r4<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r8%e<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%e,<sp/>r8_kind)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r8%g<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%g,<sp/>r8_kind)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r8%cc<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%cc,<sp/>r8_kind)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tridiag_r8%bb<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(TRID_REAL_TYPE%bb,<sp/>r8_kind)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init_tridiagonal_r8<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">TRI_INVERT_</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/tridiagonal/include/tridiagonal.inc"/>
+  </compounddef>
+</doxygen>

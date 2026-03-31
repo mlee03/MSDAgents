@@ -1,0 +1,852 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__copy" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_copy</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1a65d83b50b7ae729c4ec84ca21c0ae51b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_1d_2d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_1d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 1-D to 2-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="513" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="515" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1ad621893463884b3ee5920e9850d9045a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_1d_3d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, kd, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_1d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>kd</type>
+          <defname>kd</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 1-D to 3-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields is exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>third dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="547" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="549" bodyend="575"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1a17bd482c536d4aaba08916c2f3a70136" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_2d_2d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_2d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 2-D to 2-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields is exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="581" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="583" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1aeae047df04b7514716d65e4e8e37f516" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_2d_3d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, kd, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_2d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>kd</type>
+          <defname>kd</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 2-D to 3-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields is exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>third dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="614" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="616" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1aca18901de8cfdd2d5adc5bc44b99b781" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_3d_2d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_3d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 3-D to 2-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields is exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="648" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="650" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy_1aecda2eab373787c1feb059b9f101cbdf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine coupler_type_copy_3d_3d</definition>
+        <argsstring>(var_in, var_out, is, ie, js, je, kd, diag_name, axes, time, suffix)</argsstring>
+        <name>coupler_type_copy_3d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>kd</type>
+          <defname>kd</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <briefdescription>
+<para>Copy fields from one coupler type to another. 3-D to 3-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__copy" kindref="compound">coupler_type_copy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Number of output fields exceeds zero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable to copy information to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of first dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>upper bound of second dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>third dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="681" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="683" bodyend="709"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to spawn one coupler_bc_type into another and then register diagnostics associated with the new type. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="378" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="378" bodyend="381"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1a65d83b50b7ae729c4ec84ca21c0ae51b" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_1d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1ad621893463884b3ee5920e9850d9045a" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_1d_3d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1a17bd482c536d4aaba08916c2f3a70136" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_2d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1aeae047df04b7514716d65e4e8e37f516" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_2d_3d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1aca18901de8cfdd2d5adc5bc44b99b781" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_3d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy_1aecda2eab373787c1feb059b9f101cbdf" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy</scope><name>coupler_type_copy_3d_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

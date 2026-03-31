@@ -1,0 +1,793 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__domain__io_8F90" kind="file" language="Fortran">
+    <compoundname>test_domain_io.F90</compoundname>
+    <innerclass refid="structdata__t" prot="public">data_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__domain__io_8F90_1a7837baa2419c335b34f272722d3eed10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::compare_var_data</definition>
+        <argsstring>(check_sum_in, check_sum_ref, varname)</argsstring>
+        <name>compare_var_data</name>
+        <param>
+          <type>check_sum_in</type>
+          <defname>check_sum_in</defname>
+        </param>
+        <param>
+          <type>check_sum_ref</type>
+          <defname>check_sum_ref</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <briefdescription>
+<para>Compares two checksums and crashes if they are not the same. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">check_sum_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Checksum</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">check_sum_ref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference checksum</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable&apos;s name (for error messages) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="371" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="372" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1a9a2caf1d1ca5eeaad84b17a19a501f60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::read_data_wrapper</definition>
+        <argsstring>(fileob, var_name, dim, var_data, ref_data)</argsstring>
+        <name>read_data_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_name</type>
+          <defname>var_name</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>ref_data</type>
+          <defname>ref_data</defname>
+        </param>
+        <briefdescription>
+<para>Reads the data and compares the checksum from the expected result. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kind of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable&apos;s dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable&apos;s data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ref_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable&apos;s reference data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="240" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="241" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1a0a28032789c5ca269d2e549ecc59d6e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::register_field_wrapper</definition>
+        <argsstring>(fileob, var_name, dimension_names, ndim)</argsstring>
+        <name>register_field_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_name</type>
+          <defname>var_name</defname>
+        </param>
+        <param>
+          <type>dimension_names</type>
+          <defname>dimension_names</defname>
+        </param>
+        <param>
+          <type>ndim</type>
+          <defname>ndim</defname>
+        </param>
+        <briefdescription>
+<para>registers all of the possible variable types for a given number of dimensions </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension_names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dimension names</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ndim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of dimension </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="145" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="146" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1aba2c5a70b3d53ae26c25f09be5d062e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_domain_read</definition>
+        <argsstring></argsstring>
+        <name>test_domain_read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="19" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1a98fedb19265425da7aea45dcccde0828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::var_data_alloc</definition>
+        <argsstring>(var_data, var_domain, dim3, dim4, dim5)</argsstring>
+        <name>var_data_alloc</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>var_domain</type>
+          <defname>var_domain</defname>
+        </param>
+        <param>
+          <type>dim3</type>
+          <defname>dim3</defname>
+        </param>
+        <param>
+          <type>dim4</type>
+          <defname>dim4</defname>
+        </param>
+        <param>
+          <type>dim5</type>
+          <defname>dim5</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the variable to be the size of data compute domain for x and y and for a given size for the 3rd 4th and 5th dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain with mask table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim3</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim4</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim5 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="159" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="160" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1af52345aa9c3979de42de16cb86fff836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::var_data_init</definition>
+        <argsstring>(var_data)</argsstring>
+        <name>var_data_init</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <briefdescription>
+<para>Initializes the data to -999.99 for reals and -999 for integers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="180" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="181" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1ac612660bce2913a07a02babbee1971b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::var_data_set</definition>
+        <argsstring>(var_data, var_domain, dim3, dim4, dim5)</argsstring>
+        <name>var_data_set</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>var_domain</type>
+          <defname>var_domain</defname>
+        </param>
+        <param>
+          <type>dim3</type>
+          <defname>dim3</defname>
+        </param>
+        <param>
+          <type>dim4</type>
+          <defname>dim4</defname>
+        </param>
+        <param>
+          <type>dim5</type>
+          <defname>dim5</defname>
+        </param>
+        <briefdescription>
+<para>Sets the dcompute domain part of the variable to the expected number. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain with mask table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim3</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim4</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim5 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="190" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="191" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="test__domain__io_8F90_1af0fce49c43b674874580f82a2b292660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_domain_read::write_data_wrapper</definition>
+        <argsstring>(fileob, var_kind, var_data)</argsstring>
+        <name>write_data_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_kind</type>
+          <defname>var_kind</defname>
+        </param>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <briefdescription>
+<para>Writes the data for a give variable type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kind of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" line="227" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90" bodystart="228" bodyend="236"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_domain_read</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>,<sp/><ref refid="group__mpp__domains__mod_1ga7ac8ee98767fbab41bf6e8ba0ba4ec73" kindref="member">mpp_define_io_domain</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>,<sp/><ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>,<sp/>east,<sp/>north,<sp/>center</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">fms2_io_mod,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>,<sp/>register_variable_attribute,<sp/><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fmsnetcdfdomainfile_t,<sp/><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parse_mask_table</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">fms_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref>,<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind,<sp/>i4_kind,<sp/>i8_kind</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Dummy<sp/>type<sp/>to<sp/>hold<sp/>variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structdata__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structdata__t" kindref="compound">data_t</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_r4(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_r8(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_i4(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_i8(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>Namelist<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(2)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>layout<sp/><sp/><sp/><sp/>=<sp/>(/2,3/)</highlight><highlight class="comment"><sp/>!&lt;<sp/>Domain<sp/>layout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(2)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io_layout<sp/>=<sp/>(/1,1/)</highlight><highlight class="comment"><sp/>!&lt;<sp/>Domain<sp/>layout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nx<sp/>=<sp/>96</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>dim1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ny<sp/>=<sp/>96</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>dim2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=20)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>mask_table<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Name<sp/>of<sp/>a<sp/>masktable<sp/>to<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>xhalo<sp/>=<sp/>3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>halo<sp/>points<sp/>in<sp/>X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>yhalo<sp/>=<sp/>2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>halo<sp/>points<sp/>in<sp/>Y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nz<sp/>=<sp/>2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>the<sp/>z<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=32)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>filename=</highlight><highlight class="stringliteral">&quot;test.nc&quot;</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>use_edges=.false.<sp/><sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Use<sp/>North<sp/>and<sp/>East<sp/>domain<sp/>positions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>dim4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim5</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>dim5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>Domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Domain<sp/>with<sp/>mask<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfDomainFile_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=6)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(5)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>names</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dimensions<sp/>names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data_in</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>written<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data_out</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>read<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/><sp/>::<sp/>parsed_mask</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Parsed<sp/>masked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Error<sp/>code<sp/>when<sp/>reading<sp/>namelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ierr</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Error<sp/>code<sp/>when<sp/>reading<sp/>namelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>xposition</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>position<sp/>in<sp/>the<sp/>x<sp/>dimension<sp/>(&quot;EAST&quot;<sp/>or<sp/>&quot;CENTER&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>yposition</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>position<sp/>in<sp/>the<sp/>y<sp/>dimension<sp/>(&quot;NORTH&quot;<sp/>or<sp/>&quot;CENTER&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>namelist<sp/>/test_domain_io_nml/<sp/>layout,<sp/>io_layout,<sp/>nx,<sp/>ny,<sp/>nz,<sp/>mask_table,<sp/>xhalo,<sp/>yhalo,<sp/>nz,<sp/>filename,<sp/>use_edges</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>()</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">read</highlight><highlight class="normal">(input_nml_file,<sp/>nml=test_domain_io_nml,<sp/>iostat=io)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>ierr<sp/>=<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>(io,<sp/></highlight><highlight class="stringliteral">&apos;test_domain_io_nml&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>ndim4<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>ndim5<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_edges)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>xposition<sp/>=<sp/>east</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>yposition<sp/>=<sp/>north</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>xposition<sp/>=<sp/>center</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>yposition<sp/>=<sp/>center</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Parse<sp/>the<sp/>mask<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(parsed_mask(layout(1),<sp/>layout(2)))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>parsed_mask<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(trim(mask_table)<sp/>.ne.<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">parse_mask_table(trim(mask_table),<sp/>parsed_mask,<sp/></highlight><highlight class="stringliteral">&apos;test_io_with_mask&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref>(17280000)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>(<sp/>(/1,nx,1,ny/),<sp/>layout,<sp/>domain,<sp/>xhalo=xhalo,<sp/>yhalo=yhalo,<sp/>&amp;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>maskmap=parsed_mask)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1ga7ac8ee98767fbab41bf6e8ba0ba4ec73" kindref="member">mpp_define_io_domain</ref>(domain,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/>trim(filename),<sp/></highlight><highlight class="stringliteral">&quot;overwrite&quot;</highlight><highlight class="normal">,<sp/>domain,<sp/>nc_format=</highlight><highlight class="stringliteral">&quot;netcdf4&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>names(1)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim1&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>names(2)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim2&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>names(3)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim3&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>names(4)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim4&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>names(5)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim5&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>domain_position=xposition<sp/>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim2&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>domain_position=yposition<sp/>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim3&quot;</highlight><highlight class="normal">,<sp/>nz)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim4&quot;</highlight><highlight class="normal">,<sp/>ndim4)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim5&quot;</highlight><highlight class="normal">,<sp/>ndim5)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var2&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>2)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var3&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>3)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var4&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>4)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var5&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>5)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_alloc(var_data_in,<sp/>domain,<sp/>nz,<sp/>ndim4,<sp/>ndim5)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data_in)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data_in,<sp/>domain,<sp/>nz,<sp/>ndim4,<sp/>ndim5)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;r4&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_r4)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;r8&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_r8)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;i4&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_i4)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;i8&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_i8)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/>trim(filename),<sp/></highlight><highlight class="stringliteral">&quot;read&quot;</highlight><highlight class="normal">,<sp/>domain,<sp/>nc_format=</highlight><highlight class="stringliteral">&quot;netcdf4&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim2&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_alloc(var_data_out,<sp/>domain,<sp/>nz,<sp/>ndim4,<sp/>ndim5)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var2&quot;</highlight><highlight class="normal">,<sp/>2,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var3&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var4&quot;</highlight><highlight class="normal">,<sp/>4,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var5&quot;</highlight><highlight class="normal">,<sp/>5,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var3&quot;</highlight><highlight class="normal">,<sp/>6,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var4&quot;</highlight><highlight class="normal">,<sp/>7,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var5&quot;</highlight><highlight class="normal">,<sp/>8,<sp/>var_data_out,<sp/>var_data_in)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref>()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>registers<sp/>all<sp/>of<sp/>the<sp/>possible<sp/>variable<sp/>types<sp/>for<sp/>a<sp/>given</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/>!!<sp/>number<sp/>of<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">register_field_wrapper(fileob,<sp/>var_name,<sp/>dimension_names,<sp/>ndim)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfDomainFile_t),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_name</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>dimension_names(:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>dimension<sp/>names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>ndim</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;double&quot;</highlight><highlight class="normal">,<sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">,<sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;int64&quot;</highlight><highlight class="normal">,<sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">register_field_wrapper</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Allocates<sp/>the<sp/>variable<sp/>to<sp/>be<sp/>the<sp/>size<sp/>of<sp/>data<sp/>compute<sp/>domain<sp/>for<sp/>x<sp/>and<sp/>y</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/>!!<sp/>and<sp/>for<sp/>a<sp/>given<sp/>size<sp/>for<sp/>the<sp/>3rd<sp/>4th<sp/>and<sp/>5th<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_alloc(var_data,<sp/>var_domain,<sp/>dim3,<sp/>dim4,<sp/>dim5)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Domain<sp/>with<sp/>mask<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim5</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>Starting<sp/>x<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ie</highlight><highlight class="comment"><sp/>!&lt;<sp/>Ending<sp/>x<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>Starting<sp/>y<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>je</highlight><highlight class="comment"><sp/>!&lt;<sp/>Ending<sp/>y<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>(var_domain,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)<sp/></highlight><highlight class="comment">!&lt;<sp/>This<sp/>includes<sp/>halos<sp/>(but<sp/>halos<sp/>will<sp/>not<sp/>be<sp/>written!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_r4(is:ie,<sp/>js:je,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_r8(is:ie,<sp/>js:je,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_i4(is:ie,<sp/>js:je,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_i8(is:ie,<sp/>js:je,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">var_data_alloc</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Initializes<sp/>the<sp/>data<sp/>to<sp/>-999.99<sp/>for<sp/>reals<sp/>and<sp/>-999<sp/>for<sp/>integers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_r4<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(-999.99,<sp/>kind=r4_kind)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_r8<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(-999.99,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_i4<sp/>=<sp/>int(-999,<sp/>kind=i4_kind)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_i8<sp/>=<sp/>int(-999,<sp/>kind=i8_kind)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">var_data_init</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Sets<sp/>the<sp/>dcompute<sp/>domain<sp/>part<sp/>of<sp/>the<sp/>variable<sp/>to<sp/>the<sp/>expected<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>var_domain,<sp/>dim3,<sp/>dim4,<sp/>dim5)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Domain<sp/>with<sp/>mask<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim5</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>j,<sp/>k,<sp/>l,<sp/>m</highlight><highlight class="comment"><sp/>!&lt;<sp/>For<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>Starting<sp/>x<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ie</highlight><highlight class="comment"><sp/>!&lt;<sp/>Ending<sp/>x<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>Starting<sp/>y<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>je</highlight><highlight class="comment"><sp/>!&lt;<sp/>Ending<sp/>y<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>var_count</highlight><highlight class="comment"><sp/>!&lt;<sp/>For<sp/>keeping<sp/>track<sp/>of<sp/>the<sp/>varible&apos;s<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(var_domain,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)<sp/></highlight><highlight class="comment">!&lt;<sp/>This<sp/>does<sp/>not<sp/>include<sp/>halos!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>var_count<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>is,<sp/>ie</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>js,<sp/>je</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>dim3</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>1,<sp/>dim4</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>1,<sp/>dim5</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_count<sp/>=<sp/>var_count<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_r4(i,j,k,l,m)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(var_count,<sp/>kind=r4_kind)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_r8(i,j,k,l,m)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(var_count,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_i4(i,j,k,l,m)<sp/>=<sp/>int(var_count,<sp/>kind=i4_kind)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_i8(i,j,k,l,m)<sp/>=<sp/>int(var_count,<sp/>kind=i8_kind)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Writes<sp/>the<sp/>data<sp/>for<sp/>a<sp/>give<sp/>variable<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">write_data_wrapper(fileob,<sp/>var_kind,<sp/>var_data)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfDomainFile_t),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_kind</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>kind<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(*),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data(:,:,:,:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var2_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var3_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var4_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var5_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Reads<sp/>the<sp/>data<sp/>and<sp/>compares<sp/>the<sp/>checksum<sp/>from<sp/>the<sp/>expected<sp/>result</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">read_data_wrapper(fileob,<sp/>var_name,<sp/>dim,<sp/>var_data,<sp/>ref_data)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfDomainFile_t),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_name</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>kind<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>dim</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>variable&apos;s<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>variable&apos;s<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>ref_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>variable&apos;s<sp/>reference<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>case</highlight><highlight class="normal">(dim)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(2)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,1,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,1,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,1,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,1,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(3)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var3_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var3_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var3_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,1,1)),<sp/></highlight><highlight class="stringliteral">&quot;var3_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(4)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,:,1)),<sp/></highlight><highlight class="stringliteral">&quot;var4_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,:,1)),<sp/></highlight><highlight class="stringliteral">&quot;var4_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,:,1)),<sp/></highlight><highlight class="stringliteral">&quot;var4_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,:,1)),<sp/></highlight><highlight class="stringliteral">&quot;var4_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(5)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,:,:)),<sp/></highlight><highlight class="stringliteral">&quot;var5_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,:,:)),<sp/></highlight><highlight class="stringliteral">&quot;var5_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,:,:)),<sp/></highlight><highlight class="stringliteral">&quot;var5_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,:,:)),<sp/></highlight><highlight class="stringliteral">&quot;var5_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(6)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!Only<sp/>read<sp/>the<sp/>second<sp/>third<sp/>dimension<sp/>(3d<sp/>case)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,1:1,1,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1/))</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,1:1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,2:2,1,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var3_r4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,1:1,1,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1/))</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,1:1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,2:2,1,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var3_r8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,1:1,1,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1/))</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,1:1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,2:2,1,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var3_i4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,1:1,1,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1/))</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,1:1,1,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,2:2,1,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var3_i8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(7)</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!Only<sp/>read<sp/>the<sp/>second<sp/>third<sp/>dimension<sp/>(4d<sp/>case)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,1:1,:,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4/))</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,1:1,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,2:2,:,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var4_r4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,1:1,:,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4/))</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,1:1,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,2:2,:,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var4_r8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,1:1,:,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4/))</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,1:1,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,2:2,:,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var4_i4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,1:1,:,1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4/))</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,1:1,:,1)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,2:2,:,1)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var4_i8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(8)</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!Only<sp/>read<sp/>the<sp/>second<sp/>third<sp/>dimension<sp/>(5d<sp/>case)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_init(var_data)</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,1:1,:,:),<sp/>&amp;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4,<sp/>ndim5/))</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,1:1,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,2:2,:,:)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var5_r4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,1:1,:,:),<sp/>&amp;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4,<sp/>ndim5/))</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,1:1,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,2:2,:,:)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var5_r8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,1:1,:,:),<sp/>&amp;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4,<sp/>ndim5/))</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,1:1,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,2:2,:,:)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var5_i4-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,1:1,:,:),<sp/>&amp;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corner=(/1,<sp/>1,<sp/>2,<sp/>1,<sp/>1/),<sp/>edge_lengths=(/<sp/>nx,<sp/>ny,<sp/>1,<sp/>ndim4,<sp/>ndim5/))</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,1:1,:,:)),<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,2:2,:,:)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;var5_i8-slice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">read_data_wrapper</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="370"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Compares<sp/>two<sp/>checksums<sp/>and<sp/>crashes<sp/>if<sp/>they<sp/>are<sp/>not<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">compare_var_data(check_sum_in,<sp/>check_sum_ref,<sp/>varname)</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>check_sum_in</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>Checksum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>check_sum_ref</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>The<sp/>reference<sp/>checksum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>varname</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>variable&apos;s<sp/>name<sp/>(for<sp/>error<sp/>messages)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_sum_ref<sp/>.ne.<sp/>check_sum_in)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>&amp;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Checksums<sp/>do<sp/>not<sp/>match<sp/>for<sp/>variable:<sp/>&quot;</highlight><highlight class="normal">//trim(varname))</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">compare_var_data</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_domain_read</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_domain_io.F90"/>
+  </compounddef>
+</doxygen>

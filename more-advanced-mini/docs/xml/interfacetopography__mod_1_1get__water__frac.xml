@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacetopography__mod_1_1get__water__frac" kind="interface" language="Fortran" prot="private">
+    <compoundname>topography_mod::get_water_frac</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__water__frac_1a39e690ce9fbff16f56ea8fca03e1e68b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_water_frac_1d_r4</definition>
+        <argsstring></argsstring>
+        <name>get_water_frac_1d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__water__frac_1a2473f1ee0b42f490d949672422f43322" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_water_frac_1d_r8</definition>
+        <argsstring></argsstring>
+        <name>get_water_frac_1d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__water__frac_1aea4aafa6fbb769047de616362fc91160" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_water_frac_2d_r4</definition>
+        <argsstring></argsstring>
+        <name>get_water_frac_2d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__water__frac_1a63845c1428ab3fba717e32ad04fcf432" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_water_frac_2d_r8</definition>
+        <argsstring></argsstring>
+        <name>get_water_frac_2d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Returns fractional area covered by water. </para>    </briefdescription>
+    <detaileddescription>
+<para>Returns the percent of water in a grid box.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>blon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude (in radians) at grid box boundaries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude (in radians) at grid box boundaries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">water_frac</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fractional amount (0 to 1) of water in a grid box. The size of this field must be size(blon)-1 by size(blat)-1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A logical value of TRUE is returned if the output field was successfully created. A value of FALSE may be returned if the Navy 1/6 degree percent water data set was not readable.</para></simplesect>
+<linebreak/>
+Example usage:<linebreak/>
+<programlisting filename=".F90"><codeline><highlight class="normal">flag<sp/>=<sp/>get_water_frac(<sp/>blon,<sp/>blat,<sp/>water_frac<sp/>)<sp/></highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="169" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="169" bodyend="171"/>
+    <listofallmembers>
+      <member refid="interfacetopography__mod_1_1get__water__frac_1a39e690ce9fbff16f56ea8fca03e1e68b" prot="private" virt="non-virtual"><scope>topography_mod::get_water_frac</scope><name>get_water_frac_1d_r4</name></member>
+      <member refid="interfacetopography__mod_1_1get__water__frac_1a2473f1ee0b42f490d949672422f43322" prot="private" virt="non-virtual"><scope>topography_mod::get_water_frac</scope><name>get_water_frac_1d_r8</name></member>
+      <member refid="interfacetopography__mod_1_1get__water__frac_1aea4aafa6fbb769047de616362fc91160" prot="private" virt="non-virtual"><scope>topography_mod::get_water_frac</scope><name>get_water_frac_2d_r4</name></member>
+      <member refid="interfacetopography__mod_1_1get__water__frac_1a63845c1428ab3fba717e32ad04fcf432" prot="private" virt="non-virtual"><scope>topography_mod::get_water_frac</scope><name>get_water_frac_2d_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

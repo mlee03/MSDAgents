@@ -1,0 +1,1771 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__diag__output__buffer__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_diag_output_buffer_mod</compoundname>
+    <innerclass refid="structfms__diag__output__buffer__mod_1_1fmsdiagoutputbuffer__type" prot="private">fms_diag_output_buffer_mod::fmsdiagoutputbuffer_type</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1afb0b5f8d05d2fb11b4d637e3b7f4e087" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::add_axis_ids</definition>
+        <argsstring>(this, axis_ids)</argsstring>
+        <name>add_axis_ids</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_ids</type>
+          <defname>axis_ids</defname>
+        </param>
+        <briefdescription>
+<para>Adds the axis ids to the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis ids to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="317" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="318" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a3cd6f3a54b453d38e112fbda723b4f26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::allocate_buffer</definition>
+        <argsstring>(this, buff_type, ndim, buff_sizes, mask_variant, field_name, diurnal_samples)</argsstring>
+        <name>allocate_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>buff_type</type>
+          <defname>buff_type</defname>
+        </param>
+        <param>
+          <type>ndim</type>
+          <defname>ndim</defname>
+        </param>
+        <param>
+          <type>buff_sizes</type>
+          <defname>buff_sizes</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>diurnal_samples</type>
+          <defname>diurnal_samples</defname>
+        </param>
+        <briefdescription>
+<para>Allocates a 5D buffer to given buff_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>5D buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buff_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>allocates to the type of buff_type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ndim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buff_sizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dimension buff_sizes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field name for error output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diurnal_samples</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of diurnal samples </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="158" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="159" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a38cb23d7a5fd68951b73752e335fb4f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=51) function</type>
+        <definition>character(len=51) function fms_diag_output_buffer_mod::diag_reduction_done_wrapper</definition>
+        <argsstring>(this, reduction_method, missing_value, has_mask, mask_variant)</argsstring>
+        <name>diag_reduction_done_wrapper</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>reduction_method</type>
+          <defname>reduction_method</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>has_mask</type>
+          <defname>has_mask</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <briefdescription>
+<para>Finishes calculations for any reductions that use an average (avg, rms, pow) TODO add mask and any other needed args for adjustment, and pass in the adjusted mask to time_update_done. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Updated buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reduction_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enumerated reduction type from diag_data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>missing_value for masked data points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">has_mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates if there was a mask used during buffer updates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates if the mask changes over time</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error message to return, blank if sucessful </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="773" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="775" bodyend="794"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a916403616f1faeab190a4a51e9df7840" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=50) function</type>
+        <definition>character(len=50) function fms_diag_output_buffer_mod::do_time_max_wrapper</definition>
+        <argsstring>(this, field_data, mask, is_masked, bounds_in, bounds_out, missing_value)</argsstring>
+        <name>do_time_max_wrapper</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>is_masked</type>
+          <defname>is_masked</defname>
+        </param>
+        <param>
+          <type>bounds_in</type>
+          <defname>bounds_in</defname>
+        </param>
+        <param>
+          <type>bounds_out</type>
+          <defname>bounds_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <briefdescription>
+<para>Does the time_min reduction method on the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if the math was not successful</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer data for current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the buffer passed in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the output buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_masked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field has a mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing_value for data points that are masked </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="683" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="685" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1acd6846a199865e2e1965d75185f759e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=50) function</type>
+        <definition>character(len=50) function fms_diag_output_buffer_mod::do_time_min_wrapper</definition>
+        <argsstring>(this, field_data, mask, is_masked, bounds_in, bounds_out, missing_value)</argsstring>
+        <name>do_time_min_wrapper</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>is_masked</type>
+          <defname>is_masked</defname>
+        </param>
+        <param>
+          <type>bounds_in</type>
+          <defname>bounds_in</defname>
+        </param>
+        <param>
+          <type>bounds_out</type>
+          <defname>bounds_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <briefdescription>
+<para>Does the time_min reduction method on the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if the math was not successful</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer data for current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the buffer passed in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the output buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_masked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field has a mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing_value for data points that are masked </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="649" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="651" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ae692d7e0749cddcc9be8242d5fce5397" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=50) function</type>
+        <definition>character(len=50) function fms_diag_output_buffer_mod::do_time_none_wrapper</definition>
+        <argsstring>(this, field_data, mask, is_masked, bounds_in, bounds_out, missing_value)</argsstring>
+        <name>do_time_none_wrapper</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>is_masked</type>
+          <defname>is_masked</defname>
+        </param>
+        <param>
+          <type>bounds_in</type>
+          <defname>bounds_in</defname>
+        </param>
+        <param>
+          <type>bounds_out</type>
+          <defname>bounds_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <briefdescription>
+<para>Does the time_none reduction method on the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if the math was not successful</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer data for current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the buffer passed in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the output buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_masked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field has a mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing_value for data points that are masked </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="615" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="617" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a9be74900d9c49c4050127988e8d95c0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=150) function</type>
+        <definition>character(len=150) function fms_diag_output_buffer_mod::do_time_sum_wrapper</definition>
+        <argsstring>(this, field_data, mask, is_masked, mask_variant, bounds_in, bounds_out, missing_value, has_missing_value, pow_value, weight)</argsstring>
+        <name>do_time_sum_wrapper</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>is_masked</type>
+          <defname>is_masked</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>bounds_in</type>
+          <defname>bounds_in</defname>
+        </param>
+        <param>
+          <type>bounds_out</type>
+          <defname>bounds_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>has_missing_value</type>
+          <defname>has_missing_value</defname>
+        </param>
+        <param>
+          <type>pow_value</type>
+          <defname>pow_value</defname>
+        </param>
+        <param>
+          <type>weight</type>
+          <defname>weight</defname>
+        </param>
+        <briefdescription>
+<para>Does the time_sum reduction method on the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if the math was not successful</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer data for current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the buffer passed in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicies for the output buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_masked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field has a mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing_value for data points that are masked</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">has_missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field was registered with a missing value</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pow_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>power value, will calculate field_data^pow before adding to buffer should only be present if using pow reduction method</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The weight to use when suming </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="717" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="720" bodyend="767"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1aa2186b781188a024464b8ca188ae0b4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::flush_buffer</definition>
+        <argsstring>(this)</argsstring>
+        <name>flush_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates data fields from a buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="142" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="143" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a197f32dd1d88e6004628a3d793fa834b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_diag_output_buffer_mod::fms_diag_output_buffer_init</definition>
+        <argsstring>(buffobjs, buff_list_size)</argsstring>
+        <name>fms_diag_output_buffer_init</name>
+        <param>
+          <type>buffobjs</type>
+          <defname>buffobjs</defname>
+        </param>
+        <param>
+          <type>buff_list_size</type>
+          <defname>buff_list_size</defname>
+        </param>
+        <briefdescription>
+<para>Initializes a list of diag buffers. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if allocation is successfull</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">buffobjs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an array of buffer container types to allocate</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buff_list_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of buffer array to allocate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="121" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ab077860f773316b682b45513ab4d7539" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::get_axis_ids</definition>
+        <argsstring>(this, res)</argsstring>
+        <name>get_axis_ids</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>res</type>
+          <defname>res</defname>
+        </param>
+        <briefdescription>
+<para>Get the axis_ids for the buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Axis_ids, if the buffer doesn&apos;t have axis ids it returns diag_null</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="327" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1adb2561d0d5389981da688f98c007d225" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::get_buffer</definition>
+        <argsstring>(this, buff_out, field_name)</argsstring>
+        <name>get_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>buff_out</type>
+          <defname>buff_out</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+<para>Get routine for 5D buffers. Sets the buff_out argument to the integer or real array currently stored in the buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>5d allocated buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buff_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output of copied buffer data must be the same size as the allocated buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field name for error output </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="218" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="219" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a65a1ab9bd374372a792f2f0035fae5b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(4)</type>
+        <definition>pure integer function, dimension(4) fms_diag_output_buffer_mod::get_buffer_dims</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_buffer_dims</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>this leaves out the diurnal index cause its only used for tmp mask allocation </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to get from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="798" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="799" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ad9937b4467bc74d44b33e821161d8c65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, allocatable</type>
+        <definition>character(len=:) function, allocatable fms_diag_output_buffer_mod::get_buffer_name</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_buffer_name</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the name of the field for the output buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Name of the field for the output buffer</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="307" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="309" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a1e0af626e3119e46f611d3c70db8b52d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function fms_diag_output_buffer_mod::get_buffer_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_buffer_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the buffer_time from a output buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The buffer time</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="417" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="419" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ab99d0e9d2c78b9e1718d2e951f0470cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_output_buffer_mod::get_diurnal_sample_size</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_diurnal_sample_size</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get diurnal sample size (amount of diurnal sections) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to get from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="805" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="806" bodyend="807"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a2f01d0a5ce66ec041ce4f839e5c4a8e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_output_buffer_mod::get_field_id</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_field_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the field id of the buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the field id of the buffer</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="340" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="342" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a4cfb6094279ccd568044ebc24643b9ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::get_remapped_diurnal_data</definition>
+        <argsstring>(this, res)</argsstring>
+        <name>get_remapped_diurnal_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>res</type>
+          <defname>res</defname>
+        </param>
+        <briefdescription>
+<para>Remaps the output buffer array when using the diurnal reduction moves the diurnal index to the left-most unused dimension for the io. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>resulting remapped data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="836" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="837" bodyend="888"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a8c1c20931cbd37899ee572f33eb30384" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_output_buffer_mod::get_unlim_dim</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_unlim_dim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the unlim dimension index of the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The unlim dimension index of the buffer object</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="456" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="458" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a59f4568fabbb0c441866e5d927f96033" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_output_buffer_mod::get_yaml_id</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_yaml_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the yaml id of the buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the yaml id of the buffer</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="445" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="447" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a51c8bcd03a246ff3b7dca6cf570fa6ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::increase_unlim_dim</definition>
+        <argsstring>(this)</argsstring>
+        <name>increase_unlim_dim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Increase the unlim dimension index of the buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="465" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="466" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a1609c3f60ec5882a1e525aa8c27f6d61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::init_buffer_time</definition>
+        <argsstring>(this, time)</argsstring>
+        <name>init_buffer_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>inits the buffer time for the buffer </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time to add to the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="365" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="366" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1aa7f86accec1bbd6b929971484cdef55f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::init_buffer_unlim_dim</definition>
+        <argsstring>(this)</argsstring>
+        <name>init_buffer_unlim_dim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Init the unlim dimension index of the buffer object to 0. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="472" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="473" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1af8f43ef2230c68cadf54b30be42349c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::initialize_buffer</definition>
+        <argsstring>(this, reduction_method, field_name)</argsstring>
+        <name>initialize_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>reduction_method</type>
+          <defname>reduction_method</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+<para>Initializes a buffer based on the reduction method. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>allocated 5D buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reduction_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reduction method for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field name for error output </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="255" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1af07169a8b73b7ae124caf0810a20d251" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_output_buffer_mod::is_done_with_math</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_done_with_math</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if finished with math. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>thisdone_with_math</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="427" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="429" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1aea422ea1da2f082ba14d3576b387bd62" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_output_buffer_mod::is_there_data_to_write</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_there_data_to_write</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if there is any data to write (i.e send_data has been called) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.true. if there is data to write</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="893" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="895" bodyend="903"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a078396ad1ac8b5e436d899c7133a6563" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_output_buffer_mod::is_time_to_finish_reduction</definition>
+        <argsstring>(this, end_time)</argsstring>
+        <name>is_time_to_finish_reduction</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>end_time</type>
+          <defname>end_time</defname>
+        </param>
+        <briefdescription>
+<para>Determine if it is time to finish the reduction method. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.true. if it is time to finish the reduction method</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">end_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time at the end of the run </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="908" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="910" bodyend="920"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a2df75e7a7c9061f7dccd2e6ddf708298" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_buffer_id</definition>
+        <argsstring>(this, id)</argsstring>
+        <name>set_buffer_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>id</type>
+          <defname>id</defname>
+        </param>
+        <briefdescription>
+<para>Setter for buffer_id for any buffer objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to set id for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive integer id to set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="134" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ac399ac17d3768ccb5faec145a95efb84" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_diurnal_sample_size</definition>
+        <argsstring>(this, sample_size)</argsstring>
+        <name>set_diurnal_sample_size</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>sample_size</type>
+          <defname>sample_size</defname>
+        </param>
+        <briefdescription>
+<para>Set diurnal sample size (amount of diurnal sections) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to set sample size for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sample_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sample size to used to split daily data into given amount of sections </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="811" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="812" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ac6a4364f7e2c01747a1af63ad96fb1c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_diurnal_section_index</definition>
+        <argsstring>(this, time)</argsstring>
+        <name>set_diurnal_section_index</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Set diurnal section index based off the current time and previously set diurnal_samplesize Calculates which diurnal section of daily data the current time is in. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to set diurnal index for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current model time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="820" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="821" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1acef189480eaa758a2308feaf543755a0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_done_with_math</definition>
+        <argsstring>(this)</argsstring>
+        <name>set_done_with_math</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Set done_with_math to .true. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="436" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="437" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1af3631707d8cf6157b8e6fc76701ad08b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_field_id</definition>
+        <argsstring>(this, field_id)</argsstring>
+        <name>set_field_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_id</type>
+          <defname>field_id</defname>
+        </param>
+        <briefdescription>
+<para>set the field id of the buffer </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field id of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="349" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="350" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1afe336edf5f671109ea8c41e3a6258e8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_next_output</definition>
+        <argsstring>(this, next_output, next_next_output, is_static)</argsstring>
+        <name>set_next_output</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>next_output</type>
+          <defname>next_output</defname>
+        </param>
+        <param>
+          <type>next_next_output</type>
+          <defname>next_next_output</defname>
+        </param>
+        <param>
+          <type>is_static</type>
+          <defname>is_static</defname>
+        </param>
+        <briefdescription>
+<para>Sets the next output. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">next_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current next_output in the file obj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">next_next_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current next_next_output in the file obj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the field is static</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the field is static set the next_output to be equal to time this should only be used in the init, so next_output will be equal to the init time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the file&apos;s next_output is greater than the buffer&apos;s next output set the buffer&apos;s next output to the file&apos;s next_ouput, otherwise use the file&apos;s next_next_output This is needed for when file have fields that get data send data sent at different frequencies </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="379" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="380" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a2158e806feabc7ae0a151faa0e8e342b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_send_data_called</definition>
+        <argsstring>(this)</argsstring>
+        <name>set_send_data_called</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Sets send_data_called to .true. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="924" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="925" bodyend="927"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a1e4be25c59a7667cef412a5d425b5032" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::set_yaml_id</definition>
+        <argsstring>(this, yaml_id)</argsstring>
+        <name>set_yaml_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>yaml_id</type>
+          <defname>yaml_id</defname>
+        </param>
+        <briefdescription>
+<para>set the field id of the buffer </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>yaml id of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="358" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a10329c3b4715421074d006f24a13d977" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::update_buffer_time</definition>
+        <argsstring>(this, time)</argsstring>
+        <name>update_buffer_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Update the buffer time if it is a new time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="406" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="407" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1ad23253e5cb2f35d8ad05ddb977e2f78a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::write_buffer</definition>
+        <argsstring>(this, fms2io_fileobj, unlim_dim_level, is_diurnal)</argsstring>
+        <name>write_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>fms2io_fileobj</type>
+          <defname>fms2io_fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>is_diurnal</type>
+          <defname>is_diurnal</defname>
+        </param>
+        <briefdescription>
+<para>Write the buffer to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fms2io_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fileobj to write to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unlimited dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_diurnal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>should be set if using diurnal reductions so buffer data can be remapped </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="479" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="480" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a4fa3f1139f1f48bdf32935a4840cf6f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::write_buffer_wrapper_domain</definition>
+        <argsstring>(this, fms2io_fileobj, unlim_dim_level, is_diurnal)</argsstring>
+        <name>write_buffer_wrapper_domain</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>fms2io_fileobj</type>
+          <defname>fms2io_fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>is_diurnal</type>
+          <defname>is_diurnal</defname>
+        </param>
+        <briefdescription>
+<para>Write the buffer to the FmsNetcdfDomainFile_t fms2io_fileobj. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fms2io_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fileobj to write to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unlimited dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_diurnal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>should be set if using diurnal reductions so buffer data can be remapped </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="540" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="541" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a50adfda0923121bdac02eb5f2940072f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::write_buffer_wrapper_netcdf</definition>
+        <argsstring>(this, fms2io_fileobj, unlim_dim_level, is_diurnal)</argsstring>
+        <name>write_buffer_wrapper_netcdf</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>fms2io_fileobj</type>
+          <defname>fms2io_fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>is_diurnal</type>
+          <defname>is_diurnal</defname>
+        </param>
+        <briefdescription>
+<para>Write the buffer to the FmsNetcdfFile_t fms2io_fileobj. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fms2io_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fileobj to write to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unlimited dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_diurnal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>should be set if using diurnal reductions so buffer data can be remapped </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="504" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="505" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefms__diag__output__buffer__mod_1a7660fe052d2cbb52cdd9137256dd71bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_output_buffer_mod::write_buffer_wrapper_u</definition>
+        <argsstring>(this, fms2io_fileobj, unlim_dim_level, is_diurnal)</argsstring>
+        <name>write_buffer_wrapper_u</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>fms2io_fileobj</type>
+          <defname>fms2io_fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>is_diurnal</type>
+          <defname>is_diurnal</defname>
+        </param>
+        <briefdescription>
+<para>Write the buffer to the FmsNetcdfUnstructuredDomainFile_t fms2io_fileobj. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer object to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fms2io_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fileobj to write to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unlimited dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_diurnal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>should be set if using diurnal reductions so buffer data can be remapped </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="577" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" bodystart="578" bodyend="610"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains buffer types and routines for the diag manager. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ryan Mulhall  <ulink url="mailto:ryan.mulhall@noaa.gov">ryan.mulhall@noaa.gov</ulink>  Holds buffered data for fmsDiagVars_type objects buffer0-5d types extend fmsDiagBuffer_class, and upon allocation are added to the module&apos;s buffer_lists depending on it&apos;s dimension </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_output_buffer.F90" line="25" column="1"/>
+  </compounddef>
+</doxygen>

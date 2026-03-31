@@ -1,0 +1,831 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__fms__diag__input__buffer__mod" kind="group">
+    <compoundname>fms_diag_input_buffer_mod</compoundname>
+    <title>fms_diag_input_buffer_mod</title>
+    <innerclass refid="structfms__diag__input__buffer__mod_1_1fmsdiaginputbuffer__t" prot="private">fms_diag_input_buffer_mod::fmsdiaginputbuffer_t</innerclass>
+    <innerclass refid="interfacefms__diag__input__buffer__mod_1_1sum__data__buffer" prot="private">fms_diag_input_buffer_mod::sum_data_buffer</innerclass>
+    <innernamespace refid="namespacefms__diag__input__buffer__mod">fms_diag_input_buffer_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms__diag__input__buffer__mod_1ga135bd8589c3e6e11d8a6eb314d12e3cd" prot="private" static="no" mutable="no">
+        <type>class(*), dimension(:,:,:,:), allocatable</type>
+        <definition>class(*), dimension(:,:,:,:), allocatable buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+<para>Input data passed in send_data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="47" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__input__buffer__mod_1gaf07164b0fd9bc7f6eba56c85adabda01" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:,:,:,:), allocatable</type>
+        <definition>integer, dimension(:,:,:,:), allocatable counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <briefdescription>
+<para>Number of send_data calls for each point. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__input__buffer__mod_1gabedc417ac331461c0a5a4b5274b2bc6a" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <briefdescription>
+<para>.True. if the input buffer has been initialized </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__input__buffer__mod_1ga2457bd5161aae9538a72509068faa05c" prot="private" static="no" mutable="no">
+        <type>type(time_type)</type>
+        <definition>type(time_type) send_data_time</definition>
+        <argsstring></argsstring>
+        <name>send_data_time</name>
+        <briefdescription>
+<para>The time send data was called last. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="50" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__input__buffer__mod_1gaf93c165a9f6acf5deea09609c7eb0035" prot="private" static="no" mutable="no">
+        <type>real(kind=r8_kind)</type>
+        <definition>real(kind=r8_kind) weight</definition>
+        <argsstring></argsstring>
+        <name>weight</name>
+        <briefdescription>
+<para>Weight passed in send_data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="49" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gae8be2e29113630acddc4bdd18010c18e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure allocate_input_buffer_object</definition>
+        <argsstring></argsstring>
+        <name>allocate_input_buffer_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="55" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga53d77c2bbfe6bcf86dd9dc39c9a1eb09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function</type>
+        <definition>character(len=128) function fms_diag_input_buffer_mod::allocate_input_buffer_object</definition>
+        <argsstring>(this, input_data, axis_ids, diag_axis)</argsstring>
+        <name>allocate_input_buffer_object</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>input_data</type>
+          <defname>input_data</defname>
+        </param>
+        <param>
+          <type>axis_ids</type>
+          <defname>axis_ids</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <briefdescription>
+<para>Initiliazes an input data buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if something went wrong</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axis ids for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag_axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Initialize the axis lengths to 1. Any dimension that does not have an axis will have a length of 1. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="92" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="94" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga1a540b63f092c5cc37173ff7293bae4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>append_data_buffer_r4</definition>
+        <argsstring></argsstring>
+        <name>append_data_buffer_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga9c18382476c6f71fc74c9c6465c19813" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>append_data_buffer_r8</definition>
+        <argsstring></argsstring>
+        <name>append_data_buffer_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga1a138cf985dde578eb6e3fade44dbc2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function</type>
+        <definition>character(len=128) function fms_diag_input_buffer_mod::append_data_buffer_wrapper</definition>
+        <argsstring>(mask_out, mask_in, data_out, data_in)</argsstring>
+        <name>append_data_buffer_wrapper</name>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <briefdescription>
+<para>Appends the input_data_buffer and the mask (only when the mask is set to .True.) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message (if an error occurs)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">mask_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask currently in the input_data_buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask passed in to send_data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">data_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data currently in the input_data_buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data passed in to send_data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="256" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga03066f5caf1b42400d3921aad671da39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure get_buffer</definition>
+        <argsstring></argsstring>
+        <name>get_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="53" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga7792d97810c51cb2961ab8f1ae502b43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class(*) function, dimension(:,:,:,:), pointer</type>
+        <definition>class(*) function, dimension(:,:,:,:), pointer fms_diag_input_buffer_mod::get_buffer</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the buffer from the input buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a pointer to the buffer</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga870a371f9babe6140de386f394fae79f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure get_send_data_time</definition>
+        <argsstring></argsstring>
+        <name>get_send_data_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="61" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gafd11a267187ead340a129cb3be28d38e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(time_type) function</type>
+        <definition>type(time_type) function fms_diag_input_buffer_mod::get_send_data_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_send_data_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the time send data was called last. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the time send data was called last</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="168" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga7bbccfeb5fbc2e31acca20340299619a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure get_weight</definition>
+        <argsstring></argsstring>
+        <name>get_weight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="54" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gae169f3f41d39b2362e290245b16aa633" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, pointer</type>
+        <definition>real(kind=r8_kind) function, pointer fms_diag_input_buffer_mod::get_weight</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_weight</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the weight from the input buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a pointer to the weight</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="82" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gad8ac664d7adc0307d355f96a151f8795" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure init_input_buffer_object</definition>
+        <argsstring></argsstring>
+        <name>init_input_buffer_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="56" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga90a7d1c0b556820f1e1e96b09e06819d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_input_buffer_mod::init_input_buffer_object</definition>
+        <argsstring>(this)</argsstring>
+        <name>init_input_buffer_object</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Initiliazes an input data buffer and the counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="146" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="147" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga91e1347a36e7979bb5db04bffe69ddd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure is_initialized</definition>
+        <argsstring></argsstring>
+        <name>is_initialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="62" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga47b68c1c51d794f13cfe401d07a037a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_input_buffer_mod::is_initialized</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_initialized</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if an input buffer is initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.true. if the input buffer is initialized</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="339" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="340" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga54de8b5c2855f4e963a45d652ab0366a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure prepare_input_buffer_object</definition>
+        <argsstring></argsstring>
+        <name>prepare_input_buffer_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="59" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga9c233902fe4dd90c979628fd28765d8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_input_buffer_mod::prepare_input_buffer_object</definition>
+        <argsstring>(this, field_info)</argsstring>
+        <name>prepare_input_buffer_object</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_info</type>
+          <defname>field_info</defname>
+        </param>
+        <briefdescription>
+<para>Prepare the input data buffer to do the reduction methods (i.e divide by the number of times send data has been called) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field info to append to error message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="207" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="208" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gad8523e1b1a722ea5d2a3549b79013a2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure set_input_buffer_object</definition>
+        <argsstring></argsstring>
+        <name>set_input_buffer_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="57" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gaba6a136485731df96508b70e3e49093f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function</type>
+        <definition>character(len=128) function fms_diag_input_buffer_mod::set_input_buffer_object</definition>
+        <argsstring>(this, input_data, weight, is, js, ks, ie, je, ke)</argsstring>
+        <name>set_input_buffer_object</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>input_data</type>
+          <defname>input_data</defname>
+        </param>
+        <param>
+          <type>weight</type>
+          <defname>weight</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>ks</type>
+          <defname>ks</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>ke</type>
+          <defname>ke</defname>
+        </param>
+        <briefdescription>
+<para>Sets the members of the input buffer object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message if something went wrong</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for each of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index for each of the dimensions </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="282" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="284" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gaba27edb699de2c3d56c5e6535cdaa8aa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure set_send_data_time</definition>
+        <argsstring></argsstring>
+        <name>set_send_data_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="60" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga396634801099e43a3b6451e8d572ef92" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_input_buffer_mod::set_send_data_time</definition>
+        <argsstring>(this, time)</argsstring>
+        <name>set_send_data_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Sets the time send data was called last. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time send data was called </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="159" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gad60339af9a3ebe6aca258a62c8de6340" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_data_buffer_r4</definition>
+        <argsstring></argsstring>
+        <name>sum_data_buffer_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gae920472b65ecd6ec2dba8f2d1e4a8790" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sum_data_buffer_r8</definition>
+        <argsstring></argsstring>
+        <name>sum_data_buffer_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1gab1f30b49450a8e658534868ad9049460" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function</type>
+        <definition>character(len=128) function fms_diag_input_buffer_mod::sum_data_buffer_wrapper</definition>
+        <argsstring>(mask, data_out, data_in, counter, var_is_masked)</argsstring>
+        <name>sum_data_buffer_wrapper</name>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>counter</type>
+          <defname>counter</defname>
+        </param>
+        <param>
+          <type>var_is_masked</type>
+          <defname>var_is_masked</defname>
+        </param>
+        <briefdescription>
+<para>Sums the data in the input_data_buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message (if an error occurs)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask passed into send_data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">data_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data currently saved in the input_data_buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data passed into send_data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of times data has been summed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_is_masked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the variable is masked </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="224" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="226" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga2b6c90fb6a492116e18d4a0d50eb9411" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure</type>
+        <definition>procedure update_input_buffer_object</definition>
+        <argsstring></argsstring>
+        <name>update_input_buffer_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="58" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__input__buffer__mod_1ga73f0acab63e42df65ae23c07377f91da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=128) function</type>
+        <definition>character(len=128) function fms_diag_input_buffer_mod::update_input_buffer_object</definition>
+        <argsstring>(this, input_data, is, js, ks, ie, je, ke, mask_in, mask_out, mask_variant, var_is_masked)</argsstring>
+        <name>update_input_buffer_object</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>input_data</type>
+          <defname>input_data</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>ks</type>
+          <defname>ks</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>ke</type>
+          <defname>ke</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>var_is_masked</type>
+          <defname>var_is_masked</defname>
+        </param>
+        <briefdescription>
+<para>Updates the input data buffer object for the current send_data call. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error message (if an error occurs)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for each of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index for each of the dimensions </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_input_buffer.F90" bodystart="181" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="tree__utils_8h" kind="file" language="Fortran">
+    <compoundname>tree_utils.h</compoundname>
+    <includedby refid="grid__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</includedby>
+    <includedby refid="tree__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</includedby>
+    <includedby refid="horiz__interp__conserve__xgrid_8c" local="yes">/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</includedby>
+    <invincdepgraph>
+      <node id="329">
+        <label>/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</label>
+        <link refid="horiz__interp__conserve__xgrid_8c"/>
+      </node>
+      <node id="327">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</label>
+        <link refid="grid__utils_8c"/>
+      </node>
+      <node id="328">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</label>
+        <link refid="tree__utils_8c_source"/>
+      </node>
+      <node id="326">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.h</label>
+        <link refid="tree__utils_8h"/>
+        <childnode refid="327" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apache<sp/>license<sp/>2.0</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/>*<sp/>this<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>gfdl<sp/>flexible<sp/>modeling<sp/>system(fms).</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/>*<sp/>licensed<sp/>under<sp/>the<sp/>apache<sp/>license,<sp/>version<sp/>2.0<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;License&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>not<sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/license-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/>*<sp/>fms<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>without</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/>*<sp/>warranties<sp/>or<sp/>conditions<sp/>of<sp/>any<sp/>kind,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/>*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>merchantability<sp/>or<sp/>fitness<sp/>for<sp/>a</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/>*<sp/>particular<sp/>purpose.<sp/>see<sp/>the<sp/>license<sp/>for<sp/>the<sp/>specific<sp/>language</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/>*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/>***********************************************************************/</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mosaic_util.h</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this<sp/>header<sp/>file<sp/>provide<sp/>some<sp/>utilities<sp/>routine<sp/>that<sp/>will<sp/>be<sp/>used<sp/>in<sp/>many<sp/>tools.</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>contact:<sp/>zhi.liang@noaa.gov</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">***********************************************************************/</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TREE_UTILS_H_</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TREE_UTILS_H_</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAXNODELIST</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAXNODELIST<sp/>100</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">struct<sp/>node{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>double<sp/>x,<sp/>y,<sp/>z,<sp/>u,<sp/>u_clip;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>int<sp/>intersect;<sp/>/*<sp/>indicate<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>this<sp/>point<sp/>is<sp/>an<sp/>intersection,<sp/>0<sp/>=<sp/>no,<sp/>1=<sp/>yes,<sp/>2=both<sp/>intersect<sp/>and<sp/>vertices<sp/>*/</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>int<sp/>inbound;<sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>-1<sp/>uninitialized,<sp/>0<sp/>coincident,<sp/>1<sp/>outbound,<sp/>2<sp/>inbound<sp/>*/</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>int<sp/>initialized;<sp/>/*<sp/>=<sp/>0<sp/>means<sp/>empty<sp/>list<sp/>*/</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>int<sp/>isinside;<sp/><sp/><sp/>/*<sp/>=<sp/>1<sp/>means<sp/>one<sp/>point<sp/>is<sp/>inside<sp/>the<sp/>other<sp/>polygon,<sp/>0<sp/>is<sp/>not,<sp/>-1<sp/>undecided.<sp/>*/</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>int<sp/>subj_index;<sp/>/*<sp/>the<sp/>index<sp/>of<sp/>subject<sp/>point<sp/>that<sp/>an<sp/>intersection<sp/>follow.<sp/>*/</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>int<sp/>clip_index;<sp/>/*<sp/>the<sp/>index<sp/>of<sp/>clip<sp/>point<sp/>that<sp/>an<sp/>intersection<sp/>follow<sp/>*/</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>struct<sp/>node<sp/>*next;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">void<sp/>rewindlist(void);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">struct<sp/>node<sp/>*getnext();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">void<sp/>initnode(struct<sp/>node<sp/>*node);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">void<sp/>addend(struct<sp/>node<sp/>*list,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z,<sp/>int<sp/>intersect,<sp/>double<sp/>u,<sp/>int<sp/>inbound,<sp/>int<sp/>inside);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">int<sp/>addintersect(struct<sp/>node<sp/>*list,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z,<sp/>int<sp/>intersect,<sp/>double<sp/>u1,<sp/>double<sp/>u2,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>inbound,<sp/>int<sp/>is1,<sp/>int<sp/>ie1,<sp/>int<sp/>is2,<sp/>int<sp/>ie2);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">int<sp/>length(struct<sp/>node<sp/>*list);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">int<sp/>samenode(struct<sp/>node<sp/>node1,<sp/>struct<sp/>node<sp/>node2);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">void<sp/>addnode(struct<sp/>node<sp/>*list,<sp/>struct<sp/>node<sp/>nodein);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">struct<sp/>node<sp/>*getnode(struct<sp/>node<sp/>*list,<sp/>struct<sp/>node<sp/>innode);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">struct<sp/>node<sp/>*getnextnode(struct<sp/>node<sp/>*list);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">void<sp/>copynode(struct<sp/>node<sp/>*node_out,<sp/>struct<sp/>node<sp/>node_in);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">void<sp/>printnode(struct<sp/>node<sp/>*list,<sp/>char<sp/>*str);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">int<sp/>intersectinlist(struct<sp/>node<sp/>*list,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">void<sp/>insertintersect(struct<sp/>node<sp/>*list,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z,<sp/>double<sp/>u1,<sp/>double<sp/>u2,<sp/>int<sp/>inbound,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>x2,<sp/>double<sp/>y2,<sp/>double<sp/>z2);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">void<sp/>insertafter(struct<sp/>node<sp/>*list,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z,<sp/>int<sp/>intersect,<sp/>double<sp/>u,<sp/>int<sp/>inbound,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>x2,<sp/>double<sp/>y2,<sp/>double<sp/>z2);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">double<sp/>gridarea(struct<sp/>node<sp/>*grid);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">int<sp/>isintersect(struct<sp/>node<sp/>node);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">int<sp/>getinbound(<sp/>struct<sp/>node<sp/>node<sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">struct<sp/>node<sp/>*getlast(struct<sp/>node<sp/>*list);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">int<sp/>getfirstinbound(<sp/>struct<sp/>node<sp/>*list,<sp/>struct<sp/>node<sp/>*nodeout);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">void<sp/>getcoordinate(struct<sp/>node<sp/>node,<sp/>double<sp/>*x,<sp/>double<sp/>*y,<sp/>double<sp/>*z);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">void<sp/>getcoordinates(struct<sp/>node<sp/>*node,<sp/>double<sp/>*p);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">void<sp/>setcoordinate(struct<sp/>node<sp/>*node,<sp/>double<sp/>x,<sp/>double<sp/>y,<sp/>double<sp/>z);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">void<sp/>setinbound(struct<sp/>node<sp/>*interlist,<sp/>struct<sp/>node<sp/>*list);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">int<sp/>isinside(struct<sp/>node<sp/>*node);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">int<sp/>insidepolygon(<sp/>struct<sp/>node<sp/>*node,<sp/>struct<sp/>node<sp/>*list);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<highlight class="preprocessor"></highlight>    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.h"/>
+  </compounddef>
+</doxygen>

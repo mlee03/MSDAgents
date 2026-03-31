@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="drifters_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@ingroup<sp/>drifters</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Drifters</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Alexander.Pletzer@noaa.gov</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>[What<sp/>are<sp/>drifters?](#1-what-are-drifters)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>[The<sp/>drifters&apos;<sp/>module](#2-the-drifters-module)</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>[What<sp/>the<sp/>drifters&apos;<sp/>module<sp/>can<sp/>and<sp/>cannot<sp/>do?](#3-what-the-drifters-module-can-and-cannot-do)</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>[How<sp/>to<sp/>invoke<sp/>the<sp/>drifters&apos;<sp/>module<sp/>in<sp/>your<sp/>code](#4-how-to-invoke-the-drifters-module-in-your-code)</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>[Pre-<sp/>and<sp/>post-processing](#5-pre-and-post-processing)</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>[Loose<sp/>ends](#6-loose-ends)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>What<sp/>are<sp/>drifters?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Drifters<sp/>are<sp/>idealized<sp/>point<sp/>particles<sp/>with<sp/>positions<sp/>that<sp/>evolve<sp/>in<sp/>time<sp/>according</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>a<sp/>prescribed<sp/>velocity<sp/>field,<sp/>starting<sp/>from<sp/>some<sp/>initial<sp/>conditions.<sp/>Drifters<sp/>have</highlight></codeline>
+<codeline><highlight class="normal">no<sp/>mass,<sp/>no<sp/>energy,<sp/>no<sp/>size,<sp/>and<sp/>no<sp/>friction<sp/>and<sp/>therefore<sp/>have<sp/>no<sp/>impact<sp/>on<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">dynamics<sp/>of<sp/>the<sp/>underlying<sp/>system.<sp/>The<sp/>only<sp/>feature<sp/>that<sp/>distinguishes<sp/>a<sp/>drifter</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>another<sp/>is<sp/>its<sp/>trajectory.<sp/>This<sp/>makes<sp/>drifters<sp/>ideal<sp/>for<sp/>tracking<sp/>pollution</highlight></codeline>
+<codeline><highlight class="normal">clouds<sp/>and<sp/>probing<sp/>fields<sp/>(e.g.<sp/>temperature,<sp/>salinity)<sp/>along<sp/>ocean<sp/>currents.</highlight></codeline>
+<codeline><highlight class="normal">Drifters<sp/>can<sp/>mimic<sp/>real<sp/>experiments<sp/>such<sp/>as<sp/>the<sp/>Argo<sp/>floats</highlight></codeline>
+<codeline><highlight class="normal">&lt;http://www.metoffice.com/research/ocean/argo/ukfloats.html&gt;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>The<sp/>drifters&apos;<sp/>module</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>drifters&apos;<sp/>module<sp/>(drifters_mod)<sp/>is<sp/>a<sp/>Fortran<sp/>module<sp/>built<sp/>on<sp/>top<sp/>of<sp/>low<sp/>level</highlight></codeline>
+<codeline><highlight class="normal">kernels.<sp/>The<sp/>code<sp/>was<sp/>designed<sp/>to<sp/>run<sp/>in<sp/>parallel<sp/>within<sp/>a<sp/>coupled<sp/>FMS<sp/>model.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>general<sp/>layout<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Top<sp/>layer:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>drifters.F90:<sp/>exposes<sp/>the<sp/>API</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Some<sp/>low<sp/>level<sp/>kernels:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>cloud_interpolator.F90:<sp/>(linear)<sp/>interpolation<sp/>of<sp/>a<sp/>structured<sp/>field<sp/>at<sp/>random</highlight></codeline>
+<codeline><highlight class="normal">positions</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>drifters_comm.F90:<sp/>updates<sp/>positions<sp/>across<sp/>processor<sp/>(PE)<sp/>domains</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>drifters_core.F90:<sp/>handles<sp/>the<sp/>mechanics<sp/>for<sp/>adding/removing<sp/>drifters</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>drifters_input.F90:<sp/>imports<sp/>initial<sp/>positions<sp/>from<sp/>a<sp/>NetCDF<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>drifters_io.F90:<sp/>saves<sp/>data<sp/>for<sp/>postprocessing<sp/>and<sp/>restart</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>What<sp/>the<sp/>drifters&apos;<sp/>module<sp/>can<sp/>and<sp/>cannot<sp/>do?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>drifters&apos;<sp/>module<sp/>will<sp/>handle<sp/>all<sp/>the<sp/>communication<sp/>necessary<sp/>to<sp/>keep<sp/>track<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">positions<sp/>within<sp/>PE<sp/>domains.<sp/>This<sp/>will<sp/>involve<sp/>adding/removing<sp/>drifters<sp/>when<sp/>they</highlight></codeline>
+<codeline><highlight class="normal">enter/leave<sp/>a<sp/>PE<sp/>domain.<sp/>As<sp/>the<sp/>number<sp/>of<sp/>drifters<sp/>can<sp/>vary<sp/>greatly<sp/>both<sp/>between<sp/>PE</highlight></codeline>
+<codeline><highlight class="normal">domains<sp/>and<sp/>in<sp/>the<sp/>course<sp/>of<sp/>a<sp/>simulation,<sp/>the<sp/>drifters&apos;<sp/>module<sp/>will<sp/>also<sp/>manage</highlight></codeline>
+<codeline><highlight class="normal">dynamically<sp/>the<sp/>memory<sp/>for<sp/>you.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>drifters&apos;<sp/>code<sp/>was<sp/>written<sp/>to<sp/>run<sp/>efficiently<sp/>by<sp/>avoiding<sp/>unnecessary<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">copies.<sp/>There<sp/>is<sp/>no<sp/>software<sp/>limit<sp/>as<sp/>to<sp/>the<sp/>maximum<sp/>number<sp/>of<sp/>drifters<sp/>and<sp/>their</highlight></codeline>
+<codeline><highlight class="normal">distribution.<sp/>The<sp/>drifters&apos;<sp/>module<sp/>is<sp/>ideally<sp/>suited<sp/>for<sp/>long<sp/>runs<sp/>where<sp/>the<sp/>amount</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>data<sp/>required<sp/>to<sp/>advect<sp/>particles<sp/>is<sp/>large,<sp/>making<sp/>it<sp/>impractical<sp/>to<sp/>use<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">post-processing<sp/>approach.<sp/>Such<sp/>a<sp/>situation<sp/>occurs,<sp/>in<sp/>particular,<sp/>when<sp/>the<sp/>velocity</highlight></codeline>
+<codeline><highlight class="normal">fields<sp/>must<sp/>be<sp/>saved<sp/>at<sp/>high<sp/>sampling<sp/>rate<sp/>in<sp/>order<sp/>to<sp/>compute<sp/>accurately<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">drifters&apos;<sp/>positions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Although<sp/>a<sp/>Runge-Kutta<sp/>method<sp/>is<sp/>provided<sp/>to<sp/>push<sp/>drifters,<sp/>users<sp/>may<sp/>want<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">implement<sp/>their<sp/>own<sp/>time-integration<sp/>scheme<sp/>in<sp/>some<sp/>cases.<sp/>It<sp/>is<sp/>moreover<sp/>possible<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">combine<sp/>time<sp/>integration<sp/>along<sp/>some<sp/>axes<sp/>while<sp/>prescribing<sp/>the<sp/>evolution<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">third<sp/>axis,<sp/>as<sp/>would<sp/>be<sp/>the<sp/>case<sp/>for<sp/>robotic<sp/>floats<sp/>that<sp/>move<sp/>up<sp/>and<sp/>down<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">predetermined<sp/>way,<sp/>for<sp/>instance.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>a<sp/>number<sp/>of<sp/>basic<sp/>assumptions<sp/>which<sp/>could<sp/>make<sp/>the<sp/>drifters&apos;<sp/>module</highlight></codeline>
+<codeline><highlight class="normal">ill-suited<sp/>for<sp/>some<sp/>tasks.<sp/>First<sp/>and<sp/>foremost,<sp/>it<sp/>is<sp/>assumed<sp/>that<sp/>the<sp/>motion<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">drifters<sp/>is<sp/>not<sp/>erratic<sp/>but<sp/>follows<sp/>deterministic<sp/>trajectories.<sp/>Furthermore,</highlight></codeline>
+<codeline><highlight class="normal">drifters<sp/>should<sp/>not<sp/>cross<sp/>both<sp/>compute<sp/>and<sp/>data<sp/>domain<sp/>boundaries<sp/>within<sp/>less</highlight></codeline>
+<codeline><highlight class="normal">than<sp/>a<sp/>time<sp/>step.<sp/>This<sp/>limitation<sp/>is<sp/>imposed<sp/>by<sp/>the<sp/>Runge-Kutta<sp/>integration</highlight></codeline>
+<codeline><highlight class="normal">scheme,<sp/>which<sp/>must<sp/>be<sp/>able<sp/>to<sp/>complete,<sp/>within<sp/>a<sp/>time<sp/>step,<sp/>a<sp/>trajectory</highlight></codeline>
+<codeline><highlight class="normal">calculation<sp/>that<sp/>starts<sp/>inside<sp/>the<sp/>compute<sp/>domain.<sp/>Therefore,<sp/>the<sp/>drifters,</highlight></codeline>
+<codeline><highlight class="normal">as<sp/>they<sp/>are<sp/>presently<sp/>modeled,<sp/>are<sp/>unlikely<sp/>to<sp/>work<sp/>for<sp/>very<sp/>fast<sp/>objects.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>constraint<sp/>also<sp/>puts<sp/>a<sp/>upper<sp/>limit<sp/>to<sp/>the<sp/>domain<sp/>decomposition,<sp/>although</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>can<sp/>often<sp/>be<sp/>remedied<sp/>by<sp/>increasing<sp/>the<sp/>number<sp/>of<sp/>ghost<sp/>nodes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Another<sp/>fundamental<sp/>assumption<sp/>is<sp/>that<sp/>the<sp/>(e.g.<sp/>velocity)<sp/>fields<sp/>are<sp/>structured,</highlight></codeline>
+<codeline><highlight class="normal">on<sp/>a<sp/>per<sp/>PE<sp/>domain<sp/>basis.<sp/>There<sp/>is<sp/>no<sp/>support<sp/>for<sp/>locally<sp/>nested<sp/>or<sp/>unstructured</highlight></codeline>
+<codeline><highlight class="normal">meshes.<sp/>Meshes<sp/>need<sp/>not<sp/>be<sp/>smooth<sp/>and<sp/>continuous<sp/>across<sp/>PE<sp/>domains,<sp/>however.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>the<sp/>higher<sp/>level<sp/>module<sp/>drifters_mod<sp/>cannot<sp/>do<sp/>what<sp/>you<sp/>need,<sp/>the<sp/>chances<sp/>are</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>kernels<sp/>will<sp/>be<sp/>able<sp/>to.<sp/>For<sp/>instance,<sp/>the<sp/>upper<sp/>level<sp/>assumes,<sp/>at<sp/>present,</highlight></codeline>
+<codeline><highlight class="normal">two-dimensional<sp/>(x,y)<sp/>positions,<sp/>and<sp/>a<sp/>two-dimension<sp/>domain<sp/>decomposition.<sp/>The</highlight></codeline>
+<codeline><highlight class="normal">cloud_interpolator<sp/>kernel<sp/>on<sp/>the<sp/>other<sp/>hand<sp/>makes<sp/>no<sp/>such<sp/>assumption;<sp/>it<sp/>can<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">used<sp/>to<sp/>interpolate<sp/>structured<sp/>data<sp/>in<sp/>arbitrary<sp/>number<sp/>of<sp/>dimensions<sp/>and<sp/>with<sp/>no</highlight></codeline>
+<codeline><highlight class="normal">dependence<sp/>on<sp/>FMS<sp/>code.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>How<sp/>to<sp/>invoke<sp/>the<sp/>drifters&apos;<sp/>module<sp/>in<sp/>your<sp/>code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>implement<sp/>drifters<sp/>in<sp/>your<sp/>code,<sp/>you<sp/>will<sp/>need<sp/>to<sp/>get<sp/>access<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">velocity<sp/>fields<sp/>at<sp/>all<sp/>times.<sp/>You<sp/>will<sp/>also<sp/>need<sp/>to<sp/>settle<sp/>on<sp/>a<sp/>definition<sp/>of<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">position,<sp/>which<sp/>could<sp/>be<sp/>the<sp/>longitude,<sp/>latitude,<sp/>elevation/depth<sp/>triplet.<sp/>The</highlight></codeline>
+<codeline><highlight class="normal">drifters&apos;<sp/>code<sp/>does<sp/>not<sp/>care<sp/>what<sp/>your<sp/>choice<sp/>of<sp/>position<sp/>is.<sp/>Typically,<sp/>you<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">want,<sp/>however,<sp/>to<sp/>choose<sp/>positions<sp/>that<sp/>are<sp/>aligned<sp/>to<sp/>the<sp/>velocity<sp/>axes,<sp/>and<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>coordinate<sp/>system.<sp/>It<sp/>is<sp/>perfectly<sp/>fine<sp/>to<sp/>use<sp/>a<sp/>warped<sp/>coordinate<sp/>system</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>tripolar),<sp/>which<sp/>avoids<sp/>the<sp/>problem<sp/>of<sp/>geometric<sp/>singularity<sp/>(pole).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Naturally,<sp/>it<sp/>is<sp/>important<sp/>for<sp/>the<sp/>velocity<sp/>field&apos;s<sp/>units<sp/>to<sp/>be<sp/>consistent<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">both<sp/>positions<sp/>and<sp/>time.<sp/>Often,<sp/>some<sp/>metric<sp/>coefficients<sp/>are<sp/>required<sp/>for<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">transformation.<sp/>The<sp/>drifters&apos;<sp/>module<sp/>does<sp/>not<sp/>have<sp/>any<sp/>support<sp/>for<sp/>specific<sp/>meshes</highlight></codeline>
+<codeline><highlight class="normal">per<sp/>se.<sp/>Each<sp/>component<sp/>of<sp/>the<sp/>velocity<sp/>can<sp/>sit<sp/>on<sp/>different<sp/>nodes,<sp/>as<sp/>in<sp/>the<sp/>case</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>Arakawa<sp/>C<sp/>and<sp/>D<sp/>meshes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>will<sp/>also<sp/>need<sp/>to<sp/>know<sp/>what<sp/>the<sp/>boundaries<sp/>of<sp/>your<sp/>&quot;compute&quot;<sp/>and<sp/>&quot;data&quot;<sp/>domains<sp/>are,</highlight></codeline>
+<codeline><highlight class="normal">when<sp/>running<sp/>in<sp/>parallel.<sp/>Your<sp/>compute<sp/>domain,<sp/>expressed<sp/>in<sp/>terms<sp/>of<sp/>`xcmin`,<sp/>`xcmax`,</highlight></codeline>
+<codeline><highlight class="normal">`ycmin`<sp/>and<sp/>`ycmax`<sp/>should<sp/>densely<sp/>cover<sp/>the<sp/>entire<sp/>domain;<sp/>that<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">```Fortran</highlight></codeline>
+<codeline><highlight class="normal">xcmin[pe_east]<sp/><sp/>=<sp/>xcmax[pe]</highlight></codeline>
+<codeline><highlight class="normal">ycmin[pe_north]<sp/>=<sp/>ycmax[pe]</highlight></codeline>
+<codeline><highlight class="normal">etc.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>data<sp/>domain<sp/>should<sp/>be<sp/>larger<sp/>than<sp/>the<sp/>compute<sp/>domain.<sp/>The<sp/>larger<sp/>the<sp/>velocities</highlight></codeline>
+<codeline><highlight class="normal">or<sp/>the<sp/>larger<sp/>the<sp/>time<sp/>steps,<sp/>the<sp/>more<sp/>ghost<sp/>nodes<sp/>are<sp/>required.<sp/>You<sp/>should<sp/>also</highlight></codeline>
+<codeline><highlight class="normal">pay<sp/>attention<sp/>to<sp/>the<sp/>fact<sp/>that<sp/>*all*<sp/>components<sp/>of<sp/>your<sp/>velocity<sp/>need<sp/>to<sp/>fall<sp/>inside</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>data<sp/>domain.<sp/>If<sp/>you&apos;re<sp/>using<sp/>a<sp/>staggered<sp/>grid<sp/>(Arakawa&apos;s<sp/>B,<sp/>C<sp/>grids)<sp/>you<sp/>should</highlight></codeline>
+<codeline><highlight class="normal">reduce<sp/>the<sp/>max<sp/>data<sp/>domain<sp/>by<sp/>`dx`,<sp/>resp.<sp/>`dy`,<sp/>in<sp/>every<sp/>direction.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>implementation<sp/>of<sp/>drifters<sp/>involves<sp/>typically<sp/>the<sp/>following<sp/>steps,<sp/>which<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">be<sp/>assumed<sp/>to<sp/>run<sp/>on<sp/>different<sp/>PEs:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```Fortran</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use<sp/>drifters_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>declare<sp/>drifters<sp/>object</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>type(drifters_type)<sp/>::<sp/>drfts<sp/>!<sp/>drifters&apos;<sp/>object</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>constructor</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_new(drfts,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>input_file<sp/>=&apos;INPUT/drifters_inp.nc&apos;<sp/><sp/>,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>output_file=&apos;drifters_out.nc&apos;,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>set<sp/>the<sp/>initial<sp/>time<sp/>and<sp/>dt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>drfts%time<sp/>=<sp/>t0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>drfts%dt<sp/><sp/><sp/>=<sp/>dt</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>set<sp/>the<sp/>PE<sp/>domain<sp/>boundaries.<sp/>Xmin_comp/ymin_comp,<sp/>xmax_comp/ymax_comp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>refer<sp/>to<sp/>the<sp/>&quot;compute&quot;<sp/>domain,<sp/>which<sp/>should<sp/>cover<sp/>densily<sp/>the<sp/>domain:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>xcmax[pe]<sp/>=<sp/>xcmin[pe_east]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>ycmax[pe]<sp/>=<sp/>ycmin[pe_north]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Xmin_data/ymin_data,<sp/>xmax_data/ymax_data<sp/>refer<sp/>to<sp/>the<sp/>&quot;data&quot;<sp/>domain,<sp/>which</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>should<sp/>be<sp/>larger<sp/>than<sp/>the<sp/>compute<sp/>domain<sp/>and<sp/>therefore<sp/>overlap:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>xdmax[pe]<sp/>&gt;<sp/>xdmin[pe_east]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>ydmax[pe]<sp/>&gt;<sp/>ydmin[pe_north]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Particles<sp/>in<sp/>the<sp/>overlap<sp/>regions<sp/>are<sp/>tracked<sp/>by<sp/>several<sp/>PEs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_set_domain(drfts,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_comp=xcmin,<sp/>xmax_comp=xcmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_comp=ycmin,<sp/>ymax_comp=ycmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_data=xdmin,<sp/>xmax_data=xdmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_data=ydmin,<sp/>ymax_data=ydmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_glob=xmin<sp/>,<sp/>xmax_glob=xmax,<sp/><sp/>&amp;<sp/>!<sp/>this<sp/>will<sp/>set<sp/>periodicity<sp/>in<sp/>x</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>set<sp/>neighboring<sp/>PEs<sp/>[domain2d<sp/>is<sp/>of<sp/>type(domain2d)]</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_set_pe_neighbors(drfts,<sp/>domain=domain2d,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>set<sp/>the<sp/>velocities<sp/>axes.<sp/>Each<sp/>velocity<sp/>can<sp/>have<sp/>different<sp/>axes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_set_v_axes(drfts,<sp/>component=&apos;u&apos;,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x_u,<sp/>y=y_u,<sp/>z=z_u,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_set_v_axes(drfts,<sp/>component=&apos;v&apos;,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x_v,<sp/>y=y_v,<sp/>z=z_v,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Distribute<sp/>the<sp/>drifters<sp/>across<sp/>PEs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_distribute(drfts,<sp/>ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Push<sp/>the<sp/>drifters.<sp/>u_comp,<sp/>v_comp<sp/>etc<sp/>are<sp/>provided<sp/>by<sp/>the<sp/>host<sp/>code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_push(drfts,<sp/>u=u_comp,<sp/>v=v_comp,<sp/>w=w_comp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>do<sp/>while<sp/>(Time<sp/>&lt;<sp/>Time_end)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Update<sp/>the<sp/>velocities</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>....</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>Push<sp/>the<sp/>drifters</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_push(drfts,<sp/>u=u_comp,<sp/>v=v_comp,<sp/>w=w_comp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>check<sp/>if<sp/>RK4<sp/>integration<sp/>is<sp/>complete</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>if(drfts%rk4_step==1)<sp/>then</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>interpolate<sp/>fields</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>drifters_set_field(drfts,<sp/>index_field=1,<sp/>x=x1,<sp/>y=y1,<sp/>z=z1,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>data=temp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>....<sp/>!<sp/>set<sp/>other<sp/>fields<sp/>here</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>save<sp/>data</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>drifters_save(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>endif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>enddo</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>write<sp/>restart<sp/>file,<sp/>optionally<sp/>with<sp/>lon/lat<sp/>data<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_write_restart(drfts,<sp/>filename=&apos;RESTART/drifters_inp.nc&apos;,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x1=x_u,<sp/>y1=y_v,<sp/>geolon1=grid%geolonq,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x2=x_u,<sp/>y2=y_v,<sp/>geolat2=grid%geolatq,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>!<sp/>destroy</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>drifters_del(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>5.<sp/>Pre-<sp/>and<sp/>post-processing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>typical<sp/>NetCDF<sp/>input<sp/>file<sp/>contains:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">netcdf<sp/>drifters_inp<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nd<sp/>=<sp/>2<sp/>;<sp/>//<sp/>number<sp/>of<sp/>dimensions<sp/>(2<sp/>or<sp/>3)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>np<sp/>=<sp/>5<sp/>;<sp/>//<sp/>number<sp/>of<sp/>particles</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>positions(np,<sp/>nd)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:names<sp/>=<sp/>&quot;i<sp/>j&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:units<sp/>=<sp/>&quot;-<sp/>-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>ids(np)<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>global<sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:velocity_names<sp/>=<sp/>&quot;u<sp/>v&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:field_names<sp/>=<sp/>&quot;lon<sp/>lat<sp/>temp<sp/>salt&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:field_units<sp/>=<sp/>&quot;deg_N<sp/>deg_E<sp/>Celsius<sp/>ppu&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:time_units<sp/>=<sp/>&quot;seconds&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:title<sp/>=<sp/>&quot;example<sp/>of<sp/>input<sp/>data<sp/>for<sp/>drifters&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">data:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>positions<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>100,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>110,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>120,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>130,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>140<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>ids<sp/>=<sp/>1,<sp/>2,<sp/>3,<sp/>4,<sp/>5<sp/>;<sp/>//<sp/>must<sp/>range<sp/>from<sp/>1<sp/>to<sp/>np,<sp/>in<sp/>any<sp/>order</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>case,<sp/>the<sp/>2-d<sp/>initial<sp/>conditions<sp/>consist<sp/>of<sp/>5<sp/>particles<sp/>at<sp/>positions</highlight></codeline>
+<codeline><highlight class="normal">(240,100),<sp/>(240,<sp/>110),<sp/>....<sp/>Here,<sp/>the<sp/>positions<sp/>are<sp/>defined<sp/>as<sp/>i,<sp/>j<sp/>global<sp/>indices.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>fields<sp/>to<sp/>interpolate<sp/>are<sp/>the<sp/>longitudes,<sp/>latitudes,<sp/>temperature<sp/>and<sp/>salinity.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>output<sp/>files<sp/>have<sp/>names<sp/>`&lt;output&gt;.nc.&lt;PE&gt;`<sp/>where<sp/>PE<sp/>ranges<sp/>0...number<sp/>of<sp/>domains-1.</highlight></codeline>
+<codeline><highlight class="normal">Each<sp/>PE<sp/>writes<sp/>to<sp/>an<sp/>independent<sp/>NetCDF<sp/>file.<sp/>These<sp/>files<sp/>contain<sp/>a<sp/>history<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">positions<sp/>and<sp/>field<sp/>values:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">netcdf<sp/>drifters_out.nc<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>it_id<sp/>=<sp/>UNLIMITED<sp/>;<sp/>//<sp/>(10<sp/>currently)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nf<sp/>=<sp/>4<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nd<sp/>=<sp/>2<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>index_time(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>time(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>ids(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>positions(it_id,<sp/>nd)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:name_1<sp/>=<sp/>&quot;i&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:name_2<sp/>=<sp/>&quot;j&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:unit_1<sp/>=<sp/>&quot;-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:unit_2<sp/>=<sp/>&quot;-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>fields(it_id,<sp/>nf)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_1<sp/>=<sp/>&quot;lon&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_2<sp/>=<sp/>&quot;lat&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_3<sp/>=<sp/>&quot;temp&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_4<sp/>=<sp/>&quot;salt&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_1<sp/>=<sp/>&quot;deg_N&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_2<sp/>=<sp/>&quot;deg_E&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_3<sp/>=<sp/>&quot;Celsius&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_4<sp/>=<sp/>&quot;ppu&quot;<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>global<sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:time_units<sp/>=<sp/>&quot;seconds&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">data:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>index_time<sp/>=<sp/>0,<sp/>0,<sp/>1,<sp/>1,<sp/>2,<sp/>2,<sp/>3,<sp/>3,<sp/>4,<sp/>4<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>time<sp/>=<sp/>17280,<sp/>17280,<sp/>34560,<sp/>34560,<sp/>51840,<sp/>51840,<sp/>69120,<sp/>69120,<sp/>86400,<sp/>86400<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>ids<sp/>=<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>positions<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>239.992427824695,<sp/>99.9982201799336,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>239.992780388996,<sp/>110.000731652201,</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"><sp/>fields<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-52.5075721753049,<sp/>11.5056520209176,<sp/>26.5841099585423,<sp/>35.4729937970157,</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>tool,<sp/>drifters_combine,<sp/>has<sp/>been<sp/>written<sp/>to<sp/>combine<sp/>all<sp/>the<sp/>NetCDF<sp/>files<sp/>into<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">single<sp/>file,<sp/>which<sp/>contains<sp/>all<sp/>the<sp/>drifters<sp/>data<sp/>and<sp/>is<sp/>suitable<sp/>for<sp/>post-processing,</highlight></codeline>
+<codeline><highlight class="normal">including<sp/>visualization<sp/>using<sp/>Ncvtk<sp/>1.7<sp/>or<sp/>later.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>6.<sp/>Loose<sp/>ends</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>What<sp/>to<sp/>do<sp/>with<sp/>fields<sp/>that<sp/>are<sp/>outside<sp/>the<sp/>valid_range<sp/>(e.g.<sp/>on<sp/>continents<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">case<sp/>of<sp/>floats).<sp/>Use<sp/>piece-wise<sp/>linear<sp/>interpolation<sp/>or<sp/>fill<sp/>with<sp/>missing<sp/>values?</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>How<sp/>to<sp/>make<sp/>the<sp/>drifters<sp/>Mosaic<sp/>compliant?</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Allow<sp/>drifters<sp/>to<sp/>turn<sp/>on/off<sp/>at<sp/>specific<sp/>time?<sp/>A<sp/>predetermined<sp/>life<sp/>cycle?</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Extract<sp/>initial<sp/>positions<sp/>from<sp/>databases.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>How<sp/>best<sp/>to<sp/>visualize<sp/>drifters?</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/drifters/README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,809 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceastronomy__mod" kind="namespace" language="Fortran">
+    <compoundname>astronomy_mod</compoundname>
+    <innerclass refid="interfaceastronomy__mod_1_1angle" prot="private">astronomy_mod::angle</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1annual__mean__solar" prot="private">astronomy_mod::annual_mean_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1daily__mean__solar" prot="private">astronomy_mod::daily_mean_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1declination" prot="private">astronomy_mod::declination</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1diurnal__solar" prot="private">astronomy_mod::diurnal_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1get__orbital__parameters" prot="private">astronomy_mod::get_orbital_parameters</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1get__period" prot="private">astronomy_mod::get_period</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1half__day" prot="private">astronomy_mod::half_day</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1r__inv__squared" prot="private">astronomy_mod::r_inv_squared</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1set__orbital__parameters" prot="private">astronomy_mod::set_orbital_parameters</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1set__period" prot="private">astronomy_mod::set_period</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__astronomy__mod_1gafc625cdedb5a5a3c2340493f19fd08fb" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical annual_mean_calculated</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_calculated</name>
+        <initializer>=.false.</initializer>
+        <briefdescription>
+<para>have the annual mean values been calculated? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="405" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="405" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga3455a617595c26820155d59d85932a72" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type(time_type) autumnal_eq_ref</definition>
+        <argsstring></argsstring>
+        <name>autumnal_eq_ref</name>
+        <briefdescription>
+<para>time_type variable containing specified time of reference NH autumnal equinox </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="383" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="383" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga86198e424a786af3ea76398d607e4566" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable cosz_ann</definition>
+        <argsstring></argsstring>
+        <name>cosz_ann</name>
+        <briefdescription>
+<para>annual mean cos of zenith angle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gabf926e53591ff020492feae586455bdf" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer day_ae</definition>
+        <argsstring></argsstring>
+        <name>day_ae</name>
+        <initializer>= 23</initializer>
+        <briefdescription>
+<para>Day of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac7ef38594dc59c2d512691a0c7325d60" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) deg_to_rad</definition>
+        <argsstring></argsstring>
+        <name>deg_to_rad</name>
+        <briefdescription>
+<para>conversion from degrees to radians </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="396" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="396" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga0320a619151d37795d72878cfae3b430" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) ecc</definition>
+        <argsstring></argsstring>
+        <name>ecc</name>
+        <initializer>= 0.01671_r8_kind</initializer>
+        <briefdescription>
+<para>Eccentricity of Earth&apos;s orbit [dimensionless]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="353" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga58b4bf35594794e15c2c11fe3afe9aec" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable fracday_ann</definition>
+        <argsstring></argsstring>
+        <name>fracday_ann</name>
+        <briefdescription>
+<para>annual mean daylight fraction </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac9fe51e6e306b8564911a084b8658aca" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer hour_ae</definition>
+        <argsstring></argsstring>
+        <name>hour_ae</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Hour of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="364" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="364" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga45b6936387832601623c84dccbeb7b30" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer minute_ae</definition>
+        <argsstring></argsstring>
+        <name>minute_ae</name>
+        <initializer>= 37</initializer>
+        <briefdescription>
+<para>Minute of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="365" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="365" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>=.false.</initializer>
+        <briefdescription>
+<para>has the module been initialized ? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="398" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="398" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga950d13661623d081cc81a387b6cc0b77" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer month_ae</definition>
+        <argsstring></argsstring>
+        <name>month_ae</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>Month of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="362" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="362" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga8031fcc1923a04c1f440a6b64e733a1d" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_angles</definition>
+        <argsstring></argsstring>
+        <name>num_angles</name>
+        <initializer>= 3600</initializer>
+        <briefdescription>
+<para>Number of intervals into which the year is divided to compute orbital positions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="367" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="367" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga867b18beb2aba0632e097f1701629f9b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_pts</definition>
+        <argsstring></argsstring>
+        <name>num_pts</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>count of grid_boxes for which annual mean astronomy values have been calculated </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="406" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="406" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga8c7f0f95155468154b39cc3074ed026a" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) obliq</definition>
+        <argsstring></argsstring>
+        <name>obliq</name>
+        <initializer>= 23.439_r8_kind</initializer>
+        <briefdescription>
+<para>Obliquity [degrees]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="354" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga58544ef69e8885fa7ed0c2dbff42ff99" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), allocatable</type>
+        <definition>real(r8_kind), dimension(:), allocatable orb_angle</definition>
+        <argsstring></argsstring>
+        <name>orb_angle</name>
+        <briefdescription>
+<para>table of orbital positions (0 to 2*pi) as a function of time used to find actual orbital position via interpolation </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="390" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="390" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac80dde030d030f36de16aee92903fa8c" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) per</definition>
+        <argsstring></argsstring>
+        <name>per</name>
+        <initializer>= 102.932_r8_kind</initializer>
+        <briefdescription>
+<para>Longitude of perihelion with respect to autumnal equinox in NH [degrees]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="355" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="355" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga4af111fe62fa2772a47f0484a1e4adb0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Specified length of year [seconds]; must be specified to override default value given by length_of_year in time_manager_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="357" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gae81380ba290de3d3d4ed23bb9e04d6d3" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type(time_type) period_time_type</definition>
+        <argsstring></argsstring>
+        <name>period_time_type</name>
+        <briefdescription>
+<para>time_type variable containing period of one orbit </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="387" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="387" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gab2b0a1887183293d65351d039fb28a4c" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) rrsun_ann</definition>
+        <argsstring></argsstring>
+        <name>rrsun_ann</name>
+        <briefdescription>
+<para>annual mean earth-sun distance </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="404" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="404" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga0cad89f046bb5225b3e0ff887f5c75b5" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer second_ae</definition>
+        <argsstring></argsstring>
+        <name>second_ae</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Second of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="366" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="366" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gaa0e907c2395f2142bf015590474b047a" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) seconds_per_day</definition>
+        <argsstring></argsstring>
+        <name>seconds_per_day</name>
+        <initializer>= 86400.0_r8_kind</initializer>
+        <briefdescription>
+<para>seconds in a day </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="395" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="395" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gabcccfbc3fe882f4f36a7c93c892c7ebc" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable solar_ann</definition>
+        <argsstring></argsstring>
+        <name>solar_ann</name>
+        <briefdescription>
+<para>annual mean solar factor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga705e11112da69e641ca5f8a1732ca383" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer total_pts</definition>
+        <argsstring></argsstring>
+        <name>total_pts</name>
+        <briefdescription>
+<para>number of grid boxes owned by the processor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="409" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="409" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gae46437a4a7d0afe68e7f234deaf74f56" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) twopi</definition>
+        <argsstring></argsstring>
+        <name>twopi</name>
+        <briefdescription>
+<para>2 *PI </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="397" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="397" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga89a3171b8c7d4c50c5c41fbaaca576e3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer year_ae</definition>
+        <argsstring></argsstring>
+        <name>year_ae</name>
+        <initializer>= 1998</initializer>
+        <briefdescription>
+<para>Year of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="363" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="363" bodyend="363"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__astronomy__mod_1ga1cbb745900e141cfee7e422a2f02caa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::astronomy_end</definition>
+        <argsstring></argsstring>
+        <name>astronomy_end</name>
+        <briefdescription>
+<para>astronomy_end is the destructor for astronomy_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>check if the module has been initialized.</para><para>deallocate module variables.</para><para>mark the module as uninitialized. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="757" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="758" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga28a67f4da82725afd9c0051464b8767c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::astronomy_init</definition>
+        <argsstring>(latb, lonb)</argsstring>
+        <name>astronomy_init</name>
+        <param>
+          <type>latb</type>
+          <defname>latb</defname>
+        </param>
+        <param>
+          <type>lonb</type>
+          <defname>lonb</defname>
+        </param>
+        <briefdescription>
+<para>astronomy_init is the constructor for astronomy_mod. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod ecc must be between 0 and 0.99</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod obliquity must be between -90 and 90 degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod perihelion must be between 0 and 360 degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">latb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2d array of model latitudes at cell corners [radians]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lonb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2d array of model longitudes at cell corners [radians] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>This routine will: Verify that modules used by this module have been initialized.</para><para>Read namelist.</para><para>Write version number and namelist to logfile.</para><para>Be sure input values are within valid ranges.</para><para>Set up time-type variable defining specified time of autumnal equinox.</para><para>Set up time-type variable defining length of year.</para><para>Define useful module variables.</para><para>Call orbit to define table of orbital angles as function of orbital time.</para><para>If annual mean radiation is desired, then latb will be present. allocate arrays to hold the needed astronomical factors. define the total number of points that the processor is responsible for.</para><para>Mark the module as initialized. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="430" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="431" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gae2cdd8e2fb16d2d09083ef51fd9fa5f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::get_period_integer</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_integer</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_integer returns the length of the year as an integer number of seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year [seconds] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="570" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="571" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gadc97a16dbd669dfb2ba2b36daaf34b79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::get_period_time_type</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_time_type</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_time_type returns the length of the year as a time_type variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year as time_type variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="598" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="599" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gada396fa1ede7431df75438a6c9d6c771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::get_ref_date_of_ae</definition>
+        <argsstring>(day_out, month_out, year_out, second_out, minute_out, hour_out)</argsstring>
+        <name>get_ref_date_of_ae</name>
+        <param>
+          <type>day_out</type>
+          <defname>day_out</defname>
+        </param>
+        <param>
+          <type>month_out</type>
+          <defname>month_out</defname>
+        </param>
+        <param>
+          <type>year_out</type>
+          <defname>year_out</defname>
+        </param>
+        <param>
+          <type>second_out</type>
+          <defname>second_out</defname>
+        </param>
+        <param>
+          <type>minute_out</type>
+          <defname>minute_out</defname>
+        </param>
+        <param>
+          <type>hour_out</type>
+          <defname>hour_out</defname>
+        </param>
+        <briefdescription>
+<para>get_ref_date_of_ae retrieves the reference date of the autumnal equinox as integer variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Day of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;month_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Month of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;year_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Year of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;second_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;minute_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minute of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;hour_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hour of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="731" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="733" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga8dccd51b88c5f26258bcaab0b250675d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private astronomy_mod::orbit</definition>
+        <argsstring></argsstring>
+        <name>orbit</name>
+        <briefdescription>
+<para>Orbit computes and stores a table of value of orbital angles as a function of orbital time (both the angle and time are zero at autumnal equinox in the NH, and range from 0 to 2*pi). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>allocate the orbital angle array, sized by the namelist parameter num_angles, defining the annual cycle resolution of the earth&apos;s orbit. define some constants to be used.</para><para>define the orbital angle at each of the num_angles locations in the orbit. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="792" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="793" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga45fdac20947776c7c756bf8d8a870fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, public</type>
+        <definition>real(kind=r8_kind) function, public astronomy_mod::orbital_time</definition>
+        <argsstring>(time)</argsstring>
+        <name>orbital_time</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Orbital time returns the time (1 year = 2*pi) since autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+<para>Orbital time returns the time (1 year = 2*pi) since autumnal equinox; autumnal_eq_ref is a module variable of time_type and will have been defined by default or by a call to set_ref_date_of_ae; length_of_year is available through the time manager and is set at the value approriate for the calandar being used</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time (1 year = 2*pi) since autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="835" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="836" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gab0623c3af659b6b2bea0f17132597d9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::set_period_integer</definition>
+        <argsstring>(period_in)</argsstring>
+        <name>set_period_integer</name>
+        <param>
+          <type>period_in</type>
+          <defname>period_in</defname>
+        </param>
+        <briefdescription>
+<para>set_period_integer saves as the input length of the year (an integer) in a time_type module variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">period_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year as a time_type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="619" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="620" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga77dfe2d27540f0298b3e559c1f4a7a98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::set_period_time_type</definition>
+        <argsstring>(period_in)</argsstring>
+        <name>set_period_time_type</name>
+        <param>
+          <type>period_in</type>
+          <defname>period_in</defname>
+        </param>
+        <briefdescription>
+<para>Set_period_time_type saves the length of the year (input as a time_type variable) into a time_type module variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="642" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="643" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga58c5837e3f38565db2c7901d880950f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::set_ref_date_of_ae</definition>
+        <argsstring>(day_in, month_in, year_in, second_in, minute_in, hour_in)</argsstring>
+        <name>set_ref_date_of_ae</name>
+        <param>
+          <type>day_in</type>
+          <defname>day_in</defname>
+        </param>
+        <param>
+          <type>month_in</type>
+          <defname>month_in</defname>
+        </param>
+        <param>
+          <type>year_in</type>
+          <defname>year_in</defname>
+        </param>
+        <param>
+          <type>second_in</type>
+          <defname>second_in</defname>
+        </param>
+        <param>
+          <type>minute_in</type>
+          <defname>minute_in</defname>
+        </param>
+        <param>
+          <type>hour_in</type>
+          <defname>hour_in</defname>
+        </param>
+        <briefdescription>
+<para>set_ref_date_of_ae provides a means of specifying the reference date of the NH autumnal equinox for a particular year. </para>        </briefdescription>
+        <detaileddescription>
+<para>set_ref_date_of_ae provides a means of specifying the reference date of the NH autumnal equinox for a particular year. It is only used if calls are made to the calandar versions of the routines <ref refid="interfaceastronomy__mod_1_1diurnal__solar" kindref="compound">diurnal_solar</ref> and <ref refid="interfaceastronomy__mod_1_1daily__mean__solar" kindref="compound">daily_mean_solar</ref>. If the NOLEAP calendar is used, then the date of autumnal equinox will be the same every year. If JULIAN is used, then the date of autumnal equinox will return to the same value every 4th year.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;day_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Day of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;month_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Month of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;year_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Year of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;second_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Second of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;minute_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Minute of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;hour_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Hour of reference autumnal equinox</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="681" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="683" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga65be144c0757efbdb9ac100e1831e913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, public</type>
+        <definition>real(kind=r8_kind) function, public astronomy_mod::universal_time</definition>
+        <argsstring>(time)</argsstring>
+        <name>universal_time</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>universal_time returns the time of day at longitude = 0.0 (1 day = 2*pi) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time (1 year = 2*pi) since autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="849" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="850" bodyend="861"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="28" column="1"/>
+  </compounddef>
+</doxygen>

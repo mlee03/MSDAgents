@@ -1,0 +1,773 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceoffloading__io__mod" kind="namespace" language="Fortran">
+    <compoundname>offloading_io_mod</compoundname>
+    <innerclass refid="structoffloading__io__mod_1_1offloading__obj__out" prot="public">offloading_io_mod::offloading_obj_out</innerclass>
+    <innerclass refid="interfaceoffloading__io__mod_1_1register__axis__offload" prot="public">offloading_io_mod::register_axis_offload</innerclass>
+    <innerclass refid="interfaceoffloading__io__mod_1_1write__data__offload" prot="public">offloading_io_mod::write_data_offload</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="offloading__io_8F90_1a118f0c4fd30623d573ed2aece85ee2b1" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer current_files_init</definition>
+        <argsstring></argsstring>
+        <name>current_files_init</name>
+        <briefdescription>
+<para>number of currently initialized offloading files </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="29" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="variable" id="offloading__io_8F90_1a9ab22577cbc9fe5bfbadcdf4ce8a9057" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer max_files</definition>
+        <argsstring></argsstring>
+        <name>max_files</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>amount of offloaded files to allocate space for </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="32" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="variable" id="offloading__io_8F90_1ad369225c254bc7bda087334ca5d13096" prot="public" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <briefdescription>
+<para>.true. if module has been initialized </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="30" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="variable" id="offloading__io_8F90_1ab5f914ca5be1232a24af9b1db49b8ac2" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structoffloading__io__mod_1_1offloading__obj__out" kindref="compound">offloading_obj_out</ref>), dimension(:), allocatable, target</type>
+        <definition>type(offloading_obj_out), dimension(:), allocatable, target offloading_objs</definition>
+        <argsstring></argsstring>
+        <name>offloading_objs</name>
+        <briefdescription>
+<para>Array of offloading objects that have been initialized by this module. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="60" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="60" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="offloading__io_8F90_1ac240c43c994e0a385e73016922aaa324" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public offloading_io_mod::close_file_offload</definition>
+        <argsstring>(fileobj)</argsstring>
+        <name>close_file_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <briefdescription>
+<para>Close offloaded netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="632" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="633" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1ae456256737dbfe33117c3aa081991dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>) function, public</type>
+        <definition>type(domain2d) function, public offloading_io_mod::create_cubic_domain</definition>
+        <argsstring>(nx_in, ny_in, ntiles, io_layout, nhalos, offload_pes, layout)</argsstring>
+        <name>create_cubic_domain</name>
+        <param>
+          <type>nx_in</type>
+          <defname>nx_in</defname>
+        </param>
+        <param>
+          <type>ny_in</type>
+          <defname>ny_in</defname>
+        </param>
+        <param>
+          <type>ntiles</type>
+          <defname>ntiles</defname>
+        </param>
+        <param>
+          <type>io_layout</type>
+          <defname>io_layout</defname>
+        </param>
+        <param>
+          <type>nhalos</type>
+          <defname>nhalos</defname>
+        </param>
+        <param>
+          <type>offload_pes</type>
+          <defname>offload_pes</defname>
+        </param>
+        <param>
+          <type>layout</type>
+          <defname>layout</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nx_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of grid points in x direction per tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ny_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of grid points in y direction per tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ntiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of tiles, must be 6 for cubed-sphere</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">io_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>layout for I/O operations</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nhalos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of halo points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">offload_pes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of PEs used for offloading write operations</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>layout to be used for each tile) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="704" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="706" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1aff9e9e5897a06255edd2ec24b71c0f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>) function, public</type>
+        <definition>type(domain2d) function, public offloading_io_mod::create_lat_lon_domain</definition>
+        <argsstring>(nx_in, ny_in, halox, haloy)</argsstring>
+        <name>create_lat_lon_domain</name>
+        <param>
+          <type>nx_in</type>
+          <defname>nx_in</defname>
+        </param>
+        <param>
+          <type>ny_in</type>
+          <defname>ny_in</defname>
+        </param>
+        <param>
+          <type>halox</type>
+          <defname>halox</defname>
+        </param>
+        <param>
+          <type>haloy</type>
+          <defname>haloy</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nx_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of lat-lon grid points in x direction</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ny_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of lat-lon grid points in y direction</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of halo points in x direction</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">haloy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of halo points in y direction </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="689" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="691" bodyend="700"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a3392ae875f9c1e7eb844c617c3ec005a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine offloading_io_mod::define_cubic_mosaic</definition>
+        <argsstring>(domain, ni, nj, global_indices, layout, pe_start, pe_end, io_layout, nhalos)</argsstring>
+        <name>define_cubic_mosaic</name>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>ni</type>
+          <defname>ni</defname>
+        </param>
+        <param>
+          <type>nj</type>
+          <defname>nj</defname>
+        </param>
+        <param>
+          <type>global_indices</type>
+          <defname>global_indices</defname>
+        </param>
+        <param>
+          <type>layout</type>
+          <defname>layout</defname>
+        </param>
+        <param>
+          <type>pe_start</type>
+          <defname>pe_start</defname>
+        </param>
+        <param>
+          <type>pe_end</type>
+          <defname>pe_end</defname>
+        </param>
+        <param>
+          <type>io_layout</type>
+          <defname>io_layout</defname>
+        </param>
+        <param>
+          <type>nhalos</type>
+          <defname>nhalos</defname>
+        </param>
+        <briefdescription>
+<para>Initialize a cubed-sphere atomsphere domain. TODO move this somehere else. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ni</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of grid points in i direction per tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of grid points in j direction per tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">global_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>global indices for each tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of layouts for each tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pe_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting PE for each tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pe_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ending PE for each tile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">io_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>layout for I/O operations</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A cubed-sphere domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nhalos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of halo points </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="761" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="763" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a1de2b9c7e3e9f58f3f3fd73b71557725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public offloading_io_mod::global_metadata_offload</definition>
+        <argsstring>(fileobj, attribute_name, attribute_value)</argsstring>
+        <name>global_metadata_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>attribute_name</type>
+          <defname>attribute_name</defname>
+        </param>
+        <param>
+          <type>attribute_value</type>
+          <defname>attribute_value</defname>
+        </param>
+        <briefdescription>
+<para>Broadcast and register a global metadata attribute on offloading PEs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the global attribute to register</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of the global attribute to register (r4, r8, i4, i8, str) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="155" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a98ab441854568c89868f5bb8cf85f14e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function offloading_io_mod::init_offloading_object</definition>
+        <argsstring>(filename, nx, ny, ntile)</argsstring>
+        <name>init_offloading_object</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>nx</type>
+          <defname>nx</defname>
+        </param>
+        <param>
+          <type>ny</type>
+          <defname>ny</defname>
+        </param>
+        <param>
+          <type>ntile</type>
+          <defname>ntile</defname>
+        </param>
+        <briefdescription>
+<para>Initialize an offloading object on offload PEs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename to open</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x size of the global domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ny</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y size of the global domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ntile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of tiles, only supports 1 for lat-lon or 6 for cubed-sphere </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="647" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="648" bodyend="685"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a50b09525e4acf98a7de0aa2126e0188e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public offloading_io_mod::offloading_io_init</definition>
+        <argsstring>()</argsstring>
+        <name>offloading_io_init</name>
+        <briefdescription>
+<para>Initialize by allocating array used to keep track of offloading file objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1acad0536cca202814e4bc56a055750885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public offloading_io_mod::open_file_offload</definition>
+        <argsstring>(fileobj, filename, domain_in, pe_in, pe_out)</argsstring>
+        <name>open_file_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>domain_in</type>
+          <defname>domain_in</defname>
+        </param>
+        <param>
+          <type>pe_in</type>
+          <defname>pe_in</defname>
+        </param>
+        <param>
+          <type>pe_out</type>
+          <defname>pe_out</defname>
+        </param>
+        <briefdescription>
+<para>Open a netcdf file and set it up for offloaded writes This routine should be called from both the model PEs and the offload PEs, with the full list of pes for each group being provided. The model PEs will broadcast the filename and domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename to open</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model domain (from model pes)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pe_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model pes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pe_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>offload pes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="85" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="86" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1aa95a7d8f7ddcf866cdaa79c5edd867c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine offloading_io_mod::register_domain_axis_offload</definition>
+        <argsstring>(fileobj, axis_name, cart)</argsstring>
+        <name>register_domain_axis_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axis_name</type>
+          <defname>axis_name</defname>
+        </param>
+        <param>
+          <type>cart</type>
+          <defname>cart</defname>
+        </param>
+        <briefdescription>
+<para>Register a domain axis (ie. x or y) on offloading PEs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axis name to be written to file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>must be either &apos;x&apos; or &apos;y&apos; for cartesian axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="318" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="319" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1ac1943003e704df1bb0db2c686c89d6e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public offloading_io_mod::register_field_offload</definition>
+        <argsstring>(fileobj, varname, vartype, dimensions)</argsstring>
+        <name>register_field_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>vartype</type>
+          <defname>vartype</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <briefdescription>
+<para>Register a netcdf field on offloading PEs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>previously registered dimension/axis names for the variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="431" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="432" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a956f7f5ba7c97b0d401bad134ddee9c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine offloading_io_mod::register_netcdf_axis_offload</definition>
+        <argsstring>(fileobj, axis_name, length)</argsstring>
+        <name>register_netcdf_axis_offload</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axis_name</type>
+          <defname>axis_name</defname>
+        </param>
+        <param>
+          <type>length</type>
+          <defname>length</defname>
+        </param>
+        <briefdescription>
+<para>Register a netcdf axis on offloading PEs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axis name to be written to file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of the axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="370" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="371" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a6e0e88ffcb91ee3bce7c40166cf226ef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine offloading_io_mod::write_data_offload_2d</definition>
+        <argsstring>(fileobj, varname, vardata)</argsstring>
+        <name>write_data_offload_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>vardata</type>
+          <defname>vardata</defname>
+        </param>
+        <briefdescription>
+<para>Write 2D data to offloaded netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the variable to be written</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vardata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D data to be written </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="568" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="569" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="offloading__io_8F90_1a7be1fec4dd73085336b550f75bd246b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine offloading_io_mod::write_data_offload_3d</definition>
+        <argsstring>(fileobj, varname, vardata, unlim_dim_level)</argsstring>
+        <name>write_data_offload_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>vardata</type>
+          <defname>vardata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <briefdescription>
+<para>Write 3D data to offloaded netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the variable to be written</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vardata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D data to be written</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>level along unlimited dimension to write to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="492" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="493" bodyend="564"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="18" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2602 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__field__manager__mod" kind="group">
+    <compoundname>field_manager_mod</compoundname>
+    <title>field_manager_mod</title>
+    <innerclass refid="structfield__manager__mod_1_1field__def" prot="private">field_manager_mod::field_def</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1field__mgr__type" prot="private">field_manager_mod::field_mgr_type</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1field__names__type" prot="private">field_manager_mod::field_names_type</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1field__names__type__short" prot="private">field_manager_mod::field_names_type_short</innerclass>
+    <innerclass refid="interfacefield__manager__mod_1_1find__field__index" prot="private">field_manager_mod::find_field_index</innerclass>
+    <innerclass refid="interfacefield__manager__mod_1_1fm__get__value" prot="private">field_manager_mod::fm_get_value</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1fm__list__iter__type" prot="public">field_manager_mod::fm_list_iter_type</innerclass>
+    <innerclass refid="interfacefield__manager__mod_1_1fm__loop__over__list" prot="private">field_manager_mod::fm_loop_over_list</innerclass>
+    <innerclass refid="interfacefield__manager__mod_1_1fm__new__value" prot="private">field_manager_mod::fm_new_value</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1method__type" prot="public">field_manager_mod::method_type</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1method__type__short" prot="public">field_manager_mod::method_type_short</innerclass>
+    <innerclass refid="structfield__manager__mod_1_1method__type__very__short" prot="public">field_manager_mod::method_type_very_short</innerclass>
+    <innerclass refid="interfacefield__manager__mod_1_1parse" prot="private">field_manager_mod::parse</innerclass>
+    <innernamespace refid="namespacefield__manager__mod">field_manager_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__field__manager__mod_1ga08c4adcf3935f039c20551a2663cc48d" prot="private" static="no" mutable="no">
+        <type>type(field_def), pointer</type>
+        <definition>type (field_def), pointer current_list_p</definition>
+        <argsstring></argsstring>
+        <name>current_list_p</name>
+        <initializer>=&gt; NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="510" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="510" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga279a0782e6dff1667d041dd5b216d4eb" prot="public" static="no" mutable="no">
+        <type>type(method_type), public</type>
+        <definition>type(method_type), public default_method</definition>
+        <argsstring></argsstring>
+        <name>default_method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="322" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="322" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gad20c9415215f25058e8884841b2b379a" prot="private" static="no" mutable="no">
+        <type>character(len=fm_type_name_len), dimension(num_types)</type>
+        <definition>character(len=fm_type_name_len), dimension(num_types) field_type_name</definition>
+        <argsstring></argsstring>
+        <name>field_type_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="498" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="498" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga5ce664fa109ccb258ef09aef875394a5" prot="private" static="no" mutable="no">
+        <type>type(field_mgr_type), dimension(:), allocatable, private</type>
+        <definition>type(field_mgr_type), dimension(:), allocatable, private fields</definition>
+        <argsstring></argsstring>
+        <name>fields</name>
+        <briefdescription>
+<para>fields of <ref refid="structfield__manager__mod_1_1field__mgr__type" kindref="compound">field_mgr_type</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="495" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="495" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga95d681675a9f1f8b752ce1710d2f4185" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public fm_field_name_len</definition>
+        <argsstring></argsstring>
+        <name>fm_field_name_len</name>
+        <initializer>= 48</initializer>
+        <briefdescription>
+<para>The length of a character string representing the field name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="247" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="247" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga19ea08bc7d0d6b5b75433b084191c617" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public fm_string_len</definition>
+        <argsstring></argsstring>
+        <name>fm_string_len</name>
+        <initializer>= 1024</initializer>
+        <briefdescription>
+<para>The length of a character string representing character values for the field. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="249" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="249" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gab68891dfb5e0102e534484fc07ad94da" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public fm_type_name_len</definition>
+        <argsstring></argsstring>
+        <name>fm_type_name_len</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>The length of a character string representing the various types that the values of the field can take. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="251" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="251" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gaedbe1e4020f190623b199d614981b899" prot="private" static="no" mutable="no">
+        <type>character(len=fms_path_len)</type>
+        <definition>character(len=fms_path_len) loop_list</definition>
+        <argsstring></argsstring>
+        <name>loop_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="497" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="497" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga9fa12e719349e733e898c95717475fac" prot="private" static="no" mutable="no">
+        <type>type(field_def), pointer</type>
+        <definition>type (field_def), pointer loop_list_p</definition>
+        <argsstring></argsstring>
+        <name>loop_list_p</name>
+        <initializer>=&gt; NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="509" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="509" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public model_atmos</definition>
+        <argsstring></argsstring>
+        <name>model_atmos</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Atmospheric model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="257" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="257" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga8e09357ff314b82c48343e46c9228982" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public model_coupler</definition>
+        <argsstring></argsstring>
+        <name>model_coupler</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Ice model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="265" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="265" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gad652a7b21fb3c5ff053aaf70f8afeb6a" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public model_ice</definition>
+        <argsstring></argsstring>
+        <name>model_ice</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Ice model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="263" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="263" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga2a7ab4d44831425357665aeab4eb353e" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public model_land</definition>
+        <argsstring></argsstring>
+        <name>model_land</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Land model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="261" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="261" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga54c34ec863eb433f2159824707a822f5" prot="public" static="no" mutable="no">
+        <type>character(len=11), dimension(num_models), parameter, public</type>
+        <definition>character(len=11), dimension(num_models), parameter, public model_names</definition>
+        <argsstring></argsstring>
+        <name>model_names</name>
+        <initializer>=(/&apos;atmospheric&apos;,&apos;oceanic    &apos;,&apos;land       &apos;,&apos;ice        &apos;,&apos;coupler    &apos;/)</initializer>
+        <briefdescription>
+<para>Model names, e.g. MODEL_NAMES(MODEL_OCEAN) is &apos;oceanic&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="267" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="267" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gac785f9b02b44de9e54cdf21ae5f6a577" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public model_ocean</definition>
+        <argsstring></argsstring>
+        <name>model_ocean</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Ocean model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="259" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gacc54057f7fb4e595e4c7b70691415a50" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public no_field</definition>
+        <argsstring></argsstring>
+        <name>no_field</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>The value returned if a field is not defined. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="255" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="255" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gabfaffcec6d80f4f9dd8232df6671d99b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_fields</definition>
+        <argsstring></argsstring>
+        <name>num_fields</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="508" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="508" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gaf1c69f9a8487bb19077de2a802a96e6f" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public num_models</definition>
+        <argsstring></argsstring>
+        <name>num_models</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Number of models (ATMOS, OCEAN, LAND, ICE, COUPLER). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="253" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="253" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gaa3dd16a43def374217ef7afe4cbc5529" prot="private" static="no" mutable="no">
+        <type>type(field_def), target, save</type>
+        <definition>type (field_def), target, save root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="513" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="513" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga1bc4994e74c672782b567153601ce890" prot="private" static="no" mutable="no">
+        <type>type(field_def), pointer</type>
+        <definition>type (field_def), pointer root_p</definition>
+        <argsstring></argsstring>
+        <name>root_p</name>
+        <initializer>=&gt; NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="511" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="511" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gaf0025f05c62f5119d8d86e153379783b" prot="private" static="no" mutable="no">
+        <type>character(len=fm_field_name_len)</type>
+        <definition>character(len=fm_field_name_len) save_root_name</definition>
+        <argsstring></argsstring>
+        <name>save_root_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="499" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="499" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gac026315b908062a55bbc6bee52282aec" prot="private" static="no" mutable="no">
+        <type>type(field_def), pointer</type>
+        <definition>type (field_def), pointer save_root_parent_p</definition>
+        <argsstring></argsstring>
+        <name>save_root_parent_p</name>
+        <initializer>=&gt; NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="512" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="512" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga296f92f18dbda93d823411bbf7e7d4e5" prot="private" static="no" mutable="no">
+        <type>character(len=52)</type>
+        <definition>character(len=52) set</definition>
+        <argsstring></argsstring>
+        <name>set</name>
+        <initializer>= &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="501" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="501" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gab1a3d1f94c355f4ec335a75e08e537f0" prot="private" static="no" mutable="no">
+        <type>character(len=50)</type>
+        <definition>character(len=50) set_nonexp</definition>
+        <argsstring></argsstring>
+        <name>set_nonexp</name>
+        <initializer>= &quot;ABCDFGHIJKLMNOPQRSTUVWXYZabcdfghijklmnopqrstuvwxyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="504" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="504" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1ga8e29a47a210232e8689cc8a419c85bd9" prot="private" static="no" mutable="no">
+        <type>character(len=13)</type>
+        <definition>character(len=13) setnum</definition>
+        <argsstring></argsstring>
+        <name>setnum</name>
+        <initializer>= &quot;0123456789+-.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="507" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="507" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__field__manager__mod_1gab77b0c8d1e39f3d573826a488feffddf" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_field_table_yaml</definition>
+        <argsstring></argsstring>
+        <name>use_field_table_yaml</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>.True. if using the field_table.yaml, .false. if using the legacy field_table </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="515" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="515" bodyend="515"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__field__manager__mod_1ga3474a9ba623c104e65dc5fe72743fad7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::check_for_name_duplication</definition>
+        <argsstring></argsstring>
+        <name>check_for_name_duplication</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1179" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1180" bodyend="1195"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga2f534e79f92472e66d5a14cbf8297369" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::concat_strings</definition>
+        <argsstring>(str1, str2)</argsstring>
+        <name>concat_strings</name>
+        <param>
+          <type>str1</type>
+          <defname>str1</defname>
+        </param>
+        <param>
+          <type>str2</type>
+          <defname>str2</defname>
+        </param>
+        <briefdescription>
+<para>private function: appends str2 to the end of str1, with length check </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3398" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3399" bodyend="3411"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga2490331bea59c02616a06b1da832e240" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_def) function, pointer, private</type>
+        <definition>type (field_def) function, pointer, private field_manager_mod::create_field</definition>
+        <argsstring>(parent_p, name)</argsstring>
+        <name>create_field</name>
+        <param>
+          <type>parent_p</type>
+          <defname>parent_p</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A function to create a field as a child of parent_p. This will return a pointer to a <ref refid="structfield__manager__mod_1_1field__def" kindref="compound">field_def</ref> type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocate and initialize a new field in parent_p list. Return a pointer to the field on success, or a null pointer on failure. <linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="normal">list_p<sp/>=&gt;<sp/>create_field(parent_p,<sp/>name)</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the parent of the field that is to be created</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that is to be created </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1565" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1567" bodyend="1617"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gac45b51b861b6c329454553711d375fed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical recursive function, private</type>
+        <definition>logical recursive function, private field_manager_mod::dump_list</definition>
+        <argsstring>(list_p, recursive, depth, out_unit)</argsstring>
+        <name>dump_list</name>
+        <param>
+          <type>list_p</type>
+          <defname>list_p</defname>
+        </param>
+        <param>
+          <type>recursive</type>
+          <defname>recursive</defname>
+        </param>
+        <param>
+          <type>depth</type>
+          <defname>depth</defname>
+        </param>
+        <param>
+          <type>out_unit</type>
+          <defname>out_unit</defname>
+        </param>
+        <briefdescription>
+<para>This is a function that lists the parameters of a field. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a pointer to a list, this function prints out the fields, and subfields, if recursive is true, associated with the list.</para><para>This is most likely to be used through fm_dump_list. <linebreak/>
+ Example usage: <programlisting filename=".F90"><codeline><highlight class="normal">success<sp/>=<sp/>dump_list(list_p,<sp/></highlight><highlight class="keywordtype">recursive</highlight><highlight class="normal">=.true.,<sp/>depth=0)</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the field to be printed out</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag to make function recursively print subfields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Listing will be padded so that &apos;depth&apos; spaces appear before the field being printed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unit number to print to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1630" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1631" bodyend="1750"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga776a916be1fc2a7eaf6aacb74bb30fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::field_manager_end</definition>
+        <argsstring></argsstring>
+        <name>field_manager_end</name>
+        <briefdescription>
+<para>Destructor for field manager. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine deallocates allocated variables (if allocated) and changes the initialized flag to false. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1390" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1391" bodyend="1399"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga8a2e295bd455ae452c73eb4a6ba85e2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::field_manager_init</definition>
+        <argsstring>(nfields, table_name)</argsstring>
+        <name>field_manager_init</name>
+        <param>
+          <type>nfields</type>
+          <defname>nfields</defname>
+        </param>
+        <param>
+          <type>table_name</type>
+          <defname>table_name</defname>
+        </param>
+        <briefdescription>
+<para>Routine to initialize the field manager. </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine reads from a file containing yaml paramaters. These yaml parameters contain information on which schemes are needed within various modules. The field manager does not initialize any of those schemes however. It simply holds the information and is queried by the appropriate module.</para><para>The routine has two loops. The first loop initializes the my_table object and counts the number of fields contained therein. The second loop is the main loop that acts on each field in the my_table object, defining a list object (in the field_manager definition) from which various fm routines may be called, as well as populating the &quot;fields&quot; object and the &quot;methods&quot; objects within each field object. The &quot;fields&quot; and &quot;methods&quot; objects are then used with the subroutine new_name to append various characteristics to the list object. Note that the &quot;fields&quot; and &quot;methods&quot; objects are also used with other fm routines in a bit of a parallel system.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">nfields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field table, default </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="539" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="540" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga18c210f8d14ba15f1efd045bd91db9be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private field_manager_mod::find_base</definition>
+        <argsstring>(name, path, base)</argsstring>
+        <name>find_base</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>base</type>
+          <defname>base</defname>
+        </param>
+        <briefdescription>
+<para>A subroutine that splits a listname into a path and a base. </para>        </briefdescription>
+        <detaileddescription>
+<para>Find the base name for a list by splitting the list name into a path and base. The base is the last field within name, while the path is the preceding section of name. The base string can then be used to query for values associated with name.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list name for a field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path of the base field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string which can be used to query for values associated with name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1759" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1760" bodyend="1805"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaf228412d627dbe7049061d910a77dcb5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_def) function, pointer, private</type>
+        <definition>type (field_def) function, pointer, private field_manager_mod::find_field</definition>
+        <argsstring>(name, this_list_p)</argsstring>
+        <name>find_field</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>this_list_p</type>
+          <defname>this_list_p</defname>
+        </param>
+        <briefdescription>
+<para>Find and return a pointer to the field in the specified list. Return a null pointer on error. </para>        </briefdescription>
+        <detaileddescription>
+<para>Find and return a pointer to the field in the specified list. Return a null pointer on error. Given a pointer to a field, this function searchs for &quot;name&quot; as a sub field. <simplesect kind="return"><para>A pointer to the field corresponding to &quot;name&quot; or an unassociated pointer if the field name does not exist.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to find</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>this_list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a list which the user wishes to search for a field &quot;name&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1816" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1818" bodyend="1851"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga2f85359efc4d0e06a058e7455a1663e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::find_field_index_new</definition>
+        <argsstring>(field_name)</argsstring>
+        <name>find_field_index_new</name>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of the field corresponding to field_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to the name of the field that an index is being requested for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1438" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1439" bodyend="1447"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga7fc15fb601867e75fdfb1fb7324e6c60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::find_field_index_old</definition>
+        <argsstring>(model, field_name)</argsstring>
+        <name>find_field_index_old</name>
+        <param>
+          <type>model</type>
+          <defname>model</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+<para>Function to return the index of the field. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function when passed a model number and a field name will return the index of the field within the field manager. This index can be used to access other information from the field manager. <simplesect kind="return"><para>The index of the field corresponding to field_name.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number indicating which model is used.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that an index is being requested for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1418" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1419" bodyend="1434"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga6d9462f317ef059a16bbbaf1ff3da23d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private field_manager_mod::find_head</definition>
+        <argsstring>(name, head, rest)</argsstring>
+        <name>find_head</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>head</type>
+          <defname>head</defname>
+        </param>
+        <param>
+          <type>rest</type>
+          <defname>rest</defname>
+        </param>
+        <briefdescription>
+<para>Find the first list for a name by splitting the name into a head and the rest. </para>        </briefdescription>
+        <detaileddescription>
+<para>Find the first list for a name by splitting the name into a head and the rest. The head is the first field within name, while rest is the remaining section of name. The head string can then be used to find other fields that may be associated with name.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first field within name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">rest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the remaining section of name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1861" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1862" bodyend="1896"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga15985fa88c9702cc0278209ebeb6eab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_def) function, pointer, private</type>
+        <definition>type (field_def) function, pointer, private field_manager_mod::find_list</definition>
+        <argsstring>(path, relative_p, create)</argsstring>
+        <name>find_list</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>relative_p</type>
+          <defname>relative_p</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <briefdescription>
+<para>Find and return a pointer to the specified list, relative to relative_p. Return a null pointer on error. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function, when supplied a pointer to a field and a name of a second field relative to that pointer, will find a list and return the pointer to the second field. If create is .true. and the second field does not exist, it will be created. <simplesect kind="return"><para>A pointer to the list to be returned</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to the list of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>relative_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the list to which &quot;path&quot; is relative to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the list does not exist, it will be created if set to true </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1907" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1909" bodyend="1985"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaa79aed917fd2385b4ee827202c6cf84c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>recursive logical function</type>
+        <definition>recursive logical function field_manager_mod::find_method</definition>
+        <argsstring>(list_p, recursive, num_meth, method, control)</argsstring>
+        <name>find_method</name>
+        <param>
+          <type>list_p</type>
+          <defname>list_p</defname>
+        </param>
+        <param>
+          <type>recursive</type>
+          <defname>recursive</defname>
+        </param>
+        <param>
+          <type>num_meth</type>
+          <defname>num_meth</defname>
+        </param>
+        <param>
+          <type>method</type>
+          <defname>method</defname>
+        </param>
+        <param>
+          <type>control</type>
+          <defname>control</defname>
+        </param>
+        <briefdescription>
+<para>Given a field list pointer this function retrieves methods and associated parameters for the field list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the field of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, search recursively for fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">num_meth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of methods found</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The methods associated with the field pointed to by list_p</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The control parameters for the methods found </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3571" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3573" bodyend="3662"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga5aec64d0b5503d357d0b4b5c4f73725b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_change_list</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_change_list</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Change the current list. Return true on success, false otherwise. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function changes the currect list to correspond to the list named name. If the first character of name is the list separator (/) then the list will search for &quot;name&quot; starting from the root of the field tree. Otherwise it will search for name starting from the current list. <simplesect kind="return"><para>A flag to indicate operation success, true = no errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a list to change to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1995" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1997" bodyend="2014"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gad9e55e1938dbd96a4776dd8a4378583d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_change_root</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_change_root</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Change the root list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function changes the root of the field tree to correspond to the field named name. An example of a use of this would be if code is interested in a subset of fields with a common base. This common base could be set using fm_change_root and fields could be referenced using this root.</para><para>This function should be used in conjunction with fm_return_root. <simplesect kind="return"><para>A flag to indicate operation success, true = no errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the field which the user wishes to become the root. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2027" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2029" bodyend="2069"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga0b1ee36793ccd1b64f967964585b57d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public field_manager_mod::fm_copy_list</definition>
+        <argsstring>(list_name, suffix, create)</argsstring>
+        <name>fm_copy_list</name>
+        <param>
+          <type>list_name</type>
+          <defname>list_name</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <briefdescription>
+<para>A function that allows the user to copy a field and add a suffix to the name of the new field. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given the name of a pre-existing field and a suffix, this function will create a new field. The name of the new field will be that of the old field with a suffix supplied by the user. <simplesect kind="return"><para>index of the field that has been created by the copy</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a field that the user wishes to copy</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>suffix that will be added to list_name when field is copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag to create new list if applicable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3421" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3423" bodyend="3516"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gac0d3d65396eeb3a23b9c2e474fd360d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_dump_list</definition>
+        <argsstring>(name, recursive, unit)</argsstring>
+        <name>fm_dump_list</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>recursive</type>
+          <defname>recursive</defname>
+        </param>
+        <param>
+          <type>unit</type>
+          <defname>unit</defname>
+        </param>
+        <briefdescription>
+<para>A function to list properties associated with a field. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function writes the contents of the field named &quot;name&quot; to stdout. If recursive is present and .true., then this function writes out the contents of any subfields associated with the field named &quot;name&quot;. <simplesect kind="return"><para>A flag to indicate operation success, true = no errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field for which output is requested.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then a recursive listing of fields will be performed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file to print to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2078" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2079" bodyend="2114"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga50f81335bc907104b00283f09cf8effa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_exists</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_exists</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A function to test whether a named field exists. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function determines is a field exists, relative to the current list, and returns true if the list exists, false otherwise. <simplesect kind="return"><para>A flag to indicate operation success, true = no errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that is being queried </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2124" bodyend="2135"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaf24d68b63aef738797fd748c9a6850a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_find_methods</definition>
+        <argsstring>(list_name, methods, control)</argsstring>
+        <name>fm_find_methods</name>
+        <param>
+          <type>list_name</type>
+          <defname>list_name</defname>
+        </param>
+        <param>
+          <type>methods</type>
+          <defname>methods</defname>
+        </param>
+        <param>
+          <type>control</type>
+          <defname>control</defname>
+        </param>
+        <briefdescription>
+<para>This function retrieves all the methods associated with a field. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is different from fm_query_method in that this function gets all the methods associated as opposed to 1 method. <simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a list that the user wishes to find methods for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">methods</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of the methods associated with list_name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of the parameters associated with methods </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3525" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3527" bodyend="3564"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga68d298c14634a808902322baab39cffd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=fms_path_len) function, public</type>
+        <definition>character(len=fms_path_len) function, public field_manager_mod::fm_get_current_list</definition>
+        <argsstring>()</argsstring>
+        <name>fm_get_current_list</name>
+        <briefdescription>
+<para>A function to return the full path of the current list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the full path for the current list. A blank path indicates an error condition has occurred. <simplesect kind="return"><para>The path corresponding to the current list </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2179" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2181" bodyend="2214"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga6e31e259794f3f77164cfaaf05507b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public field_manager_mod::fm_get_index</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_get_index</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A function to return the index of a named field. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the index for name, returns the parameter NO_FIELD if it does not exist. If the first character of the named field is the list peparator, then the named field will be relative to the root of the field tree. Otherwise the named field will be relative to the current list. <simplesect kind="return"><para>index of the named field if it exists, otherwise the parameter NO_FIELD</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to get an index for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2145" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2147" bodyend="2171"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga361063ec04fbdd799ee6b1b189897d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public field_manager_mod::fm_get_length</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_get_length</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A function to return how many elements are contained within the named list or entry. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the list or entry length for the named list or entry. If the named field or entry does not exist, a value of 0 is returned. <simplesect kind="return"><para>The number of elements that the field name has.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a list or entry that the user wishes to get the length of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2223" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2225" bodyend="2254"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga3fed10d122bd44ad13d302db0b3fbae7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=8) function, public</type>
+        <definition>character(len=8) function, public field_manager_mod::fm_get_type</definition>
+        <argsstring>(name)</argsstring>
+        <name>fm_get_type</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A function to return the type of the named field. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the type of the field for name. This indicates whether the named field is a &quot;list&quot; (has children fields), or has values of type &quot;integer&quot;, &quot;real&quot;, &quot;logical&quot; or &quot;string&quot;. If it does not exist it returns a blank string. <simplesect kind="return"><para>A string containing the type of the named field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to find the type of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2264" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2266" bodyend="2291"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga3b657e0cb0727ff2a221d3c078f2ddff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function field_manager_mod::fm_get_value_integer</definition>
+        <argsstring>(name, get_ival, index)</argsstring>
+        <name>fm_get_value_integer</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>get_ival</type>
+          <defname>get_ival</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (false) or without (true) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to get a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">get_ival</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value associated with the named field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional index to retrieve a single value from an array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2296" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2298" bodyend="2348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gab111beba8a78050671a15a25f215612a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function field_manager_mod::fm_get_value_logical</definition>
+        <argsstring>(name, get_lval, index)</argsstring>
+        <name>fm_get_value_logical</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>get_lval</type>
+          <defname>get_lval</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (false) or without (true) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to get a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">get_lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value associated with the named field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional index to retrieve a single value from an array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2353" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2355" bodyend="2406"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gafcb0077d49900d550fa0821281f6494a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function field_manager_mod::fm_get_value_string</definition>
+        <argsstring>(name, get_sval, index)</argsstring>
+        <name>fm_get_value_string</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>get_sval</type>
+          <defname>get_sval</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (false) or without (true) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to get a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">get_sval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value associated with the named field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional index to retrieve a single value from an array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2411" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2413" bodyend="2463"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gacc86a175c2060ba4695ec35b3ffb8a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::fm_init_loop</definition>
+        <argsstring>(loop_list, iter)</argsstring>
+        <name>fm_init_loop</name>
+        <param>
+          <type>loop_list</type>
+          <defname>loop_list</defname>
+        </param>
+        <param>
+          <type>iter</type>
+          <defname>iter</defname>
+        </param>
+        <briefdescription>
+<para>given a name of the list, prepares an iterator over the list content. If the name of the given list is blank, then the current list is used </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">loop_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the list to iterate over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>loop iterator </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2538" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2539" bodyend="2549"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gad442674b099c93b6f4a7427037818d16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function field_manager_mod::fm_loop_over_list_new</definition>
+        <argsstring>(iter, name, field_type, index)</argsstring>
+        <name>fm_loop_over_list_new</name>
+        <param>
+          <type>iter</type>
+          <defname>iter</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_type</type>
+          <defname>field_type</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>given a list iterator, returns information about curren list element and advances the iterator to the next list element. At the end of the list, returns FALSE </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list iterator</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the current list item</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">field_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index in the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2555" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2557" bodyend="2574"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaf3e20037c88c52712f4abec8384dc562" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function field_manager_mod::fm_loop_over_list_old</definition>
+        <argsstring>(list, name, field_type, index)</argsstring>
+        <name>fm_loop_over_list_old</name>
+        <param>
+          <type>list</type>
+          <defname>list</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_type</type>
+          <defname>field_type</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>Iterates through the given list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of a list to loop over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a field from list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">field_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of a list entry</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the field within the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2469" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2471" bodyend="2533"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gabe6324d661c9d1a25b1f60694bf3ed5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_modify_name</definition>
+        <argsstring>(oldname, newname)</argsstring>
+        <name>fm_modify_name</name>
+        <param>
+          <type>oldname</type>
+          <defname>oldname</defname>
+        </param>
+        <param>
+          <type>newname</type>
+          <defname>newname</defname>
+        </param>
+        <briefdescription>
+<para>This function allows a user to rename a field without modifying the contents of the field. </para>        </briefdescription>
+        <detaileddescription>
+<para>Function to modify the name of a field. Should be used with caution. <simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">oldname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to change the name of</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">newname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name that the user wishes to change the name of the field to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3123" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3125" bodyend="3157"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga5c0b44a2bdd81906dbe5064fff4d9630" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public field_manager_mod::fm_new_list</definition>
+        <argsstring>(name, create, keep)</argsstring>
+        <name>fm_new_list</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <param>
+          <type>keep</type>
+          <defname>keep</defname>
+        </param>
+        <briefdescription>
+<para>A function to create a new list. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocate and initialize a new list and return the index of the list. If an error occurs return the parameter NO_FIELD. <simplesect kind="return"><para>integer index of the newly created list</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of a list that user wishes to create</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and true, create the list if it does not exist</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and true, make this list the current list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2582" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2584" bodyend="2638"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga18cb1f8aa1f87a0a9fe0ac2163528a4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::fm_new_value_integer</definition>
+        <argsstring>(name, new_ival, create, index, append)</argsstring>
+        <name>fm_new_value_integer</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>new_ival</type>
+          <defname>new_ival</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <param>
+          <type>append</type>
+          <defname>append</defname>
+        </param>
+        <briefdescription>
+<para>Assigns a given value to a given field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An index for the named field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to create a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_ival</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value that the user wishes to apply to the named field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then a value for this field will be created.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to an array of values that the user wishes to apply a new value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">append</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then append the value to an array of the present values. If present and .true., then index cannot be greater than 0. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2643" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2645" bodyend="2778"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga1e478d637a8f437b2036754862d81d40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::fm_new_value_logical</definition>
+        <argsstring>(name, new_lval, create, index, append)</argsstring>
+        <name>fm_new_value_logical</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>new_lval</type>
+          <defname>new_lval</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <param>
+          <type>append</type>
+          <defname>append</defname>
+        </param>
+        <briefdescription>
+<para>Assigns a given value to a given field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An index for the named field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to create a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value that the user wishes to apply to the named field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then a value for this field will be created.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to an array of values that the user wishes to apply a new value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">append</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then append the value to an array of the present values. If present and .true., then index cannot be greater than 0. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2783" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2785" bodyend="2912"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gad8e31b5139ffae89503e55df9c905047" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::fm_new_value_string</definition>
+        <argsstring>(name, new_sval, create, index, append)</argsstring>
+        <name>fm_new_value_string</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>new_sval</type>
+          <defname>new_sval</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <param>
+          <type>append</type>
+          <defname>append</defname>
+        </param>
+        <briefdescription>
+<para>Assigns a given value to a given field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An index for the named field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a field that the user wishes to create a value for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_sval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value that the user wishes to apply to the named field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then a value for this field will be created.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to an array of values that the user wishes to apply a new value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">append</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If present and .true., then append the value to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2917" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2919" bodyend="3047"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga8c0e638a294dd0a396f9e3aa68d10e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public field_manager_mod::fm_query_method</definition>
+        <argsstring>(name, method_name, method_control)</argsstring>
+        <name>fm_query_method</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>method_name</type>
+          <defname>method_name</defname>
+        </param>
+        <param>
+          <type>method_control</type>
+          <defname>method_control</defname>
+        </param>
+        <briefdescription>
+<para>This is a function that provides the capability to return parameters associated with a field in a pair of strings. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a name return a list of method names and control strings. This function should return strings similar to those in the field table if a comma delimited format is being used. <simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a list that the user wishes to change to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a parameter associated with the named field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of parameters associated with the named field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3265" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3267" bodyend="3322"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga4bb3f75e7cb9d5da487e66e5ce7a337c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::fm_reset_loop</definition>
+        <argsstring></argsstring>
+        <name>fm_reset_loop</name>
+        <briefdescription>
+<para>Resets the loop variable. For use in conjunction with <ref refid="interfacefield__manager__mod_1_1fm__loop__over__list" kindref="compound">fm_loop_over_list</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3052" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3053" bodyend="3060"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaca2ccd351328f8a95675746e9d711de1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::fm_return_root</definition>
+        <argsstring></argsstring>
+        <name>fm_return_root</name>
+        <briefdescription>
+<para>Return the root list to the value at initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para>For use in conjunction with fm_change_root.</para><para>Users should use this routine before leaving their routine if they previously used fm_change_root. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3069" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3070" bodyend="3082"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga87477eaf09839bb3f049b7413183948a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_def) function, pointer, private</type>
+        <definition>type (field_def) function, pointer, private field_manager_mod::get_field</definition>
+        <argsstring>(name, this_list_p)</argsstring>
+        <name>get_field</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>this_list_p</type>
+          <defname>this_list_p</defname>
+        </param>
+        <briefdescription>
+<para>Return a pointer to the field if it exists relative to this_list_p, null otherwise. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the field name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of a list that the user wishes to get information for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>this_list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a list that serves as the base point for searching for name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3088" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3090" bodyend="3113"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaae3e428c349350a8637a5d9370133bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::get_field_info</definition>
+        <argsstring>(n, fld_type, fld_name, model, num_methods)</argsstring>
+        <name>get_field_info</name>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>fld_type</type>
+          <defname>fld_type</defname>
+        </param>
+        <param>
+          <type>fld_name</type>
+          <defname>fld_name</defname>
+        </param>
+        <param>
+          <type>model</type>
+          <defname>model</defname>
+        </param>
+        <param>
+          <type>num_methods</type>
+          <defname>num_methods</defname>
+        </param>
+        <briefdescription>
+<para>This routine allows access to field information given an index. </para>        </briefdescription>
+        <detaileddescription>
+<para>When passed an index, this routine will return the type of field, the name of the field, the model which the field is associated and the number of methods associated with the field. <linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__field__manager__mod_1gaae3e428c349350a8637a5d9370133bba" kindref="member">get_field_info</ref>(<sp/>n,fld_type,fld_name,model,num_methods<sp/>)</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">fld_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">fld_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number indicating which model is used</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_methods</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of methods </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1459" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1460" bodyend="1472"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaad02871b54ab77978cf086aaaebcadc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::get_field_method</definition>
+        <argsstring>(n, m, method)</argsstring>
+        <name>get_field_method</name>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>m</type>
+          <defname>m</defname>
+        </param>
+        <param>
+          <type>method</type>
+          <defname>method</defname>
+        </param>
+        <briefdescription>
+<para>A routine to get a specified method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine, when passed a field index and a method index will return the method text associated with the field(n) method(m).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of method</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the m-th method of field with index n </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1479" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1480" bodyend="1489"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga5efbeebc10113c4b7b7f6476c2b003c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public field_manager_mod::get_field_methods</definition>
+        <argsstring>(n, methods)</argsstring>
+        <name>get_field_methods</name>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>methods</type>
+          <defname>methods</defname>
+        </param>
+        <briefdescription>
+<para>A routine to obtain all the methods associated with a field. </para>        </briefdescription>
+        <detaileddescription>
+<para>When passed a field index, this routine will return the text associated with all the methods attached to the field.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field index</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">methods</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an array of methods for field with index n </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1496" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1497" bodyend="1509"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga8ed7568cb6a12891d8cddc7ea64d1067" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private field_manager_mod::initialize_module_variables</definition>
+        <argsstring></argsstring>
+        <name>initialize_module_variables</name>
+        <briefdescription>
+<para>A function to initialize the values of the pointers. This will remove all fields and reset the field tree to only the root field. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3162" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3163" bodyend="3213"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gaa6232500bb846d47777b1f14e14b96dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_def) function, pointer, private</type>
+        <definition>type (field_def) function, pointer, private field_manager_mod::make_list</definition>
+        <argsstring>(this_list_p, name)</argsstring>
+        <name>make_list</name>
+        <param>
+          <type>this_list_p</type>
+          <defname>this_list_p</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>This function creates a new field and returns a pointer to that field. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocate and initialize a new list in this_list_p list. <simplesect kind="return"><para>a pointer to the list on success, or a null pointer on failure.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>this_list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base of a list that the user wishes to add a list to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a list that the user wishes to create </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3221" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3223" bodyend="3254"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gae13e12ba463946cba61e349c3a4ce2c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::new_name</definition>
+        <argsstring>(list_name, method_name_in, val_name_in)</argsstring>
+        <name>new_name</name>
+        <param>
+          <type>list_name</type>
+          <defname>list_name</defname>
+        </param>
+        <param>
+          <type>method_name_in</type>
+          <defname>method_name_in</defname>
+        </param>
+        <param>
+          <type>val_name_in</type>
+          <defname>val_name_in</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine to add new values to list parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine uses input strings list_name, method_name and val_name_in to add new values to the list. Given list_name a new list item is created that is named method_name and is given the value or values in val_name_in. If there is more than 1 value in val_name_in, these values should be comma-separated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that is of interest here.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">method_name_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the method that values are being supplied for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">val_name_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that will be parsed and used as the value when creating a new field or fields. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1206" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1207" bodyend="1383"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga85cb0b412d3be99ace47c26953064cce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::new_name_yaml</definition>
+        <argsstring>(list_name, method_name_in, val_name_in)</argsstring>
+        <name>new_name_yaml</name>
+        <param>
+          <type>list_name</type>
+          <defname>list_name</defname>
+        </param>
+        <param>
+          <type>method_name_in</type>
+          <defname>method_name_in</defname>
+        </param>
+        <param>
+          <type>val_name_in</type>
+          <defname>val_name_in</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine to add new values to list parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine uses input strings list_name, method_name and val_name_in to add new values to the list. Given list_name a new list item is created that is named method_name and is given the value or values in val_name_in. If there is more than 1 value in val_name_in, these values should be comma-separated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that is of interest here.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">method_name_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the method that values are being supplied for.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">val_name_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that will be parsed and used as the value when creating a new field or fields. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="724" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="725" bodyend="847"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga0ae99e46db48d736c2020d4e94fc8d06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::parse_integer</definition>
+        <argsstring>(text, label, parse_ival)</argsstring>
+        <name>parse_integer</name>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>label</type>
+          <defname>label</defname>
+        </param>
+        <param>
+          <type>parse_ival</type>
+          <defname>parse_ival</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string from which the values will be parsed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A label which describes the values being decoded.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">parse_ival</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that have been decoded. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1531" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1532" bodyend="1540"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gace4095eef4119de08921292878a467cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function field_manager_mod::parse_integers</definition>
+        <argsstring>(text, label, values)</argsstring>
+        <name>parse_integers</name>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>label</type>
+          <defname>label</defname>
+        </param>
+        <param>
+          <type>values</type>
+          <defname>values</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of values that have been decoded. This allows a user to define a large array and fill it partially with values from a list. This should be the size of the value array.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string from which the values will be parsed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A label which describes the values being decoded.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that have been decoded. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1515" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1516" bodyend="1520"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gae4b177cab37b9d9fa1684883e80b53dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function field_manager_mod::parse_string</definition>
+        <argsstring>(text, label, parse_sval)</argsstring>
+        <name>parse_string</name>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>label</type>
+          <defname>label</defname>
+        </param>
+        <param>
+          <type>parse_sval</type>
+          <defname>parse_sval</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string from which the values will be parsed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A label which describes the values being decoded.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">parse_sval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that have been decoded. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1543" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1544" bodyend="1552"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga2d8344440bbfdeebf998b11001223eff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>function</type>
+        <definition>function field_manager_mod::parse_strings</definition>
+        <argsstring>(text, label, values)</argsstring>
+        <name>parse_strings</name>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>label</type>
+          <defname>label</defname>
+        </param>
+        <param>
+          <type>values</type>
+          <defname>values</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string from which the values will be parsed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A label which describes the values being decoded.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value or values that have been decoded. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1523" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1524" bodyend="1528"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga16054251842969a40166ac5ad949a605" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>recursive logical function</type>
+        <definition>recursive logical function field_manager_mod::query_method</definition>
+        <argsstring>(list_p, recursive, name, method_name, method_control)</argsstring>
+        <name>query_method</name>
+        <param>
+          <type>list_p</type>
+          <defname>list_p</defname>
+        </param>
+        <param>
+          <type>recursive</type>
+          <defname>recursive</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>method_name</type>
+          <defname>method_name</defname>
+        </param>
+        <param>
+          <type>method_control</type>
+          <defname>method_control</defname>
+        </param>
+        <briefdescription>
+<para>A private function that can recursively recover values for parameters associated with a field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list_p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the field that is of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag to enable recursive searching if true</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a list that the user wishes to change to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a parameter associated with the named field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of parameters associated with the named field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="3329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="3331" bodyend="3394"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1gab79106b756992c70847eaaeb6dbd32f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::read_field_table_legacy</definition>
+        <argsstring>(nfields, table_name)</argsstring>
+        <name>read_field_table_legacy</name>
+        <param>
+          <type>nfields</type>
+          <defname>nfields</defname>
+        </param>
+        <param>
+          <type>table_name</type>
+          <defname>table_name</defname>
+        </param>
+        <briefdescription>
+<para>Routine to read and parse the field table yaml. </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine reads from a file containing formatted strings. These formatted strings contain information on which schemes are needed within various modules. The field manager does not initialize any of those schemes however. It simply holds the information and is queried by the appropriate module.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">nfields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field table, default is &apos;field_table&apos; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="858" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="859" bodyend="1176"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga5b215e8fe31aa40a0a36b9acd79800f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::read_field_table_yaml</definition>
+        <argsstring>(nfields, table_name)</argsstring>
+        <name>read_field_table_yaml</name>
+        <param>
+          <type>nfields</type>
+          <defname>nfields</defname>
+        </param>
+        <param>
+          <type>table_name</type>
+          <defname>table_name</defname>
+        </param>
+        <briefdescription>
+<para>Routine to read and parse the field table yaml. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">nfields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field table file, default is &apos;field_table.yaml&apos; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="582" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="583" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga1f8e83ec7b4f8564f4f8d4a4eda84527" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fm_loop_over_list_old::set_list_stuff</definition>
+        <argsstring>()</argsstring>
+        <name>set_list_stuff</name>
+        <briefdescription>
+<para>If the pointer matches to the right list, extract the field information. Used in fm_loop_over_list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2514" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2516" bodyend="2531"/>
+      </memberdef>
+      <memberdef kind="function" id="group__field__manager__mod_1ga24ea091bcf33c4a098f9bf35043c9641" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine field_manager_mod::strip_front_blanks</definition>
+        <argsstring>(name)</argsstring>
+        <name>strip_front_blanks</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>A routine to strip whitespace from the start of character strings. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine removes spaces and tabs from the start of a character string.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name to remove whitespace from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1405" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1406" bodyend="1409"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reads entries from a field table and stores this information along with the type of field it belongs to. </para>    </briefdescription>
+    <detaileddescription>
+<para>This allows the component models to query the field manager to see if non-default methods of operation are desired. In essence the field table is a powerful type of namelist. Default values can be provided for all the fields through a namelist, individual fields can be modified through the field table however.</para><para><simplesect kind="author"><para>William Cooke</para></simplesect>
+An example of field table entries could be <preformatted>
+              &quot;tracer&quot;,&quot;atmos_mod&quot;,&quot;sphum&quot;</preformatted></para><para><preformatted>              &quot;tracer&quot;,&quot;atmos_mod&quot;,&quot;sf6&quot;
+              &quot;longname&quot;,&quot;sulf_hex&quot;
+              &quot;advection_scheme_horiz&quot;,&quot;2nd_order&quot;
+              &quot;Profile_type&quot;,&quot;Fixed&quot;,&quot;surface_value = 0.0E+00&quot;/</preformatted></para><para><preformatted>              &quot;prog_tracers&quot;,&quot;ocean_mod&quot;,&quot;age_global&quot;
+              horizontal-advection-scheme = mdfl_sweby
+              vertical-advection-scheme = mdfl_sweby
+              restart_file = ocean_age.res.nc
+ </preformatted></para><para>The field table consists of entries in the following format.</para><para>The first line of an entry should consist of three quoted strings.</para><para>The first quoted string will tell the field manager what type of field it is.</para><para>The second quoted string will tell the field manager which model the field is being applied to. The supported types at present are <preformatted>
+      &quot;coupler_mod&quot; for the coupler,
+      &quot;atmos_mod&quot; for the atmosphere model,
+      &quot;ocean_mod&quot; for the ocean model,
+      &quot;land_mod&quot; for the land model, and,
+      &quot;ice_mod&quot; for the ice model.
+</preformatted> The third quoted string should be a unique name that can be used as a query.</para><para>The second and following lines of each entry are called methods in this context. Methods can be developed within any module and these modules can query the field manager to find any methods that are supplied in the field table.</para><para>These lines can be coded quite flexibly.</para><para>The line can consist of two or three quoted strings or a simple unquoted string.</para><para>If the line consists two or three quoted strings, then the first string will be an identifier that the querying module will ask for.</para><para>The second string will be a name that the querying module can use to set up values for the module.</para><para>The third string, if present, can supply parameters to the calling module that can be parsed and used to further modify values.</para><para>If the line consists of a simple unquoted string then quotes are not allowed in any part of the line.</para><para>An entry is ended with a backslash (/) as the final character in a row.</para><para>Comments can be inserted in the field table by having a # as the first character in the line.</para><para>In the example above we have three field entries.</para><para>The first is a simple declaration of a tracer called &quot;sphum&quot;.</para><para>The second is for a tracer called &quot;sf6&quot;. In this case a field named &quot;longname&quot; will be given the value &quot;sulf_hex&quot;. A field named &quot;advection_scheme_horiz&quot; will be given the value &quot;2nd_order&quot;. Finally a field name &quot;Profile_type&quot; will be given a child field called &quot;Fixed&quot;, and that field will be given a field called &quot;surface_value&quot; with a real value of 0.0E+00.</para><para>The third entry is an example of a oceanic age tracer. Note that the method lines are formatted differently here. This is the flexibility mentioned above.</para><para>With these formats, a number of restrictions are required.</para><para>The following formats are equally valid. <preformatted>
+      &quot;longname&quot;,&quot;sulf_hex&quot;
+      &quot;longname = sulf_hex&quot;
+      longname = sulf_hex
+</preformatted> However the following is not valid. <preformatted>
+      longname = &quot;sulf_hex&quot;
+</preformatted></para><para>In the SF6 example above the last line of the entry could be written in the following ways. <preformatted>
+      &quot;Profile_type&quot;,&quot;Fixed&quot;,&quot;surface_value = 0.0E+00&quot;/
+      Profile_type/Fixed/surface_value = 0.0E+00/
+</preformatted></para><para>Values supplied with fields are converted to the various types with the following assumptions. <preformatted>
+ Real values : These values contain a decimal point or are in exponential format.
+    These values only support e or E format for exponentials.
+    e.g. 10.0, 1e10 and 1E10 are considered to be real numbers.</preformatted></para><para><preformatted> Integer values : These values only contain numbers.
+    e.g 10 is an integer. 10.0 and 1e10 are not.</preformatted></para><para><preformatted> Logical values : These values are supplied as one of the following formats.
+    T, .T., TRUE, .TRUE.
+    t, .t., true, .true.
+    F, .F., FALSE, .FALSE.
+    f, .f., false, .false.
+    These will be converted to T or F in a dump of the field.</preformatted></para><para><preformatted> Character strings : These values are assumed to be strings if a character
+    other than an e (or E) is in the value. Numbers can be suppled in the value.
+    If the value does not meet the criteria for a real, integer or logical type,
+    it is assumed to be a character type.
+</preformatted> The entries within the field table can be designed by the individual authors of code to allow modification of their routines. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

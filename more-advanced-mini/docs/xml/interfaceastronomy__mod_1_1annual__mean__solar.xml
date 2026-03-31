@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfaceastronomy__mod_1_1annual__mean__solar" kind="interface" language="Fortran" prot="private">
+    <compoundname>astronomy_mod::annual_mean_solar</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1adde5c9a79c8488236f960ad53313e52f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_1d_r4</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_1d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1a369917c20362a8e7a69714a9019a339c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_1d_r8</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_1d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1a214c727b30138726c80247b6c6858604" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_2d_r4</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_2d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1a8b610f4ccc671704c5ade45eb6bbeaa6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_2d_r8</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_2d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1a460178318dfc0d8a5dd4045b58a9ae92" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_2level_r4</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_2level_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1annual__mean__solar_1ad0a2c7adf10d215f02a2626b8b75d67b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>annual_mean_solar_2level_r8</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_solar_2level_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Calculates the annual mean of solar information for a given latitude and time. </para>    </briefdescription>
+    <detaileddescription>
+<para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">annual_mean_solar<sp/>(js,<sp/>je,<sp/>lat,<sp/>cosz,<sp/>solar,<sp/>fracday,<sp/>rrsun)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">annual_mean_solar<sp/>(lat,<sp/>cosz,<sp/>solar)</highlight></codeline>
+</programlisting></para><para>The second interface above is used by the spectral 2-layer model, which requires only cosz and solar as output arguments, and which makes this call during the initialization phase of the model. Separate routines exist within this interface for 1D or 2D input and output fields:</para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/>::<sp/>lat</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>lat</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/>::<sp/>cosz,<sp/>solar,<sp/>fracday</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>cosz,<sp/>solar,<sp/>fracday</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jst&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting subdomain j indices of data in the physics wiondow being integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jnd&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending subdomain j indices of data in the physics wiondow being integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points [radians] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cosz is the average over the year of the cosine of an effective zenith angle that would produce the correct daily solar flux if the sun were fixed at that single position for the period of daylight on the given day. in this average, the daily mean effective cosz is weighted by the daily mean solar flux. [dimensionless] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;solar&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Normalized solar flux, averaged over the year, equal to the product of fracday*cosz*rrsun [dimensionless] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction calculated so as to make the average flux (solar) equal to the product of the flux-weighted avg cosz * this fracday * assumed annual mean avg Earth-Sun distance of 1.0. [dimensionless] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Annual mean Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 [dimensionless] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="252" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="252" bodyend="255"/>
+    <listofallmembers>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1adde5c9a79c8488236f960ad53313e52f" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_1d_r4</name></member>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1a369917c20362a8e7a69714a9019a339c" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_1d_r8</name></member>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1a214c727b30138726c80247b6c6858604" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_2d_r4</name></member>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1a8b610f4ccc671704c5ade45eb6bbeaa6" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_2d_r8</name></member>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1a460178318dfc0d8a5dd4045b58a9ae92" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_2level_r4</name></member>
+      <member refid="interfaceastronomy__mod_1_1annual__mean__solar_1ad0a2c7adf10d215f02a2626b8b75d67b" prot="private" virt="non-virtual"><scope>astronomy_mod::annual_mean_solar</scope><name>annual_mean_solar_2level_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

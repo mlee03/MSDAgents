@@ -1,0 +1,1030 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__diag__bbox__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_diag_bbox_mod</compoundname>
+    <innerclass refid="structfms__diag__bbox__mod_1_1fmsdiagboundshalos__type" prot="public">fms_diag_bbox_mod::fmsdiagboundshalos_type</innerclass>
+    <innerclass refid="structfms__diag__bbox__mod_1_1fmsdiagibounds__type" prot="public">fms_diag_bbox_mod::fmsdiagibounds_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms__diag__bbox__mod_1ga32f9315b6fea61e6888c30184b3d570e" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter xdimension</definition>
+        <argsstring></argsstring>
+        <name>xdimension</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Parameter defining the x dimension. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="91" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__bbox__mod_1ga1c93d298aee59f38e2b759457a7de3e0" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter ydimension</definition>
+        <argsstring></argsstring>
+        <name>ydimension</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Parameter defining the y dimension. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="92" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__bbox__mod_1gaf68126cf48645d83ee8c51eb5b30a57b" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter zdimension</definition>
+        <argsstring></argsstring>
+        <name>zdimension</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Parameter defininf the z dimension. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="93" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="93" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga796d5fc12d062c2c6e6dc5ebd10f5883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical pure function, public</type>
+        <definition>logical pure function, public fms_diag_bbox_mod::determine_if_block_is_in_region</definition>
+        <argsstring>(subregion_start, subregion_end, bounds, dim)</argsstring>
+        <name>determine_if_block_is_in_region</name>
+        <param>
+          <type>subregion_start</type>
+          <defname>subregion_start</defname>
+        </param>
+        <param>
+          <type>subregion_end</type>
+          <defname>subregion_end</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <briefdescription>
+<para>The PEs grid points are divided further into &quot;blocks&quot;. This function determines if a block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">subregion_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Begining of the subregion</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">subregion_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending of the subregion</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting and ending of the subregion</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="100" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="101" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga65b430af2d692bea52d625ea4f19ea3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_fie</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_fie</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the updated index <lsquo/>fie<rsquo/> of fmsDiagBoundsHalos_type in the I dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member <lsquo/>fie<rsquo/></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="236" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="237" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gabcfe31481109ef407956d7f4193fb7f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_fis</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_fis</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the updated index <lsquo/>fis<rsquo/> of fmsDiagBoundsHalos_type in the I dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member <lsquo/>fis<rsquo/></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="229" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="230" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga5a51b743c546ec9e10523f582652861c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_fje</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_fje</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the updated index <lsquo/>fje<rsquo/> of fmsDiagBoundsHalos_type in the I dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member <lsquo/>fje<rsquo/></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="250" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="251" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga2c159ae6aa279f83312f7643e76e91a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_fjs</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_fjs</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the updated index <lsquo/>fjs<rsquo/> of fmsDiagBoundsHalos_type in the I dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member <lsquo/>fjs<rsquo/></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="243" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="244" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga3ffd5dbaf9cff28f073e980cb0f97f3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_hi</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_hi</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the halo size of fmsDiagBoundsHalos_type in the I dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member hi</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="215" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="216" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga7e6079120eec6ebc78404bed8ebc56c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_hj</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_hj</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the halo size of fmsDiagBoundsHalos_type in the J dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member hj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Calling object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="222" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="223" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga50bb888bb1ecdf9faa9a39171a38f0fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_imax</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_imax</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets imax of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member imax</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="144" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="145" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga1d9704be3d2936ea5d3da8c5323bc4a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_imin</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_imin</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets imin of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member imin</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="137" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="138" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gadd97d0ab3ee50577de54316b493073b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_jmax</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_jmax</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets jmax of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member jmax</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="158" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="159" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gacd3d780cdff3c0e68a5a7572166dec04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_jmin</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_jmin</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets jmin of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member jmin</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="151" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="152" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga61c575210f620c7d82143d0f00cf5d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_kmax</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_kmax</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets kmax of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member kmax</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="173" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="174" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gae767fdaf53c8715ce64024fd2b811078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_bbox_mod::get_kmin</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_kmin</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets kmin of fmsDiagIbounds_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>copy of integer member kmin</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The !&lt; ibounds instance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="166" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="167" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga050cfd040447b41fa7fba2a200aa8a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::rebase_input</definition>
+        <argsstring>(bounds_in, bounds, starting, ending, dim)</argsstring>
+        <name>rebase_input</name>
+        <param>
+          <type>bounds_in</type>
+          <defname>bounds_in</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>starting</type>
+          <defname>starting</defname>
+        </param>
+        <param>
+          <type>ending</type>
+          <defname>ending</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <briefdescription>
+<para>Rebase the input bounds for a given dimension based on the starting and ending indices of a subregion. This is for when blocking is used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bounds to rebase</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Original indices (i.e is_in, ie_in, passed into diag_manager)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">starting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ending</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension to update </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>The starting index is going to be either &quot;starting&quot; if only a section of the block is in the subregion or starting-boundsimin+1 if the whole section of the block is in the subregion.</para><para>The ending index is going to be either bounds_out%[]max if the whole section of the block is in the subregion or bounds%[]min + size of the subregion if only a section of the block is in the susbregion </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="496" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="497" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga3be86023acd933390ff87bbb764c499e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::rebase_output</definition>
+        <argsstring>(bounds_out, starting, ending, dim)</argsstring>
+        <name>rebase_output</name>
+        <param>
+          <type>bounds_out</type>
+          <defname>bounds_out</defname>
+        </param>
+        <param>
+          <type>starting</type>
+          <defname>starting</defname>
+        </param>
+        <param>
+          <type>ending</type>
+          <defname>ending</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <briefdescription>
+<para>Rebase the ouput bounds for a given dimension based on the starting and ending indices of a subregion. This is for when blocking is used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bounds to rebase</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">starting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ending</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index of the dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension to update </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>The starting index is going to be either &quot;starting&quot; if only a section of the block is in the subregion or bounds_out%[]min if the whole section of the block is in the subregion. The -starting+1 s needed so that indices start as 1 since the output buffer has indices 1:size of a subregion</para><para>The ending index is going to be either bounds_out%[]max if the whole section of the block is in the subregion or bounds_out%[]min + size of the subregion if only a section of the block is in the susbregion </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="467" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="468" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga05ef69a744fb8ce466784fd2d3f7093d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_diag_bbox_mod::recondition_indices</definition>
+        <argsstring>(indices, field, is_in, js_in, ks_in, ie_in, je_in, ke_in, err_msg)</argsstring>
+        <name>recondition_indices</name>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>is_in</type>
+          <defname>is_in</defname>
+        </param>
+        <param>
+          <type>js_in</type>
+          <defname>js_in</defname>
+        </param>
+        <param>
+          <type>ks_in</type>
+          <defname>ks_in</defname>
+        </param>
+        <param>
+          <type>ie_in</type>
+          <defname>ie_in</defname>
+        </param>
+        <param>
+          <type>je_in</type>
+          <defname>je_in</defname>
+        </param>
+        <param>
+          <type>ke_in</type>
+          <defname>ke_in</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Updates indices based on presence/absence of input indices is, js, ks, ie, je, and ke. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.false. if there is no error else .true.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stores indices in order: (/is, js, ks, ie, je, ke, hi, fis, fie, hj, fjs, fje/)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dummy variable; only the sizes of the first 3 dimensions are used</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User input indices</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message to pass back to caller</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Error flag </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="378" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="380" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga85e298d502158eb84bdc8ad79595cd7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::reset_bounds</definition>
+        <argsstring>(this, lower_val, upper_val)</argsstring>
+        <name>reset_bounds</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>lower_val</type>
+          <defname>lower_val</defname>
+        </param>
+        <param>
+          <type>upper_val</type>
+          <defname>upper_val</defname>
+        </param>
+        <briefdescription>
+<para>Reset the instance bounding lower and upper bounds to lower_val and upper_val, respectively. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ibounds instance</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value for the lower bounds in each dimension</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value for the upper bounds in each dimension </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="256" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="257" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga22cd9ab274c6291c9e2a03db9211eece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::reset_bounds_from_array_4d</definition>
+        <argsstring>(this, array)</argsstring>
+        <name>reset_bounds_from_array_4d</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <briefdescription>
+<para>Reset the instance bounding box with the bounds determined from the first three dimensions of the 5D &quot;array&quot; argument. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of the bounding box.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 4D input array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="347" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gab3f361238dc0b2b371ee7988c5315218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::reset_bounds_from_array_5d</definition>
+        <argsstring>(this, array)</argsstring>
+        <name>reset_bounds_from_array_5d</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <briefdescription>
+<para>Reset the instance bounding box with the bounds determined from the first three dimensions of the 5D &quot;array&quot; argument. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of the bounding box.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 5D input array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="363" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="364" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1gaf958afe9ada9a6aa533aa03863482d4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=150) function</type>
+        <definition>character(len=150) function fms_diag_bbox_mod::set_bounds</definition>
+        <argsstring>(this, field_data, lower_i, upper_i, lower_j, upper_j, lower_k, upper_k, has_halos)</argsstring>
+        <name>set_bounds</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>lower_i</type>
+          <defname>lower_i</defname>
+        </param>
+        <param>
+          <type>upper_i</type>
+          <defname>upper_i</defname>
+        </param>
+        <param>
+          <type>lower_j</type>
+          <defname>lower_j</defname>
+        </param>
+        <param>
+          <type>upper_j</type>
+          <defname>upper_j</defname>
+        </param>
+        <param>
+          <type>lower_k</type>
+          <defname>lower_k</defname>
+        </param>
+        <param>
+          <type>upper_k</type>
+          <defname>upper_k</defname>
+        </param>
+        <param>
+          <type>has_halos</type>
+          <defname>has_halos</defname>
+        </param>
+        <briefdescription>
+<para>Sets the bounds of a bounding region. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>empty string if sucessful or error message if unsucessful</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower k bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper k bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">has_halos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.true. if the field has halos</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Error message to output </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="289" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="291" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga073a975c2e4fd2878c5fcd7cdf552bea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::update_bounds</definition>
+        <argsstring>(this, lower_i, upper_i, lower_j, upper_j, lower_k, upper_k)</argsstring>
+        <name>update_bounds</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>lower_i</type>
+          <defname>lower_i</defname>
+        </param>
+        <param>
+          <type>upper_i</type>
+          <defname>upper_i</defname>
+        </param>
+        <param>
+          <type>lower_j</type>
+          <defname>lower_j</defname>
+        </param>
+        <param>
+          <type>upper_j</type>
+          <defname>upper_j</defname>
+        </param>
+        <param>
+          <type>lower_k</type>
+          <defname>lower_k</defname>
+        </param>
+        <param>
+          <type>upper_k</type>
+          <defname>upper_k</defname>
+        </param>
+        <briefdescription>
+<para>Update the first three (normally x, y, and z) min and max boundaries (array indices) of the instance bounding box the six specified bounds values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box of the output field buffer inindex space.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower k bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper k bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="271" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="272" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__bbox__mod_1ga975d5dae2aabf0b54b4f808806e3edd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_bbox_mod::update_index</definition>
+        <argsstring>(this, starting_index, ending_index, dim, ignore_halos)</argsstring>
+        <name>update_index</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>starting_index</type>
+          <defname>starting_index</defname>
+        </param>
+        <param>
+          <type>ending_index</type>
+          <defname>ending_index</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <param>
+          <type>ignore_halos</type>
+          <defname>ignore_halos</defname>
+        </param>
+        <briefdescription>
+<para>Updates the starting and ending index of a given dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to update</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">starting_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index to update to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ending_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index to update to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension to update</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_halos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If .true. halos will be ignored i.e output buffers can ignore halos as they do not get updates. The indices of the Input buffers need to add the number of halos so math is done only on the compute domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="179" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" bodystart="180" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_bbox.F90" line="30" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structoffloading__io__mod_1_1offloading__obj__out" kind="type" language="Fortran" prot="public">
+    <compoundname>offloading_io_mod::offloading_obj_out</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structoffloading__io__mod_1_1offloading__obj__out_1a194a5002271b8df9f7547e0a2d72ad6e" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>)</type>
+        <definition>type(domain2d) domain_out</definition>
+        <argsstring></argsstring>
+        <name>domain_out</name>
+        <briefdescription>
+<para>domain on offloading PEs </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="41" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoffloading__io__mod_1_1offloading__obj__out_1adcc1bdd694db6008f98bcd6114a59095" prot="public" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character(len=:), allocatable filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <briefdescription>
+<para>filename of the offloaded netcdf file </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="39" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoffloading__io__mod_1_1offloading__obj__out_1aca98fd6a66bd7190b7b6b951715e6f88" prot="public" static="no" mutable="no">
+        <type>class(<ref refid="structnetcdf__io__mod_1_1fmsnetcdffile__t" kindref="compound">fmsnetcdffile_t</ref>), allocatable</type>
+        <definition>class(fmsnetcdffile_t), allocatable fileobj</definition>
+        <argsstring></argsstring>
+        <name>fileobj</name>
+        <briefdescription>
+<para>fms2_io file object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="40" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoffloading__io__mod_1_1offloading__obj__out_1a01795d202d42911850a69913f8a8f0e8" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="38" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="38" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to hold offloading file information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1713">
+        <label>integer(i8_kind)</label>
+      </node>
+      <node id="1721">
+        <label>character(len=:), allocatable</label>
+      </node>
+      <node id="1714">
+        <label>overlapspec</label>
+        <link refid="structmpp__domains__mod_1_1overlapspec"/>
+        <childnode refid="1715" relation="usage">
+          <edgelabel>recv</edgelabel>
+          <edgelabel>send</edgelabel>
+        </childnode>
+        <childnode refid="1714" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>nsend</edgelabel>
+          <edgelabel>ybegin</edgelabel>
+          <edgelabel>xbegin</edgelabel>
+          <edgelabel>yend</edgelabel>
+          <edgelabel>nhalo</edgelabel>
+          <edgelabel>xend</edgelabel>
+          <edgelabel>recvsize</edgelabel>
+          <edgelabel>shalo</edgelabel>
+          <edgelabel>ehalo</edgelabel>
+          <edgelabel>sendsize</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="1709">
+        <label>logical</label>
+      </node>
+      <node id="1707">
+        <label>offloading_obj_out</label>
+        <link refid="structoffloading__io__mod_1_1offloading__obj__out"/>
+        <childnode refid="1708" relation="usage">
+          <edgelabel>domain_out</edgelabel>
+        </childnode>
+        <childnode refid="1720" relation="usage">
+          <edgelabel>fileobj</edgelabel>
+        </childnode>
+        <childnode refid="1721" relation="usage">
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="1708">
+        <label>domain2d</label>
+        <link refid="structmpp__domains__mod_1_1domain2d"/>
+        <childnode refid="1709" relation="usage">
+          <edgelabel>rotated_ninety</edgelabel>
+          <edgelabel>symmetry</edgelabel>
+          <edgelabel>initialized</edgelabel>
+        </childnode>
+        <childnode refid="1710" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+        </childnode>
+        <childnode refid="1713" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="1708" relation="usage">
+          <edgelabel>io_domain</edgelabel>
+        </childnode>
+        <childnode refid="1714" relation="usage">
+          <edgelabel>update_c</edgelabel>
+          <edgelabel>update_t</edgelabel>
+          <edgelabel>update_e</edgelabel>
+          <edgelabel>bound_c</edgelabel>
+          <edgelabel>bound_e</edgelabel>
+          <edgelabel>check_n</edgelabel>
+          <edgelabel>update_n</edgelabel>
+          <edgelabel>check_c</edgelabel>
+          <edgelabel>bound_n</edgelabel>
+          <edgelabel>check_e</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="1716" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="1718" relation="usage">
+          <edgelabel>tilelist</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>fold</edgelabel>
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>tile_id_all</edgelabel>
+          <edgelabel>io_layout</edgelabel>
+          <edgelabel>nhalo</edgelabel>
+          <edgelabel>comm_id</edgelabel>
+          <edgelabel>ntiles</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>max_ntile_pe</edgelabel>
+          <edgelabel>shalo</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="1719" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="1719">
+        <label>character(len=name_length)</label>
+      </node>
+      <node id="1710">
+        <label>domain1d</label>
+        <link refid="structmpp__domains__mod_1_1domain1d"/>
+        <childnode refid="1709" relation="usage">
+          <edgelabel>cyclic</edgelabel>
+        </childnode>
+        <childnode refid="1710" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="1711" relation="usage">
+          <edgelabel>memory</edgelabel>
+          <edgelabel>global</edgelabel>
+          <edgelabel>domain_data</edgelabel>
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>pe</edgelabel>
+          <edgelabel>goffset</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>loffset</edgelabel>
+        </childnode>
+      </node>
+      <node id="1715">
+        <label>overlap_type</label>
+        <link refid="structmpp__domains__mod_1_1overlap__type"/>
+        <childnode refid="1709" relation="usage">
+          <edgelabel>from_contact</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>rotation</edgelabel>
+          <edgelabel>totsize</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>dir</edgelabel>
+          <edgelabel>tileme</edgelabel>
+          <edgelabel>js</edgelabel>
+          <edgelabel>count</edgelabel>
+          <edgelabel>is</edgelabel>
+          <edgelabel>tilenbr</edgelabel>
+          <edgelabel>index</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="1712">
+        <label>integer</label>
+      </node>
+      <node id="1720">
+        <label>class(fmsnetcdffile_t), allocatable</label>
+      </node>
+      <node id="1716">
+        <label>domain2d_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain2d__spec"/>
+        <childnode refid="1717" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>tile_root_pe</edgelabel>
+          <edgelabel>pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="1711">
+        <label>domain_axis_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain__axis__spec"/>
+        <childnode refid="1709" relation="usage">
+          <edgelabel>is_global</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>max_size</edgelabel>
+          <edgelabel>size</edgelabel>
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="1718">
+        <label>tile_type</label>
+        <link refid="structmpp__domains__mod_1_1tile__type"/>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>ybegin</edgelabel>
+          <edgelabel>xbegin</edgelabel>
+          <edgelabel>yend</edgelabel>
+          <edgelabel>xend</edgelabel>
+        </childnode>
+      </node>
+      <node id="1717">
+        <label>domain1d_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain1d__spec"/>
+        <childnode refid="1711" relation="usage">
+          <edgelabel>global</edgelabel>
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="1712" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" line="37" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/offloading/offloading_io.F90" bodystart="37" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structoffloading__io__mod_1_1offloading__obj__out_1a194a5002271b8df9f7547e0a2d72ad6e" prot="public" virt="non-virtual"><scope>offloading_io_mod::offloading_obj_out</scope><name>domain_out</name></member>
+      <member refid="structoffloading__io__mod_1_1offloading__obj__out_1adcc1bdd694db6008f98bcd6114a59095" prot="public" virt="non-virtual"><scope>offloading_io_mod::offloading_obj_out</scope><name>filename</name></member>
+      <member refid="structoffloading__io__mod_1_1offloading__obj__out_1aca98fd6a66bd7190b7b6b951715e6f88" prot="public" virt="non-virtual"><scope>offloading_io_mod::offloading_obj_out</scope><name>fileobj</name></member>
+      <member refid="structoffloading__io__mod_1_1offloading__obj__out_1a01795d202d42911850a69913f8a8f0e8" prot="public" virt="non-virtual"><scope>offloading_io_mod::offloading_obj_out</scope><name>id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

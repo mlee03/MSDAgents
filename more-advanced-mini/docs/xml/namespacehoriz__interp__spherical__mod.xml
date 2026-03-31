@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacehoriz__interp__spherical__mod" kind="namespace" language="Fortran">
+    <compoundname>horiz_interp_spherical_mod</compoundname>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1full__search" prot="private">horiz_interp_spherical_mod::full_search</innerclass>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1horiz__interp__spherical" prot="private">horiz_interp_spherical_mod::horiz_interp_spherical</innerclass>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1horiz__interp__spherical__new" prot="private">horiz_interp_spherical_mod::horiz_interp_spherical_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1horiz__interp__spherical__wght" prot="private">horiz_interp_spherical_mod::horiz_interp_spherical_wght</innerclass>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1radial__search" prot="private">horiz_interp_spherical_mod::radial_search</innerclass>
+    <innerclass refid="interfacehoriz__interp__spherical__mod_1_1spherical__distance" prot="private">horiz_interp_spherical_mod::spherical_distance</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>=1.e-10_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="81" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1ga2a5335366a7501897c326876d6230869" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter large</definition>
+        <argsstring></argsstring>
+        <name>large</name>
+        <initializer>=1.e20_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="80" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1ga9f2ea813fe3d59c2e3ced4da9d434161" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter max_dist_default</definition>
+        <argsstring></argsstring>
+        <name>max_dist_default</name>
+        <initializer>= 0.1_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="78" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gad5ec021db648247e2e825340a2d3fd59" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_neighbors</definition>
+        <argsstring></argsstring>
+        <name>max_neighbors</name>
+        <initializer>= 400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="77" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="104" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="104" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gaeef2901ef58e73d2f2b9215de5fc2187" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter num_nbrs_default</definition>
+        <argsstring></argsstring>
+        <name>num_nbrs_default</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="79" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1ga8a5f299eef1abe4c0df23ebd220ce83e" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer pe</definition>
+        <argsstring></argsstring>
+        <name>pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="83" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gab96da8c443f9c55ebfefe033da98ab47" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer root_pe</definition>
+        <argsstring></argsstring>
+        <name>root_pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="83" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__spherical__mod_1gabf353472de82554fcbc7ffdb9ca24a8d" prot="private" static="no" mutable="no">
+        <type>character(len=32)</type>
+        <definition>character(len=32) search_method</definition>
+        <argsstring></argsstring>
+        <name>search_method</name>
+        <initializer>= &quot;radial_search&quot;</initializer>
+        <briefdescription>
+<para>Namelist variable to indicate the searching method to find the nearest neighbor points. Its value can be &quot;radial_search&quot; and &quot;full_search&quot;, with default value &quot;radial_search&quot;. when search_method is &quot;radial_search&quot;, the search may be not quite accurate for some cases. Normally the search will be ok if you chose suitable max_dist. When search_method is &quot;full_search&quot;, it will be always accurate, but will be slower comparing to &quot;radial_search&quot;. Normally these two search algorithm will produce same results other than order of operation. &quot;radial_search&quot; are recommended to use. The purpose to add &quot;full_search&quot; is in case you think you interpolation results is not right, you have other option to verify. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="86" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="86" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__spherical__mod_1ga7b97dabd2ce5186c47f8cab78eac1fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_spherical_mod::horiz_interp_spherical_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_spherical_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;HI_KIND_TYPE&quot; variables. Must be called before reinitializing with <ref refid="interfacehoriz__interp__spherical__mod_1_1horiz__interp__spherical__new" kindref="compound">horiz_interp_spherical_new</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to <ref refid="interfacehoriz__interp__spherical__mod_1_1horiz__interp__spherical__new" kindref="compound">horiz_interp_spherical_new</ref>. The input variable must have allocated arrays. The returned variable will contain deallocated arrays. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="128" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="129" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__spherical__mod_1ga6513966ac443fb40cabb48e474037d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_spherical_mod::horiz_interp_spherical_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_spherical_init</name>
+        <briefdescription>
+<para>Initializes module and writes version number to logfile.out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="111" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" bodystart="112" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_spherical.F90" line="29" column="1"/>
+  </compounddef>
+</doxygen>

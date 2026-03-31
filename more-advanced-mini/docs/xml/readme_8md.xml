@@ -1,0 +1,658 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="readme_8md" kind="file" language="Markdown">
+    <compoundname>readme.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@ingroup<sp/>fms2_io_mod</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>FMS_io/mpp_io<sp/>to<sp/>FMS2_io<sp/>conversion<sp/>guide</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Before<sp/>introducing<sp/>the<sp/>FMS2_io<sp/>module,<sp/>subroutines<sp/>and<sp/>functions<sp/>in<sp/>fms_io<sp/>and<sp/>mpp_io<sp/>modules<sp/>were<sp/>used<sp/>to<sp/>mainly<sp/>handle<sp/>read/writes<sp/>to<sp/>NetCDF<sp/>files.<sp/>However,<sp/>there<sp/>were<sp/>duplicate<sp/>routines<sp/>present<sp/>in<sp/>both<sp/>modules<sp/>that<sp/>led<sp/>to<sp/>redundancy,<sp/>and<sp/>the<sp/>blackbox-like<sp/>I/O<sp/>processes<sp/>restricted<sp/>user<sp/>flexibility.<sp/>The<sp/>FMS2_io<sp/>module<sp/>has<sp/>thus<sp/>been<sp/>implemented<sp/>for<sp/>a<sp/>cleaner<sp/>set<sp/>of<sp/>I/O<sp/>tools<sp/>and<sp/>to<sp/>give<sp/>users<sp/>more<sp/>control<sp/>over<sp/>the<sp/>information<sp/>being<sp/>written/read<sp/>to<sp/>NetCDF<sp/>files.<sp/>This<sp/>guide<sp/>helps<sp/>convert<sp/>fms_io/mpp_io<sp/>code<sp/>to<sp/>FMS2_io</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[A.<sp/>FMS2_io<sp/>Fileobjs](readme.md#a-fms2_io-fileobjs)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[B.<sp/>Writing<sp/>Restarts](readme.md#b-writing-restarts)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[C.<sp/>Reading<sp/>Restarts](readme.md#c-reading-restarts)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[D.<sp/>Reading/Writing<sp/>Non-restarts](readme.md#d-readingwriting-non-restarts)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[E.<sp/>Coupler<sp/>Type<sp/>Restarts](readme.md#e-coupler-type-restarts)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[F.<sp/>Boundary<sp/>Conditions<sp/>Restarts](readme.md#f-boundary-conditions-restarts)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[G.<sp/>Ascii_io](readme.md#g-ascii_io)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[H.<sp/>FMS2_io<sp/>namelist](readme.md#h-fms2_io-namelist)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[I.<sp/>Chunking](readme.md#i-chunking)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[J.<sp/>MPI-IO](readme.md#j-mpi-io)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>A.<sp/>FMS2_io<sp/>Fileobjs</highlight></codeline>
+<codeline><highlight class="normal">FMS2_io<sp/>provides<sp/>three<sp/>new<sp/>derived<sp/>types,<sp/>which<sp/>target<sp/>the<sp/>different<sp/>I/O<sp/>paradigms<sp/>used<sp/>in<sp/>GFDL<sp/>models.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**1.<sp/>FmsNetcdfFile_t:**<sp/>This<sp/>type<sp/>provides<sp/>a<sp/>thin<sp/>wrapper<sp/>over<sp/>the<sp/>netCDF4<sp/>library,<sp/>but<sp/>allows<sp/>the<sp/>user<sp/>to<sp/>assign<sp/>a<sp/>“pelist”<sp/>to<sp/>the<sp/>file.<sp/>If<sp/>a<sp/>pelist<sp/>is<sp/>assigned,<sp/>only<sp/>the<sp/>first<sp/>rank<sp/>on<sp/>the<sp/>list<sp/>directly<sp/>interacts<sp/>with<sp/>the<sp/>netCDF<sp/>library,<sp/>and<sp/>performs<sp/>broadcasts<sp/>to<sp/>relay<sp/>the<sp/>information<sp/>read<sp/>to<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>ranks<sp/>on<sp/>the<sp/>list.<sp/>When<sp/>writing<sp/>netcdf<sp/>files,<sp/>only<sp/>the<sp/>first<sp/>rank<sp/>in<sp/>the<sp/>pelist<sp/>will<sp/>perform<sp/>the<sp/>writes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**2.<sp/>FmsNetcdfDomainFile_t:**<sp/>This<sp/>type<sp/>does<sp/>everything<sp/>that<sp/>the<sp/>FmsNetcdfFile_t<sp/>type<sp/>does<sp/>and<sp/>it<sp/>adds<sp/>support<sp/>for<sp/>“domain-decomposed”<sp/>reads/writes.<sp/>Here,<sp/>&quot;domain<sp/>decomposed&quot;<sp/>refers<sp/>to<sp/>data<sp/>that<sp/>is<sp/>on<sp/>a<sp/>user-defined<sp/>mpp_domain<sp/>and<sp/>is<sp/>decomposed<sp/>in<sp/>two<sp/>dimensions,<sp/>in<sp/>which<sp/>each<sp/>MPI<sp/>rank<sp/>has<sp/>its<sp/>own<sp/>section<sp/>of<sp/>the<sp/>global<sp/>data.<sp/>This<sp/>requires<sp/>a<sp/>[domain](https://github.com/NOAA-GFDL/FMS/blob/main/mpp/mpp_domains.F90#L379-L415)<sp/>to<sp/>be<sp/>associated<sp/>with<sp/>the<sp/>fileobj.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**3.<sp/>FmsNetcdfUnstructuredDomainFile_t:**<sp/>This<sp/>type<sp/>does<sp/>everything<sp/>that<sp/>the<sp/>FmsNetcdfFile_t<sp/>type<sp/>does<sp/>and<sp/>it<sp/>adds<sp/>support<sp/>for<sp/>“domain-decomposed”<sp/>reads/writes<sp/>on<sp/>a<sp/>user<sp/>defined<sp/>mpp_domains<sp/>**unstructured**<sp/>grid.<sp/>This<sp/>requires<sp/>a<sp/>[unstructured<sp/>domain](https://github.com/NOAA-GFDL/FMS/blob/3329625ea48bc3a10a5726c9f251d6d47b33516d/mpp/mpp_domains.F90#L267-L284)<sp/>to<sp/>be<sp/>associated<sp/>with<sp/>the<sp/>fileobj.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*The<sp/>FMS_io<sp/>equivalent<sp/>to<sp/>these<sp/>derived<sp/>types<sp/>is<sp/>[restart_file_type](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms/fms_io.F90#L297-L323)*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>B.<sp/>Writing<sp/>Restarts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Domain<sp/>Decomposed<sp/>Restarts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>writing<sp/>domain<sp/>decomposed<sp/>restarts,<sp/>FMS<sp/>sets<sp/>the<sp/>filename<sp/>for<sp/>domain<sp/>decomposed<sp/>restarts<sp/>in<sp/>the<sp/>following<sp/>way:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>domain<sp/>is<sp/>a<sp/>cubesphere<sp/>(6<sp/>tiles)<sp/>and<sp/>the<sp/>io_layout<sp/>is<sp/>(/1,1/),<sp/>it<sp/>will<sp/>create<sp/>restart<sp/>files:<sp/>&quot;RESTART/filename.tile{tile_number}.res.nc&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>domain<sp/>is<sp/>a<sp/>cubesphere<sp/>(6<sp/>tiles)<sp/>and<sp/>the<sp/>io_layout<sp/>is<sp/>(/x_layout,y_layout/),<sp/>it<sp/>write<sp/>`x_layout*y_layout`<sp/>restart<sp/>files:<sp/>&quot;RESTART/filename.tile{tile_number}.res.nc.????&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>domain<sp/>has<sp/>only<sp/>1<sp/>tile<sp/>and<sp/>the<sp/>tile<sp/>number<sp/>is<sp/>1,<sp/>&quot;tile{tile_number}&quot;<sp/>will<sp/>not<sp/>be<sp/>added</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additionally,<sp/>the<sp/>user<sp/>can<sp/>append<sp/>an<sp/>appendix<sp/>(i.e<sp/>&quot;nest{nest_number}&quot;<sp/>or<sp/>ens{ensemble_number}&quot;)<sp/>to<sp/>the<sp/>filename<sp/>by<sp/>calling<sp/>`set_filename_appendix<sp/>(appendix)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>domain<sp/>has<sp/>more<sp/>than<sp/>1<sp/>tile,<sp/>the<sp/>appendix<sp/>will<sp/>be<sp/>added<sp/>as<sp/>&quot;RESTART/filename.appendix.tile{tile_number}.res.nc&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>domain<sp/>has<sp/>1<sp/>tile,<sp/>the<sp/>appendix<sp/>will<sp/>added<sp/>as<sp/>&quot;RESTART/filename.res.appendix.nc&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**This<sp/>is<sp/>how<sp/>a<sp/>restart<sp/>file<sp/>can<sp/>be<sp/>written<sp/>with<sp/>FMS_io:**</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">use<sp/>fms_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>restart_file_type,<sp/>register_restart_field,<sp/>save_restart</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_domains_mod,<sp/><sp/><sp/><sp/>only:<sp/>domain</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">integer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_restart<sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Id<sp/>for<sp/>restart<sp/>variable</highlight></codeline>
+<codeline><highlight class="normal">type(restart_file_type)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms_io<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:,:)<sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>in<sp/>the<sp/>compute<sp/>or<sp/>data<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">type<sp/>(domain2d)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2d<sp/>mpp<sp/>domain</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">id_restart<sp/>=<sp/>register_restart_field(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;variable_name&quot;,<sp/>variable_data,<sp/>domain=domain)</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>save_restart(Atm_restart)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Metadata:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_io<sp/>named<sp/>the<sp/>dimensions:<sp/>&quot;xaxis_1&quot;,<sp/>&quot;yaxis_1&quot;,<sp/>zaxis_1&quot;<sp/>and<sp/>&quot;Time&quot;.<sp/>With<sp/>FMS2_io<sp/>the<sp/>user<sp/>can<sp/>name<sp/>the<sp/>axis<sp/>whatever<sp/>they<sp/>like.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_io<sp/>wrote<sp/>the<sp/>dimensions<sp/>as<sp/>variables<sp/>as<sp/>well.<sp/>FMS2_io<sp/>does<sp/>not<sp/>do<sp/>this<sp/>by<sp/>default,<sp/>the<sp/>user<sp/>can<sp/>do<sp/>this<sp/>if<sp/>they<sp/>like.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_io<sp/>wrote<sp/>variable<sp/>attribute:<sp/>&quot;longname<sp/>=<sp/>{same<sp/>as<sp/>variable}<sp/>and<sp/>&quot;units<sp/>=<sp/>{&quot;none&quot;}<sp/>to<sp/>all<sp/>variables<sp/>by<sp/>default.<sp/>FMS2_io<sp/>does<sp/>not<sp/>do<sp/>this<sp/>by<sp/>default,<sp/>the<sp/>user<sp/>can<sp/>add<sp/>real<sp/>meta<sp/>data<sp/>if<sp/>they<sp/>like.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**This<sp/>is<sp/>how<sp/>a<sp/>restart<sp/>file<sp/>can<sp/>be<sp/>written<sp/>with<sp/>FMS2-io:**</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfDomainFile_t,<sp/>register_restart_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_restart</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_domains_mod,<sp/><sp/><sp/><sp/>only:<sp/>domain2d,<sp/>center</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfDomainFile_t)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>domain<sp/>decomposed<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:,:,:)<sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>in<sp/>the<sp/>compute<sp/>or<sp/>data<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">type<sp/>(domain2d)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2d<sp/>mpp<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(4)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;xaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;yaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(4)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>domain<sp/>!&lt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>an<sp/>io_domain<sp/>!&lt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>domain,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1),<sp/>&quot;x&quot;,<sp/>position=center)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>&quot;y&quot;,<sp/>position=center)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(4),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_restart_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_restart(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[open_file](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_domain_io.F90#L321)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>a<sp/>logical<sp/>function,<sp/>outputs<sp/>.true.<sp/>if<sp/>the<sp/>file<sp/>was<sp/>opened<sp/>successfully<sp/>and<sp/>.false.<sp/>if<sp/>it<sp/>failed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Mangles<sp/>the<sp/>filename<sp/>in<sp/>the<sp/>same<sp/>manner<sp/>as<sp/>fms_io</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Opens<sp/>the<sp/>netcdf<sp/>file<sp/>to<sp/>write<sp/>(a<sp/>`nf90_create`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Set<sp/>ups<sp/>the<sp/>pelist<sp/>for<sp/>each<sp/>io_domain</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>`is_restart`<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>a<sp/>restart<sp/>file,<sp/>so<sp/>it<sp/>adds<sp/>&quot;.res&quot;<sp/>to<sp/>the<sp/>filename<sp/>and<sp/>it<sp/>allows<sp/>user<sp/>to<sp/>use<sp/>the<sp/>`write_restart`<sp/>and<sp/>`register_restart_field`<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>**NOTE**:<sp/>The<sp/>filename<sp/>needs<sp/>to<sp/>include<sp/>the<sp/>full<sp/>path<sp/>to<sp/>the<sp/>file,<sp/>including<sp/>the<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_axis](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_domain_io.F90#L437)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>writes<sp/>the<sp/>dimension<sp/>metadata<sp/>in<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_def_dim`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>&quot;x&quot;<sp/>and<sp/>&quot;y&quot;<sp/>argument<sp/>indicate<sp/>that<sp/>that<sp/>dimension<sp/>is<sp/>domain<sp/>decomposed<sp/>in<sp/>x/y.<sp/>The<sp/>only<sp/>acceptable<sp/>values<sp/>are<sp/>&quot;x&quot;<sp/>and<sp/>&quot;y&quot;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>`position=center`<sp/>indicates<sp/>the<sp/>position<sp/>of<sp/>the<sp/>axis<sp/>(this<sp/>is<sp/>the<sp/>default).<sp/>The<sp/>other<sp/>acceptable<sp/>values<sp/>are<sp/>position=east<sp/>for<sp/>&quot;x&quot;<sp/>andposition=north<sp/>for<sp/>&quot;y&quot;,<sp/>in<sp/>this<sp/>cases<sp/>the<sp/>data<sp/>is<sp/>staggered,<sp/>which<sp/>may<sp/>be<sp/>on<sp/>the<sp/>volume<sp/>face<sp/>or<sp/>corner<sp/>instead<sp/>of<sp/>at<sp/>the<sp/>centroid.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>&quot;unlimited&quot;<sp/>indicates<sp/>that<sp/>the<sp/>dimension<sp/>is<sp/>unlimited<sp/>(`nf90_unlimited`)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>integer<sp/>&quot;dimsize&quot;<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>not<sp/>a<sp/>domain<sp/>decomposed<sp/>dimension<sp/>with<sp/>a<sp/>length<sp/>equal<sp/>to<sp/>dimsize</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_restart_field](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/register_domain_restart_variable.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>variable<sp/>metadata<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_def_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Saves<sp/>the<sp/>data<sp/>as<sp/>pointers,<sp/>which<sp/>will<sp/>be<sp/>written<sp/>to<sp/>the<sp/>netcdf<sp/>file<sp/>later</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_restart](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_domain_io.F90#L549)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Loops<sp/>through<sp/>the<sp/>restart<sp/>variables<sp/>that<sp/>were<sp/>registered</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Calculates<sp/>and<sp/>writes<sp/>a<sp/>global<sp/>checksum<sp/>for<sp/>each<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>data<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_put_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[close_file](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_domain_io.F90#L424)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Cleans<sp/>up<sp/>the<sp/>fileobj<sp/>(deallocates<sp/>any<sp/>arrays)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Closes<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_close`<sp/>call)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Unstructured<sp/>Domain<sp/>Restarts</highlight></codeline>
+<codeline><highlight class="normal">Restart<sp/>files<sp/>with<sp/>domain<sp/>decomposed<sp/>variables<sp/>in<sp/>the<sp/>unstructured<sp/>domain<sp/>can<sp/>be<sp/>written<sp/>using<sp/>the<sp/>`FmsNetcdfUnstructuredDomainFile_t`<sp/>fileobj.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfUnstructuredDomainFile_t,<sp/>register_restart_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_restart</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_domains_mod,<sp/><sp/><sp/><sp/>only:<sp/>domainug,<sp/>center</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfUnstructuredDomainFile_t)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>domain<sp/>decomposed<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>in<sp/>the<sp/>unstructured<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">type<sp/>(domainug)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2d<sp/>mpp<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(3)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;ucdim&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>domain<sp/>!&lt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>an<sp/>io_domain<sp/>!&lt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>an<sp/>unstructured<sp/>domain<sp/>!&lt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>domain,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_restart_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_restart(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[open_file](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/fms_netcdf_unstructured_domain_io.F90#L69-L70)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>a<sp/>logical<sp/>function,<sp/>outputs<sp/>.true.<sp/>if<sp/>the<sp/>file<sp/>was<sp/>opened<sp/>successfully<sp/>and<sp/>.false.<sp/>if<sp/>it<sp/>failed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Mangles<sp/>the<sp/>filename:<sp/>(1)<sp/>Adds<sp/>&quot;.tileXX&quot;<sp/>if<sp/>you<sp/>are<sp/>on<sp/>multiple<sp/>tiles<sp/>(2)<sp/>Adds<sp/>.XXXX<sp/>to<sp/>the<sp/>end<sp/>of<sp/>the<sp/>file<sp/>if<sp/>uncombined.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Opens<sp/>the<sp/>netcdf<sp/>file<sp/>to<sp/>write<sp/>(a<sp/>`nf90_create`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Set<sp/>ups<sp/>the<sp/>pelist<sp/>for<sp/>each<sp/>io_domain</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>`is_restart`<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>a<sp/>restart<sp/>file,<sp/>so<sp/>it<sp/>adds<sp/>&quot;.res&quot;<sp/>to<sp/>the<sp/>filename<sp/>and<sp/>it<sp/>allows<sp/>user<sp/>to<sp/>use<sp/>the<sp/>`write_restart`<sp/>and<sp/>`register_restart_field`<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>**NOTE**:<sp/>The<sp/>filename<sp/>needs<sp/>to<sp/>include<sp/>the<sp/>full<sp/>path<sp/>to<sp/>the<sp/>file,<sp/>including<sp/>the<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_axis](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_unstructured_domain_io.F90#L155)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>writes<sp/>the<sp/>dimension<sp/>metadata<sp/>in<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_def_dim`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>lack<sp/>of<sp/>the<sp/>third<sp/>argument<sp/>in<sp/>the<sp/>`register_axis`<sp/>calls<sp/>indicates<sp/>that<sp/>this<sp/>dimension<sp/>is<sp/>in<sp/>the<sp/>unstructured<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>&quot;unlimited&quot;<sp/>indicates<sp/>that<sp/>the<sp/>dimension<sp/>is<sp/>unlimited<sp/>(`nf90_unlimited`)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>integer<sp/>&quot;dimsize&quot;<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>a<sp/>normal<sp/>dimension<sp/>of<sp/>length<sp/>equal<sp/>to<sp/>dimsize</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_restart_field](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/register_unstructured_domain_restart_variable.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>variable<sp/>metadata<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_def_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Saves<sp/>the<sp/>data<sp/>as<sp/>pointers,<sp/>which<sp/>will<sp/>be<sp/>written<sp/>to<sp/>the<sp/>netcdf<sp/>file<sp/>later</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_restart](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_unstructured_domain_io.F90#L193)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Loops<sp/>through<sp/>the<sp/>restart<sp/>variables<sp/>that<sp/>were<sp/>registered</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Calculates<sp/>and<sp/>writes<sp/>a<sp/>global<sp/>checksum<sp/>for<sp/>each<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>data<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_put_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[close_file](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_unstructured_domain_io.F90#L146)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Cleans<sp/>up<sp/>the<sp/>fileobj<sp/>and<sp/>deallocated<sp/>any<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Closes<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_close`<sp/>call)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>3.<sp/>Non-domain<sp/>Decomposed<sp/>Restarts</highlight></codeline>
+<codeline><highlight class="normal">Restart<sp/>files<sp/>without<sp/>domain<sp/>decomposed<sp/>variables<sp/>can<sp/>be<sp/>written<sp/>using<sp/>the<sp/>`FmsNetcdfFile_t`<sp/>fileobj.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfFile_t,<sp/>register_restart_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_restart</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>mpp_npes,<sp/>mpp_get_current_pelist</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfFile_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:,:,:)<sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(4)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline><highlight class="normal">integer,<sp/>allocatable,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>pes(:)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>the<sp/>pes<sp/>in<sp/>the<sp/>current<sp/>pelist</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&lt;<sp/>Get<sp/>the<sp/>current<sp/>pelist</highlight></codeline>
+<codeline><highlight class="normal">allocate(pes(mpp_npes()))</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>mpp_get_current_pelist(pes)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;xaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;yaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(4)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>pelist=pes,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1),<sp/>96)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>96)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(4),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_restart_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_restart(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[open_file](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1845)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>a<sp/>logical<sp/>function,<sp/>outputs<sp/>.true.<sp/>if<sp/>the<sp/>file<sp/>was<sp/>opened<sp/>successfully<sp/>and<sp/>.false.<sp/>if<sp/>it<sp/>failed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Mangles<sp/>the<sp/>filename:<sp/>&quot;.res&quot;<sp/>is<sp/>the<sp/>only<sp/>thing<sp/>that<sp/>is<sp/>added<sp/>to<sp/>the<sp/>filename</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>Opens<sp/>the<sp/>netcdf<sp/>file<sp/>to<sp/>write<sp/>(a<sp/>`nf90_create`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>`is_restart`<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>a<sp/>restart<sp/>file,<sp/>so<sp/>it<sp/>adds<sp/>&quot;.res&quot;<sp/>to<sp/>the<sp/>filename<sp/>and<sp/>it<sp/>allows<sp/>user<sp/>to<sp/>use<sp/>the<sp/>`write_restart`<sp/>and<sp/>`register_restart_field`<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>With<sp/>the<sp/>*optional*<sp/>pelist<sp/>argument,<sp/>only<sp/>the<sp/>first<sp/>rank<sp/>interacts<sp/>with<sp/>the<sp/>file<sp/>(opens,<sp/>writes,<sp/>closes)<sp/>and<sp/>broadcasts<sp/>the<sp/>information<sp/>to<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>ranks<sp/>on<sp/>the<sp/>list.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/><sp/>**NOTE**:<sp/>The<sp/>filename<sp/>needs<sp/>to<sp/>include<sp/>the<sp/>full<sp/>path<sp/>to<sp/>the<sp/>file,<sp/>including<sp/>the<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_axis](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/netcdf_io.F90#L727-L728)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>writes<sp/>the<sp/>dimension<sp/>metadata<sp/>in<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_def_dim`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>&quot;unlimited&quot;<sp/>indicates<sp/>that<sp/>the<sp/>dimension<sp/>is<sp/>unlimited<sp/>(`nf90_unlimited`)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>integer<sp/>&quot;dimsize&quot;<sp/>indicates<sp/>that<sp/>this<sp/>is<sp/>a<sp/>normal<sp/>dimension<sp/>of<sp/>length<sp/>equal<sp/>to<sp/>dimsize</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>&quot;x&quot;<sp/>and<sp/>&quot;y&quot;<sp/>cannot<sp/>be<sp/>added<sp/>to<sp/>the<sp/>`register_axis`<sp/>calls</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_restart_field](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms2_io.F90#L135-L140)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>variable<sp/>metadata<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_def_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Saves<sp/>the<sp/>data<sp/>as<sp/>pointers,<sp/>which<sp/>will<sp/>be<sp/>written<sp/>to<sp/>the<sp/>netcdf<sp/>file<sp/>later</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_restart](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1898)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Loops<sp/>through<sp/>the<sp/>restart<sp/>variables<sp/>that<sp/>were<sp/>registered</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Calculates<sp/>and<sp/>writes<sp/>a<sp/>global<sp/>checksum<sp/>for<sp/>each<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Writes<sp/>the<sp/>data<sp/>to<sp/>the<sp/>file<sp/>(a<sp/>`nf90_put_var`<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[close_file](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1876)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Cleans<sp/>up<sp/>the<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Closes<sp/>the<sp/>netcdf<sp/>file<sp/>(a<sp/>`nf90_close`<sp/>call)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>4.<sp/>Other<sp/>helpful<sp/>information:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>By<sp/>default,<sp/>FMS2_io<sp/>writes<sp/>the<sp/>file<sp/>as<sp/>`nf90_64bit_offset`,<sp/>the<sp/>user<sp/>can<sp/>change<sp/>the<sp/>netcdf<sp/>file<sp/>type<sp/>by<sp/>adding<sp/>`nc_format=&quot;64bit&quot;,<sp/>&quot;classic&quot;,<sp/>or<sp/>&quot;netcdf4&quot;`<sp/>to<sp/>the<sp/>`open_file`<sp/>call<sp/>(which<sp/>will<sp/>change<sp/>the<sp/>type<sp/>for<sp/>that<sp/>file<sp/>only)<sp/>or<sp/>by<sp/>adding<sp/>`netcdf_default_format=&quot;64bit&quot;,<sp/>&quot;classic&quot;,<sp/>or<sp/>&quot;netcdf4&quot;`<sp/>to<sp/>the<sp/>fms2_io_nml<sp/>(which<sp/>will<sp/>change<sp/>the<sp/>type<sp/>for<sp/>all<sp/>files<sp/>that<sp/>don&apos;t<sp/>have<sp/>the<sp/>nc_format<sp/>in<sp/>the<sp/>open_file<sp/>call)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>user<sp/>wishes<sp/>to<sp/>not<sp/>add<sp/>&quot;.res&quot;<sp/>to<sp/>filename,<sp/>the<sp/>user<sp/>can<sp/>add<sp/>`dont_add_res_to_filename=.true.`<sp/>to<sp/>the<sp/>`open_file`<sp/>call</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Variable<sp/>attributes**<sp/>can<sp/>be<sp/>written<sp/>by<sp/>calling<sp/>[register_variable_attribute](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/register_variable_attribute.inc).<sp/>Scalar<sp/>and<sp/>1d<sp/>real<sp/>and<sp/>integers<sp/>(32<sp/>and<sp/>64<sp/>bit)<sp/>and<sp/>string<sp/>values<sp/>are<sp/>supported</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>register_variable_attribute(fileobj,<sp/>&quot;varname&quot;,<sp/>&quot;attribute_name&quot;,<sp/>value)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>interface<sp/>can<sp/>be<sp/>used<sp/>with<sp/>any<sp/>FMS2_io<sp/>fileobj,<sp/>but<sp/>the<sp/>open_file<sp/>needs<sp/>to<sp/>be<sp/>called<sp/>before<sp/>using<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>in<sp/>fms_io<sp/>with<sp/>[mpp_write_meta](https://github.com/NOAA-GFDL/FMS/blob/main/mpp/include/mpp_io_write.inc#L22-L135)*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Global<sp/>attributes**<sp/>can<sp/>be<sp/>written<sp/>by<sp/>calling<sp/>[register_global_attribute](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/register_global_attribute.inc).<sp/>Scalar<sp/>and<sp/>1d<sp/>real<sp/>and<sp/>integers<sp/>(32<sp/>and<sp/>64<sp/>bit)<sp/>and<sp/>scalar<sp/>string<sp/>values<sp/>are<sp/>supported</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>register_global_attribute(fileobj,<sp/>&quot;global_attribute_name&quot;,<sp/>value)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>interface<sp/>can<sp/>be<sp/>used<sp/>with<sp/>any<sp/>FMS2_io<sp/>fileobj,<sp/>but<sp/>the<sp/>open_file<sp/>needs<sp/>to<sp/>be<sp/>called<sp/>before<sp/>using<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>in<sp/>fms_io<sp/>with<sp/>[mpp_write_meta](https://github.com/NOAA-GFDL/FMS/blob/main/mpp/include/mpp_io_write.inc#L22-L135)*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>C.<sp/>Reading<sp/>Restarts</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>restarts<sp/>can<sp/>be<sp/>read<sp/>the<sp/>same<sp/>way<sp/>as<sp/>the<sp/>writes.<sp/>The<sp/>only<sp/>difference<sp/>is<sp/>that<sp/>&quot;read&quot;<sp/>is<sp/>used<sp/>in<sp/>the<sp/>`open_file`<sp/>call<sp/>and<sp/>[read_restart](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/fms2_io.F90#L216-L219)<sp/>is<sp/>used<sp/>instead<sp/>of<sp/>write<sp/>restart.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additionally,<sp/>the<sp/>`register_restart_field`<sp/>has<sp/>the<sp/>optional<sp/>argument,<sp/>`is_optional`,<sp/>where<sp/>is<sp/>.true.<sp/>the<sp/>code<sp/>will<sp/>not<sp/>crash<sp/>if<sp/>the<sp/>variable<sp/>does<sp/>not<sp/>exist<sp/>in<sp/>the<sp/>file<sp/>when<sp/>reading.<sp/>*This<sp/>argument<sp/>is<sp/>the<sp/>same<sp/>as<sp/>`mandatory`<sp/>in<sp/>fms_io.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Other<sp/>helpful<sp/>information:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>subroutines<sp/>can<sp/>be<sp/>used<sp/>with<sp/>any<sp/>of<sp/>any<sp/>of<sp/>the<sp/>FMS2_io<sp/>fileobj.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Variable<sp/>attributes**<sp/>can<sp/>be<sp/>read<sp/>by<sp/>calling<sp/>[get_variable_attribute](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/get_variable_attribute.inc).<sp/>Scalar<sp/>and<sp/>1d<sp/>real<sp/>and<sp/>integers<sp/>(32<sp/>and<sp/>64<sp/>bit)<sp/>and<sp/>string<sp/>values<sp/>are<sp/>supported.<sp/>To<sp/>check<sp/>if<sp/>a<sp/>variable<sp/>attribute<sp/>exists<sp/>before<sp/>reading,<sp/>the<sp/>logical<sp/>function<sp/>[variable_att_exists](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/netcdf_io.F90#L1046-L1047)<sp/>can<sp/>be<sp/>used</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(variable_att_exists(fileobj,<sp/>&quot;varname&quot;,<sp/>&quot;attribute_name&quot;))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>get_variable_attribute(fileobj,<sp/>&quot;varname&quot;,<sp/>&quot;attribute_name&quot;,<sp/>value)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>in<sp/>fms_io<sp/>with<sp/>[get_vart_att_value](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms/fms_io.F90#L466-L468)*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Global<sp/>attributes**<sp/>can<sp/>be<sp/>read<sp/>by<sp/>calling<sp/>[get_global_attribute](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/get_global_attribute.inc).<sp/>Scalar<sp/>and<sp/>1d<sp/>real<sp/>and<sp/>integers<sp/>(32<sp/>and<sp/>64<sp/>bit)<sp/>and<sp/>scalar<sp/>string<sp/>values<sp/>are<sp/>supported.<sp/>To<sp/>check<sp/>if<sp/>a<sp/>global<sp/>attribute<sp/>exist<sp/>before<sp/>reading,<sp/>the<sp/>logical<sp/>function<sp/>[global_att_exists](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1019)<sp/>can<sp/>be<sp/>used.</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(global_att_exists(fileobj,<sp/>&quot;global_attribute_name))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>get_global_attribute(fileobj,<sp/>&quot;global_attribute_name&quot;,<sp/>value)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>in<sp/>fms_io<sp/>with<sp/>[get_global_att_value](https://github.com/NOAA-GFDL/FMS/blob/main/fms/fms_io.F90#L461-L464)*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Reading<sp/>dimension<sp/>metadata**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_num_dimensions](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1079)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>total<sp/>number<sp/>of<sp/>dimensions<sp/>in<sp/>a<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_dimension_names](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1107)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>dimension<sp/>names<sp/>in<sp/>a<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[dimension_exists](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1161)<sp/>is<sp/>a<sp/>logical<sp/>function<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>check<sp/>if<sp/>a<sp/>dimension<sp/>exists</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_unlimited_dimension_name](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1229)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>name<sp/>of<sp/>the<sp/>unlimited<sp/>dimension<sp/>in<sp/>a<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[is_dimension_unlimited](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1196)<sp/>is<sp/>a<sp/>logical<sp/>function<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>determine<sp/>if<sp/>a<sp/>dimension<sp/>is<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_dimension_size](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1264)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>size<sp/>of<sp/>a<sp/>dimension</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Sample<sp/>usage:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>```F90</highlight></codeline>
+<codeline><highlight class="normal"><sp/>ndims_file<sp/>=<sp/>get_num_dimensions(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>allocate(dim_names_file(ndims_file))</highlight></codeline>
+<codeline><highlight class="normal"><sp/>call<sp/>get_dimension_names(fileobj,<sp/>dim_names_file)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>call<sp/>get_unlimited_dimension_name(fileobj,<sp/>dimension_name)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>(is_dimension_unlimited(fileobj,<sp/>&quot;dimension_name&quot;))<sp/>call<sp/>mpp_error(FATAL,<sp/>&quot;dimension_name<sp/>is<sp/>not<sp/>an<sp/>unlimited<sp/>dimension&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>(dimension_exists(fileobj,<sp/>&quot;dimension_name&quot;))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>call<sp/>get_dimension_size(fileobj,<sp/>&quot;dimension_name&quot;,<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>with<sp/>fms_io<sp/>with<sp/>[mpp_get_info](https://github.com/NOAA-GFDL/FMS/blob/main/mpp/include/mpp_io_util.inc#L41)*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Reading<sp/>variable<sp/>metadata**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_num_variables](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1295)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>number<sp/>of<sp/>variables<sp/>in<sp/>a<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_variable_names](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1323)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>variables<sp/>names<sp/>in<sp/>a<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[variable_exists](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1377)<sp/>is<sp/>a<sp/>logical<sp/>function<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>check<sp/>if<sp/>a<sp/>variable<sp/>exists</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_variable_num_dimensions](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1408)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>number<sp/>of<sp/>dimensions<sp/>in<sp/>a<sp/>variable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_variable_size](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1500)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>size<sp/>of<sp/>the<sp/>variable.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[get_variable_dimension_names](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L1439)<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>names<sp/>of<sp/>the<sp/>dimensions<sp/>in<sp/>a<sp/>variable</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Sample<sp/>usage:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">nvar<sp/>=<sp/>get_num_variables(fileobj)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">allocate(var_names(nvar))</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>get_variable_names(fileobj,<sp/>var_names)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(variable_exists(fileobj,<sp/>&quot;varname&quot;))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>ndims<sp/>=<sp/>get_variable_num_dimensions(fileobj,<sp/>&quot;varname&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>allocate(dim_sizes(ndims))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>get_variable_size(fileobj,<sp/>&quot;varname&quot;,<sp/>dim_sizes)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>allocate(dim_names(ndims))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>get_variable_dimension_names(fileobj,<sp/>&quot;varname&quot;,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*A<sp/>similar<sp/>thing<sp/>can<sp/>be<sp/>accomplished<sp/>with<sp/>fms_io<sp/>with<sp/>[mpp_get_info](https://github.com/NOAA-GFDL/FMS/blob/main/mpp/include/mpp_io_util.inc#L41)<sp/>and/or<sp/>[field_size](https://github.com/NOAA-GFDL/FMS/blob/main/fms/fms_io.F90#L4965)*</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>D.<sp/>Reading/Writing<sp/>Non-restarts</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>and<sp/>writing<sp/>netcdf<sp/>files<sp/>that<sp/>are<sp/>not<sp/>restarts<sp/>can<sp/>be<sp/>done<sp/>using<sp/>`read_data`<sp/>and<sp/>`write_data`<sp/>calls.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Domain<sp/>decomposed<sp/>read/write:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfDomainFile_t,<sp/>register_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_data</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_domains_mod,<sp/><sp/><sp/><sp/>only:<sp/>domain2d,<sp/>center</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfDomainFile_t)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>domain<sp/>decomposed<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:,:,:)<sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>in<sp/>the<sp/>compute<sp/>or<sp/>data<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">type<sp/>(domain2d)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2d<sp/>mpp<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(4)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;xaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;yaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(4)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>domain))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1),<sp/>&quot;x&quot;,<sp/>position=center)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>&quot;y&quot;,<sp/>position=center)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(4),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>&apos;variable_type&apos;,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Difference<sp/>from<sp/>writing<sp/>restarts:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`open_file`<sp/>does<sp/>not<sp/>have<sp/>is_restart=.true.,<sp/>so<sp/>the<sp/>`write_restart`<sp/>functionality<sp/>cannot<sp/>be<sp/>used&apos;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_field](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/fms_netcdf_domain_io.F90#L527)<sp/>is<sp/>basically<sp/>a<sp/>wrapper<sp/>for<sp/>`nf90_def_var`<sp/>which<sp/>just<sp/>adds<sp/>the<sp/>variable<sp/>metadata<sp/>to<sp/>the<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>&quot;variable_type&quot;<sp/>is<sp/>a<sp/>string<sp/>which<sp/>indicates<sp/>the<sp/>type<sp/>you<sp/>want<sp/>the<sp/>variable<sp/>to<sp/>be<sp/>written<sp/>as.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>&quot;int&quot;,<sp/>&quot;int64&quot;,<sp/>&quot;double&quot;,<sp/>&quot;float&quot;,<sp/>and<sp/>&quot;char&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_data](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/domain_write.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>ranks<sp/>send<sp/>their<sp/>data<sp/>to<sp/>the<sp/>io_root<sp/>pe.<sp/>The<sp/>io_root<sp/>pe<sp/>receives<sp/>the<sp/>data<sp/>and<sp/>writes<sp/>it<sp/>to<sp/>the<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Similarly<sp/>for<sp/>domain<sp/>reads:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;read&quot;,<sp/>domain))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1),<sp/>&quot;x&quot;,<sp/>position=center)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>&quot;y&quot;,<sp/>position=center)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>read_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_axis`<sp/>is<sp/>required<sp/>for<sp/>the<sp/>domain<sp/>decomposed<sp/>dimensions<sp/>so<sp/>the<sp/>code<sp/>knows<sp/>which<sp/>dimensions<sp/>and<sp/>therefore<sp/>variables<sp/>are<sp/>domain<sp/>decomposed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_field`<sp/>is<sp/>not<sp/>required<sp/>because<sp/>the<sp/>code<sp/>can<sp/>get<sp/>the<sp/>dimensions<sp/>information<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[read_data](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/domain_read.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>io_root<sp/>pe<sp/>reads<sp/>the<sp/>data<sp/>and<sp/>sends<sp/>it<sp/>to<sp/>the<sp/>other<sp/>pes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Unstructured<sp/>Domain<sp/>non-restart<sp/>read/writes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfUnstructuredDomainFile_t,<sp/>register_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_data</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_domains_mod,<sp/><sp/><sp/><sp/>only:<sp/>domainug,<sp/>center</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfUnstructuredDomainFile_t)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>domain<sp/>decomposed<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>in<sp/>the<sp/>unstructured<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">type<sp/>(domainug)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2d<sp/>mpp<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(3)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;ucdim&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>domain<sp/>!&lt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>an<sp/>io_domain<sp/>!&lt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Create<sp/>an<sp/>unstructured<sp/>domain<sp/>!&lt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>domain,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>&apos;variable_type&apos;,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Difference<sp/>from<sp/>writing<sp/>restarts:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`open_file`<sp/>does<sp/>not<sp/>have<sp/>is_restart=.true.,<sp/>so<sp/>the<sp/>`write_restart`<sp/>functionality<sp/>cannot<sp/>be<sp/>used&apos;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[register_field](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/fms_netcdf_unstructured_domain_io.F90#L178-L179)<sp/>is<sp/>basically<sp/>a<sp/>wrapper<sp/>for<sp/>`nf90_def_var`<sp/>which<sp/>just<sp/>adds<sp/>the<sp/>variable<sp/>metadata<sp/>to<sp/>the<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>&quot;variable_type&quot;<sp/>is<sp/>a<sp/>string<sp/>which<sp/>indicates<sp/>the<sp/>type<sp/>you<sp/>want<sp/>the<sp/>variable<sp/>to<sp/>be<sp/>written<sp/>as.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>&quot;int&quot;,<sp/>&quot;int64&quot;,<sp/>&quot;double&quot;,<sp/>&quot;float&quot;,<sp/>and<sp/>&quot;char&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_data](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/unstructured_domain_write.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>ranks<sp/>send<sp/>their<sp/>data<sp/>to<sp/>the<sp/>io_root<sp/>pe.<sp/>The<sp/>io_root<sp/>pe<sp/>receives<sp/>the<sp/>data<sp/>and<sp/>writes<sp/>it<sp/>to<sp/>the<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Similarly<sp/>for<sp/>reads:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;read&quot;,<sp/>domain,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_axis`<sp/>is<sp/>required<sp/>for<sp/>the<sp/>dimensions<sp/>that<sp/>are<sp/>on<sp/>the<sp/>unstructured<sp/>domain,<sp/>so<sp/>the<sp/>code<sp/>knows<sp/>which<sp/>dimensions<sp/>and<sp/>therefore<sp/>variables<sp/>are<sp/>in<sp/>the<sp/>unstructured<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_field`<sp/>is<sp/>not<sp/>required<sp/>because<sp/>the<sp/>code<sp/>can<sp/>get<sp/>the<sp/>dimensions<sp/>information<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[read_data](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/unstructured_domain_read.inc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>io_root<sp/>pe<sp/>reads<sp/>the<sp/>data<sp/>and<sp/>sends<sp/>it<sp/>to<sp/>the<sp/>other<sp/>pes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>3.<sp/>Non-domain<sp/>decomposed<sp/>read/writes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Writing<sp/>non-domain<sp/>decomposed<sp/>files<sp/>is<sp/>similar<sp/>to<sp/>writing<sp/>domain<sp/>decomposed<sp/>files:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>FmsNetcdfFile_t,<sp/>register_restart_field,<sp/>register_axis,<sp/>unlimited</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>open_file,<sp/>close_file,<sp/>write_restart</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>only:<sp/>mpp_npes,<sp/>mpp_get_current_pelist</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfFile_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">real,<sp/>dimension(:,:,:,:)<sp/><sp/><sp/><sp/>::<sp/>variable_data<sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">character(len=8)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim_names(4)<sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>dimension<sp/>names</highlight></codeline>
+<codeline><highlight class="normal">integer,<sp/>allocatable,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>pes(:)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Array<sp/>of<sp/>the<sp/>pes<sp/>in<sp/>the<sp/>current<sp/>pelist</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&lt;<sp/>Get<sp/>the<sp/>current<sp/>pelist</highlight></codeline>
+<codeline><highlight class="normal">allocate(pes(mpp_npes()))</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>mpp_get_current_pelist(pes)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dim_names(1)<sp/>=<sp/>&quot;xaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(2)<sp/>=<sp/>&quot;yaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(3)<sp/>=<sp/>&quot;zaxis_1&quot;</highlight></codeline>
+<codeline><highlight class="normal">dim_names(4)<sp/>=<sp/>&quot;Time&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>pelist=pes,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(1),<sp/>96)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(2),<sp/>96)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(3),<sp/>dimsize)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>dim_names(4),<sp/>unlimited)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>&apos;variable_type&apos;,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_data(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`open_file`<sp/>-<sp/>the<sp/>pelist<sp/>argument<sp/>is<sp/>needed<sp/>so<sp/>that<sp/>only<sp/>the<sp/>root<sp/>pe<sp/>writes<sp/>the<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_axis`<sp/>is<sp/>needed<sp/>so<sp/>that<sp/>the<sp/>code<sp/>knows<sp/>the<sp/>size<sp/>of<sp/>each<sp/>dimension</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`register_field`<sp/>is<sp/>needed<sp/>so<sp/>that<sp/>the<sp/>code<sp/>knows<sp/>what<sp/>dimensions<sp/>the<sp/>variable<sp/>is<sp/>a<sp/>function<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[write_data](https://github.com/NOAA-GFDL/FMS/blob/main/fms2_io/include/netcdf_read_data.inc):<sp/>the<sp/>root<sp/>pe<sp/>in<sp/>the<sp/>pelist<sp/>writes<sp/>the<sp/>data</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>read<sp/>non-domain<sp/>decomposed<sp/>restarts:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;read&quot;,<sp/>pelist=pes,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>read_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>the<sp/>`register_axis`<sp/>and<sp/>`register_field`<sp/>calls<sp/>are<sp/>not<sp/>needed<sp/>because<sp/>the<sp/>code<sp/>can<sp/>get<sp/>the<sp/>dimensions<sp/>from<sp/>the<sp/>file</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additionally,<sp/>the<sp/>`corner`<sp/>and<sp/>`edge_lengths`<sp/>optional<sp/>arguments<sp/>in<sp/>the<sp/>`read_data`<sp/>calls<sp/>can<sp/>be<sp/>used<sp/>to<sp/>read<sp/>only<sp/>a<sp/>section<sp/>of<sp/>a<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;read&quot;,<sp/>pelist=pes,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>read_data(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data,<sp/>corner=(/10,2,2,3/),<sp/>edge_lengths=(/2,<sp/>3,<sp/>4,<sp/>1/))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Here<sp/>the<sp/>code<sp/>is<sp/>going<sp/>to<sp/>start<sp/>reading<sp/>at<sp/>x=10,<sp/>y=2,<sp/>z=2,<sp/>t=3<sp/>and<sp/>read<sp/>2,<sp/>3,<sp/>4,<sp/>1<sp/>points<sp/>in<sp/>each<sp/>direction.<sp/>Note<sp/>that<sp/>`variable_data`<sp/>must<sp/>be<sp/>the<sp/>correct<sp/>size<sp/>or<sp/>the<sp/>code<sp/>will<sp/>fail.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additionally,<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>do<sp/>&quot;compressed&quot;<sp/>reads<sp/>and<sp/>writes.<sp/>Here<sp/>&quot;compressed&quot;<sp/>is<sp/>when<sp/>different<sp/>ranks<sp/>have<sp/>different<sp/>numbers<sp/>of<sp/>points<sp/>for<sp/>a<sp/>specific</highlight></codeline>
+<codeline><highlight class="normal">axis.<sp/>For<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>pelist=pes,<sp/>is_restart=.true.))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>&quot;xaxis_1&quot;,<sp/>mpp_pe()+1,<sp/>is_compressed=.true.)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_axis(fileobj,<sp/>&quot;yaxis_1&quot;,<sp/>mpp_pe()+1,<sp/>is_compressed=.true.)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>register_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>&apos;variable_type&apos;,<sp/>dim_names)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>write_data(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Because<sp/>[is_compressed=.true.](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L747-L768),<sp/>the<sp/>root<sp/>pe<sp/>is<sp/>going<sp/>to<sp/>gather<sp/>the<sp/>dimension<sp/>size<sp/>of<sp/>each<sp/>rank<sp/>and<sp/>add<sp/>them<sp/>to<sp/>get<sp/>the<sp/>total<sp/>length<sp/>of<sp/>the<sp/>dimension.<sp/>In<sp/>the<sp/>example<sp/>above,<sp/>rank<sp/>0<sp/>has<sp/>a<sp/>x/y<sp/>axis<sp/>of<sp/>1,<sp/>rank<sp/>1<sp/>has<sp/>a<sp/>x/y<sp/>of<sp/>2.<sp/>The<sp/>total<sp/>dimension<sp/>size<sp/>of<sp/>x/y<sp/>is<sp/>equal<sp/>to<sp/>3<sp/>(the<sp/>sum<sp/>for<sp/>all<sp/>pes).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>E.<sp/>Coupler<sp/>Type<sp/>Restarts</highlight></codeline>
+<codeline><highlight class="normal">`coupler_type_register_restarts`<sp/>permits<sp/>interating<sp/>a<sp/>list<sp/>of<sp/>variables<sp/>in<sp/>the<sp/>coupler_type<sp/>and<sp/>register<sp/>each<sp/>variable<sp/>to<sp/>the<sp/>corresponding<sp/>restart<sp/>file<sp/>and<sp/>then<sp/>read/write<sp/>the<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Reading<sp/>coupler_type<sp/>restarts</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>FMS_io,<sp/>this<sp/>was<sp/>accomplished<sp/>as:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">type(coupler_2d_bc_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>bc_type</highlight></codeline>
+<codeline><highlight class="normal">type(restart_file_type),<sp/>pointer<sp/><sp/>::<sp/>bc_rest_files(:)=&gt;<sp/>null()<sp/>!&lt;<sp/>Array<sp/>of<sp/>fms2_io<sp/>fileobjs</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">call<sp/>coupler_type_register_restarts(bc_type,<sp/>bc_rest_files,<sp/>num_rest_files,<sp/>domain)</highlight></codeline>
+<codeline><highlight class="normal">do<sp/>l<sp/>=<sp/>1,<sp/>num_rest_files</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>restore_state(bc_rest_files(l),<sp/>directory=&apos;INPUT&apos;,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nonfatal_missing_files=.true.)</highlight></codeline>
+<codeline><highlight class="normal">enddo</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>FMS2_io,<sp/>this<sp/>can<sp/>be<sp/>accomplished<sp/>as:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">type(coupler_2d_bc_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>bc_type</highlight></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfDomainFile_t),<sp/>pointer<sp/><sp/>::<sp/>bc_rest_files(:)=&gt;<sp/>null()<sp/>!&lt;<sp/>Array<sp/>of<sp/>fms2_io<sp/>fileobjs</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">call<sp/>coupler_type_register_restarts(bc_type,<sp/>bc_rest_files,<sp/>num_rest_files,<sp/>domain,<sp/>to_read=.true.)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">do<sp/>l<sp/>=<sp/>1,<sp/>num_rest_files</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>read_restart(bc_rest_files(l))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>call<sp/>close_file(bc_rest_files(l))</highlight></codeline>
+<codeline><highlight class="normal">enddo</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Note:<sp/>`num_rest_files`<sp/>is<sp/>set<sp/>inside<sp/>`coupler_type_register_restarts`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Difference<sp/>from<sp/>fms_io</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`to_read`<sp/>was<sp/>added<sp/>to<sp/>the<sp/>coupler_type_register_restarts<sp/>subroutine</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[coupler_type_register_restarts](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/coupler/coupler_types.F90#L3096)<sp/>loops<sp/>through<sp/>the<sp/>variables<sp/>in<sp/>the<sp/>coupler_type,<sp/>opens<sp/>the<sp/>file<sp/>needed,<sp/>register<sp/>the<sp/>axis,<sp/>and<sp/>registers<sp/>the<sp/>restart_variables.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>file<sp/>should<sp/>be<sp/>closed<sp/>after<sp/>writing<sp/>it<sp/>by<sp/>calling<sp/>`close_file`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>It<sp/>is<sp/>required<sp/>that<sp/>the<sp/>`domain`<sp/>has<sp/>an<sp/>io_domain<sp/>or<sp/>the<sp/>code<sp/>will<sp/>fail</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Writing<sp/>coupler<sp/>type<sp/>restarts</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>done<sp/>the<sp/>same<sp/>way<sp/>as<sp/>the<sp/>reads<sp/>expect<sp/>`write_restart`<sp/>is<sp/>used<sp/>instead<sp/>of<sp/>`read_restart`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>F.<sp/>Boundary<sp/>Conditions<sp/>Restarts</highlight></codeline>
+<codeline><highlight class="normal">Both<sp/>FMS_io<sp/>and<sp/>FMS2_io<sp/>have<sp/>the<sp/>functionality<sp/>where<sp/>one<sp/>can<sp/>read<sp/>or<sp/>write<sp/>data<sp/>where<sp/>only<sp/>some<sp/>pes<sp/>have<sp/>a<sp/>section<sp/>of<sp/>the<sp/>data<sp/>(i.e<sp/>halos).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>FMS_io<sp/>this<sp/>was<sp/>accomplished<sp/>as:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">type(restart_file_type)<sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms_io<sp/>fileobj</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">id_restart<sp/>=<sp/>register_restart_field(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;variable_name&quot;,<sp/>variable_data,<sp/>indices,<sp/>global_size,<sp/>pelist,<sp/>is_root_pe)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">call<sp/>save_restart_border(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>free_restart_type(fileobj)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>FMS2_io<sp/>this<sp/>can<sp/>be<sp/>accomplished<sp/>as:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">type(FmsNetcdfFile_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>fileobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Fms2_io<sp/>fileobj</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(open_file(fileobj,<sp/>&quot;filename&quot;,<sp/>&quot;overwrite&quot;,<sp/>is_restart=.true.,<sp/>pelist=all_pelist))<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>call<sp/>register_restart_field(fileobj,<sp/>&quot;variable_name&quot;,<sp/>variable_data,<sp/>indices,<sp/>global_size,<sp/>pelist,<sp/>is_root_pe)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>call<sp/>write_restart_bc(fileobj)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>call<sp/>close_file(fileobj)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`indices`<sp/>are<sp/>the<sp/>starting<sp/>and<sp/>indices<sp/>of<sp/>the<sp/>region<sp/>for<sp/>that<sp/>pe<sp/>(starting<sp/>x,<sp/>ending<sp/>x,<sp/>starting<sp/>y,<sp/>ending<sp/>y)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`global_size`<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>variable<sp/>in<sp/>(x,y,*z*)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`pelist`<sp/>is<sp/>the<sp/>list<sp/>of<sp/>pelist<sp/>that<sp/>have<sp/>the<sp/>data<sp/>for<sp/>the<sp/>variable</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`is_root_pe`<sp/>is<sp/>a<sp/>flag<sp/>indicating<sp/>if<sp/>this<sp/>is<sp/>the<sp/>root_pe<sp/>from<sp/>the<sp/>pelist</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Difference<sp/>between<sp/>FMS2_io<sp/>and<sp/>FMS_io:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>In<sp/>fms_io,<sp/>`register_restart_field`<sp/>is<sp/>a<sp/>integer<sp/>function<sp/>while<sp/>in<sp/>FMS2_io<sp/>it<sp/>is<sp/>a<sp/>subroutine</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>In<sp/>fms_io,<sp/>the<sp/>first<sp/>two<sp/>arguments<sp/>of<sp/>`register_restart_field`<sp/>were<sp/>[fileobj<sp/>and<sp/>filename](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms/fms_io.F90#L2376-L2377)<sp/>and<sp/>in<sp/>FMS2_io<sp/>it<sp/>is<sp/>just<sp/>the<sp/>[fileobj](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/include/netcdf_add_restart_variable.inc#L350)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>In<sp/>FMS2_io,<sp/>[restore_state_border](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms/fms_io.F90#L3668)<sp/>was<sp/>renamed<sp/>to<sp/>renamed<sp/>to<sp/>[read_restart_bc](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L2083)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>In<sp/>FMS2_io,<sp/>[save_restart_border](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms/fms_io.F90#L3378)<sp/>was<sp/>renamed<sp/>to<sp/>[write_restart_bc](https://github.com/NOAA-GFDL/FMS/blob/b9fc6515c7e729909e59a0f9a1efc6eb1d3e44d1/fms2_io/netcdf_io.F90#L2114)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>In<sp/>FMS2_io,<sp/>it<sp/>is<sp/>required<sp/>for<sp/>the<sp/>file<sp/>to<sp/>be<sp/>opened<sp/>before<sp/>registering<sp/>the<sp/>restarts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>G.<sp/>Ascii_io</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Writing<sp/>ascii<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">With<sp/>fms_io,<sp/>ascii<sp/>writes<sp/>can<sp/>be<sp/>accomplished<sp/>with<sp/>a<sp/>combination<sp/>of<sp/>`mpp_open`,<sp/>`mpp_close`<sp/>from<sp/>`mpp_io`<sp/>and<sp/>`write`.</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">integer<sp/>::<sp/>unit_number</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>mpp_open(<sp/>unit_number,<sp/>&apos;filename&apos;,<sp/>nohdrs=.TRUE.<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(<sp/>mpp_pe().EQ.mpp_root_pe()<sp/>)<sp/>write<sp/>(unit_number,<sp/>*)<sp/>&apos;FMS2_io<sp/>is<sp/>flawless<sp/>and<sp/>works<sp/>as<sp/>inteded&apos;</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>mpp_close(unit_number)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">With<sp/>FMS2_io,<sp/>there<sp/>is<sp/>no<sp/>real<sp/>support<sp/>for<sp/>ascii<sp/>writes.<sp/>The<sp/>user<sp/>can<sp/>use<sp/>fortran&apos;s<sp/>`open`,<sp/>`write`<sp/>and<sp/>`close`.<sp/><sp/>For<sp/>example,</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">integer<sp/>::<sp/>unit_number</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(<sp/>mpp_pe().EQ.mpp_root_pe()<sp/>)<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>open(newunit<sp/>=<sp/>unit_number,<sp/>file=&apos;filename&apos;,<sp/>status=&apos;replace&apos;,<sp/>form=&apos;formatted&apos;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>write<sp/>(unit_number,<sp/>*)<sp/>&apos;FMS2_io<sp/>is<sp/>flawless<sp/>and<sp/>works<sp/>as<sp/>inteded&apos;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>close<sp/>(unit_number)</highlight></codeline>
+<codeline><highlight class="normal">endif</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>`if<sp/>(<sp/>mpp_pe().EQ.mpp_root_pe()<sp/>)<sp/>`<sp/>ensures<sp/>that<sp/>the<sp/>file<sp/>is<sp/>only<sp/>written<sp/>once.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>`newunit`<sp/>ensures<sp/>that<sp/>an<sp/>unused<sp/>unit<sp/>number<sp/>is<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Reading<sp/>ascii<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">With<sp/>fms_io:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Opening<sp/>an<sp/>ascii<sp/>file<sp/>was<sp/>accomplished<sp/>with<sp/>`mpp_open`,<sp/>`open_namelist_file`<sp/>or<sp/>`open`<sp/>calls.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Reading<sp/>an<sp/>ascii<sp/>file<sp/>was<sp/>accomplished<sp/>with<sp/>`read_data`,<sp/>`read_distributed`<sp/>or<sp/>`read`<sp/>calls.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Closing<sp/>an<sp/>ascii<sp/>file<sp/>was<sp/>sometimes<sp/>done<sp/>with<sp/>`mpp_close`,<sp/>`close_file`<sp/>or<sp/>`close`<sp/>calls.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">With<sp/>FMS2_io,<sp/>ascii<sp/>reads<sp/>can<sp/>be<sp/>accomplished<sp/>using<sp/>`ascii_reads`.<sp/>In<sp/>`ascii_reads`,<sp/>the<sp/>root_pe<sp/>opens<sp/>and<sp/>reads<sp/>the<sp/>file<sp/>into<sp/>a<sp/>a<sp/>string<sp/>buffer<sp/>and<sp/>broadcasts<sp/>it<sp/>to<sp/>the<sp/>other<sp/>ranks.<sp/>Each<sp/>rank<sp/>can<sp/>then<sp/>read<sp/>from<sp/>the<sp/>buffer.<sp/>For<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">character(len=:),<sp/>dimension(:),<sp/>allocatable<sp/>::<sp/>restart_file<sp/>!&lt;<sp/>Restart<sp/>file<sp/>saved<sp/>as<sp/>a<sp/>string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">call<sp/>ascii_read(&apos;INPUT/coupler.res&apos;,<sp/>restart_file)</highlight></codeline>
+<codeline><highlight class="normal">read(restart_file(1),<sp/>*)<sp/>calendar_type</highlight></codeline>
+<codeline><highlight class="normal">read(restart_file(2),<sp/>*)<sp/>date_init</highlight></codeline>
+<codeline><highlight class="normal">read(restart_file(3),<sp/>*)<sp/>date</highlight></codeline>
+<codeline><highlight class="normal">deallocate(restart_file)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>H.<sp/>FMS2_io<sp/>namelist</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**ncchksz:**<sp/>Sets<sp/>chunksize<sp/>(in<sp/>bytes)<sp/>argument<sp/>in<sp/>netcdf<sp/>file<sp/>creation<sp/>calls.<sp/>The<sp/>default<sp/>is<sp/>`64*1024`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**netcdf_default_format:**<sp/>Sets<sp/>the<sp/>netcdf<sp/>file<sp/>type.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/><sp/>&quot;64bit&quot;,<sp/>&quot;classic&quot;,<sp/>&quot;netcdf4&quot;.<sp/>This<sp/>can<sp/>be<sp/>overwritten<sp/>per<sp/>file<sp/>if<sp/>you<sp/>specify<sp/>`nc_format`<sp/>in<sp/>the<sp/>open_file<sp/>call.<sp/>The<sp/>default<sp/>is<sp/>64bit.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**header_buffer_val:**<sp/>Sets<sp/>the<sp/>netCDF<sp/>header<sp/>buffer<sp/>size(in<sp/>bytes).<sp/>The<sp/>default<sp/>is<sp/>16384<sp/>bytes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**deflate_level:**<sp/>Determines<sp/>how<sp/>much<sp/>to<sp/>compress<sp/>the<sp/>variable.<sp/>Chosen<sp/>by<sp/>an<sp/>integer<sp/>of<sp/>1<sp/>through<sp/>9.<sp/>The<sp/>higher<sp/>the<sp/>number<sp/>the<sp/>more<sp/>compression<sp/>will<sp/>take<sp/>place,<sp/>but<sp/>will<sp/>take<sp/>longer<sp/>to<sp/>write<sp/>the<sp/>file.<sp/>The<sp/>default<sp/>is<sp/>no<sp/>compression.<sp/>This<sp/>is<sp/>loseless<sp/>compression<sp/>so<sp/>that<sp/>every<sp/>bit<sp/>of<sp/>the<sp/>original<sp/>data<sp/>can<sp/>be<sp/>recovered.<sp/>See<sp/>the<sp/>NETCDF<sp/>user<sp/>guide<sp/>for<sp/>more<sp/>information:<sp/>https://www.unidata.ucar.edu/blogs/developer/en/entry/netcdf_compression</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**shuffle:**<sp/>Flag<sp/>indicating<sp/>whether<sp/>to<sp/>use<sp/>the<sp/>netcdf<sp/>shuffle<sp/>filter.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>I.<sp/>Chunking</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>release<sp/>2022.04,<sp/>&quot;chunksize&quot;<sp/>was<sp/>added<sp/>as<sp/>an<sp/>optional<sp/>argument<sp/>to<sp/>the<sp/>register_diag_field:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>register_restart_field(fileobj,<sp/>&apos;variable_name&apos;,<sp/>variable_data,</highlight></codeline>
+<codeline><highlight class="normal">dim_names,<sp/>chunsizes=chunksizes)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**chunksizes:**<sp/>Is<sp/>an<sp/>array<sp/>defining<sp/>the<sp/>chunksize<sp/>of<sp/>each<sp/>dimension<sp/>of<sp/>the<sp/>variable.<sp/>Chunksizes<sp/>can<sp/>be<sp/>used<sp/>to<sp/>improve<sp/>performance.<sp/>Default<sp/>chunks<sp/>are<sp/>chosen<sp/>by<sp/>the<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**NOTE:<sp/>This<sp/>argument<sp/>is<sp/>only<sp/>valid<sp/>with<sp/>&quot;NETCDF4&quot;<sp/>file<sp/>formats,<sp/>otherwise<sp/>it<sp/>will<sp/>be<sp/>ignored.<sp/>You<sp/>can<sp/>set<sp/>the<sp/>netcdf<sp/>file<sp/>format<sp/>for<sp/>all<sp/>files<sp/>using<sp/>the<sp/>&apos;netcdf_default_format&apos;<sp/>namelist<sp/>or<sp/>in<sp/>a<sp/>per<sp/>file<sp/>basis<sp/>by<sp/>using<sp/>the<sp/>&apos;nc_format&apos;<sp/>argument<sp/>in<sp/>the<sp/>&apos;open_file&apos;<sp/>call**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>See<sp/>the<sp/>NETCDF<sp/>user<sp/>guide<sp/>for<sp/>more<sp/>information:<sp/>(https://cluster.earlham.edu/bccd-ng/testing/mobeen/GALAXSEEHPC/netcdf-4.1.3/man4/netcdf.html#Chunking)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>J.<sp/>MPI-IO</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>opening<sp/>a<sp/>NetCDF-4<sp/>file,<sp/>the<sp/>HDF5<sp/>library&apos;s<sp/>MPI-IO<sp/>driver<sp/>can<sp/>be<sp/>used<sp/>by<sp/>calling<sp/>`open_file`<sp/>with<sp/>the<sp/>optional</highlight></codeline>
+<codeline><highlight class="normal">`use_netcdf_mpi=.true.`<sp/>argument.<sp/>When<sp/>a<sp/>file<sp/>is<sp/>opened<sp/>in<sp/>this<sp/>manner,<sp/>the<sp/>I/O<sp/>domain<sp/>is<sp/>ignored<sp/>and<sp/>every<sp/>PE<sp/>directly</highlight></codeline>
+<codeline><highlight class="normal">performs<sp/>reads<sp/>or<sp/>writes<sp/>in<sp/>parallel.<sp/>In<sp/>the<sp/>case<sp/>of<sp/>parallel<sp/>reads,<sp/>the<sp/>MPI-IO<sp/>driver<sp/>handles<sp/>coordination<sp/>and<sp/>metadata</highlight></codeline>
+<codeline><highlight class="normal">sharing<sp/>among<sp/>the<sp/>PEs,<sp/>which<sp/>can<sp/>improve<sp/>performance<sp/>compared<sp/>to<sp/>the<sp/>standard<sp/>POSIX<sp/>I/O<sp/>driver.<sp/>Additionally,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">`use_collective=.true.`<sp/>argument<sp/>can<sp/>be<sp/>passed<sp/>to<sp/>`open_file`<sp/>to<sp/>enable<sp/>collective<sp/>reads/writes:<sp/>this<sp/>can<sp/>improve<sp/>I/O</highlight></codeline>
+<codeline><highlight class="normal">performance<sp/>significantly,<sp/>but<sp/>it<sp/>requires<sp/>each<sp/>read/write<sp/>call<sp/>to<sp/>run<sp/>synchronously<sp/>across<sp/>all<sp/>participating<sp/>PEs<sp/>(i.e.,</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>introduces<sp/>an<sp/>MPI<sp/>barrier<sp/>at<sp/>the<sp/>start<sp/>of<sp/>each<sp/>read/write<sp/>call).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MPI-IO<sp/>support<sp/>is<sp/>only<sp/>available<sp/>for<sp/>NetCDF-4<sp/>files.<sp/>`use_netcdf_mpi`<sp/>and<sp/>`use_collective`<sp/>are<sp/>both<sp/>disabled<sp/>by<sp/>default.</highlight></codeline>
+<codeline><highlight class="normal">`use_collective`<sp/>has<sp/>no<sp/>effect<sp/>unless<sp/>`use_netcdf_mpi`<sp/>is<sp/>enabled.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/readme.md"/>
+  </compounddef>
+</doxygen>

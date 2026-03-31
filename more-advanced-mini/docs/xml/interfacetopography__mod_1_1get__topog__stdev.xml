@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacetopography__mod_1_1get__topog__stdev" kind="interface" language="Fortran" prot="private">
+    <compoundname>topography_mod::get_topog_stdev</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__topog__stdev_1ae592366a324dfff250f4b89bc31d0e6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_topog_stdev_1d_r4</definition>
+        <argsstring></argsstring>
+        <name>get_topog_stdev_1d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__topog__stdev_1acb24d9ce733fac8640c67c3ffc242ad8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_topog_stdev_1d_r8</definition>
+        <argsstring></argsstring>
+        <name>get_topog_stdev_1d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__topog__stdev_1ad4971f4312cbc4929f39cf682c3d2a72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_topog_stdev_2d_r4</definition>
+        <argsstring></argsstring>
+        <name>get_topog_stdev_2d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetopography__mod_1_1get__topog__stdev_1ac62b3edde208ae00e210562bcaddbc38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_topog_stdev_2d_r8</definition>
+        <argsstring></argsstring>
+        <name>get_topog_stdev_2d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Returns a standard deviation of higher resolution topography with the given model grid boxes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Returns the standard deviation of the &quot;finer&quot; input topography data set, currently the Navy 1/6 degree mean topography data, within the boundaries of the given input grid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>blon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude (in radians) at grid box boundaries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude (in radians) at grid box boundaries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">stdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The standard deviation of surface height (in meters) within given input model grid boxes. The size of this field must be size(blon)-1 by size(blat)-1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A logical value of TRUE is returned if the output field was successfully created. A value of FALSE may be returned if the input topography data set was not readable.</para></simplesect>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="normal">flag<sp/>=<sp/>get_topog_stdev(<sp/>blon,<sp/>blat,<sp/>stdev<sp/>)<sp/>@code</highlight></codeline>
+<codeline><highlight class="normal">@ingroup<sp/>topography_mod<sp/></highlight></codeline>
+</programlisting></para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="108" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="108" bodyend="110"/>
+    <listofallmembers>
+      <member refid="interfacetopography__mod_1_1get__topog__stdev_1ae592366a324dfff250f4b89bc31d0e6a" prot="private" virt="non-virtual"><scope>topography_mod::get_topog_stdev</scope><name>get_topog_stdev_1d_r4</name></member>
+      <member refid="interfacetopography__mod_1_1get__topog__stdev_1acb24d9ce733fac8640c67c3ffc242ad8" prot="private" virt="non-virtual"><scope>topography_mod::get_topog_stdev</scope><name>get_topog_stdev_1d_r8</name></member>
+      <member refid="interfacetopography__mod_1_1get__topog__stdev_1ad4971f4312cbc4929f39cf682c3d2a72" prot="private" virt="non-virtual"><scope>topography_mod::get_topog_stdev</scope><name>get_topog_stdev_2d_r4</name></member>
+      <member refid="interfacetopography__mod_1_1get__topog__stdev_1ac62b3edde208ae00e210562bcaddbc38" prot="private" virt="non-virtual"><scope>topography_mod::get_topog_stdev</scope><name>get_topog_stdev_2d_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1864 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacediag__util__mod" kind="namespace" language="Fortran">
+    <compoundname>diag_util_mod</compoundname>
+    <innerclass refid="interfacediag__util__mod_1_1attribute__init" prot="private">diag_util_mod::attribute_init</innerclass>
+    <innerclass refid="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds" prot="private">diag_util_mod::fms_diag_check_out_of_bounds</innerclass>
+    <innerclass refid="interfacediag__util__mod_1_1prepend__attribute" prot="private">diag_util_mod::prepend_attribute</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__util__mod_1ga880047814f0158c0e8dc048c54d71f2b" prot="public" static="no" mutable="no">
+        <type>character(len=1), public</type>
+        <definition>character(len=1), public field_log_separator</definition>
+        <argsstring></argsstring>
+        <name>field_log_separator</name>
+        <initializer>= &apos;|&apos;</initializer>
+        <briefdescription>
+<para>separator used for csv-style log of registered fields set by nml in diag_manager init </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="116" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__util__mod_1gaa925949ddffd0524e9998c9e0c71a810" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="114" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="114" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__util__mod_1ga8ca98f19e81e8a00c20ccf6af31a1ce5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function diag_util_mod::a_greaterthan_b</definition>
+        <argsstring>(a, b)</argsstring>
+        <name>a_greaterthan_b</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <briefdescription>
+<para>return true iff a&gt;b. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="825" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="826" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga432b8d2a61999207fe05360997f71cb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function diag_util_mod::a_lessthan_b</definition>
+        <argsstring>(a, b)</argsstring>
+        <name>a_lessthan_b</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <briefdescription>
+<para>return true iff a&lt;b. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="818" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="819" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gada0ffc9b58f58c8cffa15f09c8c457dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function diag_util_mod::a_noteq_b</definition>
+        <argsstring>(a, b)</argsstring>
+        <name>a_noteq_b</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <briefdescription>
+<para>return true iff a /= b </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first of the two integer args that are to be compared to each other. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="832" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="833" bodyend="835"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gae50021eac70f2c1d81935b584d1f4da9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::attribute_init_field</definition>
+        <argsstring>(out_field, err_msg)</argsstring>
+        <name>attribute_init_field</name>
+        <param>
+          <type>out_field</type>
+          <defname>out_field</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the atttype in out_field. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">out_field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output field to allocate memory for attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message, passed back to calling function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2267" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2268" bodyend="2291"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gad7672a732b7b5e54cdddd13e9155583f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::attribute_init_file</definition>
+        <argsstring>(out_file, err_msg)</argsstring>
+        <name>attribute_init_file</name>
+        <param>
+          <type>out_file</type>
+          <defname>out_file</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the atttype in out_file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">out_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output file to allocate memory for attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message, passed back to calling function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2383" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2384" bodyend="2407"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gae871029d44ef9d39e680ef94c6d2ad1e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::check_and_open</definition>
+        <argsstring>(file, time, do_write, filename_time)</argsstring>
+        <name>check_and_open</name>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>do_write</type>
+          <defname>do_write</defname>
+        </param>
+        <param>
+          <type>filename_time</type>
+          <defname>filename_time</defname>
+        </param>
+        <briefdescription>
+<para>Checks if it is time to open a new file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Checks if it is time to open a new file. If yes, it first closes the current file, opens a new file and returns file_unit previous diag_manager_end is replaced by closing_file and output_setup by opening_file.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File ID.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">do_write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>.TRUE.</computeroutput> if file is expecting more data to write, <computeroutput>.FALSE.</computeroutput> otherwise.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time used in setting the filename when writing periodic files</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reset the number of times in the files back to 0 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2163" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2164" bodyend="2202"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gaf04fa5bd74518dd9e15e377ee7bcd1db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::check_bounds_are_exact_dynamic</definition>
+        <argsstring>(out_num, diag_field_id, Time, err_msg)</argsstring>
+        <name>check_bounds_are_exact_dynamic</name>
+        <param>
+          <type>out_num</type>
+          <defname>out_num</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>This is an adaptor to the check_bounds_are_exact_dynamic_modern function to maintain an interface servicing the legacy diag_manager. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output field ID number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input field ID number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to use in check. The check is only performed if <computeroutput>output_fields(out_num)Time_of_prev_field_data</computeroutput> is not equal to <computeroutput>Time</computeroutput> or <computeroutput>Time_zero</computeroutput>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_bounds_are_exact_dynamic</computeroutput>. An empty error string indicates the x, y, and z indices are equal to the buffer array boundaries. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="989" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="990" bodyend="1010"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga0dba316d94c092ffaf900e8989f09e9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::check_bounds_are_exact_static</definition>
+        <argsstring>(out_num, diag_field_id, err_msg)</argsstring>
+        <name>check_bounds_are_exact_static</name>
+        <param>
+          <type>out_num</type>
+          <defname>out_num</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Check if the array indices for <computeroutput>output_fields(out_num)</computeroutput> are equal to the <computeroutput>output_fields(out_num)buffer</computeroutput> upper and lower bounds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output field ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input field ID.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The return status, which is set to non-empty message if the check fails. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1016" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1017" bodyend="1031"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga80f6d43eb251fb619824021c0977da70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::check_duplicate_output_fields</definition>
+        <argsstring>(err_msg)</argsstring>
+        <name>check_duplicate_output_fields</name>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks to see if <computeroutput>output_name</computeroutput> and <computeroutput>output_file</computeroutput> are unique in <computeroutput>output_fields</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message. If empty, then no duplicates found. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2237" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2238" bodyend="2263"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga89812bbef60d702afa04f57d3476344d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::check_out_of_bounds</definition>
+        <argsstring>(out_num, diag_field_id, err_msg)</argsstring>
+        <name>check_out_of_bounds</name>
+        <param>
+          <type>out_num</type>
+          <defname>out_num</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the array indices for <computeroutput>output_fields(out_num)</computeroutput> are outside the <computeroutput>output_fields(out_num)buffer</computeroutput> upper and lower bounds. If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output field ID number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input field ID number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_out_of_bounds</computeroutput>. An empty error string indicates the x, y, and z indices are not outside the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="841" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="842" bodyend="867"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gaa7383c3a7dc95ea212c620758a00159a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function diag_util_mod::compare_buffer_bounds_to_size</definition>
+        <argsstring>(current_bounds, bounds, error_str, lowerb_comp, upperb_comp)</argsstring>
+        <name>compare_buffer_bounds_to_size</name>
+        <param>
+          <type>current_bounds</type>
+          <defname>current_bounds</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>error_str</type>
+          <defname>error_str</defname>
+        </param>
+        <param>
+          <type>lowerb_comp</type>
+          <defname>lowerb_comp</defname>
+        </param>
+        <param>
+          <type>upperb_comp</type>
+          <defname>upperb_comp</defname>
+        </param>
+        <briefdescription>
+<para>Compares the bounding indices of an array specified in &quot;current_bounds&quot; to the corresponding lower and upper bounds specified in &quot;bounds&quot; Comparison is done by the two user specified input functions lowerb_comp and upperb_comp. If any compariosn function returns true, then, after filling error_str, this routine also returns true. The suplied comparison functions should return true for errors : for indices out of bounds, or indices are not equal when expected to be equal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">current_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A bounding box holding the current bounds of an array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">error_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The return status, which is set to non-empty message if the check fails. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Interface lowerb_comp should be used for comparison to lower bounds of buffer.</para><para>Interface lowerb_comp should be used for comparison to upper bounds of buffer. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="766" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="767" bodyend="814"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga1ba13ef1d2e071e0e38beb168cfc88e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::diag_data_out</definition>
+        <argsstring>(file, field, dat, time, final_call_in, static_write_in, filename_time)</argsstring>
+        <name>diag_data_out</name>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>dat</type>
+          <defname>dat</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>final_call_in</type>
+          <defname>final_call_in</defname>
+        </param>
+        <param>
+          <type>static_write_in</type>
+          <defname>static_write_in</defname>
+        </param>
+        <param>
+          <type>filename_time</type>
+          <defname>filename_time</defname>
+        </param>
+        <briefdescription>
+<para>Write data out to file, and if necessary flush the buffers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File ID.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field ID.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">dat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to write out.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">final_call_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>.TRUE.</computeroutput> if this is the last write for file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">static_write_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>.TRUE.</computeroutput> if static fields are to be written to file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time used in setting the filename when writing periodic files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>dif is the time as a real that is evaluated</para><para>Set up the time index and write the correct time value to the time array</para><para>Write data </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2056" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2057" bodyend="2156"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gacc4526c60b92413b1bdd1fd497515ce3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::diag_util_init</definition>
+        <argsstring>()</argsstring>
+        <name>diag_util_init</name>
+        <briefdescription>
+<para>Write the version number of this file to the log file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="123" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="124" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga64d623b5f80918996daf16f942bcb404" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function diag_util_mod::find_file</definition>
+        <argsstring>(name, tile_count)</argsstring>
+        <name>find_file</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Return the file number for file name and tile. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer find_file</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1273" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1274" bodyend="1285"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga120ca6467cad328befb3961c18381172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public diag_util_mod::find_input_field</definition>
+        <argsstring>(module_name, field_name, tile_count)</argsstring>
+        <name>find_input_field</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Return the field number for the given module name, field name, and tile number. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer find_input_field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile number. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1290" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1291" bodyend="1305"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gaf38752054e48148b8750ce46a562c098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::fms_diag_check_bounds_are_exact_dynamic</definition>
+        <argsstring>(current_bounds, bounds, output_name, module_name, Time, field_prev_Time, err_msg)</argsstring>
+        <name>fms_diag_check_bounds_are_exact_dynamic</name>
+        <param>
+          <type>current_bounds</type>
+          <defname>current_bounds</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>field_prev_Time</type>
+          <defname>field_prev_Time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks that array indices specified in the bounding box &quot;current_bounds&quot; are identical to those in the bounding box &quot;bounds&quot; match exactly. The check occurs only when the time changed. If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">current_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A bounding box holding the current bounds of an array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to use in check. The check is only performed if <computeroutput>output_fields(out_num)Time_of_prev_field_data</computeroutput> is not equal to <computeroutput>Time</computeroutput> or <computeroutput>Time_zero</computeroutput>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">field_prev_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>output_fields(out_num)Time_of_prev_field_data</computeroutput></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_bounds_are_exact_dynamic</computeroutput>. An empty error string indicates the x, y, and z indices are equal to the buffer array boundaries. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="938" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="940" bodyend="983"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga8a1f3d5fde1ca1de63161882b6b392ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::fms_diag_check_bounds_are_exact_static</definition>
+        <argsstring>(current_bounds, bounds, output_name, module_name, err_msg)</argsstring>
+        <name>fms_diag_check_bounds_are_exact_static</name>
+        <param>
+          <type>current_bounds</type>
+          <defname>current_bounds</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Check if the array indices specified in the bounding box &quot;current_bounds&quot; are equal to those specified in the bounding box &quot;bounds&quot; output_fields are equal to the buffer upper and lower bounds. If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">current_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A bounding box holding the current bounds of the array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The return status, which is set to non-empty message if the check fails. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1038" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1039" bodyend="1057"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gafd05047a7ab148d068258b1e17fda091" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::fms_diag_check_out_of_bounds_r4</definition>
+        <argsstring>(ofb, bounds, output_name, module_name, err_msg)</argsstring>
+        <name>fms_diag_check_out_of_bounds_r4</name>
+        <param>
+          <type>ofb</type>
+          <defname>ofb</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the array indices for <computeroutput>output_fields(out_num)</computeroutput> are outside the <computeroutput>output_fields(out_num)buffer</computeroutput> upper and lower bounds. If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ofb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output field buffer to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_out_of_bounds</computeroutput>. An empty error string indicates the x, y, and z indices are not outside the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="873" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="874" bodyend="898"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga8360aa65c110dea627eaa298210a2d43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::fms_diag_check_out_of_bounds_r8</definition>
+        <argsstring>(ofb, bounds, output_name, module_name, err_msg)</argsstring>
+        <name>fms_diag_check_out_of_bounds_r8</name>
+        <param>
+          <type>ofb</type>
+          <defname>ofb</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the array indices for output_field buffer (ofb) are outside the are outside the bounding box (bounds). If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ofb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output field buffer to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_out_of_bounds</computeroutput>. An empty error string indicates the x, y, and z indices are not outside the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="905" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="906" bodyend="930"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga216393ef583bb8e86e82eb10f8dc4edb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public diag_util_mod::get_file_start_time</definition>
+        <argsstring>(file_num)</argsstring>
+        <name>get_file_start_time</name>
+        <param>
+          <type>file_num</type>
+          <defname>file_num</defname>
+        </param>
+        <briefdescription>
+<para>Get the a diag_file&apos;s start_time as it is defined in the diag_table. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the start_time for the file</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File number of the file to get the start_time from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The start_time to return </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2501" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2503" bodyend="2507"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gafcd91761ec14e6c50d843282f0576993" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function diag_util_mod::get_index</definition>
+        <argsstring>(number, array)</argsstring>
+        <name>get_index</name>
+        <param>
+          <type>number</type>
+          <defname>number</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <briefdescription>
+<para>Find index <computeroutput>i</computeroutput> of array such that <computeroutput>array(i)</computeroutput> is closest to number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="546" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="547" bodyend="620"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga01b637e7d0e8e84d29ddb75cd7b6ebbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::get_subfield_size</definition>
+        <argsstring>(axes, outnum)</argsstring>
+        <name>get_subfield_size</name>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>outnum</type>
+          <defname>outnum</defname>
+        </param>
+        <briefdescription>
+<para>Get the size, start, and end indices for output fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axes of the input_field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">outnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in array output_fields </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="133" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="134" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga8d6d348cbcc3adcbb546196710b82201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::get_subfield_vert_size</definition>
+        <argsstring>(axes, outnum)</argsstring>
+        <name>get_subfield_vert_size</name>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>outnum</type>
+          <defname>outnum</defname>
+        </param>
+        <briefdescription>
+<para>Get size, start and end indices for output fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axes of the input_field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">outnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in array output_fields </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="415" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="416" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga0b6c27c26a596231c2b4f5b3a6550648" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::init_file</definition>
+        <argsstring>(name, output_freq, output_units, format, time_units, long_name, tile_count, new_file_freq, new_file_freq_units, start_time, file_duration, file_duration_units, filename_time_bounds)</argsstring>
+        <name>init_file</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>output_freq</type>
+          <defname>output_freq</defname>
+        </param>
+        <param>
+          <type>output_units</type>
+          <defname>output_units</defname>
+        </param>
+        <param>
+          <type>format</type>
+          <defname>format</defname>
+        </param>
+        <param>
+          <type>time_units</type>
+          <defname>time_units</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>new_file_freq</type>
+          <defname>new_file_freq</defname>
+        </param>
+        <param>
+          <type>new_file_freq_units</type>
+          <defname>new_file_freq_units</defname>
+        </param>
+        <param>
+          <type>start_time</type>
+          <defname>start_time</defname>
+        </param>
+        <param>
+          <type>file_duration</type>
+          <defname>file_duration</defname>
+        </param>
+        <param>
+          <type>file_duration_units</type>
+          <defname>file_duration_units</defname>
+        </param>
+        <param>
+          <type>filename_time_bounds</type>
+          <defname>filename_time_bounds</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long name for time axis.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How often data is to be written to the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output frequency unit. (MIN, HOURS, DAYS, etc.)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number type/kind the data is to be written out to the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time axis units.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_file_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How often a new file is to be created.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_file_freq_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new file frequency unit. (MIN, HOURS, DAYS, etc.)&lt;/IN&gt;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How long file is to be used.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_duration_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File duration unit. (MIN, HOURS, DAYS, etc.)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">start_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time when the file is to start</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set time bound file name to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Initialize the times to 0 </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1062" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1064" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga08ecbb715699d08631efe4e60a4029ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::init_input_field</definition>
+        <argsstring>(module_name, field_name, tile_count)</argsstring>
+        <name>init_input_field</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the input field. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input field name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile number. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1309" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1310" bodyend="1337"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga1cda424e7c8acb1935958add5a002ffe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::init_output_field</definition>
+        <argsstring>(module_name, field_name, output_name, output_file, time_method, pack, tile_count, local_coord)</argsstring>
+        <name>init_output_field</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>output_file</type>
+          <defname>output_file</defname>
+        </param>
+        <param>
+          <type>time_method</type>
+          <defname>time_method</defname>
+        </param>
+        <param>
+          <type>pack</type>
+          <defname>pack</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>local_coord</type>
+          <defname>local_coord</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the output field. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output field name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output name written to file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File where field should be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data reduction method. See &lt;LINK src=&quot;diag_manager.html&quot;&gt;diag_manager_mod&lt;/LINK&gt; for valid methods.&lt;/IN&gt;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Packing method.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile number.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">local_coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region to be written. If missing, then all data to be written.&lt;/IN&gt; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1341" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1343" bodyend="1630"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gaa8d38630de6f6ace1cb1b3ec5350d018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::log_diag_field_info</definition>
+        <argsstring>(module_name, field_name, axes, long_name, units, missing_value, range, dynamic)</argsstring>
+        <name>log_diag_field_info</name>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>range</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>dynamic</type>
+          <defname>dynamic</defname>
+        </param>
+        <briefdescription>
+<para>Writes brief diagnostic field info to the log file. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the <computeroutput>do_diag_field_log</computeroutput> namelist parameter is .TRUE., then a line briefly describing diagnostic field is added to the log file. Normally users should not call this subroutine directly, since it is called by register_static_field and register_diag_field if do_not_log is not set to .TRUE.. It is used, however, in LM3 to avoid excessive logs due to the number of fields registered for each of the tile types. LM3 code uses a do_not_log parameter in the registration calls, and subsequently calls this subroutine to log field information under a generic name.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis IDs</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long name for field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unit of field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valid range of values for field.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dynamic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>.TRUE.</computeroutput> if field is not static. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="634" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="636" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga080607862bbe462075d2c80c32d7cd3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::opening_file</definition>
+        <argsstring>(file, time, filename_time)</argsstring>
+        <name>opening_file</name>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>filename_time</type>
+          <defname>filename_time</defname>
+        </param>
+        <briefdescription>
+<para>Open file for output, and write the meta data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File ID.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time for the file time stamp</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time used in setting the filename when writing periodic files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>update fnum_for_domain with the correct domain</para><para>Allocate the is_time_axis_registered field and set it to false for the first trip</para><para>Use the correct file object </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1634" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1635" bodyend="2052"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gac38f37dff10653521379703f7000f6cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::prepend_attribute_field</definition>
+        <argsstring>(out_field, att_name, prepend_value, err_msg)</argsstring>
+        <name>prepend_attribute_field</name>
+        <param>
+          <type>out_field</type>
+          <defname>out_field</defname>
+        </param>
+        <param>
+          <type>att_name</type>
+          <defname>att_name</defname>
+        </param>
+        <param>
+          <type>prepend_value</type>
+          <defname>prepend_value</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Prepends the attribute value to an already existing attribute. If the attribute isn&apos;t yet defined, then creates a new attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">out_field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output field that will get the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">prepend_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to prepend</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message, passed back to calling routine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2296" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2297" bodyend="2380"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gab09b67c2e2f65d7103e195fb2596fb17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_util_mod::prepend_attribute_file</definition>
+        <argsstring>(out_file, att_name, prepend_value, err_msg)</argsstring>
+        <name>prepend_attribute_file</name>
+        <param>
+          <type>out_file</type>
+          <defname>out_file</defname>
+        </param>
+        <param>
+          <type>att_name</type>
+          <defname>att_name</defname>
+        </param>
+        <param>
+          <type>prepend_value</type>
+          <defname>prepend_value</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Prepends the attribute value to an already existing attribute. If the attribute isn&apos;t yet defined, then creates a new attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">out_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output file that will get the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">prepend_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to prepend</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message, passed back to calling routine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2412" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2413" bodyend="2496"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga8173f2ae692d8b1cef9f1bca76ad8910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::sync_file_times</definition>
+        <argsstring>(file_id, init_time, err_msg)</argsstring>
+        <name>sync_file_times</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Synchronize the file&apos;s start and close times with the model start and end times. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>sync_file_times</computeroutput> checks to see if the file start time is less than the model&apos;s init time (passed in as the only argument). If it is less, then the both the file start time and end time are synchronized using the passed in initial time and the duration as calculated by the <computeroutput>diag_time_inc</computeroutput> function. <computeroutput>sync_file_times</computeroutput> will also increase the <computeroutput>next_open</computeroutput> until it is greater than the init_time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial time use for the synchronization.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return error message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="1243" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="1244" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1gaac5cf9fdeba85eb93be4535e33ec02c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::update_bounds</definition>
+        <argsstring>(out_num, lower_i, upper_i, lower_j, upper_j, lower_k, upper_k)</argsstring>
+        <name>update_bounds</name>
+        <param>
+          <type>out_num</type>
+          <defname>out_num</defname>
+        </param>
+        <param>
+          <type>lower_i</type>
+          <defname>lower_i</defname>
+        </param>
+        <param>
+          <type>upper_i</type>
+          <defname>upper_i</defname>
+        </param>
+        <param>
+          <type>lower_j</type>
+          <defname>lower_j</defname>
+        </param>
+        <param>
+          <type>upper_j</type>
+          <defname>upper_j</defname>
+        </param>
+        <param>
+          <type>lower_k</type>
+          <defname>lower_k</defname>
+        </param>
+        <param>
+          <type>upper_k</type>
+          <defname>upper_k</defname>
+        </param>
+        <briefdescription>
+<para>Update the <computeroutput>output_fields</computeroutput> x, y, and z min and max boundaries (array indices) with the six specified bounds values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output field ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper i bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper j bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower k bound.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper k bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="746" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="747" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__util__mod_1ga162741650fdc9582bf1aeaf0c04d4417" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_util_mod::write_static</definition>
+        <argsstring>(file)</argsstring>
+        <name>write_static</name>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+<para>Output all static fields in this file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File ID. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="2206" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="2207" bodyend="2233"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="23" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2690 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__astronomy__mod" kind="group">
+    <compoundname>astronomy_mod</compoundname>
+    <title>astronomy_mod</title>
+    <innerclass refid="interfaceastronomy__mod_1_1annual__mean__solar" prot="private">astronomy_mod::annual_mean_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1daily__mean__solar" prot="private">astronomy_mod::daily_mean_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1diurnal__solar" prot="private">astronomy_mod::diurnal_solar</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1get__orbital__parameters" prot="private">astronomy_mod::get_orbital_parameters</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1get__period" prot="private">astronomy_mod::get_period</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1half__day" prot="private">astronomy_mod::half_day</innerclass>
+    <innerclass refid="interfaceastronomy__mod_1_1set__period" prot="private">astronomy_mod::set_period</innerclass>
+    <innernamespace refid="namespaceastronomy__mod">astronomy_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__astronomy__mod_1gafc625cdedb5a5a3c2340493f19fd08fb" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical annual_mean_calculated</definition>
+        <argsstring></argsstring>
+        <name>annual_mean_calculated</name>
+        <initializer>=.false.</initializer>
+        <briefdescription>
+<para>have the annual mean values been calculated? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="405" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="405" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga3455a617595c26820155d59d85932a72" prot="private" static="no" mutable="no">
+        <type>type(time_type)</type>
+        <definition>type(time_type) autumnal_eq_ref</definition>
+        <argsstring></argsstring>
+        <name>autumnal_eq_ref</name>
+        <briefdescription>
+<para>time_type variable containing specified time of reference NH autumnal equinox </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="383" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="383" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga86198e424a786af3ea76398d607e4566" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable cosz_ann</definition>
+        <argsstring></argsstring>
+        <name>cosz_ann</name>
+        <briefdescription>
+<para>annual mean cos of zenith angle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gabf926e53591ff020492feae586455bdf" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer day_ae</definition>
+        <argsstring></argsstring>
+        <name>day_ae</name>
+        <initializer>= 23</initializer>
+        <briefdescription>
+<para>Day of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac7ef38594dc59c2d512691a0c7325d60" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) deg_to_rad</definition>
+        <argsstring></argsstring>
+        <name>deg_to_rad</name>
+        <briefdescription>
+<para>conversion from degrees to radians </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="396" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="396" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga0320a619151d37795d72878cfae3b430" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) ecc</definition>
+        <argsstring></argsstring>
+        <name>ecc</name>
+        <initializer>= 0.01671_r8_kind</initializer>
+        <briefdescription>
+<para>Eccentricity of Earth&apos;s orbit [dimensionless]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="353" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga58b4bf35594794e15c2c11fe3afe9aec" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable fracday_ann</definition>
+        <argsstring></argsstring>
+        <name>fracday_ann</name>
+        <briefdescription>
+<para>annual mean daylight fraction </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac9fe51e6e306b8564911a084b8658aca" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer hour_ae</definition>
+        <argsstring></argsstring>
+        <name>hour_ae</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Hour of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="364" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="364" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga45b6936387832601623c84dccbeb7b30" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer minute_ae</definition>
+        <argsstring></argsstring>
+        <name>minute_ae</name>
+        <initializer>= 37</initializer>
+        <briefdescription>
+<para>Minute of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="365" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="365" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>=.false.</initializer>
+        <briefdescription>
+<para>has the module been initialized ? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="398" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="398" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga950d13661623d081cc81a387b6cc0b77" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer month_ae</definition>
+        <argsstring></argsstring>
+        <name>month_ae</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>Month of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="362" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="362" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga8031fcc1923a04c1f440a6b64e733a1d" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_angles</definition>
+        <argsstring></argsstring>
+        <name>num_angles</name>
+        <initializer>= 3600</initializer>
+        <briefdescription>
+<para>Number of intervals into which the year is divided to compute orbital positions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="367" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="367" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga867b18beb2aba0632e097f1701629f9b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_pts</definition>
+        <argsstring></argsstring>
+        <name>num_pts</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>count of grid_boxes for which annual mean astronomy values have been calculated </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="406" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="406" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga8c7f0f95155468154b39cc3074ed026a" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) obliq</definition>
+        <argsstring></argsstring>
+        <name>obliq</name>
+        <initializer>= 23.439_r8_kind</initializer>
+        <briefdescription>
+<para>Obliquity [degrees]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="354" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga58544ef69e8885fa7ed0c2dbff42ff99" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), allocatable</type>
+        <definition>real(r8_kind), dimension(:), allocatable orb_angle</definition>
+        <argsstring></argsstring>
+        <name>orb_angle</name>
+        <briefdescription>
+<para>table of orbital positions (0 to 2*pi) as a function of time used to find actual orbital position via interpolation </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="390" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="390" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gac80dde030d030f36de16aee92903fa8c" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) per</definition>
+        <argsstring></argsstring>
+        <name>per</name>
+        <initializer>= 102.932_r8_kind</initializer>
+        <briefdescription>
+<para>Longitude of perihelion with respect to autumnal equinox in NH [degrees]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="355" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="355" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga4af111fe62fa2772a47f0484a1e4adb0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Specified length of year [seconds]; must be specified to override default value given by length_of_year in time_manager_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="357" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gae81380ba290de3d3d4ed23bb9e04d6d3" prot="private" static="no" mutable="no">
+        <type>type(time_type)</type>
+        <definition>type(time_type) period_time_type</definition>
+        <argsstring></argsstring>
+        <name>period_time_type</name>
+        <briefdescription>
+<para>time_type variable containing period of one orbit </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="387" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="387" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gab2b0a1887183293d65351d039fb28a4c" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) rrsun_ann</definition>
+        <argsstring></argsstring>
+        <name>rrsun_ann</name>
+        <briefdescription>
+<para>annual mean earth-sun distance </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="404" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="404" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga0cad89f046bb5225b3e0ff887f5c75b5" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer second_ae</definition>
+        <argsstring></argsstring>
+        <name>second_ae</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Second of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="366" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="366" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gaa0e907c2395f2142bf015590474b047a" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) seconds_per_day</definition>
+        <argsstring></argsstring>
+        <name>seconds_per_day</name>
+        <initializer>= 86400.0_r8_kind</initializer>
+        <briefdescription>
+<para>seconds in a day </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="395" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="395" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gabcccfbc3fe882f4f36a7c93c892c7ebc" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable solar_ann</definition>
+        <argsstring></argsstring>
+        <name>solar_ann</name>
+        <briefdescription>
+<para>annual mean solar factor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga705e11112da69e641ca5f8a1732ca383" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer total_pts</definition>
+        <argsstring></argsstring>
+        <name>total_pts</name>
+        <briefdescription>
+<para>number of grid boxes owned by the processor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="409" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="409" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1gae46437a4a7d0afe68e7f234deaf74f56" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) twopi</definition>
+        <argsstring></argsstring>
+        <name>twopi</name>
+        <briefdescription>
+<para>2 *PI </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="397" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="397" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__astronomy__mod_1ga89a3171b8c7d4c50c5c41fbaaca576e3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer year_ae</definition>
+        <argsstring></argsstring>
+        <name>year_ae</name>
+        <initializer>= 1998</initializer>
+        <briefdescription>
+<para>Year of specified autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="363" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="363" bodyend="363"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__astronomy__mod_1gad5664c51c491dd83f21ac818217f9a6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_ast_kind_) function</type>
+        <definition>real(kind=fms_ast_kind_) function angle_</definition>
+        <argsstring>(t)</argsstring>
+        <name>angle_</name>
+        <param>
+          <type>t</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+<para>angle determines the position within the earth&apos;s orbit at time t in the year (t = 0 at NH autumnal equinox) by interpolating into the orbital position table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time of year (between 0 and 2*pi; t=0 at NH autumnal equinox</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Orbital position relative to NH autumnal equinox [radians] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Define orbital tables indices bracketing current orbital time (int and int_1). Define table index distance between the lower table value (int) and the actual orbital time (x). Define orbital position as being x of the way between int and int_1. Renormalize angle to be within the range 0 to 2*pi. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1435" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1436" bodyend="1469"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gadb7a1248df2f7994aadbd03cf7b82680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine annual_mean_solar_1d_</definition>
+        <argsstring>(jst, jnd, lat, cosz, solar, fracday, rrsun_out)</argsstring>
+        <name>annual_mean_solar_1d_</name>
+        <param>
+          <type>jst</type>
+          <defname>jst</defname>
+        </param>
+        <param>
+          <type>jnd</type>
+          <defname>jnd</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>solar</type>
+          <defname>solar</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun_out</type>
+          <defname>rrsun_out</defname>
+        </param>
+        <briefdescription>
+<para>annual_mean_solar_1d creates 2-d input fields from 1-d input fields and then calls annual_mean_solar_2d to obtain 2-d output fields which are then stored into 1-d fields for return to the calling subroutine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jst&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index of latitude window </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jnd&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index of latitude window </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;solar&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shortwave flux factor: cosine of zenith angle * daylight fraction / (earth-sun distance squared) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call annual_mean_solar_2d to calculate the astronomy fields.</para><para>place output fields into 1-D arrays for return to calling routine.</para><para>if the calculation has been done, simply return the module variables contain the results at the desired latitudes. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1266" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1268" bodyend="1321"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga413f245d7beef96115dc892cdaec6a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine annual_mean_solar_2d_</definition>
+        <argsstring>(js, je, lat, cosz, solar, fracday, rrsun)</argsstring>
+        <name>annual_mean_solar_2d_</name>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>solar</type>
+          <defname>solar</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <briefdescription>
+<para>annual_mean_solar_2d returns 2d fields of annual mean values of the cosine of zenith angle, daylight fraction and earth-sun distance at the specified latitude. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jst&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index of latitude window </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;jnd&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index of latitude window </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;solar&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shortwave flux factor: cosine of zenith angle * daylight fraction / (earth-sun distance squared) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>determine annual mean values of solar flux and product of cosz and solar flux by integrating the annual cycle in num_angles orbital increments.</para><para>define the flux-weighted annual mean cosine of the zenith angle.</para><para>define avg fracday such as to make the avg flux (solar) equal to the product of the avg cosz * avg fracday * assumed mean avg radius of 1.0. it is unlikely that these avg fracday and avg rr will ever be used.</para><para>save the values that have been calculated as module variables, if those variables are present; i.e., not the spectral 2-layer model.</para><para>increment the points computed counter. set flag to end execution once values have been calculated for all points owned by the processor.</para><para>if the calculation has been done, return the appropriate module variables. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1149" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1151" bodyend="1249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gae98dd4f6c4d82beaf07936121a0b972b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine annual_mean_solar_2level_</definition>
+        <argsstring>(lat, cosz, solar)</argsstring>
+        <name>annual_mean_solar_2level_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>solar</type>
+          <defname>solar</defname>
+        </param>
+        <briefdescription>
+<para>annual_mean_solar_2level creates 2-d input fields from 1-d input fields and then calls annual_mean_solar_2d to obtain 2-d output fields which are then stored into 1-d fields for return to the calling subroutine. This subroutine will be called during model initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod annual_mean_solar_2level should be called only once</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cosz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">solar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shortwave flux factor: cosine of zenith angle * daylight fraction / (earth-sun distance squared) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call annual_mean_solar_2d to calculate the astronomy fields.</para><para>place output fields into 1-D arrays for return to calling routine.</para><para>if the calculation has been done, print an error message since this subroutine should be called only once. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1332" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1333" bodyend="1385"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga1cbb745900e141cfee7e422a2f02caa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::astronomy_end</definition>
+        <argsstring></argsstring>
+        <name>astronomy_end</name>
+        <briefdescription>
+<para>astronomy_end is the destructor for astronomy_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>check if the module has been initialized.</para><para>deallocate module variables.</para><para>mark the module as uninitialized. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="757" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="758" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga28a67f4da82725afd9c0051464b8767c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::astronomy_init</definition>
+        <argsstring>(latb, lonb)</argsstring>
+        <name>astronomy_init</name>
+        <param>
+          <type>latb</type>
+          <defname>latb</defname>
+        </param>
+        <param>
+          <type>lonb</type>
+          <defname>lonb</defname>
+        </param>
+        <briefdescription>
+<para>astronomy_init is the constructor for astronomy_mod. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod ecc must be between 0 and 0.99</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod obliquity must be between -90 and 90 degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod perihelion must be between 0 and 360 degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">latb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2d array of model latitudes at cell corners [radians]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lonb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2d array of model longitudes at cell corners [radians] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>This routine will: Verify that modules used by this module have been initialized.</para><para>Read namelist.</para><para>Write version number and namelist to logfile.</para><para>Be sure input values are within valid ranges.</para><para>Set up time-type variable defining specified time of autumnal equinox.</para><para>Set up time-type variable defining length of year.</para><para>Define useful module variables.</para><para>Call orbit to define table of orbital angles as function of orbital time.</para><para>If annual mean radiation is desired, then latb will be present. allocate arrays to hold the needed astronomical factors. define the total number of points that the processor is responsible for.</para><para>Mark the module as initialized. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="430" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="431" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga848409919ebf701a433079e564059aec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_0d_</definition>
+        <argsstring>(lat, time_since_ae, cosz, h_out, rr_out)</argsstring>
+        <name>daily_mean_solar_0d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>h_out</type>
+          <defname>h_out</defname>
+        </param>
+        <param>
+          <type>rr_out</type>
+          <defname>rr_out</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_1d takes 1-d input fields, adds a second dimension and calls daily_mean_solar_2d. on return, the 2d fields are returned to the original 1d fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;h_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2-d array of half-day lengths at the latitudes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rr_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the inverse of the square of the earth-sun distance relative to the mean distance at angle ang in the earth&apos;s orbit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_2d to calculate astronomy fields.</para><para>return output fields to scalars for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="917" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="918" bodyend="947"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gaf2c8ceddfc3f1c564188932bf24cb74b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_1d_</definition>
+        <argsstring>(lat, time_since_ae, cosz, h_out, rr_out)</argsstring>
+        <name>daily_mean_solar_1d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>h_out</type>
+          <defname>h_out</defname>
+        </param>
+        <param>
+          <type>rr_out</type>
+          <defname>rr_out</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_1d takes 1-d input fields, adds a second dimension and calls daily_mean_solar_2d. on return, the 2d fields are returned to the original 1d fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;h_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2-d array of half-day lengths at the latitudes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rr_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the inverse of the square of the earth-sun distance relative to the mean distance at angle ang in the earth&apos;s orbit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_2d to calculate astronomy fields.</para><para>place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="815" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="816" bodyend="852"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga2f14902614fc46251932fc41c88d55c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_2d_</definition>
+        <argsstring>(lat, time_since_ae, cosz, h_out, rr_out)</argsstring>
+        <name>daily_mean_solar_2d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>h_out</type>
+          <defname>h_out</defname>
+        </param>
+        <param>
+          <type>rr_out</type>
+          <defname>rr_out</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_2d computes the daily mean astronomical parameters for the input points at latitude lat and time of year time_since_ae. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;h_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2-d array of half-day lengths at the latitudes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rr_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the inverse of the square of the earth-sun distance relative to the mean distance at angle ang in the earth&apos;s orbit.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod time_since_ae not between 0 and 2pi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Define the orbital angle (location in year), solar declination, half-day length and earth sun distance factor. Use functions contained in this module.</para><para>Where the entire day is dark, define cosz to be zero. otherwise use the standard formula. Define the daylight fraction and earth- sun distance. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="752" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="753" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gadb6a89b21172d93ab104058aa6fc31e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_2level_</definition>
+        <argsstring>(lat, time_since_ae, cosz, solar)</argsstring>
+        <name>daily_mean_solar_2level_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>solar</type>
+          <defname>solar</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_2level takes 1-d input fields, adds a second dimension and calls daily_mean_solar_2d. on return, the 2d fields are returned to the original 1d fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;solar&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shortwave flux factor: cosine of zenith angle * daylight fraction / (earth-sun distance squared) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_2d to calculate astronomy fields.</para><para>place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="866" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="867" bodyend="902"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gacd2e36cf02c7362baf59149dd723e01d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_cal_0d_</definition>
+        <argsstring>(lat, time, cosz, fracday, rrsun)</argsstring>
+        <name>daily_mean_solar_cal_0d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_cal_0d converts scalar input fields to real, 2d variables and then calls daily_mean_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_cal_2d to convert the time_types to reals and then calculate the astronomy fields.</para><para>place output fields into scalar arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1099" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1100" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gafc9fb962576747b2457a0fde387ca729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_cal_1d_</definition>
+        <argsstring>(lat, time, cosz, fracday, rrsun)</argsstring>
+        <name>daily_mean_solar_cal_1d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_cal_1d receives time_type inputs, converts them to real, 2d variables and then calls daily_mean_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_cal_2d to convert the time_types to reals and then calculate the astronomy fields.</para><para>place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1006" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1007" bodyend="1039"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga633441a25b107ff85e79aa59d32223f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_cal_2d_</definition>
+        <argsstring>(lat, time, cosz, fracday, rrsun)</argsstring>
+        <name>daily_mean_solar_cal_2d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_cal_2d receives time_type inputs, converts them to real variables and then calls daily_mean_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod time_since_ae not between 0 and 2pi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="963" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="964" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gae1944132fdf71da9b4de0f3c08cc899f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine daily_mean_solar_cal_2level_</definition>
+        <argsstring>(lat, time, cosz, solar)</argsstring>
+        <name>daily_mean_solar_cal_2level_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>solar</type>
+          <defname>solar</defname>
+        </param>
+        <briefdescription>
+<para>daily_mean_solar_cal_2level receives 1d arrays and time_type input, converts them to real, 2d variables and then calls daily_mean_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;solar&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shortwave flux factor: cosine of zenith angle * daylight fraction / (earth-sun distance squared) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data array.</para><para>call daily_mean_solar_cal_2d to convert the time_types to reals and then calculate the astronomy fields.</para><para>place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1053" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1054" bodyend="1086"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga5c25a48042198594f8e048d1f9b8a2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_ast_kind_) function</type>
+        <definition>real(kind=fms_ast_kind_) function declination_</definition>
+        <argsstring>(ang)</argsstring>
+        <name>declination_</name>
+        <param>
+          <type>ang</type>
+          <defname>ang</defname>
+        </param>
+        <briefdescription>
+<para>Declination returns the solar declination angle at orbital position ang in earth&apos;s orbit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ang</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>solar orbital position ang in earth&apos;s orbit</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Solar declination angle [radians] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1476" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1477" bodyend="1498"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga50ead8c9ca7c02a6518158c34f2dbc0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_0d_</definition>
+        <argsstring>(lat, lon, gmt, time_since_ae, cosz, fracday, rrsun, dt, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_0d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>gmt</type>
+          <defname>gmt</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt</type>
+          <defname>dt</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_0d takes scalar input fields, makes them into 2d arrays dimensioned (1,1), and calls diurnal_solar_2d. on return, the 2d fields are converted back to the desired scalar output. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;gmt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of day at longitude 0.0; midnight = 0.0, one day = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth-sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow negative values for cosz? </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>create 2d arrays from the scalar input fields.</para><para>call diurnal_solar_2d to calculate astronomy fields.</para><para>place output fields into scalars for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="455" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="458" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga5aa757b21639439c84d2829b12e6c7e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_1d_</definition>
+        <argsstring>(lat, lon, gmt, time_since_ae, cosz, fracday, rrsun, dt, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_1d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>gmt</type>
+          <defname>gmt</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt</type>
+          <defname>dt</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_1d takes 1-d input fields, adds a second dimension and calls diurnal_solar_2d. on return, the 2d fields are returned to the original 1d fields. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;gmt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of day at longitude 0.0; midnight = 0.0, one day = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth-sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow negative values for cosz? </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define 2-d versions of input data arrays.</para><para>call diurnal_solar_2d to calculate astronomy fields.</para><para>place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="383" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="386" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga7a9f01866f3b82a6c677ae9f8689e5a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_2d_</definition>
+        <argsstring>(lat, lon, gmt, time_since_ae, cosz, fracday, rrsun, dt, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_2d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>gmt</type>
+          <defname>gmt</defname>
+        </param>
+        <param>
+          <type>time_since_ae</type>
+          <defname>time_since_ae</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt</type>
+          <defname>dt</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_2d returns 2d fields of cosine of zenith angle, daylight fraction and earth-sun distance at the specified latitudes, longitudes and time. These values may be instantaneous or averaged over a specified time interval. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;gmt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of day at longitude 0.0; midnight = 0.0, one day = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time_since_ae&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year; autumnal equinox = 0.0, one year = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth-sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow negative values for cosz? </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod time_since_ae not between 0 and 2pi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod gmt not between 0 and 2pi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define the orbital angle (location in year), solar declination and earth sun distance factor. use functions contained in this module.</para><para>define terms needed in the cosine zenith angle equation.</para><para>define local time. force it to be between -pi and pi.</para><para>perform a time integration to obtain cosz and fracday if desired. output is valid over the period from t to t + dt.</para><para>if instantaneous values are desired, define cosz at time t.</para><para>Check that cosz is not negative, if desired. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="141" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="144" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga4885e827b2ba4f488df4cfda4c30d9d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_cal_0d_</definition>
+        <argsstring>(lat, lon, time, cosz, fracday, rrsun, dt_time, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_cal_0d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt_time</type>
+          <defname>dt_time</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_cal_0d receives time_type inputs, converts them to real variables and then calls diurnal_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Earth-Sun distance (r) relative to semi-major axis of orbital ellipse (a) : (a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;dt_time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>allow_negative_cosz </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Define 2-d versions of input data arrays.</para><para>Call diurnal_solar_cal_2d to convert the time_types to reals and then calculate the astronomy fields.</para><para>Place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="682" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="685" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gaa93483cf74eb2617cd1c1f97dfc2ad2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_cal_1d_</definition>
+        <argsstring>(lat, lon, time, cosz, fracday, rrsun, dt_time, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_cal_1d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt_time</type>
+          <defname>dt_time</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_cal_1d receives time_type inputs, converts them to real variables and then calls diurnal_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;gmt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of day at longitude 0.0; midnight = 0.0, one day = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth-sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow negative values for cosz? </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Define 2-d versions of input data arrays.</para><para>Call diurnal_solar_cal_2d to convert the time_types to reals and then calculate the astronomy fields.</para><para>Place output fields into 1-d arguments for return to calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="609" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="612" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gafa2dcae2cc5e1be0ff99340af4e09bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diurnal_solar_cal_2d_</definition>
+        <argsstring>(lat, lon, time, cosz, fracday, rrsun, dt_time, allow_negative_cosz, half_day_out)</argsstring>
+        <name>diurnal_solar_cal_2d_</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>cosz</type>
+          <defname>cosz</defname>
+        </param>
+        <param>
+          <type>fracday</type>
+          <defname>fracday</defname>
+        </param>
+        <param>
+          <type>rrsun</type>
+          <defname>rrsun</defname>
+        </param>
+        <param>
+          <type>dt_time</type>
+          <defname>dt_time</defname>
+        </param>
+        <param>
+          <type>allow_negative_cosz</type>
+          <defname>allow_negative_cosz</defname>
+        </param>
+        <param>
+          <type>half_day_out</type>
+          <defname>half_day_out</defname>
+        </param>
+        <briefdescription>
+<para>diurnal_solar_cal_2d receives time_type inputs, converts them to real variables and then calls diurnal_solar_2d to compute desired astronomical variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lat&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lon&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudes of model grid points </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;gmt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of day at longitude 0.0; midnight = 0.0, one day = 2 * pi </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time of year (time_type) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cosine of solar zenith angle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;fracday&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Daylight fraction of time interval </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;rrsun&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth-sun distance (r) relative to semi-major axis of orbital ellipse (a):(a/r)**2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: time interval after gmt over which the astronomical variables are to be averaged. this produces averaged output rather than instantaneous. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;allow_negative_cosz&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow negative values for cosz? </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;half_day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>half_day_out</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod radiation time step must be no longer than 12 hrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod radiation time step must not be an integral number of days</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Extract time of day (gmt) from time_type variable time with function universal_time.</para><para>Extract the time of year (time_since_ae) from time_type variable time using the function orbital_time.</para><para>Convert optional time_type variable dt_time (length of averaging period) to a real variable dt with the function universal_time.</para><para>Call diurnal_solar_2d to calculate astronomy fields, with or without the optional argument dt. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="523" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="526" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga4bae59fcf6bb7c617434d5cb9b2b8533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_orbital_parameters_</definition>
+        <argsstring>(ecc_out, obliq_out, per_out)</argsstring>
+        <name>get_orbital_parameters_</name>
+        <param>
+          <type>ecc_out</type>
+          <defname>ecc_out</defname>
+        </param>
+        <param>
+          <type>obliq_out</type>
+          <defname>obliq_out</defname>
+        </param>
+        <param>
+          <type>per_out</type>
+          <defname>per_out</defname>
+        </param>
+        <briefdescription>
+<para>get_orbital_parameters retrieves the orbital parameters for use by another module. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ecc_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eccentricity of orbital ellipse [dimensionless]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">obliq_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Obliquity [degrees]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">per_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude of perihelion with respect to autumnal equinox in northern hemisphere [degrees] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="89" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="90" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gaf080974bf70edd647165c2ecd6d12fb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_orbital_parameters_r4</definition>
+        <argsstring></argsstring>
+        <name>get_orbital_parameters_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga7b147939f6b5b568639cbeea7c741eca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_orbital_parameters_r8</definition>
+        <argsstring></argsstring>
+        <name>get_orbital_parameters_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gae2cdd8e2fb16d2d09083ef51fd9fa5f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::get_period_integer</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_integer</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_integer returns the length of the year as an integer number of seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year [seconds] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="570" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="571" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gadc97a16dbd669dfb2ba2b36daaf34b79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::get_period_time_type</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_time_type</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_time_type returns the length of the year as a time_type variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year as time_type variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="598" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="599" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gada396fa1ede7431df75438a6c9d6c771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::get_ref_date_of_ae</definition>
+        <argsstring>(day_out, month_out, year_out, second_out, minute_out, hour_out)</argsstring>
+        <name>get_ref_date_of_ae</name>
+        <param>
+          <type>day_out</type>
+          <defname>day_out</defname>
+        </param>
+        <param>
+          <type>month_out</type>
+          <defname>month_out</defname>
+        </param>
+        <param>
+          <type>year_out</type>
+          <defname>year_out</defname>
+        </param>
+        <param>
+          <type>second_out</type>
+          <defname>second_out</defname>
+        </param>
+        <param>
+          <type>minute_out</type>
+          <defname>minute_out</defname>
+        </param>
+        <param>
+          <type>hour_out</type>
+          <defname>hour_out</defname>
+        </param>
+        <briefdescription>
+<para>get_ref_date_of_ae retrieves the reference date of the autumnal equinox as integer variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;day_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Day of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;month_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Month of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;year_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Year of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;second_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;minute_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minute of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;hour_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hour of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="731" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="733" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gad4bc0a4aace797248482bac4c3e9702b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_ast_kind_) function</type>
+        <definition>real(kind=fms_ast_kind_) function half_day_0d_</definition>
+        <argsstring>(latitude, dec)</argsstring>
+        <name>half_day_0d_</name>
+        <param>
+          <type>latitude</type>
+          <defname>latitude</defname>
+        </param>
+        <param>
+          <type>dec</type>
+          <defname>dec</defname>
+        </param>
+        <briefdescription>
+<para>half_day_0d takes scalar input fields, makes them into 2-d fields dimensioned (1,1), and calls half_day_2d. On return, the 2-d fields are converted to the desired scalar output. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;latitude&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitutde of view point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dec&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solar declination angle at view point </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1561" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1562" bodyend="1589"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga88ba85e9ca3de796d4955793b78542fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_ast_kind_) function, dimension(size(latitude, 1), size(latitude, 2))</type>
+        <definition>real(kind=fms_ast_kind_) function, dimension(size(latitude,1),size(latitude,2)) half_day_2d_</definition>
+        <argsstring>(latitude, dec)</argsstring>
+        <name>half_day_2d_</name>
+        <param>
+          <type>latitude</type>
+          <defname>latitude</defname>
+        </param>
+        <param>
+          <type>dec</type>
+          <defname>dec</defname>
+        </param>
+        <briefdescription>
+<para>half_day_2d returns a 2-d array of half-day lengths at the latitudes and declination provided. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitutde of view point</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solar declination angle at view point </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define tangent of the declination.</para><para>adjust latitude so that its tangent will be defined.</para><para>define the cosine of the half-day length. adjust for cases of all daylight or all night. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1506" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1507" bodyend="1550"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga8dccd51b88c5f26258bcaab0b250675d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private astronomy_mod::orbit</definition>
+        <argsstring></argsstring>
+        <name>orbit</name>
+        <briefdescription>
+<para>Orbit computes and stores a table of value of orbital angles as a function of orbital time (both the angle and time are zero at autumnal equinox in the NH, and range from 0 to 2*pi). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>allocate the orbital angle array, sized by the namelist parameter num_angles, defining the annual cycle resolution of the earth&apos;s orbit. define some constants to be used.</para><para>define the orbital angle at each of the num_angles locations in the orbit. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="792" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="793" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga45fdac20947776c7c756bf8d8a870fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, public</type>
+        <definition>real(kind=r8_kind) function, public astronomy_mod::orbital_time</definition>
+        <argsstring>(time)</argsstring>
+        <name>orbital_time</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Orbital time returns the time (1 year = 2*pi) since autumnal equinox. </para>        </briefdescription>
+        <detaileddescription>
+<para>Orbital time returns the time (1 year = 2*pi) since autumnal equinox; autumnal_eq_ref is a module variable of time_type and will have been defined by default or by a call to set_ref_date_of_ae; length_of_year is available through the time manager and is set at the value approriate for the calandar being used</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time (1 year = 2*pi) since autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="835" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="836" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gaa4c97a14a81d841b7d0486dac4756fd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_ast_kind_) function</type>
+        <definition>real(kind=fms_ast_kind_) function r_inv_squared_</definition>
+        <argsstring>(ang)</argsstring>
+        <name>r_inv_squared_</name>
+        <param>
+          <type>ang</type>
+          <defname>ang</defname>
+        </param>
+        <briefdescription>
+<para>r_inv_squared returns the inverse of the square of the earth-sun distance relative to the mean distance at angle ang in the Earth&apos;s orbit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ang</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angular position of earth in its orbit, relative to a value of 0.0 at the NH autumnal equinox, value between 0.0 and 2 * pi [radians]</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inverse of the square of the earth-sun distance relative to the mean distance [dimensionless] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>define the earth-sun distance (r) and then return the inverse of its square (r_inv_squared) to the calling routine. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="1399" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="1400" bodyend="1427"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gabb66c13f16ae6dab3c5e796cda2397b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine set_orbital_parameters_</definition>
+        <argsstring>(ecc_in, obliq_in, per_in)</argsstring>
+        <name>set_orbital_parameters_</name>
+        <param>
+          <type>ecc_in</type>
+          <defname>ecc_in</defname>
+        </param>
+        <param>
+          <type>obliq_in</type>
+          <defname>obliq_in</defname>
+        </param>
+        <param>
+          <type>per_in</type>
+          <defname>per_in</defname>
+        </param>
+        <briefdescription>
+<para>set_orbital_parameters saves the input values of eccentricity, obliquity and perihelion time as module variables for use by astronomy_mod. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod ecc must be between 0 and 0.99</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod obliquity must be between -90. and 90. degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod perihelion must be between 0.0 and 360. degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ecc_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eccentricity of orbital ellipse [dimensionless]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">obliq_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Obliquity [degrees]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">per_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude of perihelion with respect to autumnal equinox in northern hemisphere [degrees] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" line="38" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/include/astronomy.inc" bodystart="39" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gaafc1ab8b13a03478adad25adc5878c8a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>set_orbital_parameters_r4</definition>
+        <argsstring></argsstring>
+        <name>set_orbital_parameters_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga819e17da1076c4833f91898cc0673678" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>set_orbital_parameters_r8</definition>
+        <argsstring></argsstring>
+        <name>set_orbital_parameters_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1gab0623c3af659b6b2bea0f17132597d9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::set_period_integer</definition>
+        <argsstring>(period_in)</argsstring>
+        <name>set_period_integer</name>
+        <param>
+          <type>period_in</type>
+          <defname>period_in</defname>
+        </param>
+        <briefdescription>
+<para>set_period_integer saves as the input length of the year (an integer) in a time_type module variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">period_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year as a time_type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="619" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="620" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga77dfe2d27540f0298b3e559c1f4a7a98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine astronomy_mod::set_period_time_type</definition>
+        <argsstring>(period_in)</argsstring>
+        <name>set_period_time_type</name>
+        <param>
+          <type>period_in</type>
+          <defname>period_in</defname>
+        </param>
+        <briefdescription>
+<para>Set_period_time_type saves the length of the year (input as a time_type variable) into a time_type module variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="642" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="643" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga58c5837e3f38565db2c7901d880950f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public astronomy_mod::set_ref_date_of_ae</definition>
+        <argsstring>(day_in, month_in, year_in, second_in, minute_in, hour_in)</argsstring>
+        <name>set_ref_date_of_ae</name>
+        <param>
+          <type>day_in</type>
+          <defname>day_in</defname>
+        </param>
+        <param>
+          <type>month_in</type>
+          <defname>month_in</defname>
+        </param>
+        <param>
+          <type>year_in</type>
+          <defname>year_in</defname>
+        </param>
+        <param>
+          <type>second_in</type>
+          <defname>second_in</defname>
+        </param>
+        <param>
+          <type>minute_in</type>
+          <defname>minute_in</defname>
+        </param>
+        <param>
+          <type>hour_in</type>
+          <defname>hour_in</defname>
+        </param>
+        <briefdescription>
+<para>set_ref_date_of_ae provides a means of specifying the reference date of the NH autumnal equinox for a particular year. </para>        </briefdescription>
+        <detaileddescription>
+<para>set_ref_date_of_ae provides a means of specifying the reference date of the NH autumnal equinox for a particular year. It is only used if calls are made to the calandar versions of the routines <ref refid="interfaceastronomy__mod_1_1diurnal__solar" kindref="compound">diurnal_solar</ref> and <ref refid="interfaceastronomy__mod_1_1daily__mean__solar" kindref="compound">daily_mean_solar</ref>. If the NOLEAP calendar is used, then the date of autumnal equinox will be the same every year. If JULIAN is used, then the date of autumnal equinox will return to the same value every 4th year.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;day_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Day of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;month_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Month of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;year_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Year of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;second_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Second of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;minute_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Minute of reference autumnal equinox </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;hour_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: Hour of reference autumnal equinox</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="681" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="683" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="group__astronomy__mod_1ga65be144c0757efbdb9ac100e1831e913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, public</type>
+        <definition>real(kind=r8_kind) function, public astronomy_mod::universal_time</definition>
+        <argsstring>(time)</argsstring>
+        <name>universal_time</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>universal_time returns the time of day at longitude = 0.0 (1 day = 2*pi) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time (1 year = 2*pi) since autumnal equinox </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="849" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="850" bodyend="861"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides astronomical variables for use by other modules within fms. The only currently used interface is for determination of astronomical values needed by the shortwave radiation packages. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Fei Liu </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

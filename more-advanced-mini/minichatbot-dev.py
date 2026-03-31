@@ -7,8 +7,8 @@ from langchain_core.prompts import HumanMessagePromptTemplate, SystemMessageProm
 from langchain.messages import SystemMessage
 
 llm = "llama3.2"
-collection_name = "atm-land-ice-flux-exchange"
-db_path = "./atm-land-ice-flux-exchange"
+collection_name = "fms2-io-collection"
+db_path = "./fms2-io-db"
 
 chatbot = ChatOllama(model=llm, microstat_tau=2.0)
 
@@ -18,8 +18,9 @@ collection = client.get_collection(collection_name)
 system_message = SystemMessagePromptTemplate.from_template(
   """
   You are a chatbot who only answer questions related
-  to the FMSCoupler program.  FMSCoupler program is a Fortran 
-  program developed at GFDL for climate modeling.
+  to the FMS code repository. FMS is a Fortran 
+  library developed at GFDL for large scale parallelized
+  climate modeling.
   """
 )
 
@@ -30,7 +31,7 @@ human_message = HumanMessagePromptTemplate.from_template(
   """
 )
 
-query = "Introduce yourself.  Ask how may I assist you?"
+query = "Introduce yourself. Ask how may I assist you?"
 intro = chatbot.invoke([
   system_message.format(),
   human_message.format(query=query, content="")
@@ -49,24 +50,3 @@ while "goodbye" not in query.lower():
   print(answer.content)
   print(">", end=" ")
                
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-    
-    
-       
-
-

@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="sat__vapor__pres__k_8F90" kind="file" language="Fortran">
+    <compoundname>sat_vapor_pres_k.F90</compoundname>
+    <includes refid="file__version_8h" local="no">file_version.h</includes>
+    <includes local="yes">sat_vapor_pres_k_r4.fh</includes>
+    <includes local="yes">sat_vapor_pres_k_r8.fh</includes>
+    <incdepgraph>
+      <node id="600">
+        <label>/home/Ryan.Mulhall/FMS-1/sat_vapor_pres/sat_vapor_pres_k.F90</label>
+        <link refid="sat__vapor__pres__k_8F90"/>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="603" relation="include">
+        </childnode>
+      </node>
+      <node id="602">
+        <label>sat_vapor_pres_k_r4.fh</label>
+      </node>
+      <node id="603">
+        <label>sat_vapor_pres_k_r8.fh</label>
+      </node>
+      <node id="601">
+        <label>file_version.h</label>
+        <link refid="file__version_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1compute__es__k" prot="private">sat_vapor_pres_k_mod::compute_es_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__ice__k" prot="private">sat_vapor_pres_k_mod::compute_es_liq_ice_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__k" prot="private">sat_vapor_pres_k_mod::compute_es_liq_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1compute__mrs__k" prot="private">sat_vapor_pres_k_mod::compute_mrs_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1compute__qs__k" prot="private">sat_vapor_pres_k_mod::compute_qs_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__des2__k" prot="private">sat_vapor_pres_k_mod::lookup_des2_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__des3__k" prot="private">sat_vapor_pres_k_mod::lookup_des3_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__des__k" prot="private">sat_vapor_pres_k_mod::lookup_des_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__des2__k" prot="private">sat_vapor_pres_k_mod::lookup_es2_des2_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__k" prot="private">sat_vapor_pres_k_mod::lookup_es2_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__des3__k" prot="private">sat_vapor_pres_k_mod::lookup_es3_des3_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__k" prot="private">sat_vapor_pres_k_mod::lookup_es3_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__des__k" prot="private">sat_vapor_pres_k_mod::lookup_es_des_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__k" prot="private">sat_vapor_pres_k_mod::lookup_es_k</innerclass>
+    <innerclass refid="interfacesat__vapor__pres__k__mod_1_1sat__vapor__pres__init__k" prot="private">sat_vapor_pres_k_mod::sat_vapor_pres_init_k</innerclass>
+    <innernamespace refid="namespacesat__vapor__pres__k__mod">sat_vapor_pres_k_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>sat_vapor_pres_k_mod<sp/>sat_vapor_pres_k_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>sat_vapor_pres</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Kernel<sp/>module<sp/>to<sp/>be<sp/>used<sp/>by<sp/>@ref<sp/>sat_vapor_pres_mod<sp/>for</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>table<sp/>lookups<sp/>and<sp/>calculations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>sat_vapor_pres_k_mod</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">!<sp/>This<sp/>module<sp/>is<sp/>what<sp/>I<sp/>(pjp)<sp/>think<sp/>a<sp/>kernel<sp/>should<sp/>be.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">!<sp/>There<sp/>have<sp/>been<sp/>many<sp/>proposals<sp/>as<sp/>to<sp/>what<sp/>a<sp/>kernel<sp/>should<sp/>look<sp/>like.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">!<sp/>If<sp/>fact,<sp/>so<sp/>many<sp/>different<sp/>ideas<sp/>have<sp/>been<sp/>expressed<sp/>that<sp/>the<sp/>lack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">!<sp/>of<sp/>agreement<sp/>has<sp/>greatly<sp/>hampered<sp/>progress.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">!<sp/>The<sp/>only<sp/>way<sp/>to<sp/>move<sp/>forward<sp/>is<sp/>to<sp/>limit<sp/>the<sp/>requirments<sp/>for<sp/>a<sp/>kernel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">!<sp/>to<sp/>only<sp/>what<sp/>is<sp/>widely<sp/>agreeded<sp/>upon.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">!<sp/>I<sp/>believe<sp/>that<sp/>there<sp/>are<sp/>only<sp/>two<sp/>things<sp/>widely<sp/>agreeded<sp/>upon.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">!<sp/>1)<sp/>A<sp/>kernel<sp/>should<sp/>be<sp/>independent<sp/>of<sp/>the<sp/>rest<sp/>of<sp/>FMS<sp/>so<sp/>that<sp/>it<sp/>can</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>easily<sp/>be<sp/>ported<sp/>into<sp/>another<sp/>programming<sp/>system.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>This<sp/>requires<sp/>that<sp/>a<sp/>kernel<sp/>does<sp/>not<sp/>access<sp/>anything<sp/>by<sp/>use<sp/>association.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>The<sp/>one<sp/>exception<sp/>is<sp/>this<sp/>kernel,<sp/>because<sp/>it<sp/>is<sp/>not<sp/>practical<sp/>for<sp/>physics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>modules<sp/>to<sp/>avoid<sp/>using<sp/>a<sp/>module<sp/>that<sp/>computes<sp/>the<sp/>saturation<sp/>vapor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>pressure<sp/>of<sp/>water<sp/>vapor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">!<sp/>2)<sp/>For<sp/>the<sp/>sake<sp/>of<sp/>thread<sp/>safety,<sp/>module<sp/>globals<sp/>should<sp/>be<sp/>written<sp/>only<sp/>at<sp/>initialization.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>In<sp/>this<sp/>case,<sp/>the<sp/>module<sp/>globals<sp/>are<sp/>the<sp/>tables<sp/>and<sp/>a<sp/>handful<sp/>of<sp/>scalars.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">!<sp/>3)<sp/>A<sp/>kernel<sp/>should<sp/>not<sp/>read<sp/>from<sp/>an<sp/>external<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">!<sp/>One<sp/>of<sp/>the<sp/>things<sp/>that<sp/>was<sp/>not<sp/>widely<sp/>agreeded<sp/>upon<sp/>is<sp/>that<sp/>a<sp/>kernel<sp/>should</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">!<sp/>not<sp/>be<sp/>a<sp/>fortran<sp/>module.<sp/>This<sp/>complicates<sp/>things<sp/>greatly<sp/>for<sp/>questionable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">!<sp/>benefit<sp/>and<sp/>could<sp/>be<sp/>done<sp/>as<sp/>a<sp/>second<sp/>step<sp/>anyway,<sp/>if<sp/>necessary.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Include<sp/>variable<sp/>&quot;version&quot;<sp/>to<sp/>be<sp/>written<sp/>to<sp/>log<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;file_version.h&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1sat__vapor__pres__init__k" kindref="compound">sat_vapor_pres_init_k</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__k" kindref="compound">lookup_es_k</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des__k" kindref="compound">lookup_des_k</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__des__k" kindref="compound">lookup_es_des_k</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__k" kindref="compound">lookup_es2_k</ref></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des2__k" kindref="compound">lookup_des2_k</ref></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__des2__k" kindref="compound">lookup_es2_des2_k</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__k" kindref="compound">lookup_es3_k</ref></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des3__k" kindref="compound">lookup_des3_k</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__des3__k" kindref="compound">lookup_es3_des3_k</ref></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__qs__k" kindref="compound">compute_qs_k</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__mrs__k" kindref="compound">compute_mrs_k</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="interfacesat__vapor__pres__k__mod_1_1sat__vapor__pres__init__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1sat__vapor__pres__init__k" kindref="compound">sat_vapor_pres_init_k</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>sat_vapor_pres_init_k_r4</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>sat_vapor_pres_init_k_r8</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacesat__vapor__pres__k__mod_1_1sat__vapor__pres__init__k" kindref="compound">sat_vapor_pres_init_k</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="interfacesat__vapor__pres__k__mod_1_1compute__es__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__k" kindref="compound">compute_es_k</ref></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_k_r4</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_k_r8</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__k" kindref="compound">compute_es_k</ref></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__k" kindref="compound">compute_es_liq_k</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_liq_k_r4</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_liq_k_r8</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__k" kindref="compound">compute_es_liq_k</ref></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__ice__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__ice__k" kindref="compound">compute_es_liq_ice_k</ref></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_liq_ice_k_r4</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_es_liq_ice_k_r8</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__es__liq__ice__k" kindref="compound">compute_es_liq_ice_k</ref></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__k" kindref="compound">lookup_es_k</ref></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_0d_r4</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_0d_r8</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_1d_r4</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_1d_r8</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_2d_r4</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_2d_r8</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_3d_r4</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_k_3d_r8</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="interfacesat__vapor__pres__k__mod_1_1lookup__des__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des__k" kindref="compound">lookup_des_k</ref></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_0d_r4</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_0d_r8</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_1d_r4</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_1d_r8</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_2d_r4</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_2d_r8</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_3d_r4</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des_k_3d_r8</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__des__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es__des__k" kindref="compound">lookup_es_des_k</ref></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_0d_r4</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_0d_r8</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_1d_r4</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_1d_r8</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_2d_r4</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_2d_r8</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_3d_r4</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es_des_k_3d_r8</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__k" kindref="compound">lookup_es2_k</ref></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_0d_r4</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_0d_r8</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_1d_r4</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_1d_r8</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_2d_r4</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_2d_r8</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_3d_r4</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_k_3d_r8</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="interfacesat__vapor__pres__k__mod_1_1lookup__des2__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des2__k" kindref="compound">lookup_des2_k</ref></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_0d_r4</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_0d_r8</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_1d_r4</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_1d_r8</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_2d_r4</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_2d_r8</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_3d_r4</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des2_k_3d_r8</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__des2__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es2__des2__k" kindref="compound">lookup_es2_des2_k</ref></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_0d_r4</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_0d_r8</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_1d_r4</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_1d_r8</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_2d_r4</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_2d_r8</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_3d_r4</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es2_des2_k_3d_r8</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__k" kindref="compound">lookup_es3_k</ref></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_0d_r4</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_0d_r8</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_1d_r4</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_1d_r8</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_2d_r4</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_2d_r8</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_3d_r4</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_k_3d_r8</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="interfacesat__vapor__pres__k__mod_1_1lookup__des3__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__des3__k" kindref="compound">lookup_des3_k</ref></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_0d_r4</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_0d_r8</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_1d_r4</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_1d_r8</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_2d_r4</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_2d_r8</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_3d_r4</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_des3_k_3d_r8</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__des3__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1lookup__es3__des3__k" kindref="compound">lookup_es3_des3_k</ref></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_0d_r4</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_0d_r8</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_1d_r4</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_1d_r8</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_2d_r4</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_2d_r8</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_3d_r4</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>lookup_es3_des3_k_3d_r8</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="interfacesat__vapor__pres__k__mod_1_1compute__qs__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__qs__k" kindref="compound">compute_qs_k</ref></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_0d_r4</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_0d_r8</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_1d_r4</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_1d_r8</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_2d_r4</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_2d_r8</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_3d_r4</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_qs_k_3d_r8</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>!&gt;<sp/>@ingroup<sp/>sat_vapor_pres_k_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="interfacesat__vapor__pres__k__mod_1_1compute__mrs__k" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__mrs__k" kindref="compound">compute_mrs_k</ref></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_0d_r4</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_0d_r8</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_1d_r4</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_1d_r8</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_2d_r4</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_2d_r8</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_3d_r4</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>compute_mrs_k_3d_r8</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacesat__vapor__pres__k__mod_1_1compute__mrs__k" kindref="compound">compute_mrs_k</ref></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="224"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>sat_vapor_pres_k_mod</highlight></codeline>
+<codeline lineno="225"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>dtres,<sp/>tepsl,<sp/>tminl,<sp/>dtinvl</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>table_siz</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>TABLE<sp/><sp/><sp/></highlight><highlight class="comment">!<sp/><sp/>sat<sp/>vapor<sp/>pres<sp/>(es)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>DTABLE<sp/><sp/></highlight><highlight class="comment">!<sp/><sp/>first<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>D2TABLE<sp/></highlight><highlight class="comment">!<sp/>second<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>TABLE2<sp/><sp/></highlight><highlight class="comment">!<sp/><sp/>sat<sp/>vapor<sp/>pres<sp/>(es)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>DTABLE2<sp/></highlight><highlight class="comment">!<sp/><sp/>first<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>D2TABLE2<sp/></highlight><highlight class="comment">!<sp/>second<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>TABLE3<sp/><sp/></highlight><highlight class="comment">!<sp/><sp/>sat<sp/>vapor<sp/>pres<sp/>(es)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>DTABLE3<sp/></highlight><highlight class="comment">!<sp/><sp/>first<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>D2TABLE3<sp/></highlight><highlight class="comment">!<sp/>second<sp/>derivative<sp/>of<sp/>es</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/>::<sp/>use_exact_qs</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/>::<sp/>module_is_initialized<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sat_vapor_pres_k_r4.fh&quot;</highlight></codeline>
+<codeline lineno="248"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;sat_vapor_pres_k_r8.fh&quot;</highlight></codeline>
+<codeline lineno="249"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>module<sp/></highlight><highlight class="normal">sat_vapor_pres_k_mod</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="251"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/sat_vapor_pres/sat_vapor_pres_k.F90"/>
+  </compounddef>
+</doxygen>

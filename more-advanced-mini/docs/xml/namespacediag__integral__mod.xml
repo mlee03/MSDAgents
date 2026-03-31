@@ -1,0 +1,1010 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacediag__integral__mod" kind="namespace" language="Fortran">
+    <compoundname>diag_integral_mod</compoundname>
+    <innerclass refid="interfacediag__integral__mod_1_1sum__diag__integral__field" prot="private">diag_integral_mod::sum_diag_integral_field</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__integral__mod_1gab3abaf1f650ff20ae8283804245794b0" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type (time_type) alarm_interval</definition>
+        <argsstring></argsstring>
+        <name>alarm_interval</name>
+        <briefdescription>
+<para>time interval between writing integrals </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="165" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="165" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga6542fc14acd4506cbe4e681e8954e882" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable area</definition>
+        <argsstring></argsstring>
+        <name>area</name>
+        <briefdescription>
+<para>area of each grid box </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="175" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="175" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga44a0edefc91208d5ce8d8a3dd0de23b4" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer diag_unit</definition>
+        <argsstring></argsstring>
+        <name>diag_unit</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>unit number for output file </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="203" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="203" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gae871c326d3d2b8ead82c21cea32fec47" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_num_field)</type>
+        <definition>integer, dimension  (max_num_field) field_count</definition>
+        <argsstring></argsstring>
+        <name>field_count</name>
+        <briefdescription>
+<para>number of values in integrand i </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="190" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="190" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga5a06c5958b44234ede552c3d8562b133" prot="private" static="no" mutable="no">
+        <type>character(len=16), dimension(max_num_field)</type>
+        <definition>character(len=16), dimension (max_num_field) field_format</definition>
+        <argsstring></argsstring>
+        <name>field_format</name>
+        <briefdescription>
+<para>output format for integral i </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="188" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="188" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gabc3c15fd594d9f6962546a765fb0b928" prot="private" static="no" mutable="no">
+        <type>character(len=max_len_name), dimension(max_num_field)</type>
+        <definition>character(len=max_len_name), dimension   (max_num_field) field_name</definition>
+        <argsstring></argsstring>
+        <name>field_name</name>
+        <briefdescription>
+<para>name associated with integral i </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="187" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="187" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gad61c7bdd9f943215cf8bd34b03abdfe9" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer field_size</definition>
+        <argsstring></argsstring>
+        <name>field_size</name>
+        <briefdescription>
+<para>number of columns on global domain </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gae62b24b0ee7cc78324ec12f7f721a60e" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(max_num_field)</type>
+        <definition>real(r8_kind), dimension    (max_num_field) field_sum</definition>
+        <argsstring></argsstring>
+        <name>field_sum</name>
+        <briefdescription>
+<para>integrand for integral i </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="189" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="189" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga4c859da9ab6bfa2e333ec42fd5a4038b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer fields_per_print_line</definition>
+        <argsstring></argsstring>
+        <name>fields_per_print_line</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>number of fields to write per line </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="148" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="148" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga194b872ac64610efe63831ba76127948" prot="private" static="no" mutable="no">
+        <type>character(len=fms_file_len)</type>
+        <definition>character(len=fms_file_len) file_name</definition>
+        <argsstring></argsstring>
+        <name>file_name</name>
+        <initializer>= &apos; &apos;</initializer>
+        <briefdescription>
+<para>optional integrals output file name </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="143" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="143" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gacdf0c3567cd770c80db6e367b0567919" prot="private" static="no" mutable="no">
+        <type>character(len=160)</type>
+        <definition>character(len=160) format_data</definition>
+        <argsstring></argsstring>
+        <name>format_data</name>
+        <briefdescription>
+<para>format statement for data output </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="196" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gad88a26befd2a1d208047240fddc7686a" prot="private" static="no" mutable="no">
+        <type>character(len=160)</type>
+        <definition>character(len=160) format_text</definition>
+        <argsstring></argsstring>
+        <name>format_text</name>
+        <briefdescription>
+<para>format statement for header </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="195" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="195" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga4bf18935576cd18ce06f6baf83664da5" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer idim</definition>
+        <argsstring></argsstring>
+        <name>idim</name>
+        <briefdescription>
+<para>x dimension of grid on local processor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="176" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="176" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga50fa0c155866b0757195057431935623" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer jdim</definition>
+        <argsstring></argsstring>
+        <name>jdim</name>
+        <briefdescription>
+<para>y dimension of grid on local processor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="177" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="177" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gab73cc39d4a2d87f5f95c3832b3c38b30" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_len_name</definition>
+        <argsstring></argsstring>
+        <name>max_len_name</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+<para>maximum length of name associated with integral </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="184" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="184" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga76f3eaacf3e8b3e52bd9ca10cf92b2e1" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_num_field</definition>
+        <argsstring></argsstring>
+        <name>max_num_field</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+<para>maximum number of integrals allowed </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="185" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="185" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>module is initialized ? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="204" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="204" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gaefa2e4790371f23d032dee1e40081d73" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nd</definition>
+        <argsstring></argsstring>
+        <name>nd</name>
+        <briefdescription>
+<para>number of characters in data format statement </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="197" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="197" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gad30ff19e4d6a4b6099e0a5a614456ba0" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type (time_type) next_alarm_time</definition>
+        <argsstring></argsstring>
+        <name>next_alarm_time</name>
+        <briefdescription>
+<para>next time at which integrals are to be written </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="164" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="164" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga4c96d61731cb100c7806ae75a45a8e34" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nt</definition>
+        <argsstring></argsstring>
+        <name>nt</name>
+        <briefdescription>
+<para>number of characters in text format statement </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="198" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="198" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga4403f6a970a0a6b5bd2b682f03270349" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_field</definition>
+        <argsstring></argsstring>
+        <name>num_field</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>number of integrals that have been activated </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="186" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="186" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga733c7c7c9e963dc7420950b54f599076" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) output_interval</definition>
+        <argsstring></argsstring>
+        <name>output_interval</name>
+        <initializer>= -1.0_r8_kind</initializer>
+        <briefdescription>
+<para>time interval at which integrals </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="137" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="137" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gaf51a565fd7313cc75731e284b181e39c" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical print_header</definition>
+        <argsstring></argsstring>
+        <name>print_header</name>
+        <initializer>= .true.</initializer>
+        <briefdescription>
+<para>print a header for the integrals </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="145" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="145" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga0d94445e6648671fe5453688d08fbc3a" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) sum_area</definition>
+        <argsstring></argsstring>
+        <name>sum_area</name>
+        <briefdescription>
+<para>surface area of globe </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="179" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="179" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gaa28498d7d9b46a177ac8dc17b69c9d46" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type (time_type) time_init_save</definition>
+        <argsstring></argsstring>
+        <name>time_init_save</name>
+        <briefdescription>
+<para>initial time associated with experiment; used as a base for defining time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="168" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="168" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1gacf8bf7410d80c6ecbced1c316ae6d12a" prot="private" static="no" mutable="no">
+        <type>character(len=8)</type>
+        <definition>character(len=8) time_units</definition>
+        <argsstring></argsstring>
+        <name>time_units</name>
+        <initializer>= &apos;hours&apos;</initializer>
+        <briefdescription>
+<para>time units associated with </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="140" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="140" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__integral__mod_1ga34a1fd428a2ad31e55f75bc2c54ecdeb" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type (time_type) zero_time</definition>
+        <argsstring></argsstring>
+        <name>zero_time</name>
+        <briefdescription>
+<para>time_type variable set to (0,0); used as flag to indicate integrals are not being output </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="166" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="166" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__integral__mod_1gafa172fde50423184584c72dba95637ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, private</type>
+        <definition>logical function, private diag_integral_mod::diag_integral_alarm</definition>
+        <argsstring>(Time)</argsstring>
+        <name>diag_integral_alarm</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Function to check if it is time to write integrals. if not writing integrals, return. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">result<sp/>=<sp/>diag_integral_alarm(time)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">type(time_type),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>answer</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;answer&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>logical answer</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="1032" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="1033" bodyend="1040"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1gae242cb7883e5522984b902a09680fce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_integral_mod::diag_integral_end</definition>
+        <argsstring>(Time)</argsstring>
+        <name>diag_integral_end</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>diag_integral_end is the destructor for diag_integral_mod. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_integral_end<sp/>(time)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">type(time_type),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="512" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="513" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga38c31ccb17c6433d4228180ea57ac312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_integral_mod::diag_integral_field_init</definition>
+        <argsstring>(name, format)</argsstring>
+        <name>diag_integral_field_init</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>format</type>
+          <defname>format</defname>
+        </param>
+        <briefdescription>
+<para>diag_integral_field_init registers and initializes an integral field </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_integral_field_init<sp/>(name,<sp/>format)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name,<sp/>format</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;format&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output format of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output format of the field to be integrated </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="391" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="392" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1gab1a4d0d7413b96f1c242cd1a1991db42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_integral_mod::diag_integral_init</definition>
+        <argsstring>(Time_init, Time, blon, blat, area_in)</argsstring>
+        <name>diag_integral_init</name>
+        <param>
+          <type>Time_init</type>
+          <defname>Time_init</defname>
+        </param>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>blon</type>
+          <defname>blon</defname>
+        </param>
+        <param>
+          <type>blat</type>
+          <defname>blat</defname>
+        </param>
+        <param>
+          <type>area_in</type>
+          <defname>area_in</defname>
+        </param>
+        <briefdescription>
+<para>diag_integral_init is the constructor for diag_integral_mod. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_integral_init<sp/>(time_init,<sp/>time,<sp/>blon,<sp/>blat)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">type(time_type),<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>time_init,<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>blon,<sp/>blat,<sp/>area_in</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time_init&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial time to start the integral </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;latb&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of model latitudes at cell boundaries [radians] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;lonb&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of model longitudes at cell boundaries [radians]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_init</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial time to start the integral</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">blon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of model latitudes at cell boundaries [radians]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">blat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of model longitudes at cell boundaries [radians] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="238" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="239" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga35d0f233eb80cf6dc9745665491f13bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_integral_mod::diag_integral_output</definition>
+        <argsstring>(Time)</argsstring>
+        <name>diag_integral_output</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>diag_integral_output determines if this is a timestep on which integrals are to be written. if not, it returns; if so, it calls write_field_averages. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_integral_output<sp/>(time)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">type(time_type),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="467" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="468" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga9044729378b414c525069296e5895e75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=fms_file_len) function</type>
+        <definition>character (len=fms_file_len) function diag_integral_mod::ensemble_file_name</definition>
+        <argsstring>(fname)</argsstring>
+        <name>ensemble_file_name</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+<para>Adds .ens_## to the diag_integral.out file name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>character array updated_file_name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Make sure the file name short enough to handle adding the ensemble number</para><para>Get the ensemble ID and convert it to a string</para><para>Add a 0 if the ensemble is less than 10 (2 digit)</para><para>Insert the ens_ string in the correct location Loop through to find the last period</para><para>Add to the end if there is no period in the file name </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="1089" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="1090" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga5976735fd4905d4457d5906a10972e13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private diag_integral_mod::format_data_init</definition>
+        <argsstring>(nst_in, nend_in, use_exp_format)</argsstring>
+        <name>format_data_init</name>
+        <param>
+          <type>nst_in</type>
+          <defname>nst_in</defname>
+        </param>
+        <param>
+          <type>nend_in</type>
+          <defname>nend_in</defname>
+        </param>
+        <param>
+          <type>use_exp_format</type>
+          <defname>use_exp_format</defname>
+        </param>
+        <briefdescription>
+<para>format_text_init generates the format to be output in the integrals file. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/><sp/></highlight><highlight class="normal">format_data_init<sp/>(nst_in,<sp/>nend_in)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>nst_in,<sp/>nend_in</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;nst_in</parametername>
+<parametername direction="in">nend_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;use_exp_format&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, uses exponent notation for the first format code to avoid overflow with larger time values</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nst_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nend_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_exp_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, uses exponent notation for the first format code to avoid overflow with larger time values </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="907" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="908" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga96f079c99753175c9f7981ea5596351b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private diag_integral_mod::format_text_init</definition>
+        <argsstring>(nst_in, nend_in)</argsstring>
+        <name>format_text_init</name>
+        <param>
+          <type>nst_in</type>
+          <defname>nst_in</defname>
+        </param>
+        <param>
+          <type>nend_in</type>
+          <defname>nend_in</defname>
+        </param>
+        <briefdescription>
+<para>format_text_init generates the header records to be output in the integrals file. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/><sp/></highlight><highlight class="normal">format_text_init<sp/>(nst_in,<sp/>nend_in)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>nst_in,<sp/>nend_in</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;nst_in</parametername>
+<parametername direction="in">nend_in&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nst_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nend_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending integral index which will be included in this format statement </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="816" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="817" bodyend="881"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga4b1882f2e23448eb6b4f028713b07628" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, private</type>
+        <definition>real(r8_kind) function, private diag_integral_mod::get_axis_time</definition>
+        <argsstring>(Time, units)</argsstring>
+        <name>get_axis_time</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <briefdescription>
+<para>Function to convert the time_type input variable into units of units and returns it in atime. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">atime<sp/>=<sp/>get_axis_time(time,<sp/>units)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type),<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>Time</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>units</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>atime</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;units&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input units of time_type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;atime&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>real atime</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input units of time_type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="985" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="986" bodyend="1006"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1gab2168ca36ffd9b5e365fb5c7e61ee250" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, private</type>
+        <definition>integer function, private diag_integral_mod::get_field_index</definition>
+        <argsstring>(name)</argsstring>
+        <name>get_field_index</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>get_field_index returns returns the index associated with an integral name. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">index<sp/>=<sp/>get_field_index(name)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>index</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name associated with an integral </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;index&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name associated with an integral </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="637" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="638" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga00d45acfb42ff2414dd441f2cdc333ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, private</type>
+        <definition>type(time_type) function, private diag_integral_mod::set_axis_time</definition>
+        <argsstring>(atime, units)</argsstring>
+        <name>set_axis_time</name>
+        <param>
+          <type>atime</type>
+          <defname>atime</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <briefdescription>
+<para>Function to convert input time to a time_type. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">time<sp/>=<sp/>set_axis_time(atime,<sp/>units)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>atime</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>units</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/><sp/>::<sp/>Time</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;atime&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;units&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input units, not used </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">atime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input units, not used </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="579" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="580" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1ga1a8db2d363db7f12fc6cabbc69c3bd58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, dimension(size(field_data, 1), size(field_data, 2)), private</type>
+        <definition>real(r8_kind) function, dimension (size(field_data,1),size(field_data,2)), private diag_integral_mod::vert_diag_integral</definition>
+        <argsstring>(field_data, wt)</argsstring>
+        <name>vert_diag_integral</name>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>wt</type>
+          <defname>wt</defname>
+        </param>
+        <briefdescription>
+<para>Function to perform a weighted integral in the vertical direction of a 3d data field. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">data2<sp/>=<sp/>vert_diag_integral(field_data,<sp/>wt)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension<sp/>(:,:,:)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data,<sp/>wt</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension<sp/>(size(field_data,1),size(field_data,2))</highlight><highlight class="normal"><sp/>::<sp/>data2</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;field_data&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral field data arrays </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;wt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral field weighting functions </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;data2&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>real array data2</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral field data arrays</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">wt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral field weighting functions </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="1066" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="1067" bodyend="1084"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__integral__mod_1gabe5084a54ef60e332571b9144be196b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private diag_integral_mod::write_field_averages</definition>
+        <argsstring>(Time)</argsstring>
+        <name>write_field_averages</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine to sum multiple fields, average them and then write the result to an output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/><sp/></highlight><highlight class="normal">write_field_averages<sp/>(time)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="normal">type(time_type),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral time stamp at the current time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="690" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" bodystart="691" bodyend="792"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/diag_integral.F90" line="26" column="1"/>
+  </compounddef>
+</doxygen>

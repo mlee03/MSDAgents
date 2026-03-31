@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="horiz__interp__bicubic_8F90" kind="file" language="Fortran">
+    <compoundname>horiz_interp_bicubic.F90</compoundname>
+    <includes refid="file__version_8h" local="no">file_version.h</includes>
+    <includes local="yes">horiz_interp_bicubic_r4.fh</includes>
+    <includes local="yes">horiz_interp_bicubic_r8.fh</includes>
+    <incdepgraph>
+      <node id="337">
+        <label>horiz_interp_bicubic_r4.fh</label>
+      </node>
+      <node id="335">
+        <label>/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bicubic.F90</label>
+        <link refid="horiz__interp__bicubic_8F90"/>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+      </node>
+      <node id="338">
+        <label>horiz_interp_bicubic_r8.fh</label>
+      </node>
+      <node id="336">
+        <label>file_version.h</label>
+        <link refid="file__version_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1bcucof" prot="private">horiz_interp_bicubic_mod::bcucof</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1bcuint" prot="private">horiz_interp_bicubic_mod::bcuint</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1fill__xy" prot="private">horiz_interp_bicubic_mod::fill_xy</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic" prot="private">horiz_interp_bicubic_mod::horiz_interp_bicubic</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic__new" prot="private">horiz_interp_bicubic_mod::horiz_interp_bicubic_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1indl" prot="private">horiz_interp_bicubic_mod::indl</innerclass>
+    <innerclass refid="interfacehoriz__interp__bicubic__mod_1_1indu" prot="private">horiz_interp_bicubic_mod::indu</innerclass>
+    <innernamespace refid="namespacehoriz__interp__bicubic__mod">horiz_interp_bicubic_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>horiz_interp_bicubic_mod<sp/>horiz_interp_bicubic_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>horiz_interp</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Delivers<sp/>methods<sp/>for<sp/>bicubic<sp/>interpolation<sp/>from<sp/>a<sp/>coarse<sp/>regular<sp/>grid</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>on<sp/>a<sp/>fine<sp/>regular<sp/>grid</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!&gt;<sp/>This<sp/>module<sp/>delivers<sp/>methods<sp/>for<sp/>bicubic<sp/>interpolation<sp/>from<sp/>a</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>coarse<sp/>regular<sp/>grid<sp/>on<sp/>a<sp/>fine<sp/>regular<sp/>grid.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/>Subroutines</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!<sp/>-<sp/>@ref<sp/>bcuint</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">!!<sp/>-<sp/>@ref<sp/>bcucof</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!!<sp/>are<sp/>methods<sp/>taken<sp/>from</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>W.<sp/>H.<sp/>Press,<sp/>S.<sp/>A.<sp/>Teukolski,<sp/>W.<sp/>T.<sp/>Vetterling<sp/>and<sp/>B.<sp/>P.<sp/>Flannery,</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Numerical<sp/>Recipies<sp/>in<sp/>FORTRAN,<sp/>The<sp/>Art<sp/>of<sp/>Scientific<sp/>Computing.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Cambridge<sp/>University<sp/>Press,<sp/>1992</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">!!<sp/>written<sp/>by</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>martin.schmidt@io-warnemuende.de<sp/>(2004)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">!!<sp/>revised<sp/>by</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>martin.schmidt@io-warnemuende.de<sp/>(2004)</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">!!<sp/>Version<sp/>1.0.0.2005-07-06</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">!!<sp/>The<sp/>module<sp/>is<sp/>thought<sp/>to<sp/>interact<sp/>with<sp/>MOM-4.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">!!<sp/>Alle<sp/>benotigten<sp/>Felder<sp/>werden<sp/>extern<sp/>von<sp/>MOM<sp/>verwaltet,<sp/>da<sp/>sie</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">!!<sp/>nicht<sp/>fur<sp/>alle<sp/>interpolierten<sp/>Daten<sp/>die<sp/>gleiche<sp/>Dimension<sp/>haben<sp/>mussen.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_mod</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1ga172901d39c9b0cf14aa83b1e94fdf21b" kindref="member">stdout</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">horiz_interp_type_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structhoriz__interp__type__mod_1_1horiz__interp__type" kindref="compound">horiz_interp_type</ref>,<sp/>bicubic</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">constants_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>pi</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/><sp/>::<sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic" kindref="compound">horiz_interp_bicubic</ref>,<sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic__new" kindref="compound">horiz_interp_bicubic_new</ref>,<sp/><ref refid="group__horiz__interp__bicubic__mod_1gac9e01b3755e01a4da0a3ef84945dc30b" kindref="member">horiz_interp_bicubic_del</ref>,<sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1fill__xy" kindref="compound">fill_xy</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/><sp/>::<sp/><ref refid="group__horiz__interp__bicubic__mod_1gadf3f211d33d7b34dafb8fba56e51e7b7" kindref="member">horiz_interp_bicubic_init</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Creates<sp/>a<sp/>new<sp/>@ref<sp/>horiz_interp_type<sp/>for<sp/>bicubic<sp/>interpolation.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>!!<sp/>Allocates<sp/>space<sp/>and<sp/>initializes<sp/>a<sp/>derived-type<sp/>variable</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>!!<sp/>that<sp/>contains<sp/>pre-computed<sp/>interpolation<sp/>indices<sp/>and<sp/>weights.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@ingroup<sp/>horiz_interp_bicubic_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic__new" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic__new" kindref="compound">horiz_interp_bicubic_new</ref></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_new_1d_r8</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_new_1d_s_r8</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_new_1d_r4</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_new_1d_s_r4</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Perform<sp/>bicubic<sp/>horizontal<sp/>interpolation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1horiz__interp__bicubic" kindref="compound">horiz_interp_bicubic</ref></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_r4</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>horiz_interp_bicubic_r8</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>horiz_interp_bicubic_mod</highlight></codeline>
+<codeline lineno="79"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Include<sp/>variable<sp/>&quot;version&quot;<sp/>to<sp/>be<sp/>written<sp/>to<sp/>log<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;file_version.h&gt;</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>module_is_initialized<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>verbose_bicubic<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>Grid<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>xc,<sp/>yc<sp/>:<sp/>co-ordinates<sp/>of<sp/>the<sp/>coarse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>xf,<sp/>yf<sp/>:<sp/>co-ordinates<sp/>of<sp/>the<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>fc<sp/><sp/><sp/><sp/><sp/>:<sp/>variable<sp/>to<sp/>be<sp/>interpolated<sp/>at<sp/>the<sp/>coarse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dfc_x<sp/><sp/>:<sp/>x-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>coarse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dfc_y<sp/><sp/>:<sp/>y-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>coarse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dfc_xy<sp/>:<sp/>x-y-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>coarse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>ff<sp/><sp/><sp/><sp/><sp/>:<sp/>variable<sp/>to<sp/>be<sp/>interpolated<sp/>at<sp/>the<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dff_x<sp/><sp/>:<sp/>x-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dff_y<sp/><sp/>:<sp/>y-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>dff_xy<sp/>:<sp/>x-y-derivative<sp/>of<sp/>fc<sp/>at<sp/>the<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>tpi</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Private<sp/>interfaces<sp/>for<sp/>mixed<sp/>precision<sp/>helper<sp/>routines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="interfacehoriz__interp__bicubic__mod_1_1fill__xy" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1fill__xy" kindref="compound">fill_xy</ref></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>fill_xy_r4</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>fill_xy_r8</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="interfacehoriz__interp__bicubic__mod_1_1bcuint" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1bcuint" kindref="compound">bcuint</ref></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>bcuint_r4</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>bcuint_r8</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="interfacehoriz__interp__bicubic__mod_1_1bcucof" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1bcucof" kindref="compound">bcucof</ref></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>bcucof_r4</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>bcucof_r8</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/>!&gt;<sp/>find<sp/>the<sp/>lower<sp/>neighbour<sp/>of<sp/>xf<sp/>in<sp/>field<sp/>xc,<sp/>return<sp/>is<sp/>the<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="interfacehoriz__interp__bicubic__mod_1_1indl" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1indl" kindref="compound">indl</ref></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>indl_r4</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>indl_r8</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/>!&gt;<sp/>find<sp/>the<sp/>upper<sp/>neighbour<sp/>of<sp/>xf<sp/>in<sp/>field<sp/>xc,<sp/>return<sp/>is<sp/>the<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="interfacehoriz__interp__bicubic__mod_1_1indu" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacehoriz__interp__bicubic__mod_1_1indu" kindref="compound">indu</ref></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>indu_r4</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>indu_r8</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Initializes<sp/>module<sp/>and<sp/>writes<sp/>version<sp/>number<sp/>to<sp/>logfile.out</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__horiz__interp__bicubic__mod_1gadf3f211d33d7b34dafb8fba56e51e7b7" kindref="member">horiz_interp_bicubic_init</ref></highlight></codeline>
+<codeline lineno="134" refid="group__horiz__interp__bicubic__mod_1gadf3f211d33d7b34dafb8fba56e51e7b7" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(module_is_initialized)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref>(</highlight><highlight class="stringliteral">&quot;HORIZ_INTERP_BICUBIC_MOD&quot;</highlight><highlight class="normal">,<sp/>version)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>module_is_initialized<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>tpi<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(2.0_r8_kind*pi,<sp/>r8_kind)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__horiz__interp__bicubic__mod_1gadf3f211d33d7b34dafb8fba56e51e7b7" kindref="member">horiz_interp_bicubic_init</ref></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Free<sp/>memory<sp/>from<sp/>a<sp/>horiz_interp_type<sp/>used<sp/>for<sp/>bicubic<sp/>interpolation</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/>!!<sp/>(allocated<sp/>via<sp/>@ref<sp/>horiz_bicubic_new)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__horiz__interp__bicubic__mod_1gac9e01b3755e01a4da0a3ef84945dc30b" kindref="member">horiz_interp_bicubic_del</ref>(<sp/>Interp<sp/>)</highlight></codeline>
+<codeline lineno="145" refid="group__horiz__interp__bicubic__mod_1gac9e01b3755e01a4da0a3ef84945dc30b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structhoriz__interp__type__mod_1_1horiz__interp__type" kindref="compound">horiz_interp_type</ref>),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>interp</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(interp%horizInterpReals8_type%is_allocated)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals8_type%rat_x))<sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals8_type%rat_x<sp/>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals8_type%rat_y))<sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals8_type%rat_y<sp/>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals8_type%lon_in))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals8_type%lon_in<sp/>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals8_type%lat_in))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals8_type%lat_in<sp/>)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals8_type%wti))<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals8_type%wti<sp/>)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(interp%horizInterpReals4_type%is_allocated)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals4_type%rat_x))<sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals4_type%rat_x<sp/>)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals4_type%rat_y))<sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals4_type%rat_y<sp/>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals4_type%lon_in))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals4_type%lon_in<sp/>)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals4_type%lat_in))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals4_type%lat_in<sp/>)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%horizInterpReals4_type%wti))<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal"><sp/>(<sp/>interp%horizInterpReals4_type%wti<sp/>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%i_lon)<sp/>)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<sp/>interp%i_lon<sp/>)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(interp%j_lat)<sp/>)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<sp/>interp%j_lat<sp/>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>interp%horizInterpReals8_type%is_allocated<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>interp%horizInterpReals4_type%is_allocated<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__horiz__interp__bicubic__mod_1gac9e01b3755e01a4da0a3ef84945dc30b" kindref="member">horiz_interp_bicubic_del</ref></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;horiz_interp_bicubic_r4.fh&quot;</highlight></codeline>
+<codeline lineno="169"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;horiz_interp_bicubic_r8.fh&quot;</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">horiz_interp_bicubic_mod</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="172"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bicubic.F90"/>
+  </compounddef>
+</doxygen>

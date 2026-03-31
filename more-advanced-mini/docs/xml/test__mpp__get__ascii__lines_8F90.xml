@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__mpp__get__ascii__lines_8F90" kind="file" language="Fortran">
+    <compoundname>test_mpp_get_ascii_lines.F90</compoundname>
+    <innerclass refid="interfaceassertequals" prot="public">assertequals</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__mpp__get__ascii__lines_8F90_1a4a30f2c595a45af70930ed827b16c7a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_get_ascii_lines::assertequals_int_int</definition>
+        <argsstring>(tstval, expval, test_name)</argsstring>
+        <name>assertequals_int_int</name>
+        <param>
+          <type>tstval</type>
+          <defname>tstval</defname>
+        </param>
+        <param>
+          <type>expval</type>
+          <defname>expval</defname>
+        </param>
+        <param>
+          <type>test_name</type>
+          <defname>test_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_get_ascii_lines.F90" line="61" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_get_ascii_lines.F90" bodystart="62" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp__get__ascii__lines_8F90_1adb5c41f490a0e2238dc7831e834c0fb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_get_ascii_lines</definition>
+        <argsstring></argsstring>
+        <name>test_get_ascii_lines</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_get_ascii_lines.F90" line="19" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_get_ascii_lines.F90" bodystart="19" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_get_ascii_lines</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/>mpp_init_test_logfile_init,<sp/>get_ascii_file_num_lines,<sp/><ref refid="group__mpp__mod_1ga19ad0727af939c9f14b038ba8fbd5310" kindref="member">read_ascii_file</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/><sp/>iso_fortran_env,<sp/>only:<sp/>int8</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="interfaceassertequals" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfaceassertequals" kindref="compound">assertequals</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">procedure</highlight><highlight class="normal"><sp/>assertEquals_int_int</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfaceassertequals" kindref="compound">assertequals</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>str_length<sp/>=<sp/>256</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>num_tests<sp/>=<sp/>5</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer(KIND=INT8)</highlight><highlight class="normal"><sp/>::<sp/>test_number</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(num_tests)</highlight><highlight class="normal"><sp/>::<sp/>my_num_lines=(/5,25,0,5,5/)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>f_num_lines,<sp/>io_status</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=10)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(num_tests)</highlight><highlight class="normal"><sp/>::<sp/>file_name=(/</highlight><highlight class="stringliteral">&quot;ascii_5<sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ascii_25<sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ascii_0<sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ascii_skip&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ascii_long&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=15)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(num_tests)</highlight><highlight class="normal"><sp/>::<sp/>test_name=(/</highlight><highlight class="stringliteral">&quot;5<sp/>line<sp/>test<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;25<sp/>line<sp/>test<sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;0<sp/>line<sp/>test<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;blank<sp/>line<sp/>test&quot;</highlight><highlight class="normal">,&amp;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;long<sp/>line<sp/>test<sp/>&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=str_length)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>file_contents(:)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>namelist<sp/>/test_mpp_get_ascii_lines_nml/<sp/>test_number</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">open</highlight><highlight class="normal">(30,<sp/>file=</highlight><highlight class="stringliteral">&quot;test_numb2.nml&quot;</highlight><highlight class="normal">,<sp/>form=</highlight><highlight class="stringliteral">&quot;formatted&quot;</highlight><highlight class="normal">,<sp/>status=</highlight><highlight class="stringliteral">&quot;old&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">read</highlight><highlight class="normal">(30,<sp/>nml<sp/>=<sp/>test_mpp_get_ascii_lines_nml)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">close</highlight><highlight class="normal">(30)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>(test_level=mpp_init_test_logfile_init)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>my_num_lines(test_number)<sp/>=<sp/>my_num_lines(test_number)+1<sp/></highlight><highlight class="comment">!!!!!<sp/>Please<sp/>See<sp/>Note<sp/>At<sp/>End<sp/>of<sp/>File</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>f_num_lines<sp/>=<sp/>get_ascii_file_num_lines(trim(file_name(test_number)),<sp/>str_length)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfaceassertequals" kindref="compound">assertequals</ref>(f_num_lines,<sp/>my_num_lines(test_number),<sp/>trim(test_name(test_number)))</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpi_finalize(ierr)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">assertequals_int_int(tstval,<sp/>expval,<sp/>test_name)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/><sp/>iso_fortran_env,<sp/>only:<sp/>error_unit</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>tstval</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>expval</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>test_name</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tstval<sp/>.eq.<sp/>expval)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(error_unit,<sp/></highlight><highlight class="stringliteral">&apos;(A,&quot;<sp/>&quot;,I0,&quot;:<sp/>&quot;,A,&quot;<sp/>-<sp/>&quot;,A)&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>number&quot;</highlight><highlight class="normal">,<sp/>test_number,<sp/>test_name,<sp/></highlight><highlight class="stringliteral">&quot;success&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(error_unit,<sp/></highlight><highlight class="stringliteral">&apos;(A,&quot;<sp/>&quot;,I0,&quot;:<sp/>&quot;,A,&quot;<sp/>-<sp/>&quot;,A)&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>number&quot;</highlight><highlight class="normal">,<sp/>test_number,<sp/>test_name,<sp/></highlight><highlight class="stringliteral">&quot;failure&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(error_unit,<sp/></highlight><highlight class="stringliteral">&apos;(&quot;Expected<sp/>&quot;&quot;&quot;,I0,&quot;&quot;&quot;<sp/>got<sp/>&quot;&quot;&quot;,I0,&quot;&quot;&quot;.&quot;&quot;&quot;)&apos;</highlight><highlight class="normal">)<sp/>expval,<sp/>tstval</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">assertequals_int_int</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_get_ascii_lines</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">!<sp/>IMPORTANT<sp/>NOTE<sp/>REGARDING<sp/>LINE<sp/>COUNT<sp/>!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">!<sp/>The<sp/>current<sp/>implmenetation<sp/>of<sp/>mpp<sp/>(as<sp/>of<sp/>release<sp/>2020.02)<sp/>requires<sp/>that<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">!<sp/>number<sp/>of<sp/>lines<sp/>returned<sp/>from<sp/>a<sp/>file<sp/>be<sp/>one<sp/>more<sp/>than<sp/>the<sp/>actual<sp/>number<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">!<sp/>lines<sp/>contained<sp/>within<sp/>the<sp/>file.<sp/>This<sp/>is<sp/>set<sp/>up<sp/>so<sp/>that<sp/>there<sp/>are<sp/>no<sp/>attempts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">!<sp/>to<sp/>read<sp/>nml<sp/>information<sp/>from<sp/>an<sp/>array<sp/>of<sp/>dimension<sp/>zero,<sp/>as<sp/>that<sp/>results<sp/>in<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">!<sp/>segmentation<sp/>fault.<sp/>This<sp/>workaround<sp/>may<sp/>be<sp/>addressed<sp/>in<sp/>future<sp/>versions<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">!<sp/>mpp,<sp/>in<sp/>which<sp/>case<sp/>this<sp/>test<sp/>must<sp/>be<sp/>adapted.</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_get_ascii_lines.F90"/>
+  </compounddef>
+</doxygen>

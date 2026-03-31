@@ -1,0 +1,960 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceblackboxio" kind="namespace" language="Fortran">
+    <compoundname>blackboxio</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="blackboxio_8F90_1a03dcb745f96466b04949b03fc6a25806" prot="private" static="no" mutable="no">
+        <type>integer, private</type>
+        <definition>integer, private fms2_ncchksz</definition>
+        <argsstring></argsstring>
+        <name>fms2_ncchksz</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Chunksize (bytes) used in nc_open and nc_create. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="37" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="37" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__blackboxio_1gafb9957a5bf46e16d89d52add6735030d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::blackboxio_init</definition>
+        <argsstring>(chksz)</argsstring>
+        <name>blackboxio_init</name>
+        <param>
+          <type>chksz</type>
+          <defname>chksz</defname>
+        </param>
+        <briefdescription>
+<para>Accepts the namelist fms2_io_nml variables relevant to blackboxio. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="52" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gaf2e59735a0d2d02d670c6313df1f4c3c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::copy_metadata</definition>
+        <argsstring>(fileobj, new_fileobj)</argsstring>
+        <name>copy_metadata</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>new_fileobj</type>
+          <defname>new_fileobj</defname>
+        </param>
+        <briefdescription>
+<para>Copy metadata from one file object to another. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">new_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New file object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="164" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="165" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga95f1590bc284ea0b2323adea289f7ef5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public blackboxio::create_diskless_domain_file</definition>
+        <argsstring>(fileobj, domain, path)</argsstring>
+        <name>create_diskless_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Create a &quot;diskless&quot; netcdf file to act as a buffer to support our &quot;register
+        data to a file without knowing its name&quot; legacy restart I/O workflow. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling whether the creation of the buffer was successful.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two-dimensional domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="451" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="453" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gaff3ad41565ff60b338ed511463b295ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function blackboxio::create_diskless_netcdf_file</definition>
+        <argsstring>(fileobj, pelist, path)</argsstring>
+        <name>create_diskless_netcdf_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>pelist</type>
+          <defname>pelist</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Create a &quot;diskless&quot; netcdf file to act as a buffer to support our &quot;register
+        data to a file without knowing its name&quot; legacy restart I/O workflow. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling whether the creation of the buffer was successful.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pelist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of ranks associated with this file. If not provided, only the current rank will be able to act on the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="113" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="115" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga03eb8c9a96e5bf7ce404c5bf9055f156" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public blackboxio::create_diskless_netcdf_file_wrap</definition>
+        <argsstring>(fileobj, pelist, path)</argsstring>
+        <name>create_diskless_netcdf_file_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>pelist</type>
+          <defname>pelist</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling whether the creation of the buffer was successful.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pelist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of ranks associated with this file. If not provided, only the current rank will be able to act on the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="363" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga2c069c6f428e3883b7cab946ec4f3e4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public blackboxio::create_diskless_unstructured_domain_file</definition>
+        <argsstring>(fileobj, domain, path)</argsstring>
+        <name>create_diskless_unstructured_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Create a &quot;diskless&quot; netcdf file to act as a buffer to support our &quot;register
+        data to a file without knowing its name&quot; legacy restart I/O workflow. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling whether the creation of the buffer was successful.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two-dimensional domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="593" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="595" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gaa70ddd512256fb0b713e12078f2a8cf1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::get_new_filename</definition>
+        <argsstring>(path, new_path, directory, timestamp, new_name)</argsstring>
+        <name>get_new_filename</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>new_path</type>
+          <defname>new_path</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>new_name</type>
+          <defname>new_name</defname>
+        </param>
+        <briefdescription>
+<para>Create a new file path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New file path.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New file basename. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="60" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="61" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gae08227887ad7eb808b9a957f81d3c8aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::netcdf_restore_state_wrap</definition>
+        <argsstring>(fileobj, unlim_dim_level, directory, timestamp, filename)</argsstring>
+        <name>netcdf_restore_state_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Loop through registered restart variables and read them from a netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory to write restart file to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New name for the file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="417" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="419" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gafcd9ed038e13a0ae272f0e9514494548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::netcdf_save_restart_wrap2</definition>
+        <argsstring>(fileobj, unlim_dim_level, directory, timestamp, filename, nc_format)</argsstring>
+        <name>netcdf_save_restart_wrap2</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Support for writing new restarts from a diskless file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory to write restart file to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New name for the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="378" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="380" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gad34df91f2c77dc99c6c29664cd22700c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::new_domain_file</definition>
+        <argsstring>(fileobj, path, mode, new_fileobj, nc_format)</argsstring>
+        <name>new_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>new_fileobj</type>
+          <defname>new_fileobj</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Make a copy of a file&apos;s metadata to support &quot;intermediate restarts&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of new file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File mode. Allowed values are: &quot;read&quot;, &quot;append&quot;, &quot;write&quot;, or &quot;overwrite&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="483" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="484" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga141bd2e24303cda7da3ed94f78617642" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::new_netcdf_file</definition>
+        <argsstring>(fileobj, path, mode, new_fileobj, nc_format)</argsstring>
+        <name>new_netcdf_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>new_fileobj</type>
+          <defname>new_fileobj</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Make a copy of a file&apos;s metadata to support &quot;intermediate restarts&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of new file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File mode. Allowed values are: &quot;read&quot;, &quot;append&quot;, &quot;write&quot;, or &quot;overwrite&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New file object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="332" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga97d399a2f806859e9eb19524c3c13eb6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::new_unstructured_domain_file</definition>
+        <argsstring>(fileobj, path, mode, new_fileobj, nc_format)</argsstring>
+        <name>new_unstructured_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>new_fileobj</type>
+          <defname>new_fileobj</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Make a copy of a file&apos;s metadata to support &quot;intermediate restarts&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of new file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File mode. Allowed values are: &quot;read&quot;, &quot;append&quot;, &quot;write&quot;, or &quot;overwrite.&quot;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New file object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="621" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="622" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1gad834e6646b05b4f861848550c5f7c6c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::restore_domain_state_wrap</definition>
+        <argsstring>(fileobj, unlim_dim_level, directory, timestamp, filename, ignore_checksum)</argsstring>
+        <name>restore_domain_state_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>ignore_checksum</type>
+          <defname>ignore_checksum</defname>
+        </param>
+        <briefdescription>
+<para>Loop through registered restart variables and read them from a netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory to write restart file to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New name for the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_checksum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Checksum data integrity flag. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="559" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="561" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga7effa56c64251096b7bc7b422ee6b1d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::save_domain_restart_wrap</definition>
+        <argsstring>(fileobj, unlim_dim_level, directory, timestamp, filename, nc_format)</argsstring>
+        <name>save_domain_restart_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Loop through registered restart variables and write them to a netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory to write restart file to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New name for the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="521" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="523" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga85ecac5f7bcdd8a8a4d5d1dce797dea7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine blackboxio::tempfile</definition>
+        <argsstring>(filename)</argsstring>
+        <name>tempfile</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Create a unique filename (poor man&apos;s version of mktemp). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New unique filename. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="90" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="91" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="group__blackboxio_1ga2c07bf56b42dfb6772ee4896c4a47e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public blackboxio::unstructured_write_restart_wrap</definition>
+        <argsstring>(fileobj, unlim_dim_level, directory, timestamp, filename, nc_format)</argsstring>
+        <name>unstructured_write_restart_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>timestamp</type>
+          <defname>timestamp</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory to write restart file to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New name for the file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="647" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" bodystart="649" bodyend="672"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/blackboxio.F90" line="24" column="1"/>
+  </compounddef>
+</doxygen>

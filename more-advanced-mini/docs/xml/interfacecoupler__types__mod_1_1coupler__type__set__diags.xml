@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__set__diags" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_set_diags</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__set__diags_1a1f527a8f5e0c5ba75f4b479d31ded65d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_set_diags_2d</definition>
+        <argsstring>(var, diag_name, axes, time)</argsstring>
+        <name>ct_set_diags_2d</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure for which to register diagnostics</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2810" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2811" bodyend="2860"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__set__diags_1aa047dc9a8b612801a2d57ef0a21ea583" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_set_diags_3d</definition>
+        <argsstring>(var, diag_name, axes, time)</argsstring>
+        <name>ct_set_diags_3d</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>diag_name</type>
+          <defname>diag_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Register the diagnostics of a <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>axes has less than 3 elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure for which to register diagnostics</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name for diagnostic file<ndash/>if blank, then don&apos;t register the fields</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of axes identifiers for diagnostic variable registration</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model time variable for registering diagnostic field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2866" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2867" bodyend="2914"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to set diagnostics for the arrays in a coupler_bc_type. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="438" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="438" bodyend="439"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__set__diags_1a1f527a8f5e0c5ba75f4b479d31ded65d" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_set_diags</scope><name>ct_set_diags_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__set__diags_1aa047dc9a8b612801a2d57ef0a21ea583" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_set_diags</scope><name>ct_set_diags_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

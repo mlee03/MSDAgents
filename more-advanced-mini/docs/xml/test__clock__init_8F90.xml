@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__clock__init_8F90" kind="file" language="Fortran">
+    <compoundname>test_clock_init.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__clock__init_8F90_1a537f26105a984c783ea1cadffbed9000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_clock_init::create_and_check_clock</definition>
+        <argsstring>(nameIn, expected, flagsIn)</argsstring>
+        <name>create_and_check_clock</name>
+        <param>
+          <type>nameIn</type>
+          <defname>nameIn</defname>
+        </param>
+        <param>
+          <type>expected</type>
+          <defname>expected</defname>
+        </param>
+        <param>
+          <type>flagsIn</type>
+          <defname>flagsIn</defname>
+        </param>
+        <briefdescription>
+<para>Helper subroutine to test different scenarios when testing mpp&apos;s clock_init subroutine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">namein</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of clock</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">expected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expected clock id</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">flagsin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Clock creation flags </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_clock_init.F90" line="50" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_clock_init.F90" bodystart="51" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="test__clock__init_8F90_1a6560829109d2363f7874cda7815b406d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_clock_init</definition>
+        <argsstring></argsstring>
+        <name>test_clock_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_clock_init.F90" line="24" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_clock_init.F90" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Tests the clock_init subroutine. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Colin Gladue  <ulink url="mailto:gfdl.climate.model.info@noaa.gov">gfdl.climate.model.info@noaa.gov</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@file</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!<sp/>@brief<sp/>Tests<sp/>the<sp/>clock_init<sp/>subroutine</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>@author<sp/>Colin<sp/>Gladue</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!<sp/>@email<sp/>gfdl.climate.model.info@noaa.gov</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_clock_init</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/>mpp_init_test_init_true_only</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>,<sp/>mpp_clock_sync,<sp/>mpp_clock_detailed</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>(test_level=mpp_init_test_init_true_only)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>We<sp/>cannot<sp/>directly<sp/>access<sp/>the<sp/>clock_init<sp/>subroutine,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>but<sp/>we<sp/>can<sp/>use<sp/>the<sp/>mpp_clock_id<sp/>function<sp/>to<sp/>call<sp/>clock_init.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,*)<sp/></highlight><highlight class="stringliteral">&quot;Testing<sp/>simple<sp/>clock&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_and_check_clock(</highlight><highlight class="stringliteral">&quot;name1&quot;</highlight><highlight class="normal">,<sp/>1)<sp/></highlight><highlight class="comment">!<sp/>Simple<sp/>name<sp/>input<sp/>clock<sp/>init</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,*)<sp/></highlight><highlight class="stringliteral">&quot;Testing<sp/>clock<sp/>with<sp/>empty<sp/>string<sp/>name&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_and_check_clock(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>2)<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Simple<sp/>clock<sp/>init<sp/>with<sp/>empty<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>All<sp/>possible<sp/>combinations<sp/>of<sp/>specified<sp/>flags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,*)<sp/></highlight><highlight class="stringliteral">&quot;Testing<sp/>clock<sp/>with<sp/>MPP_CLOCK_SYNC<sp/>flag&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_and_check_clock(</highlight><highlight class="stringliteral">&quot;name3&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>flagsin=mpp_clock_sync<sp/>)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,*)<sp/></highlight><highlight class="stringliteral">&quot;Testing<sp/>clock<sp/>with<sp/>MPP_CLOCK_DETAILED<sp/>flag&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_and_check_clock(</highlight><highlight class="stringliteral">&quot;name4&quot;</highlight><highlight class="normal">,<sp/>4,<sp/>flagsin=mpp_clock_detailed)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,*)<sp/></highlight><highlight class="stringliteral">&quot;Testing<sp/>clock<sp/>with<sp/>both<sp/>flags&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_and_check_clock(</highlight><highlight class="stringliteral">&quot;name5&quot;</highlight><highlight class="normal">,<sp/>5,<sp/>flagsin=mpp_clock_sync+mpp_clock_detailed)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpi_finalize(ierr)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>@brief<sp/>Helper<sp/>subroutine<sp/>to<sp/>test<sp/>different<sp/>scenarios<sp/>when<sp/>testing<sp/>mpp&apos;s<sp/>clock_init<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">create_and_check_clock(nameIn,<sp/>expected,<sp/>flagsIn)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>nameIn</highlight><highlight class="comment"><sp/>!&lt;<sp/>Name<sp/>of<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>expected</highlight><highlight class="comment"><sp/>!&lt;<sp/>Expected<sp/>clock<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>flagsIn</highlight><highlight class="comment"><sp/>!&lt;<sp/>Clock<sp/>creation<sp/>flags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dummy</highlight><highlight class="comment"><sp/>!&lt;<sp/>Dummy<sp/>variable<sp/>to<sp/>aid<sp/>in<sp/>calling<sp/>mpp_clock_id<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id</highlight><highlight class="comment"><sp/>!&lt;<sp/>Id<sp/>of<sp/>a<sp/>given<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(flagsin))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dummy<sp/>=<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>(namein,<sp/>flags=flagsin)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dummy<sp/>=<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>(namein)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>At<sp/>this<sp/>point<sp/>we<sp/>have<sp/>not<sp/>encountered<sp/>any<sp/>errors<sp/>after<sp/>initializing<sp/>the<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Let&apos;s<sp/>make<sp/>sure<sp/>this<sp/>clock<sp/>can<sp/>be<sp/>accessed<sp/>and<sp/>has<sp/>the<sp/>expected<sp/>ID.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>id<sp/>=<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>(namein)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id.ne.expected)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;Clock<sp/>not<sp/>initialized<sp/>correctly,<sp/>ID<sp/>!=<sp/>expected&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">create_and_check_clock</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_clock_init</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_clock_init.F90"/>
+  </compounddef>
+</doxygen>

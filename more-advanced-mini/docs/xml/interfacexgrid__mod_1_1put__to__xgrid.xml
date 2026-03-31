@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacexgrid__mod_1_1put__to__xgrid" kind="interface" language="Fortran" prot="private">
+    <compoundname>xgrid_mod::put_to_xgrid</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacexgrid__mod_1_1put__to__xgrid_1ab30405f7d6f3512882102d218d4a0b2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine put_side1_to_xgrid</definition>
+        <argsstring>(d, grid_id, x, xmap, remap_method, complete)</argsstring>
+        <name>put_side1_to_xgrid</name>
+        <param>
+          <type>d</type>
+          <defname>d</defname>
+        </param>
+        <param>
+          <type>grid_id</type>
+          <defname>grid_id</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>xmap</type>
+          <defname>xmap</defname>
+        </param>
+        <param>
+          <type>remap_method</type>
+          <defname>remap_method</defname>
+        </param>
+        <param>
+          <type>complete</type>
+          <defname>complete</defname>
+        </param>
+        <briefdescription>
+<para>Scatters data to exchange grid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to send</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3 character grid ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>xgrid data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">xmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">remap_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid interpolation method can be FIRST_ORDER(=1) or SECOND_ORDER(=2) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="3246" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="3247" bodyend="3333"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacexgrid__mod_1_1put__to__xgrid_1a0c26bcb8e32d0fee3effed9e8dc18d5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine put_side2_to_xgrid</definition>
+        <argsstring>(d, grid_id, x, xmap)</argsstring>
+        <name>put_side2_to_xgrid</name>
+        <param>
+          <type>d</type>
+          <defname>d</defname>
+        </param>
+        <param>
+          <type>grid_id</type>
+          <defname>grid_id</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>xmap</type>
+          <defname>xmap</defname>
+        </param>
+        <briefdescription>
+<para>Scatters data to exchange grid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to send</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3 character grid ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>xgrid data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">xmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="3339" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="3340" bodyend="3359"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Scatters data from model grid onto exchange grid. </para>    </briefdescription>
+    <detaileddescription>
+<para>Example usage: <programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">put_to_xgrid(d,<sp/>grid_id,<sp/>x,<sp/>xmap,<sp/>remap_order)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="192" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="192" bodyend="194"/>
+    <listofallmembers>
+      <member refid="interfacexgrid__mod_1_1put__to__xgrid_1ab30405f7d6f3512882102d218d4a0b2c" prot="private" virt="non-virtual"><scope>xgrid_mod::put_to_xgrid</scope><name>put_side1_to_xgrid</name></member>
+      <member refid="interfacexgrid__mod_1_1put__to__xgrid_1a0c26bcb8e32d0fee3effed9e8dc18d5a" prot="private" virt="non-virtual"><scope>xgrid_mod::put_to_xgrid</scope><name>put_side2_to_xgrid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

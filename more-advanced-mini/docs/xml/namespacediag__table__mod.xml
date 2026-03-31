@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacediag__table__mod" kind="namespace" language="Fortran">
+    <compoundname>diag_table_mod</compoundname>
+    <innerclass refid="structdiag__table__mod_1_1field__description__type" prot="private">diag_table_mod::field_description_type</innerclass>
+    <innerclass refid="structdiag__table__mod_1_1file__description__type" prot="private">diag_table_mod::file_description_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__table__mod_1ga4576f6f6d43aeb8da109bcc9c56e032b" prot="private" static="no" mutable="no">
+        <type>character(len= *), parameter</type>
+        <definition>character(len=*), parameter unallowed_all</definition>
+        <argsstring></argsstring>
+        <name>unallowed_all</name>
+        <initializer>= UNALLOWED_QTE//&quot;,&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="301" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="301" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__table__mod_1gaa50c2697fd0d2c5e8c1cd58cd76a30c9" prot="private" static="no" mutable="no">
+        <type>character(len= *), parameter</type>
+        <definition>character(len=*), parameter unallowed_qte</definition>
+        <argsstring></argsstring>
+        <name>unallowed_qte</name>
+        <initializer>= &quot;&apos;&quot;//&apos;&quot;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="300" bodyend="300"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__table__mod_1gae21e54693ac29ba6ea341f068b8a1d5b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function diag_table_mod::find_unit_ivalue</definition>
+        <argsstring>(unit_string)</argsstring>
+        <name>find_unit_ivalue</name>
+        <param>
+          <type>unit_string</type>
+          <defname>unit_string</defname>
+        </param>
+        <briefdescription>
+<para>Return the integer value for the given time unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer find_unit_ivalue</para></simplesect>
+Returns the corresponding integer value for the given time unit. <itemizedlist>
+<listitem>
+<para>seconds = 1  </para></listitem>
+<listitem>
+<para>minutes = 2  </para></listitem>
+<listitem>
+<para>hours = 3  </para></listitem>
+<listitem>
+<para>days = 4  </para></listitem>
+<listitem>
+<para>months = 5  </para></listitem>
+<listitem>
+<para>years = 6  </para></listitem>
+<listitem>
+<para>unknown = -1  </para></listitem>
+</itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">unit_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string, containing the unit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="815" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="816" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga1695d1a295ffad87a6bccd0bcd238b40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=128) function</type>
+        <definition>pure character(len=128) function diag_table_mod::fix_file_name</definition>
+        <argsstring>(file_name_string)</argsstring>
+        <name>fix_file_name</name>
+        <param>
+          <type>file_name_string</type>
+          <defname>file_name_string</defname>
+        </param>
+        <briefdescription>
+<para>Fixes the file name for use with diagnostic file and field initializations. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Character(len=128) fix_file_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_name_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the file name from the <computeroutput>diag_table</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="779" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="780" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga370403e27e2c23871182969e879e85b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_table_mod::initialize_output_arrays</definition>
+        <argsstring>()</argsstring>
+        <name>initialize_output_arrays</name>
+        <briefdescription>
+<para>Allocate the file, in and out field arrays after reading the <computeroutput>diag_table</computeroutput> file. (CURRENTLY EMPTY) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="837" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="838" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1gac12da4fcfab0b5745219b11be2c552ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function diag_table_mod::is_a_file</definition>
+        <argsstring>(line)</argsstring>
+        <name>is_a_file</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <briefdescription>
+<para>Determines if a line from the diag_table file is a file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Logical is_a_file</para></simplesect>
+<computeroutput>is_a_file</computeroutput> checks a diag_table line to determine if the line describes a file. If the line describes a file, the <computeroutput>is_a_file</computeroutput> will return <computeroutput>.TRUE.</computeroutput>. Otherwise, it will return <computeroutput>.FALSE.</computeroutput></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the <computeroutput>diag_table</computeroutput> line. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="748" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="749" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1gadadc44257b97056c277261b4ada5098b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_table_mod::parse_diag_table</definition>
+        <argsstring>(diag_subset, istat, err_msg)</argsstring>
+        <name>parse_diag_table</name>
+        <param>
+          <type>diag_subset</type>
+          <defname>diag_subset</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Parse the <computeroutput>diag_table</computeroutput> in preparation for diagnostic output. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>parse_diag_table</computeroutput> is the public interface to parse the diag_table, and setup the arrays needed to store the requested diagnostics from the <computeroutput>diag_table</computeroutput>. <computeroutput>parse_diag_table</computeroutput> will return a non-zero <computeroutput>istat</computeroutput> if a problem parsing the <computeroutput>diag_table</computeroutput>.</para><para>NOT YET IMPLEMENTED: <computeroutput>parse_diag_table</computeroutput> will parse through the <computeroutput>diag_table</computeroutput> twice. The first pass, will be to get a good &quot;guess&quot; of array sizes. These arrays, that will hold the requested diagnostic fields and files, will then be allocated to the size of the &quot;guess&quot; plus a slight increase.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_subset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diagnostic sampling subset.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of parsing the <computeroutput>diag_table</computeroutput>. A non-zero status indicates a problem parsing the table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message corresponding to the <computeroutput>istat</computeroutput> return value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="317" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="318" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga79d5f5b384aadde19cb96e1485795d6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structdiag__table__mod_1_1field__description__type" kindref="compound">field_description_type</ref>) function</type>
+        <definition>type(field_description_type) function diag_table_mod::parse_field_line</definition>
+        <argsstring>(line, istat, err_msg)</argsstring>
+        <name>parse_field_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Parse a field description line from the <computeroutput>diag_table</computeroutput> file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="structdiag__table__mod_1_1field__description__type" kindref="compound">field_description_type</ref> parse_field_line</para></simplesect>
+<computeroutput>parse_field_line</computeroutput> parses a field description line from the <computeroutput>diag_table</computeroutput> file, and returns a <computeroutput>TYPE(field_description_type)</computeroutput>. The calling function, would then need to call the <computeroutput>init_input_field</computeroutput> and <computeroutput>init_output_field</computeroutput> to initialize the diagnostic output field.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line to parse from the <computeroutput>diag_table</computeroutput> file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return state of the function. A value of 0 indicates success. A positive value indicates a <computeroutput>FATAL</computeroutput> error occurred, and a negative value indicates a <computeroutput>WARNING</computeroutput> should be issued.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error string to include in the <computeroutput>FATAL</computeroutput> or <computeroutput>WARNING</computeroutput> message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="659" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="660" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga879e2779d113e53e31b3625b322d6bee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structdiag__table__mod_1_1file__description__type" kindref="compound">file_description_type</ref>) function</type>
+        <definition>type(file_description_type) function diag_table_mod::parse_file_line</definition>
+        <argsstring>(line, istat, err_msg)</argsstring>
+        <name>parse_file_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para><computeroutput>parse_file_line</computeroutput> parses a file description line from the <computeroutput>diag_table</computeroutput> file, and returns a <computeroutput>TYPE(file_description_type)</computeroutput>. The calling function, would then need to call the <computeroutput>init_file</computeroutput> to initialize the diagnostic output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="structdiag__table__mod_1_1file__description__type" kindref="compound">file_description_type</ref> parse_file_line</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line to parse from the <computeroutput>diag_table</computeroutput> file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return state of the function. A value of 0 indicates success. A positive value indicates a <computeroutput>FATAL</computeroutput> error occurred, and a negative value indicates a <computeroutput>WARNING</computeroutput> should be issued.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error string to include in the <computeroutput>FATAL</computeroutput> or <computeroutput>WARNING</computeroutput> message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="490" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="491" bodyend="649"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="249" column="1"/>
+  </compounddef>
+</doxygen>

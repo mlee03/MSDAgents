@@ -1,0 +1,963 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__diag__update__buffer_8F90" kind="file" language="Fortran">
+    <compoundname>test_diag_update_buffer.F90</compoundname>
+    <innerclass refid="structdiagtestbuffer__type" prot="public">diagtestbuffer_type</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a8efb0c4d6ce84d6b7aaae3d8457d63de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::allocate_buffer_obj</definition>
+        <argsstring>(data_point, bo, NX, NY, NZ, NL, NDI)</argsstring>
+        <name>allocate_buffer_obj</name>
+        <param>
+          <type>data_point</type>
+          <defname>data_point</defname>
+        </param>
+        <param>
+          <type>bo</type>
+          <defname>bo</defname>
+        </param>
+        <param>
+          <type>NX</type>
+          <defname>NX</defname>
+        </param>
+        <param>
+          <type>NY</type>
+          <defname>NY</defname>
+        </param>
+        <param>
+          <type>NZ</type>
+          <defname>NZ</defname>
+        </param>
+        <param>
+          <type>NL</type>
+          <defname>NL</defname>
+        </param>
+        <param>
+          <type>NDI</type>
+          <defname>NDI</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sample point allocated to the type being tested.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The three spatial dimensions.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the 4th dimentions</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ndi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diurnal axis length, </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="465" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="466" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a79439c89e8935894822730711f473146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::allocate_input_data_and_ptrs</definition>
+        <argsstring>(datapoint, field_data, rmask, missvalue, mask, NX, NY, NZ, NL)</argsstring>
+        <name>allocate_input_data_and_ptrs</name>
+        <param>
+          <type>datapoint</type>
+          <defname>datapoint</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>rmask</type>
+          <defname>rmask</defname>
+        </param>
+        <param>
+          <type>missvalue</type>
+          <defname>missvalue</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>NX</type>
+          <defname>NX</defname>
+        </param>
+        <param>
+          <type>NY</type>
+          <defname>NY</defname>
+        </param>
+        <param>
+          <type>NZ</type>
+          <defname>NZ</defname>
+        </param>
+        <param>
+          <type>NL</type>
+          <defname>NL</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="441" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="442" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a7fd178b6068f50d340333085b7889d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::check_results_1</definition>
+        <argsstring>(buff, sample, test_name)</argsstring>
+        <name>check_results_1</name>
+        <param>
+          <type>buff</type>
+          <defname>buff</defname>
+        </param>
+        <param>
+          <type>sample</type>
+          <defname>sample</defname>
+        </param>
+        <param>
+          <type>test_name</type>
+          <defname>test_name</defname>
+        </param>
+        <briefdescription>
+<para>Verify that the buffer data is equal to the expected index value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 5D buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sample</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diurnal sample</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">test_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The test name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="358" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a6b9fc027acff693d4fd30b500c76db4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::check_results_2</definition>
+        <argsstring>(buff, sample, val)</argsstring>
+        <name>check_results_2</name>
+        <param>
+          <type>buff</type>
+          <defname>buff</defname>
+        </param>
+        <param>
+          <type>sample</type>
+          <defname>sample</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="397" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="398" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a64f86fb7ac4049b44c5c140c7c9d78bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function test_diag_update_buffer::get_array_index_from_4d</definition>
+        <argsstring>(i, j, k, l, NX, NY, NZ)</argsstring>
+        <name>get_array_index_from_4d</name>
+        <param>
+          <type>i</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>j</type>
+          <defname>j</defname>
+        </param>
+        <param>
+          <type>k</type>
+          <defname>k</defname>
+        </param>
+        <param>
+          <type>l</type>
+          <defname>l</defname>
+        </param>
+        <param>
+          <type>NX</type>
+          <defname>NX</defname>
+        </param>
+        <param>
+          <type>NY</type>
+          <defname>NY</defname>
+        </param>
+        <param>
+          <type>NZ</type>
+          <defname>NZ</defname>
+        </param>
+        <briefdescription>
+<para>Calculate the unique index into a 4D array given the first four indecies i,j,k,l and the with in the fist three dimensions. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The three spatial dimentsions plus another</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the spatial dimentions. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="435" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="436" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1ab5bee48ff233388f2ef73f5db933eca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::init_buff_values_1</definition>
+        <argsstring>(buffer, counter, count_0d, num_elems)</argsstring>
+        <name>init_buff_values_1</name>
+        <param>
+          <type>buffer</type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>counter</type>
+          <defname>counter</defname>
+        </param>
+        <param>
+          <type>count_0d</type>
+          <defname>count_0d</defname>
+        </param>
+        <param>
+          <type>num_elems</type>
+          <defname>num_elems</defname>
+        </param>
+        <briefdescription>
+<para>Init to zero the buffer, counter , an. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actual buffer array of the buffer class.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actual buffer array of the buffer class.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">count_0d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A counter used in time averaging.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">num_elems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A counter used in time averaging. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="298" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="299" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1aa5723d0eb9381bb4d4650cb96392e1b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::init_field_values</definition>
+        <argsstring>(field)</argsstring>
+        <name>init_field_values</name>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="271" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="272" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a951daf05f486e3c56e6f96e2801ed0ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::init_ofield_index_cfg</definition>
+        <argsstring>(idx_cfg, is, js, ks, ie, je, ke, hi, hj, f1, f2, f3, f4)</argsstring>
+        <name>init_ofield_index_cfg</name>
+        <param>
+          <type>idx_cfg</type>
+          <defname>idx_cfg</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>ks</type>
+          <defname>ks</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <param>
+          <type>ke</type>
+          <defname>ke</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>hj</type>
+          <defname>hj</defname>
+        </param>
+        <param>
+          <type>f1</type>
+          <defname>f1</defname>
+        </param>
+        <param>
+          <type>f2</type>
+          <defname>f2</defname>
+        </param>
+        <param>
+          <type>f3</type>
+          <defname>f3</defname>
+        </param>
+        <param>
+          <type>f4</type>
+          <defname>f4</defname>
+        </param>
+        <briefdescription>
+<para>Initialized an fms_diag_outfield_index_type by calling member function of fms_diag_outfield_index_type input object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">idx_cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to initialize.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Var with same name in fms_diag_outfield_index_type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Var with same name in fms_diag_outfield_index_type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">hj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Var with same name in fms_diag_outfield_index_type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Var with same name in fms_diag_outfield_index_type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="262" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="263" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1a108f5b8a957b25c7b54d4a9eaf469fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_diag_update_buffer::print_output_field_values</definition>
+        <argsstring>(buffer, onum)</argsstring>
+        <name>print_output_field_values</name>
+        <param>
+          <type>buffer</type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>onum</type>
+          <defname>onum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="330" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="331" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="test__diag__update__buffer_8F90_1aefdf9fe53de122097bfe8365f99c60f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_diag_update_buffer</definition>
+        <argsstring></argsstring>
+        <name>test_diag_update_buffer</name>
+        <briefdescription>
+<para>This programs tests the update of field data buffers with the &quot;math&quot; functions in module fms_diag_fieldbuff_update_mod. It mimics the daig_manager::send_4d operation of calling those functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" line="22" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/><sp/>This<sp/>programs<sp/>tests<sp/>the<sp/>update<sp/>of<sp/>field<sp/>data<sp/>buffers<sp/>with</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!<sp/>the<sp/><sp/>&quot;math&quot;<sp/>functions<sp/>in<sp/>module<sp/>fms_diag_fieldbuff_update_mod.<sp/>It<sp/>mimics</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>the<sp/>daig_manager::send_4d<sp/>operation<sp/>of<sp/>calling<sp/>those<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_diag_update_buffer</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/><ref refid="group__mpp__mod_1gac00f997102c5613d8c547f1ee10fa49c" kindref="member">mpp_set_stack_size</ref>,<sp/>mpp_init_test_requests_allocated</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref>,<sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal,note</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">diag_data_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/>very_large_axis_length</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">USE<sp/></highlight><highlight class="normal">fms_diag_outfield_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/><ref refid="structfms__diag__outfield__mod_1_1fmsdiagoutfield__type" kindref="compound">fmsdiagoutfield_type</ref>,<sp/><ref refid="structfms__diag__outfield__mod_1_1fmsdiagoutfieldindex__type" kindref="compound">fmsdiagoutfieldindex_type</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">USE<sp/></highlight><highlight class="normal">fms_diag_fieldbuff_update_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/><ref refid="interfacefms__diag__fieldbuff__update__mod_1_1fieldbuff__update" kindref="compound">fieldbuff_update</ref>,<sp/><ref refid="interfacefms__diag__fieldbuff__update__mod_1_1fieldbuff__copy__missvals" kindref="compound">fieldbuff_copy_missvals</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/>&amp;<sp/><ref refid="interfacefms__diag__fieldbuff__update__mod_1_1fieldbuff__copy__fieldvals" kindref="compound">fieldbuff_copy_fieldvals</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">USE<sp/></highlight><highlight class="normal">fms_diag_time_reduction_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/><ref refid="structfms__diag__time__reduction__mod_1_1fmsdiagtimereduction__type" kindref="compound">fmsdiagtimereduction_type</ref>,<sp/><ref refid="group__fms__diag__time__reduction__mod_1gab95875c4e1d56b44678a4f834a97c288" kindref="member">time_average</ref>,<sp/><ref refid="group__fms__diag__time__reduction__mod_1gac1ac589f80e677c504448699e4771df4" kindref="member">time_rms</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">USE<sp/></highlight><highlight class="normal">fms_diag_bbox_mod,<sp/></highlight><highlight class="keywordtype">ONLY</highlight><highlight class="normal">:<sp/><ref refid="structfms__diag__bbox__mod_1_1fmsdiagibounds__type" kindref="compound">fmsdiagibounds_type</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/><sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Class<sp/>diag_buffer_type<sp/>is<sp/>here<sp/>only<sp/>for<sp/>temporary<sp/>use<sp/>for<sp/>modern<sp/>diag_manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>development<sp/>until<sp/>the<sp/>real<sp/>buffer<sp/>class<sp/>is<sp/>sufficiently<sp/>ready<sp/>and<sp/>merged.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structdiagtestbuffer__type" refkind="compound"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">TYPE</highlight><highlight class="normal"><sp/><ref refid="structdiagtestbuffer__type" kindref="compound">diagtestbuffer_type</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>buffer</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>counter</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:)</highlight><highlight class="normal"><sp/><sp/>::<sp/>count_0d</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/>::<sp/>num_elements</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/>TYPE<sp/></highlight><highlight class="normal"><ref refid="structdiagtestbuffer__type" kindref="compound">diagtestbuffer_type</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>SZ=10</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Field<sp/>data<sp/>this<sp/>size<sp/>in<sp/>all<sp/>spatiall<sp/>dims.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>SL=2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Field<sp/>data<sp/>this<sp/>size<sp/>in<sp/>4th<sp/>dim</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>NDI=1</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>diurnal<sp/>elemes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal"><sp/>::<sp/>r4_datapoint,<sp/>i8_datapoint</highlight><highlight class="comment"><sp/>!&lt;<sp/>to<sp/>be<sp/>allocated<sp/>of<sp/>rype<sp/>data<sp/>(e.g.<sp/>r4.<sp/>i8)</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>to<sp/>be<sp/>used<sp/>thought.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(fmsDiagIbounds_type)<sp/>::<sp/><sp/>buff_bounds</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!Diag_manager::send_data<sp/>uses<sp/>CLASS(*)<sp/>in<sp/>function<sp/>signature,<sp/>SO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>we<sp/>mimic<sp/>the<sp/>resulting<sp/>operations.<sp/>The<sp/>set<sp/>of<sp/>ClASS(*)<sp/>data<sp/>needs<sp/>to<sp/>be<sp/>allocated<sp/>of<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>type<sp/>in<sp/>order<sp/>to<sp/>be<sp/>able<sp/>to<sp/>call<sp/>the<sp/>math/buffer<sp/>update<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">TARGET</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>field_data</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">TARGET</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>rmask</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">TARGET</highlight><highlight class="normal"><sp/>::<sp/>missvalue</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>mask</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>oor_mask</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(diagTestBuffer_type),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">TARGET</highlight><highlight class="normal"><sp/>::<sp/>buff_obj</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>In<sp/>principle,<sp/>the<sp/>field_data<sp/>can<sp/>be<sp/>r4,r8,i4,i8,but<sp/>we<sp/>will<sp/>only<sp/>rest<sp/>r4,i8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!These<sp/>belwo<sp/>will<sp/>be<sp/>pointers<sp/>to<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::field_r4_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>r4<sp/>field<sp/>data<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::rmask_r4_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>r4<sp/>field<sp/>data<sp/>rmask<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::missval_r4_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>r4<sp/>missing<sp/>value<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::field_i8_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>i8<sp/>field<sp/>data<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::rmask_i8_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>i8<sp/>field<sp/>data<sp/>rmask<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::missval_i8_ptr<sp/>=&gt;<sp/>null()<sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>i8<sp/>missing<sp/>value<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Typed<sp/>pointers<sp/>to<sp/>buffer<sp/>class(*)<sp/>data<sp/>will<sp/>be<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofb_r4_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;Ptr<sp/>to<sp/>r4<sp/>buffer<sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofc_r4_ptr<sp/>=&gt;<sp/>null()<sp/><sp/></highlight><highlight class="comment">!&lt;Ptr<sp/>to<sp/>r4<sp/>counter<sp/><sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL<sp/>(kind=r4_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofb0d_r4_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;<sp/>Ptr<sp/>to<sp/>r4<sp/>count0d<sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/>!!<sp/>Typed<sp/>pointers<sp/>to<sp/>buffer<sp/>class(*)<sp/>data<sp/>will<sp/>be<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofb_i8_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;Ptr<sp/>to<sp/>i8<sp/>buffer<sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:,:,:,:,:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofc_i8_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;Ptr<sp/>to<sp/>i8<sp/>counter<sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER<sp/>(kind=i8_kind)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">dimension<sp/>(:)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">::ofb0d_i8_ptr<sp/>=&gt;<sp/>null()<sp/></highlight><highlight class="comment">!&lt;Ptr<sp/>to<sp/>i8<sp/>count0d<sp/><sp/>member<sp/>of<sp/>buffer<sp/>obj.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>An<sp/>error<sp/>flag<sp/>(required<sp/>by<sp/>some<sp/>mpp<sp/>routines)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>test_passed</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Flag<sp/>indicating<sp/>if<sp/>the<sp/>test_passed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>temp_result</highlight><highlight class="comment"><sp/>!&lt;<sp/>Set<sp/>to<sp/>result<sp/>of<sp/>one<sp/>of<sp/>the<sp/>update<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CHARACTER(LEN=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">PARAMETER</highlight><highlight class="normal"><sp/>::<sp/>module_name1<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;modX&quot;</highlight><highlight class="comment"><sp/>!&lt;<sp/>Some<sp/>dummy<sp/>valuel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CHARACTER(LEN=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">PARAMETER</highlight><highlight class="normal">::<sp/>field_name1<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;fieldX&quot;</highlight><highlight class="comment"><sp/>!&lt;<sp/>Some<sp/>dummy<sp/>valuel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CHARACTER(LEN=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">PARAMETER</highlight><highlight class="normal"><sp/>::<sp/>output_name1<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ofieldX&quot;</highlight><highlight class="comment"><sp/>!&lt;<sp/>Some<sp/>dummy<sp/>valuel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>time_reduction_type1<sp/>=<sp/><ref refid="group__fms__diag__time__reduction__mod_1gab95875c4e1d56b44678a4f834a97c288" kindref="member">time_average</ref><sp/></highlight><highlight class="comment">!&lt;The<sp/>first<sp/>time<sp/>reduction<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>output_freq1<sp/>=<sp/>1</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>firs<sp/>output<sp/>frequencey<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>pow_value<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Power<sp/>value<sp/>for<sp/>rms<sp/>or<sp/>pow(x)<sp/>calculations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>phys_window<sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>OMP<sp/>subsetted<sp/>data?<sp/>See<sp/>output_fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>need_compute<sp/><sp/></highlight><highlight class="comment">!<sp/>if<sp/>local_output,<sp/>does<sp/>the<sp/>current<sp/>PE<sp/>take<sp/>part<sp/>in<sp/>send_data?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>mask_variant</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>num_elems</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>reduced_k_range</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(fmsDiagTimeReduction_type),<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>time_reduction<sp/></highlight><highlight class="comment">!!Replaces<sp/>LOGICAL::time_rms,time_max,time_min...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">::<sp/>diag_field_id</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">::<sp/>sample<sp/></highlight><highlight class="comment">!!diurnal_index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/><sp/><sp/>weight</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">::<sp/>hi,<sp/>hj<sp/><sp/></highlight><highlight class="comment">!!for<sp/>halo<sp/>sizes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>num_threads</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>active_omp_level</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>issued_mask_ignore_warning</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">CHARACTER(len=256)</highlight><highlight class="normal"><sp/>::<sp/>err_msg,<sp/>err_msg_local</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(3)</highlight><highlight class="normal"><sp/>::<sp/>l_start,<sp/>l_end</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>missvalue_present<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(fmsDiagOutfield_type),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal"><sp/>::<sp/>ofield_cfg</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(fmsDiagOutfieldIndex_type),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal"><sp/>::<sp/>ofield_index_cfg</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&apos;test_update_buffers_with_field&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Test<sp/>has<sp/>started&apos;</highlight><highlight class="normal">,note)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Allocate<sp/>the<sp/>field<sp/>data<sp/>and<sp/>associated<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>r4_datapoint)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>i8_datapoint)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">allocate_input_data_and_ptrs(r4_datapoint,<sp/>field_data,<sp/>rmask,<sp/>missvalue,<sp/>mask,<sp/>sz,sz,sz,sl)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">allocate_buffer_obj(r4_datapoint,<sp/>buff_obj,<sp/>sz,<sp/>sz,<sp/>sz,<sp/>sl,<sp/>ndi)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">buff_bounds%reset(very_large_axis_length,<sp/>0)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">init_field_values<sp/>(field_data)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!TODO:<sp/>(MDM)<sp/>Can<sp/>switch<sp/>to<sp/>final<sp/>diang_manager<sp/>buffer_object<sp/>type<sp/>in<sp/>modern<sp/>diag<sp/>effort.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!In<sp/>this<sp/>version,<sp/>we<sp/>will<sp/>meerely<sp/>set<sp/>type<sp/>specific<sp/>pointers<sp/>to<sp/>data.<sp/>Some<sp/>will<sp/>be</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>null,<sp/>but<sp/>at<sp/>the<sp/>end<sp/>either<sp/>the<sp/>r4<sp/>pointers<sp/>are<sp/>non-null<sp/>or<sp/>the<sp/>i8<sp/>pointers<sp/>are<sp/>not<sp/>null</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>field_data<sp/>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>rmask<sp/>)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>missvalue<sp/>)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field_r4_ptr<sp/>=&gt;<sp/>field_data</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rmask_r4_ptr<sp/>=&gt;<sp/>rmask</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>missval_r4_ptr<sp/>=&gt;<sp/>missvalue</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>rmask<sp/>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>missvalue<sp/>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field_i8_ptr<sp/>=&gt;<sp/>field_data</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rmask_i8_ptr<sp/>=&gt;<sp/>rmask</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>missval_i8_ptr<sp/>=&gt;<sp/>missvalue</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>CLASS<sp/>DEFAULT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">CALL<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;test_update_buffers_with_field&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;ptr<sp/>assignemnt<sp/>unsupported<sp/>type&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/><sp/>ofb<sp/>=&gt;<sp/>buff_obj%buffer<sp/>)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>ofc<sp/>=&gt;<sp/>buff_obj%counter<sp/>)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>ofb0d<sp/>=&gt;<sp/>buff_obj%count_0d<sp/>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofb_r4_ptr<sp/>=&gt;<sp/><sp/>ofb</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofc_r4_ptr<sp/>=&gt;<sp/><sp/>ofc</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofb0d_r4_ptr<sp/>=&gt;<sp/>ofb0d</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>ofc<sp/>=&gt;<sp/>buff_obj%counter<sp/>)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>ofb0d<sp/>=&gt;<sp/>buff_obj%count_0d<sp/>)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofb_i8_ptr<sp/>=&gt;<sp/><sp/>ofb</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofc_i8_ptr<sp/>=&gt;<sp/><sp/>ofc</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ofb0d_i8_ptr<sp/>=&gt;<sp/>ofb0d</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>CLASS<sp/>DEFAULT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">CALL<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_manager_mod::send_data_4d&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;ptr<sp/>assigenment<sp/>error&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/>diag_field_id<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/>sample<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/>weight<sp/>=<sp/>1.0</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/>missvalue<sp/>=<sp/>1.0e-5</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/>pow_value<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/>phys_window<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/>need_compute<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/>mask_variant<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/>reduced_k_range<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/>num_elems<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/>num_threads<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/>active_omp_level<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/>issued_mask_ignore_warning<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/>mask<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">init_buff_values_1<sp/>(buff_obj%buffer,<sp/>buff_obj%counter,<sp/>buff_obj%count_0d,<sp/>buff_obj%num_elements)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/>hi<sp/>=<sp/>0<sp/></highlight><highlight class="comment">!!halo<sp/>size<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/>hj<sp/>=<sp/>0<sp/></highlight><highlight class="comment">!!halo<sp/>size<sp/>j</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/>l_start(1)<sp/>=<sp/>1<sp/></highlight><highlight class="comment">!!local<sp/>(to<sp/>PE)<sp/>start<sp/>inddex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/>l_start(2)<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/>l_start(3)<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/>l_end(1)<sp/><sp/>=<sp/>sz</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/>l_end(2)<sp/>=<sp/>sz</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/>l_end(3)<sp/>=<sp/>sz</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">ALLOCATE</highlight><highlight class="normal">(<sp/>ofield_cfg<sp/>)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">ofield_cfg%initialize_for_ut(module_name1,<sp/>field_name1,<sp/>output_name1,<sp/>pow_value,<sp/>&amp;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>phys_window,<sp/>need_compute,<sp/>mask_variant,<sp/>reduced_k_range<sp/>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>num_elems,<sp/>time_reduction_type1,<sp/>output_freq1<sp/>)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">ALLOCATE</highlight><highlight class="normal">(<sp/>ofield_index_cfg<sp/>)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">CALL<sp/></highlight><highlight class="normal">init_ofield_index_cfg(ofield_index_cfg,<sp/>1+hi,<sp/>1+hj,<sp/>1,<sp/>sz<sp/>-<sp/>hi,<sp/>sz<sp/>-<sp/>hj,<sp/>sz,&amp;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/>hi,<sp/>hj,<sp/>1<sp/>+<sp/>hi,<sp/>sz<sp/>-<sp/>hi,<sp/>1<sp/>+<sp/>hj,<sp/>sz<sp/>-<sp/>hj)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!First<sp/>make<sp/>sure<sp/>buffer<sp/>vals<sp/>are<sp/>all<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_results_2(ofb_r4_ptr,<sp/>1,<sp/>0)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Update<sp/>the<sp/>buffer<sp/>values<sp/>with<sp/>the<sp/>fieldbuff_update<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Case:<sp/>mask_var=false<sp/>&amp;<sp/>missval<sp/>not<sp/>present<sp/>&amp;<sp/>mask<sp/>not<sp/>present<sp/>&amp;<sp/>not_reduced_k_range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/>test_passed<sp/>=<sp/>.true.<sp/><sp/></highlight><highlight class="comment">!!<sp/>will<sp/>be<sp/>set<sp/>to<sp/>false<sp/>if<sp/>there<sp/>are<sp/>any<sp/>issues.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/>temp_result<sp/>=<sp/><ref refid="interfacefms__diag__fieldbuff__update__mod_1_1fieldbuff__update" kindref="compound">fieldbuff_update</ref>(ofield_cfg,<sp/>ofield_index_cfg,<sp/>field_r4_ptr,<sp/>sample,<sp/>&amp;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ofb_r4_ptr,<sp/>ofc_r4_ptr,<sp/>buff_bounds,<sp/>&amp;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ofb0d_r4_ptr(sample),<sp/>buff_obj%num_elements(sample),<sp/>&amp;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>mask,<sp/>weight,<sp/>missval_r4_ptr,<sp/>&amp;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>num_threads,<sp/>active_omp_level,<sp/>&amp;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>issued_mask_ignore_warning,<sp/>&amp;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>l_start,<sp/>l_end,<sp/>err_msg,<sp/>err_msg_local<sp/>)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_results_1(ofb_r4_ptr,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;Buffer_update_test01&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">print_output_field_values(<sp/>buff_obj%buffer,<sp/>1<sp/>)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>************<sp/>2ND<sp/>TEST:<sp/>**********************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!First<sp/>make<sp/>sure<sp/>buffer<sp/>vals<sp/>are<sp/>all<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/>ofb_r4_ptr<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_results_2(ofb_r4_ptr,<sp/>1,<sp/>0)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!<sp/>Update<sp/>the<sp/>buffer<sp/>values<sp/>with<sp/>the<sp/>copy_fieldvals<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>missvalue_present<sp/>=<sp/>.true.<sp/>TBD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!call<sp/>print_output_field_values(<sp/>buff_obj%buffer,<sp/>1<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/>temp_result<sp/>=<sp/><ref refid="interfacefms__diag__fieldbuff__update__mod_1_1fieldbuff__copy__fieldvals" kindref="compound">fieldbuff_copy_fieldvals</ref>(ofield_cfg,<sp/>ofield_index_cfg,<sp/>field_r4_ptr,<sp/>sample,<sp/>&amp;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ofb_r4_ptr,<sp/>buff_bounds,<sp/>&amp;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ofb0d_r4_ptr(sample),<sp/><sp/>mask,<sp/>missval_r4_ptr,<sp/>&amp;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>l_start,<sp/>l_end,<sp/>err_msg,<sp/>err_msg_local<sp/>)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!!call<sp/>print_output_field_values(<sp/><sp/>buff_obj%buffer,<sp/>1<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_results_1(ofb_r4_ptr,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;Buffer_update_test02&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&apos;test_diag_update_buffer&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Test<sp/>has<sp/>finished&apos;</highlight><highlight class="normal">,note)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keyword">CONTAINS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/><sp/><sp/>!&gt;<sp/>@brief<sp/>Initialized<sp/>an<sp/>fms_diag_outfield_index_type<sp/>by<sp/>calling<sp/>member<sp/>function<sp/>of</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/><sp/><sp/>!!<sp/>fms_diag_outfield_index_type<sp/>input<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">init_ofield_index_cfg(idx_cfg,<sp/>is,<sp/>js<sp/>,<sp/>ks,<sp/>ie,<sp/>je,<sp/>ke,<sp/>hi,<sp/>hj,<sp/>f1,<sp/>f2,<sp/>f3,<sp/>f4)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(fmsDiagOutfieldIndex_type),<sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal"><sp/><sp/>::<sp/>idx_cfg</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>object<sp/>to<sp/>initialize.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>is,<sp/>js,<sp/>ks</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>Var<sp/>with<sp/>same<sp/>name<sp/>in<sp/>fms_diag_outfield_index_type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/><sp/>ie,<sp/>je,<sp/>ke</highlight><highlight class="comment"><sp/>!&lt;<sp/>Var<sp/>with<sp/>same<sp/>name<sp/>in<sp/>fms_diag_outfield_index_type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>hi,<sp/>hj</highlight><highlight class="comment"><sp/>!&lt;<sp/>Var<sp/>with<sp/>same<sp/>name<sp/>in<sp/>fms_diag_outfield_index_type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>f1,<sp/>f2,<sp/>f3,<sp/>f4</highlight><highlight class="comment"><sp/>!&lt;<sp/>Var<sp/>with<sp/>same<sp/>name<sp/>in<sp/>fms_diag_outfield_index_type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">idx_cfg%initialize<sp/>(<sp/>is,<sp/>js<sp/>,<sp/>ks,<sp/>ie,<sp/>je,<sp/>ke,<sp/>hi,<sp/>hj,<sp/>f1,<sp/>f2,<sp/>f3,<sp/>f4)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">init_ofield_index_cfg</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">init_field_values<sp/>(field)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(INOUT)</highlight><highlight class="normal"><sp/>::<sp/>field</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>NX,NY,NZ,<sp/>NL</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>i,j,k,l</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>itemp</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nx<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field,1)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ny=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field,2)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nz=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field,3)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nl=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field,4)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>1,<sp/>nl</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>nz</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>ny</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nx</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>itemp<sp/>=<sp/>get_array_index_from_4d(i,j,k,l,nx,ny,nz)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>field)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field(i,j,k,l)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(itemp,<sp/>kind=r4_kind)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>field(i,j,k,l)<sp/>=<sp/>int(itemp,<sp/>kind=i8_kind)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/>SUBROUTINE<sp/></highlight><highlight class="normal">init_field_values</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="297"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Init<sp/>to<sp/>zero<sp/>the<sp/>buffer,<sp/>counter<sp/>,<sp/>an</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">init_buff_values_1<sp/>(buffer,<sp/>counter,<sp/>count_0d,<sp/>num_elems)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(INOUT)</highlight><highlight class="normal"><sp/>::<sp/>buffer</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>actual<sp/>buffer<sp/>array<sp/>of<sp/>the<sp/>buffer<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(INOUT)</highlight><highlight class="normal"><sp/>::<sp/>counter</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>The<sp/>actual<sp/>buffer<sp/>array<sp/>of<sp/>the<sp/>buffer<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(INOUT)</highlight><highlight class="normal"><sp/>::<sp/>count_0d</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>A<sp/>counter<sp/>used<sp/>in<sp/>time<sp/>averaging.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(INOUT)</highlight><highlight class="normal"><sp/>::<sp/>num_elems</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>A<sp/>counter<sp/>used<sp/>in<sp/>time<sp/>averaging.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">PARAMETER</highlight><highlight class="normal"><sp/>::<sp/>sample<sp/>=<sp/>1</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>The<sp/>diurnal<sp/>sample.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>buffer)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer<sp/><sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>counter)</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>counter<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>counter<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>count_0d)</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_0d<sp/><sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_0d<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>num_elems<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/>SUBROUTINE<sp/></highlight><highlight class="normal">init_buff_values_1</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">print_output_field_values<sp/>(buffer,<sp/>onum)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:<sp/>)</highlight><highlight class="normal"><sp/>::<sp/>buffer</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>onum</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>i,j,k</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>ti</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">REAL</highlight><highlight class="normal"><sp/>::<sp/>tr</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;Start<sp/>of<sp/>print_output_field_values&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>j<sp/><sp/>=1<sp/>,10</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,10</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>buffer)</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!print<sp/>&quot;(10f10.1)&quot;,<sp/>buffer(:,j,k,1,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr<sp/>=<sp/><sp/>buffer(i,j,k,1,1)</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/></highlight><highlight class="stringliteral">&quot;(f10.1)&quot;</highlight><highlight class="normal">,<sp/>tr</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!print<sp/>&quot;(10I10)&quot;,<sp/>buffer(:,j,k,1,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!print<sp/>&quot;(I8))&quot;,<sp/>buffer(i,j,k,1,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/></highlight><highlight class="stringliteral">&quot;(I8)&quot;</highlight><highlight class="normal">,<sp/>ti</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;************************&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;End<sp/>of<sp/>print_output_field_values&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/>SUBROUTINE<sp/></highlight><highlight class="normal">print_output_field_values</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="356"><highlight class="comment">!&gt;<sp/>@brief<sp/>Verify<sp/>that<sp/>the<sp/>buffer<sp/>data<sp/>is<sp/>equal<sp/>to<sp/>the<sp/>expected<sp/>index<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">check_results_1(buff,<sp/>sample,<sp/>test_name)</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>buff</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>5D<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>sample</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>diurnal<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CHARACTER(*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>test_name</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>test<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>NX,NY,NZ,<sp/>NL</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>i,j,k,l</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>pass</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>idx</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/>::<sp/>bv</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nx<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,1)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ny=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,2)</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nz=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,3)</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nl=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,4)</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>1,<sp/>nl</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>nz</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>ny</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nx</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>buff)</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/><sp/>get_array_index_from_4d(i,j,k,l,nx,ny,nz)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bv<sp/>=<sp/>buff(i,j,k,l,sample)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>get_array_index_from_4d(i,j,k,l,nx,ny,nz)<sp/><sp/>/=<sp/>buff(i,j,k,l,sample)<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>get_array_index_from_4d(i,j,k,l,nx,ny,nz)<sp/><sp/>/=<sp/>buff(i,j,k,l,sample)<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pass<sp/>.eqv.<sp/>.false.)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&apos;check_results_1&apos;</highlight><highlight class="normal">,<sp/>test_name//</highlight><highlight class="stringliteral">&quot;<sp/>has<sp/>failed.&quot;</highlight><highlight class="normal">,fatal)</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">check_results_1</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>SUBROUTINE<sp/></highlight><highlight class="normal">check_results_2(buff,<sp/>sample,<sp/>val)</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>buff</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>sample</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>val</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>NX,NY,NZ,<sp/>NL</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>::<sp/>i,j,k,l</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal"><sp/>::<sp/>pass</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nx<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,1)</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ny=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,2)</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nz=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,3)</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nl=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(buff,4)</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>1,<sp/>nl</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>nz</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>ny</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">DO</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nx</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">SELECT<sp/>TYPE</highlight><highlight class="normal"><sp/>(<sp/>buff)</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><sp/>buff(i,j,k,l,sample)<sp/>/=<sp/>val<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE<sp/>IS</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>buff(i,j,k,l,sample)<sp/><sp/>/=<sp/>val<sp/><sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pass<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>SELECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>END<sp/>DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pass<sp/>.eqv.<sp/>.false.)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&apos;check_results_2&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Test<sp/>has<sp/>failed&apos;</highlight><highlight class="normal">,fatal)</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">check_results_2</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="433"><highlight class="comment"><sp/><sp/><sp/>!&gt;<sp/>@brief<sp/>Calculate<sp/>the<sp/>unique<sp/>index<sp/>into<sp/>a<sp/>4D<sp/>array<sp/>given<sp/>the<sp/>first<sp/>four<sp/>indecies</highlight></codeline>
+<codeline lineno="434"><highlight class="comment"><sp/><sp/><sp/>!!<sp/>i,j,k,l<sp/>and<sp/>the<sp/>with<sp/>in<sp/>the<sp/>fist<sp/>three<sp/>dimensions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">pure<sp/>integer<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">get_array_index_from_4d(i,j,k,<sp/>l,<sp/>NX,NY,NZ)</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>j,<sp/>k,<sp/>l</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>three<sp/>spatial<sp/>dimentsions<sp/>plus<sp/>another</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>NX,<sp/>NY,<sp/>NZ</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>size<sp/>of<sp/>the<sp/>spatial<sp/>dimentions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>get_array_index_from_4d<sp/>=<sp/><sp/>(l-1)*<sp/>(nx<sp/>*<sp/>ny<sp/>*<sp/>nz)<sp/>+<sp/>(k-1)<sp/>*<sp/>nx<sp/>*<sp/>ny<sp/>+<sp/>(j-1)<sp/>*<sp/>nx<sp/>+<sp/>i</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">get_array_index_from_4d</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">allocate_input_data_and_ptrs(datapoint,<sp/>field_data,<sp/>rmask,<sp/>missvalue,<sp/>mask,<sp/>NX,NY,NZ,<sp/>NL)</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>datapoint<sp/></highlight><highlight class="comment">!!The<sp/>type<sp/>of<sp/>data<sp/>we<sp/>want</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>field_data</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>rmask</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal"><sp/>::<sp/>missvalue</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">LOGICAL</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">ALLOCATABLE</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">DIMENSION(:,:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>mask</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal"><sp/>,<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>NX,NY,NZ,<sp/>NL</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>type</highlight><highlight class="normal"><sp/>(datapoint)</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>field_data(NX,NY,NZ,NL))</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>rmask(NX,NY,NZ,NL))</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>missvalue)</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>field_data(NX,NY,NZ,NL))</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>rmask(NX,NY,NZ,NL))</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>missvalue)</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>class<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&quot;allocate<sp/>input<sp/>data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>input<sp/>data<sp/>type<sp/>is<sp/>not<sp/>a<sp/><sp/>r4<sp/>or<sp/>i8&quot;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(mask(nx,ny,nz,nl))</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/><sp/>subroutine<sp/></highlight><highlight class="normal">allocate_input_data_and_ptrs</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">allocate_buffer_obj(<sp/>data_point,<sp/>bo,<sp/>NX,NY,NZ,<sp/>NL,<sp/>NDI)</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">TYPE</highlight><highlight class="normal">(diagTestBuffer_type),<sp/></highlight><highlight class="keywordtype">INTENT(inout)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>bo</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">CLASS</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">INTENT(in)</highlight><highlight class="normal"><sp/>::<sp/>data_point</highlight><highlight class="comment"><sp/>!&lt;<sp/>Sample<sp/>point<sp/>allocated<sp/>to<sp/>the<sp/>type<sp/>being<sp/>tested.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>NX,<sp/>NY,<sp/>NZ</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>three<sp/>spatial<sp/>dimensions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>NL</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>4th<sp/>dimentions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">INTEGER</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">INTENT(IN)</highlight><highlight class="normal"><sp/>::<sp/>NDI</highlight><highlight class="comment"><sp/>!&lt;<sp/>Diurnal<sp/>axis<sp/>length,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal"><sp/>(bo)</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>type</highlight><highlight class="normal"><sp/>(data_point)</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">(kind=i8_kind))</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%buffer(NX,NY,NZ,NL,<sp/>NDI))</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%counter(NX,NY,NZ,NL,<sp/>NDI))</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%count_0d(NDI))</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%buffer(NX,NY,NZ,NL,NDI))</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%counter(NX,NY,NZ,NL,NDI))</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal"><sp/>::<sp/>bo%count_0d(NDI))</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>class<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&quot;allocate<sp/>buffer<sp/>obj&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>input<sp/>data<sp/>type<sp/>is<sp/>not<sp/>a<sp/><sp/>r4<sp/>or<sp/>i8&quot;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>bo%num_elements(ndi))</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/>END<sp/>subroutine<sp/></highlight><highlight class="normal">allocate_buffer_obj</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_diag_update_buffer</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_update_buffer.F90"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,602 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__yaml__parser__mod" kind="group">
+    <compoundname>yaml_parser_mod</compoundname>
+    <title>yaml_parser_mod</title>
+    <innerclass refid="interfaceyaml__parser__mod_1_1get__value__from__key" prot="private">yaml_parser_mod::get_value_from_key</innerclass>
+    <innerclass refid="interfaceyaml__parser__mod_1_1open__and__parse__file__wrap" prot="private">yaml_parser_mod::open_and_parse_file_wrap</innerclass>
+    <innernamespace refid="namespaceyaml__parser__mod">yaml_parser_mod</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga4e9b515f7f544a82082c78f6c29416d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine yaml_parser_mod::check_error_code</definition>
+        <argsstring>(error_code, filename)</argsstring>
+        <name>check_error_code</name>
+        <param>
+          <type>error_code</type>
+          <defname>error_code</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Checks the error code from a <ref refid="interfaceyaml__parser__mod_1_1open__and__parse__file__wrap" kindref="compound">open_and_parse_file_wrap</ref> function call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="270" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="271" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga991ef792715cfaaf77a9929ffe718879" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_block_ids</definition>
+        <argsstring>(file_id, block_name, block_ids, parent_block_id)</argsstring>
+        <name>get_block_ids</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_name</type>
+          <defname>block_name</defname>
+        </param>
+        <param>
+          <type>block_ids</type>
+          <defname>block_ids</defname>
+        </param>
+        <param>
+          <type>parent_block_id</type>
+          <defname>parent_block_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the ids of the blocks with block_name in the yaml file If parent_block_id is present, it only gets those that belong to that block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the block you are looking for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">block_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of blocks with block_name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent_block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent_block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="470" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="471" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1gadd4c06d8e3056b38795c5f3ac5e27472" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_block_name</definition>
+        <argsstring>(file_id, block_id, block_name)</argsstring>
+        <name>get_block_name</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_id</type>
+          <defname>block_id</defname>
+        </param>
+        <param>
+          <type>block_name</type>
+          <defname>block_name</defname>
+        </param>
+        <briefdescription>
+<para>Gets the block name form the block id. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id corresponding to the yaml file that was opened</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the block to get the name from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">block_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="572" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="573" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga5ef96a65d44366f4014d60d0509749cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_key_ids</definition>
+        <argsstring>(file_id, block_id, key_ids)</argsstring>
+        <name>get_key_ids</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_id</type>
+          <defname>block_id</defname>
+        </param>
+        <param>
+          <type>key_ids</type>
+          <defname>key_ids</defname>
+        </param>
+        <briefdescription>
+<para>Gets the ids of the key-value pairs in a block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id corresponding to the yaml file that was opened</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent_block</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">key_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ids of the key-value pairs </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="512" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="513" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga18652691d52033fcf0977464bf961705" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_key_name</definition>
+        <argsstring>(file_id, key_id, key_name)</argsstring>
+        <name>get_key_name</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>key_id</type>
+          <defname>key_id</defname>
+        </param>
+        <param>
+          <type>key_name</type>
+          <defname>key_name</defname>
+        </param>
+        <briefdescription>
+<para>Gets the key from a file id. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">key_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the key-value pair of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="293" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="294" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1gaf4da6a3ca1bdc64af6f37d7545fdedfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_key_value</definition>
+        <argsstring>(file_id, key_id, key_value)</argsstring>
+        <name>get_key_value</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>key_id</type>
+          <defname>key_id</defname>
+        </param>
+        <param>
+          <type>key_value</type>
+          <defname>key_value</defname>
+        </param>
+        <briefdescription>
+<para>Gets the value from a file id. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">key_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the key-value pair of interest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="308" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="309" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga1765b04ffaada8280e3d04d260f1b363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public yaml_parser_mod::get_nkeys</definition>
+        <argsstring>(file_id, block_id)</argsstring>
+        <name>get_nkeys</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_id</type>
+          <defname>block_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the number of key-value pairs in a block. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of key-value pairs in this block</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id corresponding to the yaml file that was opened</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent_block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="497" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="499" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1gabeac7c228a3c6057474cb7aac407cbca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public yaml_parser_mod::get_num_blocks</definition>
+        <argsstring>(file_id, block_name, parent_block_id)</argsstring>
+        <name>get_num_blocks</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_name</type>
+          <defname>block_name</defname>
+        </param>
+        <param>
+          <type>parent_block_id</type>
+          <defname>parent_block_id</defname>
+        </param>
+        <briefdescription>
+<para>Determines the number of blocks with block_name in the yaml file If parent_block_id is present, it only counts those that belong to that block. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of blocks with block_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the block you are looking for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent_block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="448" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="450" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1gaa4244a23fcf9076354e6939176f2b24d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public yaml_parser_mod::get_num_unique_blocks</definition>
+        <argsstring>(file_id, parent_block_id)</argsstring>
+        <name>get_num_unique_blocks</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>parent_block_id</type>
+          <defname>parent_block_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the number of unique blocks. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of unique blocks</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id corresponding to the yaml file that was opened</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent_block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent_block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="535" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="537" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1gad5d9a33fcf7a8793a93e59d7c9d6aeac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public yaml_parser_mod::get_unique_block_ids</definition>
+        <argsstring>(file_id, block_ids, parent_block_id)</argsstring>
+        <name>get_unique_block_ids</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_ids</type>
+          <defname>block_ids</defname>
+        </param>
+        <param>
+          <type>parent_block_id</type>
+          <defname>parent_block_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the ids of the unique block ids. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id corresponding to the yaml file that was opened</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">block_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ids of each unique block</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent_block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent_block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="554" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="555" bodyend="568"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga0567345270e76181ad8ee7500bd1c461" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine yaml_parser_mod::get_value_from_key_0d</definition>
+        <argsstring>(file_id, block_id, key_name, key_value, is_optional)</argsstring>
+        <name>get_value_from_key_0d</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_id</type>
+          <defname>block_id</defname>
+        </param>
+        <param>
+          <type>key_name</type>
+          <defname>key_name</defname>
+        </param>
+        <param>
+          <type>key_value</type>
+          <defname>key_value</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <briefdescription>
+<para>Used to dermine the value of a key from a keyname. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID corresponding to the block you want the key for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the key you want the value for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">key_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the key</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if it is okay for the key to not exist. If the key does not exist key_value will not be set, so it is the user&apos;s responsibility to initialize it before the call </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="323" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="324" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga734f8c898afc2da442aaa74a1b6d84ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine yaml_parser_mod::get_value_from_key_1d</definition>
+        <argsstring>(file_id, block_id, key_name, key_value, is_optional)</argsstring>
+        <name>get_value_from_key_1d</name>
+        <param>
+          <type>file_id</type>
+          <defname>file_id</defname>
+        </param>
+        <param>
+          <type>block_id</type>
+          <defname>block_id</defname>
+        </param>
+        <param>
+          <type>key_name</type>
+          <defname>key_name</defname>
+        </param>
+        <param>
+          <type>key_value</type>
+          <defname>key_value</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <briefdescription>
+<para>Used&apos; to dermine the 1D value of a key from a keyname. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File id of the yaml file to search</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">block_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID corresponding to the block you want the key for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the key you want the value for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">key_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the key</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if it is okay for the key&apos; to not exist. If the key does not exist key_value will not be set, so it is the user&apos;s responsibility to initialize it before the call </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="389" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="390" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="group__yaml__parser__mod_1ga3d600290bb55dd9edd575555d217cfeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public yaml_parser_mod::open_and_parse_file</definition>
+        <argsstring>(filename)</argsstring>
+        <name>open_and_parse_file</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Opens and parses a yaml file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A file id corresponding to the file that was opened</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the yaml file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" line="249" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser.F90" bodystart="251" bodyend="266"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Routines to use for parsing yaml files. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

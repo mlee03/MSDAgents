@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__home_Ryan_8Mulhall_FMS-1_diag_manager_README" kind="page">
+    <compoundname>md__home_Ryan.Mulhall_FMS-1_diag_manager_README</compoundname>
+    <title>README</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The purpose of this document is to document the differences between the old diag manager and the new (modern) diag manager.</para><para><heading level="2">Contents</heading>
+</para><para><itemizedlist>
+<listitem><para><ulink url="README.md#1-diag-table-format">1. Diag Table Format</ulink></para></listitem><listitem><para><ulink url="README.md#2-scalar-axis">2. Scalar Axis</ulink></para></listitem><listitem><para><ulink url="README.md#3-average-time-variables">3. Average Time Variables</ulink></para></listitem><listitem><para><ulink url="README.md#4-subregional-files">4. Subregional Files</ulink></para></listitem><listitem><para><ulink url="README.md#5-global-attributes">5. Global attributes</ulink></para></listitem><listitem><para><ulink url="README.md#6-real-attributes-from-diag_field_add_attribute-calls">6. Real attributes from diag_field_add_attribute calls</ulink></para></listitem><listitem><para><ulink url="README.md#7-history-files-data-output-changes">7. History files data output &quot;changes&quot;</ulink></para></listitem></itemizedlist>
+</para><para><heading level="3">1. Diag Table Format</heading>
+</para><para>The modern diag manager uses a YAML format instead of the legacy ascii table. A description of the YAML diag table can be found <ref refid="diag__yaml__format_8md_source" kindref="compound">here</ref>. A formal specification, in the form of a JSON schema, can be found in the <ulink url="https://github.com/NOAA-GFDL/gfdl_msd_schemas">gfdl_msd_schemas</ulink> repository on Github.</para><para><heading level="3">2. Scalar Axis</heading>
+</para><para>The old diag manager was adding a <computeroutput>scalar_axis</computeroutput> dimension of size 1 for scalar variables</para><para><programlisting><codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_axis<sp/>=<sp/>1<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>p700(scalar_axis)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p700:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p700:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+</programlisting> The new diag manager will no longer have a dummy scalar axis dimension.</para><para><heading level="3">3. Average Time Variables</heading>
+</para><para>The old diag manager includes time bounds metadata in a non-standard convention (i.e. <computeroutput>average_T1</computeroutput>, <computeroutput>average_T2</computeroutput>, and <computeroutput>average_DT</computeroutput>)<orderedlist>
+<listitem><para><computeroutput>average_T1</computeroutput> is the start time for the averaging period (in the same time units as time)</para></listitem><listitem><para><computeroutput>average_T2</computeroutput> is the end time for the averaging period</para></listitem><listitem><para><computeroutput>average_DT</computeroutput> is the length of the averaging period, in days</para></listitem></orderedlist>
+</para><para><programlisting><codeline><highlight class="normal">double<sp/>average_T1(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T1:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T1:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T1:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T1:long_name<sp/>=<sp/>&quot;Start<sp/>time<sp/>for<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>average_T2(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T2:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T2:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T2:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_T2:long_name<sp/>=<sp/>&quot;End<sp/>time<sp/>for<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>average_DT(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_DT:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_DT:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_DT:units<sp/>=<sp/>&quot;days&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>average_DT:long_name<sp/>=<sp/>&quot;Length<sp/>of<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+</programlisting> These 3 variables are referenced as a variable attribute in each diagnostic. e.g. <programlisting><codeline><highlight class="normal">dis_liq:time_avg_info<sp/>=<sp/>&quot;average_T1,average_T2,average_DT&quot;<sp/>;</highlight></codeline>
+</programlisting></para><para>The new diag manager will not be using these non standard variables. Instead the time bounds information will be specified in CF standards. One time_bounds variable, with an extra nv dimension, that species both average_T1 and average_T2. The average_DT information can be obtained from the time_bnds variable.</para><para><programlisting><codeline><highlight class="normal">double<sp/>nv(nv)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nv:long_name<sp/>=<sp/>&quot;vertex<sp/>number&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>time_bnds(time,<sp/>nv)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>time_bnds:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>time_bnds:long_name<sp/>=<sp/>&quot;time<sp/>axis<sp/>boundaries&quot;<sp/>;</highlight></codeline>
+</programlisting> This time_bounds variable is refernced as a variable attribute of time: <programlisting><codeline><highlight class="normal">time:bounds<sp/>=<sp/>&quot;time_bnds&quot;<sp/>;</highlight></codeline>
+</programlisting></para><para><heading level="3">4. Subregional Files</heading>
+</para><para><heading level="4">A. <computeroutput>is_subregional</computeroutput> global attribute:</heading>
+</para><para>Subregional files will have a global NetCDF attribute <computeroutput>is_subregional = True</computeroutput> set for non-global history files. This attribute will be used in PP tools.</para><para><heading level="4">B. Subregional dimension names:</heading>
+</para><para>In some cases, the old diag manager was adding <computeroutput>sub0X</computeroutput> to the dimension names where X is a number greater than 1. This was causing problems in PP tools that were expecting the dimension to have <computeroutput>sub01</computeroutput> in the name. The new diag manager will not have this problem.</para><para><heading level="4">C. Corner and center diagnostics:</heading>
+</para><para>In the old diag manager, if mixing variables that are corner variables, such as velocities={uo,vo,umo,vmo} and center variables, such as tracers={thetao,so,volcello} you sometimes ended up with a different number of variables per file. The extra files had duplicate data for the corner velocities because the two PEs shared the point at the edge. This happened with some grid/layouts/masks/subregion combinations and it caused problems with the combiner. The new diag manager will not have this problem.</para><para><heading level="3">5. Global attributes</heading>
+</para><para><heading level="4">A. Grid type and grid tile:</heading>
+</para><para>The old diag manager was adding the global attributes grid_type = &quot;regular&quot; and grid_tile = &quot;N/A&quot; for all files regardless of what the grid_type and the grid_title actually were. The new diag manager will no longer be doing this as they are not correct and don’t seem to be used.</para><para><heading level="4">B. Associated_files global attribute:</heading>
+</para><para>We were unable to reproduce the exact order of the associated_files global attribute, so users may see differences like</para><para><programlisting><codeline><highlight class="normal">lake_area:<sp/>19790101.land_static.nc<sp/>soil_area:<sp/>19790101.land_static.nc<sp/>land_area:<sp/>19790101.land_static.nc<sp/>&lt;&gt;<sp/>land_area:<sp/>19790101.land_static.nc<sp/>soil_area:<sp/>19790101.land_static.nc<sp/>lake_area:<sp/>19790101.land_static.nc</highlight></codeline>
+</programlisting></para><para><heading level="3">6. Real attributes from diag_field_add_attribute calls</heading>
+</para><para>When real attributes were added to the file via a diag_field_add_attribute call, the old diag manager is always saving it as NF90_FLOAT regardless of the precision the data was <ulink url="https://github.com/NOAA-GFDL/FMS/blob/ebb32649efa395ea14598f74c8d49e74d1408579/diag_manager/diag_manager.F90#L4532-L4543">passed in</ulink></para><para>The new diag manager is going to write the attribute as it is passed in. This will cause differences when the model component was compiled with r8 as it will write the attribute as r8 instead of r4.</para><para><heading level="3">7. History files data output &quot;changes&quot;</heading>
+</para><para>When the model run time is less than then the output frequency (i.e if the module run time is 2 days and you are writing monthly diagnostics), the old diag manager was writing 9.96921e+36. The new diag manager is not going to write anything for this cases, so if you ncdump the output from the new diag manager, you will get:</para><para><programlisting><codeline><highlight class="normal">wa<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>...</highlight></codeline>
+</programlisting></para><para>Similarly, when a variable was registered, but send_data was never called, the old diag manager was outputting the warning like</para><para><programlisting><codeline><highlight class="normal">WARNING<sp/>from<sp/>PE<sp/><sp/><sp/><sp/><sp/>0:<sp/>diag_manager_mod::closing_file:<sp/>module/output_field<sp/>soil/soil_fgw,<sp/>skip<sp/>one<sp/>time<sp/>level,<sp/>maybe<sp/>send_data<sp/>never<sp/>called</highlight></codeline>
+</programlisting></para><para>And writing out <computeroutput>9.96921e+36</computeroutput> for the variable. The new diag manager will also be outputting the warning, but it will not write out anything. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

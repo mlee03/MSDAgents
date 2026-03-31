@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__horiz__interp__bilinear__mod" kind="group">
+    <compoundname>horiz_interp_bilinear_mod</compoundname>
+    <title>horiz_interp_bilinear_mod</title>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" prot="private">horiz_interp_bilinear_mod::horiz_interp_bilinear_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__read__weights__bilinear" prot="private">horiz_interp_bilinear_mod::horiz_interp_read_weights_bilinear</innerclass>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1intersect" prot="private">horiz_interp_bilinear_mod::intersect</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1ga66f2fd468ffa98f7bc06d64e79d67ac7" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter dummy</definition>
+        <argsstring></argsstring>
+        <name>dummy</name>
+        <initializer>= -999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="74" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>=1.e-10_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1ga2f318fd686588d9c67d1a444254b1e19" prot="private" static="no" mutable="no">
+        <type>real(r4_kind), parameter</type>
+        <definition>real(r4_kind), parameter epsln_r4</definition>
+        <argsstring></argsstring>
+        <name>epsln_r4</name>
+        <initializer>=1.e-4_r4_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="85" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="85" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga4b3d7eff41b991232c4ec5c46f64c044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine find_neighbor_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, src_modulo)</argsstring>
+        <name>find_neighbor_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <briefdescription>
+<para>this routine will search the source grid to fine the grid box that encloses each destination grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="420" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="421" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga93b1deb9d46c5bdc070d2615b44a020d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine find_neighbor_new_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, src_modulo, no_crash)</argsstring>
+        <name>find_neighbor_new_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>no_crash</type>
+          <defname>no_crash</defname>
+        </param>
+        <briefdescription>
+<para>this routine will search the source grid to fine the grid box that encloses each destination grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="698" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="699" bodyend="896"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1gab22820a4cc88426e29b96f4a3fc86d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_bilinear_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose, mask_in, mask_out, missing_value, missing_permit, new_handle_missing)</argsstring>
+        <name>horiz_interp_bilinear_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>missing_permit</type>
+          <defname>missing_permit</defname>
+        </param>
+        <param>
+          <type>new_handle_missing</type>
+          <defname>new_handle_missing</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine for performing the horizontal interpolation between two grids. </para>        </briefdescription>
+        <detaileddescription>
+<para>horiz_interp_bilinear_new must be called before calling this routine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derived type variable containing interpolation indices and weights. Returned by a previous call to horiz_interp_bilinear_new</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input data on source grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output data on source grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 = no output; 1 = min,max,means; 2 = all output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input mask, must be the same size as the input data. The real(FMS_HI_KIND_) value of mask_in must be in the range (0.,1.). Set mask_in=0.0 for data points that should not be used or have missing data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">mask_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output mask that specifies whether data was computed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="915" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="917" bodyend="1222"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga33f7657fee7ef736ce2babf1f9027113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_bilinear_mod::horiz_interp_bilinear_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_bilinear_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;horiz_interp_type&quot; variables. </para>        </briefdescription>
+        <detaileddescription>
+<para>Must be called before reinitializing with <ref refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" kindref="compound">horiz_interp_bilinear_new</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to <ref refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" kindref="compound">horiz_interp_bilinear_new</ref>. The input variable must have allocated arrays. The returned variable will contain deallocated arrays </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="101" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="102" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1gad9333ccf7fd748ffd664e364dc66200b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_bilinear_mod::horiz_interp_bilinear_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_bilinear_init</name>
+        <briefdescription>
+<para>Initialize this module and writes version number to logfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="90" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga3ed0270000ea77294139955a9397138c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_bilinear_new_1d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, src_modulo)</argsstring>
+        <name>horiz_interp_bilinear_new_1d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="20" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="22" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga6971a39ea7034d91383515c5b6f66cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_bilinear_new_2d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose, src_modulo, new_search, no_crash_when_not_found)</argsstring>
+        <name>horiz_interp_bilinear_new_2d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>src_modulo</type>
+          <defname>src_modulo</defname>
+        </param>
+        <param>
+          <type>new_search</type>
+          <defname>new_search</defname>
+        </param>
+        <param>
+          <type>no_crash_when_not_found</type>
+          <defname>no_crash_when_not_found</defname>
+        </param>
+        <briefdescription>
+<para>Initialization routine. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocates space and initializes a derived-type variable that contains pre-computed interpolation indices and weights.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived type variable containing indices and weights for subsequent interpolations. To reinitialize for different grid-to-grid interpolation horiz_interp_del must be used first.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude (radians) for source data grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude (radians) for source data grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude (radians) for output data grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude (radians) for output data grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag for amount of print output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src_modulo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates if the boundary condition along zonal boundary is cyclic or not. Cyclic when true </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="206" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="208" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga9fae04bbe23cf46fc66053e5d7081b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_read_weights_bilinear_</definition>
+        <argsstring>(Interp, weight_filename, lon_out, lat_out, lon_in, lat_in, weight_file_source, interp_method, isw, iew, jsw, jew, nglon, nglat)</argsstring>
+        <name>horiz_interp_read_weights_bilinear_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>weight_filename</type>
+          <defname>weight_filename</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>weight_file_source</type>
+          <defname>weight_file_source</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>isw</type>
+          <defname>isw</defname>
+        </param>
+        <param>
+          <type>iew</type>
+          <defname>iew</defname>
+        </param>
+        <param>
+          <type>jsw</type>
+          <defname>jsw</defname>
+        </param>
+        <param>
+          <type>jew</type>
+          <defname>jew</defname>
+        </param>
+        <param>
+          <type>nglon</type>
+          <defname>nglon</defname>
+        </param>
+        <param>
+          <type>nglat</type>
+          <defname>nglat</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine for reading a weight file and use it to fill in the horiz interp type for the bilinear interpolation method. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horiz interp time to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the weight file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output (model) latitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output (model) longitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input (data) latitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input (data) longitude</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight_file_source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the weight file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to use</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting and ending indices of the compute domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nglon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of longitudes in the global domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nglat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of latitudes in the globl domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="1227" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="1229" bodyend="1310"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1gac46db8e9a35e113c5ec10cdde9bf6f76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function inside_polygon_</definition>
+        <argsstring>(polyx, polyy, x, y)</argsstring>
+        <name>inside_polygon_</name>
+        <param>
+          <type>polyx</type>
+          <defname>polyx</defname>
+        </param>
+        <param>
+          <type>polyy</type>
+          <defname>polyy</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+<para>The function will return true if the point x,y is inside a polygon, or false if it is not. If the point is exactly on the edge of a polygon, the function will return .true. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">polyx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitude coordinates of corners</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">polyy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>latitude coordinates of corners</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x coordinate of point to be tested</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y coordinate of point to be tested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="666" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="667" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga96edc5a8e07033d8010198c10daab728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(fms_hi_kind_) function</type>
+        <definition>real(fms_hi_kind_) function intersect_</definition>
+        <argsstring>(x1, y1, x2, y2, x)</argsstring>
+        <name>intersect_</name>
+        <param>
+          <type>x1</type>
+          <defname>x1</defname>
+        </param>
+        <param>
+          <type>y1</type>
+          <defname>y1</defname>
+        </param>
+        <param>
+          <type>x2</type>
+          <defname>x2</defname>
+        </param>
+        <param>
+          <type>y2</type>
+          <defname>y2</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" line="900" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_bilinear.inc" bodystart="901" bodyend="907"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga3af83e1f7f0f1cf3d008c7de0a658394" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>intersect_r4</definition>
+        <argsstring></argsstring>
+        <name>intersect_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1gab5a62f5b97e7d66c1bd276d1d141c519" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>intersect_r8</definition>
+        <argsstring></argsstring>
+        <name>intersect_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Performs spatial interpolation between grids using bilinear interpolation. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Zhi Liang <ulink url="mailto:Zhi.Liang@noaa.gov">Zhi.Liang@noaa.gov</ulink> This module can interpolate data from regular rectangular grid to rectangular/tripolar grid. The interpolation scheme is bilinear interpolation. There is an optional mask field for missing input data. An optional output mask field may be used in conjunction with the input mask to show where output data exists. </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

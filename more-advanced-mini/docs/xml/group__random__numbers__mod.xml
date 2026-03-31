@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__random__numbers__mod" kind="group">
+    <compoundname>random_numbers_mod</compoundname>
+    <title>random_numbers_mod</title>
+    <innerclass refid="interfacerandom__numbers__mod_1_1getrandomnumbers" prot="private">random_numbers_mod::getrandomnumbers</innerclass>
+    <innerclass refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" prot="private">random_numbers_mod::initializerandomnumberstream</innerclass>
+    <innerclass refid="structrandom__numbers__mod_1_1randomnumberstream" prot="private">random_numbers_mod::randomnumberstream</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, dimension(8), public</type>
+        <definition>integer function, dimension(8), public random_numbers_mod::constructseed</definition>
+        <argsstring>(i, j, time, perm)</argsstring>
+        <name>constructseed</name>
+        <param>
+          <type>i</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>j</type>
+          <defname>j</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>perm</type>
+          <defname>perm</defname>
+        </param>
+        <briefdescription>
+<para>Constructs a unique seed from grid cell index and model date/time The perm is supplied we generate a different seed by circularly shifting the bits of the seed - this is useful if we want to create more than one seed for a given column and model date/time. Note that abs(perm) must be &lt;= the number of bits used to represent the default integer (likely 32) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" line="93" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" bodystart="94" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="group__random__numbers__mod_1gaed0dc14ae47a52b6a5e1f93afac1d37a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(randomnumberstream) function</type>
+        <definition>type(randomnumberstream) function random_numbers_mod::initializerandomnumberstream_s</definition>
+        <argsstring>(seed)</argsstring>
+        <name>initializerandomnumberstream_s</name>
+        <param>
+          <type>seed</type>
+          <defname>seed</defname>
+        </param>
+        <briefdescription>
+<para>Initialization. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="group__random__numbers__mod_1ga2cfb9d86103060116e8b7df11e247d3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(randomnumberstream) function</type>
+        <definition>type(randomnumberstream) function random_numbers_mod::initializerandomnumberstream_v</definition>
+        <argsstring>(seed)</argsstring>
+        <name>initializerandomnumberstream_v</name>
+        <param>
+          <type>seed</type>
+          <defname>seed</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" line="79" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90" bodystart="80" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Generic module to wrap random number generators. </para>    </briefdescription>
+    <detaileddescription>
+<para>The module defines a type that identifies the particular stream of random numbers, and has procedures for initializing it and getting real numbers in the range 0 to 1. This version uses the Mersenne Twister to generate random numbers on [0, 1]. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

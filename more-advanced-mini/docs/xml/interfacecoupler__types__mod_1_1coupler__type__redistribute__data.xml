@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__redistribute__data" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_redistribute_data</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__redistribute__data_1aad8d9c68b7e666c4655bfc99456c5011" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_redistribute_data_2d</definition>
+        <argsstring>(var_in, domain_in, var_out, domain_out, complete)</argsstring>
+        <name>ct_redistribute_data_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>domain_in</type>
+          <defname>domain_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>domain_out</type>
+          <defname>domain_out</defname>
+        </param>
+        <param>
+          <type>complete</type>
+          <defname>complete</defname>
+        </param>
+        <briefdescription>
+<para>Redistribute the data in all elements of a <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Redistributes the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> into another, which may be on different processors with a different decomposition.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Mismatch in num_bcs in CT_copy_data_2d.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Mismatch in the total number of fields in CT_redistribute_data_2d.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to copy (intent in)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FMS domain for the input structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The recipient BC_type structure (data intent out)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FMS domain for the output structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">complete</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, complete the updates </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2127" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2128" bodyend="2299"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__redistribute__data_1a5f7ca24112941fa3261bb5178a1b51c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_redistribute_data_3d</definition>
+        <argsstring>(var_in, domain_in, var_out, domain_out, complete)</argsstring>
+        <name>ct_redistribute_data_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>domain_in</type>
+          <defname>domain_in</defname>
+        </param>
+        <param>
+          <type>var_out</type>
+          <defname>var_out</defname>
+        </param>
+        <param>
+          <type>domain_out</type>
+          <defname>domain_out</defname>
+        </param>
+        <param>
+          <type>complete</type>
+          <defname>complete</defname>
+        </param>
+        <briefdescription>
+<para>Redistributes the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Redistributes the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> into another, which may be on different processors with a different decomposition.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to copy (intent in)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FMS domain for the input structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The recipient BC_type structure (data intent out)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FMS domain for the output structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">complete</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, complete the updates </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2306" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2307" bodyend="2479"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to redistribute the field data from one coupler_bc_type to another of the same rank and global size, but a different decomposition. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="401" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="401" bodyend="402"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__redistribute__data_1aad8d9c68b7e666c4655bfc99456c5011" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_redistribute_data</scope><name>ct_redistribute_data_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__redistribute__data_1a5f7ca24112941fa3261bb5178a1b51c3" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_redistribute_data</scope><name>ct_redistribute_data_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

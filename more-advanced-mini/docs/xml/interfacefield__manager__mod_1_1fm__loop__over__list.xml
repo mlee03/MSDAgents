@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacefield__manager__mod_1_1fm__loop__over__list" kind="interface" language="Fortran" prot="private">
+    <compoundname>field_manager_mod::fm_loop_over_list</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacefield__manager__mod_1_1fm__loop__over__list_1a1a9a7d3d709fc4810af91b31e60092d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fm_loop_over_list_new</definition>
+        <argsstring>(iter, name, field_type, index)</argsstring>
+        <name>fm_loop_over_list_new</name>
+        <param>
+          <type>iter</type>
+          <defname>iter</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_type</type>
+          <defname>field_type</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>given a list iterator, returns information about curren list element and advances the iterator to the next list element. At the end of the list, returns FALSE </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list iterator</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the current list item</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">field_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index in the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2555" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2557" bodyend="2574"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefield__manager__mod_1_1fm__loop__over__list_1a18a354cde9fb37b92b883cb50f807887" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fm_loop_over_list_old</definition>
+        <argsstring>(list, name, field_type, index)</argsstring>
+        <name>fm_loop_over_list_old</name>
+        <param>
+          <type>list</type>
+          <defname>list</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_type</type>
+          <defname>field_type</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>Iterates through the given list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A flag to indicate whether the function operated with (FALSE) or without (TRUE) errors</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of a list to loop over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of a field from list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">field_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of a list entry</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the field within the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="2469" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="2471" bodyend="2533"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A function for looping over a list. </para>    </briefdescription>
+    <detaileddescription>
+<para>Loop over the list, setting the name, type and index of the next field. Return false at the end of the loop. <linebreak/>
+ Example usage: <programlisting filename=".F90"><codeline><highlight class="normal">success<sp/>=<sp/><ref refid="interfacefield__manager__mod_1_1fm__loop__over__list" kindref="compound">fm_loop_over_list</ref>(list,<sp/>name,<sp/>field_type,<sp/>index)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="415" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="415" bodyend="417"/>
+    <listofallmembers>
+      <member refid="interfacefield__manager__mod_1_1fm__loop__over__list_1a1a9a7d3d709fc4810af91b31e60092d3" prot="private" virt="non-virtual"><scope>field_manager_mod::fm_loop_over_list</scope><name>fm_loop_over_list_new</name></member>
+      <member refid="interfacefield__manager__mod_1_1fm__loop__over__list_1a18a354cde9fb37b92b883cb50f807887" prot="private" virt="non-virtual"><scope>field_manager_mod::fm_loop_over_list</scope><name>fm_loop_over_list_old</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

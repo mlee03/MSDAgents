@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structfms__diag__yaml__mod_1_1diagyamlfiles__type" kind="type" language="Fortran" prot="private">
+    <compoundname>fms_diag_yaml_mod::diagyamlfiles_type</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1adecddf6eb207ab970783f772a657851c" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer current_new_file_freq_index</definition>
+        <argsstring></argsstring>
+        <name>current_new_file_freq_index</name>
+        <briefdescription>
+<para>The index of the new_file_freq array Need to use <computeroutput>MAX_STR_LEN</computeroutput> because not all filenames/global attributes are the same length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="134" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="134" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7ace7f81781f1193aa014ded7f6f94e1" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_dimensions)</type>
+        <definition>integer, dimension(max_dimensions) default_chunksizes</definition>
+        <argsstring></argsstring>
+        <name>default_chunksizes</name>
+        <briefdescription>
+<para>Specified chunksizes to use by default. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="155" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a44da4a57c86788e93cf9ac2a72852279" prot="private" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character (len=:), allocatable default_var_module</definition>
+        <argsstring></argsstring>
+        <name>default_var_module</name>
+        <briefdescription>
+<para>The module for all of the variables in the file This may be overridden if the modules was defined at the variable level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="151" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="151" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7e96861c6239a62f632d504a10c9afb6" prot="private" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character (len=:), allocatable default_var_precision</definition>
+        <argsstring></argsstring>
+        <name>default_var_precision</name>
+        <briefdescription>
+<para>The precision for all of the variables in the file This may be overridden if the precison was defined at the variable level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="145" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac4b74c2537cca75db3d7fdfc9f3b0081" prot="private" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character (len=:), allocatable default_var_reduction</definition>
+        <argsstring></argsstring>
+        <name>default_var_reduction</name>
+        <briefdescription>
+<para>The reduction for all of the variables in the file This may be overridden if the reduction was defined at the variable level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="148" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1afa72780a6b631cabf498e77971aec074" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_duration</definition>
+        <argsstring></argsstring>
+        <name>file_duration</name>
+        <briefdescription>
+<para>How long the file should receive data after start time in file_duration_units. This optional field can only be used if the start_time field is present.  If this field is absent, then the file duration will be equal to the frequency for creating new files. NOTE: The file_duration_units field must also be present if this field is present. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac1a7ac90271aaaa5fe0976f2b2018867" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_duration_units</definition>
+        <argsstring></argsstring>
+        <name>file_duration_units</name>
+        <briefdescription>
+<para>The file duration units (DIAG_SECONDS, DIAG_MINUTES, &amp; DIAG_HOURS, DIAG_DAYS, DIAG_YEARS) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="131" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa2e74ce520debd22da125e55d6f86a5e" prot="private" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character (len=:), allocatable file_fname</definition>
+        <argsstring></argsstring>
+        <name>file_fname</name>
+        <briefdescription>
+<para>file name </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="101" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="101" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a140c50b2d9393b33d7d423ba5bc2ecf2" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_freq</definition>
+        <argsstring></argsstring>
+        <name>file_freq</name>
+        <briefdescription>
+<para>the frequency of data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="105" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="105" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4a4bdb33fd29e2f80738ed2e8990a728" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_frequnit</definition>
+        <argsstring></argsstring>
+        <name>file_frequnit</name>
+        <briefdescription>
+<para>the frequency unit (DIAG_SECONDS, DIAG_MINUTES, DIAG_HOURS, DIAG_DAYS, DIAG_YEARS) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="102" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1fca59c25d5d73c3c70cbb250f981c42" prot="private" static="no" mutable="no">
+        <type>character(len=max_str_len), dimension(:,:), allocatable</type>
+        <definition>character (len=max_str_len), dimension(:,:), allocatable file_global_meta</definition>
+        <argsstring></argsstring>
+        <name>file_global_meta</name>
+        <briefdescription>
+<para>Array of key(dim=1) and values(dim=2) to be added as global meta data to the file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="141" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a9b5818dcbf7c488b47b76a15dc8764af" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_new_file_freq</definition>
+        <argsstring></argsstring>
+        <name>file_new_file_freq</name>
+        <briefdescription>
+<para>Frequency for closing the existing file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="111" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4dd19f8444f6401a41a4af3b3d8c682d" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_freq)</type>
+        <definition>integer, dimension(max_freq) file_new_file_freq_units</definition>
+        <argsstring></argsstring>
+        <name>file_new_file_freq_units</name>
+        <briefdescription>
+<para>Time units for creating a new file. Required if “new_file_freq” used (DIAG_SECONDS, DIAG_MINUTES, &amp; DIAG_HOURS, DIAG_DAYS, DIAG_YEARS) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="112" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1e8013f5ce73c7e2183c9a117587efec" prot="private" static="no" mutable="no">
+        <type>character(len=max_str_len), dimension(:), allocatable</type>
+        <definition>character (len=max_str_len), dimension(:), allocatable file_outlist</definition>
+        <argsstring></argsstring>
+        <name>file_outlist</name>
+        <briefdescription>
+<para>An array of variable output names within a file, used to distinguish varlist names for yaml output. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="138" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="138" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a2ac94445c817eefbd087048c18dd8a7e" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)</type>
+        <definition>type(time_type) file_start_time</definition>
+        <argsstring></argsstring>
+        <name>file_start_time</name>
+        <briefdescription>
+<para>Time to start the file for the first time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="116" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7c050e0e9f42fb19a76d50451da1b2c2" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical file_start_time_set</definition>
+        <argsstring></argsstring>
+        <name>file_start_time_set</name>
+        <briefdescription>
+<para>.True. if file_start_time has been set </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="118" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1acafb09edde09af93684f89dc65eb49f8" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1subregion__type" kindref="compound">subregion_type</ref>)</type>
+        <definition>type(subregion_type) file_sub_region</definition>
+        <argsstring></argsstring>
+        <name>file_sub_region</name>
+        <briefdescription>
+<para>type containing info about the subregion </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="110" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a6c2d664b79b20fae3317921d53eb8b00" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer file_timeunit</definition>
+        <argsstring></argsstring>
+        <name>file_timeunit</name>
+        <briefdescription>
+<para>The unit of time (DIAG_SECONDS, DIAG_MINUTES, DIAG_HOURS, DIAG_DAYS, DIAG_YEARS) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="106" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a15d479bb88df4cd947ea9f40bf791a09" prot="private" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character (len=:), allocatable file_unlimdim</definition>
+        <argsstring></argsstring>
+        <name>file_unlimdim</name>
+        <briefdescription>
+<para>The name of the unlimited dimension. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="109" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a8edef17215278c94594e8b0b80eccee8" prot="private" static="no" mutable="no">
+        <type>character(len=max_str_len), dimension(:), allocatable</type>
+        <definition>character (len=max_str_len), dimension(:), allocatable file_varlist</definition>
+        <argsstring></argsstring>
+        <name>file_varlist</name>
+        <briefdescription>
+<para>An array of variable names within a file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="136" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1afea25e7ee726d146fc1436f59d0dc674" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer filename_time</definition>
+        <argsstring></argsstring>
+        <name>filename_time</name>
+        <briefdescription>
+<para>The time to use when setting the name of new files: begin, middle, or end of the time_bounds. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="119" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae29fc4d20927ba1a8ddde02099e09b89" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_collective_writes</definition>
+        <argsstring></argsstring>
+        <name>use_collective_writes</name>
+        <briefdescription>
+<para>True if using collective writes, default is false. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="154" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae4845320ce3e72b796f0e936bfbfcb77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_duration</definition>
+        <argsstring></argsstring>
+        <name>get_file_duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="170" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a80f289f298e9001047c462fb88b08fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_duration_units</definition>
+        <argsstring></argsstring>
+        <name>get_file_duration_units</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="171" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ad1e6e4476a07d8f4762f4bba726a9f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_fname</definition>
+        <argsstring></argsstring>
+        <name>get_file_fname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="161" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0db6f76f0d4d9747a80eb5cd0b7ffbde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_freq</definition>
+        <argsstring></argsstring>
+        <name>get_file_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="163" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aad9af26d4d83a9a6a3e4907d93bd15d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_frequnit</definition>
+        <argsstring></argsstring>
+        <name>get_file_frequnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="162" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a955dc05a0b7f7f887873909db7e3f228" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_global_meta</definition>
+        <argsstring></argsstring>
+        <name>get_file_global_meta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="173" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ab7cf5f31aec3c3ce013664525d42993c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_new_file_freq</definition>
+        <argsstring></argsstring>
+        <name>get_file_new_file_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="167" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac4f59948fdac9dc6ff981f6fd57fd947" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_new_file_freq_units</definition>
+        <argsstring></argsstring>
+        <name>get_file_new_file_freq_units</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="168" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac3dc7f9aa5c6053280dace754d284d27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_start_time</definition>
+        <argsstring></argsstring>
+        <name>get_file_start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="169" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a32cbf39176de114f5b1f7dcd8a140392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_sub_region</definition>
+        <argsstring></argsstring>
+        <name>get_file_sub_region</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="166" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a5206be0770235e22120e6b2f22f83218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_timeunit</definition>
+        <argsstring></argsstring>
+        <name>get_file_timeunit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="164" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0ee93c2d74969ede986914215bd8b32b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_unlimdim</definition>
+        <argsstring></argsstring>
+        <name>get_file_unlimdim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="165" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ad4719287d0515d57edb853a485ae49c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_file_varlist</definition>
+        <argsstring></argsstring>
+        <name>get_file_varlist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="172" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a8c785c758aef190ce774adc7658a28fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public get_filename_time</definition>
+        <argsstring></argsstring>
+        <name>get_filename_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="174" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac20aa37bd12037654c2cbfc54a5a4eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_duration</definition>
+        <argsstring></argsstring>
+        <name>has_file_duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="188" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa3102924df865f0cae43dbeaf6f67561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_duration_units</definition>
+        <argsstring></argsstring>
+        <name>has_file_duration_units</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="189" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1ec3e1451acadc41ab0bfdb5b5785fe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_fname</definition>
+        <argsstring></argsstring>
+        <name>has_file_fname</name>
+        <briefdescription>
+<para>Has functions to determine if allocatable variables are true. If a variable is not an allocatable then is will always return .true. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="179" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aee63993d4df6c6448a43ec36dd3f019e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_freq</definition>
+        <argsstring></argsstring>
+        <name>has_file_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="181" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa34154eb745b9fc1c5320f3a06151a33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_frequnit</definition>
+        <argsstring></argsstring>
+        <name>has_file_frequnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="180" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4ab714cc4ba5575c2db806cc0d76ca3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_global_meta</definition>
+        <argsstring></argsstring>
+        <name>has_file_global_meta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="191" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae7fc9daecb0b167f7e199b76d5a5c5f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_new_file_freq</definition>
+        <argsstring></argsstring>
+        <name>has_file_new_file_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="185" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a2cbf3d0df90e25118ea67b3a54ca2d95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_new_file_freq_units</definition>
+        <argsstring></argsstring>
+        <name>has_file_new_file_freq_units</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="186" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ab4563d20ec567a80f9eac718bd8c4849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_start_time</definition>
+        <argsstring></argsstring>
+        <name>has_file_start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="187" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0691f861e59563fb89f8f17f03bcd46c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_sub_region</definition>
+        <argsstring></argsstring>
+        <name>has_file_sub_region</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="184" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1563e04e9714012349c850d2ca39e4b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_timeunit</definition>
+        <argsstring></argsstring>
+        <name>has_file_timeunit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="182" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a5f0fd7896ff69314c8ba302e22c3e81c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_unlimdim</definition>
+        <argsstring></argsstring>
+        <name>has_file_unlimdim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="183" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a56ab14e79a766cd8bd27472b92ef573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_file_varlist</definition>
+        <argsstring></argsstring>
+        <name>has_file_varlist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="190" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac330a948874f47e9207fbb2655331006" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public increase_new_file_freq_index</definition>
+        <argsstring></argsstring>
+        <name>increase_new_file_freq_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="192" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0eb20a39e610eb5fbdd14e6173172da2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_global_meta</definition>
+        <argsstring></argsstring>
+        <name>is_global_meta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="176" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae3899be5e9f420081148baeff4bcc1b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_using_collective_writes</definition>
+        <argsstring></argsstring>
+        <name>is_using_collective_writes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="175" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1abfb8ce4c70838b093d3673a9bc721fd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public size_file_varlist</definition>
+        <argsstring></argsstring>
+        <name>size_file_varlist</name>
+        <briefdescription>
+<para>All getter functions (functions named get_x(), for member field named x) return copies of the member variables unless explicitly noted. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="160" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>type to hold the diag_file information </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="500">
+        <label>character(len=:), allocatable</label>
+      </node>
+      <node id="494">
+        <label>logical</label>
+      </node>
+      <node id="495">
+        <label>time_type</label>
+        <link refid="structtime__manager__mod_1_1time__type"/>
+        <childnode refid="496" relation="usage">
+          <edgelabel>days</edgelabel>
+          <edgelabel>seconds</edgelabel>
+          <edgelabel>ticks</edgelabel>
+        </childnode>
+      </node>
+      <node id="499">
+        <label>class(*), dimension(:,:), allocatable</label>
+      </node>
+      <node id="501">
+        <label>character(len=max_str_len), dimension(:), allocatable</label>
+      </node>
+      <node id="496">
+        <label>integer</label>
+      </node>
+      <node id="497">
+        <label>character(len=max_str_len), dimension(:,:), allocatable</label>
+      </node>
+      <node id="493">
+        <label>diagyamlfiles_type</label>
+        <link refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type"/>
+        <childnode refid="494" relation="usage">
+          <edgelabel>use_collective_writes</edgelabel>
+          <edgelabel>file_start_time_set</edgelabel>
+        </childnode>
+        <childnode refid="495" relation="usage">
+          <edgelabel>file_start_time</edgelabel>
+        </childnode>
+        <childnode refid="497" relation="usage">
+          <edgelabel>file_global_meta</edgelabel>
+        </childnode>
+        <childnode refid="498" relation="usage">
+          <edgelabel>file_sub_region</edgelabel>
+        </childnode>
+        <childnode refid="500" relation="usage">
+          <edgelabel>file_fname</edgelabel>
+          <edgelabel>file_unlimdim</edgelabel>
+          <edgelabel>default_var_module</edgelabel>
+          <edgelabel>default_var_reduction</edgelabel>
+          <edgelabel>default_var_precision</edgelabel>
+        </childnode>
+        <childnode refid="501" relation="usage">
+          <edgelabel>file_outlist</edgelabel>
+          <edgelabel>file_varlist</edgelabel>
+        </childnode>
+        <childnode refid="496" relation="usage">
+          <edgelabel>filename_time</edgelabel>
+          <edgelabel>file_duration</edgelabel>
+          <edgelabel>default_chunksizes</edgelabel>
+          <edgelabel>file_new_file_freq_units</edgelabel>
+          <edgelabel>file_timeunit</edgelabel>
+          <edgelabel>current_new_file_freq_index</edgelabel>
+          <edgelabel>file_new_file_freq</edgelabel>
+          <edgelabel>file_freq</edgelabel>
+          <edgelabel>file_duration_units</edgelabel>
+          <edgelabel>file_frequnit</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="498">
+        <label>subregion_type</label>
+        <link refid="structfms__diag__yaml__mod_1_1subregion__type"/>
+        <childnode refid="499" relation="usage">
+          <edgelabel>corners</edgelabel>
+        </childnode>
+        <childnode refid="496" relation="usage">
+          <edgelabel>grid_type</edgelabel>
+          <edgelabel>tile</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="99" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="99" bodyend="193"/>
+    <listofallmembers>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1adecddf6eb207ab970783f772a657851c" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>current_new_file_freq_index</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7ace7f81781f1193aa014ded7f6f94e1" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>default_chunksizes</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a44da4a57c86788e93cf9ac2a72852279" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>default_var_module</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7e96861c6239a62f632d504a10c9afb6" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>default_var_precision</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac4b74c2537cca75db3d7fdfc9f3b0081" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>default_var_reduction</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1afa72780a6b631cabf498e77971aec074" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_duration</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac1a7ac90271aaaa5fe0976f2b2018867" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_duration_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa2e74ce520debd22da125e55d6f86a5e" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_fname</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a140c50b2d9393b33d7d423ba5bc2ecf2" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4a4bdb33fd29e2f80738ed2e8990a728" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_frequnit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1fca59c25d5d73c3c70cbb250f981c42" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_global_meta</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a9b5818dcbf7c488b47b76a15dc8764af" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_new_file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4dd19f8444f6401a41a4af3b3d8c682d" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_new_file_freq_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1e8013f5ce73c7e2183c9a117587efec" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_outlist</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a2ac94445c817eefbd087048c18dd8a7e" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_start_time</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a7c050e0e9f42fb19a76d50451da1b2c2" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_start_time_set</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1acafb09edde09af93684f89dc65eb49f8" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_sub_region</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a6c2d664b79b20fae3317921d53eb8b00" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_timeunit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a15d479bb88df4cd947ea9f40bf791a09" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_unlimdim</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a8edef17215278c94594e8b0b80eccee8" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>file_varlist</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1afea25e7ee726d146fc1436f59d0dc674" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>filename_time</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae4845320ce3e72b796f0e936bfbfcb77" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_duration</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a80f289f298e9001047c462fb88b08fd6" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_duration_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ad1e6e4476a07d8f4762f4bba726a9f55" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_fname</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0db6f76f0d4d9747a80eb5cd0b7ffbde" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aad9af26d4d83a9a6a3e4907d93bd15d8" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_frequnit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a955dc05a0b7f7f887873909db7e3f228" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_global_meta</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ab7cf5f31aec3c3ce013664525d42993c" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_new_file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac4f59948fdac9dc6ff981f6fd57fd947" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_new_file_freq_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac3dc7f9aa5c6053280dace754d284d27" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_start_time</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a32cbf39176de114f5b1f7dcd8a140392" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_sub_region</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a5206be0770235e22120e6b2f22f83218" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_timeunit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0ee93c2d74969ede986914215bd8b32b" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_unlimdim</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ad4719287d0515d57edb853a485ae49c1" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_file_varlist</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a8c785c758aef190ce774adc7658a28fc" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>get_filename_time</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac20aa37bd12037654c2cbfc54a5a4eaf" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_duration</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa3102924df865f0cae43dbeaf6f67561" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_duration_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1ec3e1451acadc41ab0bfdb5b5785fe1" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_fname</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aee63993d4df6c6448a43ec36dd3f019e" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1aa34154eb745b9fc1c5320f3a06151a33" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_frequnit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a4ab714cc4ba5575c2db806cc0d76ca3d" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_global_meta</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae7fc9daecb0b167f7e199b76d5a5c5f5" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_new_file_freq</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a2cbf3d0df90e25118ea67b3a54ca2d95" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_new_file_freq_units</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ab4563d20ec567a80f9eac718bd8c4849" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_start_time</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0691f861e59563fb89f8f17f03bcd46c" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_sub_region</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a1563e04e9714012349c850d2ca39e4b3" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_timeunit</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a5f0fd7896ff69314c8ba302e22c3e81c" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_unlimdim</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a56ab14e79a766cd8bd27472b92ef573c" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>has_file_varlist</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ac330a948874f47e9207fbb2655331006" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>increase_new_file_freq_index</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1a0eb20a39e610eb5fbdd14e6173172da2" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>is_global_meta</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae3899be5e9f420081148baeff4bcc1b7" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>is_using_collective_writes</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1abfb8ce4c70838b093d3673a9bc721fd0" prot="public" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>size_file_varlist</name></member>
+      <member refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type_1ae29fc4d20927ba1a8ddde02099e09b89" prot="private" virt="non-virtual"><scope>fms_diag_yaml_mod::diagyamlfiles_type</scope><name>use_collective_writes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

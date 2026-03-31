@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__constants__mod" kind="group">
+    <compoundname>constants_mod</compoundname>
+    <title>constants_mod</title>
+    <innernamespace refid="namespaceconstants__mod">constants_mod</innernamespace>
+    <innernamespace refid="namespaceversion">version</innernamespace>
+    <briefdescription>
+<para>compatibility module as we transition to an FMSConstants module </para>    </briefdescription>
+    <detaileddescription>
+<para>Constants have been declared as type REAL, PARAMETER.</para><para>The value a constant can not be changed in a users program. New constants can be defined in terms of values from the constants module using a parameter statement.<linebreak/>
+<linebreak/>
+</para><para>The name given to a particular constant may be changed.<linebreak/>
+<linebreak/>
+</para><para>Constants can be used on the right side on an assignment statement (their value can not be reassigned).</para><para>Example:</para><para><verbatim>    use constants_mod, only:  TFREEZE, grav_new =&gt; GRAV
+    real, parameter :: grav_inv = 1.0 / grav_new
+    tempc(:,:,:) = tempk(:,:,:) - TFREEZE
+    geopotential(:,:) = height(:,:) * grav_new</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

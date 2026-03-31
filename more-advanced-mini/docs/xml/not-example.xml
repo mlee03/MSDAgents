@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="not-example" kind="example">
+    <compoundname>not</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>actually invalid, but should not be used in subroutine/function descriptions as it is for presenting examples of source code separately. Some examples of what can be used for programming examples in descriptions are below.</para><para>Some html commands, such as <computeroutput>&lt;TT&gt;</computeroutput> and <computeroutput>&lt;br&gt;</computeroutput> are allowed. Full list can be found <ulink url="https://www.doxygen.nl/manual/htmlcmds.html"><bold>here</bold></ulink>. Coding examples can be formatted by either tabbing, or within the <computeroutput>@code</computeroutput> commands(see full subroutine documentation below for examples of both). Links to other pages within the documentation can be created with <computeroutput>@ref name</computeroutput>.</para><para>### Documenting Subroutines and Functions</para><para>The first <computeroutput>!&gt;</computeroutput> comment above a routine implicitly starts the brief description, and the second <computeroutput>!&gt;</computeroutput> will start the full description (as long as the brief description is terminated).</para><para>Simple subroutine/function documentation:</para><para><programlisting filename=".F90"><codeline><highlight class="comment">!&gt;<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>continued<sp/>description</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">foo(bar)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>bar</highlight><highlight class="comment"><sp/>!&lt;<sp/>argument<sp/>description</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+</programlisting></para><para>Full subroutine/function documentation:</para><para><programlisting filename=".F90"><codeline><highlight class="comment">!&gt;<sp/>@brief<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>continued<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>Long<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>continued<sp/>long<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>&lt;br&gt;Example<sp/>1:</highlight></codeline>
+<codeline><highlight class="comment">!!</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/>foo()</highlight></codeline>
+<codeline><highlight class="comment">!!</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>Example<sp/>2:</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>@code{.F90}</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>foo()</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>endcode<sp/>(`@`<sp/>omitted<sp/>to<sp/>not<sp/>close<sp/>this<sp/>example)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">foo()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>bar</highlight><highlight class="comment"><sp/>!&lt;<sp/>variable<sp/>description</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+</programlisting></para><para><heading level="3">Module Grouping</heading>
+</para><para>To get the modules parsed correctly, each module page is created through a grouping defined at the top of the file. Each FMS module is then also in a group corresponding to its subdirectory, with these groups defined in <computeroutput><ref refid="grouping_8h_source" kindref="compound">docs/grouping.h</ref></computeroutput>. The groups can also contain any other relevant files, such as additional documentation files, header, or include files. Files or additional documentation can be added to either directory or module groups by adding `` to a specific objects documentation block, or to enclose any section of code with the following:</para><para><programlisting filename=".F90"><codeline><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&lt;<sp/>any<sp/>documented<sp/>code<sp/>within<sp/>here<sp/>will<sp/>be<sp/>included<sp/>in<sp/>foo_mod<sp/>&gt;</highlight><highlight class="comment"></highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@}</highlight></codeline>
+</programlisting></para><para><heading level="3">Documenting Interfaces and Type Definitions</heading>
+</para><para>Interfaces and type definitions can be documented in a similar way as subroutines/functions. In the documentation they will both be listed data types and will show any included subroutines or variables with links if available.</para><para>For interfaces and type definitions, duplicates can appear for subroutines/functions and variables contained in interfaces and typedefs if they are included in the module group as well. This can be avoided by ending the module group before the interface is defined with `!&gt; <programlisting filename="not"></programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

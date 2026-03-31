@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__home_Ryan_8Mulhall_FMS-1_TESTING" kind="page">
+    <compoundname>md__home_Ryan.Mulhall_FMS-1_TESTING</compoundname>
+    <title>Unit Testing</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>FMS includes a suite of MPI unit tests for most subdirectories and modules that make up the library.</para><para>It consists of programs in the test_fms/ directory, with shell scripts to handle directory set up and input files. test_lib.sh.in and tap-driver.sh provide additional helper functions used in the scripts and manage output.</para><para>The unit tests can be run either through the autotools build system, or through cmake via ctest. The different build systems will run the exact same scripts and executables, but there are some differences in the commands used to start the testing.</para><para><heading level="2">Autotools Unit Testing</heading>
+</para><para><heading level="3">Running the Tests</heading>
+</para><para><orderedlist>
+<listitem><para>Configure and build the code with autotools <programlisting><codeline><highlight class="normal">mkdir<sp/>build<sp/>#<sp/>create<sp/>a<sp/>build<sp/>directory<sp/>in<sp/>FMS</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">autoreconf<sp/>-if<sp/>../configure.ac</highlight></codeline>
+<codeline><highlight class="normal">../configure<sp/>&lt;configure<sp/>options&gt;</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Build and run suite <programlisting><codeline><highlight class="normal">make<sp/>check</highlight></codeline>
+</programlisting> This will compile any code not already compiled and then proceed to run the test scripts.</para></listitem></orderedlist>
+</para><para>If a test fails, <computeroutput>make check</computeroutput> will stop running the rest of the unit tests once it is done with the current subdirectory.</para><para>To instead run all of the tests regardless of failures, the <computeroutput>-k</computeroutput> option can be given: <programlisting><codeline><highlight class="normal">make<sp/>check<sp/>-k</highlight></codeline>
+</programlisting></para><para><heading level="3">Debugging Output and Test Options for Autotools</heading>
+</para><para>Setting the environment variable TEST_VERBOSE will direct output to stdout as the test runs, while setting VERBOSE will only output on failure. Logs are created for each test as well, with the name &lt;test script name&gt;.log in its corresponding test_fms/ directory.</para><para>To run an individual test: <programlisting><codeline><highlight class="normal">make<sp/>check<sp/>-C<sp/>test_fms/&lt;test<sp/>directory&gt;<sp/>TESTS=&lt;test<sp/>script<sp/>name&gt;</highlight></codeline>
+</programlisting></para><para>SKIP_TESTS can be set to in order to skip specific tests in a script. It uses the script name and test number, and takes ranges as well: <programlisting><codeline><highlight class="normal">SKIP_TESTS=&quot;test_name.4<sp/>test_name.[1-3]&quot;</highlight></codeline>
+</programlisting></para><para>Some options that effect the test suite can be set by passing options to the ./configure script that creates the makefiles for the build system:</para><para><itemizedlist>
+<listitem><para><computeroutput>--enable-code-coverage</computeroutput> allows for compilation with flags for coverage information. If enabled a coverage report can be generated with <computeroutput>make check-code-coverage</computeroutput></para></listitem><listitem><para><computeroutput>--enable-test-input=/path/to/input</computeroutput> turns on test scripts that require input netcdf files (interpolator, xgrid, data_override). This option is mainly used internally and in automated testing since we do not host the input data publicly.</para></listitem><listitem><para><computeroutput>--with-yaml</computeroutput> compile with yaml input and enable its associated tests</para></listitem></itemizedlist>
+</para><para><heading level="2">CMake Unit Testing</heading>
+</para><para><heading level="3">Running the tests</heading>
+</para><para><orderedlist>
+<listitem><para>Configure and build the code and tests with cmake <programlisting><codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>&lt;Any<sp/>cmake<sp/>options<sp/>such<sp/>as<sp/>-DWITH_YAML=on&gt;<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Run the tests with ctest <programlisting><codeline><highlight class="normal">ctest</highlight></codeline>
+</programlisting> Alternatively, the generated makefile can be used as well: <programlisting><codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+</programlisting> <heading level="3">Debugging and Test Options for CMake</heading>
+</para></listitem></orderedlist>
+</para><para>To rerun failed tests with debug output from a previous failed ctest command: <programlisting><codeline><highlight class="normal">ctest<sp/>--rerun-failed<sp/>--verbose</highlight></codeline>
+</programlisting> All tests are labeled with the subdirectory they are in in the <computeroutput>test_fms</computeroutput> directory. To run tests for a specific area of the code, such as the mpp modules: <programlisting><codeline><highlight class="normal">ctest<sp/>-L<sp/>mpp</highlight></codeline>
+</programlisting> To run specific tests matching the given regex: <programlisting><codeline><highlight class="normal">ctest<sp/>-R<sp/>&lt;regex&gt;</highlight></codeline>
+</programlisting></para><para>For more testing options with ctest, you can look to the <ulink url="https://cmake.org/cmake/help/latest/manual/ctest.1.html">ctest documentation</ulink>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

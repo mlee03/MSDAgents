@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__increment__data" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_increment_data</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__increment__data_1aed3f7dc8267d23b25da779183d0619d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_increment_data_2d_2d</definition>
+        <argsstring>(var_in, var, halo_size, bc_index, field_index, scale_factor, scale_prev, exclude_flux_type, only_flux_type, pass_through_ice)</argsstring>
+        <name>ct_increment_data_2d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>halo_size</type>
+          <defname>halo_size</defname>
+        </param>
+        <param>
+          <type>bc_index</type>
+          <defname>bc_index</defname>
+        </param>
+        <param>
+          <type>field_index</type>
+          <defname>field_index</defname>
+        </param>
+        <param>
+          <type>scale_factor</type>
+          <defname>scale_factor</defname>
+        </param>
+        <param>
+          <type>scale_prev</type>
+          <defname>scale_prev</defname>
+        </param>
+        <param>
+          <type>exclude_flux_type</type>
+          <defname>exclude_flux_type</defname>
+        </param>
+        <param>
+          <type>only_flux_type</type>
+          <defname>only_flux_type</defname>
+        </param>
+        <param>
+          <type>pass_through_ice</type>
+          <defname>pass_through_ice</defname>
+        </param>
+        <briefdescription>
+<para>Increment data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do a direct increment of the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> into another. Both must have the same array sizes.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index is present and exceeds var_in%num_bcs.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>field_index is present and exceeds num_fields for var_in%bc(bc_incdx)%name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index must be present if field_index is present.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an i-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an j-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to add to the other type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The BC_type structure whose fields are being incremented</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halo_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extent of the halo to increment; 0 by default</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bc_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the field in the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">scale_factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scaling factor for the data that is being added</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">scale_prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scaling factor for the data that is already here</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">exclude_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to exclude from this increment.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">only_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to include from this increment.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pass_through_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, only increment BCs whose value of pass_through ice matches this </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2497" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2499" bodyend="2638"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__increment__data_1ae69bd8151735bda0c5b0566940a6264a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ct_increment_data_2d_3d_r4</definition>
+        <argsstring></argsstring>
+        <name>ct_increment_data_2d_3d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__increment__data_1a03961360751810a6ca0ea1692f7afc32" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ct_increment_data_2d_3d_r8</definition>
+        <argsstring></argsstring>
+        <name>ct_increment_data_2d_3d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__increment__data_1acd960c767313fd11ab555ffd0b8950ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_increment_data_3d_3d</definition>
+        <argsstring>(var_in, var, halo_size, bc_index, field_index, scale_factor, scale_prev, exclude_flux_type, only_flux_type, pass_through_ice)</argsstring>
+        <name>ct_increment_data_3d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>halo_size</type>
+          <defname>halo_size</defname>
+        </param>
+        <param>
+          <type>bc_index</type>
+          <defname>bc_index</defname>
+        </param>
+        <param>
+          <type>field_index</type>
+          <defname>field_index</defname>
+        </param>
+        <param>
+          <type>scale_factor</type>
+          <defname>scale_factor</defname>
+        </param>
+        <param>
+          <type>scale_prev</type>
+          <defname>scale_prev</defname>
+        </param>
+        <param>
+          <type>exclude_flux_type</type>
+          <defname>exclude_flux_type</defname>
+        </param>
+        <param>
+          <type>only_flux_type</type>
+          <defname>only_flux_type</defname>
+        </param>
+        <param>
+          <type>pass_through_ice</type>
+          <defname>pass_through_ice</defname>
+        </param>
+        <briefdescription>
+<para>Increment data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do a direct increment of the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref> into another. Both must have the same array sizes.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index is present and exceeds var_in%num_bcs.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>field_index is present and exceeds num_fields for var_in%bc(bc_incdx)%name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index must be present if field_index is present.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an i-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an j-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an k-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive k-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to add to the other type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The BC_type structure whose fields are being incremented</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halo_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extent of the halo to copy; 0 by default</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bc_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the field in the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">scale_factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scaling factor for the data that is being added</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">scale_prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scaling factor for the data that is already here</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">exclude_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to exclude from this increment.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">only_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to include from this increment.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pass_through_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, only increment BCs whose value of pass_through ice matches this </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="2656" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="2658" bodyend="2804"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to increment the field data from one coupler_bc_type with the data from another. Both must have the same horizontal size and decomposition, but a 2d type may be incremented by a 2d or 3d type. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="416" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="416" bodyend="418"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__increment__data_1aed3f7dc8267d23b25da779183d0619d9" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_increment_data</scope><name>ct_increment_data_2d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__increment__data_1ae69bd8151735bda0c5b0566940a6264a" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_increment_data</scope><name>ct_increment_data_2d_3d_r4</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__increment__data_1a03961360751810a6ca0ea1692f7afc32" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_increment_data</scope><name>ct_increment_data_2d_3d_r8</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__increment__data_1acd960c767313fd11ab555ffd0b8950ff" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_increment_data</scope><name>ct_increment_data_3d_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacecompare__data__checksums__int" kind="namespace" language="Fortran">
+    <compoundname>compare_data_checksums_int</compoundname>
+    <innerclass refid="interfacecompare__data__checksums__int_1_1compare__checksums__int" prot="private">compare_data_checksums_int::compare_checksums_int</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacecompare__data__checksums__int_1abc1dedc47367af905c204c88877d2d03" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer stdunit</definition>
+        <argsstring></argsstring>
+        <name>stdunit</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="30" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" bodystart="30" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecompare__data__checksums__int_1a207a417cbbfa0f4dc211304c9fd693bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compare_data_checksums_int::compare_checksums_2d_i4</definition>
+        <argsstring>(a, b, chk_str)</argsstring>
+        <name>compare_checksums_2d_i4</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>chk_str</type>
+          <defname>chk_str</defname>
+        </param>
+        <briefdescription>
+<para>compare checksums of 2D 32-bit integer arrays </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D arrays to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><simplesect kind="note"><para>can&apos;t call mpp_sync here since there might be different number of tiles on each pe.</para></simplesect>
+<simplesect kind="note"><para>in some cases, even though the checksum agree, the two arrays actually are different [e.g.,(1.1,-1.2) with (-1.1,1.2)]. Thus, we need to check the values point-by-point. </para></simplesect>
+</para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="44" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" bodystart="45" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecompare__data__checksums__int_1ab3da26966b3d60b0e0bde357a437e2bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compare_data_checksums_int::compare_checksums_2d_i8</definition>
+        <argsstring>(a, b, chk_str)</argsstring>
+        <name>compare_checksums_2d_i8</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>chk_str</type>
+          <defname>chk_str</defname>
+        </param>
+        <briefdescription>
+<para>compare checksums of 2D 64-bit integer arrays </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D arrays to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><simplesect kind="note"><para>can&apos;t call mpp_sync here since there might be different number of tiles on each pe.</para></simplesect>
+<simplesect kind="note"><para>in some cases, even though the checksum agree, the two arrays actually are different [e.g.,(1.1,-1.2) with (-1.1,1.2)]. Thus, we need to check the values point-by-point. </para></simplesect>
+</para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="125" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" bodystart="126" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecompare__data__checksums__int_1a612da874c1feecd8a06094c62eae2d79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compare_data_checksums_int::compare_checksums_3d_i4</definition>
+        <argsstring>(a, b, string)</argsstring>
+        <name>compare_checksums_3d_i4</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Compare the checksums of 2 3D 32-bit real arrays. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D 64-bit real arrays to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="83" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" bodystart="84" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecompare__data__checksums__int_1aa644918d0790455b98e9c433b30c6d77" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compare_data_checksums_int::compare_checksums_3d_i8</definition>
+        <argsstring>(a, b, string)</argsstring>
+        <name>compare_checksums_3d_i8</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Compare the checksums of 2 3D 64-bit real arrays. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D 64-bit real arrays to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="165" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" bodystart="166" bodyend="203"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Compare the checksums of 2D and 3D 32-bit or 64-bit integer arrays. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jessica Liptak </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/compare_data_checksums_int.F90" line="20" column="1"/>
+  </compounddef>
+</doxygen>

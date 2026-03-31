@@ -1,0 +1,955 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceinterpolator__mod" kind="namespace" language="Fortran">
+    <compoundname>interpolator_mod</compoundname>
+    <innerclass refid="interfaceinterpolator__mod_1_1assignment_07_0A_08" prot="private">interpolator_mod::assignment(=)</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1cart__to__latlon" prot="private">interpolator_mod::cart_to_latlon</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1cell__center2" prot="private">interpolator_mod::cell_center2</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1diag__read__data" prot="private">interpolator_mod::diag_read_data</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1get__axis__latlon__data" prot="private">interpolator_mod::get_axis_latlon_data</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1get__axis__level__data" prot="private">interpolator_mod::get_axis_level_data</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1interp__linear" prot="private">interpolator_mod::interp_linear</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1interp__weighted__scalar" prot="private">interpolator_mod::interp_weighted_scalar</innerclass>
+    <innerclass refid="structinterpolator__mod_1_1interpolate__r4__type" prot="private">interpolator_mod::interpolate_r4_type</innerclass>
+    <innerclass refid="structinterpolator__mod_1_1interpolate__r8__type" prot="private">interpolator_mod::interpolate_r8_type</innerclass>
+    <innerclass refid="structinterpolator__mod_1_1interpolate__type" prot="public">interpolator_mod::interpolate_type</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1interpolator" prot="private">interpolator_mod::interpolator</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1interpolator__init" prot="private">interpolator_mod::interpolator_init</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1latlon2xyz" prot="private">interpolator_mod::latlon2xyz</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1read__data" prot="private">interpolator_mod::read_data</innerclass>
+    <innerclass refid="interfaceinterpolator__mod_1_1read__data__no__time__axis" prot="private">interpolator_mod::read_data_no_time_axis</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__interpolator__mod_1gaff93b2fa50821a83fc80771ce1432573" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter bilinear</definition>
+        <argsstring></argsstring>
+        <name>bilinear</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga0886acc546e2ce96d68a217f4f083baa" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical clim_diag_initialized</definition>
+        <argsstring></argsstring>
+        <name>clim_diag_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="327" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="327" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga20d3ceab1c143412e44c13c91ca72bdf" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_diag_fields)</type>
+        <definition>integer, dimension(max_diag_fields) climo_diag_id</definition>
+        <argsstring></argsstring>
+        <name>climo_diag_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="387" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="387" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga710a4e8e854b1465a39e04fb196ce79a" prot="private" static="no" mutable="no">
+        <type>character(len=64), dimension(max_diag_fields)</type>
+        <definition>character(len=64), dimension(max_diag_fields) climo_diag_name</definition>
+        <argsstring></argsstring>
+        <name>climo_diag_name</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="386" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="386" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaf42c3198468cce3cb9317abec8ce9b91" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical conservative_interp</definition>
+        <argsstring></argsstring>
+        <name>conservative_interp</name>
+        <initializer>= .true.</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="401" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="401" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga68021bdaff941d0dca0af2bd238577ff" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public constant</definition>
+        <argsstring></argsstring>
+        <name>constant</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="372" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="372" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga5fd8e962c6888eba277561a11cd96579" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter dtr</definition>
+        <argsstring></argsstring>
+        <name>dtr</name>
+        <initializer>= TPI/360._r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="381" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="381" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga24a4a60aa8752e4b5c6cc0f73fd3eede" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter f_p</definition>
+        <argsstring></argsstring>
+        <name>f_p</name>
+        <initializer>= r8_kind</initializer>
+        <briefdescription>
+<para>64-bit precision (kind=8) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="396" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="396" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga502428bcf9180d659e18ca5fa75e1299" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_diag_fields)</type>
+        <definition>integer, dimension(max_diag_fields) hinterp_id</definition>
+        <argsstring></argsstring>
+        <name>hinterp_id</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="387" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga35417d30b898bcf452404f676c11aba6" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter increasing_downward</definition>
+        <argsstring></argsstring>
+        <name>increasing_downward</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="349" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="349" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga107a3eba77a9e7dd5899bce22fa97ddf" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter increasing_upward</definition>
+        <argsstring></argsstring>
+        <name>increasing_upward</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Flags to indicate direction of vertical axis in data file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="349" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaa28d203ad17b54aff243b202e9bf9c4a" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public interp_linear_p</definition>
+        <argsstring></argsstring>
+        <name>interp_linear_p</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="376" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gab0e08ab332bb853d3ce3814057e86bc5" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public interp_log_p</definition>
+        <argsstring></argsstring>
+        <name>interp_log_p</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+<para>Flags to indicate the type of vertical interpolation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="376" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga12580a82d34b2b06715648e407f55503" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public interp_weighted_p</definition>
+        <argsstring></argsstring>
+        <name>interp_weighted_p</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="376" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="376" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga791daa62d0ce344386b01b92eba17511" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter kg_m2</definition>
+        <argsstring></argsstring>
+        <name>kg_m2</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Flags to indicate whether the climatology units are mixing ratio (kg/kg) or column integral (kg/m2). Vertical interpolation scheme requires mixing ratio at this time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="366" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga5e12e763eded3d17204b2fc9c561c13e" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="338" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaf91a086208769d0331d73f39ab4740f0" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter linear</definition>
+        <argsstring></argsstring>
+        <name>linear</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="354" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga64fa514c9bb82d62614398a2a0c5ea00" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_diag_fields</definition>
+        <argsstring></argsstring>
+        <name>max_diag_fields</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="346" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gacd28eca6ccf48ce126e8a2ae4bb8d5a1" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) missing_value</definition>
+        <argsstring></argsstring>
+        <name>missing_value</name>
+        <initializer>= -1.e10_r8_kind</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="388" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="388" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="326" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga2478bde0940afdb5975a61635ece1163" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ndim</definition>
+        <argsstring></argsstring>
+        <name>ndim</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="329" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga01f6e84ee319a3ff6ad71e39d5d877a4" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlat</definition>
+        <argsstring></argsstring>
+        <name>nlat</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="332" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="332" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaa719bb9b17a2b5742dc7a799f94b4dfa" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlatb</definition>
+        <argsstring></argsstring>
+        <name>nlatb</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="333" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="333" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga5f5b3f17c0444f500a18ba56caa6fa48" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlev</definition>
+        <argsstring></argsstring>
+        <name>nlev</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="336" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="336" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gabaa51d2ba8485bd03277c4150b36c339" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlevh</definition>
+        <argsstring></argsstring>
+        <name>nlevh</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="337" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="337" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga759fae6c04f2ad64e60016a22f45c523" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlon</definition>
+        <argsstring></argsstring>
+        <name>nlon</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="334" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="334" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gab7bc20ce3f17044d2ce02938e3485142" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nlonb</definition>
+        <argsstring></argsstring>
+        <name>nlonb</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="335" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="335" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga5855cdc86ae384319da413a14c60cb15" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter no_conv</definition>
+        <argsstring></argsstring>
+        <name>no_conv</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="366" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="366" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gadcf902fa166abd885ffc5f2afbfae66f" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter notime</definition>
+        <argsstring></argsstring>
+        <name>notime</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Flags to indicate whether the time interpolation should be linear or some other scheme for seasonal data. NOTIME indicates that data file has no time axis. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga263e0f5eba3e5d0270c2e645c519c62f" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ntime</definition>
+        <argsstring></argsstring>
+        <name>ntime</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="331" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaf2eff42caf9d63cc7e2c9bee86f8a3ca" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ntime_in</definition>
+        <argsstring></argsstring>
+        <name>ntime_in</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gac93bf2d8981de31ff4983aafea799a55" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_clim_diag</definition>
+        <argsstring></argsstring>
+        <name>num_clim_diag</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="385" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="385" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gabfaffcec6d80f4f9dd8232df6671d99b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_fields</definition>
+        <argsstring></argsstring>
+        <name>num_fields</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga912077ba059d2b501757eaa28ec7c8e0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nvar</definition>
+        <argsstring></argsstring>
+        <name>nvar</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="330" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="330" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga38ca6e2445c51340029fc8601ef0314d" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter pressure</definition>
+        <argsstring></argsstring>
+        <name>pressure</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gaa13752dac6a4b54d2c25de1c34ecf17d" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical read_all_on_init</definition>
+        <argsstring></argsstring>
+        <name>read_all_on_init</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="399" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="399" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga99e4c575bfed0fbed89d26c394ac08d1" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical retain_cm3_bug</definition>
+        <argsstring></argsstring>
+        <name>retain_cm3_bug</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="402" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="402" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1gacc414d894b74be8ca35eae58865dda42" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter seasonal</definition>
+        <argsstring></argsstring>
+        <name>seasonal</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga8ca7993c91c39425803b10a08d07cb9f" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer sense</definition>
+        <argsstring></argsstring>
+        <name>sense</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="344" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="344" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga322a47b9327a4137e1f7130aab01ab98" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter sigma</definition>
+        <argsstring></argsstring>
+        <name>sigma</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Flags to indicate where climatology pressure levels are pressure or sigma levels. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga90b309ae24a1bd54e76a6918a1215508" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter tpi</definition>
+        <argsstring></argsstring>
+        <name>tpi</name>
+        <initializer>= (2.0_r8_kind*PI)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="380" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="380" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga210708a70ef4bb1983a8c6fd2a798e35" prot="private" static="no" mutable="no">
+        <type>character(len=64)</type>
+        <definition>character(len=64) units</definition>
+        <argsstring></argsstring>
+        <name>units</name>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="343" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="343" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga6354efeadfde9254bc8a3c2698bff1a0" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_mpp_io</definition>
+        <argsstring></argsstring>
+        <name>use_mpp_io</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Set to true to use mpp_io, otherwise fms2io is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="403" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="403" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga9e8dcf56a77b1b156ccc0fa7e082a46b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>No description. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="400" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="400" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__interpolator__mod_1ga4dde5fcf3778c18e9803ac1d73a66ef6" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public zero</definition>
+        <argsstring></argsstring>
+        <name>zero</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Flags to indicate what to do when the model surface pressure exceeds the climatology surface pressure level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="372" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__interpolator__mod_1ga964d51ef7fd4e420ca8306497ef88279" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function interpolator_mod::check_climo_units</definition>
+        <argsstring>(units)</argsstring>
+        <name>check_climo_units</name>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <briefdescription>
+<para>check_climo_units checks the units that the climatology data is using. This is needed to allow for conversion of datasets to mixing ratios which is what the vertical interpolation scheme requires. The default is to assume no conversion is needed. If the units are those of a column burden (kg/m2) then conversion to mixing ratio is flagged. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;units&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The units which you will be checking </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="501" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="502" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1gaa04edf3968e85b9668bf62703731acdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=64) function</type>
+        <definition>character(len=64) function interpolator_mod::chomp</definition>
+        <argsstring>(string)</argsstring>
+        <name>chomp</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>chomp receives a string from NetCDF files and removes CHAR(0) from the end of this string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;string&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string from the NetCDF file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="756" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="757" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1ga06df9761d5d17f3a33ad65fc800099d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::init_clim_diag</definition>
+        <argsstring>(clim_type, mod_axes, init_time)</argsstring>
+        <name>init_clim_diag</name>
+        <param>
+          <type>clim_type</type>
+          <defname>clim_type</defname>
+        </param>
+        <param>
+          <type>mod_axes</type>
+          <defname>mod_axes</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <briefdescription>
+<para>init_clim_diag is a routine to register diagnostic fields for the climatology file. This routine calculates the domain decompostion of the climatology fields for later export through send_data. The ids created here are for column burdens that will diagnose the vertical interpolation routine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">&lt;clim_type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolate type containing the names of the fields in the climatology file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;mod_axes&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axes of the model </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;init_time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model initialization time</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>init_clim_diag : You must call interpolator_init before calling init_clim_diag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>init_clim_diag : Trying to set up too many diagnostic fields for the climatology data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="541" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="542" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1ga19abcf7938596e9a635bb58a0fe48deb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::interpolate_type_eq</definition>
+        <argsstring>(Out, In)</argsstring>
+        <name>interpolate_type_eq</name>
+        <param>
+          <type>Out</type>
+          <defname>Out</defname>
+        </param>
+        <param>
+          <type>In</type>
+          <defname>In</defname>
+        </param>
+        <briefdescription>
+<para>Assignment overload routine for <ref refid="structinterpolator__mod_1_1interpolate__type" kindref="compound">interpolate_type</ref>, to be used through the assignment interface. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="412" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="413" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1ga7e435e7e9e550fb380f88f362501faa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::interpolator_end</definition>
+        <argsstring>(clim_type)</argsstring>
+        <name>interpolator_end</name>
+        <param>
+          <type>clim_type</type>
+          <defname>clim_type</defname>
+        </param>
+        <briefdescription>
+<para>interpolator_end receives interpolate data as input and deallocates its memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">&lt;clim_type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolate type whose components will be deallocated </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="647" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="648" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1gaf7a99acaf1d46d5729cf55d4544b685b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::obtain_interpolator_time_slices</definition>
+        <argsstring>(clim_type, Time)</argsstring>
+        <name>obtain_interpolator_time_slices</name>
+        <param>
+          <type>clim_type</type>
+          <defname>clim_type</defname>
+        </param>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>obtain_interpolator_time_slices makes sure that the appropriate time slices are available for interpolation on this time step. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">&lt;clim_type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolate type previously defined by a call to <ref refid="interfaceinterpolator__mod_1_1interpolator__init" kindref="compound">interpolator_init</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;Time&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model time that you wish to interpolate to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;interpolator_timeslice 1:  file=&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;interpolator_timeslice 2:  file=&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;interpolator_timeslice 3:  file=&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;interpolator_timeslice 4:  file=&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;interpolator_timeslice 5:  file=&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>"interpolator_timeslice : No data from the previous climatology time but we have the next time. How did this happen?" </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="590" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="591" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1ga048095c591ef4051abfa1da6ebdbf3d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::query_interpolator</definition>
+        <argsstring>(clim_type, nfields, field_names)</argsstring>
+        <name>query_interpolator</name>
+        <param>
+          <type>clim_type</type>
+          <defname>clim_type</defname>
+        </param>
+        <param>
+          <type>nfields</type>
+          <defname>nfields</defname>
+        </param>
+        <param>
+          <type>field_names</type>
+          <defname>field_names</defname>
+        </param>
+        <briefdescription>
+<para>query_interpolator receives an interpolate type as input and returns the number of fields and field names. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;clim_type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolate type which contains the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;nfields&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: No description </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;field_names&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OPTIONAL: No description </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="735" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="736" bodyend="745"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interpolator__mod_1ga75dd97cee018ee8dfe45361b82c8ed01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public interpolator_mod::unset_interpolator_time_flag</definition>
+        <argsstring>(clim_type)</argsstring>
+        <name>unset_interpolator_time_flag</name>
+        <param>
+          <type>clim_type</type>
+          <defname>clim_type</defname>
+        </param>
+        <briefdescription>
+<para>unset_interpolator_time_flag sets a flag in clim_type to false. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">&lt;clim_type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolate type containing the names of the fields in the climatology file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="629" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" bodystart="630" bodyend="636"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/interpolator/interpolator.F90" line="23" column="1"/>
+  </compounddef>
+</doxygen>

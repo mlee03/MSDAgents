@@ -1,0 +1,607 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__modern__diag_8F90" kind="file" language="Fortran">
+    <compoundname>test_modern_diag.F90</compoundname>
+    <innerclass refid="structdata__type" prot="public">data_type</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__modern__diag_8F90_1a13993cc42adfa046e31c437c0b6fda90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_modern_diag::allocate_dummy_data</definition>
+        <argsstring>(var, lat_lon_domain, cube_sphere, lnd_domain, nz)</argsstring>
+        <name>allocate_dummy_data</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>lat_lon_domain</type>
+          <defname>lat_lon_domain</defname>
+        </param>
+        <param>
+          <type>cube_sphere</type>
+          <defname>cube_sphere</defname>
+        </param>
+        <param>
+          <type>lnd_domain</type>
+          <defname>lnd_domain</defname>
+        </param>
+        <param>
+          <type>nz</type>
+          <defname>nz</defname>
+        </param>
+        <briefdescription>
+<para>Set up a normal (lat/lon) 2D domain, a cube sphere, and UG domain. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocates the dummy data to send to send_data</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data var to allocate</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lat_lon_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lat/Lon domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cube_sphere</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cube sphere domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lnd_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Land domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of Z points </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="229" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="230" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="test__modern__diag_8F90_1adbeed2e82ad2fb5d2eb26fcaf25b252d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_modern_diag::deallocate_dummy_data</definition>
+        <argsstring>(var)</argsstring>
+        <name>deallocate_dummy_data</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the dummy data to send to send_data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data var to deallocate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="258" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="259" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="test__modern__diag_8F90_1a0b42b75de2a5a998e67e104396001cde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_modern_diag::set_dummy_data</definition>
+        <argsstring>(var, data_value)</argsstring>
+        <name>set_dummy_data</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>data_value</type>
+          <defname>data_value</defname>
+        </param>
+        <briefdescription>
+<para>Sets the dummy_data to use in send_data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data type to set</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to send the data as </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="265" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="266" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="test__modern__diag_8F90_1aeeddbd025309b7d388c2e42e4e3c2402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_modern_diag::set_up_2d_domain</definition>
+        <argsstring>(Domain, layout, nx, ny, io_layout)</argsstring>
+        <name>set_up_2d_domain</name>
+        <param>
+          <type>Domain</type>
+          <defname>Domain</defname>
+        </param>
+        <param>
+          <type>layout</type>
+          <defname>layout</defname>
+        </param>
+        <param>
+          <type>nx</type>
+          <defname>nx</defname>
+        </param>
+        <param>
+          <type>ny</type>
+          <defname>ny</defname>
+        </param>
+        <param>
+          <type>io_layout</type>
+          <defname>io_layout</defname>
+        </param>
+        <briefdescription>
+<para>Sets up a lat/lon domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Layout to use when setting up the domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of x points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ny</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of y points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">io_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Io layout to use when setting up the io_domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="279" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="280" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="test__modern__diag_8F90_1a1bba918f7c529dd8dbf9831c4fc295fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_modern_diag::set_up_cube_sph_domain</definition>
+        <argsstring>(Domain_cube_sph, nx, ny, io_layout)</argsstring>
+        <name>set_up_cube_sph_domain</name>
+        <param>
+          <type>Domain_cube_sph</type>
+          <defname>Domain_cube_sph</defname>
+        </param>
+        <param>
+          <type>nx</type>
+          <defname>nx</defname>
+        </param>
+        <param>
+          <type>ny</type>
+          <defname>ny</defname>
+        </param>
+        <param>
+          <type>io_layout</type>
+          <defname>io_layout</defname>
+        </param>
+        <briefdescription>
+<para>Sets up a cube sphere domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">domain_cube_sph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of x points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ny</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of y points</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">io_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Io layout to use when setting up the io_domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="292" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="293" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="test__modern__diag_8F90_1aae5da0a10be42367cfea5815d94fd3db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_modern_diag</definition>
+        <argsstring></argsstring>
+        <name>test_modern_diag</name>
+        <briefdescription>
+<para>This programs tests the modern diag_manager. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" line="21" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/><sp/>This<sp/>programs<sp/>tests<sp/>the<sp/>modern<sp/>diag_manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_modern_diag</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>,<sp/><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>,<sp/><ref refid="group__mpp__domains__mod_1ga7ac8ee98767fbab41bf6e8ba0ba4ec73" kindref="member">mpp_define_io_domain</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__mpp__domains__mod_1ga943b352aa3b86ef8351d9589f5686a50" kindref="member">mpp_define_mosaic</ref>,<sp/><ref refid="structmpp__domains__mod_1_1domainug" kindref="compound">domainug</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domains" kindref="compound">mpp_get_compute_domains</ref>,<sp/><ref refid="group__mpp__domains__mod_1ga0dc077caf4660cca3b0971fb5fa71f8c" kindref="member">mpp_define_unstruct_domain</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>,<sp/>mpp_get_ug_domain_grid_index,<sp/>&amp;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mpp_get_ug_compute_domain</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">diag_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__diag__manager__mod_1gab78722b306c31534a1b7870aaef28c6c" kindref="member">diag_manager_init</ref>,<sp/><ref refid="group__diag__manager__mod_1gae363283d453e40d48d70f583c1e58b5f" kindref="member">diag_manager_end</ref>,<sp/>diag_axis_init,<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_axis_add_attribute,<sp/><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref>,<sp/><ref refid="group__diag__manager__mod_1gaffcd2ffd364000d0a1b498c8aa21ea1e" kindref="member">diag_send_complete</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_manager_set_time_end,<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>,<sp/><ref refid="group__diag__manager__mod_1ga391e6c5a8bd236359bd030890cedbef9" kindref="member">register_static_field</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__diag__manager__mod_1ga6f632296fdf20dc41c1f4cc3918422b6" kindref="member">diag_field_add_cell_measures</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r8_kind,<sp/>r4_kind</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">fms_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>fatal,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>,<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">time_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>,<sp/><ref refid="group__time__manager__mod_1gae4ed023b8077a6f14fffb764d642e55a" kindref="member">set_calendar_type</ref>,<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>,<sp/>julian,<sp/><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref>,<sp/></highlight><highlight class="keyword">OPERATOR</highlight><highlight class="normal">(+)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_diag_object_mod,</highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>dump_diag_obj</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">!&gt;<sp/>@brief<sp/>Type<sp/>to<sp/>hold<sp/>all<sp/>the<sp/>dummy<sp/>data<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structdata__type" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structdata__type" kindref="compound">data_type</ref></highlight></codeline>
+<codeline lineno="40" refid="structdata__type_1a4895d0e40d28a21e6a46fce96942fa0a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var1(:,:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structdata__type_1a3205ec75d8a20d37e85a3415ef7ba1fa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var2(:,:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structdata__type_1a9b4f8e238d19f6347914b12d7e21fbca" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var3(:,:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structdata__type_1a30ee22887e8a0bf7d30119d7c4e157c4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var4(:,:,:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structdata__type_1abbbbe63aa8bbdb95c1f517bf72f068eb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var5(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structdata__type_1a9f4a1a5bc0de97eeab8c94c2c1f2127c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var6(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>data<sp/>for<sp/>var6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>type<sp/></highlight><highlight class="normal"><ref refid="structdata__type" kindref="compound">data_type</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>time</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Time<sp/>of<sp/>the<sp/>simulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>time_step</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Time_step<sp/>of<sp/>the<sp/>simulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(2)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>layout</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Layout<sp/>to<sp/>use<sp/>when<sp/>setting<sp/>up<sp/>the<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(2)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io_layout</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>io<sp/>layout<sp/>to<sp/>use<sp/>when<sp/>setting<sp/>up<sp/>the<sp/>io<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nx</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>x<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ny</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>y<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nz</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>z<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ug_dim_size</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>points<sp/>in<sp/>the<sp/>UG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2D<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain_cube_sph</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domainug" kindref="compound">domainug</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>land_domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Unstructured<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">::<sp/>x</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>X<sp/>axis<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">::<sp/>y</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Y<sp/>axis_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">::<sp/>z</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Z<sp/>axis_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">::<sp/>ug_dim_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>UG<sp/>axis_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>For<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_x</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>x<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_x3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>x<sp/>dimension<sp/>in<sp/>the<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_y</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>y<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_y3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>y<sp/>dimension<sp/>in<sp/>the<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_ug</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>unstructured<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_z</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>z<sp/>dimention</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_z2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>axis<sp/>id<sp/>for<sp/>the<sp/>z<sp/>dimention</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var1</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>var<sp/>in<sp/>lon/lat<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>var<sp/>in<sp/>lat/lon<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>var<sp/>in<sp/>cube<sp/>sphere<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>3d<sp/>var<sp/>in<sp/>cube<sp/>sphere<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var5</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>var<sp/>in<sp/>UG<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var6</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>diag_field<sp/>id<sp/>for<sp/>var<sp/>that<sp/>is<sp/>not<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var7</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>1D<sp/>var</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>id_var8</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Scalar<sp/>var</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structdata__type" kindref="compound">data_type</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dummy<sp/>variable<sp/>data<sp/>to<sp/>send<sp/>to<sp/>diag_manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>used</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Used<sp/>for<sp/>send_data<sp/>call</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io_status</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Status<sp/>after<sp/>reading<sp/>the<sp/>namelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>debug<sp/>=<sp/>.false.<sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Flag<sp/>used<sp/>to<sp/>ignore<sp/>the<sp/>axis/field_ids<sp/>checks<sp/>in<sp/>the<sp/>test.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>Useful<sp/>when<sp/>using<sp/>a<sp/>portion<sp/>or<sp/>a<sp/>different<sp/>diag_table.yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">namelist<sp/>/<sp/>test_modern_diag_nml<sp/>/<sp/>debug</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1gae4ed023b8077a6f14fffb764d642e55a" kindref="member">set_calendar_type</ref>(julian)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__diag__manager__mod_1gab78722b306c31534a1b7870aaef28c6c" kindref="member">diag_manager_init</ref></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">read</highlight><highlight class="normal"><sp/>(input_nml_file,<sp/>test_modern_diag_nml,<sp/>iostat=io_status)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(io_status<sp/>&gt;<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,</highlight><highlight class="stringliteral">&apos;=&gt;test_modern_diag:<sp/>Error<sp/>reading<sp/>input.nml&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">nx<sp/>=<sp/>96</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">ny<sp/>=<sp/>96</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">nz<sp/>=<sp/>5</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">layout<sp/>=<sp/>(/1,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()/)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">io_layout<sp/>=<sp/>(/1,<sp/>1/)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment">!&gt;<sp/>Set<sp/>up<sp/>a<sp/>normal<sp/>(lat/lon)<sp/>2D<sp/>domain,<sp/>a<sp/>cube<sp/>sphere,<sp/>and<sp/>UG<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">set_up_2d_domain(domain,<sp/>layout,<sp/>nx,<sp/>ny,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">set_up_cube_sph_domain(domain_cube_sph,<sp/>nx,<sp/>ny,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_land_domain(domain_cube_sph,<sp/>nx,<sp/>ny,<sp/>6,<sp/>land_domain,<sp/>npes_group=1)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_get_ug_compute_domain(land_domain,<sp/>size=ug_dim_size)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Set<sp/>up<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(x(nx),<sp/>y(ny),<sp/>z(nz))</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,nx</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>x(i)<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,ny</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>y(i)<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,nz</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/>z(i)<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(ug_dim_data(ug_dim_size))</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_get_ug_domain_grid_index(land_domain,<sp/>ug_dim_data)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">ug_dim_data<sp/>=<sp/>ug_dim_data<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Set<sp/>up<sp/>the<sp/>initial<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">time<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(2,1,1,0,0,0)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Register<sp/>the<sp/>diags<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">id_x<sp/><sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">,<sp/><sp/>x,<sp/><sp/></highlight><highlight class="stringliteral">&apos;point_E&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">,<sp/>long_name=</highlight><highlight class="stringliteral">&apos;point_E&apos;</highlight><highlight class="normal">,<sp/>domain2=domain,<sp/>set_name=</highlight><highlight class="stringliteral">&quot;land&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">id_y<sp/><sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">,<sp/><sp/>y,<sp/><sp/></highlight><highlight class="stringliteral">&apos;point_N&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">,<sp/>long_name=</highlight><highlight class="stringliteral">&apos;point_N&apos;</highlight><highlight class="normal">,<sp/>domain2=domain,<sp/>set_name=</highlight><highlight class="stringliteral">&quot;land&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">id_x3<sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;x3&apos;</highlight><highlight class="normal">,<sp/>x,<sp/></highlight><highlight class="stringliteral">&apos;point_E&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">,<sp/>domain2=domain_cube_sph)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">id_y3<sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;y3&apos;</highlight><highlight class="normal">,<sp/>y,<sp/></highlight><highlight class="stringliteral">&apos;point_E&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">,<sp/>domain2=domain_cube_sph)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">id_ug<sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&quot;grid_index&quot;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">real(ug_dim_data)</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;U&quot;</highlight><highlight class="normal">,<sp/>long_name=</highlight><highlight class="stringliteral">&quot;grid<sp/>indices&quot;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_name=</highlight><highlight class="stringliteral">&quot;land&quot;</highlight><highlight class="normal">,<sp/>domainu=land_domain,<sp/>aux=</highlight><highlight class="stringliteral">&quot;geolon_t<sp/>geolat_t&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">id_z2<sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;z_edge&apos;</highlight><highlight class="normal">,<sp/><sp/>z,<sp/><sp/></highlight><highlight class="stringliteral">&apos;point_Z&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;z&apos;</highlight><highlight class="normal">,<sp/>long_name=</highlight><highlight class="stringliteral">&apos;point_Z&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">id_z<sp/><sp/>=<sp/>diag_axis_init(</highlight><highlight class="stringliteral">&apos;z&apos;</highlight><highlight class="normal">,<sp/><sp/>z,<sp/><sp/></highlight><highlight class="stringliteral">&apos;point_Z&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;z&apos;</highlight><highlight class="normal">,<sp/>long_name=</highlight><highlight class="stringliteral">&apos;point_Z&apos;</highlight><highlight class="normal">,<sp/>edges<sp/>=<sp/>id_z2)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_z,<sp/></highlight><highlight class="stringliteral">&apos;formula&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;p(n,k,j,i)<sp/>=<sp/>ap(k)<sp/>+<sp/>b(k)*ps(n,j,i)&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_z,<sp/></highlight><highlight class="stringliteral">&apos;integer&apos;</highlight><highlight class="normal">,<sp/>10)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_z,<sp/></highlight><highlight class="stringliteral">&apos;1d<sp/>integer&apos;</highlight><highlight class="normal">,<sp/>(/10,<sp/>10/))</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_z,<sp/></highlight><highlight class="stringliteral">&apos;real&apos;</highlight><highlight class="normal">,<sp/>10.)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_x,<sp/></highlight><highlight class="stringliteral">&apos;1d<sp/>real&apos;</highlight><highlight class="normal">,<sp/>(/10./))</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_axis_add_attribute<sp/>(id_ug,<sp/></highlight><highlight class="stringliteral">&apos;compress&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;x<sp/>y&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>debug)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_x<sp/><sp/>.ne.<sp/>1)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>x<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_y<sp/><sp/>.ne.<sp/>2)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>y<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_x3<sp/>.ne.<sp/>3)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>x3<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_y3<sp/>.ne.<sp/>4)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>y3<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_ug<sp/>.ne.<sp/>5)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>ug<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_z2<sp/>.ne.<sp/>6)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>z2<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_z<sp/><sp/>.ne.<sp/>7)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>z<sp/>axis<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Register<sp/>the<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">id_var1<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;ocn_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var1&apos;</highlight><highlight class="normal">,<sp/>(/id_x,<sp/>id_y/),<sp/>time,<sp/></highlight><highlight class="stringliteral">&apos;Var<sp/>in<sp/>a<sp/>lon/lat<sp/>domain&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">id_var2<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;ocn_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var2&apos;</highlight><highlight class="normal">,<sp/>(/id_y,<sp/>id_x/),<sp/>time,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Var<sp/>in<sp/>a<sp/>lon/lat<sp/>domain<sp/>with<sp/>flipped<sp/>dimensions&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">id_var3<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;atm_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var3&apos;</highlight><highlight class="normal">,<sp/>(/id_x3,<sp/>id_y3/),<sp/>time,<sp/></highlight><highlight class="stringliteral">&apos;Var<sp/>in<sp/>a<sp/>cube<sp/>sphere<sp/>domain&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">id_var4<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;atm_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var4&apos;</highlight><highlight class="normal">,<sp/>(/id_x3,<sp/>id_y3,<sp/>id_z/),<sp/>time,<sp/>&amp;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;3D<sp/>var<sp/>in<sp/>a<sp/>cube<sp/>sphere<sp/>domain&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">id_var5<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;lnd_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var5&apos;</highlight><highlight class="normal">,<sp/>(/id_ug/),<sp/>time,<sp/></highlight><highlight class="stringliteral">&apos;Var<sp/>in<sp/>a<sp/>UG<sp/>domain&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">id_var6<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;atm_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var6&apos;</highlight><highlight class="normal">,<sp/>(/id_z/),<sp/>time,<sp/></highlight><highlight class="stringliteral">&apos;Var<sp/>not<sp/>domain<sp/>decomposed&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard_name=</highlight><highlight class="stringliteral">&quot;I<sp/>hope<sp/>this<sp/>is<sp/>the<sp/>MDTF<sp/>tables&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment">!&lt;<sp/>This<sp/>has<sp/>the<sp/>same<sp/>name<sp/>as<sp/>var1,<sp/>but<sp/>it<sp/>should<sp/>have<sp/>a<sp/>different<sp/>id<sp/>because<sp/>the<sp/>module<sp/>is<sp/>different</highlight></codeline>
+<codeline lineno="167"><highlight class="comment">!!<sp/>so<sp/>it<sp/>should<sp/>have<sp/>its<sp/>own<sp/>diag_obj</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">id_var7<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1register__diag__field" kindref="compound">register_diag_field</ref>(</highlight><highlight class="stringliteral">&apos;lnd_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var1&apos;</highlight><highlight class="normal">,<sp/>time,<sp/></highlight><highlight class="stringliteral">&apos;Some<sp/>scalar<sp/>var&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;mullions&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>standard_name=</highlight><highlight class="stringliteral">&quot;Land<sp/>is<sp/>important!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">id_var8<sp/>=<sp/><ref refid="group__diag__manager__mod_1ga391e6c5a8bd236359bd030890cedbef9" kindref="member">register_static_field</ref>(</highlight><highlight class="stringliteral">&apos;atm_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;var7&apos;</highlight><highlight class="normal">,<sp/>(/id_z/),<sp/></highlight><highlight class="stringliteral">&quot;Be<sp/>static!&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>debug)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var1<sp/><sp/>.ne.<sp/>1)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var1<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var2<sp/><sp/>.ne.<sp/>2)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var2<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var3<sp/><sp/>.ne.<sp/>3)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var3<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var4<sp/><sp/>.ne.<sp/>4)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var4<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var5<sp/><sp/>.ne.<sp/>5)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var5<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var6<sp/><sp/>.ne.<sp/>6)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var6<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var7<sp/><sp/>.ne.<sp/>7)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var7<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(id_var8<sp/><sp/>.ne.<sp/>8)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;var8<sp/>does<sp/>not<sp/>have<sp/>the<sp/>expected<sp/>id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__diag__manager__mod_1ga6f632296fdf20dc41c1f4cc3918422b6" kindref="member">diag_field_add_cell_measures</ref>(id_var6,<sp/>area=id_var8,<sp/>volume=id_var8)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var1,<sp/></highlight><highlight class="stringliteral">&quot;some<sp/>string&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;this<sp/>is<sp/>a<sp/>string&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var1,<sp/></highlight><highlight class="stringliteral">&quot;integer&quot;</highlight><highlight class="normal">,<sp/>10)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var1,<sp/></highlight><highlight class="stringliteral">&quot;1d_integer&quot;</highlight><highlight class="normal">,<sp/>(/10,<sp/>10/))</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var1,<sp/></highlight><highlight class="stringliteral">&quot;real&quot;</highlight><highlight class="normal">,<sp/>10.)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var2,<sp/></highlight><highlight class="stringliteral">&apos;1d_real&apos;</highlight><highlight class="normal">,<sp/>(/10./))</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var2,<sp/></highlight><highlight class="stringliteral">&apos;formula&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;p(n,k,j,i)<sp/>=<sp/>ap(k)<sp/>+<sp/>b(k)*ps(n,j,i)&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacediag__manager__mod_1_1diag__field__add__attribute" kindref="compound">diag_field_add_attribute</ref><sp/>(id_var2,<sp/></highlight><highlight class="stringliteral">&apos;cell_methods&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;area:<sp/>mullions&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">!!<sp/>test<sp/>dump<sp/>routines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">!!<sp/>prints<sp/>fields<sp/>from<sp/>objects<sp/>for<sp/>debugging<sp/>to<sp/>log<sp/>if<sp/>name<sp/>is<sp/>provided,<sp/>othwerise<sp/>goes<sp/>to<sp/>stdout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">dump_diag_obj(</highlight><highlight class="stringliteral">&apos;diag_obj_dump.log&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">dump_diag_obj()</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_manager_set_time_end(time)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_manager_set_time_end(<ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(2,1,2,0,0,0))</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">allocate_dummy_data(var_data,<sp/>domain,<sp/>domain_cube_sph,<sp/>land_domain,<sp/>nz)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">time_step<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref>(3600,0)<sp/></highlight><highlight class="comment">!&lt;<sp/>1<sp/>hour</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">set_dummy_data(var_data,<sp/>666)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var8,<sp/>var_data%var6,<sp/>time)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,23</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>time<sp/>=<sp/>time<sp/>+<sp/>time_step</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">set_dummy_data(var_data,<sp/>i)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var1,<sp/>var_data%var1,<sp/>time)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var2,<sp/>var_data%var2,<sp/>time)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var3,<sp/>var_data%var3,<sp/>time)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var4,<sp/>var_data%var4,<sp/>time)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var5,<sp/>var_data%var5,<sp/>time)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var6,<sp/>var_data%var6,<sp/>time)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>used<sp/>=<sp/><ref refid="interfacediag__manager__mod_1_1send__data" kindref="compound">send_data</ref>(id_var7,<sp/>var_data%var6,<sp/>time)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__diag__manager__mod_1gaffcd2ffd364000d0a1b498c8aa21ea1e" kindref="member">diag_send_complete</ref>(time_step)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">deallocate_dummy_data(var_data)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__diag__manager__mod_1gae363283d453e40d48d70f583c1e58b5f" kindref="member">diag_manager_end</ref>(time)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal">include<sp/></highlight><highlight class="stringliteral">&quot;../fms2_io/create_atmosphere_domain.inc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">include<sp/></highlight><highlight class="stringliteral">&quot;../fms2_io/create_land_domain.inc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="228"><highlight class="comment">!&gt;<sp/>@brief<sp/>Allocates<sp/>the<sp/>dummy<sp/>data<sp/>to<sp/>send<sp/>to<sp/>send_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">allocate_dummy_data(var,<sp/>lat_lon_domain,<sp/>cube_sphere,<sp/>lnd_domain,<sp/>nz)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structdata__type" kindref="compound">data_type</ref>),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Data<sp/>var<sp/>to<sp/>allocate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>),<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>lat_lon_domain</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>Lat/Lon<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>),<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>cube_sphere</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domainug" kindref="compound">domainug</ref>),<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>lnd_domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Land<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>nz</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>Z<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>nland</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>unstructured<sp/>grid<sp/>per<sp/>PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Starting<sp/>x<sp/>compute<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ie</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Ending<sp/>x<sp/>compute<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Starting<sp/>y<sp/>compute<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>je</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Ending<sp/>y<sp/>compute<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(lat_lon_domain,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var1(is:ie,<sp/>js:je))<sp/></highlight><highlight class="comment">!&lt;<sp/>Variable<sp/>in<sp/>a<sp/>lat/lon<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var2(js:je,<sp/>is:ie))<sp/></highlight><highlight class="comment">!&lt;<sp/>Variable<sp/>in<sp/>a<sp/>lat/lon<sp/>domain<sp/>with<sp/>flipped<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(cube_sphere,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var3(is:ie,<sp/>js:je))<sp/></highlight><highlight class="comment">!&lt;<sp/>Variable<sp/>in<sp/>a<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var4(is:ie,<sp/>js:je,<sp/>nz))<sp/></highlight><highlight class="comment">!&lt;<sp/>Variable<sp/>in<sp/>a<sp/>3D<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_get_ug_compute_domain(lnd_domain,<sp/>size=nland)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var5(nland))<sp/></highlight><highlight class="comment">!&lt;<sp/>Variable<sp/>in<sp/>the<sp/>land<sp/>unstructured<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var%var6(nz))<sp/></highlight><highlight class="comment">!&lt;<sp/>1D<sp/>variable<sp/>not<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">allocate_dummy_data</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="257"><highlight class="comment">!&gt;<sp/>@brief<sp/>Allocates<sp/>the<sp/>dummy<sp/>data<sp/>to<sp/>send<sp/>to<sp/>send_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">deallocate_dummy_data(var)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structdata__type" kindref="compound">data_type</ref>),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Data<sp/>var<sp/>to<sp/>deallocate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(var%var1,<sp/>var%var2,<sp/>var%var3,<sp/>var%var4,<sp/>var%var5,<sp/>var%var6)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">deallocate_dummy_data</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="264"><highlight class="comment">!&gt;<sp/>@brief<sp/>Sets<sp/>the<sp/>dummy_data<sp/>to<sp/>use<sp/>in<sp/>send_data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">set_dummy_data(var,<sp/>data_value)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structdata__type" kindref="compound">data_type</ref>),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Data<sp/>type<sp/>to<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>data_value</highlight><highlight class="comment"><sp/>!&lt;<sp/>Value<sp/>to<sp/>send<sp/>the<sp/>data<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>var%var1<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/>var%var2<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value<sp/>+<sp/>1,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>var%var3<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value<sp/>+<sp/>2,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>var%var4<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value<sp/>+<sp/>3,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>var%var5<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value<sp/>+<sp/>4,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>var%var6<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(data_value<sp/>+<sp/>5,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">set_dummy_data</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="278"><highlight class="comment">!&gt;<sp/>@brief<sp/>Sets<sp/>up<sp/>a<sp/>lat/lon<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">set_up_2d_domain(Domain,<sp/>layout,<sp/>nx,<sp/>ny,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>),<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>2D<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>layout(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Layout<sp/>to<sp/>use<sp/>when<sp/>setting<sp/>up<sp/>the<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nx</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>x<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ny</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>y<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io_layout(:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>Io<sp/>layout<sp/>to<sp/>use<sp/>when<sp/>setting<sp/>up<sp/>the<sp/>io_domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref>(17280000)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>(<sp/>(/1,nx,1,ny/),<sp/>layout,<sp/>domain,<sp/>name=</highlight><highlight class="stringliteral">&apos;2D<sp/>domain&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1ga7ac8ee98767fbab41bf6e8ba0ba4ec73" kindref="member">mpp_define_io_domain</ref>(domain,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">set_up_2d_domain</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="291"><highlight class="comment">!&gt;<sp/>@brief<sp/>Sets<sp/>up<sp/>a<sp/>cube<sp/>sphere<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">set_up_cube_sph_domain(Domain_cube_sph,<sp/>nx,<sp/>ny,<sp/>io_layout)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>),<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>domain_cube_sph</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>2D<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nx</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>x<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ny</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>y<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>io_layout(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Io<sp/>layout<sp/>to<sp/>use<sp/>when<sp/>setting<sp/>up<sp/>the<sp/>io_domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>For<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>npes</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>pes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ntiles=6</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>tiles</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(4,ntiles)</highlight><highlight class="normal"><sp/>::<sp/>global_indices</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>global<sp/>indices<sp/>of<sp/>each<sp/>tile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(2,ntiles)</highlight><highlight class="normal"><sp/>::<sp/>layout</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>layout<sp/>of<sp/>each<sp/>tile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(ntiles)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>pe_start</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>starting<sp/>PE<sp/>of<sp/>each<sp/>tile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(ntiles)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>pe_end</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>ending<sp/>PE<sp/>of<sp/>eeach<sp/>tile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/>npes<sp/>=<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Create<sp/>the<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,ntiles</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>global_indices(:,<sp/>i)<sp/>=<sp/>(/1,<sp/>ny,<sp/>1,<sp/>ny/)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>layout(:,<sp/>i)<sp/>=<sp/>(/1,<sp/>npes/ntiles/)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>pe_start(i)<sp/>=<sp/>(i-1)*(npes/ntiles)</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>pe_end(i)<sp/>=<sp/>i*(npes/ntiles)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">create_atmosphere_domain((/nx,<sp/>nx,<sp/>nx,<sp/>nx,<sp/>nx,<sp/>nx/),<sp/>&amp;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(/ny,<sp/>ny,<sp/>ny,<sp/>ny,<sp/>ny,<sp/>ny/),<sp/>&amp;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_indices,<sp/>layout,<sp/>pe_start,<sp/>pe_end,<sp/>&amp;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>io_layout,<sp/>domain_cube_sph)</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">set_up_cube_sph_domain</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_modern_diag</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_modern_diag.F90"/>
+  </compounddef>
+</doxygen>

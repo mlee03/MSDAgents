@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacefms__io__utils__mod_1_1parse__mask__table" kind="interface" language="Fortran" prot="private">
+    <compoundname>fms_io_utils_mod::parse_mask_table</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacefms__io__utils__mod_1_1parse__mask__table_1a80f47a37c42ad204c8120bf543b69e25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine parse_mask_table_2d</definition>
+        <argsstring>(mask_table, maskmap, modelname)</argsstring>
+        <name>parse_mask_table_2d</name>
+        <param>
+          <type>mask_table</type>
+          <defname>mask_table</defname>
+        </param>
+        <param>
+          <type>maskmap</type>
+          <defname>maskmap</defname>
+        </param>
+        <param>
+          <type>modelname</type>
+          <defname>modelname</defname>
+        </param>
+        <briefdescription>
+<para>Populate 2D maskmap from mask_table given a model. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask table to be read in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">maskmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D Mask output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modelname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model to which this applies </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="542" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="543" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefms__io__utils__mod_1_1parse__mask__table_1abd955c030cf562b9a24a14855e8b1063" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine parse_mask_table_3d</definition>
+        <argsstring>(mask_table, maskmap, modelname)</argsstring>
+        <name>parse_mask_table_3d</name>
+        <param>
+          <type>mask_table</type>
+          <defname>mask_table</defname>
+        </param>
+        <param>
+          <type>maskmap</type>
+          <defname>maskmap</defname>
+        </param>
+        <param>
+          <type>modelname</type>
+          <defname>modelname</defname>
+        </param>
+        <briefdescription>
+<para>Populate 3D maskmap from mask_table given a model. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask table to be read in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">maskmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D Mask output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modelname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model to which this applies </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="638" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="639" bodyend="736"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reads in the mask_table file in the ASCII format from a given path and populates a maskmap array that used for domain decomposition. </para>    </briefdescription>
+    <detaileddescription>
+<para>The maskmap array is a logical array with the same shape as the domain layout, with each index representing a specific pe within the decomposition. This array is intended to be used as input for the mpp_define_domain routines maskmap argument, to essentially exclude certain pe&apos;s from a domain decomposition.</para><para>Mask table format is as follows:</para><para>&lt;number-of-ranks-to-mask&gt; &lt;domain-layout&gt; &lt;rank-to-mask&gt; &lt;any-additional-ranks-to-mask&gt;</para><para><heading level="2">For example, for a domain layout of (2,2), </heading>
+</para><para>| (1,2) | (2,2) | | ----------<mdash/> | <heading level="2">| (1,1) | (2,1) | </heading>
+</para><para>The below mask table masks out 2 pes: the top left corner (1,1) and the bottom right corner (4,4). To clarify, this means 2 pes would be required, rather than 4 if the domain decomposition was not masked.</para><para>2 2,2 1,1 2,2</para><para>This interface includes support for both 2D and 3D mask tables. </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="107" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="107" bodyend="109"/>
+    <listofallmembers>
+      <member refid="interfacefms__io__utils__mod_1_1parse__mask__table_1a80f47a37c42ad204c8120bf543b69e25" prot="private" virt="non-virtual"><scope>fms_io_utils_mod::parse_mask_table</scope><name>parse_mask_table_2d</name></member>
+      <member refid="interfacefms__io__utils__mod_1_1parse__mask__table_1abd955c030cf562b9a24a14855e8b1063" prot="private" virt="non-virtual"><scope>fms_io_utils_mod::parse_mask_table</scope><name>parse_mask_table_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

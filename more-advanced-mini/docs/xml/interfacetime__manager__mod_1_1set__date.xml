@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacetime__manager__mod_1_1set__date" kind="interface" language="Fortran" prot="private">
+    <compoundname>time_manager_mod::set_date</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacetime__manager__mod_1_1set__date_1a799bb07774ab9c4603f2059d9de7f82b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function set_date_c</definition>
+        <argsstring>(string, zero_year_warning, err_msg, allow_rounding)</argsstring>
+        <name>set_date_c</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>zero_year_warning</type>
+          <defname>zero_year_warning</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_rounding</type>
+          <defname>allow_rounding</defname>
+        </param>
+        <briefdescription>
+<para>Calls set_date_private for different calendar types when given a string input. Examples of acceptable forms of string: </para>        </briefdescription>
+        <detaileddescription>
+<para>1980-01-01 00:00:00 1980-01-01 00:00:00.50 1980-1-1 0:0:0 1980-1-1</para><para>year number must occupy 4 spaces. months, days, hours, minutes, seconds may occupy 1 or 2 spaces year, month and day must be separated by a &apos;-&apos; hour, minute, second must be separated by a &apos;:&apos; hour, minute, second are optional. If not present then zero is assumed. second may be a real number.</para><para>zero_year_warning: If the year number is zero, it will be silently changed to one, unless zero_year_warning=.true., in which case a WARNING message will also be issued </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1507" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1508" bodyend="1604"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetime__manager__mod_1_1set__date_1a782e7c48f07fc3190f26a64b8701d5ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function set_date_i</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, err_msg)</argsstring>
+        <name>set_date_i</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Calls set_date_private to set days for different calendar types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1464" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1465" bodyend="1484"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Given an input date in year, month, days, etc., creates a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> that represents this time interval from the internally defined base date. </para>    </briefdescription>
+    <detaileddescription>
+<para>Given a date, computes the corresponding time given the selected date time mapping algorithm. Note that it is possible to specify any number of illegal dates; these should be checked for and generate errors as appropriate.</para><para><linebreak/>
+Example usage: <linebreak/>
+ Integer input <programlisting filename=".F90"><codeline><highlight class="normal">time<sp/>=<sp/>set_date(year,<sp/>month,<sp/>day,<sp/>hours,<sp/>minute,<sp/>second,<sp/>tick,<sp/>err_msg)<sp/></highlight></codeline>
+</programlisting> <linebreak/>
+ String input <programlisting filename=".F90"><codeline><highlight class="normal">time<sp/>=<sp/>set_date(time_string,<sp/>zero_year_warning,<sp/>err_msg,<sp/>allow_rounding)<sp/></highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A character string containing a date formatted according to CF conventions. e.g. &apos;1980-12-31 23:59:59.9&apos;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zero_year_warning</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the year number is zero, it will be silently changed to one, unless zero_year_warning=.true., in which case a WARNING message will also be issued.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allow_rounding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When .true., any fractions of a second will be rounded off to the nearest tick. When .false., it is a fatal error if the second fraction cannot be exactly represented by a number of ticks.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: <programlisting filename=".F90"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal">(err_msg<sp/>/=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(</highlight><highlight class="stringliteral">&apos;my_routine&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;additional<sp/>info:<sp/>&apos;</highlight><highlight class="normal">//trim(err_msg)<sp/>,fatal)</highlight></codeline>
+</programlisting> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="246" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="246" bodyend="247"/>
+    <listofallmembers>
+      <member refid="interfacetime__manager__mod_1_1set__date_1a799bb07774ab9c4603f2059d9de7f82b" prot="private" virt="non-virtual"><scope>time_manager_mod::set_date</scope><name>set_date_c</name></member>
+      <member refid="interfacetime__manager__mod_1_1set__date_1a782e7c48f07fc3190f26a64b8701d5ca" prot="private" virt="non-virtual"><scope>time_manager_mod::set_date</scope><name>set_date_i</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

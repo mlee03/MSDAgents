@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__string__utils__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_string_utils_mod</compoundname>
+    <innerclass refid="interfacefms__string__utils__mod_1_1c__free" prot="private">fms_string_utils_mod::c_free</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1c__strlen" prot="private">fms_string_utils_mod::c_strlen</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1fms__c2f__string" prot="private">fms_string_utils_mod::fms_c2f_string</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1fms__cstring2cpointer" prot="public">fms_string_utils_mod::fms_cstring2cpointer</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1fms__find__my__string__binding" prot="public">fms_string_utils_mod::fms_find_my_string_binding</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1fms__find__unique" prot="public">fms_string_utils_mod::fms_find_unique</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1fms__sort__this" prot="private">fms_string_utils_mod::fms_sort_this</innerclass>
+    <innerclass refid="interfacefms__string__utils__mod_1_1stringify" prot="private">fms_string_utils_mod::stringify</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga8672b5fd67e3eaf6da18f8c2b02df38b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, allocatable</type>
+        <definition>character(len=:) function, allocatable fms_string_utils_mod::cpointer_fortran_conversion</definition>
+        <argsstring>(cstring)</argsstring>
+        <name>cpointer_fortran_conversion</name>
+        <param>
+          <type>cstring</type>
+          <defname>cstring</defname>
+        </param>
+        <briefdescription>
+<para>Converts a C-string returned from a TYPE(C_PTR) function to a fortran string with type character. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cstring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input C-pointer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The fortran string returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Set the length of fstring </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="207" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="208" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga01f052374df3852d135909e2298d795c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, allocatable</type>
+        <definition>character(len=:) function, allocatable fms_string_utils_mod::cstring_fortran_conversion</definition>
+        <argsstring>(cstring)</argsstring>
+        <name>cstring_fortran_conversion</name>
+        <param>
+          <type>cstring</type>
+          <defname>cstring</defname>
+        </param>
+        <briefdescription>
+<para>Converts a C-string to a pointer and then to a Fortran string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cstring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input C-string</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The fortran string returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="199" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga3ff073d5eebb3bcfdfd9ddc71b530f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(c_ptr) function, dimension(:), allocatable, public</type>
+        <definition>type(c_ptr) function, dimension(:), allocatable, public fms_string_utils_mod::fms_array_to_pointer</definition>
+        <argsstring>(my_array)</argsstring>
+        <name>fms_array_to_pointer</name>
+        <param>
+          <type>my_array</type>
+          <defname>my_array</defname>
+        </param>
+        <briefdescription>
+<para>Converts a character array to an array of c pointers! </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An array of c pointers </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="130" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="132" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1gaf0b14ac6892c1f33a7c843cbb4211d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_string_utils_mod::fms_f2c_string</definition>
+        <argsstring>(dest, str_in)</argsstring>
+        <name>fms_f2c_string</name>
+        <param>
+          <type>dest</type>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>str_in</type>
+          <defname>str_in</defname>
+        </param>
+        <briefdescription>
+<para>Copies a Fortran string into a C string and puts c_null_char in any trailing spaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>C String to be copied into</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fortran string to copy to C string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Drop an error if the C string is not large enough to hold the input and the c_null_char at the end.</para><para>Copy c_null_char into each spot in dest</para><para>Loop though and put each character of the Fortran string into the C string array </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="227" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="228" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga765e6281315482acb86e7e00d9744311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, dimension(:), allocatable, public</type>
+        <definition>integer function, dimension(:), allocatable, public fms_string_utils_mod::fms_find_my_string</definition>
+        <argsstring>(my_pointer, narray, string_to_find)</argsstring>
+        <name>fms_find_my_string</name>
+        <param>
+          <type>my_pointer</type>
+          <defname>my_pointer</defname>
+        </param>
+        <param>
+          <type>narray</type>
+          <defname>narray</defname>
+        </param>
+        <param>
+          <type>string_to_find</type>
+          <defname>string_to_find</defname>
+        </param>
+        <briefdescription>
+<para>Searches through a SORTED array of pointers for a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the indices where the array was found If the string was not found, indices will be indices(1) = -999 <linebreak/>
+Example usage: my_pointer = fms_array_to_pointer(my_array) call fms_sort_this(my_pointer, n_array, indices) ifind = fms_find_my_string(my_pointer, n_array, string_to_find)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">my_pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of c pointer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">narray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the array</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string_to_find</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to find </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="172" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="174" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga0f4f0e2139e2a0894c635b725e23e4a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, dimension(:), allocatable, public</type>
+        <definition>character(len=:) function, dimension(:), allocatable, public fms_string_utils_mod::fms_pointer_to_array</definition>
+        <argsstring>(my_pointer, narray)</argsstring>
+        <name>fms_pointer_to_array</name>
+        <param>
+          <type>my_pointer</type>
+          <defname>my_pointer</defname>
+        </param>
+        <param>
+          <type>narray</type>
+          <defname>narray</defname>
+        </param>
+        <briefdescription>
+<para>Convert an array of c pointers back to a character array. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A character array</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">my_pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of c pointer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">narray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="148" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="150" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(:) function, allocatable, public</type>
+        <definition>character(:) function, allocatable, public fms_string_utils_mod::string</definition>
+        <argsstring>(v, fmt)</argsstring>
+        <name>string</name>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>fmt</type>
+          <defname>fmt</defname>
+        </param>
+        <briefdescription>
+<para>Converts a number or a Boolean value to a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The argument as a string</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be converted to a string</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional format string for a real or integral argument </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="244" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="245" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__string__utils__mod_1ga275cfaba1034f5745919fc561949d295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_string_utils_mod::string_copy</definition>
+        <argsstring>(dest, source, check_for_null)</argsstring>
+        <name>string_copy</name>
+        <param>
+          <type>dest</type>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>source</type>
+          <defname>source</defname>
+        </param>
+        <param>
+          <type>check_for_null</type>
+          <defname>check_for_null</defname>
+        </param>
+        <briefdescription>
+<para>Safely copy a string from one buffer to another. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination string.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source string.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">check_for_null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating to test for null character </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="303" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" bodystart="304" bodyend="326"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/string_utils/fms_string_utils.F90" line="28" column="1"/>
+  </compounddef>
+</doxygen>

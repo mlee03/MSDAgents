@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t" kind="type" language="Fortran" prot="public">
+    <compoundname>fms_netcdf_unstructured_domain_io_mod::fmsnetcdfunstructureddomainfile_t</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">FmsNetcdfFile_t</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t_1ace8345d99aa02df9bfbc7de0d0c33dd7" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structmpp__domains__mod_1_1domainug" kindref="compound">domainug</ref>)</type>
+        <definition>type(domainug) domain</definition>
+        <argsstring></argsstring>
+        <name>domain</name>
+        <briefdescription>
+<para>Unstructured domain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t_1a4b9080aaea12918fcfd59476bf3d8b43" prot="public" static="no" mutable="no">
+        <type>character(len=fms_path_len)</type>
+        <definition>character(len=fms_path_len) non_mangled_path</definition>
+        <argsstring></argsstring>
+        <name>non_mangled_path</name>
+        <briefdescription>
+<para>Non-domain-mangled path. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="49" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Type to represent a netCDF file when on a domain decomposed unstructured grid. Used to do distributed I/O across ranks, as determined by the io_layout. The io_layout is a 1D array (nx_pe,ny_pe) of size 2 set via mpp_set_io_domain and determines how many PEs will be performing IO operations within a given domain decompositon. The total number of writing PEs is nx_pe * ny_pe. </para>    </briefdescription>
+    <detaileddescription>
+<para>For example, if domain&apos;s layout was (4,4) so 16 PEs total, then a io_layout of (2,2) would have 4 PEs performing I/O operations. When doing a read, each IO PE will receive a portion of data from 3 of the non-IO PEs and then write the aggregate. When doing a write, each IO PE will read the data and then send a data portion to 3 of the non-IO PEs. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="961">
+        <label>fmsnetcdfunstructureddomainfile_t</label>
+        <link refid="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t"/>
+        <childnode refid="962" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="962">
+        <label>FmsNetcdfFile_t</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="973">
+        <label>integer(i8_kind)</label>
+      </node>
+      <node id="981">
+        <label>unstruct_overlap_type</label>
+        <link refid="structmpp__domains__mod_1_1unstruct__overlap__type"/>
+        <childnode refid="968" relation="usage">
+          <edgelabel>i</edgelabel>
+          <edgelabel>j</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>count</edgelabel>
+        </childnode>
+      </node>
+      <node id="980">
+        <label>unstruct_pass_type</label>
+        <link refid="structmpp__domains__mod_1_1unstruct__pass__type"/>
+        <childnode refid="981" relation="usage">
+          <edgelabel>recv</edgelabel>
+          <edgelabel>send</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>nsend</edgelabel>
+          <edgelabel>nrecv</edgelabel>
+        </childnode>
+      </node>
+      <node id="967">
+        <label>unstruct_axis_spec</label>
+        <link refid="structmpp__domains__mod_1_1unstruct__axis__spec"/>
+        <childnode refid="968" relation="usage">
+          <edgelabel>max_size</edgelabel>
+          <edgelabel>size</edgelabel>
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+          <edgelabel>end_index</edgelabel>
+          <edgelabel>begin_index</edgelabel>
+        </childnode>
+      </node>
+      <node id="966">
+        <label>unstruct_domain_spec</label>
+        <link refid="structmpp__domains__mod_1_1unstruct__domain__spec"/>
+        <childnode refid="967" relation="usage">
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="974">
+        <label>overlapspec</label>
+        <link refid="structmpp__domains__mod_1_1overlapspec"/>
+        <childnode refid="975" relation="usage">
+          <edgelabel>recv</edgelabel>
+          <edgelabel>send</edgelabel>
+        </childnode>
+        <childnode refid="974" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>nsend</edgelabel>
+          <edgelabel>ybegin</edgelabel>
+          <edgelabel>xbegin</edgelabel>
+          <edgelabel>yend</edgelabel>
+          <edgelabel>nhalo</edgelabel>
+          <edgelabel>xend</edgelabel>
+          <edgelabel>recvsize</edgelabel>
+          <edgelabel>shalo</edgelabel>
+          <edgelabel>ehalo</edgelabel>
+          <edgelabel>sendsize</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="963">
+        <label>fmsnetcdfunstructureddomainfile_t</label>
+        <link refid="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t"/>
+        <childnode refid="964" relation="public-inheritance">
+        </childnode>
+        <childnode refid="965" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+        <childnode refid="983" relation="usage">
+          <edgelabel>non_mangled_path</edgelabel>
+        </childnode>
+      </node>
+      <node id="970">
+        <label>logical</label>
+      </node>
+      <node id="964">
+        <label>FmsNetcdfFile_t</label>
+      </node>
+      <node id="965">
+        <label>domainug</label>
+        <link refid="structmpp__domains__mod_1_1domainug"/>
+        <childnode refid="966" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="967" relation="usage">
+          <edgelabel>global</edgelabel>
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="969" relation="usage">
+          <edgelabel>sg_domain</edgelabel>
+        </childnode>
+        <childnode refid="965" relation="usage">
+          <edgelabel>io_domain</edgelabel>
+        </childnode>
+        <childnode refid="980" relation="usage">
+          <edgelabel>ug2sg</edgelabel>
+          <edgelabel>sg2ug</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>ntiles</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>grid_index</edgelabel>
+          <edgelabel>tile_root_pe</edgelabel>
+          <edgelabel>npes_io_group</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>tile_npes</edgelabel>
+        </childnode>
+        <childnode refid="982" relation="usage">
+          <edgelabel>io_layout</edgelabel>
+        </childnode>
+      </node>
+      <node id="969">
+        <label>domain2d</label>
+        <link refid="structmpp__domains__mod_1_1domain2d"/>
+        <childnode refid="970" relation="usage">
+          <edgelabel>rotated_ninety</edgelabel>
+          <edgelabel>symmetry</edgelabel>
+          <edgelabel>initialized</edgelabel>
+        </childnode>
+        <childnode refid="971" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+        </childnode>
+        <childnode refid="973" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="969" relation="usage">
+          <edgelabel>io_domain</edgelabel>
+        </childnode>
+        <childnode refid="974" relation="usage">
+          <edgelabel>update_c</edgelabel>
+          <edgelabel>update_t</edgelabel>
+          <edgelabel>update_e</edgelabel>
+          <edgelabel>bound_c</edgelabel>
+          <edgelabel>bound_e</edgelabel>
+          <edgelabel>check_n</edgelabel>
+          <edgelabel>update_n</edgelabel>
+          <edgelabel>check_c</edgelabel>
+          <edgelabel>bound_n</edgelabel>
+          <edgelabel>check_e</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="976" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="978" relation="usage">
+          <edgelabel>tilelist</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>fold</edgelabel>
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>tile_id_all</edgelabel>
+          <edgelabel>io_layout</edgelabel>
+          <edgelabel>nhalo</edgelabel>
+          <edgelabel>comm_id</edgelabel>
+          <edgelabel>ntiles</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>max_ntile_pe</edgelabel>
+          <edgelabel>shalo</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="979" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="979">
+        <label>character(len=name_length)</label>
+      </node>
+      <node id="971">
+        <label>domain1d</label>
+        <link refid="structmpp__domains__mod_1_1domain1d"/>
+        <childnode refid="970" relation="usage">
+          <edgelabel>cyclic</edgelabel>
+        </childnode>
+        <childnode refid="971" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="972" relation="usage">
+          <edgelabel>memory</edgelabel>
+          <edgelabel>global</edgelabel>
+          <edgelabel>domain_data</edgelabel>
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>pe</edgelabel>
+          <edgelabel>goffset</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>loffset</edgelabel>
+        </childnode>
+      </node>
+      <node id="983">
+        <label>character(len=fms_path_len)</label>
+      </node>
+      <node id="975">
+        <label>overlap_type</label>
+        <link refid="structmpp__domains__mod_1_1overlap__type"/>
+        <childnode refid="970" relation="usage">
+          <edgelabel>from_contact</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>rotation</edgelabel>
+          <edgelabel>totsize</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>dir</edgelabel>
+          <edgelabel>tileme</edgelabel>
+          <edgelabel>js</edgelabel>
+          <edgelabel>count</edgelabel>
+          <edgelabel>is</edgelabel>
+          <edgelabel>tilenbr</edgelabel>
+          <edgelabel>index</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="982">
+        <label>integer(i4_kind)</label>
+      </node>
+      <node id="968">
+        <label>integer</label>
+      </node>
+      <node id="976">
+        <label>domain2d_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain2d__spec"/>
+        <childnode refid="977" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>tile_id</edgelabel>
+          <edgelabel>pe</edgelabel>
+          <edgelabel>tile_root_pe</edgelabel>
+          <edgelabel>pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="972">
+        <label>domain_axis_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain__axis__spec"/>
+        <childnode refid="970" relation="usage">
+          <edgelabel>is_global</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>max_size</edgelabel>
+          <edgelabel>size</edgelabel>
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="978">
+        <label>tile_type</label>
+        <link refid="structmpp__domains__mod_1_1tile__type"/>
+        <childnode refid="968" relation="usage">
+          <edgelabel>ybegin</edgelabel>
+          <edgelabel>xbegin</edgelabel>
+          <edgelabel>yend</edgelabel>
+          <edgelabel>xend</edgelabel>
+        </childnode>
+      </node>
+      <node id="977">
+        <label>domain1d_spec</label>
+        <link refid="structmpp__domains__mod_1_1domain1d__spec"/>
+        <childnode refid="972" relation="usage">
+          <edgelabel>global</edgelabel>
+          <edgelabel>compute</edgelabel>
+        </childnode>
+        <childnode refid="968" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="47" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="47" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t_1ace8345d99aa02df9bfbc7de0d0c33dd7" prot="public" virt="non-virtual"><scope>fms_netcdf_unstructured_domain_io_mod::fmsnetcdfunstructureddomainfile_t</scope><name>domain</name></member>
+      <member refid="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t_1a4b9080aaea12918fcfd59476bf3d8b43" prot="public" virt="non-virtual"><scope>fms_netcdf_unstructured_domain_io_mod::fmsnetcdfunstructureddomainfile_t</scope><name>non_mangled_path</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

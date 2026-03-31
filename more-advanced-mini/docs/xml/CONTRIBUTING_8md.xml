@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CONTRIBUTING_8md" kind="file" language="Markdown">
+    <compoundname>CONTRIBUTING.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Contributing<sp/>To<sp/>libFMS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Thank<sp/>you<sp/>for<sp/>taking<sp/>time<sp/>to<sp/>contribute.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">libFMS<sp/>is<sp/>a<sp/>software<sp/>framework<sp/>for<sp/>supporting<sp/>the<sp/>**seamless**<sp/>development,</highlight></codeline>
+<codeline><highlight class="normal">construction,<sp/>execution,<sp/>and<sp/>scientific<sp/>interpretation<sp/>of<sp/>atmospheric,<sp/>oceanic,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>land<sp/>models<sp/>across<sp/>timescales.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Contributions<sp/>to<sp/>this<sp/>project<sp/>are<sp/>released<sp/>to<sp/>the<sp/>public<sp/>under<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[projects<sp/>open<sp/>source<sp/>license](LICENSE.md).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">What<sp/>follows<sp/>is<sp/>a<sp/>set<sp/>of<sp/>guidelines<sp/>and<sp/>how-tos<sp/>for<sp/>contributing<sp/>to<sp/>libFMS.</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>guidelines,<sp/>not<sp/>rules.<sp/><sp/>Use<sp/>your<sp/>best<sp/>judgement<sp/>and<sp/>feel<sp/>free<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">propose<sp/>changes<sp/>to<sp/>this<sp/>document<sp/>in<sp/>a<sp/>pull<sp/>request.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Table<sp/>of<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Code<sp/>of<sp/>Conduct](#code-of-conduct)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Quick<sp/>Start<sp/>Workflow](#quick-start-workflow)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Support](#support)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Issues](#issues)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Pull<sp/>Requests](#pull-requests)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Tests](#tests)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Styleguides](#styleguides)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Maintainer<sp/>Help](#maintainer-help)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Code<sp/>of<sp/>Conduct</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>and<sp/>everyone<sp/>participating<sp/>in<sp/>it<sp/>is<sp/>governed<sp/>by<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Code<sp/>of<sp/>Conduct](CODE_OF_CONDUCT.md).<sp/>By<sp/>participating,<sp/>you<sp/>are<sp/>expected<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">uphold<sp/>this<sp/>code.<sp/>Please<sp/>report<sp/>unacceptable<sp/>behavior<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">[gfdl.climate.model.info@noaa.gov](mailto:gfdl.climate.model.info@noaa.gov).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Quick<sp/>Start<sp/>Workflow</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Create<sp/>an<sp/>issue<sp/>that<sp/>describes<sp/>the<sp/>change,<sp/>or<sp/>feature<sp/>request</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Fork<sp/>the<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>a<sp/>feature<sp/>branch<sp/>off<sp/>an<sp/>up-do-date<sp/>`main`<sp/>branch</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Update<sp/>the<sp/>tests<sp/>and<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Push<sp/>the<sp/>commits<sp/>to<sp/>your<sp/>fork</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Submit<sp/>a<sp/>pull<sp/>request<sp/>to<sp/>the<sp/>`main`<sp/>branch</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Support</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>support,<sp/>open<sp/>a<sp/>GitHub<sp/>issue<sp/>using<sp/>the<sp/>support<sp/>issue<sp/>template.<sp/><sp/>Please<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">as<sp/>descriptive<sp/>as<sp/>possible.<sp/><sp/>See<sp/>the<sp/>[Issues](#issues)<sp/>section<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Support<sp/>for<sp/>this<sp/>project<sp/>is<sp/>primarily<sp/>accomplished<sp/>via<sp/>this<sp/>project’s<sp/>community.</highlight></codeline>
+<codeline><highlight class="normal">Additional<sp/>support<sp/>may<sp/>be<sp/>offered<sp/>from<sp/>related<sp/>communities</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>[MOM6](https://github.com/NOAA-GFDL/MOM6)<sp/>or<sp/>by<sp/>members<sp/>of<sp/>the<sp/>GFDL</highlight></codeline>
+<codeline><highlight class="normal">[Modeling<sp/>Systems](https://www.gfdl.noaa.gov/modeling-systems)<sp/>Group.<sp/><sp/>The</highlight></codeline>
+<codeline><highlight class="normal">members<sp/>of<sp/>the<sp/>Modeling<sp/>Systems<sp/>group<sp/>are<sp/>the<sp/>main<sp/>developers<sp/>and<sp/>maintainers<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">this<sp/>project.<sp/><sp/>Modeling<sp/>Systems<sp/>is<sp/>a<sp/>small<sp/>group,<sp/>and<sp/>our<sp/>ability<sp/>to<sp/>offer</highlight></codeline>
+<codeline><highlight class="normal">support<sp/>is<sp/>limited.<sp/><sp/>Please<sp/>be<sp/>patient<sp/>when<sp/>requesting<sp/>support.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Issues</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>contributing<sp/>to<sp/>this<sp/>project,<sp/>please<sp/>first<sp/>open<sp/>an<sp/>issue<sp/>using<sp/>the<sp/>template</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>best<sp/>matches<sp/>the<sp/>change<sp/>type.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Template<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---------------<sp/>|<sp/>------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Bug<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Report<sp/>a<sp/>bug,<sp/>or<sp/>unexpected<sp/>behavior<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Feature<sp/>Request<sp/>|<sp/>A<sp/>requested<sp/>feature<sp/>or<sp/>change<sp/>to<sp/>the<sp/>code<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Support<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>Request<sp/>for<sp/>support.<sp/><sp/>Please<sp/>see<sp/>the<sp/>[Support](#support)<sp/>section.<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>issue<sp/>title<sp/>should<sp/>be<sp/>short<sp/>and<sp/>descriptive.<sp/><sp/>The<sp/>issue<sp/>description<sp/>should</highlight></codeline>
+<codeline><highlight class="normal">be<sp/>clear<sp/>and<sp/>concise.<sp/><sp/>Include<sp/>enough<sp/>information<sp/>to<sp/>help<sp/>others<sp/>reproduce<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">issue,<sp/>or<sp/>understand<sp/>the<sp/>change<sp/>requested.<sp/><sp/>Use</highlight></codeline>
+<codeline><highlight class="normal">[GitHub<sp/>flavored<sp/>markdown](https://guides.github.com/features/mastering-markdown/)</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>format<sp/>the<sp/>message,<sp/>and<sp/>include<sp/>links<sp/>to<sp/>references.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Pull<sp/>Requests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Submit<sp/>pull<sp/>requests<sp/>for<sp/>bug<sp/>fixes,<sp/>improvements,<sp/>including<sp/>tests,<sp/>or<sp/>alerts<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">particular<sp/>problems<sp/>in<sp/>the<sp/>code.<sp/><sp/>We<sp/>perform<sp/>merge<sp/>requests<sp/>based<sp/>on<sp/>an<sp/>internal</highlight></codeline>
+<codeline><highlight class="normal">GFDL<sp/>schedule<sp/>that<sp/>addresses<sp/>the<sp/>needs<sp/>of<sp/>the<sp/>GFDL<sp/>scientists.<sp/><sp/>This<sp/>release</highlight></codeline>
+<codeline><highlight class="normal">schedule<sp/>is<sp/>better<sp/>described<sp/>in<sp/>the<sp/>Release<sp/>Schedule<sp/>sections.<sp/><sp/>We<sp/>follow<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[GitHub<sp/>fork-pull<sp/>request<sp/>workflow](https://guides.github.com/activities/forking/)</highlight></codeline>
+<codeline><highlight class="normal">workflow,<sp/>briefly<sp/>described<sp/>in<sp/>the<sp/>[Quick<sp/>Start<sp/>Workflow](#quick-start-workflow)</highlight></codeline>
+<codeline><highlight class="normal">section.<sp/><sp/>When<sp/>creating<sp/>the<sp/>pull<sp/>request,<sp/>please<sp/>select<sp/>a<sp/>template<sp/>that<sp/>best</highlight></codeline>
+<codeline><highlight class="normal">matches<sp/>the<sp/>type<sp/>of<sp/>changes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>keep<sp/>the<sp/>changes<sp/>in<sp/>a<sp/>single<sp/>pull<sp/>to<sp/>be<sp/>as<sp/>small<sp/>as<sp/>possible<sp/>to<sp/>help</highlight></codeline>
+<codeline><highlight class="normal">reviewer(s)<sp/>quickly<sp/>evaluate<sp/>changes.<sp/><sp/>If<sp/>you<sp/>do<sp/>have<sp/>a<sp/>large<sp/>update,<sp/>try<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">split<sp/>the<sp/>update<sp/>into<sp/>small,<sp/>logical<sp/>pull<sp/>requests.<sp/><sp/>If<sp/>the<sp/>update<sp/>includes<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">refactoring,<sp/>please<sp/>submit<sp/>a<sp/>pull<sp/>request<sp/>that<sp/>includes<sp/>just<sp/>the<sp/>code<sp/>refactoring.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>a<sp/>pull<sp/>request<sp/>is<sp/>created,<sp/>a<sp/>member<sp/>of<sp/>the<sp/>Modeling<sp/>Systems<sp/>group<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">review<sp/>the<sp/>changes,<sp/>and,<sp/>if<sp/>necessary,<sp/>will<sp/>work<sp/>with<sp/>the<sp/>author<sp/>of<sp/>the<sp/>pull</highlight></codeline>
+<codeline><highlight class="normal">request<sp/>to<sp/>modify<sp/>their<sp/>code<sp/>changes.<sp/>Note<sp/>that<sp/>merging<sp/>pull<sp/>requests<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">contingent<sp/>on<sp/>several<sp/>factors,<sp/>including<sp/>the<sp/>ability<sp/>to<sp/>support<sp/>the<sp/>code<sp/>changes</highlight></codeline>
+<codeline><highlight class="normal">long-term,<sp/>portability,<sp/>and<sp/>the<sp/>scope<sp/>of<sp/>the<sp/>impact<sp/>on<sp/>the<sp/>code<sp/>base.<sp/>Therefore,</highlight></codeline>
+<codeline><highlight class="normal">Modeling<sp/>Systems<sp/>does<sp/>not<sp/>guarantee<sp/>that<sp/>all<sp/>pull<sp/>requests<sp/>will<sp/>be<sp/>accepted,</highlight></codeline>
+<codeline><highlight class="normal">even<sp/>if<sp/>the<sp/>changes<sp/>pass<sp/>the<sp/>initial<sp/>testing<sp/>phases,<sp/>and<sp/>are<sp/>otherwise<sp/>correct.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Reviewing<sp/>Pull<sp/>Requests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>reviewing<sp/>a<sp/>pull<sp/>request,<sp/>members<sp/>of<sp/>MSD<sp/>should<sp/>look<sp/>for<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Design</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Does<sp/>the<sp/>code<sp/>change<sp/>belong<sp/>in<sp/>the<sp/>FMS<sp/>library<sp/>or<sp/>does<sp/>it<sp/>better<sp/>belong<sp/>elsewhere<sp/>such<sp/>as<sp/>a<sp/>component<sp/>repository<sp/>or<sp/>the<sp/>FMScoupler?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Could<sp/>existing<sp/>routines/modules<sp/>be<sp/>utilized<sp/>to<sp/>reduce<sp/>redundancy?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Temporary<sp/>changes/fixes<sp/>meant<sp/>to<sp/>be<sp/>removed<sp/>should<sp/>be<sp/>avoided<sp/>whenever<sp/>possible</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Functionality</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Does<sp/>this<sp/>PR<sp/>do<sp/>what<sp/>is<sp/>intended<sp/>(and<sp/>stated)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Are<sp/>the<sp/>changes<sp/>good<sp/>for<sp/>both<sp/>end-users<sp/>and<sp/>developers?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Will<sp/>the<sp/>code<sp/>change<sp/>impact<sp/>existing<sp/>end-users<sp/>needlessly?</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Complexity</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Are<sp/>the<sp/>changes<sp/>easily<sp/>understood<sp/>by<sp/>the<sp/>reader<sp/>/<sp/>reviewer?</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Testing</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Code<sp/>changes<sp/>should<sp/>include<sp/>a<sp/>test<sp/>program<sp/>or<sp/>a<sp/>modification<sp/>to<sp/>a<sp/>test<sp/>program<sp/>to<sp/>ensure<sp/>the<sp/>code<sp/>is<sp/>covered<sp/>by<sp/>the<sp/>test<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Comments</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Inline<sp/>comments<sp/>for<sp/>complex<sp/>code<sp/>segments<sp/>or<sp/>intricacies<sp/>to<sp/>make<sp/>the<sp/>purpose<sp/>of<sp/>the<sp/>code<sp/>reasonably<sp/>clear</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Style<sp/>and<sp/>Consistency</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Code<sp/>should<sp/>follow<sp/>the<sp/>syle<sp/>guide<sp/>in<sp/>general,<sp/>but<sp/>should<sp/>also<sp/>be<sp/>consistent<sp/>to<sp/>the<sp/>file<sp/>the<sp/>change<sp/>is<sp/>made<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Documentation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>If<sp/>a<sp/>PR<sp/>changes<sp/>the<sp/>behaviour<sp/>or<sp/>instructions,<sp/>accompanying<sp/>documentation<sp/>should<sp/>also<sp/>change</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Thoroughness</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Reviews<sp/>should<sp/>be<sp/>done<sp/>line<sp/>by<sp/>line,<sp/>and<sp/>the<sp/>surrounding<sp/>context/file<sp/>should<sp/>be<sp/>taken<sp/>into<sp/>account</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Comments<sp/>on<sp/>pull<sp/>requests<sp/>should<sp/>be<sp/>courteous<sp/>and<sp/>constructive,<sp/>giving<sp/>useful<sp/>feedback<sp/>and<sp/>explanations<sp/>for<sp/>why<sp/>changes<sp/>should<sp/>be<sp/>made.<sp/>See<sp/>the<sp/>[code<sp/>of<sp/>conduct](CODE_OF_CONDUCT.md)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">FMS<sp/>uses<sp/>github<sp/>actons<sp/>to<sp/>run<sp/>build<sp/>tests<sp/>for<sp/>libFMS.<sp/><sp/>Users<sp/>should<sp/>create</highlight></codeline>
+<codeline><highlight class="normal">unit<sp/>tests,<sp/>code<sp/>coverage<sp/>tests,<sp/>and<sp/>regression<sp/>tests<sp/>for<sp/>new<sp/>and<sp/>existing<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>yaml<sp/>(.yml)<sp/>files.<sp/><sp/>Github<sp/>provides<sp/>a<sp/>guide</highlight></codeline>
+<codeline><highlight class="normal">(https://help.github.com/en/articles/about-continuous-integration)<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">implementing<sp/>CI<sp/>tests.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Code<sp/>Style</highlight></codeline>
+<codeline><highlight class="normal">Code<sp/>updates<sp/>should<sp/>follow<sp/>the<sp/>coding<sp/>style<sp/>for<sp/>the<sp/>project,<sp/>contained<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">[CODE_STYLE.md](CODE_STYLE.md).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Release<sp/>Schedule</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Releases<sp/>will<sp/>be<sp/>tagged<sp/>using<sp/>the<sp/>format<sp/>`yyyy.rr[.pp]`,<sp/>where<sp/>`yyyy`<sp/>is<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">4-digit<sp/>year,<sp/>`rr`<sp/>is<sp/>the<sp/>2-digit<sp/>release<sp/>number,<sp/>and<sp/>`pp`<sp/>is<sp/>the<sp/>2-digit<sp/>patch</highlight></codeline>
+<codeline><highlight class="normal">number.<sp/><sp/>Preliminary<sp/>releases<sp/>mean<sp/>for<sp/>testing<sp/>(i.e.,<sp/>code<sp/>that<sp/>is<sp/>still<sp/>under</highlight></codeline>
+<codeline><highlight class="normal">development)<sp/>will<sp/>be<sp/>marked<sp/>`yyyy.rr-alpha#`<sp/>or<sp/>`yyyy.rr-beta#`<sp/>where<sp/>`#`<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>incremented<sp/>number<sp/>of<sp/>the<sp/>testing<sp/>tag.<sp/>Alpha<sp/>tags</highlight></codeline>
+<codeline><highlight class="normal">mark<sp/>code<sp/>updates<sp/>that<sp/>are<sp/>intended<sp/>for<sp/>developers<sp/>to<sp/>include<sp/>in<sp/>their<sp/>baseline</highlight></codeline>
+<codeline><highlight class="normal">regression<sp/>tests<sp/>to<sp/>determine<sp/>whether<sp/>the<sp/>code<sp/>contains<sp/>bugs<sp/>not<sp/>encountered</highlight></codeline>
+<codeline><highlight class="normal">during<sp/>baseline<sp/>testing.<sp/>Beta<sp/>tags<sp/>are<sp/>intended<sp/>for<sp/>a<sp/>wider<sp/>audience<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">developers<sp/>and<sp/>end<sp/>users<sp/>to<sp/>ensure<sp/>that<sp/>their<sp/>simulations<sp/>run<sp/>as<sp/>expected<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">reproduce<sp/>prior<sp/>results.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/CONTRIBUTING.md"/>
+  </compounddef>
+</doxygen>

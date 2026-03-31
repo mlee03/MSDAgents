@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="gaussian__topog_8F90" kind="file" language="Fortran">
+    <compoundname>gaussian_topog.F90</compoundname>
+    <includes refid="file__version_8h" local="no">file_version.h</includes>
+    <includes local="yes">gaussian_topog_r4.fh</includes>
+    <includes local="yes">gaussian_topog_r8.fh</includes>
+    <incdepgraph>
+      <node id="1009">
+        <label>/home/Ryan.Mulhall/FMS-1/topography/gaussian_topog.F90</label>
+        <link refid="gaussian__topog_8F90"/>
+        <childnode refid="1010" relation="include">
+        </childnode>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+      </node>
+      <node id="1011">
+        <label>gaussian_topog_r4.fh</label>
+      </node>
+      <node id="1012">
+        <label>gaussian_topog_r8.fh</label>
+      </node>
+      <node id="1010">
+        <label>file_version.h</label>
+        <link refid="file__version_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacegaussian__topog__mod_1_1gaussian__topog__init" prot="private">gaussian_topog_mod::gaussian_topog_init</innerclass>
+    <innerclass refid="interfacegaussian__topog__mod_1_1get__gaussian__topog" prot="private">gaussian_topog_mod::get_gaussian_topog</innerclass>
+    <innernamespace refid="namespacegaussian__topog__mod">gaussian_topog_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>gaussian_topog_mod<sp/>gaussian_topog_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>topography</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Routines<sp/>for<sp/>creating<sp/>Gaussian-shaped<sp/>land<sp/>surface<sp/>topography</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>for<sp/>latitude-longitude<sp/>grids.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>@author<sp/>Bruce<sp/>Wyman</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>Interfaces<sp/>generate<sp/>simple<sp/>Gaussian-shaped<sp/>mountains<sp/>from</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/>parameters<sp/>specified<sp/>by<sp/>either<sp/>argument<sp/>list<sp/>or<sp/>namelist<sp/>input.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/>The<sp/>mountain<sp/>shapes<sp/>are<sp/>controlled<sp/>by<sp/>the<sp/>height,<sp/>half-width,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!<sp/>and<sp/>ridge-width<sp/>parameters.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>gaussian_topog_mod</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>gaussian_topog_mod</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>,<sp/><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref>,<sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">constants_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>pi</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacegaussian__topog__mod_1_1gaussian__topog__init" kindref="compound">gaussian_topog_init</ref>,<sp/><ref refid="interfacegaussian__topog__mod_1_1get__gaussian__topog" kindref="compound">get_gaussian_topog</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="interfacegaussian__topog__mod_1_1gaussian__topog__init" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacegaussian__topog__mod_1_1gaussian__topog__init" kindref="compound">gaussian_topog_init</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>gaussian_topog_init_r4</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>gaussian_topog_init_r8</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacegaussian__topog__mod_1_1gaussian__topog__init" kindref="compound">gaussian_topog_init</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="interfacegaussian__topog__mod_1_1get__gaussian__topog" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacegaussian__topog__mod_1_1get__gaussian__topog" kindref="compound">get_gaussian_topog</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>get_gaussian_topog_r4,<sp/>get_gaussian_topog_r8</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacegaussian__topog__mod_1_1get__gaussian__topog" kindref="compound">get_gaussian_topog</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">!!<sp/>Namelist<sp/>information<sp/>for<sp/>gaussian_topog_nml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>The<sp/>variables<sp/>in<sp/>this<sp/>namelist<sp/>are<sp/>only<sp/>used<sp/>when<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>&lt;TT&gt;gaussian_topog_init&lt;/TT&gt;<sp/>is<sp/>called.<sp/><sp/>The<sp/>namelist<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>are<sp/>dimensioned<sp/>(by<sp/>10),<sp/>so<sp/>that<sp/>multiple<sp/>mountains<sp/>can<sp/>be<sp/>generated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>Internal<sp/>parameter<sp/>mxmtns<sp/>=<sp/>10.<sp/>By<sp/>default<sp/>no<sp/>mountains<sp/>are<sp/>generated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/>&lt;/DATA&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>NAMELIST<sp/>FOR<sp/>GENERATING<sp/>GAUSSIAN<sp/>MOUNTAINS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/>*<sp/>multiple<sp/>mountains<sp/>can<sp/>be<sp/>generated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/>*<sp/>the<sp/>final<sp/>mountains<sp/>are<sp/>the<sp/>sum<sp/>of<sp/>all</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>=<sp/>height<sp/>in<sp/>meters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>olon,<sp/>olat<sp/>=<sp/>longitude,latitude<sp/>origin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>rlon,<sp/>rlat<sp/>=<sp/>longitude,latitude<sp/>half-width<sp/>of<sp/>ridge<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>wlon,<sp/>wlat<sp/>=<sp/>longitude,latitude<sp/>half-width<sp/>of<sp/>tail<sp/><sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Note:<sp/>For<sp/>the<sp/>standard<sp/>gaussian<sp/>mountain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set<sp/>rlon<sp/>=<sp/>rlat<sp/>=<sp/>0<sp/>.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">!!<sp/>&lt;PRE&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/>--&gt;<sp/><sp/><sp/>___________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/>gaussian<sp/><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/>sides<sp/>--&gt;<sp/>/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>olon<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_____/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>olat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\______</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|&lt;--&gt;|&lt;-----------&gt;|</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|wlon|<sp/><sp/><sp/><sp/>rlon<sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wlat<sp/><sp/><sp/><sp/><sp/>rlat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>maxmts<sp/>=<sp/>10</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="group__gaussian__topog__mod_1ga847c0ab931bcbc1d703d2112a2ee7891" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__gaussian__topog__mod_1ga847c0ab931bcbc1d703d2112a2ee7891" kindref="member">height</ref><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>height<sp/>in<sp/>meters<sp/>of<sp/>the<sp/>gaussian<sp/>mountiains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="group__gaussian__topog__mod_1ga476bcaa078d628cb8327d21796d89720" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1ga476bcaa078d628cb8327d21796d89720" kindref="member">olon</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>longitude<sp/>of<sp/>mountain<sp/>origins<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="group__gaussian__topog__mod_1ga62ca2820b1d332e9fcfc7d489a42728d" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1ga62ca2820b1d332e9fcfc7d489a42728d" kindref="member">olat</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>Latitude<sp/><sp/>of<sp/>mountain<sp/>origins<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="group__gaussian__topog__mod_1ga0858ae03d66adfa9fd61c742f03d4e56" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1ga0858ae03d66adfa9fd61c742f03d4e56" kindref="member">wlon</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>Longitude<sp/>of<sp/>half-width<sp/>mountain<sp/>trails<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="group__gaussian__topog__mod_1gac3a0b63da3c8d713742cd18114b4751f" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1gac3a0b63da3c8d713742cd18114b4751f" kindref="member">wlat</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>Latitude<sp/>of<sp/>half-width<sp/>mountain<sp/>trails<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="group__gaussian__topog__mod_1ga0d48272a9c59376e493e488bd19ad54a" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1ga0d48272a9c59376e493e488bd19ad54a" kindref="member">rlon</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>Longitude<sp/>of<sp/>half-width<sp/>mountain<sp/>ridges<sp/>(degrees)</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>for<sp/>&quot;standard&quot;<sp/>gaussian<sp/>mountain<sp/>set,<sp/>rlon/rlat<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="group__gaussian__topog__mod_1ga9978839ddc17c1a17df32ddb9e48f240" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(maxmts)</highlight><highlight class="normal"><sp/>::<sp/><sp/><ref refid="group__gaussian__topog__mod_1ga9978839ddc17c1a17df32ddb9e48f240" kindref="member">rlat</ref><sp/><sp/>=<sp/>0.0_r8_kind<sp/></highlight><highlight class="comment">!&lt;<sp/>Latitude<sp/>of<sp/>half-width<sp/>mountain<sp/>ridges<sp/>(degrees)</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>for<sp/>&quot;standard&quot;<sp/>gaussian<sp/>mountain<sp/>set,<sp/>rlon/rlat<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/>namelist<sp/>/gaussian_topog_nml/<sp/><ref refid="group__gaussian__topog__mod_1ga847c0ab931bcbc1d703d2112a2ee7891" kindref="member">height</ref>,<sp/><ref refid="group__gaussian__topog__mod_1ga476bcaa078d628cb8327d21796d89720" kindref="member">olon</ref>,<sp/><ref refid="group__gaussian__topog__mod_1ga62ca2820b1d332e9fcfc7d489a42728d" kindref="member">olat</ref>,<sp/><ref refid="group__gaussian__topog__mod_1ga0858ae03d66adfa9fd61c742f03d4e56" kindref="member">wlon</ref>,<sp/><ref refid="group__gaussian__topog__mod_1gac3a0b63da3c8d713742cd18114b4751f" kindref="member">wlat</ref>,<sp/><ref refid="group__gaussian__topog__mod_1ga0d48272a9c59376e493e488bd19ad54a" kindref="member">rlon</ref>,<sp/><ref refid="group__gaussian__topog__mod_1ga9978839ddc17c1a17df32ddb9e48f240" kindref="member">rlat</ref></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">!<sp/>&lt;/NAMELIST&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Include<sp/>variable<sp/>&quot;version&quot;<sp/>to<sp/>be<sp/>written<sp/>to<sp/>log<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;file_version.h&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>do_nml<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>module_is_initialized<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__gaussian__topog__mod_1ga4220a748e4af2993f19a323a34a074e1" kindref="member">read_namelist</ref></highlight></codeline>
+<codeline lineno="124" refid="group__gaussian__topog__mod_1ga4220a748e4af2993f19a323a34a074e1" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>iunit,<sp/>ierr,<sp/>io</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="127"><highlight class="comment">!&gt;<sp/><sp/>read<sp/>namelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">read</highlight><highlight class="normal"><sp/>(input_nml_file,<sp/>gaussian_topog_nml,<sp/>iostat=io)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/>ierr<sp/>=<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>(io,</highlight><highlight class="stringliteral">&apos;gaussian_topog_nml&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment">!&gt;<sp/><sp/>write<sp/>version<sp/>and<sp/>namelist<sp/>to<sp/>log<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>==<sp/>mpp_root_pe())<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>iunit<sp/>=<sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>()</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(iunit,<sp/>nml=gaussian_topog_nml)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/>do_nml<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__gaussian__topog__mod_1ga4220a748e4af2993f19a323a34a074e1" kindref="member">read_namelist</ref></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gaussian_topog_r4.fh&quot;</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;gaussian_topog_r8.fh&quot;</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">gaussian_topog_mod</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="150"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/topography/gaussian_topog.F90"/>
+  </compounddef>
+</doxygen>

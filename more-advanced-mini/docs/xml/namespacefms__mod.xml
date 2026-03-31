@@ -1,0 +1,499 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_mod</compoundname>
+    <innerclass refid="interfacefms__mod_1_1monotonic__array" prot="private">fms_mod::monotonic_array</innerclass>
+    <innerclass refid="structfms__mod_1_1nml__errors__type" prot="private">fms_mod::nml_errors_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms__mod_1ga30b3df11679d5bdf62120674e4633a55" prot="public" static="no" mutable="no">
+        <type>integer, public</type>
+        <definition>integer, public clock_flag_default</definition>
+        <argsstring></argsstring>
+        <name>clock_flag_default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="191" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="191" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1gad1925a5c08b19f3412af60515e4e6321" prot="private" static="no" mutable="no">
+        <type>character(len=16)</type>
+        <definition>character(len=16) clock_flags</definition>
+        <argsstring></argsstring>
+        <name>clock_flags</name>
+        <initializer>=&apos;NONE&apos;</initializer>
+        <briefdescription>
+<para>Possible values are &apos;NONE&apos;, &apos;SYNC&apos;, or &apos;DETAILED&apos;. SYNC will give accurate information on load balance of the clocked portion of code. DETAILED also turns on detailed message-passing performance diagnosis. Both SYNC and DETAILED will work correctly on innermost clock nest and distort outer clocks, and possibly the overall code time. See the <ref refid="group__mpp__mod" kindref="compound">mpp_mod</ref> module for more details. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="219" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="219" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga4b46c985d2a99c5a87f1733b1749e892" prot="private" static="no" mutable="no">
+        <type>character(len=16)</type>
+        <definition>character(len=16) clock_grain</definition>
+        <argsstring></argsstring>
+        <name>clock_grain</name>
+        <initializer>= &apos;NONE&apos;</initializer>
+        <briefdescription>
+<para>The level of clock granularity used for performance timing sections of code. Possible values in order of increasing detail are: &apos;NONE&apos;, &apos;COMPONENT&apos;, &apos;SUBCOMPONENT&apos;, &apos;MODULE_DRIVER&apos;, &apos;MODULE&apos;, &apos;ROUTINE&apos;, &apos;LOOP&apos;, and &apos;INFRA&apos;. Code sections are defined using routines in MPP module: mpp_clock_id, mpp_clock_begin, and mpp_clock_end. The fms module makes these routines public. A list of timed code sections will be printed to STDOUT. See the <ref refid="group__mpp__mod" kindref="compound">mpp_mod</ref> module for more details. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="212" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="212" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1gaa4d51133301c44a4a974eda285c057ec" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private do_nml_error_init</definition>
+        <argsstring></argsstring>
+        <name>do_nml_error_init</name>
+        <initializer>= .true.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="250" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="250" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga7460ed347f0eebbfe05fe3f60863a8cf" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer domains_stack_size</definition>
+        <argsstring></argsstring>
+        <name>domains_stack_size</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The size in words of the MPP_DOMAINS user stack. If domains_stack_size &gt; 0, the following MPP_DOMAINS routine is called: call mpp_domains_set_stack_size (domains_stack_size). If domains_stack_size = 0 (default) then the default size set by <ref refid="group__mpp__domains__mod" kindref="compound">mpp_domains_mod</ref> is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="232" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="232" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="259" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga12c1ce70bb3b9275cc49b79e75de0d8d" prot="private" static="no" mutable="no">
+        <type>integer, dimension(20), private</type>
+        <definition>integer, dimension(20), private nml_error_codes</definition>
+        <argsstring></argsstring>
+        <name>nml_error_codes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="249" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms_8F90_1ad0983e62757ba0f7771ba039794b746a" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structfms__mod_1_1nml__errors__type" kindref="compound">nml_errors_type</ref>), save</type>
+        <definition>type(nml_errors_type), save nml_errors</definition>
+        <argsstring></argsstring>
+        <name>nml_errors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="202" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="202" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga02cde751a71d9b42ced5e3c300805f2e" prot="private" static="no" mutable="no">
+        <type>integer, private</type>
+        <definition>integer, private num_nml_error_codes</definition>
+        <argsstring></argsstring>
+        <name>num_nml_error_codes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="249" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="249" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga78f0d71e88638662c5f3ee5175f24d85" prot="public" static="no" mutable="no">
+        <type>logical, public</type>
+        <definition>logical, public print_memory_usage</definition>
+        <argsstring></argsstring>
+        <name>print_memory_usage</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+<para>If set to .TRUE., memory usage statistics will be printed at various points in the code. It is used to study memory usage, e.g to detect memory leaks. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="237" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="237" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga4422f1543997b447d925821d54e7252a" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical read_all_pe</definition>
+        <argsstring></argsstring>
+        <name>read_all_pe</name>
+        <initializer>= .true.</initializer>
+        <briefdescription>
+<para>Read global data on all processors extracting local part needed (TRUE) or read global data on PE0 and broadcast to all PEs(FALSE). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="209" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="209" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1gaebceb5b06d9009d61504648bc4865786" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer stack_size</definition>
+        <argsstring></argsstring>
+        <name>stack_size</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The size in words of the MPP user stack. If stack_size &gt; 0, the following MPP routine is called: call mpp_set_stack_size (stack_size). If stack_size = 0 (default) then the default size set by mpp_mod is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="229" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__mod_1ga19036b5d0d3973d75e541700506919f2" prot="private" static="no" mutable="no">
+        <type>character(len=8)</type>
+        <definition>character(len=8) warning_level</definition>
+        <argsstring></argsstring>
+        <name>warning_level</name>
+        <initializer>= &apos;warning&apos;</initializer>
+        <briefdescription>
+<para>Sets the termination condition for the WARNING flag to interfaces error_mesg/mpp_error. set warning_level = &apos;fatal&apos; (program crashes for warning messages) or &apos;warning&apos; (prints warning message and continues). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="225" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="225" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_mod::check_nml_error</definition>
+        <argsstring>(IOSTAT, NML_NAME)</argsstring>
+        <name>check_nml_error</name>
+        <param>
+          <type>IOSTAT</type>
+          <defname>IOSTAT</defname>
+        </param>
+        <param>
+          <type>NML_NAME</type>
+          <defname>NML_NAME</defname>
+        </param>
+        <briefdescription>
+<para>Checks the iostat argument that is returned after reading a namelist and determines if the error code is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>This function returns the input iostat value (integer) if it is an allowable error code. If the iostat error code is not allowable, an error message is printed and the program terminated.</para></simplesect>
+The FMS allows multiple namelist records to reside in the same file. Use this interface to check the iostat argument that is returned after reading a record from the namelist file. If an invalid iostat value is detected this routine will produce a fatal error. See the NOTE below.</para><para>Some compilers will return non-zero iostat values when reading through files with multiple namelist. This routine will try skip these errors and only terminate for true namelist errors.</para><para><linebreak/>
+Examples<linebreak/>
+</para><para>The following example checks if a file exists, reads a namelist input from that file, and checks for errors in that namelist. When the correct namelist is read and it has no errors the routine check_nml_error will return zero and the while loop will exit. This code segment should be used to read namelist files. <programlisting filename=".F90"><codeline><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr,<sp/>io</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">read</highlight><highlight class="normal"><sp/>(input_nml_file,<sp/>fms_nml,<sp/>iostat=io)</highlight></codeline>
+<codeline><highlight class="normal">ierr<sp/>=<sp/>check_nml_error(io,</highlight><highlight class="stringliteral">&apos;fms_nml&apos;</highlight><highlight class="normal">)</highlight></codeline>
+</programlisting> <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Unknown</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error while reading namelist ...., (IOSTAT = ####) There was an error reading the namelist specified. Carefully examine all namelist and variables for anything incorrect (e.g. malformed, hidden characters).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Unknown</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>namelist, or mistyped namelist variable in namelist ...., (IOSTAT = ####) The name list given doesn&apos;t exist in the namelist file, or a variable in the namelist is mistyped or isn&apos;t a namelist variable.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iostat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iostat value returned when reading a namelist record.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nml_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the namelist. This name will be printed if an error is encountered, otherwise the name is not used. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="522" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="523" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_mod::error_mesg</definition>
+        <argsstring>(routine, message, level)</argsstring>
+        <name>error_mesg</name>
+        <param>
+          <type>routine</type>
+          <defname>routine</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>level</type>
+          <defname>level</defname>
+        </param>
+        <briefdescription>
+<para>Print notes, warnings and error messages; terminates program for warning and error messages. Usage of mpp_error is preferable. (use error levels NOTE,WARNING,FATAL, see example below) </para>        </briefdescription>
+        <detaileddescription>
+<para>Print notes, warnings and error messages; and terminates the program for error messages. This routine is a wrapper around mpp_error, and is provided for backward compatibility. This module also publishes mpp_error, <bold>users should try to use the mpp_error interface</bold>.</para><para><linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal,<sp/>note</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;fms_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;initialization<sp/>not<sp/>called&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;fms_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;fms_mod<sp/>message&apos;</highlight><highlight class="normal">,<sp/>note)</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">routine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Routine name where the warning or error has occurred.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Warning or error message to be printed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level of severity; set to NOTE, WARNING, or FATAL Termination always occurs for FATAL, never for NOTE, and is settable for WARNING (see namelist). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="440" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="441" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_mod::fms_end</definition>
+        <argsstring>()</argsstring>
+        <name>fms_end</name>
+        <briefdescription>
+<para>Calls the termination routines for all modules in the MPP package. </para>        </briefdescription>
+        <detaileddescription>
+<para>Termination routine for the fms module. It also calls destructor routines for the mpp, mpp_domains, and mpp_io modules. If this routine is called more than once it will return silently. There are no arguments. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="414" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="415" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga6695d901d751a75f108c27aa385d9579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_mod::fms_error_handler</definition>
+        <argsstring>(routine, message, err_msg)</argsstring>
+        <name>fms_error_handler</name>
+        <param>
+          <type>routine</type>
+          <defname>routine</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Facilitates the control of fatal error conditions. </para>        </briefdescription>
+        <detaileddescription>
+<para>When err_msg is present, message is copied into err_msg and the function returns a value of .true. Otherwise calls mpp_error to terminate execution. The intended use is as shown below. <simplesect kind="return"><para>true when err_msg is present <programlisting filename=".F90"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal">(fms_error_handler(routine,<sp/>message,<sp/>err_msg))<sp/>return</highlight></codeline>
+</programlisting></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">routine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Routine name where the fatal error has occurred.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fatal error message to be printed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When err_msg is present: err_msg = message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="467" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="468" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_mod::fms_init</definition>
+        <argsstring>(localcomm, alt_input_nml_path)</argsstring>
+        <name>fms_init</name>
+        <param>
+          <type>localcomm</type>
+          <defname>localcomm</defname>
+        </param>
+        <param>
+          <type>alt_input_nml_path</type>
+          <defname>alt_input_nml_path</defname>
+        </param>
+        <briefdescription>
+<para>Initializes the FMS module and also calls the initialization routines for all modules in the MPP package. Will be called automatically if the user does not call it. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialization routine for the fms module. It also calls initialization routines for the mpp, mpp_domains, and mpp_io modules. Although this routine will be called automatically by other fms_mod routines, users should explicitly call fms_init. If this routine is called more than once it will return silently. There are no arguments.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>invalid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>entry for namelist variable warning_level The namelist variable warning_level must be either &apos;fatal&apos; or &apos;warning&apos;(case-insensitive)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>invalid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>entry for namelist variable clock_grain The namelist variable clock_grain must be one of the following values: &apos;NONE&apos;, &apos;COMPONENT&apos;, &apos;SUBCOMPONENT&apos;, &apos;MODULE_DRIVER&apos;, &apos;MODULE&apos;, &apos;ROUTINE&apos;, &apos;LOOP&apos;, or &apos;INFRA&apos; (case-insensitive). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="285" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="286" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga0d71e1611bc61c9aa999c92abe008c45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, private</type>
+        <definition>subroutine, private fms_mod::nml_error_init</definition>
+        <argsstring></argsstring>
+        <name>nml_error_init</name>
+        <briefdescription>
+<para>Determines the IOSTAT error value for some common Namelist errors. Also checks if the compiler returns a non-zero status if there are multiple namelist records in a single file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="557" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="558" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga2cb4556e28486de51d4118871fd5acd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_mod::string_array_index</definition>
+        <argsstring>(string, string_array, index)</argsstring>
+        <name>string_array_index</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>string_array</type>
+          <defname>string_array</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>match the input character string to a string in an array/list of character strings </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If an exact match was found then true is returned, otherwise false is returned.</para></simplesect>
+Tries to find a match for a character string in a list of character strings. The match is case sensitive and disregards blank characters to the right of the string.</para><para><linebreak/>
+Examples<linebreak/>
+ <programlisting filename=".F90"><codeline><highlight class="normal">string<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;def&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">string_array<sp/>=<sp/>(/<sp/></highlight><highlight class="stringliteral">&quot;abcd&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;def<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;fghi&quot;</highlight><highlight class="normal"><sp/>/)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">string_array_index(<sp/>string,<sp/>string_array,<sp/>index<sp/>)</highlight></codeline>
+</programlisting> Returns: TRUE, index = 2</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character string of arbitrary length.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string_array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array/list of character strings.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of string_array where the first match was found. If no match was found then index = 0.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If an exact match was found then TRUE is returned, otherwise FALSE is returned. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="672" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="673" bodyend="694"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_mod::write_version_number</definition>
+        <argsstring>(version, tag, unit)</argsstring>
+        <name>write_version_number</name>
+        <param>
+          <type>version</type>
+          <defname>version</defname>
+        </param>
+        <param>
+          <type>tag</type>
+          <defname>tag</defname>
+        </param>
+        <param>
+          <type>unit</type>
+          <defname>unit</defname>
+        </param>
+        <briefdescription>
+<para>Prints to the log file (or a specified unit) the version id string and tag name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="700" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" bodystart="701" bodyend="723"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms/fms.F90" line="43" column="1"/>
+  </compounddef>
+</doxygen>

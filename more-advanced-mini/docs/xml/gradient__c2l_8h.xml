@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="gradient__c2l_8h" kind="file" language="Fortran">
+    <compoundname>gradient_c2l.h</compoundname>
+    <includedby refid="gradient__c2l_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</includedby>
+    <invincdepgraph>
+      <node id="300">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</label>
+        <link refid="gradient__c2l_8c"/>
+      </node>
+      <node id="299">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.h</label>
+        <link refid="gradient__c2l_8h"/>
+        <childnode refid="300" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apache<sp/>license<sp/>2.0</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/>*<sp/>this<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>gfdl<sp/>flexible<sp/>modeling<sp/>system(fms).</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/>*<sp/>licensed<sp/>under<sp/>the<sp/>apache<sp/>license,<sp/>version<sp/>2.0<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;License&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>not<sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/license-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/>*<sp/>fms<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>without</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/>*<sp/>warranties<sp/>or<sp/>conditions<sp/>of<sp/>any<sp/>kind,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/>*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>merchantability<sp/>or<sp/>fitness<sp/>for<sp/>a</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/>*<sp/>particular<sp/>purpose.<sp/>see<sp/>the<sp/>license<sp/>for<sp/>the<sp/>specific<sp/>language</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/>*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/>***********************************************************************/</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GRADIENT_H_</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GRADIENT_H_</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">void<sp/>a2b_ord2(int<sp/>nx,<sp/>int<sp/>ny,<sp/>const<sp/>double<sp/>*qin,<sp/>const<sp/>double<sp/>*edge_w,<sp/>const<sp/>double<sp/>*edge_e,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*edge_s,<sp/>const<sp/>double<sp/>*edge_n,<sp/>double<sp/>*qout,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>on_west_edge,<sp/>int<sp/>on_east_edge,<sp/>int<sp/>on_south_edge,<sp/>int<sp/>on_north_edge);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">void<sp/>grad_c2l(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*pin,<sp/>const<sp/>double<sp/>*dx,<sp/>const<sp/>double<sp/>*dy,<sp/>const<sp/>double<sp/>*area,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*edge_w,<sp/>const<sp/>double<sp/>*edge_e,<sp/>const<sp/>double<sp/>*edge_s,<sp/>const<sp/>double<sp/>*edge_n,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*en_n,<sp/>const<sp/>double<sp/>*en_e,<sp/>const<sp/>double<sp/>*vlon,<sp/>const<sp/>double<sp/>*vlat,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*grad_x,<sp/>double<sp/>*grad_y,<sp/>const<sp/>int<sp/>*on_west_edge,<sp/>const<sp/>int<sp/>*on_east_edge,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>int<sp/>*on_south_edge,<sp/>const<sp/>int<sp/>*on_north_edge);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">void<sp/>grad_c2l_(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*pin,<sp/>const<sp/>double<sp/>*dx,<sp/>const<sp/>double<sp/>*dy,<sp/>const<sp/>double<sp/>*area,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*edge_w,<sp/>const<sp/>double<sp/>*edge_e,<sp/>const<sp/>double<sp/>*edge_s,<sp/>const<sp/>double<sp/>*edge_n,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*en_n,<sp/>const<sp/>double<sp/>*en_e,<sp/>const<sp/>double<sp/>*vlon,<sp/>const<sp/>double<sp/>*vlat,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*grad_x,<sp/>double<sp/>*grad_y,<sp/>const<sp/>int<sp/>*on_west_edge,<sp/>const<sp/>int<sp/>*on_east_edge,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>int<sp/>*on_south_edge,<sp/>const<sp/>int<sp/>*on_north_edge);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">void<sp/>calc_c2l_grid_info(int<sp/>*nx_pt,<sp/>int<sp/>*ny_pt,<sp/>const<sp/>double<sp/>*xt,<sp/>const<sp/>double<sp/>*yt,<sp/>const<sp/>double<sp/>*xc,<sp/>const<sp/>double<sp/>*yc,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*dx,<sp/>double<sp/>*dy,<sp/>double<sp/>*area,<sp/>double<sp/>*edge_w,<sp/>double<sp/>*edge_e,<sp/>double<sp/>*edge_s,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*edge_n,<sp/>double<sp/>*en_n,<sp/>double<sp/>*en_e,<sp/>double<sp/>*vlon,<sp/>double<sp/>*vlat,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>*on_west_edge,<sp/>int<sp/>*on_east_edge,<sp/>int<sp/>*on_south_edge,<sp/>int<sp/>*on_north_edge);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">void<sp/>calc_c2l_grid_info_(int<sp/>*nx_pt,<sp/>int<sp/>*ny_pt,<sp/>const<sp/>double<sp/>*xt,<sp/>const<sp/>double<sp/>*yt,<sp/>const<sp/>double<sp/>*xc,<sp/>const<sp/>double<sp/>*yc,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*dx,<sp/>double<sp/>*dy,<sp/>double<sp/>*area,<sp/>double<sp/>*edge_w,<sp/>double<sp/>*edge_e,<sp/>double<sp/>*edge_s,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*edge_n,<sp/>double<sp/>*en_n,<sp/>double<sp/>*en_e,<sp/>double<sp/>*vlon,<sp/>double<sp/>*vlat,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>*on_west_edge,<sp/>int<sp/>*on_east_edge,<sp/>int<sp/>*on_south_edge,<sp/>int<sp/>*on_north_edge);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">void<sp/>get_edge(int<sp/>nx,<sp/>int<sp/>ny,<sp/>const<sp/>double<sp/>*lont,<sp/>const<sp/>double<sp/>*latt,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>*lonc,<sp/>const<sp/>double<sp/>*latc,<sp/>double<sp/>*edge_w,<sp/>double<sp/>*edge_e,<sp/>double<sp/>*edge_s,<sp/>double<sp/>*edge_n,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>on_west_edge,<sp/>int<sp/>on_east_edge,<sp/>int<sp/>on_south_edge,<sp/>int<sp/>on_north_edge<sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">void<sp/>mid_pt_sphere(const<sp/>double<sp/>*p1,<sp/>const<sp/>double<sp/>*p2,<sp/>double<sp/>*pm);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">void<sp/>mid_pt3_cart(const<sp/>double<sp/>*p1,<sp/>const<sp/>double<sp/>*p2,<sp/>double<sp/>*e);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<highlight class="preprocessor"></highlight>    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.h"/>
+  </compounddef>
+</doxygen>

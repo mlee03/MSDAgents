@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms2__io__mod" kind="namespace" language="Fortran">
+    <compoundname>fms2_io_mod</compoundname>
+    <innerclass refid="interfacefms2__io__mod_1_1close__file" prot="private">fms2_io_mod::close_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1open__file" prot="private">fms2_io_mod::open_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1open__virtual__file" prot="private">fms2_io_mod::open_virtual_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__data" prot="private">fms2_io_mod::read_data</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__new__restart" prot="private">fms2_io_mod::read_new_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__restart" prot="private">fms2_io_mod::read_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__axis" prot="private">fms2_io_mod::register_axis</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__field" prot="private">fms2_io_mod::register_field</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__restart__field" prot="private">fms2_io_mod::register_restart_field</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__data" prot="private">fms2_io_mod::write_data</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__new__restart" prot="private">fms2_io_mod::write_new_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__restart" prot="private">fms2_io_mod::write_restart</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga784a7d4c0e58dd00159bbc2bb7aa0ce3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer deflate_level</definition>
+        <argsstring></argsstring>
+        <name>deflate_level</name>
+        <initializer>= default_deflate_level</initializer>
+        <briefdescription>
+<para>Netcdf deflate level to use in nf90_def_var (integer between 1 to 9) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="461" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="461" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga6f86d86f58a066cbe83458b34a14e1b4" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private fms2_io_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>fms2_io_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>True after calling fms2_io_init. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="452" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="452" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga6a6e9d8fc157d60fba739ab572e55b7b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer header_buffer_val</definition>
+        <argsstring></argsstring>
+        <name>header_buffer_val</name>
+        <initializer>= 16384</initializer>
+        <briefdescription>
+<para>User defined netCDF header buffer size(in bytes) used in NF__ENDDEF. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="459" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="459" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga7f70386a959c772ab6145f460d6fa8d4" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ncchksz</definition>
+        <argsstring></argsstring>
+        <name>ncchksz</name>
+        <initializer>= 64*1024</initializer>
+        <briefdescription>
+<para>User defined chunksize (in bytes) argument in netcdf file creation calls. Replaces setting the NC_CHKSZ environment variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="454" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="454" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1gaeee123b8726562ad5d4e659f261db74c" prot="private" static="no" mutable="no">
+        <type>character(len=10)</type>
+        <definition>character (len = 10) netcdf_default_format</definition>
+        <argsstring></argsstring>
+        <name>netcdf_default_format</name>
+        <initializer>= &quot;64bit&quot;</initializer>
+        <briefdescription>
+<para>User defined netcdf file format, acceptable values are: &quot;64bit&quot;, &quot;classic&quot;, &quot;netcdf4&quot;. This can be overwritten for a given file by specifying &quot;nc_format&quot; in the <ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="456" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="456" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga484c850b71e5a98392b9d0fc21f4813c" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical shuffle</definition>
+        <argsstring></argsstring>
+        <name>shuffle</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Flag indicating whether to use the netcdf shuffle filter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="463" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="463" bodyend="463"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms2__io__mod_1gab2efb88539d9a05da43d95a501ed7e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms2_io_mod::fms2_io_init</definition>
+        <argsstring>()</argsstring>
+        <name>fms2_io_init</name>
+        <briefdescription>
+<para>Reads the fms2_io_nml. Needs to be called prior to any usage of fms2_io_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Check if the module has already been initialized</para><para>Call initialization routines that this module depends on</para><para>Read the namelist</para><para>Send the namelist variables to their respective modules</para><para>Mark the fms2_io as initialized </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="470" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="471" bodyend="494"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="71" column="1"/>
+  </compounddef>
+</doxygen>

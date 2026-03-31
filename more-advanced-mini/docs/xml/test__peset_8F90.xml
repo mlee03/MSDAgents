@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__peset_8F90" kind="file" language="Fortran">
+    <compoundname>test_peset.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__peset_8F90_1ab7918b0d12640a9d25f510fd3e7247dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_peset</definition>
+        <argsstring></argsstring>
+        <name>test_peset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_peset.F90" line="18" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_peset.F90" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_peset</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@author<sp/>Jessica<sp/>Liptak</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@description<sp/>Indirectly<sp/>test<sp/>the<sp/>functionality<sp/>of<sp/>get_peset<sp/>and<sp/>expand_peset<sp/>in<sp/>mpp_util_sma.inc<sp/>by<sp/>passing</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>!!<sp/>processor<sp/>IDs<sp/>among<sp/>PEs<sp/>via<sp/>mpp_send<sp/>and<sp/>mpp_recv,<sp/>then<sp/>calling<sp/>mpp_sync_self.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/><ref refid="group__mpp__mod_1ga09e69243d8c67e6a6e6e4fd9e93d0870" kindref="member">mpp_sync_self</ref>,<sp/><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_init_test_peset_allocated,<sp/>&amp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>,<sp/>mpp_root_pe,<sp/><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>,<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>npes</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>total<sp/>number<sp/>of<sp/>PEs<sp/>returned<sp/>from<sp/>mpp_npes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>pelist</highlight><highlight class="comment"><sp/>!&lt;<sp/>List<sp/>of<sp/>pes<sp/>that<sp/>will<sp/>communicate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>numlist</highlight><highlight class="comment"><sp/>!&lt;<sp/>List<sp/>of<sp/>integers<sp/>assigned<sp/>to<sp/>each<sp/>pe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>ierr,<sp/>sum_id</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Initialize<sp/>mpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>(test_level=mpp_init_test_peset_allocated)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Get<sp/>the<sp/>total<sp/>number<sp/>of<sp/>PEs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>npes<sp/>=<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/>!&gt;<sp/>create<sp/>a<sp/>pelist<sp/>and<sp/>a<sp/>list<sp/>of<sp/>numbers<sp/>to<sp/>populate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pelist(npes))</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(numlist(npes))</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>pelist=(/(i,i=0,npes-1)/)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(pelist)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>sum<sp/>used<sp/>to<sp/>verify<sp/>that<sp/>all<sp/>PEs<sp/>received<sp/>all<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>sum_id=sum(pelist)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>numlist(:)=0</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>!&gt;<sp/>loop<sp/>through<sp/>number<sp/>of<sp/>pes<sp/>and<sp/>populate<sp/>number<sp/>list<sp/>if<sp/>the<sp/>current<sp/>pe<sp/>is<sp/>the<sp/>root<sp/>pe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>npes</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>.eq.<sp/>mpp_root_pe())<sp/>&amp;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>numlist(i)<sp/>=<sp/>i-1</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>!&gt;<sp/>root<sp/>pe<sp/>sends<sp/>the<sp/>numlist<sp/>to<sp/>all<sp/>of<sp/>the<sp/>other<sp/>pes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>(numlist,<sp/>npes,<sp/>mpp_root_pe())</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/>!&gt;<sp/>check<sp/>that<sp/>calling<sp/>routines<sp/>are<sp/>complete</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>!!<sp/>@note:<sp/>mpp_sync_self<sp/>calls<sp/>get_peset;<sp/>get<sp/>pe_set<sp/>calls<sp/>expand_peset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga09e69243d8c67e6a6e6e4fd9e93d0870" kindref="member">mpp_sync_self</ref>(pelist)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sum(numlist)<sp/>.ne.<sp/>sum_id)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,</highlight><highlight class="stringliteral">&quot;numlist<sp/>sum<sp/>does<sp/>not<sp/>match<sp/>pelist<sp/>sum&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(numlist))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(numlist)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(pelist))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(pelist)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Finalize<sp/>mpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpi_finalize(ierr)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_peset</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_peset.F90"/>
+  </compounddef>
+</doxygen>

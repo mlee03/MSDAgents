@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfaceamip__interp__mod_1_1amip__interp__new" kind="interface" language="Fortran" prot="private">
+    <compoundname>amip_interp_mod::amip_interp_new</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfaceamip__interp__mod_1_1amip__interp__new_1a929f1426a519ff4fbd98f363cc25d459" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amip_interp_new_1d_r4</definition>
+        <argsstring></argsstring>
+        <name>amip_interp_new_1d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceamip__interp__mod_1_1amip__interp__new_1a6daa299c4a0fbd1cec907e200d34745a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amip_interp_new_1d_r8</definition>
+        <argsstring></argsstring>
+        <name>amip_interp_new_1d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceamip__interp__mod_1_1amip__interp__new_1a3b11e40cc42d4e23a610f79238c86b26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amip_interp_new_2d_r4</definition>
+        <argsstring></argsstring>
+        <name>amip_interp_new_2d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceamip__interp__mod_1_1amip__interp__new_1a31ca3c944894b5cf986f752663295cdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amip_interp_new_2d_r8</definition>
+        <argsstring></argsstring>
+        <name>amip_interp_new_2d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Initializes data needed for the horizontal interpolation between the sst data and model grid. </para>    </briefdescription>
+    <detaileddescription>
+<para>The returned variable of type <ref refid="structamip__interp__mod_1_1amip__interp__type" kindref="compound">amip_interp_type</ref> is needed when calling <ref refid="interfaceamip__interp__mod_1_1get__amip__sst" kindref="compound">get_amip_sst</ref> and <ref refid="interfaceamip__interp__mod_1_1get__amip__ice" kindref="compound">get_amip_ice</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude in radians of the model&apos;s grid box edges (1d lat/lon grid case) or at grid box mid-point (2d case for arbitrary grids). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude in radians of the model&apos;s grid box edges (1d lat/lon grid case) or at grid box mid-point (2d case for arbitrary grids). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A mask for the model grid. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>use_climo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag the specifies that monthly mean climatological values will be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>use_annual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag the specifies that the annual mean climatological will be used. If both use_annual = use_climo = true, then use_annual = true will be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specify the horiz_interp scheme. = &quot;conservative&quot; means conservative scheme, = &quot;bilinear&quot; means bilinear interpolation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>interp, a defined data type variable needed when calling <ref refid="interfaceamip__interp__mod_1_1get__amip__sst" kindref="compound">get_amip_sst</ref> and <ref refid="interfaceamip__interp__mod_1_1get__amip__ice" kindref="compound">get_amip_ice</ref>.</para></simplesect>
+<linebreak/>
+ Example usage: <verbatim>            Interp = amip_interp_new ( lon, lat, mask, use_climo, use_annual, interp_method )
+</verbatim></para><para>This function may be called to initialize multiple variables of type <ref refid="structamip__interp__mod_1_1amip__interp__type" kindref="compound">amip_interp_type</ref>. However, there currently is no call to release the storage used by this variable.</para><para>The size of input augment mask must be a function of the size of input augments lon and lat. The first and second dimensions of mask must equal (size(lon,1)-1, size(lat,2)-1).</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL: the value of the namelist parameter DATA_SET being used is not allowed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Check the value of namelist variable DATA_SET.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL: requested input data set does not exist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data set requested is valid but the data does not exist in the INPUT subdirectory. You may have requested amip2 data which has not been officially set up. See the section on DATA SETS to properly set the data up.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL: use_climo mismatch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The namelist variable date_out_of_range = &apos;fail&apos; and the <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref> argument use_climo = true. This combination is not allowed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL: use_annual(climo) mismatch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The namelist variable date_out_of_range = &apos;fail&apos; and the <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref> argument use_annual = true. This combination is not allowed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="274" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="274" bodyend="276"/>
+    <listofallmembers>
+      <member refid="interfaceamip__interp__mod_1_1amip__interp__new_1a929f1426a519ff4fbd98f363cc25d459" prot="private" virt="non-virtual"><scope>amip_interp_mod::amip_interp_new</scope><name>amip_interp_new_1d_r4</name></member>
+      <member refid="interfaceamip__interp__mod_1_1amip__interp__new_1a6daa299c4a0fbd1cec907e200d34745a" prot="private" virt="non-virtual"><scope>amip_interp_mod::amip_interp_new</scope><name>amip_interp_new_1d_r8</name></member>
+      <member refid="interfaceamip__interp__mod_1_1amip__interp__new_1a3b11e40cc42d4e23a610f79238c86b26" prot="private" virt="non-virtual"><scope>amip_interp_mod::amip_interp_new</scope><name>amip_interp_new_2d_r4</name></member>
+      <member refid="interfaceamip__interp__mod_1_1amip__interp__new_1a31ca3c944894b5cf986f752663295cdc" prot="private" virt="non-virtual"><scope>amip_interp_mod::amip_interp_new</scope><name>amip_interp_new_2d_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

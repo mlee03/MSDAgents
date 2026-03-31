@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="memutils_8F90" kind="file" language="Fortran">
+    <compoundname>memutils.F90</compoundname>
+    <innernamespace refid="namespacememutils__mod">memutils_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>memutils_mod<sp/>memutils_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>memutils</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!<sp/>@brief<sp/>Module<sp/>to<sp/>expose<sp/>the<sp/>memory<sp/>printing<sp/>API</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>@author<sp/>V.<sp/>Balaji</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>Module<sp/>to<sp/>expose<sp/>the<sp/>memory<sp/>printing<sp/>API</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/>Model<sp/>components<sp/>at<sp/>times<sp/>desire<sp/>to<sp/>print<sp/>the<sp/>memory<sp/>statics<sp/>to<sp/>stderr,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/>or<sp/>another<sp/>file<sp/>(e.g.<sp/>the<sp/>log<sp/>file).<sp/><sp/>This<sp/>can<sp/>be<sp/>useful<sp/>in<sp/>debugging.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!<sp/>This<sp/>module<sp/>exposes<sp/>the<sp/>print_memuse_stat<sp/>and<sp/>memutils_init<sp/>calls<sp/>for</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">!!<sp/>use<sp/>in<sp/>external<sp/>user<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>memutils_mod</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>memutils_mod</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">!Author:<sp/>Balaji<sp/>(V.Balaji@noaa.gov)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__min" kindref="compound">mpp_min</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__sum" kindref="compound">mpp_sum</ref>,<sp/><ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_memutils_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__memutils__mod_1gac353a266f4ed14aa3f6168844dd7ee72" kindref="member">mpp_print_memuse_stats</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>memutils_initialized=.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>Indicate<sp/>if<sp/>module<sp/>has<sp/>been<sp/>initialized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="group__memutils__mod_1ga254fc4a57b84b735b95cbb2612a1a69e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__memutils__mod_1ga254fc4a57b84b735b95cbb2612a1a69e" kindref="member">print_memory_usage</ref>=.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>Default<sp/>behavior<sp/>of<sp/>print_memuse_stats()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__memutils__mod_1ga2389796d387861f09a060ae7c645aed2" kindref="member">memutils_init</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Initialize<sp/>the<sp/>memutils<sp/>module</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>!!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/>!!<sp/>memutils_init<sp/>initializes<sp/>the<sp/>print_memory_usage<sp/>and<sp/>memutils_initialized</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/>!!<sp/>module<sp/>variables<sp/>when<sp/>called.<sp/><sp/>This<sp/>configures<sp/>if<sp/>print_memuse_stats()<sp/>should</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>!!<sp/>print<sp/>the<sp/>memory<sp/>statistics<sp/>when<sp/>called.<sp/><sp/>memutils_init,<sp/>at<sp/>present,<sp/>can</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>!!<sp/>be<sp/>called<sp/>multiple<sp/>times,<sp/>and<sp/>potentially<sp/>change<sp/>the<sp/>behavior<sp/>of<sp/>print_memuse_stats().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__memutils__mod_1ga2389796d387861f09a060ae7c645aed2" kindref="member">memutils_init</ref>(print_flag)</highlight></codeline>
+<codeline lineno="54" refid="group__memutils__mod_1ga2389796d387861f09a060ae7c645aed2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>print_flag</highlight><highlight class="comment"><sp/>!&lt;<sp/>Indicate<sp/>if<sp/>memory<sp/>statistics<sp/>should<sp/>be<sp/>printed<sp/>by<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(print_flag)<sp/>)<sp/><ref refid="group__memutils__mod_1ga254fc4a57b84b735b95cbb2612a1a69e" kindref="member">print_memory_usage</ref><sp/>=<sp/>print_flag</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>memutils_initialized<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__memutils__mod_1ga2389796d387861f09a060ae7c645aed2" kindref="member">memutils_init</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment">!&gt;<sp/>@brief<sp/>Print<sp/>memory<sp/>usage<sp/>stats<sp/>to<sp/>stdout,<sp/>or<sp/>a<sp/>particular<sp/>file</highlight></codeline>
+<codeline lineno="62"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">!!<sp/>API<sp/>to<sp/>allow<sp/>external<sp/>user<sp/>code<sp/>to<sp/>print<sp/>memory<sp/>statistics<sp/>to<sp/>stderr,<sp/>or<sp/>an</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">!!<sp/>optional<sp/>file<sp/>(Fortran<sp/>file<sp/>unit).<sp/><sp/>The<sp/>module<sp/>variable<sp/>`print_memory_usage`</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">!!<sp/>will<sp/>control<sp/>the<sp/>default<sp/>behavior<sp/>(set<sp/>when<sp/>memutils_init<sp/>is<sp/>called).<sp/><sp/>The</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">!!<sp/>default<sp/>behavior<sp/>can<sp/>be<sp/>modified<sp/>passing<sp/>in<sp/>the<sp/>optional<sp/>`always`<sp/>(logical)</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">!!<sp/>parameter.<sp/><sp/>If<sp/>`always.eqv..TRUE.`,<sp/>print_memuse_stats()<sp/>will<sp/>print<sp/>the<sp/>memory</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">!!<sp/>statistics.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats</ref>(<sp/>text,<sp/>unit,<sp/>always<sp/>)</highlight></codeline>
+<codeline lineno="70" refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>text</highlight><highlight class="comment"><sp/>!&lt;<sp/>Text<sp/>to<sp/>be<sp/>printed<sp/>before<sp/>the<sp/>memory<sp/>statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>unit</highlight><highlight class="comment"><sp/>!&lt;<sp/>Fortran<sp/>file<sp/>unit<sp/>to<sp/>where<sp/>memory<sp/>statistics<sp/>should<sp/>be<sp/>recorded</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>always</highlight><highlight class="comment"><sp/>!&lt;<sp/>If<sp/>`.TRUE.`,<sp/>force<sp/>memory<sp/>statistics<sp/>to<sp/>be<sp/>printed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(always)<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>.NOT.always<sp/>)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>.NOT.<ref refid="group__memutils__mod_1ga254fc4a57b84b735b95cbb2612a1a69e" kindref="member">print_memory_usage</ref><sp/>)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__memutils__mod_1gac353a266f4ed14aa3f6168844dd7ee72" kindref="member">mpp_print_memuse_stats</ref>(text,<sp/>unit)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats</ref></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">memutils_mod</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90"/>
+  </compounddef>
+</doxygen>

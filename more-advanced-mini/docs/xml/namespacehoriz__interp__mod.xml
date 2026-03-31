@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacehoriz__interp__mod" kind="namespace" language="Fortran">
+    <compoundname>horiz_interp_mod</compoundname>
+    <innerclass refid="interfacehoriz__interp__mod_1_1horiz__interp" prot="private">horiz_interp_mod::horiz_interp</innerclass>
+    <innerclass refid="interfacehoriz__interp__mod_1_1horiz__interp__new" prot="private">horiz_interp_mod::horiz_interp_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__mod_1_1horiz__interp__read__weights" prot="private">horiz_interp_mod::horiz_interp_read_weights</innerclass>
+    <innerclass refid="interfacehoriz__interp__mod_1_1horiz__interp__solo__1d" prot="private">horiz_interp_mod::horiz_interp_solo_1d</innerclass>
+    <innerclass refid="interfacehoriz__interp__mod_1_1is__lat__lon" prot="private">horiz_interp_mod::is_lat_lon</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="246" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="246" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__mod_1gaa5cc5243028451aaa7a84ed7f1dbe1d4" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical reproduce_siena</definition>
+        <argsstring></argsstring>
+        <name>reproduce_siena</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Set reproduce_siena = .true. to reproduce siena results. Set reproduce_siena = .false. to decrease truncation error in routine poly_area in file mosaic_util.c. The truncation error of second order conservative remapping might be big for high resolution grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="235" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="235" bodyend="235"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__mod_1ga01331e97bf44a5092a0a174a71b0029a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;horiz_interp_type&quot; variables. Must be called before reinitializing with <ref refid="interfacehoriz__interp__mod_1_1horiz__interp__new" kindref="compound">horiz_interp_new</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to <ref refid="interfacehoriz__interp__mod_1_1horiz__interp__new" kindref="compound">horiz_interp_new</ref>. The input variable must have allocated arrays. The returned variable will contain deallocated arrays </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="285" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="286" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gaf77c64ca3f1413639ab8cf1b70788712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_end</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_end</name>
+        <briefdescription>
+<para>Dummy routine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="315" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__mod_1gacdf98c1cb99d01572520e76a7e39069d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_mod::horiz_interp_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_init</name>
+        <briefdescription>
+<para>Initialize module and writes version number to logfile.out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" bodystart="255" bodyend="280"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp.F90" line="37" column="1"/>
+  </compounddef>
+</doxygen>

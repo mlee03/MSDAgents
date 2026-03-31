@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__drifters_8F90" kind="file" language="Fortran">
+    <compoundname>test_drifters.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__drifters_8F90_1a1178d1aeeb0e4b764dbef454f01d4d93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine my_error_handler</definition>
+        <argsstring>(mesg)</argsstring>
+        <name>my_error_handler</name>
+        <param>
+          <type>mesg</type>
+          <defname>mesg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/drifters/test_drifters.F90" line="342" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/drifters/test_drifters.F90" bodystart="343" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="test__drifters_8F90_1ac46437644838ce8661f48dbe2b17d868" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_drifters</definition>
+        <argsstring></argsstring>
+        <name>test_drifters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/drifters/test_drifters.F90" line="19" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/drifters/test_drifters.F90" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_drifters</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>use_drifters</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>contents<sp/>of<sp/>input<sp/>file:<sp/>drifters_inp_test_3d.nc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">!!$netcdf<sp/>drifters_inp_test_3d<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">!!$dimensions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>nd<sp/>=<sp/>3<sp/>;<sp/>//<sp/>number<sp/>of<sp/>dimensions<sp/>(2<sp/>or<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>np<sp/>=<sp/>4<sp/>;<sp/>//<sp/>number<sp/>of<sp/>particles</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">!!$variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>double<sp/>positions(np,<sp/>nd)<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>positions:names<sp/>=<sp/>&quot;x<sp/>y<sp/>z&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>positions:units<sp/>=<sp/>&quot;-<sp/>-<sp/>-&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>int<sp/>ids(np)<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">!!$</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">!!$//<sp/>global<sp/>attributes:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>:velocity_names<sp/>=<sp/>&quot;u<sp/>v<sp/>w&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>:field_names<sp/>=<sp/>&quot;temp&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>:field_units<sp/>=<sp/>&quot;C&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>:time_units<sp/>=<sp/>&quot;seconds&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/>:title<sp/>=<sp/>&quot;example<sp/>of<sp/>input<sp/>data<sp/>for<sp/>drifters&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">!!$data:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">!!$</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/>positions<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/>-0.8,<sp/>0.,<sp/>0.,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/>-0.2,<sp/>0.,<sp/>0.,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>0.2,<sp/>0.,<sp/>0.,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/>0.8,<sp/>0.,<sp/>0.;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">!!$</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/>ids<sp/>=<sp/>1,<sp/>2,<sp/>3,<sp/>4<sp/>;<sp/>//<sp/>must<sp/>range<sp/>from<sp/>1<sp/>to<sp/>np,<sp/>in<sp/>any<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">!!$}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>Example<sp/>showing<sp/>how<sp/>to<sp/>use<sp/>drifters_mod.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">drifters_mod</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>declare<sp/>drifters<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(drifters_type)<sp/>::<sp/>drfts<sp/><sp/></highlight><highlight class="comment">!<sp/>drifters&apos;<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(drifters_type)<sp/>::<sp/>drfts2<sp/></highlight><highlight class="comment">!<sp/>to<sp/>test<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=128)</highlight><highlight class="normal"><sp/><sp/>::<sp/>ermesg</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>t0,<sp/>dt,<sp/>t,<sp/>tend,<sp/>rho</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>xmin,<sp/>xmax,<sp/>ymin,<sp/>ymax,<sp/>zmin,<sp/>zmax,<sp/>theta</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>pi<sp/>=<sp/>3.1415926535897931159980</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>x(:),<sp/>y(:)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>if<sp/>(DIMS<sp/>==<sp/>2)<sp/>then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>real,<sp/>allocatable<sp/>::<sp/>u(:,:),<sp/>v(:,:),<sp/>w(:,:),<sp/>temp(:,:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>z(:),<sp/>u(:,:,:),<sp/>v(:,:,:),<sp/>w(:,:,:),<sp/>temp(:,:,:)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>layout(2),<sp/>nx,<sp/>ny,<sp/>nz,<sp/>halox,<sp/>haloy,<sp/>i,<sp/>j,<sp/>k,<sp/>npes,<sp/>pe,<sp/>root</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>isd,<sp/><sp/>ied,<sp/><sp/>jsd,<sp/><sp/>jed,<sp/>isc,<sp/><sp/>iec,<sp/><sp/>jsc,<sp/><sp/>jec</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>pe_beg,<sp/>pe_end</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ibnds(1)<sp/></highlight><highlight class="comment">!<sp/>only<sp/>used<sp/>in<sp/>_SERIAL<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d)<sp/>::<sp/>domain</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>npes<sp/><sp/><sp/>=<sp/>1<sp/></highlight><highlight class="comment">!_MPP_NPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>pe<sp/><sp/><sp/><sp/><sp/>=<sp/>0<sp/></highlight><highlight class="comment">!_MPP_PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>root<sp/><sp/><sp/>=<sp/>0<sp/></highlight><highlight class="comment">!_MPP_ROOT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>pe_beg<sp/>=<sp/>npes/2</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>pe_end<sp/>=<sp/>npes-1</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>input<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>t0<sp/>=<sp/>0.0<sp/></highlight><highlight class="comment">!<sp/>initial<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>tend<sp/>=<sp/>2.0*pi<sp/></highlight><highlight class="comment">!<sp/>max<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>dt<sp/>=<sp/><sp/>tend/20.0<sp/></highlight><highlight class="comment">!<sp/>time<sp/>step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>domain<sp/>boundaries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>xmin<sp/>=<sp/>-1.<sp/>;<sp/>xmax<sp/>=<sp/>1.</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>ymin<sp/>=<sp/>-1.<sp/>;<sp/>ymax<sp/>=<sp/>1.</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>zmin<sp/>=<sp/>-1.<sp/>;<sp/>zmax<sp/>=<sp/>1.</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>nx<sp/>=<sp/>41;<sp/>ny<sp/>=<sp/>41;<sp/>nz<sp/>=<sp/>21;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>halox<sp/>=<sp/>2;<sp/>haloy<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>x(1-halox:nx+halox),<sp/>y(1-haloy:ny+haloy))</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>x<sp/>=<sp/>xmin<sp/>+<sp/>(xmax-xmin)*(/<sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(i-1)/</highlight><highlight class="keywordtype">real(nx-1)</highlight><highlight class="normal">,<sp/>i<sp/>=<sp/>1-halox,<sp/>nx+halox)<sp/>/)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>y<sp/>=<sp/>ymin<sp/>+<sp/>(ymax-ymin)*(/<sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(j-1)/</highlight><highlight class="keywordtype">real(ny-1)</highlight><highlight class="normal">,<sp/>j<sp/>=<sp/>1-haloy,<sp/>ny+haloy)<sp/>/)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>allocate(<sp/>u(1-halox:nx+halox,<sp/>1-haloy:ny+haloy),<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>v(1-halox:nx+halox,<sp/>1-haloy:ny+haloy),<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>w(1-halox:nx+halox,<sp/>1-haloy:ny+haloy),<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>temp(1-halox:nx+halox,<sp/>1-haloy:ny+haloy))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">!<sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>z(nz)<sp/>)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>z<sp/>=<sp/>zmin<sp/>+<sp/>(zmax-zmin)*(/<sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(k-1)/</highlight><highlight class="keywordtype">real(nz-1)</highlight><highlight class="normal">,<sp/>k<sp/>=<sp/>1,<sp/>nz)<sp/>/)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>u(1-halox:nx+halox,<sp/>1-haloy:ny+haloy,<sp/>nz),<sp/>&amp;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>v(1-halox:nx+halox,<sp/>1-haloy:ny+haloy,<sp/>nz),<sp/>&amp;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>w(1-halox:nx+halox,<sp/>1-haloy:ny+haloy,<sp/>nz),<sp/>&amp;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>temp(1-halox:nx+halox,<sp/>1-haloy:ny+haloy,<sp/>nz))</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>decompose<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1ga395663978bf22825d9d8a8b4c29a5510" kindref="member">mpp_domains_init</ref><sp/></highlight><highlight class="comment">!<sp/>(MPP_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/>call<sp/>mpp_domains_set_stack_size(stackmax)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(<sp/>(/<sp/>(i,<sp/>i=pe_beg,<sp/>pe_end)<sp/>/),<sp/></highlight><highlight class="stringliteral">&apos;_drifters&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>this<sp/>sumulates<sp/>a<sp/>run<sp/>on<sp/>a<sp/>subset<sp/>of<sp/>PEs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pe<sp/>&gt;=<sp/>pe_beg<sp/>.and.<sp/>pe<sp/>&lt;=<sp/>pe_end)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga2238aa842b4c9e899d733ef41b71bb71" kindref="member">mpp_set_current_pelist</ref>(<sp/>(/<sp/>(i,<sp/>i=pe_beg,<sp/>pe_end)<sp/>/)<sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__layout" kindref="compound">mpp_define_layout</ref>(<sp/>(/1,nx,<sp/>1,ny/),<sp/>pe_end-pe_beg+1,<sp/>layout<sp/>)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pe==root)<sp/>print<sp/>*,</highlight><highlight class="stringliteral">&apos;LAYOUT:<sp/>&apos;</highlight><highlight class="normal">,<sp/>layout</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>((/1,nx,<sp/>1,ny/),<sp/>layout,<sp/>domain,<sp/>&amp;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xhalo=halox,<sp/>yhalo=haloy)<sp/></highlight><highlight class="comment">!,&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!&amp;<sp/>xflags=CYCLIC_GLOBAL_DOMAIN,<sp/>yflags=CYCLIC_GLOBAL_DOMAIN)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>call<sp/>drifters_new(drfts,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>input_file<sp/>=&apos;drifters_inp_test_2d.nc&apos;<sp/><sp/>,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>output_file=&apos;drifters_out_test_2d.nc&apos;,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_new(drfts,<sp/>&amp;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>input_file<sp/>=</highlight><highlight class="stringliteral">&apos;drifters_inp_test_3d.nc&apos;</highlight><highlight class="normal"><sp/><sp/>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>output_file=</highlight><highlight class="stringliteral">&apos;drifters_out_test_3d.nc&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>set<sp/>start/end<sp/>pe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>drfts%comm%pe_beg<sp/>=<sp/>pe_beg</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>drfts%comm%pe_end<sp/>=<sp/>pe_end</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>initial<sp/>time<sp/>and<sp/>dt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>drfts%time<sp/>=<sp/>t0</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>drfts%dt<sp/><sp/><sp/>=<sp/>dt</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref><sp/><sp/><sp/>(<sp/>domain,<sp/>isd,<sp/><sp/>ied,<sp/><sp/>jsd,<sp/><sp/>jed<sp/><sp/>)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(<sp/>domain,<sp/>isc,<sp/><sp/>iec,<sp/><sp/>jsc,<sp/><sp/>jec<sp/><sp/>)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">!#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>ibnds<sp/>=<sp/>lbound(x);<sp/>isd<sp/>=<sp/>ibnds(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>ibnds<sp/>=<sp/>ubound(x);<sp/>ied<sp/>=<sp/>ibnds(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>ibnds<sp/>=<sp/>lbound(y);<sp/>jsd<sp/>=<sp/>ibnds(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>ibnds<sp/>=<sp/>ubound(y);<sp/>jed<sp/>=<sp/>ibnds(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>isc<sp/>=<sp/>isd;<sp/>iec<sp/>=<sp/>ied<sp/>-<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>jsc<sp/>=<sp/>jsd;<sp/>jec<sp/>=<sp/>jed<sp/>-<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>PE<sp/>domain<sp/>boundaries.<sp/>Xmin_comp/ymin_comp,<sp/>xmax_comp/ymax_comp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>refer<sp/>to<sp/>the<sp/>&quot;compute&quot;<sp/>domain,<sp/>which<sp/>should<sp/>cover<sp/>densily<sp/>the<sp/>domain:<sp/>ie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>xcmax[pe]<sp/>=<sp/>xcmin[pe_east]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>ycmax[pe]<sp/>=<sp/>ycmin[pe_north]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Xmin_data/ymin_data,<sp/>xmax_data/ymax_data<sp/>refer<sp/>to<sp/>the<sp/>&quot;data&quot;<sp/>domain,<sp/>which</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>should<sp/>be<sp/>larger<sp/>than<sp/>the<sp/>compute<sp/>domain<sp/>and<sp/>therefore<sp/>overlap:<sp/>ie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>xdmax[pe]<sp/>&gt;<sp/>xdmin[pe_east]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>ydmax[pe]<sp/>&gt;<sp/>ydmin[pe_north]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Particles<sp/>in<sp/>the<sp/>overlap<sp/>regions<sp/>are<sp/>tracked<sp/>by<sp/>several<sp/>PEs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_domain(drfts,<sp/>&amp;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_comp=x(isc<sp/><sp/>),<sp/>xmax_comp=x(iec+1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_comp=y(jsc<sp/><sp/>),<sp/>ymax_comp=y(jec+1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_data=x(isd<sp/><sp/>),<sp/>xmax_data=x(ied<sp/><sp/>),<sp/>&amp;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_data=y(jsd<sp/><sp/>),<sp/>ymax_data=y(jed<sp/><sp/>),<sp/>&amp;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_glob=xmin<sp/><sp/><sp/><sp/>,<sp/>xmax_glob=xmax<sp/><sp/><sp/><sp/>,<sp/>&amp;<sp/>!<sp/>periodicity<sp/>in<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">!!$<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_glob=ymin<sp/><sp/><sp/><sp/>,<sp/>ymax_glob=ymax<sp/><sp/><sp/><sp/>,<sp/>&amp;<sp/>!<sp/>periodicity<sp/>in<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>set<sp/>neighboring<sp/>PEs<sp/>[domain2d<sp/>is<sp/>of<sp/>type(domain2d)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_pe_neighbors(drfts,<sp/>domain=domain,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>velocities<sp/>axes.<sp/>Each<sp/>velocity<sp/>can<sp/>have<sp/>different<sp/>axes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_v_axes(drfts,<sp/>component=</highlight><highlight class="stringliteral">&apos;u&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x,<sp/>y=y,<sp/>&amp;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=DRFT_EMPTY_ARRAY,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>&gt;=<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=z,<sp/>&amp;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_v_axes(drfts,<sp/>component=</highlight><highlight class="stringliteral">&apos;v&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x,<sp/>y=y,<sp/>&amp;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=DRFT_EMPTY_ARRAY,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>&gt;=<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=z,<sp/>&amp;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_v_axes(drfts,<sp/>component=</highlight><highlight class="stringliteral">&apos;w&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x,<sp/>y=y,<sp/>&amp;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=DRFT_EMPTY_ARRAY,<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>&gt;=<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=z,<sp/>&amp;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Distribute<sp/>the<sp/>drifters<sp/>across<sp/>PEs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_distribute(drfts,<sp/>ermesg)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>t0</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(t<sp/>&lt;=<sp/>tend+epsilon(1.))</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Update<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>t<sp/>+<sp/>dt/2.0</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Set<sp/>velocity<sp/>and<sp/>field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>j<sp/>=<sp/>1-haloy,<sp/>ny+haloy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>i<sp/>=<sp/>1-halox,<sp/>nx+halox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta<sp/>=<sp/>atan2(y(j),<sp/>x(i))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rho<sp/><sp/><sp/>=<sp/>sqrt(x(i)**2<sp/>+<sp/>y(j)**2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u(i,j)<sp/>=<sp/>-<sp/>rho<sp/>*<sp/>sin(theta)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v(i,j)<sp/>=<sp/>+<sp/>rho<sp/>*<sp/>cos(theta)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp(i,j)<sp/>=<sp/>(x(i)**2<sp/>+<sp/>y(j)**2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>Push<sp/>the<sp/>drifters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>drifters_push(drfts,<sp/>u=u,<sp/>v=v,<sp/>ermesg=ermesg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(ermesg/=&apos;&apos;)<sp/>call<sp/>my_error_handler(ermesg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>nz</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1-haloy,<sp/>ny+haloy</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1-halox,<sp/>nx+halox</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta<sp/>=<sp/>atan2(y(j),<sp/>x(i))</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rho<sp/><sp/><sp/>=<sp/>sqrt(x(i)**2<sp/>+<sp/>y(j)**2)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u(i,j,k)<sp/>=<sp/>-<sp/>rho<sp/>*<sp/>sin(theta)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v(i,j,k)<sp/>=<sp/>+<sp/>rho<sp/>*<sp/>cos(theta)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w(i,j,k)<sp/>=<sp/>+<sp/>0.01<sp/>*<sp/>cos(t)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp(i,j,k)<sp/>=<sp/>(x(i)**2<sp/>+<sp/>y(j)**2)<sp/>*<sp/>(1.0<sp/>-<sp/>z(k)**2)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Push<sp/>the<sp/>drifters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_push(drfts,<sp/>u=u,<sp/>v=v,<sp/>w=w,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Check<sp/>if<sp/>RK4<sp/>integration<sp/>is<sp/>complete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drfts%rk4_completed)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Interpolate<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_field(drfts,<sp/>index_field=1,<sp/>x=x,<sp/>y=y,<sp/>&amp;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>&gt;=<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>z=z,<sp/>&amp;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>data=temp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Save<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_save(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Write<sp/>restart<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_write_restart(drfts,<sp/>filename=</highlight><highlight class="stringliteral">&apos;drifters_res.nc&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>test<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>drfts2<sp/>=<sp/>drfts</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>destroy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_del(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ermesg/=</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">my_error_handler(ermesg)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(x,<sp/>y)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(u,<sp/>v,<sp/>temp)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="comment">!#if<sp/>_DIMS<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(z,<sp/>w)</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="340"><highlight class="preprocessor"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_drifters</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">my_error_handler(mesg)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/>fatal,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>mesg</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="comment">!#ifndef<sp/>_SERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>mesg)</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="comment">!#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>print<sp/>*,<sp/>mesg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>stop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="comment">!#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">my_error_handler</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/drifters/test_drifters.F90"/>
+  </compounddef>
+</doxygen>

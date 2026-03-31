@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacempp__domains__mod_1_1mpp__define__domains" kind="interface" language="Fortran" prot="private">
+    <compoundname>mpp_domains_mod::mpp_define_domains</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacempp__domains__mod_1_1mpp__define__domains_1ab6d7809c0d8de18df0d4f107d277e28b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mpp_define_domains1d</definition>
+        <argsstring></argsstring>
+        <name>mpp_define_domains1d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacempp__domains__mod_1_1mpp__define__domains_1ad4cc0bb6b01266ee7d596af0878bfc0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mpp_define_domains2d</definition>
+        <argsstring></argsstring>
+        <name>mpp_define_domains2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Set up a domain decomposition. </para>    </briefdescription>
+    <detaileddescription>
+<para>There are two forms for the <emphasis><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref></emphasis> call. The 2D version is generally to be used but is built by repeated calls to the 1D version, also provided.</para><para><linebreak/>
+Example usage: <verbatim>               call mpp_define_domains( global_indices, ndivs, domain, &amp;
+                              pelist, flags, halo, extent, maskmap )
+               call mpp_define_domains( global_indices, layout, domain, pelist, &amp;
+                              xflags, yflags, xhalo, yhalo,           &amp;
+                              xextent, yextent, maskmap, name )
+</verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>global_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Defines the global domain. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ndivs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of domain divisions required. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Holds the resulting domain decomposition. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pelist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of PEs to which the domains are to be assigned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional flag to pass additional information about the desired domain topology. Useful flags in a 1D decomposition include <computeroutput>GLOBAL_DATA_DOMAIN</computeroutput> and <computeroutput>CYCLIC_GLOBAL_DOMAIN</computeroutput>. Flags are integers: multiple flags may be added together. The flag values are public parameters available by use association. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>halo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the halo. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Normally <computeroutput><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref></computeroutput> attempts an even division of the global domain across <computeroutput>ndivs</computeroutput> domains. The <computeroutput>extent</computeroutput> array can be used by the user to pass a custom domain division. The <computeroutput>extent</computeroutput> array has <computeroutput>ndivs</computeroutput> elements and holds the compute domain widths, which should add up to cover the global domain exactly. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maskmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Some divisions may be masked (<computeroutput>maskmap=.FALSE.</computeroutput>) to exclude them from the computation (e.g for ocean model domains that are all land). The <computeroutput>maskmap</computeroutput> array is dimensioned <computeroutput>ndivs</computeroutput> and contains <computeroutput>.TRUE.</computeroutput> values for any domain that must be <emphasis>included</emphasis> in the computation (default all). The <computeroutput>pelist</computeroutput> array length should match the number of domains included in the computation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>(<sp/>(/1,100/),<sp/>10,<sp/>domain,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags=global_data_domain+cyclic_global_domain,<sp/>halo=2<sp/>)</highlight></codeline>
+</programlisting></para><para>defines 10 compute domains spanning the range [1,100] of the global domain. The compute domains are non-overlapping blocks of 10. All the data domains are global, and with a halo of 2 span the range [-1:102]. And since the global domain has been declared to be cyclic, domain(9)next =&gt; domain(0) and domain(0)prev =&gt; domain(9). A field is allocated on the data domain, and computations proceed on the compute domain. A call to <ref refid="interfacempp__domains__mod_1_1mpp__update__domains" kindref="compound">mpp_update_domains</ref> would fill in the values in the halo region:<linebreak/>
+ <linebreak/>
+ <programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>(<sp/>domain,<sp/>isd,<sp/>ied<sp/>)<sp/></highlight><highlight class="comment">!returns<sp/>-1<sp/>and<sp/>102</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(<sp/>domain,<sp/>is,<sp/>ie<sp/>)<sp/></highlight><highlight class="comment">!returns<sp/>(1,10)<sp/>on<sp/>PE<sp/>0<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>a(isd:ied)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>is,ie</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>a(i)<sp/>=<sp/>&amp;lt;perform<sp/>computations&amp;gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__update__domains" kindref="compound">mpp_update_domains</ref>(<sp/>a,<sp/>domain<sp/>)</highlight></codeline>
+</programlisting> <linebreak/>
+ The call to mpp_update_domainsfills in the regions outside the compute domain. Since the global domain is cyclic, the values at <emphasis>i=</emphasis>(-1,0) are the same as at <emphasis>i=</emphasis>(99,100); and <emphasis>i=</emphasis>(101,102) are the same as <emphasis>i=</emphasis>(1,2).</para><para>The 2D version is just an extension of this syntax to two dimensions.</para><para>The 2D version of the above should generally be used in codes, including 1D-decomposed ones, if there is a possibility of future evolution toward 2D decomposition. The arguments are similar to the 1D case, except that now we have optional arguments flags, halo, extent and maskmap along two axes.</para><para>flags can now take an additional possible value to fold one or more edges. This is done by using flags <emphasis>FOLD_WEST_EDGE</emphasis>, <emphasis>FOLD_EAST_EDGE</emphasis>, <emphasis>FOLD_SOUTH_EDGE</emphasis> or <emphasis>FOLD_NORTH_EDGE</emphasis>. When a fold exists (e.g cylindrical domain), vector fields reverse sign upon crossing the fold. This parity reversal is performed only in the vector version of <ref refid="interfacempp__domains__mod_1_1mpp__update__domains" kindref="compound">mpp_update_domains</ref>. In addition, shift operations may need to be applied to vector fields on staggered grids, also described in the vector interface to <ref refid="interfacempp__domains__mod_1_1mpp__update__domains" kindref="compound">mpp_update_domains</ref>.</para><para><computeroutput>name</computeroutput> is the name associated with the decomposition, e.g <computeroutput>&apos;Ocean model&apos;</computeroutput>. If this argument is present, <computeroutput><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref></computeroutput> will print the domain decomposition generated to <computeroutput>stdlog</computeroutput>.</para><para><linebreak/>
+Examples: call <ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>( (/1,100,1,100/), (/2,2/), domain, xhalo=1 ) will create the following domain layout:<linebreak/>
+ <linebreak/>
+ <table rows="3" cols="5"><row>
+<entry thead="yes"><para>domain  </para></entry><entry thead="yes"><para>domain(1)  </para></entry><entry thead="yes"><para>domain(2)  </para></entry><entry thead="yes"><para>domain(3)  </para></entry><entry thead="yes"><para>domain(4)   </para></entry></row>
+<row>
+<entry thead="no"><para>Compute domain  </para></entry><entry thead="no"><para>1,50,1,50  </para></entry><entry thead="no"><para>51,100,1,50  </para></entry><entry thead="no"><para>1,50,51,100  </para></entry><entry thead="no"><para>51,100,51,100   </para></entry></row>
+<row>
+<entry thead="no"><para>Data domain  </para></entry><entry thead="no"><para>0,51,1,50  </para></entry><entry thead="no"><para>50,101,1,50  </para></entry><entry thead="no"><para>0,51,51,100  </para></entry><entry thead="no"><para>50,101,51,100   </para></entry></row>
+</table>
+</para><para>Again, we allocate arrays on the data domain, perform computations on the compute domain, and call <ref refid="interfacempp__domains__mod_1_1mpp__update__domains" kindref="compound">mpp_update_domains</ref> to update the halo region.</para><para>If we wished to perfom a 1D decomposition along Y on the same global domain, we could use: <verbatim>               call mpp_define_domains( (/1,100,1,100/), layout=(/4,1/), domain, xhalo=1 )
+</verbatim></para><para>This will create the following domain layout:<linebreak/>
+ <linebreak/>
+ <table rows="3" cols="5"><row>
+<entry thead="yes"><para>domain  </para></entry><entry thead="yes"><para>domain(1)  </para></entry><entry thead="yes"><para>domain(2)  </para></entry><entry thead="yes"><para>domain(3)  </para></entry><entry thead="yes"><para>domain(4)   </para></entry></row>
+<row>
+<entry thead="no"><para>Compute domain  </para></entry><entry thead="no"><para>1,100,1,25  </para></entry><entry thead="no"><para>1,100,26,50  </para></entry><entry thead="no"><para>1,100,51,75  </para></entry><entry thead="no"><para>1,100,76,100   </para></entry></row>
+<row>
+<entry thead="no"><para>Data domain  </para></entry><entry thead="no"><para>0,101,1,25  </para></entry><entry thead="no"><para>0,101,26,50  </para></entry><entry thead="no"><para>0,101,51,75  </para></entry><entry thead="no"><para>1,101,76,100   </para></entry></row>
+</table>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_domains.F90" line="890" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_domains.F90" bodystart="890" bodyend="892"/>
+    <listofallmembers>
+      <member refid="interfacempp__domains__mod_1_1mpp__define__domains_1ab6d7809c0d8de18df0d4f107d277e28b" prot="private" virt="non-virtual"><scope>mpp_domains_mod::mpp_define_domains</scope><name>mpp_define_domains1d</name></member>
+      <member refid="interfacempp__domains__mod_1_1mpp__define__domains_1ad4cc0bb6b01266ee7d596af0878bfc0c" prot="private" virt="non-virtual"><scope>mpp_domains_mod::mpp_define_domains</scope><name>mpp_define_domains2d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

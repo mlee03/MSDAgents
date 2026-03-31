@@ -1,0 +1,4908 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__fms2__io__mod" kind="group">
+    <compoundname>fms2_io_mod</compoundname>
+    <title>fms2_io_mod</title>
+    <innerclass refid="interfacefms2__io__mod_1_1close__file" prot="private">fms2_io_mod::close_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1open__file" prot="private">fms2_io_mod::open_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1open__virtual__file" prot="private">fms2_io_mod::open_virtual_file</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__data" prot="private">fms2_io_mod::read_data</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__new__restart" prot="private">fms2_io_mod::read_new_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1read__restart" prot="private">fms2_io_mod::read_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__axis" prot="private">fms2_io_mod::register_axis</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__field" prot="private">fms2_io_mod::register_field</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1register__restart__field" prot="private">fms2_io_mod::register_restart_field</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__data" prot="private">fms2_io_mod::write_data</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__new__restart" prot="private">fms2_io_mod::write_new_restart</innerclass>
+    <innerclass refid="interfacefms2__io__mod_1_1write__restart" prot="private">fms2_io_mod::write_restart</innerclass>
+    <innernamespace refid="namespacefms2__io__mod">fms2_io_mod</innernamespace>
+    <innerpage refid="group__fms2__io__mod_md__home_Ryan.Mulhall_FMS-1_fms2_io_readme">readme</innerpage>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga784a7d4c0e58dd00159bbc2bb7aa0ce3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer deflate_level</definition>
+        <argsstring></argsstring>
+        <name>deflate_level</name>
+        <initializer>= default_deflate_level</initializer>
+        <briefdescription>
+<para>Netcdf deflate level to use in nf90_def_var (integer between 1 to 9) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="461" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="461" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga6f86d86f58a066cbe83458b34a14e1b4" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private fms2_io_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>fms2_io_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>True after calling fms2_io_init. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="452" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="452" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga6a6e9d8fc157d60fba739ab572e55b7b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer header_buffer_val</definition>
+        <argsstring></argsstring>
+        <name>header_buffer_val</name>
+        <initializer>= 16384</initializer>
+        <briefdescription>
+<para>User defined netCDF header buffer size(in bytes) used in NF__ENDDEF. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="459" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="459" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga7f70386a959c772ab6145f460d6fa8d4" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ncchksz</definition>
+        <argsstring></argsstring>
+        <name>ncchksz</name>
+        <initializer>= 64*1024</initializer>
+        <briefdescription>
+<para>User defined chunksize (in bytes) argument in netcdf file creation calls. Replaces setting the NC_CHKSZ environment variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="454" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="454" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1gaeee123b8726562ad5d4e659f261db74c" prot="private" static="no" mutable="no">
+        <type>character(len=10)</type>
+        <definition>character (len = 10) netcdf_default_format</definition>
+        <argsstring></argsstring>
+        <name>netcdf_default_format</name>
+        <initializer>= &quot;64bit&quot;</initializer>
+        <briefdescription>
+<para>User defined netcdf file format, acceptable values are: &quot;64bit&quot;, &quot;classic&quot;, &quot;netcdf4&quot;. This can be overwritten for a given file by specifying &quot;nc_format&quot; in the <ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="456" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="456" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms2__io__mod_1ga484c850b71e5a98392b9d0fc21f4813c" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical shuffle</definition>
+        <argsstring></argsstring>
+        <name>shuffle</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Flag indicating whether to use the netcdf shuffle filter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="463" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="463" bodyend="463"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms2__io__mod_1ga3628d0c71f1136ec7970df3f1c9717cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_0d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner)</argsstring>
+        <name>compressed_read_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="27" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="29" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga4e1a1a36d87cbd10b1cf8ea5ef32b3fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_1d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_read_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="52" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="54" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga531447a7c5dbf4712cfb36ff0c0ef6d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_2d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_read_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="80" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="82" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga420a58318801bd6bbb814d9f338edad4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_3d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_read_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="108" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="110" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga9981bedcd9e0ff5eb1cc7a80df93bca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_4d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_read_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="136" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="138" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga3f8f517e73a2a8cff77f855fb75ca957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_read_5d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_read_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain reads in data from the netcdf file and broadcasts the data to the rest of the ranks. This routine may only be used with variables that are &quot;compressed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the read in data will be stored.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" line="164" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_read.inc" bodystart="166" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga29d8211a8db30e21e39c77eccdb5b106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_0d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner)</argsstring>
+        <name>compressed_write_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="28" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="30" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga4e17a109b16f1b0989654cdceb1d6587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_0d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner)</argsstring>
+        <name>compressed_write_0d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="56" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="58" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga836fd5af6c087b865965479e6c5d07ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_1d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="80" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="82" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga0326e0dee8e43c01c7c88c28ed27936a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_1d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_1d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="651" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="653" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaa20655dcffef2fd19610ae614ce85b67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_2d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="190" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="192" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga7e238d0d9af000d6a6ead42b23d66068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_2d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_2d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="678" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="680" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga0eaa98362955a30581c68990d8f579ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_3d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="310" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="312" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gad68926bac45a9efeacc252870ba8356f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_3d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_3d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="704" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="706" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga641fe0666a6176dc5e62cc571db474a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_4d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="438" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="440" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga86ef83a25711def0650dbe4a307100cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_4d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_4d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="730" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="732" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga36875c990126e5e8c6e94bea49e51910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_5d</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>For variables without a compressed dimension, this routine simply wraps netcdf_write data. If the variable does have a compressed axis, the I/O root gathers the data from the rest of the ranks and then writes the combined data to the netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="546" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="548" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga1d428457f2ddc55e6ab2141bcdb799f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine compressed_write_5d_wrap</definition>
+        <argsstring>(fileobj, variable_name, cdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>compressed_write_5d_wrap</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>cdata</type>
+          <defname>cdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compressed data that will be gathered and written to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" line="756" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/compressed_write.inc" bodystart="758" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga2b3ace3c8197fe3c10c4542d22eb3e52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_0d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner)</argsstring>
+        <name>domain_read_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="29" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="30" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gab23fa1f4760ccdf384890c293e187854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_1d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_read_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="55" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="57" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gadfb3990c47a612b195c65935e374dd87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_2d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_read_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="86" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="88" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaa00033fd60c5e3fc2a21d77e9de60c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_3d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_read_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="287" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="289" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gae23552b57e4f58bd3ed938dd0f967fe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_4d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_read_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="492" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="494" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaeeab4f13a263036f8e6e0eb539bd2106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_read_5d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_read_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>I/O domain root reads in a domain decomposed variable at a specific unlimited dimension level and scatters the data to the rest of the ranks using its I/O compute domain indices. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be read out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" line="730" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_read.inc" bodystart="732" bodyend="961"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga8be344419c84ad080a94baf2ec140689" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_0d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner)</argsstring>
+        <name>domain_write_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="28" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="29" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga58e37ba07bf0b390e40202c3fa8e3c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_1d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_write_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="52" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="54" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga9d0c062fd46e3d6ad13e4fbca6d32b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_2d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_write_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot; using mpp_gather. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="82" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="84" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga3364c0bdbd92a2acb4fe1651d8900924" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_3d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_write_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot; using mpp_gather. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="261" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="263" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga49dafd6294b8ecf1d6543462a9a75435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_4d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_write_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="443" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="445" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga6f4a82d59156a41e49b3258dce564484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine domain_write_5d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>domain_write_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Gather &quot;compute&quot; domain data on the I/O root rank and then have the I/O root write out the data that spans the &quot;global&quot; domain. This routine may only be used with variables that are &quot;domain
+        decomposed&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="744" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="746" bodyend="1037"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gab2efb88539d9a05da43d95a501ed7e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms2_io_mod::fms2_io_init</definition>
+        <argsstring>()</argsstring>
+        <name>fms2_io_init</name>
+        <briefdescription>
+<para>Reads the fms2_io_nml. Needs to be called prior to any usage of fms2_io_mod. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Check if the module has already been initialized</para><para>Call initialization routines that this module depends on</para><para>Read the namelist</para><para>Send the namelist variables to their respective modules</para><para>Mark the fms2_io as initialized </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="470" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="471" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga66097da66cf90ce803be71741f727ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine netcdf_mpi_write_2d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>netcdf_mpi_write_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Write 2D data using NetCDF MPI. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="1041" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="1042" bodyend="1144"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga9d16d789f7b644c6b0e5ac829506bcf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine netcdf_mpi_write_3d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>netcdf_mpi_write_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Write 3D data using NetCDF MPI. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="1148" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="1149" bodyend="1281"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaccd0816d0d22f8dc50575c28c1840f56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine netcdf_mpi_write_4d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>netcdf_mpi_write_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Write 4D data using NetCDF MPI. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="1285" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="1286" bodyend="1433"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga099cc50bc162929b9a4cc3187ef3dfd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine netcdf_mpi_write_5d</definition>
+        <argsstring>(fileobj, variable_name, vdata, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>netcdf_mpi_write_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Write 5D data using NetCDF MPI. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written out to the netcdf file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level for the unlimited dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" line="1437" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/domain_write.inc" bodystart="1438" bodyend="1600"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaf1bed603cb37e8b18ceda6de55b82a85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_0d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga55402102f24dd0d5cc6fb32b12b3bc3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_1d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="49" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaf94f6d6cdfe4800f51801a6c75b76349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_2d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="72" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga395c328328b146f85e12848b0ed9990f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_3d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="89" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="92" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaa775ce7b118579c475639aae90f85a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_4d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="109" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="112" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga77654602f154b728860340ed6c25aa75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_domain_restart_variable_5d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_domain_restart_variable_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" line="129" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_domain_restart_variable.inc" bodystart="132" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaec7b9175d6a60678f6d0d7952d7bc0b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_0d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gacbd7b9f7c72c43ae69d816d76c402671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_1d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="49" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga5e0eede830873c479cea4eba0fd1b694" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_2d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="66" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="69" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga7eee9dc8ac739e02de7161d3a30b8291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_3d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="86" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="89" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga27784eacea55e629229ecd64be8874b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_4d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="106" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="109" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gad887d352fbac5254b9452a6825c2258c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_unstructured_domain_restart_variable_5d</definition>
+        <argsstring>(fileobj, variable_name, vdata, dimensions, is_optional, chunksizes)</argsstring>
+        <name>register_unstructured_domain_restart_variable_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prevent errors in read-only files if a variable does not exist.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable This feature is only available for netcdf4 files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" line="126" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_unstructured_domain_restart_variable.inc" bodystart="129" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaa6eafb821917f92e937c532c72711b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_variable_attribute_0d</definition>
+        <argsstring>(fileobj, variable_name, attribute_name, attribute_value, str_len)</argsstring>
+        <name>register_variable_attribute_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>attribute_name</type>
+          <defname>attribute_name</defname>
+        </param>
+        <param>
+          <type>attribute_value</type>
+          <defname>attribute_value</defname>
+        </param>
+        <param>
+          <type>str_len</type>
+          <defname>str_len</defname>
+        </param>
+        <briefdescription>
+<para>Add an attribute to a variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Attribute name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Attribute value</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_variable_attribute.inc" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_variable_attribute.inc" bodystart="28" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga0a9fc35686f9fdfb6b798ad426ff9b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine register_variable_attribute_1d</definition>
+        <argsstring>(fileobj, variable_name, attribute_name, attribute_value, str_len)</argsstring>
+        <name>register_variable_attribute_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>attribute_name</type>
+          <defname>attribute_name</defname>
+        </param>
+        <param>
+          <type>attribute_value</type>
+          <defname>attribute_value</defname>
+        </param>
+        <param>
+          <type>str_len</type>
+          <defname>str_len</defname>
+        </param>
+        <briefdescription>
+<para>Add an attribute to a variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Attribute name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Attribute value</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_variable_attribute.inc" line="138" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/register_variable_attribute.inc" bodystart="140" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga74fa974dcdf54067f5e5fca7398f3165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_0d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, broadcast)</argsstring>
+        <name>unstructured_domain_read_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="25" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="32" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaf9324c7dd7313fbc70032a18b57162e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_1d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, edge_lengths, broadcast)</argsstring>
+        <name>unstructured_domain_read_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="55" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="62" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gaa2b3d5b924f68b85863b3789d2e2fb0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_2d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, edge_lengths, broadcast)</argsstring>
+        <name>unstructured_domain_read_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="88" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="95" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga3ee6d0fa0a6c2b4d7063d23eda77bcef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_3d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, edge_lengths, broadcast)</argsstring>
+        <name>unstructured_domain_read_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="121" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="128" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga0028ca353c1480ff45a30f409cebbb22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_4d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, edge_lengths, broadcast)</argsstring>
+        <name>unstructured_domain_read_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="161" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga96e1c2ff2bb6d1fc6035cb4eed2c8c73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_read_5d</definition>
+        <argsstring>(fileobj, variable_name, buf, unlim_dim_level, corner, edge_lengths, broadcast)</argsstring>
+        <name>unstructured_domain_read_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>buf</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that the data will be read into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be read in each dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the data will be broadcasted to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" line="187" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_read.inc" bodystart="194" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga72c3477d33efc2e8462ff354bada11bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_0d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner)</argsstring>
+        <name>unstructured_domain_write_0d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="28" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gada15a55c252bae3b4a77a993ccc00aaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_1d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>unstructured_domain_write_1d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="45" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="47" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga0158283c350685688b388c1247c74e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_2d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>unstructured_domain_write_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="71" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga491251a1d73294bd8fc1690783ed873b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_3d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>unstructured_domain_write_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="93" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="95" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1ga7bcc4ef8e6ca2361837d3aecdd70bfd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_4d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>unstructured_domain_write_4d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="117" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="119" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms2__io__mod_1gae9193bb10afee1aacf676f5730dfa59e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine unstructured_domain_write_5d</definition>
+        <argsstring>(fileobj, variable_name, variable_data, unlim_dim_level, corner, edge_lengths)</argsstring>
+        <name>unstructured_domain_write_5d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_data</type>
+          <defname>variable_data</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>corner</type>
+          <defname>corner</defname>
+        </param>
+        <param>
+          <type>edge_lengths</type>
+          <defname>edge_lengths</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data that will be written.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">corner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of starting indices describing where the data will be written to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edge_lengths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements that will be written in each dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" line="141" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/unstructured_domain_write.inc" bodystart="143" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This module supports netCDF I/O operations. </para>    </briefdescription>
+    <detaileddescription>
+<para>fms2_io_mod is the top level module that provides open, close, read, and write interfaces to the NetCDF package. This module defines public &quot;aliases&quot;(interfaces) to select procedures in fms_netcdf_domain_io_mod for reading/writing data on structured grid domains; fms_netcdf_unstructured_domain_io_mod for reading/writing data on unstructured grid domains; netcdf_io_mod for reading/writing data that is not parallelized with domain decomposition.</para><para>Subroutines and functions in fms_netcdf_domain_io_mod, fms_netcdf_unstructured_domain_io_mod, and netcdf_io_mod are intended for internally use only. We highly recommended to only call public interfaces defined in this module.</para><para>Before any fms2_io_mod I/O operations, a file derived type must be declared. Three file derived types are currently available and are described below. Any instances of these three file types are referred to as &quot;fileobj&quot; in this module.</para><para><itemizedlist>
+<listitem><para>FmsNetcdfFile_t: provides limited number of wrapper procedures to the netCDF4 library. If the user provides a pelist to procedures compatible with this type, only the root rank of the pelist performs I/O operations by calling the NetCDF library: the root rank either boradcasts the read-in data to the remaining ranks in the pelist, or gathers data from the remaining ranks in the pelist before writing. If a pelist is not provided, all ranks calling the procedure will perform the IO operation.</para></listitem><listitem><para>FmsNetcdfDomainFile_t: extends upon FmsNetcdfFile_t and adds supports for &quot;domain-decomposed&quot; reads and writes. Here, &quot;domain decomposed&quot; refers to data that is partitioned into subdomains of the decomposed global domain, and each MPI rank holds its portion of the global data. The users must provide a domain of type Domain2D from mpp_domains_mod when initializing this file object. To specify pe&apos;s for performing the IO operations, see mpp_set_io_layout</para></listitem><listitem><para>FmsNetcdfUnstructuredDomainFile_t: also extends upon FmsNetcdfFile_t and adds support for “domain-decomposed” reads/writes for data decomposed on subdomains of unstructured grids The users must provide a domain of type DomainUG from mpp_domains_mod when initializing this file object.</para></listitem></itemizedlist>
+</para><para>See mpp_domains_mod documentation for more information on creating a domain decomposition using FMS.</para><para>When using the FmsNetcdfDomainFile_t or the FmsNetcdfUnstructuredDomainFile_t types, the io_layout controls how the IO operations are parallelized. See mpp_domains_mod for more information (TODO!).</para><para>Besides standard open/close/read/write operations, this module also provides interfaces for writing and reading &quot;diskless&quot; netcdf files via the blackboxio module. This module is used mainly for testing purposes, and should not be used in production.</para><para>Users can specify additional I/O parameters with the fms2_io_nml namelist which allows users to specify the following NetCDF library parameters: Netcdf file format, chunk_size, deflate_level, shuffle. Note, fms2_io accepts the Netcdf file format namelist values:&quot;64bit&quot;, &quot;class&quot;, and &quot;netcdf4&quot;. For more information on optimizing NetCDF writing operation, see <ulink url="https://docs.unidata.ucar.edu/netcdf-c/current/file_format_specifications.html">https://docs.unidata.ucar.edu/netcdf-c/current/file_format_specifications.html</ulink></para><para><simplesect kind="note"><para>The legacy IO modules, fms_io_mod and mpp_io_mod, are no longer available. If converting legacy code from fms_io/mpp_io to fms2_io, please refer to the migration guide at <ref refid="readme_8md_source" kindref="compound">fms2_io/readme.md</ref>. </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

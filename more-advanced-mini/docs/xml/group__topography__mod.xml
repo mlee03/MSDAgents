@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__topography__mod" kind="group">
+    <compoundname>topography_mod</compoundname>
+    <title>topography_mod</title>
+    <innerclass refid="interfacetopography__mod_1_1get__ocean__frac" prot="private">topography_mod::get_ocean_frac</innerclass>
+    <innerclass refid="interfacetopography__mod_1_1get__ocean__mask" prot="private">topography_mod::get_ocean_mask</innerclass>
+    <innerclass refid="interfacetopography__mod_1_1get__topog__mean" prot="private">topography_mod::get_topog_mean</innerclass>
+    <innerclass refid="interfacetopography__mod_1_1get__water__frac" prot="private">topography_mod::get_water_frac</innerclass>
+    <innerclass refid="interfacetopography__mod_1_1get__water__mask" prot="private">topography_mod::get_water_mask</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__topography__mod_1gabc2f2f86cf3ca8a954db6a721979ee1d" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter compute_stdev</definition>
+        <argsstring></argsstring>
+        <name>compute_stdev</name>
+        <initializer>= 123</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="256" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="256" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gab17721304b5430ba0b7bc1e1a990ec1a" prot="private" static="no" mutable="no">
+        <type>logical, dimension(2)</type>
+        <definition>logical, dimension(2) file_is_opened</definition>
+        <argsstring></argsstring>
+        <name>file_is_opened</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="225" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="225" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gae4d1dece93092ed78e188eb1da5bba60" prot="private" static="no" mutable="no">
+        <type>type(fmsnetcdffile_t), dimension(2)</type>
+        <definition>type(fmsnetcdffile_t), dimension(2) fileobj</definition>
+        <argsstring></argsstring>
+        <name>fileobj</name>
+        <briefdescription>
+<para>needed for fms2_io </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="226" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1ga01d0432338eb4f3eae9351ca1cb683b1" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ipts</definition>
+        <argsstring></argsstring>
+        <name>ipts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="255" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="255" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gaad8d4e31d2c23453486d91a7aa9ca2e0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer jpts</definition>
+        <argsstring></argsstring>
+        <name>jpts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="255" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="264" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="264" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gaa9525274c5b5e98690676d2824c0fc66" prot="private" static="no" mutable="no">
+        <type>character(len=fms_path_len)</type>
+        <definition>character(len=fms_path_len) topog_file</definition>
+        <argsstring></argsstring>
+        <name>topog_file</name>
+        <initializer>= &apos;DATA/navy_topography.data&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="219" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="219" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1ga57bef0abb6b8c68b51b9343aaee849b4" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter topog_index</definition>
+        <argsstring></argsstring>
+        <name>topog_index</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="223" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1ga2c3638afe145ea5420f960a120e6e261" prot="private" static="no" mutable="no">
+        <type>character(len=fms_path_len)</type>
+        <definition>character(len=fms_path_len) water_file</definition>
+        <argsstring></argsstring>
+        <name>water_file</name>
+        <initializer>= &apos;DATA/navy_pctwater.data&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="219" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__topography__mod_1gaa91ee76decad1514df4f3121b8d07cb5" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter water_index</definition>
+        <argsstring></argsstring>
+        <name>water_index</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="224" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="224" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__topography__mod_1gab9d112e1cf5cb4c11eca1db2c4f72f45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function topography_mod::open_topog_file</definition>
+        <argsstring>()</argsstring>
+        <name>open_topog_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="284" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="285" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="group__topography__mod_1gade4c517f0e92162b5a375c1aadaeefb6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function topography_mod::open_water_file</definition>
+        <argsstring>()</argsstring>
+        <name>open_water_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="311" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="312" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="group__topography__mod_1ga1507b133d0b6d8fcc8767a45cb8b826e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine topography_mod::read_namelist</definition>
+        <argsstring></argsstring>
+        <name>read_namelist</name>
+        <briefdescription>
+<para>Reads the namelist file, write namelist to log file, and initializes constants. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="343" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="344" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="group__topography__mod_1ga3cb105e8714bc35f304ba71cfd89c15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public topography_mod::topography_init</definition>
+        <argsstring>()</argsstring>
+        <name>topography_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" line="272" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/topography/topography.F90" bodystart="273" bodyend="276"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Routines for creating land surface topography fields and land-water masks for latitude-longitude grids. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Bruce Wyman</para></simplesect>
+This module generates realistic mountains and land-water masks on a specified latitude-longitude grid by interpolating from the 1/6 degree Navy mean topography and percent water data sets. The fields that can be generated are mean and standard deviation of topography within the specified grid boxes; and land-ocean (or water) mask and land-ocean (or water) fractional area.</para><para>The interpolation scheme conserves the area-weighted average of the input data by using module horiz_interp.</para><para>The interfaces get_gaussian_topog and gaussian_topog_init are documented in <ref refid="group__gaussian__topog__mod" kindref="compound">gaussian_topog_mod</ref> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

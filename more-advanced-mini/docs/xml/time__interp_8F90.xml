@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="time__interp_8F90" kind="file" language="Fortran">
+    <compoundname>time_interp.F90</compoundname>
+    <includes refid="file__version_8h" local="no">file_version.h</includes>
+    <includes local="yes">time_interp_r4.fh</includes>
+    <includes local="yes">time_interp_r8.fh</includes>
+    <incdepgraph>
+      <node id="993">
+        <label>time_interp_r4.fh</label>
+      </node>
+      <node id="991">
+        <label>/home/Ryan.Mulhall/FMS-1/time_interp/time_interp.F90</label>
+        <link refid="time__interp_8F90"/>
+        <childnode refid="992" relation="include">
+        </childnode>
+        <childnode refid="993" relation="include">
+        </childnode>
+        <childnode refid="994" relation="include">
+        </childnode>
+      </node>
+      <node id="994">
+        <label>time_interp_r8.fh</label>
+      </node>
+      <node id="992">
+        <label>file_version.h</label>
+        <link refid="file__version_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacetime__interp__mod_1_1time__interp" prot="private">time_interp_mod::time_interp</innerclass>
+    <innernamespace refid="namespacetime__interp__mod">time_interp_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>time_interp_mod<sp/>time_interp_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>time_interp</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Computes<sp/>a<sp/>weight<sp/>and<sp/>dates/indices<sp/>for<sp/>linearly<sp/>interpolating<sp/>between<sp/>two<sp/>dates.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!&gt;<sp/>@author<sp/>Bruce<sp/>Wyman</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>A<sp/>time<sp/>type<sp/>is<sp/>converted<sp/>into<sp/>two<sp/>consecutive<sp/>dates<sp/>plus</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>a<sp/>fraction<sp/>representing<sp/>the<sp/>distance<sp/>between<sp/>the<sp/>dates.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/>This<sp/>information<sp/>can<sp/>be<sp/>used<sp/>to<sp/>interpolate<sp/>between<sp/>the<sp/>dates.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/>The<sp/>dates<sp/>may<sp/>be<sp/>expressed<sp/>as<sp/>years,<sp/>months,<sp/>or<sp/>days<sp/>or</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!<sp/>as<sp/>indices<sp/>in<sp/>an<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>time_interp_mod</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">time_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>,<sp/><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref>,<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>,<sp/><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__time__manager__mod_1ga462dc68f1995e86d41808fb5526bf9bf" kindref="member">days_in_year</ref>,<sp/><ref refid="group__time__manager__mod_1ga92f8585eafca73420566a92fbcd6b51a" kindref="member">days_in_month</ref>,<sp/><ref refid="group__time__manager__mod_1ga0cd42a0c4bcdd97f4ad94d585adf775c" kindref="member">leap_year</ref>,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__time__manager__mod_1gab6936a9b92f42646ca5942c3de01cc6c" kindref="member">time_type_to_real</ref>,<sp/><ref refid="interfacetime__manager__mod_1_1real__to__time__type" kindref="compound">real_to_time_type</ref>,<sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__time__manager__mod_1gad4d5cb71942ebf3f1bb9d4a29a6d9a04" kindref="member">get_calendar_type</ref>,<sp/>julian,<sp/>gregorian,<sp/>no_calendar,<sp/>&amp;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(+),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(-),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(&gt;),<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(&lt;),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(<sp/>//<sp/>),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(<sp/>/<sp/>),<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(&gt;=),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(&lt;=),<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(<sp/>*<sp/>),<sp/>&amp;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(==),<sp/><ref refid="group__time__manager__mod_1ga56c87c0e8dd197bb93aa694fdc327eb4" kindref="member">print_date</ref>,<sp/><ref refid="group__time__manager__mod_1gad9a5f9ab6f649da9aafe32b22b1be0a5" kindref="member">print_time</ref>,&amp;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__time__manager__mod_1gaf822bea03a375fc7a3f1d8d1fd82e187" kindref="member">time_list_error</ref>,<sp/><ref refid="group__time__manager__mod_1ga3d16305bd99a9dc1db550c26c0d754df" kindref="member">date_to_string</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1ga172901d39c9b0cf14aa83b1e94fdf21b" kindref="member">stdout</ref>,<sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__fms__mod_1ga6695d901d751a75f108c27aa385d9579" kindref="member">fms_error_handler</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/>time_interp_init,<sp/><ref refid="interfacetime__interp__mod_1_1time__interp" kindref="compound">time_interp</ref>,<sp/><ref refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" kindref="member">fraction_of_year</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment">!&gt;<sp/>Returns<sp/>a<sp/>weight<sp/>and<sp/>dates<sp/>or<sp/>indices<sp/>for<sp/>interpolating<sp/>between<sp/>two<sp/>dates.<sp/>The</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">!!<sp/>interface<sp/>fraction_of_year<sp/>is<sp/>provided<sp/>for<sp/>backward<sp/>compatibility<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="57"><highlight class="comment">!!<sp/>previous<sp/>version.\n</highlight></codeline>
+<codeline lineno="58"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">!!<sp/>Returns<sp/>weight<sp/>by<sp/>interpolating<sp/>Time<sp/>between<sp/>Time1<sp/>and<sp/>Time2.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">!!<sp/>i.e.<sp/>weight<sp/>=<sp/>(Time-Time1)/(Time2-Time1)</highlight></codeline>
+<codeline lineno="61"><highlight class="comment">!!<sp/>Time1<sp/>and<sp/>Time2<sp/>may<sp/>be<sp/>specified<sp/>by<sp/>any<sp/>of<sp/>several<sp/>different<sp/>ways,</highlight></codeline>
+<codeline lineno="62"><highlight class="comment">!!<sp/>which<sp/>is<sp/>the<sp/>reason<sp/>for<sp/>multiple<sp/>interfaces.\n</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">!!<sp/>-<sp/>If<sp/>Time1<sp/>and<sp/>Time2<sp/>are<sp/>the<sp/>begining<sp/>and<sp/>end<sp/>of<sp/>the<sp/>year<sp/>in<sp/>which</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">!!<sp/><sp/><sp/>Time<sp/>falls,<sp/>use<sp/>first<sp/>interface.\n</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">!!<sp/>-<sp/>If<sp/>Time1<sp/>and<sp/>Time2<sp/>fall<sp/>on<sp/>year<sp/>boundaries,<sp/>use<sp/>second<sp/>interface.\n</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">!!<sp/>-<sp/>If<sp/>Time1<sp/>and<sp/>Time2<sp/>fall<sp/>on<sp/>month<sp/>boundaries,<sp/>use<sp/>third.\n</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">!!<sp/>-<sp/>If<sp/>Time1<sp/>and<sp/>Time2<sp/>fall<sp/>on<sp/>day<sp/>boundaries,<sp/>use<sp/>fourth.\n</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="73"><highlight class="comment">!!<sp/>-<sp/>If<sp/>Time1<sp/>and<sp/>Time2<sp/>are<sp/>consecutive<sp/>elements<sp/>of<sp/>an<sp/>assending<sp/>list,<sp/>use<sp/>fifth.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">!!<sp/><sp/><sp/>The<sp/>fifth<sp/>also<sp/>returns<sp/>the<sp/>indices<sp/>of<sp/>Timelist<sp/>between<sp/>which<sp/>Time<sp/>falls.\n</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">!!<sp/>-<sp/>The<sp/>sixth<sp/>interface<sp/>is<sp/>for<sp/>cyclical<sp/>data.<sp/>Time_beg<sp/>and<sp/>Time_end<sp/>specify<sp/>the</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">!!<sp/><sp/><sp/>begining<sp/>and<sp/>end<sp/>of<sp/>a<sp/>repeating<sp/>period.<sp/>In<sp/>this<sp/>case:&lt;br&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight<sp/>=<sp/>(Time_adjusted<sp/>-<sp/>Time1)<sp/>/<sp/>(Time2<sp/>-<sp/>Time1)</highlight></codeline>
+<codeline lineno="79"><highlight class="comment">!!<sp/>&lt;br&gt;Where:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">!!<sp/>@code{.F90}</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time1<sp/>=<sp/>Timelist(index1)</highlight></codeline>
+<codeline lineno="82"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time2<sp/>=<sp/>Timelist(index2)</highlight></codeline>
+<codeline lineno="83"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time_adjusted<sp/>=<sp/>Time<sp/>-<sp/>N*Period</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Period<sp/>=<sp/>Time_end-Time_beg</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="86"><highlight class="comment">!!<sp/>N<sp/>is<sp/>between<sp/>(Time-Time_end)/Period<sp/>and<sp/>(Time-Time_beg)/Period</highlight></codeline>
+<codeline lineno="87"><highlight class="comment">!!<sp/>That<sp/>is,<sp/>N<sp/>is<sp/>the<sp/>integer<sp/>that<sp/>results<sp/>in<sp/>Time_adjusted<sp/>that<sp/>is<sp/>between<sp/>Time_beg<sp/>and<sp/>Time_end.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="89"><highlight class="comment">!!<sp/>&lt;br&gt;Example<sp/>usages:</highlight></codeline>
+<codeline lineno="90"><highlight class="comment">!!<sp/>@code{.F90}</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>weight<sp/>)</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>weight,<sp/>year1,<sp/>year2<sp/>)</highlight></codeline>
+<codeline lineno="93"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>weight,<sp/>year1,<sp/>year2,<sp/>month1,<sp/>month2<sp/>)</highlight></codeline>
+<codeline lineno="94"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>weight,<sp/>year1,<sp/>year2,<sp/>month1,<sp/>month2,<sp/>day1,<sp/>day2<sp/>)</highlight></codeline>
+<codeline lineno="95"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>Timelist,<sp/>weight,<sp/>index1,<sp/>index2<sp/>[,<sp/>modtime]<sp/>)</highlight></codeline>
+<codeline lineno="96"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>time_interp(<sp/>Time,<sp/>Time_beg,<sp/>Time_end,<sp/>Timelist,<sp/>weight,<sp/>index1,<sp/>index2</highlight></codeline>
+<codeline lineno="97"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[,correct_leap_year_inconsistency])</highlight></codeline>
+<codeline lineno="98"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="99"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="100"><highlight class="comment">!!<sp/><sp/><sp/>For<sp/>all<sp/>routines<sp/>in<sp/>this<sp/>module<sp/>the<sp/>calendar<sp/>type<sp/>in<sp/>module</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">!!<sp/><sp/><sp/>time_manager<sp/>must<sp/>be<sp/>set.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="103"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>The<sp/>following<sp/>private<sp/>parameters<sp/>are<sp/>set<sp/>by<sp/>this<sp/>module:</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="105"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seconds<sp/>per<sp/>minute<sp/>=<sp/>60</highlight></codeline>
+<codeline lineno="106"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minutes<sp/>per<sp/>hour<sp/><sp/><sp/>=<sp/>60</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hours<sp/><sp/><sp/>per<sp/>day<sp/><sp/><sp/><sp/>=<sp/>24</highlight></codeline>
+<codeline lineno="108"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>months<sp/><sp/>per<sp/>year<sp/><sp/><sp/>=<sp/>12</highlight></codeline>
+<codeline lineno="109"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="110"><highlight class="comment">!!<sp/>@param<sp/>Time<sp/>The<sp/>time<sp/>at<sp/>which<sp/>the<sp/>weight<sp/>is<sp/>computed.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment">!!<sp/>@param<sp/>Time_beg<sp/>For<sp/>cyclical<sp/>interpolation:<sp/>Time_beg<sp/>specifies<sp/>the<sp/>begining<sp/>time<sp/>of<sp/>a<sp/>cycle.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">!!<sp/>@param<sp/>Time_end<sp/>For<sp/>cyclical<sp/>interpolation:<sp/>Time_end<sp/>specifies<sp/>the<sp/>ending<sp/>time<sp/>of<sp/>a<sp/>cycle.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">!!<sp/>@param<sp/>Timelist<sp/>For<sp/>cyclical<sp/>interpolation:<sp/>Timelist<sp/>is<sp/>an<sp/>array<sp/>of<sp/>times<sp/>between<sp/>Time_beg<sp/>and<sp/>Time_end.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Must<sp/>be<sp/>monotonically<sp/>increasing.</highlight></codeline>
+<codeline lineno="115"><highlight class="comment">!!<sp/>@param<sp/>index1<sp/>Timelist(index1)<sp/>=<sp/>The<sp/>largest<sp/>value<sp/>of<sp/>Timelist<sp/>which<sp/>is<sp/>less<sp/>than<sp/>mod(Time,Time_end-Time_beg)</highlight></codeline>
+<codeline lineno="116"><highlight class="comment">!!<sp/>@param<sp/>index2<sp/>Timelist(index2)<sp/>=<sp/>The<sp/>smallest<sp/>value<sp/>of<sp/>Timelist<sp/>which<sp/>is<sp/>greater<sp/>than<sp/>mod(Time,Time_end-Time_beg)</highlight></codeline>
+<codeline lineno="117"><highlight class="comment">!!<sp/>@param<sp/>correct_leap_year_inconsistency<sp/>Turns<sp/>on<sp/>a<sp/>kluge<sp/>for<sp/>an<sp/>inconsistency<sp/>which<sp/>may<sp/>occur<sp/>in<sp/>a<sp/>special<sp/>case.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>When<sp/>the<sp/>modulo<sp/>time<sp/>period<sp/>(i.e.<sp/>Time_end<sp/>-<sp/>Time_beg)<sp/>is<sp/>a<sp/>whole<sp/>number<sp/>of<sp/>years</highlight></codeline>
+<codeline lineno="119"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>is<sp/>not<sp/>a<sp/>multiple<sp/>of<sp/>4,<sp/>and<sp/>the<sp/>calendar<sp/>in<sp/>use<sp/>has<sp/>leap<sp/>years,<sp/>then<sp/>it<sp/>is</highlight></codeline>
+<codeline lineno="120"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>likely<sp/>that<sp/>the<sp/>interpolation<sp/>will<sp/>involve<sp/>mapping<sp/>a<sp/>common<sp/>year<sp/>onto<sp/>a<sp/>leap<sp/>year.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>this<sp/>case<sp/>it<sp/>is<sp/>often<sp/>desirable,<sp/>but<sp/>not<sp/>absolutely<sp/>necessary,<sp/>to<sp/>use<sp/>data<sp/>for</highlight></codeline>
+<codeline lineno="122"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Feb<sp/>28<sp/>of<sp/>the<sp/>leap<sp/>year<sp/>when<sp/>it<sp/>is<sp/>mapped<sp/>onto<sp/>a<sp/>common<sp/>year.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>To<sp/>turn<sp/>this<sp/>on,<sp/>set<sp/>correct_leap_year_inconsistency=.true.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">!!<sp/>@param<sp/>weight<sp/>weight<sp/>=<sp/>(mod(Time,Time_end-Time_beg)<sp/>-<sp/>Timelist(index1))<sp/>/<sp/>(Timelist(index2)<sp/>-<sp/>Timelist(index1))</highlight></codeline>
+<codeline lineno="125"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>time_interp_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="interfacetime__interp__mod_1_1time__interp" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacetime__interp__mod_1_1time__interp" kindref="compound">time_interp</ref></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>time_interp_frac_r8,<sp/><sp/>time_interp_year_r8,<sp/>&amp;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interp_month_r8,<sp/>time_interp_day_r8,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interp_list_r8,<sp/><sp/>time_interp_modulo_r8</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>time_interp_frac_r4,<sp/><sp/>time_interp_year_r4,<sp/>&amp;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interp_month_r4,<sp/>time_interp_day_r4,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interp_list_r4,<sp/><sp/>time_interp_modulo_r4</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="135"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>time_interp_mod</highlight></codeline>
+<codeline lineno="136"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>NONE=0,<sp/>year=1,<sp/>month=2,<sp/>day=3</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/><sp/>secmin<sp/>=<sp/>60,<sp/>minhour<sp/>=<sp/>60,<sp/>hourday<sp/>=<sp/>24,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sechour<sp/>=<sp/>secmin*minhour,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>secday<sp/>=<sp/>secmin*minhour*hourday</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>monyear<sp/>=<sp/>12</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>halfday<sp/>=<sp/>secday/2</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>yrmod,<sp/>momod,<sp/>dymod</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>mod_leapyear</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Include<sp/>variable<sp/>&quot;version&quot;<sp/>to<sp/>be<sp/>written<sp/>to<sp/>log<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;file_version.h&gt;</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>module_is_initialized=.false.</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>perthlike_behavior=.false.</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/>namelist<sp/>/<sp/>time_interp_nml<sp/>/<sp/>perthlike_behavior</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keyword"><sp/>subroutine<sp/></highlight><highlight class="normal">time_interp_init()</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr,<sp/>io,<sp/>logunit</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>module_is_initialized<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">read</highlight><highlight class="normal"><sp/>(input_nml_file,<sp/>time_interp_nml,<sp/>iostat=io)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/>ierr<sp/>=<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>(io,<sp/></highlight><highlight class="stringliteral">&apos;time_interp_nml&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref>(</highlight><highlight class="stringliteral">&quot;TIME_INTERP_MOD&quot;</highlight><highlight class="normal">,<sp/>version)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/>logunit<sp/>=<sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>()</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(logunit,time_interp_nml)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/>module_is_initialized<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">time_interp_init</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="179"><highlight class="comment">!&gt;<sp/>@brief<sp/>Wrapper<sp/>function<sp/>to<sp/>return<sp/>the<sp/>fractional<sp/>time<sp/>into<sp/>the<sp/>current<sp/>year</highlight></codeline>
+<codeline lineno="180"><highlight class="comment">!!<sp/>Always<sp/>returns<sp/>an<sp/>r8_kind,<sp/>conversion<sp/>to<sp/>r4<sp/>will<sp/>be<sp/>done<sp/>implicitly<sp/>if<sp/>needed</highlight></codeline>
+<codeline lineno="181"><highlight class="comment">!&gt;<sp/>@param<sp/>Time<sp/>time<sp/>to<sp/>calculate<sp/>fraction<sp/>with</highlight></codeline>
+<codeline lineno="182"><highlight class="comment">!&gt;<sp/>@return<sp/>real(kind=8)<sp/>fraction<sp/>of<sp/>time<sp/>passed<sp/>in<sp/>current<sp/>year</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keyword"><sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" kindref="member">fraction_of_year</ref><sp/>(Time)</highlight></codeline>
+<codeline lineno="184" refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>time</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" kindref="member">fraction_of_year</ref></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacetime__interp__mod_1_1time__interp" kindref="compound">time_interp</ref><sp/>(<sp/>time,<sp/><ref refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" kindref="member">fraction_of_year</ref><sp/>)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__time__interp__mod_1ga5a119e48f297281530019236621287c8" kindref="member">fraction_of_year</ref></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="192"><highlight class="comment">!&gt;<sp/>Given<sp/>an<sp/>array<sp/>of<sp/>times<sp/>in<sp/>ascending<sp/>order<sp/>and<sp/>a<sp/>specific<sp/>time<sp/>returns</highlight></codeline>
+<codeline lineno="193"><highlight class="comment">!!<sp/>values<sp/>of<sp/>index1<sp/>and<sp/>index2<sp/>such<sp/>that<sp/>the<sp/>Timelist(index1)&lt;=Time<sp/>and</highlight></codeline>
+<codeline lineno="194"><highlight class="comment">!!<sp/>Time&lt;=Timelist(index2),<sp/>and<sp/>index2=index1+1</highlight></codeline>
+<codeline lineno="195"><highlight class="comment">!!<sp/>index1=0,<sp/>index2=1<sp/>or<sp/>index=n,<sp/>index2=n+1<sp/>are<sp/>returned<sp/>to<sp/>indicate<sp/>that</highlight></codeline>
+<codeline lineno="196"><highlight class="comment">!!<sp/>the<sp/>time<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__time__interp__mod_1ga2ff024fdfe3ac7dfd4fdb56fa741c86e" kindref="member">bisect</ref>(Timelist,Time,index1,index2)</highlight></codeline>
+<codeline lineno="198" refid="group__time__interp__mod_1ga2ff024fdfe3ac7dfd4fdb56fa741c86e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/><sp/>,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>Timelist(:)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/><sp/>,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>Time</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>index1,<sp/>index2</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,il,iu,n,i1,i2</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>n<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(timelist(:))</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time==timelist(1))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>1<sp/>;<sp/>i2<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time==timelist(n))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>n<sp/>;<sp/>i2<sp/>=<sp/>n+1</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>il<sp/>=<sp/>0;<sp/>iu=n+1</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(iu-il<sp/>&gt;<sp/>1)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>(iu+il)/2</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timelist(i)<sp/>&gt;<sp/>time)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iu<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>il<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>il<sp/>;<sp/>i2<sp/>=<sp/>il+1</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(index1))<sp/>index1<sp/>=<sp/>i1</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(index2))<sp/>index2<sp/>=<sp/>i2</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__time__interp__mod_1ga2ff024fdfe3ac7dfd4fdb56fa741c86e" kindref="member">bisect</ref></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>private<sp/>routines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">!#######################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keyword"><sp/>function<sp/></highlight><highlight class="normal">year_midpt<sp/>(yr)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>yr</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)<sp/><sp/><sp/><sp/>::<sp/>year_midpt,<sp/>year_beg,<sp/>year_end</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/>year_beg<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr<sp/><sp/>,<sp/>1,<sp/>1)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/>year_end<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr+1,<sp/>1,<sp/>1)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/>year_midpt<sp/>=<sp/>(year_beg<sp/>+<sp/>year_end)<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>function<sp/></highlight><highlight class="normal">year_midpt</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword"><sp/>function<sp/></highlight><highlight class="normal">month_midpt<sp/>(yr,<sp/>mo)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>yr,<sp/>mo</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>)<sp/><sp/><sp/><sp/>::<sp/>month_midpt,<sp/>month_beg,<sp/>month_end</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>---<sp/>beginning<sp/>of<sp/>this<sp/>month<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/>month_beg<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr,<sp/>mo,<sp/>1)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>---<sp/>start<sp/>of<sp/>next<sp/>month<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mo<sp/>&lt;<sp/>12)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>month_end<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr,<sp/>mo+1,<sp/>1)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>month_end<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr+1,<sp/>1,<sp/>1)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/>month_midpt<sp/>=<sp/>(month_beg<sp/>+<sp/>month_end)<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keyword"><sp/>end<sp/>function<sp/></highlight><highlight class="normal">month_midpt</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">set_modtime<sp/>(Tin,<sp/>modtime)<sp/></highlight><highlight class="keyword">result</highlight><highlight class="normal"><sp/>(Tout)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>Tin</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>modtime</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>Tout</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se,<sp/>mtime</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(modtime))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>mtime<sp/>=<sp/>modtime</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>mtime<sp/>=<sp/>none</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>case</highlight><highlight class="normal"><sp/>(mtime)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(none)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tout<sp/>=<sp/>tin</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(year)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref><sp/>(tin,<sp/>yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yr<sp/>=<sp/>yrmod</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>correct<sp/>leap<sp/>year<sp/>dates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.mod_leapyear<sp/>.and.<sp/>mo<sp/>==<sp/>2<sp/>.and.<sp/>dy<sp/>&gt;<sp/>28)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mo<sp/>=<sp/>3;<sp/>dy<sp/>=<sp/>dy-28</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tout<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(month)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref><sp/>(tin,<sp/>yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yr<sp/>=<sp/>yrmod;<sp/>mo<sp/>=<sp/>momod</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tout<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(day)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref><sp/>(tin,<sp/>yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yr<sp/>=<sp/>yrmod;<sp/>mo<sp/>=<sp/>momod;<sp/>dy<sp/>=<sp/>dymod</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tout<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(yr,<sp/>mo,<sp/>dy,<sp/>hr,<sp/>mn,<sp/>se)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>function<sp/></highlight><highlight class="normal">set_modtime</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">error_handler(string)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>string</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;time_interp_mod&apos;</highlight><highlight class="normal">,<sp/>trim(string),<sp/>fatal)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">error_handler</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;time_interp_r4.fh&quot;</highlight></codeline>
+<codeline lineno="307"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;time_interp_r8.fh&quot;</highlight></codeline>
+<codeline lineno="308"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">time_interp_mod</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="311"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/time_interp/time_interp.F90"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2849 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__diag__file__object__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_diag_file_object_mod</compoundname>
+    <innerclass refid="structfms__diag__file__object__mod_1_1fmsdiagfile__type" prot="private">fms_diag_file_object_mod::fmsdiagfile_type</innerclass>
+    <innerclass refid="structfms__diag__file__object__mod_1_1fmsdiagfilecontainer__type" prot="private">fms_diag_file_object_mod::fmsdiagfilecontainer_type</innerclass>
+    <innerclass refid="structfms__diag__file__object__mod_1_1subregionalfile__type" prot="private">fms_diag_file_object_mod::subregionalfile_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fms__diag__file__object_8F90_1adca123fb01d80eae0ea699250cf02883" prot="public" static="no" mutable="no">
+        <type>logical, public</type>
+        <definition>logical, public fms_diag_files_object_initialized</definition>
+        <argsstring></argsstring>
+        <name>fms_diag_files_object_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="61" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__file__object_8F90_1af7558cf3ba788496ff0c0d4b772a0ff6" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter var_string_len</definition>
+        <argsstring></argsstring>
+        <name>var_string_len</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="63" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="63" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a932d038946ce1e1ecc237f9f9a918412" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::add_axes</definition>
+        <argsstring>(this, axis_ids, diag_axis, naxis, yaml_id, buffer_id, output_buffers)</argsstring>
+        <name>add_axes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_ids</type>
+          <defname>axis_ids</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <param>
+          <type>naxis</type>
+          <defname>naxis</defname>
+        </param>
+        <param>
+          <type>yaml_id</type>
+          <defname>yaml_id</defname>
+        </param>
+        <param>
+          <type>buffer_id</type>
+          <defname>buffer_id</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <briefdescription>
+<para>Loops through a variable&apos;s axis_ids and adds them to the FMSDiagFile object if they don&apos;t exist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of axes_ids</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag_axis object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">naxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of axis that have been registered</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Yaml id of the field section for this var</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the buffer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffers </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Add the axis to the buffer object </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="821" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="822" bodyend="944"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a02977a1f1bc66a805dddb80228fe5599" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::add_buffer_id</definition>
+        <argsstring>(this, buffer_id)</argsstring>
+        <name>add_buffer_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>buffer_id</type>
+          <defname>buffer_id</defname>
+        </param>
+        <briefdescription>
+<para>Adds a buffer_id to the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer id to add to the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="347" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ada7cab86c4d592f9c6b66d99a0936391" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::add_field_and_yaml_id</definition>
+        <argsstring>(this, new_field_id, yaml_id)</argsstring>
+        <name>add_field_and_yaml_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>new_field_id</type>
+          <defname>new_field_id</defname>
+        </param>
+        <param>
+          <type>yaml_id</type>
+          <defname>yaml_id</defname>
+        </param>
+        <briefdescription>
+<para>Adds a field and yaml ID to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">new_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The field ID to be added to field_ids</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The yaml_id </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="330" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a81fda98f69c3fe4870dd5503c3ccd6b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::add_new_axis</definition>
+        <argsstring>(this, var_axis_id)</argsstring>
+        <name>add_new_axis</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>var_axis_id</type>
+          <defname>var_axis_id</defname>
+        </param>
+        <briefdescription>
+<para>Adds a new axis the list of axis in the diag file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis id of the variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="948" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="949" bodyend="953"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a04c33b90e97738033819848f703e4ae8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::add_start_time</definition>
+        <argsstring>(this, start_time)</argsstring>
+        <name>add_start_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>start_time</type>
+          <defname>start_time</defname>
+        </param>
+        <briefdescription>
+<para>adds the start time to the fileobj </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This should be called from the register field calls. It can be called multiple times (one for each variable) So it needs to make sure that the start_time is the same for each variable. The initial value is the base_time</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">start_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start time passed into register_diag_field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">start_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the start_time sent in is equal to the diag_init_time return because thisstart_time was already set to the diag_init_time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">start_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the start_time sent is is greater than or equal to the start time already in the diag file obj return because either thisstart_time was already updated or the file has start_time defined in the yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>If the thisstart_time is not equal to the diag_init_time from the diag_table thisstart_time was already updated so make sure it is the same for the current variable or error out</para><para>If the thisstart_time is equal to the diag_init_time, simply update it with the start_time and set up the *_output variables </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1045" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1046" bodyend="1095"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a466f7206663ccf442e5635f45d263ea4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::check_buffer_times</definition>
+        <argsstring>(this, output_buffers, diag_fields)</argsstring>
+        <name>check_buffer_times</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <param>
+          <type>diag_fields</type>
+          <defname>diag_fields</defname>
+        </param>
+        <briefdescription>
+<para>Check to ensure that send_data was called at the time step for every output buffer in the file This is only needed when you are output data at every time step. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffers</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag_fields </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1994" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1995" bodyend="2019"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a5676c3e9a1ae143717bd42724654e40a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::check_file_times</definition>
+        <argsstring>(this, time_step, output_buffers, diag_fields, do_not_write)</argsstring>
+        <name>check_file_times</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <param>
+          <type>diag_fields</type>
+          <defname>diag_fields</defname>
+        </param>
+        <param>
+          <type>do_not_write</type>
+          <defname>do_not_write</defname>
+        </param>
+        <briefdescription>
+<para>Determine if it is time to &quot;write&quot; to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model step time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffer. This is needed for error messages!</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag_fields objects</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">do_not_write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. only if this is not a new time step and you are writing at every time step </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1482" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1483" bodyend="1525"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ae834561bc274cfb6931c55b534ebd6d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::close_diag_file</definition>
+        <argsstring>(this, output_buffers, model_end_time, diag_fields)</argsstring>
+        <name>close_diag_file</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <param>
+          <type>model_end_time</type>
+          <defname>model_end_time</defname>
+        </param>
+        <param>
+          <type>diag_fields</type>
+          <defname>diag_fields</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffers This is needed for error checking</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_end_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time that simulation ends</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag fields This is needed for error checking</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The select types are needed here because otherwise the code will go to the wrong close_file routine and things will not close propertly</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keep track of the number of time levels that were written to the file If the file is using the new_file_freq key, it will be closing the file multiple time, so this ensures that we keep a running count This is going be written to the output yaml, after all the files are closed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reset the unlimited dimension level back to 0, in case the fms2io_fileobj is re-used </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1913" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1914" bodyend="1955"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ad36238fc3907b69e9bc37b394c4719c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::define_new_subaxis</definition>
+        <argsstring>(this, var_axis_ids, x_y_axis_id, is_cube_sphere, diag_axis, naxis)</argsstring>
+        <name>define_new_subaxis</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>var_axis_ids</type>
+          <defname>var_axis_ids</defname>
+        </param>
+        <param>
+          <type>x_y_axis_id</type>
+          <defname>x_y_axis_id</defname>
+        </param>
+        <param>
+          <type>is_cube_sphere</type>
+          <defname>is_cube_sphere</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <param>
+          <type>naxis</type>
+          <defname>naxis</defname>
+        </param>
+        <briefdescription>
+<para>Define a new sub axis. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_axis_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Original variable axis ids</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x_y_axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ids of the x and y axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_cube_sphere</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the axis is in the cubesphere</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">naxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of axis current registered</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag_axis object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1002" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1003" bodyend="1039"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ab3bc38598d4f068f84086c6fa099fec1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::does_axis_exist</definition>
+        <argsstring>(this, var_axis_id)</argsstring>
+        <name>does_axis_exist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>var_axis_id</type>
+          <defname>var_axis_id</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable axis id to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Check if the axis already exists, move on </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="983" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="985" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ab02e1fa3cbe7db26de8be45a921b3712" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::dump_file_obj</definition>
+        <argsstring>(this, unit_num)</argsstring>
+        <name>dump_file_obj</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>unit_num</type>
+          <defname>unit_num</defname>
+        </param>
+        <briefdescription>
+<para>writes out internal values for fmsDiagFile_type object </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unit_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>passed in from dump_diag_obj will either be for new log file or stdout </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1099" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1100" bodyend="1119"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aab9a448916fcd95017ea44060c0c01ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::flush_diag_file</definition>
+        <argsstring>(this)</argsstring>
+        <name>flush_diag_file</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Flushes the netcdf file to disk if flush_nc_files is set to .True. in the namelist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1733" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1734" bodyend="1738"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aaa291bd7adcb8b18c20697e8c528997b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_diag_file_object_mod::fms_diag_files_object_init</definition>
+        <argsstring>(files_array)</argsstring>
+        <name>fms_diag_files_object_init</name>
+        <param>
+          <type>files_array</type>
+          <defname>files_array</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">files_array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of diag files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>If the file has a sub_regional, define it as one and allocate the sub_axis_ids array. This will be set in a add_axes</para><para>These will be set in a set_file_domain</para><para>This will be set in a add_axes</para><para>Set the start_time of the file to the base_time and set up the *_output variables </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="218" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="219" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a948b6a77b5384ec706b80009f0a6ae14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(:), allocatable</type>
+        <definition>pure integer function, dimension(:), allocatable fms_diag_file_object_mod::get_buffer_ids</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_buffer_ids</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the buffer_id list from the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returned buffer ids for this file </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1977" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1978" bodyend="1982"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ad26d51827ba1c5ffe1a16d865b249ceb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(:), allocatable</type>
+        <definition>pure integer function, dimension(:), allocatable fms_diag_file_object_mod::get_field_ids</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_field_ids</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of the value of field_ids. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A copy of field_ids</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="527" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="528" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a45fb1eb1e6a3e4093799101ad829edd7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_duration</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_duration</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_duration from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_duration</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="626" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="627" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a9420133a8955fab7f84c2bd83a7a855f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_duration_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_duration_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_duration_units from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_duration_units</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="634" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="635" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a90fee9b135a6d0fb8889b468a748c3f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_file_object_mod::get_file_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_fname from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_fname</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="537" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="538" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a6f2f91fe83b98af13c18fa259bc91878" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_freq from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_freq</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="553" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="554" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ad2f3e2f98e5d82b3f49a3cd559ecdbd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_frequnit</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_frequnit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_frequnit from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_frequnit</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="545" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="546" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aa33929931e77760e889a901920d8402e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=max_str_len) function, dimension(:,:), allocatable</type>
+        <definition>pure character (len=max_str_len) function, dimension(:,:), allocatable fms_diag_file_object_mod::get_file_global_meta</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_global_meta</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_global_meta from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_global_meta</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="650" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="651" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aa7973eef94ffa818c4657b15ba959d1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, dimension(:), allocatable</type>
+        <definition>pure character(len=:) function, dimension(:), allocatable fms_diag_file_object_mod::get_file_metadata_from_model</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_metadata_from_model</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of the value of fileobj. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A copy of fileobj Returns a copy of the value of file_metadata_from_model </para></simplesect>
+<simplesect kind="return"><para>A copy of file_metadata_from_model</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="519" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="520" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a5489b63f5e00c551fd27d9658f680b79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_new_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_new_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_new_file_freq from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_new_file_freq</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="602" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="603" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aa8ce3a88e22c4ce6cfed1eb279297bff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_new_file_freq_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_new_file_freq_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_new_file_freq_units from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_new_file_freq_units</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="610" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="611" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a7eb90b5bf6e6193da0df22115228e2f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>pure type(time_type) function fms_diag_file_object_mod::get_file_start_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_start_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_start_time from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_start_time</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="618" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="619" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a37297f6a36f52f1cab9d40fcff939953" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(subregion_type) function, pointer</type>
+        <definition>type(subregion_type) function, pointer fms_diag_file_object_mod::get_file_sub_region</definition>
+        <argsstring>(obj)</argsstring>
+        <name>get_file_sub_region</name>
+        <param>
+          <type>obj</type>
+          <defname>obj</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_sub_region from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to file_sub_region</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="577" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="578" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aeabc1c957d26b2b5141133c89e84ce9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_file_object_mod::get_file_sub_region_grid_type</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_sub_region_grid_type</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="585" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="587" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a51aad8082071369f6f4e13a0e4529c3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_file_timeunit</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_timeunit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_timeunit from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_timeunit</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="561" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="562" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a24fdaa7ca6e2223cd9dda4be49af0841" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_file_object_mod::get_file_unlimdim</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_unlimdim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_unlimdim from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_unlimdim</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="569" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="570" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a25fbaf753c62dc21ae66bffc45976ee8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, dimension(:), allocatable</type>
+        <definition>pure character (len=:) function, dimension(:), allocatable fms_diag_file_object_mod::get_file_varlist</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_varlist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of file_varlist from the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of file_varlist</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="642" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="643" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a8e1c2c2a5f80ba2990c5115cbaa4f9dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function fms_diag_file_object_mod::get_filename_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_filename_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the time to use to determine the filename, if using a wildcard file name (i.e ocn%4yr%2mo%2dy%2hr) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The time to use when determining the filename</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="452" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="454" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a435a54e86c30e952d52a02cbbf473d91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_id</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of the value of id. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A copy of id</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="479" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="480" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a2f21025ae7f25aece8b1d037c265a53e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, pointer</type>
+        <definition>type(time_type) function, pointer fms_diag_file_object_mod::get_model_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_model_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the model time from the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the model time</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1968" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1970" bodyend="1973"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1af79bbc52dfa56a448148ecfe88787525" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_file_object_mod::get_ndistributedfiles</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_ndistributedfiles</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get number of distributed files that were written. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of distributed files that were written</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1702" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1704" bodyend="1719"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a97ac3614741f9a9aaab9a07fa2dd6797" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>pure type(time_type) function fms_diag_file_object_mod::get_next_next_output</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_next_next_output</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the next_output for the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next_output</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1753" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1755" bodyend="1761"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a82b99c2110187c7fa2d1e2c96966283f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>pure type(time_type) function fms_diag_file_object_mod::get_next_output</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_next_output</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the next_output for the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next_output</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1743" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1745" bodyend="1748"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ac22eb81ad3b6a167a0eb5e7b9d503bb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_file_object_mod::get_num_tiles</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_num_tiles</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the number of tiles in the file&apos;s domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of tiles in the file&apos;s domain</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1682" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1684" bodyend="1697"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a8132e66c7e1ec5a4265997fec33c5d85" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_file_object_mod::get_num_time_levels</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_num_time_levels</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the number of time levels that were actually written to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of time levels that were actually written to the file</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1663" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1665" bodyend="1677"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1af86db51f20e59a45c0873df744f46418" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_number_of_buffers</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_number_of_buffers</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Gets the stored number of buffers from the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returned number of buffers </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1986" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1987" bodyend="1989"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a46e1cba4fdc5238e1ec5e1fffa25e141" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::get_time_ops</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_time_ops</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns a copy of the value of time_ops. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A copy of time_ops</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="487" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="488" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a8257802f42a658252da41474f7cd35c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_file_object_mod::get_unlim_dimension_level</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_unlim_dimension_level</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the unlimited dimension level that is in the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The unlimited dimension</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1724" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1726" bodyend="1729"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a6557586afc34d7e65bb9ad78b0e67aa5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::get_write_on_this_pe</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_write_on_this_pe</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Query for the write_on_this_pe member of the diag file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the write_on_this_pe member of the diag file object</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="970" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="972" bodyend="978"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a5bd85988a092af1ebb016b6b7337003a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_diag_yaml_file</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_diag_yaml_file</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Logical function to determine if the variable diag_yaml_file has been allocated or associated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if diag_yaml_file exists .False. if diag_yaml has not been set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="445" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="446" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a2d19f0f77f6d371ced65e9ba4705e5e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_field_ids</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_field_ids</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Logical function to determine if the variable field_ids has been allocated or associated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if field_ids exists .False. if field_ids has not been set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="472" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="473" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ac0018c301d32a13448ae4290fad437a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_duration</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_duration</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_duration is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_duration is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="749" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="750" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a89d039f4c957981b335df17f2a4ca2d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_duration_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_duration_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_duration_units is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_duration_units is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="757" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="758" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a453b43f604d52cc3378a1f3249316433" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_fname is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_fname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="677" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="678" bodyend="680"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aaf5fe5400833ae637ef9fad5112d8ad7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_freq is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_freq is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="693" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="694" bodyend="696"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a53a9ad9c51bd33edc7e981a14886cece" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_frequnit</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_frequnit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_frequnit is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_frequnit is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="685" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="686" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a8d3de2d1eba703b4dbbb515834fb1d68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_global_meta</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_global_meta</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_global_meta is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_global_meta is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="773" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="774" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ac302166f262c7dc03b77e901ef67a1db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_metadata_from_model</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_metadata_from_model</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Logical function to determine if the variable file_metadata_from_model has been allocated or associated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if file_metadata_from_model exists .False. if file_metadata_from_model has not been set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="431" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="432" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aad61e36b75c7d07c44d049547d92a91c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_new_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_new_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_new_file_freq is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_new_file_freq is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="725" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="726" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aa3412067f865caca0ec1edcdc497f02d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_new_file_freq_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_new_file_freq_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_new_file_freq_units is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_new_file_freq_units is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="733" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="734" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ab42aee19e9f16e8b8d1e6f0b84117912" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_start_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_start_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_start_time is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_start_time is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="741" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="742" bodyend="744"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a6fb7df78f06841fff74ea9d322ccc34e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_sub_region</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_sub_region</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_sub_region is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_sub_region is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="717" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="718" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a7c0a6da2e9dfa84c54e35e0d811692b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_timeunit</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_timeunit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_timeunit is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_timeunit is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="701" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="702" bodyend="704"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a0204de1661e71d988200a04a49fdf4a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_unlimdim</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_unlimdim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_unlimdim is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_unlimdim is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="709" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="710" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a7aa64b54ded8320b90551346bdc37ea3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_file_varlist</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_varlist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if file_varlist is allocated in the yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if file_varlist is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="765" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="766" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aebc2ba2b52616fafe2350328bed6a386" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::has_fileobj</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_fileobj</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Logical function to determine if the variable fileobj has been allocated or associated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if fileobj exists .False. if fileobj has not been set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="438" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="439" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a3c2ed41e6456d5f92bdd27c61f5f80f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::has_send_data_been_called</definition>
+        <argsstring>(this, output_buffers, print_warnings, diag_fields)</argsstring>
+        <name>has_send_data_been_called</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <param>
+          <type>print_warnings</type>
+          <defname>print_warnings</defname>
+        </param>
+        <param>
+          <type>diag_fields</type>
+          <defname>diag_fields</defname>
+        </param>
+        <briefdescription>
+<para>Determine if send_data has been called for any fields in the file. Prints out warnings, if indicated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if send_data has been called for any fields in the file</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffers</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">print_warnings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if printing warnings</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag fields </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="2024" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="2026" bodyend="2053"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ab192a0be1d5aa43fe2291e23f20d0d13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::init_diurnal_axis</definition>
+        <argsstring>(this, diag_axis, naxis, yaml_id)</argsstring>
+        <name>init_diurnal_axis</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <param>
+          <type>naxis</type>
+          <defname>naxis</defname>
+        </param>
+        <param>
+          <type>yaml_id</type>
+          <defname>yaml_id</defname>
+        </param>
+        <briefdescription>
+<para>Initializes a diurnal axis for a fileobj. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This is going to be called for every variable in the file, if the variable is not a diurnal variable it will do nothing. It only defined a diurnal axis once.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag_axis object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">naxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of diag_axis that heve been defined</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID to the variable&apos;s yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="358" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="359" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a59a1221b253f583b2390c0f3185950a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::init_unlim_dim</definition>
+        <argsstring>(this, output_buffers)</argsstring>
+        <name>init_unlim_dim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>output_buffers</type>
+          <defname>output_buffers</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the unlim dimension in the file and in its buffer objects to 0. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_buffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of output buffer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1645" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1646" bodyend="1658"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ae6174646a5d35f2b234b383f6d3ad66a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::is_done_writing_data</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_done_writing_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determines if done writing data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if done writing data</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="668" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="669" bodyend="672"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a87073062d7f8164c8b467f986fd5fef8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::is_field_registered</definition>
+        <argsstring>(this, field_id)</argsstring>
+        <name>is_field_registered</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_id</type>
+          <defname>field_id</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the field to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="321" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a4a9deedeae8dccc9a84558ad96e49a88" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical pure function</type>
+        <definition>logical pure function fms_diag_file_object_mod::is_file_static</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_file_static</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if a file is static. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag indicating if the file is static or not</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1138" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1139" bodyend="1147"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1aee8596f89238073113666f67010a143b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical pure function</type>
+        <definition>logical pure function fms_diag_file_object_mod::is_regional</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_regional</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if a file is regional. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag indicating if the file is regional or not</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1124" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1125" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a4253688f71f5e1822848cbbb1d39602c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::is_time_to_close_file</definition>
+        <argsstring>(this, time_step, force_close)</argsstring>
+        <name>is_time_to_close_file</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <param>
+          <type>force_close</type>
+          <defname>force_close</defname>
+        </param>
+        <briefdescription>
+<para>Determine if it is time to close the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if it is time to close the file</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model step time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">force_close</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if .true. return true </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1453" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1454" bodyend="1468"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a94fdb2131fc899844232f700e13d9306" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_file_object_mod::is_using_collective_writes</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_using_collective_writes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determines whether or not the file is using netcdf collective writes. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical indicating whether or not the file is using netcdf collective writes</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="658" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="659" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1af899d804d3ac9a872269f17dc5752b47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::open_diag_file</definition>
+        <argsstring>(this, time_step, file_is_opened)</argsstring>
+        <name>open_diag_file</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <param>
+          <type>file_is_opened</type>
+          <defname>file_is_opened</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model step time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_is_opened</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.true. if the file was opened in this time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1151" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1152" bodyend="1300"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a13fb17f3792092088ffb66d6cd50fa5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::prepare_for_force_write</definition>
+        <argsstring>(this)</argsstring>
+        <name>prepare_for_force_write</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Prepare the diag file for the force_write. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1635" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1636" bodyend="1641"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ac3721583bc5a82a1bfdd4f4e877b6f01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::set_domain_from_axis</definition>
+        <argsstring>(this, diag_axis, axes)</argsstring>
+        <name>set_domain_from_axis</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <briefdescription>
+<para>Sets the domain and type of domain from the axis IDs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of diag_axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="780" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="781" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a3b4daf462598da150907a0877c087f33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::set_file_domain</definition>
+        <argsstring>(this, domain, type_of_domain)</argsstring>
+        <name>set_file_domain</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>type_of_domain</type>
+          <defname>type_of_domain</defname>
+        </param>
+        <briefdescription>
+<para>Set the domain and the type_of_domain for a file. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine is going to be called once by every variable in the file in register_diag_field. It will update the domain and the type_of_domain if needed and verify that all the variables are in the same domain</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type_of_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fileobj_type to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="792" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="793" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a7b3acb21b3703e1f46d10153415dd9ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::set_file_time_ops</definition>
+        <argsstring>(this, VarYaml, is_static)</argsstring>
+        <name>set_file_time_ops</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>VarYaml</type>
+          <defname>VarYaml</defname>
+        </param>
+        <param>
+          <type>is_static</type>
+          <defname>is_static</defname>
+        </param>
+        <briefdescription>
+<para>Set the time_ops variable in the diag_file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varyaml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable&apos;s yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if variable is static </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="394" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="395" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1acfa408095390bc01dc659f5fad5cb6bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::set_model_time</definition>
+        <argsstring>(this, model_time)</argsstring>
+        <name>set_model_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>model_time</type>
+          <defname>model_time</defname>
+        </param>
+        <briefdescription>
+<para>Set the model time for the diag file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1959" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1960" bodyend="1963"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a4ffe948b693cd82d380a754515fc7476" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::time_to_start_doing_math</definition>
+        <argsstring>(this)</argsstring>
+        <name>time_to_start_doing_math</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if it is time to start doing mathz. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>.True. if it is time to start doing mathz</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1473" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1474" bodyend="1478"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a13acde3f5ec5773820162f4f94cb41ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::update_current_new_file_freq_index</definition>
+        <argsstring>(this, time_step)</argsstring>
+        <name>update_current_new_file_freq_index</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <briefdescription>
+<para>Updates the current_new_file_freq_index if using a new_file_freq. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model step time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1585" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1586" bodyend="1609"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a0b0e220b52c6d71c9119f6576e4ca4e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::update_next_write</definition>
+        <argsstring>(this, time_step)</argsstring>
+        <name>update_next_write</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <briefdescription>
+<para>Set up the next_output and next_next_output variable in a file obj. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current model step time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1613" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1614" bodyend="1631"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ad0c1e0db0eab05a1213a3606d1be9fb7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::update_write_on_this_pe</definition>
+        <argsstring>(this, write_on_this_pe)</argsstring>
+        <name>update_write_on_this_pe</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>write_on_this_pe</type>
+          <defname>write_on_this_pe</defname>
+        </param>
+        <briefdescription>
+<para>This updates write on this pe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">write_on_this_pe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if the current PE is in subregion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="957" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="958" bodyend="965"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ab3399a02d540440f9b870d45547c6879" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_axis_data</definition>
+        <argsstring>(this, diag_axis)</argsstring>
+        <name>write_axis_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag_axis object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1879" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1880" bodyend="1909"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a503f4909edaf38bd6f90417fad7ae4be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_axis_metadata</definition>
+        <argsstring>(this, diag_axis)</argsstring>
+        <name>write_axis_metadata</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag_axis object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1765" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1766" bodyend="1812"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1ac35d375445c6cc273ff4624dc0e5496d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_field_data</definition>
+        <argsstring>(this, field_obj, buffer_obj, unlim_dim_was_increased)</argsstring>
+        <name>write_field_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_obj</type>
+          <defname>field_obj</defname>
+        </param>
+        <param>
+          <type>buffer_obj</type>
+          <defname>buffer_obj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_was_increased</type>
+          <defname>unlim_dim_was_increased</defname>
+        </param>
+        <briefdescription>
+<para>Write out the field data to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag file object to write to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The field object to write from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buffer_obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer object with the data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1407" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1408" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a8b7893d73a1b73976b5ee633648b9426" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_field_metadata</definition>
+        <argsstring>(this, diag_field, diag_axis)</argsstring>
+        <name>write_field_metadata</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_field</type>
+          <defname>diag_field</defname>
+        </param>
+        <param>
+          <type>diag_axis</type>
+          <defname>diag_axis</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag_axis object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1816" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1817" bodyend="1875"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a2a192369732c33c764d386186e55523f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_global_metadata</definition>
+        <argsstring>(this)</argsstring>
+        <name>write_global_metadata</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1304" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1305" bodyend="1331"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a00212dbc3e1fe0f68994678a7adb02b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_file_object_mod::write_time_data</definition>
+        <argsstring>(this)</argsstring>
+        <name>write_time_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Write out the time data to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1542" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1543" bodyend="1581"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__file__object_8F90_1a961b90a8631eb6220265db0a4d333e8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_file_object_mod::writing_on_this_pe</definition>
+        <argsstring>(this)</argsstring>
+        <name>writing_on_this_pe</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determine if the current PE has data to write. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="1529" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" bodystart="1530" bodyend="1538"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_file_object.F90" line="25" column="1"/>
+  </compounddef>
+</doxygen>

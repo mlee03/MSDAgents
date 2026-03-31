@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="TESTING_8md" kind="file" language="Markdown">
+    <compoundname>TESTING.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Unit<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">FMS<sp/>includes<sp/>a<sp/>suite<sp/>of<sp/>MPI<sp/>unit<sp/>tests<sp/>for<sp/>most<sp/>subdirectories<sp/>and<sp/>modules<sp/>that<sp/>make<sp/>up<sp/>the<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>consists<sp/>of<sp/>programs<sp/>in<sp/>the<sp/>test_fms/<sp/>directory,<sp/>with<sp/>shell<sp/>scripts<sp/>to<sp/>handle<sp/>directory<sp/>set<sp/>up<sp/>and<sp/>input<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">test_lib.sh.in<sp/>and<sp/>tap-driver.sh<sp/>provide<sp/>additional<sp/>helper<sp/>functions<sp/>used<sp/>in<sp/>the<sp/>scripts<sp/>and<sp/>manage<sp/>output.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>unit<sp/>tests<sp/>can<sp/>be<sp/>run<sp/>either<sp/>through<sp/>the<sp/>autotools<sp/>build<sp/>system,<sp/>or<sp/>through<sp/>cmake<sp/>via<sp/>ctest.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>different<sp/>build<sp/>systems<sp/>will<sp/>run<sp/>the<sp/>exact<sp/>same<sp/>scripts<sp/>and<sp/>executables,<sp/>but<sp/>there<sp/>are<sp/>some<sp/>differences<sp/>in<sp/>the<sp/>commands<sp/>used<sp/>to<sp/>start<sp/>the<sp/>testing.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Autotools<sp/>Unit<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>Tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Configure<sp/>and<sp/>build<sp/>the<sp/>code<sp/>with<sp/>autotools</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>#<sp/>create<sp/>a<sp/>build<sp/>directory<sp/>in<sp/>FMS</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">autoreconf<sp/>-if<sp/>../configure.ac</highlight></codeline>
+<codeline><highlight class="normal">../configure<sp/>&lt;configure<sp/>options&gt;</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Build<sp/>and<sp/>run<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>check</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>compile<sp/>any<sp/>code<sp/>not<sp/>already<sp/>compiled<sp/>and<sp/>then<sp/>proceed<sp/>to<sp/>run<sp/>the<sp/>test<sp/>scripts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>a<sp/>test<sp/>fails,<sp/>`make<sp/>check`<sp/>will<sp/>stop<sp/>running<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>unit<sp/>tests<sp/>once<sp/>it<sp/>is<sp/>done<sp/>with<sp/>the<sp/>current<sp/>subdirectory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>instead<sp/>run<sp/>all<sp/>of<sp/>the<sp/>tests<sp/>regardless<sp/>of<sp/>failures,<sp/>the<sp/>`-k`<sp/>option<sp/>can<sp/>be<sp/>given:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>check<sp/>-k</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Debugging<sp/>Output<sp/>and<sp/>Test<sp/>Options<sp/>for<sp/>Autotools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Setting<sp/>the<sp/>environment<sp/>variable<sp/>TEST_VERBOSE<sp/>will<sp/>direct<sp/>output<sp/>to<sp/>stdout<sp/>as<sp/>the<sp/>test<sp/>runs,<sp/>while<sp/>setting<sp/>VERBOSE<sp/>will<sp/>only<sp/>output<sp/>on<sp/>failure.</highlight></codeline>
+<codeline><highlight class="normal">Logs<sp/>are<sp/>created<sp/>for<sp/>each<sp/>test<sp/>as<sp/>well,<sp/>with<sp/>the<sp/>name<sp/>\&lt;test<sp/>script<sp/>name\&gt;.log<sp/>in<sp/>its<sp/>corresponding<sp/>test_fms/<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>an<sp/>individual<sp/>test:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>check<sp/>-C<sp/>test_fms/&lt;test<sp/>directory&gt;<sp/>TESTS=&lt;test<sp/>script<sp/>name&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SKIP_TESTS<sp/>can<sp/>be<sp/>set<sp/>to<sp/>in<sp/>order<sp/>to<sp/>skip<sp/>specific<sp/>tests<sp/>in<sp/>a<sp/>script.<sp/>It<sp/>uses<sp/>the<sp/>script<sp/>name<sp/>and<sp/>test<sp/>number,<sp/>and<sp/>takes<sp/>ranges<sp/>as<sp/>well:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">SKIP_TESTS=&quot;test_name.4<sp/>test_name.[1-3]&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>options<sp/>that<sp/>effect<sp/>the<sp/>test<sp/>suite<sp/>can<sp/>be<sp/>set<sp/>by<sp/>passing<sp/>options<sp/>to<sp/>the<sp/>./configure<sp/>script<sp/>that<sp/>creates<sp/>the<sp/>makefiles</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>the<sp/>build<sp/>system:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/><sp/>`--enable-code-coverage`<sp/>allows<sp/>for<sp/>compilation<sp/>with<sp/>flags<sp/>for<sp/>coverage<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>If<sp/>enabled<sp/>a<sp/>coverage<sp/>report<sp/>can<sp/>be<sp/>generated<sp/>with<sp/>`make<sp/>check-code-coverage`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/><sp/>`--enable-test-input=/path/to/input`<sp/>turns<sp/>on<sp/>test<sp/>scripts<sp/>that<sp/>require<sp/>input<sp/>netcdf<sp/>files<sp/>(interpolator,<sp/>xgrid,<sp/>data_override).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>This<sp/>option<sp/>is<sp/>mainly<sp/>used<sp/>internally<sp/>and<sp/>in<sp/>automated<sp/>testing<sp/>since<sp/>we<sp/>do<sp/>not<sp/>host<sp/>the<sp/>input<sp/>data<sp/>publicly.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/><sp/>`--with-yaml`<sp/>compile<sp/>with<sp/>yaml<sp/>input<sp/>and<sp/>enable<sp/>its<sp/>associated<sp/>tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>CMake<sp/>Unit<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Configure<sp/>and<sp/>build<sp/>the<sp/>code<sp/>and<sp/>tests<sp/>with<sp/>cmake</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>&lt;Any<sp/>cmake<sp/>options<sp/>such<sp/>as<sp/>-DWITH_YAML=on&gt;<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Run<sp/>the<sp/>tests<sp/>with<sp/>ctest</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ctest</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Alternatively,<sp/>the<sp/>generated<sp/>makefile<sp/>can<sp/>be<sp/>used<sp/>as<sp/>well:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Debugging<sp/>and<sp/>Test<sp/>Options<sp/>for<sp/>CMake</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>rerun<sp/>failed<sp/>tests<sp/>with<sp/>debug<sp/>output<sp/>from<sp/>a<sp/>previous<sp/>failed<sp/>ctest<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ctest<sp/>--rerun-failed<sp/>--verbose</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>tests<sp/>are<sp/>labeled<sp/>with<sp/>the<sp/>subdirectory<sp/>they<sp/>are<sp/>in<sp/>in<sp/>the<sp/>`test_fms`<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>tests<sp/>for<sp/>a<sp/>specific<sp/>area<sp/>of<sp/>the<sp/>code,<sp/>such<sp/>as<sp/>the<sp/>mpp<sp/>modules:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ctest<sp/>-L<sp/>mpp</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>specific<sp/>tests<sp/>matching<sp/>the<sp/>given<sp/>regex:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ctest<sp/>-R<sp/>&lt;regex&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>testing<sp/>options<sp/>with<sp/>ctest,<sp/>you<sp/>can<sp/>look<sp/>to<sp/>the<sp/>[ctest<sp/>documentation](https://cmake.org/cmake/help/latest/manual/ctest.1.html).</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/TESTING.md"/>
+  </compounddef>
+</doxygen>

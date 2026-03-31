@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="scatter__data__bc_8inc" kind="file" language="Fortran">
+    <compoundname>scatter_data_bc.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__netcdf__io__mod_1ga33f2332549738c113af405df9ecd957d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine scatter_data_bc_2d</definition>
+        <argsstring>(fileobj, varname, vdata, bc_info, unlim_dim_level, ignore_checksum)</argsstring>
+        <name>scatter_data_bc_2d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>bc_info</type>
+          <defname>bc_info</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>ignore_checksum</type>
+          <defname>ignore_checksum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fms2io netcdf fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scattered data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bc_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>information about the boundary condition variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_checksum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Checksum data integrity flag. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Set the indices</para><para>This is the section of the PE that will actually be read from the global_buffer</para><para>Set up index shifts for global array</para><para>If you are the file root, read in the data</para><para>If the checksum exists read it and compare it with the calculated from the data that was read</para><para>If the fileobj&apos;s root is not the same as the variable&apos;s root, then no data will be read for the file root</para><para>Scatter the data to the other PE</para><para>Return if fileobj&apos;s root is not the same as the variable&apos;s root</para><para>Set vdata to equal the scattered data</para><para>If you are the file root, read in the data</para><para>If the checksum exists read it and compare it with the calculated from the data that was read</para><para>If the fileobj&apos;s root is not the same as the variable&apos;s root, then no data will be read for the file root</para><para>Scatter the data to the other PE</para><para>Return if fileobj&apos;s root is not the same as the variable&apos;s root</para><para>Set vdata to equal the scattered data </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/scatter_data_bc.inc" line="25" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/scatter_data_bc.inc" bodystart="26" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="group__netcdf__io__mod_1gaece3b55f327bf0328e3af770bac1ae1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine scatter_data_bc_3d</definition>
+        <argsstring>(fileobj, varname, vdata, bc_info, unlim_dim_level, ignore_checksum)</argsstring>
+        <name>scatter_data_bc_3d</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>vdata</type>
+          <defname>vdata</defname>
+        </param>
+        <param>
+          <type>bc_info</type>
+          <defname>bc_info</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>ignore_checksum</type>
+          <defname>ignore_checksum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fms2io netcdf fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">vdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scattered data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bc_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>information about the boundary condition variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_checksum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Checksum data integrity flag. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Set the indices</para><para>This is the section of the PE that will actually be read from the global_buffer</para><para>Set up index shifts for global array</para><para>If you are the file root, read in the data</para><para>If the checksum exists read it and compare it with the calculated from the data that was read</para><para>If the fileobj&apos;s root is not the same as the variable&apos;s root, then no data will be read for the file root</para><para>Scatter the data to the other PE</para><para>Return if fileobj&apos;s root is not the same as the variable&apos;s root</para><para>Set vdata to equal the scattered data</para><para>If you are the file root, read in the data</para><para>If the checksum exists read it and compare it with the calculated from the data that was read</para><para>If the fileobj&apos;s root is not the same as the variable&apos;s root, then no data will be read for the file root</para><para>Scatter the data to the other PE</para><para>Return if fileobj&apos;s root is not the same as the variable&apos;s root</para><para>Set vdata to equal the scattered data </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/scatter_data_bc.inc" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/include/scatter_data_bc.inc" bodystart="179" bodyend="330"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Routines for the gather_data_bc interface. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@file</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/>Routines<sp/>for<sp/>the<sp/>@ref<sp/>gather_data_bc<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>netcdf_io_mod</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">!&lt;<sp/>Root<sp/>pe<sp/>reads<sp/>the<sp/>data<sp/>in<sp/>the<sp/>netcdf<sp/>file<sp/>and<sp/>scatters<sp/>it<sp/>to<sp/>the<sp/>other<sp/>pes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__netcdf__io__mod_1ga33f2332549738c113af405df9ecd957d" kindref="member">scatter_data_bc_2d</ref>(fileobj,<sp/>varname,<sp/>vdata,<sp/>bc_info,<sp/>unlim_dim_level,<sp/>ignore_checksum)</highlight></codeline>
+<codeline lineno="26" refid="group__netcdf__io__mod_1ga33f2332549738c113af405df9ecd957d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/>!&lt;<sp/>Fms2io<sp/>netcdf<sp/>fileobj</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>varname</highlight><highlight class="comment"><sp/>!&lt;<sp/>Variable<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>vdata</highlight><highlight class="comment"><sp/>!&lt;<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(bc_information),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>bc_info</highlight><highlight class="comment"><sp/>!&lt;<sp/>information<sp/>about<sp/>the<sp/>boundary<sp/>condition<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>unlim_dim_level</highlight><highlight class="comment"><sp/>!&lt;<sp/>Unlimited<sp/>dimension<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>ignore_checksum</highlight><highlight class="comment"><sp/>!&lt;<sp/>Checksum<sp/>data<sp/>integrity<sp/>flag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>global_buf_r8_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>buffer<sp/>with<sp/>a<sp/>data<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>local_buf_r8_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>pe&apos;s<sp/>portion<sp/>of<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>global_buf_r4_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>buffer<sp/>with<sp/>a<sp/>data<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>local_buf_r4_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>pe&apos;s<sp/>portion<sp/>of<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>chksum_val</highlight><highlight class="comment"><sp/>!&lt;<sp/>Checksum<sp/>value<sp/>calculated<sp/>from<sp/>the<sp/>read<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=32)</highlight><highlight class="normal"><sp/>::<sp/>chksum</highlight><highlight class="comment"><sp/>!&lt;<sp/>Cheksum<sp/>value<sp/>converted<sp/>to<sp/>a<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=32)</highlight><highlight class="normal"><sp/>::<sp/>chksum_read</highlight><highlight class="comment"><sp/>!&lt;<sp/>String<sp/>checksum<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>chksum_ignore<sp/>=<sp/>.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>local<sp/>variable<sp/>for<sp/>data<sp/>integrity<sp/>checks</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>default:<sp/>.FALSE.<sp/>-<sp/>checks<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1,<sp/>i2,<sp/>j1,<sp/>j2</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>indices<sp/>relative<sp/>to<sp/>the<sp/>global<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i_add,<sp/>j_add</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>shift</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i_glob</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>global<sp/>domain<sp/>in<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j_glob</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>global<sp/>domain<sp/>in<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(ignore_checksum))<sp/>chksum_ignore<sp/>=<sp/>ignore_checksum</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Set<sp/>the<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>isc<sp/>=<sp/>bc_info%indices(1)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>iec<sp/>=<sp/>bc_info%indices(2)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>jsc<sp/>=<sp/>bc_info%indices(3)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>jec<sp/>=<sp/>bc_info%indices(4)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/>!&gt;<sp/>This<sp/>is<sp/>the<sp/>section<sp/>of<sp/>the<sp/>PE<sp/>that<sp/>will<sp/>actually<sp/>be<sp/>read<sp/>from<sp/>the<sp/>global_buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>i1<sp/>=<sp/>1<sp/>+<sp/>bc_info%x_halo</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/>(iec-isc)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>j1<sp/>=<sp/>1<sp/>+<sp/>bc_info%y_halo</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>j2<sp/>=<sp/>j1<sp/>+<sp/>(jec-jsc)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Set<sp/>up<sp/>index<sp/>shifts<sp/>for<sp/>global<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>i_add<sp/>=<sp/>bc_info%ishift</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>j_add<sp/>=<sp/>bc_info%jshift</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_glob<sp/>=<sp/>bc_info%global_size(1)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j_glob<sp/>=<sp/>bc_info%global_size(2)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>type</highlight><highlight class="normal">(vdata)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>you<sp/>are<sp/>the<sp/>file<sp/>root,<sp/>read<sp/>in<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global_buf_r4_kind(i_glob,<sp/>j_glob))</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">netcdf_read_data(fileobj,<sp/>varname,<sp/>&amp;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_buf_r4_kind,<sp/>&amp;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlim_dim_level=unlim_dim_level,<sp/>&amp;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>broadcast=.false.)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>checksum<sp/>exists<sp/>read<sp/>it<sp/>and<sp/>compare<sp/>it<sp/>with<sp/>the<sp/>calculated<sp/>from<sp/>the<sp/>data<sp/>that<sp/>was<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.chksum_ignore<sp/>.and.<sp/>variable_att_exists(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>broadcast=.false.))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_attribute(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>chksum_read,<sp/>broadcast=.false.)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum_val<sp/>=<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(global_buf_r4_kind,<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/))</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(chksum,<sp/></highlight><highlight class="stringliteral">&quot;(Z16)&quot;</highlight><highlight class="normal">)<sp/>chksum_val</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>string_compare(adjustl(chksum),<sp/>adjustl(chksum_read)))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_2d:<sp/>&quot;</highlight><highlight class="normal">//trim(varname)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_in:&quot;</highlight><highlight class="normal">//(chksum)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_out:&quot;</highlight><highlight class="normal">//<sp/>&amp;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>(chksum_read))</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root,<sp/>then<sp/>no<sp/>data<sp/>will<sp/>be<sp/>read<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>file<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r4_kind(1,1))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r4_kind<sp/>=<sp/>0.</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isc<sp/>=<sp/>1;<sp/>i_add=0;<sp/>iec=1;<sp/>jsc=1;<sp/>j_add=0;<sp/>jec=1</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i1=1;<sp/>i2=1;<sp/>j1=1;<sp/>j2=1</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r4_kind(i1:i2,j1:j2))</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Scatter<sp/>the<sp/>data<sp/>to<sp/>the<sp/>other<sp/>PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__scatter" kindref="compound">mpp_scatter</ref>(isc+i_add,<sp/>iec+i_add,<sp/>jsc+j_add,<sp/>jec+j_add,<sp/>bc_info%pelist,<sp/>&amp;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r4_kind(i1:i2,j1:j2),<sp/>global_buf_r4_kind,<sp/>fileobj%is_root)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Return<sp/>if<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r4_kind)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Set<sp/>vdata<sp/>to<sp/>equal<sp/>the<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vdata(i1:i2,j1:j2)<sp/>=<sp/>local_buf_r4_kind(i1:i2,j1:j2)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r4_kind)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(global_buf_r4_kind)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r8_kind))</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>you<sp/>are<sp/>the<sp/>file<sp/>root,<sp/>read<sp/>in<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global_buf_r8_kind(i_glob,<sp/>j_glob))</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">netcdf_read_data(fileobj,<sp/>varname,<sp/>&amp;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_buf_r8_kind,<sp/>&amp;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlim_dim_level=unlim_dim_level,<sp/>&amp;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>broadcast=.false.)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>checksum<sp/>exists<sp/>read<sp/>it<sp/>and<sp/>compare<sp/>it<sp/>with<sp/>the<sp/>calculated<sp/>from<sp/>the<sp/>data<sp/>that<sp/>was<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.chksum_ignore<sp/>.and.<sp/>variable_att_exists(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>broadcast=.false.))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_attribute(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>chksum_read,<sp/>broadcast=.false.)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum_val<sp/>=<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(global_buf_r8_kind,<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(chksum,<sp/></highlight><highlight class="stringliteral">&quot;(Z16)&quot;</highlight><highlight class="normal">)<sp/>chksum_val</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>string_compare(adjustl(chksum),<sp/>adjustl(chksum_read)))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_2d:<sp/>&quot;</highlight><highlight class="normal">//trim(varname)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_in:&quot;</highlight><highlight class="normal">//chksum//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_out:&quot;</highlight><highlight class="normal">//chksum_read)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root,<sp/>then<sp/>no<sp/>data<sp/>will<sp/>be<sp/>read<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>file<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r8_kind(1,1))</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r8_kind<sp/>=<sp/>0.</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isc<sp/>=<sp/>1;<sp/>i_add=0;<sp/>iec=1;<sp/>jsc=1;<sp/>j_add=0;<sp/>jec=1</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i1=1;<sp/>i2=1;<sp/>j1=1;<sp/>j2=1</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r8_kind(i1:i2,j1:j2))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Scatter<sp/>the<sp/>data<sp/>to<sp/>the<sp/>other<sp/>PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__scatter" kindref="compound">mpp_scatter</ref>(isc+i_add,<sp/>iec+i_add,<sp/>jsc+j_add,<sp/>jec+j_add,<sp/>bc_info%pelist,<sp/>&amp;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r8_kind(i1:i2,j1:j2),<sp/>global_buf_r8_kind,<sp/>fileobj%is_root)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Return<sp/>if<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r8_kind)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Set<sp/>vdata<sp/>to<sp/>equal<sp/>the<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vdata(i1:i2,j1:j2)<sp/>=<sp/>local_buf_r8_kind(i1:i2,j1:j2)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r8_kind)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(global_buf_r8_kind)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>class<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_2d:<sp/>unsupported<sp/>type.<sp/>Currently<sp/>only<sp/>r8_kind<sp/>and<sp/>r4_kinds<sp/>are<sp/>supported&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__netcdf__io__mod_1ga33f2332549738c113af405df9ecd957d" kindref="member">scatter_data_bc_2d</ref></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="comment">!&lt;<sp/>Root<sp/>pe<sp/>reads<sp/>the<sp/>data<sp/>in<sp/>the<sp/>netcdf<sp/>file<sp/>and<sp/>scatters<sp/>it<sp/>to<sp/>the<sp/>other<sp/>pes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__netcdf__io__mod_1gaece3b55f327bf0328e3af770bac1ae1e" kindref="member">scatter_data_bc_3d</ref>(fileobj,<sp/>varname,<sp/>vdata,<sp/>bc_info,<sp/>unlim_dim_level,<sp/>ignore_checksum)</highlight></codeline>
+<codeline lineno="179" refid="group__netcdf__io__mod_1gaece3b55f327bf0328e3af770bac1ae1e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/>!&lt;<sp/>Fms2io<sp/>netcdf<sp/>fileobj</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>varname</highlight><highlight class="comment"><sp/>!&lt;<sp/>Variable<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(*),<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>vdata</highlight><highlight class="comment"><sp/>!&lt;<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(bc_information),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>bc_info</highlight><highlight class="comment"><sp/>!&lt;<sp/>information<sp/>about<sp/>the<sp/>boundary<sp/>condition<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>unlim_dim_level</highlight><highlight class="comment"><sp/>!&lt;<sp/>Unlimited<sp/>dimension<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>ignore_checksum</highlight><highlight class="comment"><sp/>!&lt;<sp/>Checksum<sp/>data<sp/>integrity<sp/>flag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>global_buf_r8_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>buffer<sp/>with<sp/>a<sp/>data<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>local_buf_r8_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>pe&apos;s<sp/>portion<sp/>of<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>global_buf_r4_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>buffer<sp/>with<sp/>a<sp/>data<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>local_buf_r4_kind</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>pe&apos;s<sp/>portion<sp/>of<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>chksum_val</highlight><highlight class="comment"><sp/>!&lt;<sp/>Checksum<sp/>value<sp/>calculated<sp/>from<sp/>the<sp/>read<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=32)</highlight><highlight class="normal"><sp/>::<sp/>chksum</highlight><highlight class="comment"><sp/>!&lt;<sp/>Cheksum<sp/>value<sp/>converted<sp/>to<sp/>a<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=32)</highlight><highlight class="normal"><sp/>::<sp/>chksum_read</highlight><highlight class="comment"><sp/>!&lt;<sp/>String<sp/>checksum<sp/>read<sp/>in<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>chksum_ignore<sp/>=<sp/>.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>local<sp/>variable<sp/>for<sp/>data<sp/>integrity<sp/>checks</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>default:<sp/>.FALSE.<sp/>-<sp/>checks<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1,<sp/>i2,<sp/>j1,<sp/>j2</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>indices<sp/>relative<sp/>to<sp/>the<sp/>global<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i_add,<sp/>j_add</highlight><highlight class="comment"><sp/>!&lt;<sp/>current<sp/>PE&apos;s<sp/>shift</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i_glob</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>global<sp/>domain<sp/>in<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j_glob</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>global<sp/>domain<sp/>in<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>k_glob</highlight><highlight class="comment"><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>z<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">PRESENT</highlight><highlight class="normal">(ignore_checksum))<sp/>chksum_ignore<sp/>=<sp/>ignore_checksum</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Set<sp/>the<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>isc<sp/>=<sp/>bc_info%indices(1)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>iec<sp/>=<sp/>bc_info%indices(2)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>jsc<sp/>=<sp/>bc_info%indices(3)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>jec<sp/>=<sp/>bc_info%indices(4)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/><sp/>!&gt;<sp/>This<sp/>is<sp/>the<sp/>section<sp/>of<sp/>the<sp/>PE<sp/>that<sp/>will<sp/>actually<sp/>be<sp/>read<sp/>from<sp/>the<sp/>global_buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>i1<sp/>=<sp/>1<sp/>+<sp/>bc_info%x_halo</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/>(iec-isc)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>j1<sp/>=<sp/>1<sp/>+<sp/>bc_info%y_halo</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>j2<sp/>=<sp/>j1<sp/>+<sp/>(jec-jsc)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Set<sp/>up<sp/>index<sp/>shifts<sp/>for<sp/>global<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>i_add<sp/>=<sp/>bc_info%ishift</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>j_add<sp/>=<sp/>bc_info%jshift</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_glob<sp/>=<sp/>bc_info%global_size(1)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j_glob<sp/>=<sp/>bc_info%global_size(2)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>k_glob<sp/>=<sp/>bc_info%global_size(3)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>type</highlight><highlight class="normal">(vdata)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r4_kind))</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>you<sp/>are<sp/>the<sp/>file<sp/>root,<sp/>read<sp/>in<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global_buf_r4_kind(i_glob,<sp/>j_glob,<sp/>k_glob))</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">netcdf_read_data(fileobj,<sp/>varname,<sp/>&amp;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_buf_r4_kind,<sp/>&amp;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlim_dim_level=unlim_dim_level,<sp/>&amp;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>broadcast=.false.)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>checksum<sp/>exists<sp/>read<sp/>it<sp/>and<sp/>compare<sp/>it<sp/>with<sp/>the<sp/>calculated<sp/>from<sp/>the<sp/>data<sp/>that<sp/>was<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.chksum_ignore<sp/>.and.<sp/>variable_att_exists(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>broadcast=.false.))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_attribute(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>chksum_read,<sp/>broadcast=.false.)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum_val<sp/>=<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(global_buf_r4_kind,<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/))</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(chksum,<sp/></highlight><highlight class="stringliteral">&quot;(Z16)&quot;</highlight><highlight class="normal">)<sp/>chksum_val</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>string_compare(adjustl(chksum),<sp/>adjustl(chksum_read)))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_2d:<sp/>&quot;</highlight><highlight class="normal">//trim(varname)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_in:&quot;</highlight><highlight class="normal">//(chksum)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_out:&quot;</highlight><highlight class="normal">//<sp/>&amp;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>(chksum_read))</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root,<sp/>then<sp/>no<sp/>data<sp/>will<sp/>be<sp/>read<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>file<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r4_kind(1,1,k_glob))</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r4_kind<sp/>=<sp/>0.</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isc<sp/>=<sp/>1;<sp/>i_add=0;<sp/>iec=1;<sp/>jsc=1;<sp/>j_add=0;<sp/>jec=1</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i1=1;<sp/>i2=1;<sp/>j1=1;<sp/>j2=1</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r4_kind(i1:i2,j1:j2,k_glob))</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Scatter<sp/>the<sp/>data<sp/>to<sp/>the<sp/>other<sp/>PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__scatter" kindref="compound">mpp_scatter</ref>(isc+i_add,<sp/>iec+i_add,<sp/>jsc+j_add,<sp/>jec+j_add,<sp/>k_glob,<sp/>bc_info%pelist,<sp/>&amp;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r4_kind(i1:i2,j1:j2,:),<sp/>global_buf_r4_kind,<sp/>fileobj%is_root)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Return<sp/>if<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r4_kind)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Set<sp/>vdata<sp/>to<sp/>equal<sp/>the<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vdata(i1:i2,j1:j2,:)<sp/>=<sp/>local_buf_r4_kind(i1:i2,j1:j2,:)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r4_kind)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(global_buf_r4_kind)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>type<sp/>is</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(kind=r8_kind))</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>you<sp/>are<sp/>the<sp/>file<sp/>root,<sp/>read<sp/>in<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global_buf_r8_kind(i_glob,<sp/>j_glob,<sp/>k_glob))</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">netcdf_read_data(fileobj,<sp/>varname,<sp/>&amp;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_buf_r8_kind,<sp/>&amp;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlim_dim_level=unlim_dim_level,<sp/>&amp;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>broadcast=.false.)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>checksum<sp/>exists<sp/>read<sp/>it<sp/>and<sp/>compare<sp/>it<sp/>with<sp/>the<sp/>calculated<sp/>from<sp/>the<sp/>data<sp/>that<sp/>was<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.chksum_ignore<sp/>.and.<sp/>variable_att_exists(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>broadcast=.false.))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_attribute(fileobj,<sp/>varname,<sp/></highlight><highlight class="stringliteral">&quot;checksum&quot;</highlight><highlight class="normal">,<sp/>chksum_read,<sp/>broadcast=.false.)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum_val<sp/>=<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(global_buf_r8_kind,<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/))</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chksum<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(chksum,<sp/></highlight><highlight class="stringliteral">&quot;(Z16)&quot;</highlight><highlight class="normal">)<sp/>chksum_val</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>string_compare(adjustl(chksum),<sp/>adjustl(chksum_read)))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_2d:<sp/>&quot;</highlight><highlight class="normal">//trim(varname)//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_in:&quot;</highlight><highlight class="normal">//chksum//</highlight><highlight class="stringliteral">&quot;<sp/>chksum_out:&quot;</highlight><highlight class="normal">//chksum_read)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="301"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>If<sp/>the<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root,<sp/>then<sp/>no<sp/>data<sp/>will<sp/>be<sp/>read<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="302"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>file<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r8_kind(1,1,k_glob))</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r8_kind<sp/>=<sp/>0.</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isc<sp/>=<sp/>1;<sp/>i_add=0;<sp/>iec=1;<sp/>jsc=1;<sp/>j_add=0;<sp/>jec=1</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i1=1;<sp/>i2=1;<sp/>j1=1;<sp/>j2=1;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local_buf_r8_kind(i1:i2,j1:j2,k_glob))</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Scatter<sp/>the<sp/>data<sp/>to<sp/>the<sp/>other<sp/>PE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__scatter" kindref="compound">mpp_scatter</ref>(isc+i_add,<sp/>iec+i_add,<sp/>jsc+j_add,<sp/>jec+j_add,<sp/>k_glob,<sp/>bc_info%pelist,<sp/>&amp;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_buf_r8_kind(i1:i2,j1:j2,:),<sp/>global_buf_r8_kind,<sp/>fileobj%is_root)</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="316"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Return<sp/>if<sp/>fileobj&apos;s<sp/>root<sp/>is<sp/>not<sp/>the<sp/>same<sp/>as<sp/>the<sp/>variable&apos;s<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root<sp/>.and.<sp/>.not.<sp/>bc_info%data_on_file_root)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r8_kind)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="322"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Set<sp/>vdata<sp/>to<sp/>equal<sp/>the<sp/>scattered<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vdata(i1:i2,j1:j2,:)<sp/>=<sp/>local_buf_r8_kind(i1:i2,j1:j2,:)</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local_buf_r8_kind)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fileobj%is_root)<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(global_buf_r8_kind)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>class<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">error(</highlight><highlight class="stringliteral">&quot;scatter_data_bc_3d:<sp/>unsupported<sp/>type.<sp/>Currently<sp/>only<sp/>r8_kind<sp/>and<sp/>r4_kinds<sp/>are<sp/>supported&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__netcdf__io__mod_1gaece3b55f327bf0328e3af770bac1ae1e" kindref="member">scatter_data_bc_3d</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/include/scatter_data_bc.inc"/>
+  </compounddef>
+</doxygen>

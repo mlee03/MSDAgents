@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="parser__demo2_8F90" kind="file" language="Fortran">
+    <compoundname>parser_demo2.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="parser__demo2_8F90_1a936ef342779c3350660ad5d19a8f5fd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program parser_demo</definition>
+        <argsstring></argsstring>
+        <name>parser_demo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/parser/parser_demo2.F90" line="19" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/parser/parser_demo2.F90" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>parser_demo</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/><sp/>This<sp/>programs<sp/>demostrates<sp/>how<sp/>to<sp/>use<sp/>the<sp/>parser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>use_yaml</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">yaml_parser_mod</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>diag_yaml_id</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>Id<sp/>for<sp/>the<sp/>diag_table<sp/>yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nfiles</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>files<sp/>in<sp/>the<sp/>diag_table<sp/>yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>file_ids(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>Ids<sp/>of<sp/>the<sp/>files<sp/>in<sp/>the<sp/>diag_table<sp/>yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nvariables</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>variables<sp/>in<sp/>the<sp/>diag_table<sp/>yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>var_ids(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Ids<sp/>of<sp/>the<sp/>variables<sp/>in<sp/>the<sp/>diag_table<sp/>yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i,<sp/>j,<sp/>k</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>For<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nkeys</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>key_ids(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Ids<sp/>of<sp/>keys<sp/>in<sp/>the<sp/>diag_table_yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=255)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>key_value</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>value<sp/>of<sp/>a<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=255)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>key_name</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>name<sp/>of<sp/>a<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">diag_yaml_id<sp/>=<sp/><ref refid="group__yaml__parser__mod_1ga3d600290bb55dd9edd575555d217cfeb" kindref="member">open_and_parse_file</ref>(</highlight><highlight class="stringliteral">&quot;diag_table.yaml&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">nkeys<sp/>=<sp/><ref refid="group__yaml__parser__mod_1ga1765b04ffaada8280e3d04d260f1b363" kindref="member">get_nkeys</ref>(diag_yaml_id,<sp/>0)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(key_ids(nkeys))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga5ef96a65d44366f4014d60d0509749cf" kindref="member">get_key_ids</ref>(diag_yaml_id,<sp/>0,<sp/>key_ids)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nkeys</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga18652691d52033fcf0977464bf961705" kindref="member">get_key_name</ref>(diag_yaml_id,<sp/>key_ids(i),<sp/>key_name)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1gaf4da6a3ca1bdc64af6f37d7545fdedfe" kindref="member">get_key_value</ref>(diag_yaml_id,<sp/>key_ids(i),<sp/>key_value)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;Key:&quot;</highlight><highlight class="normal">,<sp/>trim(key_name),<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Value:&quot;</highlight><highlight class="normal">,<sp/>trim(key_value)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(key_ids)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">nfiles<sp/>=<sp/><ref refid="group__yaml__parser__mod_1gabeac7c228a3c6057474cb7aac407cbca" kindref="member">get_num_blocks</ref>(diag_yaml_id,<sp/></highlight><highlight class="stringliteral">&quot;diag_files&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(file_ids(nfiles))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga991ef792715cfaaf77a9929ffe718879" kindref="member">get_block_ids</ref>(diag_yaml_id,<sp/></highlight><highlight class="stringliteral">&quot;diag_files&quot;</highlight><highlight class="normal">,<sp/>file_ids)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nfiles</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;File<sp/>number:&quot;</highlight><highlight class="normal">,<sp/>i</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/>nkeys<sp/>=<sp/><ref refid="group__yaml__parser__mod_1ga1765b04ffaada8280e3d04d260f1b363" kindref="member">get_nkeys</ref>(diag_yaml_id,<sp/>file_ids(i))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(key_ids(nkeys))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga5ef96a65d44366f4014d60d0509749cf" kindref="member">get_key_ids</ref>(diag_yaml_id,<sp/>file_ids(i),<sp/>key_ids)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>nkeys</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga18652691d52033fcf0977464bf961705" kindref="member">get_key_name</ref>(diag_yaml_id,<sp/>key_ids(j),<sp/>key_name)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1gaf4da6a3ca1bdc64af6f37d7545fdedfe" kindref="member">get_key_value</ref>(diag_yaml_id,<sp/>key_ids(j),<sp/>key_value)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Key:&quot;</highlight><highlight class="normal">,<sp/>trim(key_name),<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Value:&quot;</highlight><highlight class="normal">,<sp/>trim(key_value)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(key_ids)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>The<sp/>number<sp/>of<sp/>variables<sp/>that<sp/>are<sp/>part<sp/>of<sp/>the<sp/>current<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/>nvariables<sp/>=<sp/><ref refid="group__yaml__parser__mod_1gabeac7c228a3c6057474cb7aac407cbca" kindref="member">get_num_blocks</ref>(diag_yaml_id,<sp/></highlight><highlight class="stringliteral">&quot;varlist&quot;</highlight><highlight class="normal">,<sp/>parent_block_id=file_ids(i))</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_ids(nvariables))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga991ef792715cfaaf77a9929ffe718879" kindref="member">get_block_ids</ref>(diag_yaml_id,<sp/></highlight><highlight class="stringliteral">&quot;varlist&quot;</highlight><highlight class="normal">,<sp/>var_ids,<sp/>parent_block_id=file_ids(i))</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>nvariables</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Variable<sp/>number:&quot;</highlight><highlight class="normal">,<sp/>j</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nkeys<sp/>=<sp/><ref refid="group__yaml__parser__mod_1ga1765b04ffaada8280e3d04d260f1b363" kindref="member">get_nkeys</ref>(diag_yaml_id,<sp/>var_ids(j))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(key_ids(nkeys))</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga5ef96a65d44366f4014d60d0509749cf" kindref="member">get_key_ids</ref>(diag_yaml_id,<sp/>var_ids(j),<sp/>key_ids)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>1,<sp/>nkeys</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1ga18652691d52033fcf0977464bf961705" kindref="member">get_key_name</ref>(diag_yaml_id,<sp/>key_ids(k),<sp/>key_name)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__yaml__parser__mod_1gaf4da6a3ca1bdc64af6f37d7545fdedfe" kindref="member">get_key_value</ref>(diag_yaml_id,<sp/>key_ids(k),<sp/>key_value)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>Key:&quot;</highlight><highlight class="normal">,<sp/>trim(key_name),<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Value:&quot;</highlight><highlight class="normal">,<sp/>trim(key_value)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(key_ids)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(var_ids)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(file_ids)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">parser_demo</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/parser/parser_demo2.F90"/>
+  </compounddef>
+</doxygen>

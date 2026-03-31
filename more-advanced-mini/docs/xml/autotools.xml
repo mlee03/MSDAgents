@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="autotools" kind="page">
+    <compoundname>autotools</compoundname>
+    <title>Building with Autotools</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="1">Autotools Build System Documentation</heading>
+</para><para>This document describes the autotools-based build system for FMS.</para><para><heading level="2">Introduction to Autotools</heading>
+</para><para>Autoconf, automake, and libtool and the GNU/Linux standard build tools. When building a package based on autotools, the user does something like:</para><para>./configure &amp;&amp; make check install</para><para>The configure step queries the system about many things, and constructs makefiles.</para><para>The make step uses the generated Makefiles to build, test, and install the software.</para><para>Standard environment variables and configure options can be used to control many aspects of the build. Custom configure options can easily be added to support additional needs.</para><para><heading level="3">Caution Concerning Generated Files</heading>
+</para><para>Autotools creates many generated files, which should not be edited or checked into the repository. Simply ignore them. Do not try to edit generated Makefiles, do not move or rename any of the shell scripts that autoreconf puts in place to let autotools work. These files have been added to .gitignore and should never be added to the repo.</para><para><heading level="1">How to Build FMS</heading>
+</para><para>Previously, everyone built FMS by checking out code from git. However, with the new build system, only those who want to contribute to the code base need to check out the code from git.</para><para><heading level="2">As an FMS Developer</heading>
+</para><para>All FMS developers will need a reasonably recent version of tools autoconf, automake, and libtool. These are available on package management systems. (Ex. yum install automake autoconf libtool).</para><para>The process of building FMS from the repo is:</para><para><orderedlist>
+<listitem><para>Clone repo and cd into repo directory.</para></listitem><listitem><para>Run autoreconf -i to build the developer build system.</para></listitem><listitem><para>Run ./configure to configure.</para></listitem><listitem><para>Run make to build.</para></listitem></orderedlist>
+</para><para><heading level="2">As an FMS User</heading>
+</para><para>Users start with a tarball, not the git repo. They do not have to have any of the autotools installed. Their build process is:</para><para><orderedlist>
+<listitem><para>Unpack the tarball and cd into the directory.</para></listitem><listitem><para>Run ./configure <ndash/>prefix=/my/installdir</para></listitem><listitem><para>Run make install</para></listitem></orderedlist>
+</para><para><heading level="2">Precious Flags for configure</heading>
+</para><para>Some environment variables are important to the autotools build system, these are known as &quot;precious&quot; variables. One example is CC, which should be set to the C compiler.</para><para>It&apos;s common to set some precious vars before the build. Commonly used ones include:<itemizedlist>
+<listitem><para>CC the C compiler</para></listitem><listitem><para>FC the Fortran compiler</para></listitem><listitem><para>CPPFLAGS C (and Fortran) pre-processor flags</para></listitem><listitem><para>FCFLAGS Fortran compiler flags</para></listitem><listitem><para>LDFLAGS Linker flags</para></listitem></itemizedlist>
+</para><para><heading level="2">Standard Configure Options</heading>
+</para><para>The configure script has some standard options, including:<itemizedlist>
+<listitem><para><ndash/>prefix allows user to specify install directory</para></listitem><listitem><para><ndash/>disable-shared disables building of shared library</para></listitem><listitem><para><ndash/>help prints message showing all options</para></listitem></itemizedlist>
+</para><para><heading level="2">FMS Configure Options</heading>
+</para><para>Configure build options for FMS:<itemizedlist>
+<listitem><para><computeroutput>--with-yaml</computeroutput> : Build with support for yaml input files(requires the libyaml library and headers)</para></listitem><listitem><para><computeroutput>--enable-mixed-mode</computeroutput> : Build in mixed precision mode, with default 4 byte reals and 8 byte real overloads</para></listitem><listitem><para><computeroutput>--disable-setting-flags</computeroutput> : Build without automatically setting flags during configuration</para></listitem><listitem><para><computeroutput>--with-mpi</computeroutput> : Build with MPI support, enabled by default</para></listitem><listitem><para><computeroutput>--enable-overload-r4</computeroutput> : Compiles with 4 byte real routine overloads</para></listitem><listitem><para><computeroutput>--enable-overload-c4</computeroutput> : Compiles with 4 byte complex routine overloads</para></listitem><listitem><para><computeroutput>--enable-overload-c8</computeroutput> : Compiles with 8 byte complex routine overloads</para></listitem><listitem><para><computeroutput>--disable-8byte-int</computeroutput> : Compiles with only 4 byte integer routines</para></listitem></itemizedlist>
+</para><para><heading level="2">Standard Make Targets</heading>
+</para><para>Some of the useful make targets include:<itemizedlist>
+<listitem><para>make or make all - build code</para></listitem><listitem><para>make install - build code (as needed) and install</para></listitem><listitem><para>make check - build code (as needed) and run tests</para></listitem><listitem><para>make clean - clean back build</para></listitem><listitem><para>make distclean - clean configure output and build</para></listitem><listitem><para>make dist - create a tarball for distribution</para></listitem><listitem><para>make distcheck - create a tarball, unpack it, build and run tests, then then clean it. </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

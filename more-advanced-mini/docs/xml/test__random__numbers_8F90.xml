@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__random__numbers_8F90" kind="file" language="Fortran">
+    <compoundname>test_random_numbers.F90</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="test__random__numbers_8F90_1ad9648694f959cda61589de825f5bb1bb" prot="public" static="no">
+        <name>CALC_MOMENT_</name>
+        <param><defname>i</defname></param>
+        <initializer>(1._k / real(i + 1, k))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="129" column="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__random__numbers_8F90_1a7e9709454595f94a35ba38c2d303d9bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::array_compare_1d</definition>
+        <argsstring>(arr1, arr2, msg)</argsstring>
+        <name>array_compare_1d</name>
+        <param>
+          <type>arr1</type>
+          <defname>arr1</defname>
+        </param>
+        <param>
+          <type>arr2</type>
+          <defname>arr2</defname>
+        </param>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+<para>Compare two arrays of integers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="271" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="272" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a55d6b1d308743411c68d9ed7ef60807f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::calc_expected_moments</definition>
+        <argsstring></argsstring>
+        <name>calc_expected_moments</name>
+        <briefdescription>
+<para>Calculate all expected moments and standard deviations of sample moments. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="132" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="133" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1ac721fd2063bb67c571e6b11f7bec811e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::check_bounds</definition>
+        <argsstring>(x)</argsstring>
+        <name>check_bounds</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+<para>Check that a value lies within the 0&lt;x&lt;1 range. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="262" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="263" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1afa384b4974133d3926a0a810ca4c4911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function test_random_numbers::compare_sample_moments</definition>
+        <argsstring>(v)</argsstring>
+        <name>compare_sample_moments</name>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+<para>Check that the first 1,000 moments of a sample are within one standard deviation of their expected values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="234" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="235" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1aea9fb7dba7458dc55807e09a65724e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::constructseed_assert</definition>
+        <argsstring>(i, j, time, perm)</argsstring>
+        <name>constructseed_assert</name>
+        <param>
+          <type>i</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>j</type>
+          <defname>j</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>perm</type>
+          <defname>perm</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="89" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="90" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a98924d05f43ada08c77561a4ed2d7a4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::set_time</definition>
+        <argsstring></argsstring>
+        <name>set_time</name>
+        <briefdescription>
+<para>Set <computeroutput>now</computeroutput> to the current date and time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="56" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="57" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a8e3db79c4b8d6cedc16f4e4dfa0fbd22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::test_constructseed</definition>
+        <argsstring></argsstring>
+        <name>test_constructseed</name>
+        <briefdescription>
+<para>Test random_numbers_mod&apos;s constructSeed() </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="67" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="68" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a3175d81a5692e28c775c74cfa5892621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::test_getrandomnumbers</definition>
+        <argsstring></argsstring>
+        <name>test_getrandomnumbers</name>
+        <briefdescription>
+<para>Test random_numbers_mod&apos;s getRandomNumbers() </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="105" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="106" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1aa4120854064293da799b2273a4f79a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::test_getrandomnumbers_dispatch</definition>
+        <argsstring>(stream)</argsstring>
+        <name>test_getrandomnumbers_dispatch</name>
+        <param>
+          <type>stream</type>
+          <defname>stream</defname>
+        </param>
+        <briefdescription>
+<para>Invoke the 1D and 2D tests for a given random number stream. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="143" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a63a92d621b87931a236a812d297f7ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_random_numbers</definition>
+        <argsstring></argsstring>
+        <name>test_random_numbers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="18" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1ac9e7f76ed0aee2b7bb29cccbe81a28d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function test_random_numbers::test_sample_1d</definition>
+        <argsstring>(stream, n)</argsstring>
+        <name>test_sample_1d</name>
+        <param>
+          <type>stream</type>
+          <defname>stream</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Draw a random sample and test its values and moments (1D) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="197" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="198" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1af9bbc30bf6d39ac85608f65f07a9872f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function test_random_numbers::test_sample_2d</definition>
+        <argsstring>(stream, n)</argsstring>
+        <name>test_sample_2d</name>
+        <param>
+          <type>stream</type>
+          <defname>stream</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Draw a random sample and test its values and moments (2D) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="214" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="215" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="test__random__numbers_8F90_1a632ddb701a75ab2f00f1558ab866f5b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_random_numbers::test_samples_iter</definition>
+        <argsstring>(stream, test, n0)</argsstring>
+        <name>test_samples_iter</name>
+        <param>
+          <type>stream</type>
+          <defname>stream</defname>
+        </param>
+        <param>
+          <type>test</type>
+          <defname>test</defname>
+        </param>
+        <param>
+          <type>n0</type>
+          <defname>n0</defname>
+        </param>
+        <briefdescription>
+<para>Run the requested test using progressively larger sample sizes, until ten passing samples have been drawn. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" line="152" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90" bodystart="153" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_random_numbers</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_string_utils_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">time_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>,<sp/><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref>,<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>,<sp/><ref refid="group__time__manager__mod_1gae4ed023b8077a6f14fffb764d642e55a" kindref="member">set_calendar_type</ref>,<sp/>julian</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">random_numbers_mod</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>n_moments<sp/>=<sp/>1000</highlight><highlight class="comment"><sp/>!&gt;<sp/>Highest-order<sp/>moment<sp/>to<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>n0_1d<sp/>=<sp/>2500</highlight><highlight class="comment"><sp/>!&gt;<sp/>Initial<sp/>length<sp/>of<sp/>1D<sp/>random<sp/>sample<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>n0_2d<sp/>=<sp/>50</highlight><highlight class="comment"><sp/>!&gt;<sp/>Initial<sp/>dimensions<sp/>of<sp/>2D<sp/>random<sp/>sample<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>seeds(*)<sp/>=<sp/>[0,<sp/>-5,<sp/>3]</highlight><highlight class="comment"><sp/>!&gt;<sp/>Seed<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>k<sp/>=<sp/>test_fms_kind_</highlight><highlight class="comment"><sp/>!&gt;<sp/>Either<sp/>r4_kind<sp/>or<sp/>r8_kind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(n_moments)</highlight><highlight class="normal"><sp/>::<sp/>moment_mu</highlight><highlight class="comment"><sp/>!&gt;<sp/>Expected<sp/>moment<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(n_moments)</highlight><highlight class="normal"><sp/>::<sp/>moment_sigma</highlight><highlight class="comment"><sp/>!&gt;<sp/>Standard<sp/>deviations<sp/>of<sp/>sample<sp/>moments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/>::<sp/>now</highlight><highlight class="comment"><sp/>!&gt;<sp/>Current<sp/>date<sp/>and<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()<sp/>.ne.<sp/>4)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>random_numbers<sp/>unit<sp/>test<sp/>requires<sp/>four<sp/>PEs&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_constructseed</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_getrandomnumbers</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment">!&gt;<sp/>Set<sp/>`now`<sp/>to<sp/>the<sp/>current<sp/>date<sp/>and<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>now_values(8)</highlight><highlight class="comment"><sp/>!&gt;<sp/>Values<sp/>returned<sp/>by<sp/>the<sp/>date_and_time()<sp/>intrinsic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1gae4ed023b8077a6f14fffb764d642e55a" kindref="member">set_calendar_type</ref>(julian)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">date_and_time(values=now_values)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>now<sp/>=<sp/><ref refid="interfacetime__manager__mod_1_1set__date" kindref="compound">set_date</ref>(now_values(1),<sp/>now_values(2),<sp/>now_values(3),<sp/>&amp;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>now_values(5),<sp/>now_values(6),<sp/>now_values(7))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">!&gt;<sp/>Test<sp/>random_numbers_mod&apos;s<sp/>constructSeed()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">test_constructseed</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>.eq.<sp/>0)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now,<sp/>0)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now,<sp/>0)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now,<sp/><sp/>10)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now,<sp/>-10)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now,<sp/><sp/>10)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now,<sp/>-10)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now,<sp/><sp/>20)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(1),<sp/>seeds(1),<sp/>now,<sp/>-20)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now,<sp/><sp/>20)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">constructseed_assert(seeds(2),<sp/>seeds(3),<sp/>now,<sp/>-20)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">test_constructseed</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">constructseed_assert(i,<sp/>j,<sp/>time,<sp/>perm)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>j</highlight><highlight class="comment"><sp/>!&gt;<sp/>Seed<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type),<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight><highlight class="comment"><sp/>!&gt;<sp/>Time<sp/>to<sp/>be<sp/>used<sp/>in<sp/>the<sp/>construction<sp/>of<sp/>a<sp/>seed<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>perm</highlight><highlight class="comment"><sp/>!&gt;<sp/>Permutation<sp/>to<sp/>be<sp/>applied<sp/>to<sp/>the<sp/>seed<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(8)</highlight><highlight class="normal"><sp/>::<sp/>seed_expected,<sp/>seed_ret</highlight><highlight class="comment"><sp/>!&gt;<sp/>Expected<sp/>and<sp/>returned<sp/>seed<sp/>vectors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second</highlight><highlight class="comment"><sp/>!&gt;<sp/>Date<sp/>and<sp/>time<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref>(time,<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>seed_expected<sp/>=<sp/>[i,<sp/>j,<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second]</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(perm))<sp/>seed_expected<sp/>=<sp/>ishftc(seed_expected,<sp/>perm)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>seed_ret<sp/>=<sp/><ref refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" kindref="member">constructseed</ref>(i,<sp/>j,<sp/>time,<sp/>perm)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">array_compare_1d(seed_ret,<sp/>seed_expected,<sp/></highlight><highlight class="stringliteral">&quot;constructSeed<sp/>unit<sp/>test<sp/>failed&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">constructseed_assert</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment">!&gt;<sp/>Test<sp/>random_numbers_mod&apos;s<sp/>getRandomNumbers()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">test_getrandomnumbers</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream)<sp/>::<sp/>stream</highlight><highlight class="comment"><sp/>!&gt;<sp/>Random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">calc_expected_moments</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>case</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>())</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(0)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stream<sp/>=<sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref>(seeds(1))</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch(stream)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stream<sp/>=<sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref>(seeds(2))</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch(stream)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(2)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stream<sp/>=<sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref>(seeds)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch(stream)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>(3)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stream<sp/>=<sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref>(<ref refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" kindref="member">constructseed</ref>(seeds(2),<sp/>seeds(3),<sp/>now))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch(stream)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>case<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>PE:<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()))</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">test_getrandomnumbers</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Expression<sp/>for<sp/>the<sp/>expectation<sp/>value<sp/>of<sp/>the<sp/>i-th<sp/>raw<sp/>moment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CALC_MOMENT_(i)<sp/>(1._k<sp/>/<sp/>real(i<sp/>+<sp/>1,<sp/>k))</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">!&gt;<sp/>Calculate<sp/>all<sp/>expected<sp/>moments<sp/>and<sp/>standard<sp/>deviations<sp/>of<sp/>sample<sp/>moments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">calc_expected_moments</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i</highlight><highlight class="comment"><sp/>!&gt;<sp/>Moment<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>n<sp/>=<sp/>n0_1d</highlight><highlight class="comment"><sp/>!&gt;<sp/>Sample<sp/>size<sp/>for<sp/>which<sp/>to<sp/>calculate<sp/>moment<sp/>standard<sp/>deviations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,<sp/>n_moments</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>moment_mu(i)<sp/>=<sp/>calc_moment_(i)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>moment_sigma(i)<sp/>=<sp/>sqrt((calc_moment_(2*i)<sp/>-<sp/>moment_mu(i)**2)<sp/>/<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(n,<sp/>k))</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">calc_expected_moments</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment">!&gt;<sp/>Invoke<sp/>the<sp/>1D<sp/>and<sp/>2D<sp/>tests<sp/>for<sp/>a<sp/>given<sp/>random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch(stream)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>stream</highlight><highlight class="comment"><sp/>!&gt;<sp/>Random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_samples_iter(stream,<sp/>test_sample_1d,<sp/>n0_1d)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_samples_iter(stream,<sp/>test_sample_2d,<sp/>n0_2d)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">test_getrandomnumbers_dispatch</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="150"><highlight class="comment">!&gt;<sp/>Run<sp/>the<sp/>requested<sp/>test<sp/>using<sp/>progressively<sp/>larger<sp/>sample<sp/>sizes,<sp/>until<sp/>ten</highlight></codeline>
+<codeline lineno="151"><highlight class="comment">!&gt;<sp/>passing<sp/>samples<sp/>have<sp/>been<sp/>drawn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">test_samples_iter(stream,<sp/>test,<sp/>n0)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>abstract<sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>Abstract<sp/>interface<sp/>for<sp/>test_sample_1d<sp/>and<sp/>test_sample_2d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>function<sp/></highlight><highlight class="normal">test_sample(stream,<sp/>n)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">import<sp/></highlight><highlight class="normal">::<sp/><ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>stream</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>n</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>test_sample</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>required_passes<sp/>=<sp/>10</highlight><highlight class="comment"><sp/>!&gt;<sp/>Number<sp/>of<sp/>samples<sp/>that<sp/>must<sp/>pass<sp/>the<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>stream</highlight><highlight class="comment"><sp/>!&gt;<sp/>Random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">procedure</highlight><highlight class="normal">(test_sample)<sp/>::<sp/>test</highlight><highlight class="comment"><sp/>!&gt;<sp/>Function<sp/>which<sp/>draws<sp/>a<sp/>random<sp/>sample<sp/>and<sp/>tests<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>n0</highlight><highlight class="comment"><sp/>!&gt;<sp/>Initial<sp/>sample<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal"><sp/>::<sp/>x</highlight><highlight class="comment"><sp/>!&gt;<sp/>Sample<sp/>for<sp/>0D<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>n</highlight><highlight class="comment"><sp/>!&gt;<sp/>Sample<sp/>size<sp/>for<sp/>1D<sp/>or<sp/>2D<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>pass_counter</highlight><highlight class="comment"><sp/>!&gt;<sp/>Number<sp/>of<sp/>test<sp/>passes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>0D<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>Draw<sp/>a<sp/>scalar<sp/>and<sp/>check<sp/>that<sp/>it&apos;s<sp/>within<sp/>[0,1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref>(stream,<sp/>x)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_bounds(x)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>1D<sp/>and<sp/>2D<sp/>cases</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>Attempt<sp/>to<sp/>draw<sp/>ten<sp/>samples<sp/>for<sp/>which<sp/>the<sp/>first<sp/>1,000<sp/>moments<sp/>are<sp/>within<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>standard<sp/>deviation<sp/>of<sp/>their<sp/>expected<sp/>values<sp/>for<sp/>the<sp/>uniform<sp/>distribution<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>[0,1].<sp/>Draw<sp/>progressively<sp/>larger<sp/>samples<sp/>until<sp/>this<sp/>condition<sp/>has<sp/>been<sp/>fulfilled.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>n<sp/>=<sp/>n0</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>pass_counter<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(pass_counter<sp/>.lt.<sp/>required_passes)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(test(stream,<sp/>n))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pass_counter<sp/>=<sp/>pass_counter<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>n<sp/>=<sp/>n<sp/>*<sp/>11<sp/>/<sp/>10</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">test_samples_iter</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="196"><highlight class="comment">!&gt;<sp/>Draw<sp/>a<sp/>random<sp/>sample<sp/>and<sp/>test<sp/>its<sp/>values<sp/>and<sp/>moments<sp/>(1D)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">test_sample_1d(stream,<sp/>n)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>stream</highlight><highlight class="comment"><sp/>!&gt;<sp/>Random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>n</highlight><highlight class="comment"><sp/>!&gt;<sp/>Length<sp/>of<sp/>the<sp/>1D<sp/>sample<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>test_sample_1d</highlight><highlight class="comment"><sp/>!&gt;<sp/>True<sp/>if<sp/>the<sp/>test<sp/>passes<sp/>for<sp/>this<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal"><sp/>::<sp/>v(n)</highlight><highlight class="comment"><sp/>!&gt;<sp/>Sample<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i</highlight><highlight class="comment"><sp/>!&gt;<sp/>Indices<sp/>into<sp/>v(:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref>(stream,<sp/>v)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>n</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_bounds(v(i))</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>test_sample_1d<sp/>=<sp/>compare_sample_moments(v)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>function<sp/></highlight><highlight class="normal">test_sample_1d</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="213"><highlight class="comment">!&gt;<sp/>Draw<sp/>a<sp/>random<sp/>sample<sp/>and<sp/>test<sp/>its<sp/>values<sp/>and<sp/>moments<sp/>(2D)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">test_sample_2d(stream,<sp/>n)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberStream),<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>stream</highlight><highlight class="comment"><sp/>!&gt;<sp/>Random<sp/>number<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>n</highlight><highlight class="comment"><sp/>!&gt;<sp/>Dimensions<sp/>of<sp/>the<sp/>2D<sp/>sample<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>test_sample_2d</highlight><highlight class="comment"><sp/>!&gt;<sp/>True<sp/>if<sp/>the<sp/>test<sp/>passes<sp/>for<sp/>this<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal"><sp/>::<sp/>arr(n,n)</highlight><highlight class="comment"><sp/>!&gt;<sp/>Sample<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>j</highlight><highlight class="comment"><sp/>!&gt;<sp/>Indices<sp/>into<sp/>arr(:,:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref>(stream,<sp/>arr)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1,<sp/>n</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>n</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_bounds(arr(i,<sp/>j))</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>test_sample_2d<sp/>=<sp/>compare_sample_moments(reshape(arr,<sp/>[</highlight><highlight class="keyword">size</highlight><highlight class="normal">(arr)]))</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>function<sp/></highlight><highlight class="normal">test_sample_2d</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="232"><highlight class="comment">!&gt;<sp/>Check<sp/>that<sp/>the<sp/>first<sp/>1,000<sp/>moments<sp/>of<sp/>a<sp/>sample<sp/>are<sp/>within<sp/>one<sp/>standard</highlight></codeline>
+<codeline lineno="233"><highlight class="comment">!&gt;<sp/>deviation<sp/>of<sp/>their<sp/>expected<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">compare_sample_moments(v)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>v(:)</highlight><highlight class="comment"><sp/>!&gt;<sp/>Vector<sp/>containing<sp/>a<sp/>random<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>compare_sample_moments</highlight><highlight class="comment"><sp/>!&gt;<sp/>True<sp/>if<sp/>the<sp/>sample<sp/>passes<sp/>the<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>vi(:)</highlight><highlight class="comment"><sp/>!&gt;<sp/>v(:)<sp/>raised<sp/>to<sp/>the<sp/>power<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i</highlight><highlight class="comment"><sp/>!&gt;<sp/>Moment<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>n</highlight><highlight class="comment"><sp/>!&gt;<sp/>Size<sp/>of<sp/>v(:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal"><sp/>::<sp/>moment_sample</highlight><highlight class="comment"><sp/>!&gt;<sp/>Value<sp/>of<sp/>the<sp/>i-th<sp/>sample<sp/>moment,<sp/>calculated<sp/>from<sp/>v(:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>n<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(v)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(vi(n))</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>vi<sp/>=<sp/>1._k</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>n_moments</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>vi<sp/>=<sp/>vi<sp/>*<sp/>v</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>moment_sample<sp/>=<sp/>sum(vi)<sp/>/<sp/>n</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(abs(moment_sample<sp/>-<sp/>moment_mu(i))<sp/>.gt.<sp/>moment_sigma(i))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>compare_sample_moments<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/>compare_sample_moments<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>function<sp/></highlight><highlight class="normal">compare_sample_moments</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="261"><highlight class="comment">!&gt;<sp/>Check<sp/>that<sp/>a<sp/>value<sp/>lies<sp/>within<sp/>the<sp/>0&lt;x&lt;1<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">check_bounds(x)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(k)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>x</highlight><highlight class="comment"><sp/>!&gt;<sp/>Scalar<sp/>value<sp/>to<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x.lt.0.<sp/>.or.<sp/>x.gt.1.)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;Random<sp/>number<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(x)<sp/>//<sp/></highlight><highlight class="stringliteral">&quot;<sp/>is<sp/>out<sp/>of<sp/>expected<sp/>bounds:<sp/>[0,<sp/>1]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">check_bounds</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="270"><highlight class="comment">!&gt;<sp/>Compare<sp/>two<sp/>arrays<sp/>of<sp/>integers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">array_compare_1d(arr1,<sp/>arr2,<sp/>msg)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/>::<sp/>arr1,<sp/>arr2</highlight><highlight class="comment"><sp/>!&gt;<sp/>Arrays<sp/>to<sp/>be<sp/>compared</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>msg</highlight><highlight class="comment"><sp/>!&gt;<sp/>Error<sp/>message<sp/>to<sp/>be<sp/>shown<sp/>if<sp/>the<sp/>comparison<sp/>fails</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>m,<sp/>n</highlight><highlight class="comment"><sp/>!&gt;<sp/>The<sp/>sizes<sp/>of<sp/>the<sp/>two<sp/>arrays</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i</highlight><highlight class="comment"><sp/>!&gt;<sp/>Loop<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/>m<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(arr1)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>n<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(arr2)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m<sp/>.ne.<sp/>n)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;(A)&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;1D<sp/>array<sp/>comparison<sp/>failed<sp/>due<sp/>to<sp/>incompatible<sp/>array<sp/>sizes&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;(A)&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;Array<sp/>1<sp/>has<sp/>size<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(m)<sp/>//<sp/></highlight><highlight class="stringliteral">&quot;<sp/>and<sp/>array<sp/>2<sp/>has<sp/>size<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(n)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>msg)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,<sp/>m</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arr1(i)<sp/>.ne.<sp/>arr2(i))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;(A)&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;1D<sp/>array<sp/>comparison<sp/>failed<sp/>due<sp/>to<sp/>element<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(i)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<ref refid="group__mpp__mod_1ga285ef180624257148d85af894928844b" kindref="member">stderr</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;(A)&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&quot;Array<sp/>1<sp/>has<sp/>value<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(arr1(i))<sp/>//<sp/>&amp;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>and<sp/>array<sp/>2<sp/>has<sp/>value<sp/>&quot;</highlight><highlight class="normal"><sp/>//<sp/><ref refid="group__fms__string__utils__mod_1ga2c36034f095148176d070326efd80d28" kindref="member">string</ref>(arr2(i))</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>msg)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">array_compare_1d</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_random_numbers</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/random_numbers/test_random_numbers.F90"/>
+  </compounddef>
+</doxygen>

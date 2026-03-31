@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structargparse_1_1parser__t" kind="type" language="Fortran" prot="public">
+    <compoundname>argparse::parser_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structargparse_1_1parser__t_1a29afbb3b5e4d09b5c54b3e67ab67d919" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer argc</definition>
+        <argsstring></argsstring>
+        <name>argc</name>
+        <briefdescription>
+<para>Total number of arguments. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="variable" id="structargparse_1_1parser__t_1ae322d2eafe68941ce14ed586fbfcc6fd" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structargparse_1_1argument__t" kindref="compound">argument_t</ref>), pointer</type>
+        <definition>type(argument_t), pointer args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <briefdescription>
+<para>Linked list of arguments. Will be made a dictionary in the future. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" line="45" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="structargparse_1_1parser__t_1a989790da671b7ba2f7112d2a0daadb0f" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_pos_args</definition>
+        <argsstring></argsstring>
+        <name>num_pos_args</name>
+        <briefdescription>
+<para>Number of positional arguments. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" line="49" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parser type. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1810">
+        <label>parser_t</label>
+        <link refid="structargparse_1_1parser__t"/>
+        <childnode refid="1811" relation="usage">
+          <edgelabel>args</edgelabel>
+        </childnode>
+        <childnode refid="1815" relation="usage">
+          <edgelabel>num_pos_args</edgelabel>
+          <edgelabel>argc</edgelabel>
+        </childnode>
+      </node>
+      <node id="1813">
+        <label>character(len=512)</label>
+      </node>
+      <node id="1814">
+        <label>character(len=32)</label>
+      </node>
+      <node id="1811">
+        <label>argument_t</label>
+        <link refid="structargparse_1_1argument__t"/>
+        <childnode refid="1812" relation="usage">
+          <edgelabel>requires_val</edgelabel>
+          <edgelabel>positional</edgelabel>
+        </childnode>
+        <childnode refid="1811" relation="usage">
+          <edgelabel>head</edgelabel>
+        </childnode>
+        <childnode refid="1813" relation="usage">
+          <edgelabel>val</edgelabel>
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="1814" relation="usage">
+          <edgelabel>short_name</edgelabel>
+          <edgelabel>long_name</edgelabel>
+        </childnode>
+      </node>
+      <node id="1812">
+        <label>logical</label>
+      </node>
+      <node id="1815">
+        <label>integer</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" line="44" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/argparse.F90" bodystart="44" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structargparse_1_1parser__t_1a29afbb3b5e4d09b5c54b3e67ab67d919" prot="public" virt="non-virtual"><scope>argparse::parser_t</scope><name>argc</name></member>
+      <member refid="structargparse_1_1parser__t_1ae322d2eafe68941ce14ed586fbfcc6fd" prot="public" virt="non-virtual"><scope>argparse::parser_t</scope><name>args</name></member>
+      <member refid="structargparse_1_1parser__t_1a989790da671b7ba2f7112d2a0daadb0f" prot="public" virt="non-virtual"><scope>argparse::parser_t</scope><name>num_pos_args</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

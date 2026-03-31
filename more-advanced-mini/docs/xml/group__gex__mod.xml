@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__gex__mod" kind="group">
+    <compoundname>gex_mod</compoundname>
+    <title>gex_mod</title>
+    <innerclass refid="interfacegex__mod_1_1check__gex" prot="private">gex_mod::check_gex</innerclass>
+    <innerclass refid="structgex__mod_1_1gex__type" prot="private">gex_mod::gex_type</innerclass>
+    <innerclass refid="structgex__mod_1_1gex__type__r" prot="private">gex_mod::gex_type_r</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__gex__mod_1ga8a5d0f629723876831f476853f033c93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function gex_mod::check_gex_index</definition>
+        <argsstring>(MODEL_SRC, MODEL_REC, index)</argsstring>
+        <name>check_gex_index</name>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>Function to check if gex index is properly set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the filed goes TO</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>gex index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="327" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1gae215d5953db4388211764d169e28506d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function gex_mod::check_gex_name</definition>
+        <argsstring>(MODEL_SRC, MODEL_REC, name)</argsstring>
+        <name>check_gex_name</name>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Function to return the value of exchanged field and check that it was set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the filed goes TO</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the tracer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="297" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="298" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1gaa1f463807ee4a5e6079d3c1aaaf193d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine gex_mod::gex_assert_valid_index</definition>
+        <argsstring>(indx, name, lb, ub)</argsstring>
+        <name>gex_assert_valid_index</name>
+        <param>
+          <type>indx</type>
+          <defname>indx</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>lb</type>
+          <defname>lb</defname>
+        </param>
+        <param>
+          <type>ub</type>
+          <defname>ub</defname>
+        </param>
+        <briefdescription>
+<para>Check that an index falls within a range of valid values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">indx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower bound of valid indices</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ub</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound of valid indices</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="350" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="351" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1gafa5e37204a68a3a330f4beaaf82cffcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public gex_mod::gex_get_index</definition>
+        <argsstring>(MODEL_SRC, MODEL_REC, name, record)</argsstring>
+        <name>gex_get_index</name>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>record</type>
+          <defname>record</defname>
+        </param>
+        <briefdescription>
+<para>Function to return index of exchanged field. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the tracer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the filed goes TO</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">record</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>register that the field was accessed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="270" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="271" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1ga586a32d323d826a0f492c8ef4afef0c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public gex_mod::gex_get_n_ex</definition>
+        <argsstring>(MODEL_SRC, MODEL_REC)</argsstring>
+        <name>gex_get_n_ex</name>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <briefdescription>
+<para>Function to return number of fields exchanged. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the filed goes TO </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="231" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="232" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1gab2a8cb0e70534c7ba775c893a5e49f6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=64) function, public</type>
+        <definition>character(len=64) function, public gex_mod::gex_get_property</definition>
+        <argsstring>(MODEL_SRC, MODEL_REC, gex_index, property)</argsstring>
+        <name>gex_get_property</name>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <param>
+          <type>gex_index</type>
+          <defname>gex_index</defname>
+        </param>
+        <param>
+          <type>property</type>
+          <defname>property</defname>
+        </param>
+        <briefdescription>
+<para>Function to return property value (string) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the filed goes TO</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gex_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>gex index</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">property</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>requested property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="245" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="246" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1ga5aa5b3db27a418ed75c38b32d80bae73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public gex_mod::gex_init</definition>
+        <argsstring>()</argsstring>
+        <name>gex_init</name>
+        <briefdescription>
+<para>Subroutine to initialize generic exchange between model components. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="155" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="156" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gex__mod_1gaaab1482cc630a894fd32eafb9bdd258f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine gex_mod::gex_read_field_table</definition>
+        <argsstring>(listroot, MODEL_SRC, MODEL_REC)</argsstring>
+        <name>gex_read_field_table</name>
+        <param>
+          <type>listroot</type>
+          <defname>listroot</defname>
+        </param>
+        <param>
+          <type>MODEL_SRC</type>
+          <defname>MODEL_SRC</defname>
+        </param>
+        <param>
+          <type>MODEL_REC</type>
+          <defname>MODEL_REC</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine to fields for a given exchange. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">listroot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the field manager list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field comes FROM</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">model_rec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the model where the field goes TO </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" line="188" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/gex.F90" bodystart="189" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simple generic exchange (gex) interface to pass (non-tracer) fields across components. </para>    </briefdescription>
+    <detaileddescription>
+<para>File for <ref refid="group__gex__mod" kindref="compound">gex_mod</ref>.</para><para><simplesect kind="author"><para>Fabien Paulot (<ulink url="mailto:Fabien.Paulot@noaa.gov">Fabien.Paulot@noaa.gov</ulink>)</para></simplesect>
+<heading level="1">1. Introduction</heading>
+</para><para><bold>gex</bold> provides a generic interface to pass diagnostic fields across components. This interface is not meant to pass tracers across components.</para><para><heading level="1">2. Setup</heading>
+</para><para><heading level="2">2.1. Field table</heading>
+</para><para>Each exchanged field needs to be specified in the <computeroutput>coupler_mod</computeroutput> field table as:</para><para><blockquote><para>SENDING_COMPONENT_to_RECEIVING_COMPONENT_ex, &quot;coupler_mod&quot;, GEX_NAME </para></blockquote></para><para><computeroutput>SENDING_COMPONENT</computeroutput> and <computeroutput>RECEIVING_COMPONENT</computeroutput> can be <computeroutput>lnd</computeroutput>, <computeroutput>atm</computeroutput> and <computeroutput>ocn</computeroutput> <computeroutput>GEX_NAME</computeroutput> is the name under which the exchanged field is stored within <bold>gex</bold></para><para>Additional information can be provided regarding the field units.</para><para><emphasis>Example</emphasis> <verbatim>&quot;atm_to_lnd_ex&quot;,&quot;coupler_mod&quot;,&quot;dryoa&quot;
+                &quot;units&quot;,&quot;kg/m2/s&quot;
+/
+</verbatim></para><para><heading level="2">2.2 Sending routine</heading>
+</para><para>Two things need to happen:</para><para><itemizedlist>
+<listitem><para>At initialization, obtain index of exchanged field via: <verbatim>GEX_INDEX = gex_get_index(SENDING_COMPONENT,RECEIVING_COMPONENT,GEX_NAME)
+</verbatim></para><para>Returns <computeroutput>NO_TRACER</computeroutput> if <computeroutput>gex_name</computeroutput> is not found</para><para><emphasis>Example</emphasis> <verbatim>gex_dryoa = gex_get_index(MODEL_ATMOS,MODEL_LAND,&apos;dryoa&apos;)
+</verbatim></para><para>requests index for <computeroutput>dryoa</computeroutput> field (exchanged from atmos-&gt;land) in gex.</para></listitem><listitem><para>Populate exchanged field <verbatim>gex_array(:,:,GEX_INDEX) = SOME_VALUE
+</verbatim></para><para><computeroutput>gex array</computeroutput> is an array that contains all exchanged fields in the sending component. It needs to be made available in the routine where the field of interest is calculated.</para><para><emphasis>Example</emphasis> <verbatim>gex_atm2lnd(:,:,gex_dryoa) = pwt(:,:,kd)*dsinku_lnd(:,:,nomphilic)
+</verbatim></para><para>stores the total OA deposition</para></listitem></itemizedlist>
+</para><para><heading level="2">2.3 Receiving routine</heading>
+</para><para>Receiving is very similar to sending.</para><para><itemizedlist>
+<listitem><para>To get the index of requested field (at initialization) <verbatim>GEX_INDEX = gex_get_index(SENDING_COMPONENT,RECEIVING_COMPONENT,GEX_NAME)
+</verbatim></para></listitem><listitem><para>To get value of exchanged field <verbatim>gex_array(:,:,GEX_INDEX)
+</verbatim></para><para><computeroutput>gex array</computeroutput> is an array that contains all exchanged fields in the receiving component. It needs to be made available in the routine where the field of interest is needed </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

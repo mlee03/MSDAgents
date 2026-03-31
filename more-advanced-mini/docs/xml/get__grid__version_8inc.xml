@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="get__grid__version_8inc" kind="file" language="Fortran">
+    <compoundname>get_grid_version.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="get__grid__version_8inc_1a9e35be61f4f7954001d9f1fe1639258e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_grid_version_1_</definition>
+        <argsstring>(grid_file, mod_name, domain, lon, lat, min_lon, max_lon)</argsstring>
+        <name>get_grid_version_1_</name>
+        <param>
+          <type>grid_file</type>
+          <defname>grid_file</defname>
+        </param>
+        <param>
+          <type>mod_name</type>
+          <defname>mod_name</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>min_lon</type>
+          <defname>min_lon</defname>
+        </param>
+        <param>
+          <type>max_lon</type>
+          <defname>max_lon</defname>
+        </param>
+        <briefdescription>
+<para>Get global lon and lat of three model (target) grids, with a given file name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of grid file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mod_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/data_override/include/get_grid_version.inc" line="20" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/data_override/include/get_grid_version.inc" bodystart="21" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="get__grid__version_8inc_1ace08adb534b00f8cc25c75a5940a7c87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_grid_version_2_</definition>
+        <argsstring>(fileobj, mod_name, domain, lon, lat, min_lon, max_lon, use_center_grid_points)</argsstring>
+        <name>get_grid_version_2_</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>mod_name</type>
+          <defname>mod_name</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>min_lon</type>
+          <defname>min_lon</defname>
+        </param>
+        <param>
+          <type>max_lon</type>
+          <defname>max_lon</defname>
+        </param>
+        <param>
+          <type>use_center_grid_points</type>
+          <defname>use_center_grid_points</defname>
+        </param>
+        <briefdescription>
+<para>Get global lon and lat of three model (target) grids from mosaic.nc. Currently we assume the refinement ratio is 2 and there is one tile on each pe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object for grid file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mod_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_center_grid_points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating whether or not to use the centroid values of the supergrid from the grid file as opposed to calcuating it by taking the average of the four corner points. This is only relevant to OCN and ICE grids. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/data_override/include/get_grid_version.inc" line="147" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/data_override/include/get_grid_version.inc" bodystart="148" bodyend="255"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>Get<sp/>global<sp/>lon<sp/>and<sp/>lat<sp/>of<sp/>three<sp/>model<sp/>(target)<sp/>grids,<sp/>with<sp/>a<sp/>given<sp/>file<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">get_grid_version_1_(grid_file,<sp/>mod_name,<sp/>domain,<sp/>lon,<sp/>lat,<sp/>min_lon,<sp/>max_lon)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>lkind<sp/>=<sp/>fms_get_grid_version_kind_</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>grid_file</highlight><highlight class="comment"><sp/>!&lt;<sp/>name<sp/>of<sp/>grid<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>mod_name</highlight><highlight class="comment"><sp/>!&lt;<sp/>module<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d),<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>domain</highlight><highlight class="comment"><sp/>!&lt;<sp/>2D<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>lon,<sp/>lat</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>min_lon,<sp/>max_lon</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i,<sp/>j,<sp/>siz(4)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nlon,<sp/>nlat</highlight><highlight class="comment"><sp/>!&lt;<sp/>size<sp/>of<sp/>global<sp/>lon<sp/>and<sp/>lat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>lon_vert,<sp/>lat_vert</highlight><highlight class="comment"><sp/>!&lt;<sp/>of<sp/>OCN<sp/>grid<sp/>vertices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>glon,<sp/>glat</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>lon<sp/>and<sp/>lat<sp/>of<sp/>1-D<sp/>grid<sp/>of<sp/>atm/lnd</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>is_new_grid</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>is,<sp/>ie,<sp/>js,<sp/>je</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>isg,<sp/>ieg,<sp/>jsg,<sp/>jeg</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=3)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>xname,<sp/>yname</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>start(2),<sp/>nread(2)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfDomainFile_t)<sp/>::<sp/>fileobj</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndims</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(.not.<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/>grid_file,<sp/></highlight><highlight class="stringliteral">&apos;read&apos;</highlight><highlight class="normal">,<sp/>domain<sp/>))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;data_override_mod(get_grid_version_1):<sp/>Error<sp/>in<sp/>opening<sp/>file<sp/>&apos;</highlight><highlight class="normal">//trim(grid_file))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__global__domain" kindref="compound">mpp_get_global_domain</ref>(domain,<sp/>isg,<sp/>ieg,<sp/>jsg,<sp/>jeg)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(domain,<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lon(isc:iec,<sp/>jsc:jec))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lat(isc:iec,<sp/>jsc:jec))</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>case</highlight><highlight class="normal">(mod_name)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&apos;ocn&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;ice&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>is_new_grid<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(variable_exists(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;x_T&apos;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_new_grid<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(variable_exists(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;geolon_t&apos;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_new_grid<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,</highlight><highlight class="stringliteral">&apos;data_override:<sp/>both<sp/>x_T<sp/>and<sp/>geolon_t<sp/>is<sp/>not<sp/>in<sp/>the<sp/>grid<sp/>file<sp/>&apos;</highlight><highlight class="normal">//trim(grid_file)<sp/>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is_new_grid)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ndims<sp/>=<sp/>get_variable_num_dimensions(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;x_T&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_size(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;x_T&apos;</highlight><highlight class="normal">,<sp/>siz(1:ndims))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nlon<sp/>=<sp/>siz(1);<sp/>nlat<sp/>=<sp/>siz(2)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_grid_sizes(trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_domain<sp/><sp/>&apos;</highlight><highlight class="normal">,<sp/>domain,<sp/>nlon,<sp/>nlat)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lon_vert(isc:iec,jsc:jec,4),<sp/>lat_vert(isc:iec,jsc:jec,4)<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;x_vert_T&apos;</highlight><highlight class="normal">,<sp/>lon_vert)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;y_vert_T&apos;</highlight><highlight class="normal">,<sp/>lat_vert)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">!2<sp/>Global<sp/>lon<sp/>and<sp/>lat<sp/>of<sp/>ocean<sp/>grid<sp/>cell<sp/>centers<sp/>are<sp/>determined<sp/>from<sp/>adjacent<sp/>vertices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lon(:,:)<sp/>=<sp/>(lon_vert(:,:,1)<sp/>+<sp/>lon_vert(:,:,2)<sp/>+<sp/>lon_vert(:,:,3)<sp/>+<sp/>lon_vert(:,:,4))*0.25_lkind</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lat(:,:)<sp/>=<sp/>(lat_vert(:,:,1)<sp/>+<sp/>lat_vert(:,:,2)<sp/>+<sp/>lat_vert(:,:,3)<sp/>+<sp/>lat_vert(:,:,4))*0.25_lkind</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ndims<sp/>=<sp/>get_variable_num_dimensions(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;geolon_vert_t&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_size(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;geolon_vert_t&apos;</highlight><highlight class="normal">,<sp/>siz(1:ndims))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nlon<sp/>=<sp/>siz(1)<sp/>-<sp/>1;<sp/>nlat<sp/>=<sp/>siz(2)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_grid_sizes(trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_domain<sp/><sp/>&apos;</highlight><highlight class="normal">,<sp/>domain,<sp/>nlon,<sp/>nlat)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start(1)<sp/>=<sp/>isc;<sp/>nread(1)<sp/>=<sp/>iec-isc+2</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start(2)<sp/>=<sp/>jsc;<sp/>nread(2)<sp/>=<sp/>jec-jsc+2</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lon_vert(isc:iec+1,jsc:jec+1,1))</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lat_vert(isc:iec+1,jsc:jec+1,1))</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;geolon_vert_t&apos;</highlight><highlight class="normal">,<sp/>lon_vert(:,:,1),<sp/>corner=start,<sp/>edge_lengths=nread)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&apos;geolat_vert_t&apos;</highlight><highlight class="normal">,<sp/>lat_vert(:,:,1),<sp/>corner=start,<sp/>edge_lengths=nread)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>jsc,<sp/>jec</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>isc,<sp/>iec</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lon(i,j)<sp/>=<sp/>(lon_vert(i,j,1)<sp/>+<sp/>lon_vert(i+1,j,1)<sp/>+<sp/>&amp;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lon_vert(i+1,j+1,1)<sp/>+<sp/>lon_vert(i,j+1,1))*0.25_lkind</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lat(i,j)<sp/>=<sp/>(lat_vert(i,j,1)<sp/>+<sp/>lat_vert(i+1,j,1)<sp/>+<sp/>&amp;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lat_vert(i+1,j+1,1)<sp/>+<sp/>lat_vert(i,j+1,1))*0.25_lkind</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(lon_vert)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(lat_vert)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&apos;atm&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;lnd&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trim(mod_name)<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;atm&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xname<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;xta&apos;</highlight><highlight class="normal">;<sp/>yname<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;yta&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xname<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;xtl&apos;</highlight><highlight class="normal">;<sp/>yname<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;ytl&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>ndims<sp/>=<sp/>get_variable_num_dimensions(fileobj,<sp/>xname)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_size(fileobj,<sp/>xname,<sp/>siz(1:ndims))</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlon<sp/>=<sp/>siz(1);<sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(glon(nlon))</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/>xname,<sp/>glon)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>ndims<sp/>=<sp/>get_variable_num_dimensions(fileobj,<sp/>xname)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_size(fileobj,<sp/>yname,<sp/>siz(1:ndims))</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>nlat<sp/>=<sp/>siz(1);<sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(glat(nlat))</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/>yname,<sp/>glat)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_grid_sizes(trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_domain<sp/><sp/>&apos;</highlight><highlight class="normal">,<sp/>domain,<sp/>nlon,<sp/>nlat)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>is<sp/>=<sp/>isc<sp/>-<sp/>isg<sp/>+<sp/>1;<sp/>ie<sp/>=<sp/>iec<sp/>-<sp/>isg<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>js<sp/>=<sp/>jsc<sp/>-<sp/>jsg<sp/>+<sp/>1;<sp/>je<sp/>=<sp/>jec<sp/>-<sp/>jsg<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>js,<sp/>jec</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>is,<sp/>ie</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lon(i,j)<sp/>=<sp/>glon(i)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lat(i,j)<sp/>=<sp/>glat(j)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(glon)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(glat)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>case<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;data_override_mod:<sp/>mod_name<sp/>should<sp/>be<sp/>&apos;atm&apos;,<sp/>&apos;ocn&apos;,<sp/>&apos;ice&apos;<sp/>or<sp/>&apos;lnd&apos;<sp/>&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>convert<sp/>from<sp/>degree<sp/>to<sp/>radian</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>lon<sp/>=<sp/>lon<sp/>*<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(DEG_TO_RAD,<sp/>lkind)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>lat<sp/>=<sp/>lat*<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(DEG_TO_RAD,<sp/>lkind)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>min_lon<sp/>=<sp/>minval(lon)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>max_lon<sp/>=<sp/>maxval(lon)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__min" kindref="compound">mpp_min</ref>(min_lon)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>(max_lon)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">get_grid_version_1_</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment">!&gt;<sp/>Get<sp/>global<sp/>lon<sp/>and<sp/>lat<sp/>of<sp/>three<sp/>model<sp/>(target)<sp/>grids<sp/>from<sp/>mosaic.nc.</highlight></codeline>
+<codeline lineno="146"><highlight class="comment">!!<sp/>Currently<sp/>we<sp/>assume<sp/>the<sp/>refinement<sp/>ratio<sp/>is<sp/>2<sp/>and<sp/>there<sp/>is<sp/>one<sp/>tile<sp/>on<sp/>each<sp/>pe.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">get_grid_version_2_(fileobj,<sp/>mod_name,<sp/>domain,<sp/>lon,<sp/>lat,<sp/>min_lon,<sp/>max_lon,<sp/>use_center_grid_points)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>lkind<sp/>=<sp/>fms_get_grid_version_kind_</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/>!&lt;<sp/>file<sp/>object<sp/>for<sp/>grid<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>mod_name</highlight><highlight class="comment"><sp/>!&lt;<sp/>module<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2d),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>domain</highlight><highlight class="comment"><sp/>!&lt;<sp/>2D<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>lon,<sp/>lat</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>min_lon,<sp/>max_lon</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>use_center_grid_points</highlight><highlight class="comment"><sp/>!&lt;<sp/>Flag<sp/>indicating<sp/>whether<sp/>or<sp/>not<sp/>to<sp/>use<sp/>the</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>centroid<sp/>values<sp/>of<sp/>the<sp/>supergrid<sp/>from<sp/>the</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>grid<sp/>file<sp/>as<sp/>opposed<sp/>to<sp/>calcuating<sp/>it<sp/>by</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>taking<sp/>the<sp/>average<sp/>of<sp/>the<sp/>four<sp/>corner<sp/>points.</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>This<sp/>is<sp/>only<sp/>relevant<sp/>to<sp/>OCN<sp/>and<sp/>ICE<sp/>grids.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i,<sp/>j,<sp/>siz(2)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nlon,<sp/>nlat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>size<sp/>of<sp/>global<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>nlon_super,<sp/>nlat_super<sp/></highlight><highlight class="comment">!<sp/>size<sp/>of<sp/>global<sp/>supergrid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>isc2,<sp/>iec2,<sp/>jsc2,<sp/>jec2</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=FMS_PATH_LEN)</highlight><highlight class="normal"><sp/>::<sp/>solo_mosaic_file,<sp/>grid_file</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(lkind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/>::<sp/>tmpx(:,:),<sp/>tmpy(:,:)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>open_solo_mosaic</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t)<sp/><sp/><sp/><sp/><sp/>::<sp/>mosaicfileobj,<sp/>tilefileobj</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>start(2),<sp/>nread(2)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>use_center_grid_points_local</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>use_center_grid_points_local<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(use_center_grid_points))<sp/>use_center_grid_points_local<sp/>=<sp/>use_center_grid_points</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trim(mod_name)<sp/>.NE.<sp/></highlight><highlight class="stringliteral">&apos;atm&apos;</highlight><highlight class="normal"><sp/>.AND.<sp/>trim(mod_name)<sp/>.NE.<sp/></highlight><highlight class="stringliteral">&apos;ocn&apos;</highlight><highlight class="normal"><sp/>.AND.<sp/>&amp;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>trim(mod_name)<sp/>.NE.<sp/></highlight><highlight class="stringliteral">&apos;ice&apos;</highlight><highlight class="normal"><sp/>.AND.<sp/>trim(mod_name)<sp/>.NE.<sp/></highlight><highlight class="stringliteral">&apos;lnd&apos;</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>&amp;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;data_override_mod:<sp/>mod_name<sp/>should<sp/>be<sp/>&apos;atm&apos;,<sp/>&apos;ocn&apos;,<sp/>&apos;ice&apos;<sp/>or<sp/>&apos;lnd&apos;<sp/>&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(domain,<sp/>isc,<sp/>iec,<sp/>jsc,<sp/>jec)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lon(isc:iec,<sp/>jsc:jec))</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(lat(isc:iec,<sp/>jsc:jec))</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>get<sp/>the<sp/>grid<sp/>file<sp/>to<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(variable_exists(fileobj,<sp/>trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_mosaic_file&apos;</highlight><highlight class="normal"><sp/>))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileobj,<sp/>trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_mosaic_file&apos;</highlight><highlight class="normal">,<sp/>solo_mosaic_file)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>solo_mosaic_file<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;INPUT/&apos;</highlight><highlight class="normal">//trim(solo_mosaic_file)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(.not.<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(mosaicfileobj,<sp/>solo_mosaic_file,<sp/></highlight><highlight class="stringliteral">&apos;read&apos;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;data_override_mod(get_grid_version_2):<sp/>Error<sp/>in<sp/>opening<sp/>solo<sp/>mosaic<sp/>file<sp/>&apos;</highlight><highlight class="normal">//<sp/>&amp;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>trim(solo_mosaic_file))</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>open_solo_mosaic=.true.</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>mosaicfileobj<sp/>=<sp/>fileobj</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>open_solo_mosaic<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_mosaic_tile_grid(grid_file,<sp/>mosaicfileobj,<sp/>domain)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(.not.<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(tilefileobj,<sp/>grid_file,<sp/></highlight><highlight class="stringliteral">&apos;read&apos;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;data_override_mod(get_grid_version_2):<sp/>Error<sp/>in<sp/>opening<sp/>tile<sp/>file<sp/>&apos;</highlight><highlight class="normal">//trim(grid_file))</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_variable_size(tilefileobj,<sp/></highlight><highlight class="stringliteral">&apos;area&apos;</highlight><highlight class="normal">,<sp/>siz)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>nlon_super<sp/>=<sp/>siz(1);<sp/>nlat_super<sp/>=<sp/>siz(2)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>mod(nlon_super,2)<sp/>.NE.<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;data_override_mod:<sp/>&apos;</highlight><highlight class="normal">//trim(mod_name)//</highlight><highlight class="stringliteral">&apos;<sp/>supergrid<sp/>longitude<sp/>size<sp/>can<sp/>not<sp/>be<sp/>divided<sp/>by<sp/>2&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>mod(nlat_super,2)<sp/>.NE.<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;data_override_mod:<sp/>&apos;</highlight><highlight class="normal">//trim(mod_name)//</highlight><highlight class="stringliteral">&apos;<sp/>supergrid<sp/>latitude<sp/>size<sp/>can<sp/>not<sp/>be<sp/>divided<sp/>by<sp/>2&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>nlon<sp/>=<sp/>nlon_super/2;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>nlat<sp/>=<sp/>nlat_super/2;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">check_grid_sizes(trim(mod_name)//</highlight><highlight class="stringliteral">&apos;_domain<sp/><sp/>&apos;</highlight><highlight class="normal">,<sp/>domain,<sp/>nlon,<sp/>nlat)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>isc2<sp/>=<sp/>2*isc-1;<sp/>iec2<sp/>=<sp/>2*iec+1</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>jsc2<sp/>=<sp/>2*jsc-1;<sp/>jec2<sp/>=<sp/>2*jec+1</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/>start(1)<sp/>=<sp/>isc2;<sp/>nread(1)<sp/>=<sp/>iec2-isc2+1</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>start(2)<sp/>=<sp/>jsc2;<sp/>nread(2)<sp/>=<sp/>jec2-jsc2+1</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(tmpx(isc2:iec2,<sp/>jsc2:jec2),<sp/>tmpy(isc2:iec2,<sp/>jsc2:jec2)<sp/>)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(<sp/>tilefileobj,<sp/></highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">,<sp/>tmpx,<sp/>corner=start,edge_lengths=nread)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(<sp/>tilefileobj,<sp/></highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">,<sp/>tmpy,<sp/>corner=start,edge_lengths=nread)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>copy<sp/>data<sp/>onto<sp/>model<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trim(mod_name)<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;atm&apos;</highlight><highlight class="normal"><sp/>.OR.<sp/>trim(mod_name)<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;lnd&apos;</highlight><highlight class="normal"><sp/>.OR.<sp/>use_center_grid_points_local)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>jsc,<sp/>jec</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>isc,<sp/>iec</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lon(i,j)<sp/>=<sp/>tmpx(i*2,j*2)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lat(i,j)<sp/>=<sp/>tmpy(i*2,j*2)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>jsc,<sp/>jec</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>isc,<sp/>iec</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lon(i,j)<sp/>=<sp/>(tmpx(i*2-1,j*2-1)+tmpx(i*2+1,j*2-1)+tmpx(i*2+1,j*2+1)+tmpx(i*2-1,j*2+1))*0.25_lkind</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lat(i,j)<sp/>=<sp/>(tmpy(i*2-1,j*2-1)+tmpy(i*2+1,j*2-1)+tmpy(i*2+1,j*2+1)+tmpy(i*2-1,j*2+1))*0.25_lkind</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>convert<sp/>to<sp/>radian</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/>lon<sp/>=<sp/>lon<sp/>*<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(DEG_TO_RAD,<sp/>lkind)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>lat<sp/>=<sp/>lat<sp/>*<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(DEG_TO_RAD,<sp/>lkind)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(tmpx,<sp/>tmpy)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>min_lon<sp/>=<sp/>minval(lon)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>max_lon<sp/>=<sp/>maxval(lon)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__min" kindref="compound">mpp_min</ref>(min_lon)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>(max_lon)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(tilefileobj)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(open_solo_mosaic)<sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(mosaicfileobj)</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">get_grid_version_2_</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/data_override/include/get_grid_version.inc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structfield__manager__mod_1_1method__type" kind="type" language="Fortran" prot="public">
+    <compoundname>field_manager_mod::method_type</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfield__manager__mod_1_1method__type_1a781981a9bcaabce7bd12fc11cd5b28a8" prot="public" static="no" mutable="no">
+        <type>character(len=fm_string_len)</type>
+        <definition>character(len=fm_string_len) method_control</definition>
+        <argsstring></argsstring>
+        <name>method_control</name>
+        <briefdescription>
+<para>This is the string containing parameters that the module can use as values for a field method. These should override default values within the module. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="291" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="291" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1method__type_1accdbc7774bba3d7f91245e572fe7a434" prot="public" static="no" mutable="no">
+        <type>character(len=fm_string_len)</type>
+        <definition>character(len=fm_string_len) method_name</definition>
+        <argsstring></argsstring>
+        <name>method_name</name>
+        <briefdescription>
+<para>This is the name of a method which the module can parse and use to assign different default values to a field method. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="288" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="288" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfield__manager__mod_1_1method__type_1a5933ec40d096d918a0eb56cba325fe8f" prot="public" static="no" mutable="no">
+        <type>character(len=fm_string_len)</type>
+        <definition>character(len=fm_string_len) method_type</definition>
+        <argsstring></argsstring>
+        <name>method_type</name>
+        <briefdescription>
+<para>This string represents a tag that a module using this method can key on. Typically this should contain some reference to the module that is calling it. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="285" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="285" bodyend="285"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This <ref refid="structfield__manager__mod_1_1method__type" kindref="compound">method_type</ref> is a way to allow a component module to alter the parameters it needs for various tracers. </para>    </briefdescription>
+    <detaileddescription>
+<para>In essence this is a way to modify a namelist. A namelist can supply default parameters for all tracers. This method will allow the user to modify these default parameters for an individual tracer. An example could be that the user wishes to use second order advection on a tracer and also use fourth order advection on a second tracer within the same model run. The default advection could be second order and the field table would then indicate that the second tracer requires fourth order advection. This would be parsed by the advection routine. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1424">
+        <label>method_type</label>
+        <link refid="structfield__manager__mod_1_1method__type"/>
+        <childnode refid="1425" relation="usage">
+          <edgelabel>method_control</edgelabel>
+          <edgelabel>method_type</edgelabel>
+          <edgelabel>method_name</edgelabel>
+        </childnode>
+      </node>
+      <node id="1425">
+        <label>character(len=fm_string_len)</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="283" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="283" bodyend="294"/>
+    <listofallmembers>
+      <member refid="structfield__manager__mod_1_1method__type_1a781981a9bcaabce7bd12fc11cd5b28a8" prot="public" virt="non-virtual"><scope>field_manager_mod::method_type</scope><name>method_control</name></member>
+      <member refid="structfield__manager__mod_1_1method__type_1accdbc7774bba3d7f91245e572fe7a434" prot="public" virt="non-virtual"><scope>field_manager_mod::method_type</scope><name>method_name</name></member>
+      <member refid="structfield__manager__mod_1_1method__type_1a5933ec40d096d918a0eb56cba325fe8f" prot="public" virt="non-virtual"><scope>field_manager_mod::method_type</scope><name>method_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

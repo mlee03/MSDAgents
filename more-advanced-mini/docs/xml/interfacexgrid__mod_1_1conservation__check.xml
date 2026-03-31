@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacexgrid__mod_1_1conservation__check" kind="interface" language="Fortran" prot="private">
+    <compoundname>xgrid_mod::conservation_check</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacexgrid__mod_1_1conservation__check_1a231bab92f9349804878f4236f6d238d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, dimension(3)</type>
+        <definition>real(r8_kind) function, dimension(3) conservation_check_side1</definition>
+        <argsstring>(d, grid_id, xmap, remap_method)</argsstring>
+        <name>conservation_check_side1</name>
+        <param>
+          <type>d</type>
+          <defname>d</defname>
+        </param>
+        <param>
+          <type>grid_id</type>
+          <defname>grid_id</defname>
+        </param>
+        <param>
+          <type>xmap</type>
+          <defname>xmap</defname>
+        </param>
+        <param>
+          <type>remap_method</type>
+          <defname>remap_method</defname>
+        </param>
+        <briefdescription>
+<para><ref refid="interfacexgrid__mod_1_1conservation__check" kindref="compound">conservation_check</ref> - returns three numbers which are the global sum of a variable (1) on its home model grid, (2) after interpolation to the other side grid(s), and (3) after re_interpolation back onto its home side grid(s). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>real(r8_kind) conservation_check_side1</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model data to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3 character grid id</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">xmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="4111" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="4112" bodyend="4149"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacexgrid__mod_1_1conservation__check_1a2c8de1ae7f082cb78aa428f3668f591d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, dimension(3)</type>
+        <definition>real(r8_kind) function, dimension(3) conservation_check_side2</definition>
+        <argsstring>(d, grid_id, xmap, remap_method)</argsstring>
+        <name>conservation_check_side2</name>
+        <param>
+          <type>d</type>
+          <defname>d</defname>
+        </param>
+        <param>
+          <type>grid_id</type>
+          <defname>grid_id</defname>
+        </param>
+        <param>
+          <type>xmap</type>
+          <defname>xmap</defname>
+        </param>
+        <param>
+          <type>remap_method</type>
+          <defname>remap_method</defname>
+        </param>
+        <briefdescription>
+<para><ref refid="interfacexgrid__mod_1_1conservation__check" kindref="compound">conservation_check</ref> - returns three numbers which are the global sum of a variable (1) on its home model grid, (2) after interpolation to the other side grid(s), and (3) after re_interpolation back onto its home side grid(s). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>real(r8_kind) conservation_check_side2</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model data to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3 character grid ID</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">xmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="4158" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="4159" bodyend="4204"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Returns three numbers which are the global sum of a variable. </para>    </briefdescription>
+    <detaileddescription>
+<para>Returns three numbers which are the global sum of a variable (1) on its home model grid, (2) after interpolation to the other side grid(s), and (3) after re_interpolation back onto its home side grid(s). Conservation_check must be called by all PEs to work properly.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>real(r8_kind) data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grid_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3 character grid ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">xmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exchange grid </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">global</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sum of a variable on home model grid, after side grid interpolation and after reinterpolation</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">conservation_check(d,<sp/>grid_id,<sp/>xmap,remap_order)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="251" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="251" bodyend="253"/>
+    <listofallmembers>
+      <member refid="interfacexgrid__mod_1_1conservation__check_1a231bab92f9349804878f4236f6d238d7" prot="private" virt="non-virtual"><scope>xgrid_mod::conservation_check</scope><name>conservation_check_side1</name></member>
+      <member refid="interfacexgrid__mod_1_1conservation__check_1a2c8de1ae7f082cb78aa428f3668f591d" prot="private" virt="non-virtual"><scope>xgrid_mod::conservation_check</scope><name>conservation_check_side2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

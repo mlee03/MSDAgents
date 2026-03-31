@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="grid__utils_8h" kind="file" language="Fortran">
+    <compoundname>grid_utils.h</compoundname>
+    <includedby refid="gradient__c2l_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</includedby>
+    <includedby refid="grid__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</includedby>
+    <includedby refid="tree__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</includedby>
+    <includedby refid="horiz__interp__conserve__xgrid_8c" local="yes">/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</includedby>
+    <invincdepgraph>
+      <node id="315">
+        <label>/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</label>
+        <link refid="horiz__interp__conserve__xgrid_8c"/>
+      </node>
+      <node id="313">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</label>
+        <link refid="grid__utils_8c"/>
+      </node>
+      <node id="311">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.h</label>
+        <link refid="grid__utils_8h"/>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="314">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</label>
+        <link refid="tree__utils_8c_source"/>
+      </node>
+      <node id="312">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</label>
+        <link refid="gradient__c2l_8c"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apache<sp/>license<sp/>2.0</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/>*<sp/>this<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>gfdl<sp/>flexible<sp/>modeling<sp/>system(fms).</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/>*<sp/>licensed<sp/>under<sp/>the<sp/>apache<sp/>license,<sp/>version<sp/>2.0<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;License&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>not<sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/license-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/>*<sp/>fms<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>without</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/>*<sp/>warranties<sp/>or<sp/>conditions<sp/>of<sp/>any<sp/>kind,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/>*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>merchantability<sp/>or<sp/>fitness<sp/>for<sp/>a</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/>*<sp/>particular<sp/>purpose.<sp/>see<sp/>the<sp/>license<sp/>for<sp/>the<sp/>specific<sp/>language</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/>*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/>***********************************************************************/</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mosaic_util.h</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this<sp/>header<sp/>file<sp/>provide<sp/>some<sp/>utilities<sp/>routine<sp/>that<sp/>will<sp/>be<sp/>used<sp/>in<sp/>many<sp/>tools.</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>contact:<sp/>zhi.liang@noaa.gov</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">***********************************************************************/</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GRID_UTILS_H_</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GRID_UTILS_H_</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOLERANCE<sp/>(1.e-6)</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifndef<sp/>RANGE_CHECK_CRITERIA</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>RANGE_CHECK_CRITERIA<sp/>0.05</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MV<sp/>50</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>min(a,b)<sp/>(a&lt;b<sp/>?<sp/>a:b)</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>max(a,b)<sp/>(a&gt;b<sp/>?<sp/>a:b)</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SMALL_VALUE<sp/>(<sp/>1.e-10<sp/>)</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">void<sp/>error_handler(const<sp/>char<sp/>*msg);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">int<sp/>lon_fix(double<sp/>*x,<sp/>double<sp/>*y,<sp/>int<sp/>n_in,<sp/>double<sp/>tlon);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">double<sp/>minval_double(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*data);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">double<sp/>maxval_double(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*data);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">double<sp/>avgval_double(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*data);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">void<sp/>latlon2xyz(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*x,<sp/>double<sp/>*y,<sp/>double<sp/>*z);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">void<sp/>xyz2latlon(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*x,<sp/>const<sp/>double<sp/>*y,<sp/>const<sp/>double<sp/>*z,<sp/>double<sp/>*lon,<sp/>double<sp/>*lat);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">int<sp/>delete_vtx(double<sp/>x[],<sp/>double<sp/>y[],<sp/>int<sp/>n,<sp/>int<sp/>n_del);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">int<sp/>insert_vtx(double<sp/>x[],<sp/>double<sp/>y[],<sp/>int<sp/>n,<sp/>int<sp/>n_ins,<sp/>double<sp/>lon_in,<sp/>double<sp/>lat_in);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">int<sp/>fix_lon(double<sp/>lon[],<sp/>double<sp/>lat[],<sp/>int<sp/>n,<sp/>double<sp/>tlon);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">double<sp/>great_circle_distance(double<sp/>*p1,<sp/>double<sp/>*p2);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">void<sp/>vect_cross(const<sp/>double<sp/>*p1,<sp/>const<sp/>double<sp/>*p2,<sp/>double<sp/>*e<sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">double<sp/>spherical_angle(const<sp/>double<sp/>*v1,<sp/>const<sp/>double<sp/>*v2,<sp/>const<sp/>double<sp/>*v3);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">double<sp/>great_circle_area(int<sp/>n,<sp/>const<sp/>double<sp/>*x,<sp/>const<sp/>double<sp/>*y,<sp/>const<sp/>double<sp/>*z);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">double<sp/>*<sp/>cross(const<sp/>double<sp/>*p1,<sp/>const<sp/>double<sp/>*p2);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">double<sp/>dot(const<sp/>double<sp/>*p1,<sp/>const<sp/>double<sp/>*p2);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">void<sp/>normalize_vect(double<sp/>*e);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">void<sp/>unit_vect_latlon(int<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*vlon,<sp/>double<sp/>*vlat);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">int<sp/>intersect_tri_with_line(const<sp/>double<sp/>*plane,<sp/>const<sp/>double<sp/>*l1,<sp/>const<sp/>double<sp/>*l2,<sp/>double<sp/>*p,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*t);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">int<sp/>invert_matrix_3x3(long<sp/>double<sp/>m[],<sp/>long<sp/>double<sp/>m_inv[]);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">void<sp/>mult(long<sp/>double<sp/>m[],<sp/>long<sp/>double<sp/>v[],<sp/>long<sp/>double<sp/>out_v[]);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">double<sp/>metric(const<sp/>double<sp/>*p);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">int<sp/>inside_a_polygon(<sp/>double<sp/>*lon1,<sp/>double<sp/>*lat1,<sp/>int<sp/>*npts,<sp/>double<sp/>*lon2,<sp/>double<sp/>*lat2);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">int<sp/>samepoint(double<sp/>x1,<sp/>double<sp/>y1,<sp/>double<sp/>z1,<sp/>double<sp/>x2,<sp/>double<sp/>y2,<sp/>double<sp/>z2);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">int<sp/>inside_a_polygon_(double<sp/>*lon1,<sp/>double<sp/>*lat1,<sp/>int<sp/>*npts,<sp/>double<sp/>*lon2,<sp/>double<sp/>*lat2);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">int<sp/>inside_edge(double<sp/>x0,<sp/>double<sp/>y0,<sp/>double<sp/>x1,<sp/>double<sp/>y1,<sp/>double<sp/>x,<sp/>double<sp/>y);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">int<sp/>line_intersect_2d_3d(double<sp/>*a1,<sp/>double<sp/>*a2,<sp/>double<sp/>*q1,<sp/>double<sp/>*q2,<sp/>double<sp/>*q3,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>*intersect,<sp/>double<sp/>*u_a,<sp/>double<sp/>*u_q,<sp/>int<sp/>*inbound);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">double<sp/>poly_ctrlon(const<sp/>double<sp/>lon[],<sp/>const<sp/>double<sp/>lat[],<sp/>int<sp/>n,<sp/>double<sp/>clon);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">double<sp/>poly_ctrlat(const<sp/>double<sp/>lon[],<sp/>const<sp/>double<sp/>lat[],<sp/>int<sp/>n);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">int<sp/>get_maxxgrid(void);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">int<sp/>get_maxxgrid_(void);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">double<sp/>get_global_area(void);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">double<sp/>get_global_area_(void);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">double<sp/>poly_area(const<sp/>double<sp/>lon[],<sp/>const<sp/>double<sp/>lat[],<sp/>int<sp/>n);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">double<sp/>poly_area_dimensionless(const<sp/>double<sp/>x[],<sp/>const<sp/>double<sp/>y[],<sp/>int<sp/>n);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">double<sp/>spherical_excess_area(const<sp/>double*<sp/>p_ll,<sp/>const<sp/>double*<sp/>p_ul,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double*<sp/>p_lr,<sp/>const<sp/>double*<sp/>p_ur,<sp/>double<sp/>radius);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">void<sp/>get_grid_area(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">void<sp/>get_grid_great_circle_area(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">void<sp/>get_grid_area_no_adjust(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">int<sp/>clip(const<sp/>double<sp/>lon_in[],<sp/>const<sp/>double<sp/>lat_in[],<sp/>int<sp/>n_in,<sp/>double<sp/>ll_lon,<sp/>double<sp/>ll_lat,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>ur_lon,<sp/>double<sp/>ur_lat,<sp/>double<sp/>lon_out[],<sp/>double<sp/>lat_out[]);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">int<sp/>clip_2dx2d(const<sp/>double<sp/>lon1_in[],<sp/>const<sp/>double<sp/>lat1_in[],<sp/>int<sp/>n1_in,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>lon2_in[],<sp/>const<sp/>double<sp/>lat2_in[],<sp/>int<sp/>n2_in,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>lon_out[],<sp/>double<sp/>lat_out[]);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">int<sp/>clip_2dx2d_great_circle(const<sp/>double<sp/>x1_in[],<sp/>const<sp/>double<sp/>y1_in[],<sp/>const<sp/>double<sp/>z1_in[],<sp/>int<sp/>n1_in,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>double<sp/>x2_in[],<sp/>const<sp/>double<sp/>y2_in[],<sp/>const<sp/>double<sp/>z2_in<sp/>[],<sp/>int<sp/>n2_in,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>x_out[],<sp/>double<sp/>y_out[],<sp/>double<sp/>z_out[]);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">void<sp/>get_grid_area_ug(const<sp/>int<sp/>*npts,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">void<sp/>get_grid_great_circle_area_ug(const<sp/>int<sp/>*npts,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">void<sp/>get_grid_area_(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">void<sp/>get_grid_great_circle_area_(const<sp/>int<sp/>*nlon,<sp/>const<sp/>int<sp/>*nlat,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">void<sp/>get_grid_area_ug_(const<sp/>int<sp/>*npts,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">void<sp/>get_grid_great_circle_area_ug_(const<sp/>int<sp/>*npts,<sp/>const<sp/>double<sp/>*lon,<sp/>const<sp/>double<sp/>*lat,<sp/>double<sp/>*area);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<highlight class="preprocessor"></highlight>    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.h"/>
+  </compounddef>
+</doxygen>

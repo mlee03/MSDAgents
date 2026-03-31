@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="constant_8h" kind="file" language="Fortran">
+    <compoundname>constant.h</compoundname>
+    <includedby refid="gradient__c2l_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</includedby>
+    <includedby refid="grid__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</includedby>
+    <includedby refid="tree__utils_8c" local="yes">/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</includedby>
+    <includedby refid="horiz__interp__conserve__xgrid_8c" local="yes">/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</includedby>
+    <invincdepgraph>
+      <node id="286">
+        <label>/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve_xgrid.c</label>
+        <link refid="horiz__interp__conserve__xgrid_8c"/>
+      </node>
+      <node id="284">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/grid_utils.c</label>
+        <link refid="grid__utils_8c"/>
+      </node>
+      <node id="285">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/tree_utils.c</label>
+        <link refid="tree__utils_8c_source"/>
+      </node>
+      <node id="282">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/constant.h</label>
+        <link refid="constant_8h"/>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+      </node>
+      <node id="283">
+        <label>/home/Ryan.Mulhall/FMS-1/grid_utils/gradient_c2l.c</label>
+        <link refid="gradient__c2l_8c"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">/***********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apache<sp/>license<sp/>2.0</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/>*<sp/>this<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>gfdl<sp/>flexible<sp/>modeling<sp/>system(fms).</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/>*<sp/>licensed<sp/>under<sp/>the<sp/>apache<sp/>license,<sp/>version<sp/>2.0<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;License&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>not<sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/>*<sp/>you<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/license-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/>*<sp/>fms<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>without</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/>*<sp/>warranties<sp/>or<sp/>conditions<sp/>of<sp/>any<sp/>kind,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/>*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>merchantability<sp/>or<sp/>fitness<sp/>for<sp/>a</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/>*<sp/>particular<sp/>purpose.<sp/>see<sp/>the<sp/>license<sp/>for<sp/>the<sp/>specific<sp/>language</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/>*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>license.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/>***********************************************************************/</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RADIUS<sp/><sp/><sp/>(6371000.)</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>STRING<sp/><sp/><sp/>255</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPSLN8<sp/><sp/><sp/>(1.e-8)</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>EPSLN15<sp/><sp/>(1.0e-15)</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>EPSLN30<sp/><sp/>(1.0e-30)</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>EPSLN10<sp/><sp/>(1.0e-10)</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>R2D<sp/>(180/M_PI)</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TPI<sp/>(2.0*M_PI)</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>HPI<sp/>(0.5*M_PI)</highlight></codeline>
+<highlight class="preprocessor"></highlight>    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/grid_utils/constant.h"/>
+  </compounddef>
+</doxygen>

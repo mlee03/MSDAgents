@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="get__grid__version_8F90" kind="file" language="Fortran">
+    <compoundname>get_grid_version.F90</compoundname>
+    <includes local="yes">get_grid_version_r4.fh</includes>
+    <includes local="yes">get_grid_version_r8.fh</includes>
+    <incdepgraph>
+      <node id="88">
+        <label>get_grid_version_r4.fh</label>
+      </node>
+      <node id="89">
+        <label>get_grid_version_r8.fh</label>
+      </node>
+      <node id="87">
+        <label>/home/Ryan.Mulhall/FMS-1/data_override/get_grid_version.F90</label>
+        <link refid="get__grid__version_8F90"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfaceget__grid__version__mod_1_1get__grid__version__1" prot="public">get_grid_version_mod::get_grid_version_1</innerclass>
+    <innerclass refid="interfaceget__grid__version__mod_1_1get__grid__version__2" prot="public">get_grid_version_mod::get_grid_version_2</innerclass>
+    <innernamespace refid="namespaceget__grid__version__mod">get_grid_version_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>get_grid_version_mod<sp/>get_grid_version_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>data_override</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>get_grid<sp/>implementations<sp/>and<sp/>helper<sp/>routines<sp/>for<sp/>@ref<sp/>data_override_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>get_grid_version_mod</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>get_grid_version_mod</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">constants_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>deg_to_rad</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind,<sp/>fms_path_len</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,fatal,note,<sp/><ref refid="interfacempp__mod_1_1mpp__min" kindref="compound">mpp_min</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>,<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal">(.NE.),</highlight><highlight class="keyword">operator</highlight><highlight class="normal">(.EQ.)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__global__domain" kindref="compound">mpp_get_global_domain</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms2_io_mod,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/>fmsnetcdfdomainfile_t,<sp/>fmsnetcdffile_t,<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>variable_exists,<sp/><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>,<sp/>get_variable_size,<sp/>get_variable_num_dimensions</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mosaic2_mod,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mosaic2__mod_1ga8dfe682ca88da8a6e7d31d8bfb304fe7" kindref="member">get_mosaic_tile_grid</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="interfaceget__grid__version__mod_1_1get__grid__version__1" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfaceget__grid__version__mod_1_1get__grid__version__1" kindref="compound">get_grid_version_1</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>get_grid_version_1_r4</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>get_grid_version_1_r8</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfaceget__grid__version__mod_1_1get__grid__version__1" kindref="compound">get_grid_version_1</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="interfaceget__grid__version__mod_1_1get__grid__version__2" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfaceget__grid__version__mod_1_1get__grid__version__2" kindref="compound">get_grid_version_2</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>get_grid_version_2_r4</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>get_grid_version_2_r8</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfaceget__grid__version__mod_1_1get__grid__version__2" kindref="compound">get_grid_version_2</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">!&gt;<sp/>Get<sp/>lon<sp/>and<sp/>lat<sp/>of<sp/>three<sp/>model<sp/>(target)<sp/>grids<sp/>from<sp/>grid_spec.nc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="group__get__grid__version__mod_1ga5b4b5b2fe69e82c657c3c8f6a235f5e3" kindref="member">check_grid_sizes</ref>(domain_name,<sp/>Domain,<sp/>nlon,<sp/>nlat)</highlight></codeline>
+<codeline lineno="50" refid="group__get__grid__version__mod_1ga5b4b5b2fe69e82c657c3c8f6a235f5e3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=12)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>domain_name</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">type(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>),<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>domain</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>nlon,<sp/>nlat</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=184)</highlight><highlight class="normal"><sp/>::<sp/>error_message</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>xsize,<sp/>ysize</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__global__domain" kindref="compound">mpp_get_global_domain</ref>(domain,<sp/>xsize=xsize,<sp/>ysize=ysize)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nlon<sp/>.NE.<sp/>xsize<sp/>.OR.<sp/>nlat<sp/>.NE.<sp/>ysize)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>error_message<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Error<sp/>in<sp/>data_override_init.<sp/>Size<sp/>of<sp/>grid<sp/>as<sp/>specified<sp/>by<sp/>&apos;</highlight><highlight class="normal">//<sp/>&amp;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>does<sp/>not<sp/>conform<sp/>to<sp/>that<sp/>specified<sp/>by<sp/>grid_spec.nc.&apos;</highlight><highlight class="normal">//<sp/>&amp;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/><sp/>From<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><sp/><sp/><sp/><sp/>by<sp/><sp/><sp/><sp/><sp/><sp/>From<sp/>grid_spec.nc:<sp/><sp/><sp/><sp/><sp/>by<sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>error_message(<sp/>59:<sp/>70)<sp/>=<sp/>domain_name</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>error_message(130:141)<sp/>=<sp/>domain_name</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(error_message(143:146),</highlight><highlight class="stringliteral">&apos;(i4)&apos;</highlight><highlight class="normal">)<sp/>xsize</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(error_message(150:153),</highlight><highlight class="stringliteral">&apos;(i4)&apos;</highlight><highlight class="normal">)<sp/>ysize</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(error_message(174:177),</highlight><highlight class="stringliteral">&apos;(i4)&apos;</highlight><highlight class="normal">)<sp/>nlon</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(error_message(181:184),</highlight><highlight class="stringliteral">&apos;(i4)&apos;</highlight><highlight class="normal">)<sp/>nlat</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,error_message)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__get__grid__version__mod_1ga5b4b5b2fe69e82c657c3c8f6a235f5e3" kindref="member">check_grid_sizes</ref></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;get_grid_version_r4.fh&quot;</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;get_grid_version_r8.fh&quot;</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">get_grid_version_mod</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/data_override/get_grid_version.F90"/>
+  </compounddef>
+</doxygen>

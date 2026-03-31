@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__netcdf__unstructured__domain__io__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_netcdf_unstructured_domain_io_mod</compoundname>
+    <innerclass refid="structfms__netcdf__unstructured__domain__io__mod_1_1fmsnetcdfunstructureddomainfile__t" prot="public">fms_netcdf_unstructured_domain_io_mod::fmsnetcdfunstructureddomainfile_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__netcdf__unstructured__domain__io__mod_1ga66c5f10fc8c5b289b9af6a6eddced27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_unstructured_domain_io_mod::close_unstructured_domain_file</definition>
+        <argsstring>(fileobj)</argsstring>
+        <name>close_unstructured_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="160" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__unstructured__domain__io__mod_1ga5574ef9902e2e79c3df83f9be1b6b511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_netcdf_unstructured_domain_io_mod::open_unstructured_domain_file</definition>
+        <argsstring>(fileobj, path, mode, domain, nc_format, is_restart, dont_add_res_to_filename)</argsstring>
+        <name>open_unstructured_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <param>
+          <type>is_restart</type>
+          <defname>is_restart</defname>
+        </param>
+        <param>
+          <type>dont_add_res_to_filename</type>
+          <defname>dont_add_res_to_filename</defname>
+        </param>
+        <briefdescription>
+<para>Open a netcdf file that is associated with an unstructured domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the open completed successfully.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File mode. Allowed values are &quot;read&quot;, &quot;append&quot;, &quot;write&quot;, or &quot;overwrite&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unstructured domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_restart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag telling if this file is a restart file. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dont_add_res_to_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating not to add &quot;.res&quot; to the filename </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="83" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="86" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__unstructured__domain__io__mod_1ga0db013b62a5a385dce70bb855a20bc11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_unstructured_domain_io_mod::register_unstructured_dimension</definition>
+        <argsstring>(fileobj, dim_name)</argsstring>
+        <name>register_unstructured_dimension</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>dim_name</type>
+          <defname>dim_name</defname>
+        </param>
+        <briefdescription>
+<para>Add an unstructured dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="169" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="170" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__unstructured__domain__io__mod_1ga778ad25c97c954d89fc6a9eaad0b0376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_unstructured_domain_io_mod::register_unstructured_domain_variable</definition>
+        <argsstring>(fileobj, variable_name, variable_type, dimensions, chunksizes)</argsstring>
+        <name>register_unstructured_domain_variable</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_type</type>
+          <defname>variable_type</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable type. Allowed values are: &quot;int&quot;, &quot;int64&quot;, &quot;float&quot;, or &quot;double&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable (netcdf4 only) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="192" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="194" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__unstructured__domain__io__mod_1gaf86060fb58d398bd3e34c71a026a4db0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_unstructured_domain_io_mod::unstructured_write_restart</definition>
+        <argsstring>(fileobj, unlim_dim_level)</argsstring>
+        <name>unstructured_write_restart</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper to distinguish interfaces. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="208" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" bodystart="209" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_unstructured_domain_io.F90" line="27" column="1"/>
+  </compounddef>
+</doxygen>

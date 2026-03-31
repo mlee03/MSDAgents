@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds" kind="interface" language="Fortran" prot="private">
+    <compoundname>diag_util_mod::fms_diag_check_out_of_bounds</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds_1a4f58c8acb09efae45ec4bd0dad4e3b2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_check_out_of_bounds_r4</definition>
+        <argsstring>(ofb, bounds, output_name, module_name, err_msg)</argsstring>
+        <name>fms_diag_check_out_of_bounds_r4</name>
+        <param>
+          <type>ofb</type>
+          <defname>ofb</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the array indices for <computeroutput>output_fields(out_num)</computeroutput> are outside the <computeroutput>output_fields(out_num)buffer</computeroutput> upper and lower bounds. If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ofb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output field buffer to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_out_of_bounds</computeroutput>. An empty error string indicates the x, y, and z indices are not outside the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="873" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="874" bodyend="898"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds_1a24b5636bb4656a40563715082a33fb23" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_check_out_of_bounds_r8</definition>
+        <argsstring>(ofb, bounds, output_name, module_name, err_msg)</argsstring>
+        <name>fms_diag_check_out_of_bounds_r8</name>
+        <param>
+          <type>ofb</type>
+          <defname>ofb</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>output_name</type>
+          <defname>output_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the array indices for output_field buffer (ofb) are outside the are outside the bounding box (bounds). If there is an error then error message will be filled. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ofb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output field buffer to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bounding box to check against</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name for placing in error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status of <computeroutput>check_out_of_bounds</computeroutput>. An empty error string indicates the x, y, and z indices are not outside the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="905" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="906" bodyend="930"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" line="102" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_util.F90" bodystart="102" bodyend="104"/>
+    <listofallmembers>
+      <member refid="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds_1a4f58c8acb09efae45ec4bd0dad4e3b2b" prot="private" virt="non-virtual"><scope>diag_util_mod::fms_diag_check_out_of_bounds</scope><name>fms_diag_check_out_of_bounds_r4</name></member>
+      <member refid="interfacediag__util__mod_1_1fms__diag__check__out__of__bounds_1a24b5636bb4656a40563715082a33fb23" prot="private" virt="non-virtual"><scope>diag_util_mod::fms_diag_check_out_of_bounds</scope><name>fms_diag_check_out_of_bounds_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

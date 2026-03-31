@@ -1,0 +1,678 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="column__diagnostics_8inc" kind="file" language="Fortran">
+    <compoundname>column_diagnostics.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="column__diagnostics_8inc_1a3491695b9f90f90230e84c2e6936c1c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine column_diagnostics_header_</definition>
+        <argsstring>(module, diag_unit, Time, nn, diag_lon, diag_lat, diag_i, diag_j)</argsstring>
+        <name>column_diagnostics_header_</name>
+        <param>
+          <type>module</type>
+          <defname>module</defname>
+        </param>
+        <param>
+          <type>diag_unit</type>
+          <defname>diag_unit</defname>
+        </param>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>nn</type>
+          <defname>nn</defname>
+        </param>
+        <param>
+          <type>diag_lon</type>
+          <defname>diag_lon</defname>
+        </param>
+        <param>
+          <type>diag_lat</type>
+          <defname>diag_lat</defname>
+        </param>
+        <param>
+          <type>diag_i</type>
+          <defname>diag_i</defname>
+        </param>
+        <param>
+          <type>diag_j</type>
+          <defname>diag_j</defname>
+        </param>
+        <briefdescription>
+<para>column_diagnostics_header writes out information concerning time and location of following data into the column_diagnostics output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name calling this subroutine</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current model time [ time_type ]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unit number for column_diagnostics output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of diagnostic column currently active</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitude of current diagnostic column [ degrees ]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>latitude of current diagnostic column [ degrees ]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i coordinate of current diagnostic column</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>j coordinate of current diagnostic column </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/column_diagnostics/include/column_diagnostics.inc" line="301" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/column_diagnostics/include/column_diagnostics.inc" bodystart="304" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="column__diagnostics_8inc_1a2807ec606d65fce8623ef466befe96be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine initialize_diagnostic_columns_</definition>
+        <argsstring>(module, num_diag_pts_latlon, num_diag_pts_ij, global_i, global_j, global_lat_latlon, global_lon_latlon, lonb_in, latb_in, do_column_diagnostics, diag_lon, diag_lat, diag_i, diag_j, diag_units)</argsstring>
+        <name>initialize_diagnostic_columns_</name>
+        <param>
+          <type>module</type>
+          <defname>module</defname>
+        </param>
+        <param>
+          <type>num_diag_pts_latlon</type>
+          <defname>num_diag_pts_latlon</defname>
+        </param>
+        <param>
+          <type>num_diag_pts_ij</type>
+          <defname>num_diag_pts_ij</defname>
+        </param>
+        <param>
+          <type>global_i</type>
+          <defname>global_i</defname>
+        </param>
+        <param>
+          <type>global_j</type>
+          <defname>global_j</defname>
+        </param>
+        <param>
+          <type>global_lat_latlon</type>
+          <defname>global_lat_latlon</defname>
+        </param>
+        <param>
+          <type>global_lon_latlon</type>
+          <defname>global_lon_latlon</defname>
+        </param>
+        <param>
+          <type>lonb_in</type>
+          <defname>lonb_in</defname>
+        </param>
+        <param>
+          <type>latb_in</type>
+          <defname>latb_in</defname>
+        </param>
+        <param>
+          <type>do_column_diagnostics</type>
+          <defname>do_column_diagnostics</defname>
+        </param>
+        <param>
+          <type>diag_lon</type>
+          <defname>diag_lon</defname>
+        </param>
+        <param>
+          <type>diag_lat</type>
+          <defname>diag_lat</defname>
+        </param>
+        <param>
+          <type>diag_i</type>
+          <defname>diag_i</defname>
+        </param>
+        <param>
+          <type>diag_j</type>
+          <defname>diag_j</defname>
+        </param>
+        <param>
+          <type>diag_units</type>
+          <defname>diag_units</defname>
+        </param>
+        <briefdescription>
+<para>initialize_diagnostic_columns returns the (i, j, lat, lon) coord- inates of any diagnostic columns that are located on the current processor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">module</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module calling this subroutine</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_diag_pts_latlon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of diagnostic columns specified by lat-lon coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_diag_pts_ij</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of diagnostic columns specified by global (i,j) coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">global_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified global i coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">global_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified global j coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">global_lat_latlon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified global lat coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">global_lon_latlon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified global lon coordinates</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">do_column_diagnostics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a diagnostic column in this jrow ?</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">diag_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>processor i indices of diagnstic columns</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">diag_j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>processor j indices of diagnstic columns</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">diag_lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>latitudes of diagnostic columns [ degrees ]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">diag_lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudes of diagnostic columns [ degrees ]</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">diag_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unit number for each diagnostic column </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/column_diagnostics/include/column_diagnostics.inc" line="23" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/column_diagnostics/include/column_diagnostics.inc" bodystart="29" bodyend="291"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>initialize_diagnostic_columns<sp/>returns<sp/>the<sp/>(i,<sp/>j,<sp/>lat,<sp/>lon)<sp/>coord-</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/><sp/><sp/><sp/>inates<sp/>of<sp/>any<sp/>diagnostic<sp/>columns<sp/>that<sp/>are<sp/>located<sp/>on<sp/>the<sp/>current</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!<sp/><sp/><sp/><sp/>processor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">initialize_diagnostic_columns_<sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(module,<sp/>num_diag_pts_latlon,<sp/>num_diag_pts_ij,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_i<sp/>,<sp/>global_j<sp/>,<sp/>global_lat_latlon,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon_latlon,<sp/>lonb_in,<sp/>latb_in,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_column_diagnostics,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon,<sp/>diag_lat,<sp/>diag_i,<sp/>diag_j,<sp/>diag_units)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>initialize_diagnostic_columns<sp/>returns<sp/>the<sp/>(i,<sp/>j,<sp/>lat,<sp/>lon)<sp/>coord-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>inates<sp/>of<sp/>any<sp/>diagnostic<sp/>columns<sp/>that<sp/>are<sp/>located<sp/>on<sp/>the<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>processor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>module</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>module<sp/>calling<sp/>this<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>num_diag_pts_latlon</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>number<sp/>of<sp/>diagnostic<sp/>columns<sp/>specified</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>by<sp/>lat-lon<sp/><sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>num_diag_pts_ij</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>number<sp/>of<sp/>diagnostic<sp/>columns<sp/>specified</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>by<sp/>global<sp/>(i,j)<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>global_i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>specified<sp/>global<sp/>i<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>global_j</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>specified<sp/>global<sp/>j<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>global_lat_latlon</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>specified<sp/>global<sp/>lat<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>global_lon_latlon</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>specified<sp/>global<sp/>lon<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>lonb_in,<sp/>latb_in</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>do_column_diagnostics</highlight><highlight class="comment"><sp/>!&lt;<sp/>is<sp/>a<sp/>diagnostic<sp/>column<sp/>in<sp/>this<sp/>jrow<sp/>?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>diag_i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>processor<sp/>i<sp/>indices<sp/>of<sp/>diagnstic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>diag_j</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>processor<sp/>j<sp/>indices<sp/>of<sp/>diagnstic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>diag_lat</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>latitudes<sp/>of<sp/>diagnostic<sp/>columns<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>diag_lon</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>longitudes<sp/>of<sp/>diagnostic<sp/>columns<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>diag_units</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>unit<sp/>number<sp/>for<sp/>each<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>intent(in)<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>module<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>module<sp/>calling<sp/>this<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_diag_pts_latlon<sp/><sp/><sp/>number<sp/>of<sp/>diagnostic<sp/>columns<sp/>specified</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>by<sp/>lat-lon<sp/><sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_diag_pts_ij<sp/><sp/><sp/><sp/><sp/><sp/><sp/>number<sp/>of<sp/>diagnostic<sp/>columns<sp/>specified</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>by<sp/>global<sp/>(i,j)<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_i<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>specified<sp/>global<sp/>i<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_j<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>specified<sp/>global<sp/>j<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat_latlon<sp/><sp/><sp/><sp/><sp/>specified<sp/>global<sp/>lat<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon_latlon<sp/><sp/><sp/><sp/><sp/>specified<sp/>global<sp/>lon<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>intent(out)<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_column_diagnostics<sp/>is<sp/>a<sp/>diagnostic<sp/>column<sp/>in<sp/>this<sp/>jrow<sp/>?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_i<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>processor<sp/>i<sp/>indices<sp/>of<sp/>diagnstic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_j<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>processor<sp/>j<sp/>indices<sp/>of<sp/>diagnstic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>latitudes<sp/>of<sp/>diagnostic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>longitudes<sp/>of<sp/>diagnostic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_units<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unit<sp/>number<sp/>for<sp/>each<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(diag_i,1))</highlight><highlight class="normal"><sp/>::<sp/>global_lat</highlight><highlight class="comment"><sp/>!&lt;<sp/>latitudes<sp/>for<sp/>all<sp/>diagnostic<sp/>columns<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(diag_i,1))</highlight><highlight class="normal"><sp/>::<sp/>global_lon</highlight><highlight class="comment"><sp/>!&lt;<sp/>longitudes<sp/>for<sp/>all<sp/>diagnostic<sp/>columns<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(latb_in,1)-1,<sp/>size(latb_in,2)-1)</highlight><highlight class="normal"><sp/>::<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance,<sp/>distance_x,<sp/>distance_y,<sp/>&amp;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_x2,<sp/>distance2</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(latb_in,1),<sp/>size(latb_in,2))</highlight><highlight class="normal"><sp/>::<sp/>latb_deg</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(lonb_in,1),<sp/>size(lonb_in,2))</highlight><highlight class="normal"><sp/>::<sp/>lonb_deg</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>dellat,<sp/>dellon</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>latb_max,<sp/>latb_min,<sp/>lonb_max,<sp/>lonb_min</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>num_diag_pts</highlight><highlight class="comment"><sp/>!&lt;<sp/>total<sp/>number<sp/>of<sp/>diagnostic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>do<sp/>loop<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>j</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>do<sp/>loop<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>nn</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>do<sp/>loop<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>::<sp/><sp/>ref_lat</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>::<sp/><sp/>current_distance</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=8)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/><sp/>char</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>character<sp/>string<sp/>for<sp/>diaganostic<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=FMS_FILE_LEN)</highlight><highlight class="normal"><sp/><sp/>::<sp/><sp/>filename</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>filename<sp/>for<sp/>output<sp/>file<sp/>for<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>allow_ij_input</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>open_file</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/><sp/>io</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>lkind=fms_cd_kind_</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>tmp</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat<sp/><sp/><sp/><sp/><sp/><sp/>latitudes<sp/>for<sp/>all<sp/>diagnostic<sp/>columns<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon<sp/><sp/><sp/><sp/><sp/><sp/>longitudes<sp/>for<sp/>all<sp/>diagnostic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_diag_pts<sp/><sp/><sp/><sp/>total<sp/>number<sp/>of<sp/>diagnostic<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>i,<sp/>j,<sp/>nn<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>loop<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>char<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>character<sp/>string<sp/>for<sp/>diaganostic<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename<sp/>for<sp/>output<sp/>file<sp/>for<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">column_diagnostics_init</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>save<sp/>the<sp/>input<sp/>lat<sp/>and<sp/>lon<sp/>fields.<sp/>define<sp/>the<sp/>delta<sp/>of<sp/>latitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>and<sp/>longitude.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>latb_deg<sp/>=<sp/></highlight><highlight class="keywordtype">real(<sp/>real(latb_in,r8_kind)*RADIAN,<sp/>FMS_CD_KIND_)</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>unit<sp/>conversion<sp/>in<sp/>r8_kind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lonb_deg<sp/>=<sp/></highlight><highlight class="keywordtype">real(<sp/>real(lonb_in,r8_kind)*RADIAN,<sp/>FMS_CD_KIND_<sp/>)</highlight><highlight class="comment"><sp/>!&lt;<sp/>unit<sp/>conversion<sp/>in<sp/>r8_kind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dellat<sp/>=<sp/>latb_in(1,2)<sp/>-<sp/>latb_in(1,1)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dellon<sp/>=<sp/>lonb_in(2,1)<sp/>-<sp/>lonb_in(1,1)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>latb_max<sp/>=<sp/>maxval(latb_deg(:,:))</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>latb_min<sp/>=<sp/>minval(latb_deg(:,:))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lonb_max<sp/>=<sp/>maxval(lonb_deg(:,:))</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lonb_min<sp/>=<sp/>minval(lonb_deg(:,:))</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lonb_min<sp/>&lt;<sp/>10.0_lkind<sp/>.or.<sp/>lonb_max<sp/>&gt;<sp/>350.0_lkind)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lonb_min<sp/>=<sp/>0.0_lkind</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lonb_max<sp/>=<sp/>360.0_lkind</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>allow_ij_input<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ref_lat<sp/>=<sp/>latb_in(1,1)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=2,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(latb_in,1)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(latb_in(i,1)<sp/>/=<sp/>ref_lat)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allow_ij_input<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">exit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>.not.<sp/>allow_ij_input<sp/>.and.<sp/>num_diag_pts_ij<sp/>/=<sp/>0)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;column_diagnostics_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;cannot<sp/>specify<sp/>column<sp/>diagnostics<sp/>column<sp/>with<sp/>(i,j)<sp/>&amp;</highlight></codeline>
+<codeline lineno="152"><highlight class="stringliteral"></highlight><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;coordinates<sp/>when<sp/>using<sp/>cubed<sp/>sphere<sp/>--<sp/>must<sp/>specify<sp/>&amp;</highlight></codeline>
+<codeline lineno="153"><highlight class="stringliteral"></highlight><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>lat/lon<sp/>coordinates&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>initialize<sp/>column_diagnostics<sp/>flag<sp/>and<sp/>diag<sp/>unit<sp/>numbers.<sp/>define</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>total<sp/>number<sp/>of<sp/>diagnostic<sp/>columns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>do_column_diagnostics<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diag_units(:)<sp/>=<sp/>-1</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diag_i(:)<sp/>=<sp/>-99</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diag_j(:)<sp/>=<sp/>-99</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat(:)<sp/>=<sp/>-999.0_lkind</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon(:)<sp/>=<sp/>-999.0_lkind</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>num_diag_pts<sp/>=<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(diag_i(:))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>define<sp/>an<sp/>array<sp/>of<sp/>lat-lon<sp/>values<sp/>for<sp/>all<sp/>diagnostic<sp/>columns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>nn<sp/>=<sp/>1,<sp/>num_diag_pts_latlon</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat(nn)<sp/>=<sp/>global_lat_latlon(nn)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon(nn)<sp/>=<sp/>global_lon_latlon(nn)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>nn<sp/>=<sp/>1,<sp/>num_diag_pts_ij</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>(-0.5_lkind*acos(-1.0_lkind)<sp/>+<sp/>0.5_lkind*dellat)<sp/>+<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(global_j(nn)-1,FMS_CD_KIND_)*dellat</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat(nn+num_diag_pts_latlon)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(tmp,r8_kind)*RADIAN,<sp/>FMS_CD_KIND_<sp/>)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>0.5_lkind*dellon<sp/>+<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(global_i(nn)-1,FMS_CD_KIND_)*dellon</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon(nn+num_diag_pts_latlon)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(tmp,r8_kind)*RADIAN,<sp/>FMS_CD_KIND_<sp/>)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>loop<sp/>over<sp/>all<sp/>diagnostic<sp/>points<sp/>to<sp/>check<sp/>for<sp/>their<sp/>presence<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>this<sp/>processor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>nn=1,num_diag_pts</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref><sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>verify<sp/>that<sp/>the<sp/>values<sp/>of<sp/>lat<sp/>and<sp/>lon<sp/>are<sp/>valid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_lon(nn)<sp/>&gt;=<sp/>0.0_lkind<sp/>.and.<sp/>&amp;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon(nn)<sp/>&lt;=<sp/>360.0_lkind)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;column_diagnostics_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>invalid<sp/>longitude&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_lat(nn)<sp/>&gt;=<sp/>-90.0_lkind<sp/>.and.<sp/>&amp;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat(nn)<sp/>&lt;=<sp/><sp/>90.0_lkind)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;column_diagnostics_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>invalid<sp/>latitude&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>if<sp/>the<sp/>desired<sp/>diagnostics<sp/>column<sp/>is<sp/>within<sp/>the<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>processor&apos;s<sp/>domain,<sp/>define<sp/>the<sp/>total<sp/>and<sp/>coordinate<sp/>distances<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>each<sp/>of<sp/>the<sp/>processor&apos;s<sp/>grid<sp/>points<sp/>to<sp/>the<sp/>diagnostics<sp/>point.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_lat(nn)<sp/>.ge.<sp/>latb_min<sp/>.and.<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lat(nn)<sp/>.le.<sp/>latb_max)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_lon(nn)<sp/>.ge.<sp/>lonb_min<sp/><sp/><sp/><sp/><sp/>.and.&amp;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_lon(nn)<sp/>.le.<sp/>lonb_max)<sp/><sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j=1,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(latb_deg,2)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(lonb_deg,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_y(i,j)<sp/>=<sp/>abs(global_lat(nn)<sp/>-<sp/>latb_deg(i,j))</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_x(i,j)<sp/>=<sp/>abs(global_lon(nn)<sp/>-<sp/>lonb_deg(i,j))</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_x2(i,j)<sp/>=<sp/>abs((global_lon(nn)-360.0_lkind)<sp/>-<sp/>lonb_deg(i,j))</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance(i,j)<sp/>=<sp/>(global_lat(nn)-latb_deg(i,j))**2<sp/>+<sp/>(global_lon(nn)-lonb_deg(i,j))**2</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance2(i,j)<sp/>=<sp/>(global_lat(nn)-latb_deg(i,j))**2<sp/>+<sp/>((global_lon(nn)-360.0_lkind)<sp/>-<sp/>lonb_deg(i,j))**2</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>find<sp/>the<sp/>grid<sp/>point<sp/>on<sp/>the<sp/>processor<sp/>that<sp/>is<sp/>within<sp/>the<sp/>specified</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>critical<sp/>distance<sp/>and<sp/>also<sp/>closest<sp/>to<sp/>the<sp/>requested<sp/>diagnostics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>column.<sp/>save<sp/>the<sp/>(i,j)<sp/>coordinates<sp/>and<sp/>(lon,lat)<sp/>of<sp/>this<sp/>model</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>grid<sp/>point.<sp/>set<sp/>a<sp/>flag<sp/>indicating<sp/>that<sp/>a<sp/>disgnostics<sp/>file<sp/>should</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>be<sp/>opened<sp/>on<sp/>this<sp/>processor<sp/>for<sp/>this<sp/>diagnostic<sp/>point.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_distance<sp/>=<sp/>distance(1,1)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j=1,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(latb_deg,2)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(lonb_deg,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_x(i,j)<sp/>&lt;=<sp/></highlight><highlight class="keywordtype">real(crit_xdistance,FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>.and.<sp/>&amp;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_y(i,j)<sp/>&lt;=<sp/>real(crit_ydistance,fms_cd_kind_))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance(i,j)<sp/>&lt;<sp/>current_distance)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_distance<sp/>=<sp/>distance(i,j)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_column_diagnostics(i,j)<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_j(nn)<sp/>=<sp/>j</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_i(nn)<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon(nn)<sp/>=<sp/>lonb_deg(i,j)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat(nn)<sp/>=<sp/>latb_deg(i,j)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref><sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>check<sp/>needed<sp/>because<sp/>of<sp/>the<sp/>0.0<sp/>/<sp/>360.0<sp/>longitude<sp/>periodicity.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_x2(i,j)&lt;=<sp/></highlight><highlight class="keywordtype">real(crit_xdistance,FMS_CD_KIND_)</highlight><highlight class="normal"><sp/>.and.<sp/>&amp;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance_y(i,j)<sp/>&lt;=<sp/>real(crit_ydistance,fms_cd_kind_))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance2(i,j)<sp/>&lt;<sp/>current_distance)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_distance<sp/>=<sp/>distance2(i,j)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_column_diagnostics(i,j)<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_j(nn)<sp/>=<sp/>j</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_i(nn)<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon(nn)<sp/>=<sp/>lonb_deg(i,j)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat(nn)<sp/>=<sp/>latb_deg(i,j)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref><sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>if<sp/>the<sp/>point<sp/>has<sp/>been<sp/>found<sp/>on<sp/>this<sp/>processor,<sp/>open<sp/>a<sp/>diagnostics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(char,<sp/></highlight><highlight class="stringliteral">&apos;(i2)&apos;</highlight><highlight class="normal">)<sp/>nn</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename<sp/>=<sp/>trim(module)<sp/>//<sp/></highlight><highlight class="stringliteral">&apos;_point&apos;</highlight><highlight class="normal"><sp/>//<sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trim(adjustl(char))<sp/>//<sp/></highlight><highlight class="stringliteral">&apos;.out&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()<sp/>&gt;<sp/>10000)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<sp/>filename,</highlight><highlight class="stringliteral">&apos;(a,i6.6)&apos;</highlight><highlight class="normal"><sp/>)trim(filename)//</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()-mpp_root_pe()</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(<sp/>filename,</highlight><highlight class="stringliteral">&apos;(a,i4.4)&apos;</highlight><highlight class="normal"><sp/>)trim(filename)//</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()-mpp_root_pe()</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">open</highlight><highlight class="normal">(newunit=diag_units(nn),<sp/>file=trim(filename),<sp/>action=</highlight><highlight class="stringliteral">&apos;WRITE&apos;</highlight><highlight class="normal">,<sp/>position=</highlight><highlight class="stringliteral">&apos;rewind&apos;</highlight><highlight class="normal">,<sp/>iostat=io)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(io/=0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;column_diagnostics_mod&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Error<sp/>in<sp/>opening<sp/>file<sp/>&apos;</highlight><highlight class="normal">//trim(filename),<sp/>fatal)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!<sp/>(open_file)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">initialize_diagnostic_columns_</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight><highlight class="comment">!####################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="298"><highlight class="comment">!&gt;<sp/>@brief<sp/>column_diagnostics_header<sp/>writes<sp/>out<sp/>information<sp/>concerning</highlight></codeline>
+<codeline lineno="299"><highlight class="comment">!!<sp/><sp/><sp/><sp/>time<sp/>and<sp/>location<sp/>of<sp/>following<sp/>data<sp/>into<sp/>the<sp/>column_diagnostics</highlight></codeline>
+<codeline lineno="300"><highlight class="comment">!!<sp/><sp/><sp/><sp/>output<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">column_diagnostics_header_<sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(module,<sp/>diag_unit,<sp/>time,<sp/>nn,<sp/>diag_lon,<sp/>&amp;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat,<sp/>diag_i,<sp/>diag_j)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>column_diagnostics_header<sp/>writes<sp/>out<sp/>information<sp/>concerning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>time<sp/>and<sp/>location<sp/>of<sp/>following<sp/>data<sp/>into<sp/>the<sp/>column_diagnostics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>output<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>module</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>module<sp/>name<sp/>calling<sp/>this<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>Time</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>current<sp/>model<sp/>time<sp/>[<sp/>time_type<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>diag_unit</highlight><highlight class="comment"><sp/>!&lt;<sp/>unit<sp/>number<sp/>for<sp/>column_diagnostics<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>nn</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>index<sp/>of<sp/>diagnostic<sp/>column<sp/>currently<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>diag_lon</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>longitude<sp/>of<sp/>current<sp/>diagnostic<sp/>column<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_CD_KIND_)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>diag_lat</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>latitude<sp/>of<sp/>current<sp/>diagnostic<sp/>column<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>diag_i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>i<sp/>coordinate<sp/>of<sp/>current<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>diag_j</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>j<sp/>coordinate<sp/>of<sp/>current<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>intent(in)<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>module<sp/><sp/><sp/><sp/><sp/>module<sp/>name<sp/>calling<sp/>this<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time<sp/><sp/><sp/><sp/><sp/><sp/><sp/>current<sp/>model<sp/>time<sp/>[<sp/>time_type<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_unit<sp/><sp/>unit<sp/>number<sp/>for<sp/>column_diagnostics<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>nn<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>of<sp/>diagnostic<sp/>column<sp/>currently<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon<sp/><sp/><sp/>longitude<sp/>of<sp/>current<sp/>diagnostic<sp/>column<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lat<sp/><sp/><sp/>latitude<sp/>of<sp/>current<sp/>diagnostic<sp/>column<sp/>[<sp/>degrees<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_i<sp/><sp/><sp/><sp/><sp/>i<sp/>coordinate<sp/>of<sp/>current<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_j<sp/><sp/><sp/><sp/><sp/>j<sp/>coordinate<sp/>of<sp/>current<sp/>diagnostic<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>year</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>month</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>day</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>hour</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>minute</highlight><highlight class="comment"><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>second</highlight><highlight class="comment"><sp/>!&lt;<sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=9)</highlight><highlight class="normal"><sp/><sp/>::<sp/>mon</highlight><highlight class="comment"><sp/><sp/><sp/><sp/>!&lt;<sp/>character<sp/>string<sp/>for<sp/>the<sp/>current<sp/>month</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=64)</highlight><highlight class="normal"><sp/>::<sp/>header</highlight><highlight class="comment"><sp/>!&lt;<sp/>title<sp/>for<sp/>the<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>integers<sp/>defining<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>mon<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>character<sp/>string<sp/>for<sp/>the<sp/>current<sp/>month</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>header<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>title<sp/>for<sp/>the<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">column_diagnostics_init</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>convert<sp/>the<sp/>time<sp/>type<sp/>to<sp/>a<sp/>date<sp/>and<sp/>time<sp/>for<sp/>printing.<sp/>convert</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>month<sp/>to<sp/>a<sp/>character<sp/>string.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="comment">!--------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_date<sp/>(time,<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second)</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mon<sp/>=<sp/>month_name(month)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>write<sp/>timestamp<sp/>and<sp/>column<sp/>location<sp/>information<sp/>to<sp/>the<sp/>diagnostic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>columns<sp/>output<sp/>unit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;======================================================&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>header<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PRINTING<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>//<sp/></highlight><highlight class="stringliteral">&apos;<sp/><sp/>DIAGNOSTICS&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/>header</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a,<sp/>i6,2x,<sp/>a,i4,i4,i4,i4)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>time<sp/>stamp:&apos;</highlight><highlight class="normal">,<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year,<sp/>trim(mon),<sp/>day,<sp/>&amp;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hour,<sp/>minute,<sp/>second</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a,<sp/>i4)&apos;</highlight><highlight class="normal">)<sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>DIAGNOSTIC<sp/>POINT<sp/>COORDINATES,<sp/>point<sp/>#&apos;</highlight><highlight class="normal">,<sp/>nn</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a,f8.3,a,f8.3)&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&apos;<sp/>longitude<sp/>=<sp/>&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_lon(nn),<sp/></highlight><highlight class="stringliteral">&apos;<sp/>latitude<sp/><sp/>=<sp/>&apos;</highlight><highlight class="normal">,<sp/>diag_lat(nn)</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a,<sp/>i6,<sp/>a,i6,a,i6)&apos;</highlight><highlight class="normal">)<sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>on<sp/>processor<sp/>#<sp/>&apos;</highlight><highlight class="normal">,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>(),<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>:<sp/><sp/><sp/>processor<sp/>i<sp/>=&apos;</highlight><highlight class="normal">,<sp/>diag_i(nn),<sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>,<sp/><sp/><sp/>processor<sp/>j<sp/>=&apos;</highlight><highlight class="normal">,<sp/>diag_j(nn)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(diag_unit,</highlight><highlight class="stringliteral">&apos;(a)&apos;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="comment">!---------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">column_diagnostics_header_</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="comment">!@}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/column_diagnostics/include/column_diagnostics.inc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="AUTOTOOLS__INSTRUCTIONS_8md" kind="file" language="Markdown">
+    <compoundname>AUTOTOOLS_INSTRUCTIONS.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">\page<sp/>autotools<sp/>Building<sp/>with<sp/>Autotools</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Autotools<sp/>Build<sp/>System<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>document<sp/>describes<sp/>the<sp/>autotools-based<sp/>build<sp/>system<sp/>for<sp/>FMS.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction<sp/>to<sp/>Autotools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Autoconf,<sp/>automake,<sp/>and<sp/>libtool<sp/>and<sp/>the<sp/>GNU/Linux<sp/>standard<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">tools.<sp/>When<sp/>building<sp/>a<sp/>package<sp/>based<sp/>on<sp/>autotools,<sp/>the<sp/>user<sp/>does</highlight></codeline>
+<codeline><highlight class="normal">something<sp/>like:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">./configure<sp/>&amp;&amp;<sp/>make<sp/>check<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>configure<sp/>step<sp/>queries<sp/>the<sp/>system<sp/>about<sp/>many<sp/>things,<sp/>and<sp/>constructs</highlight></codeline>
+<codeline><highlight class="normal">makefiles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>make<sp/>step<sp/>uses<sp/>the<sp/>generated<sp/>Makefiles<sp/>to<sp/>build,<sp/>test,<sp/>and<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>software.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Standard<sp/>environment<sp/>variables<sp/>and<sp/>configure<sp/>options<sp/>can<sp/>be<sp/>used<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">control<sp/>many<sp/>aspects<sp/>of<sp/>the<sp/>build.<sp/>Custom<sp/>configure<sp/>options<sp/>can<sp/>easily</highlight></codeline>
+<codeline><highlight class="normal">be<sp/>added<sp/>to<sp/>support<sp/>additional<sp/>needs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Caution<sp/>Concerning<sp/>Generated<sp/>Files</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Autotools<sp/>creates<sp/>many<sp/>generated<sp/>files,<sp/>which<sp/>should<sp/>not<sp/>be<sp/>edited<sp/>or</highlight></codeline>
+<codeline><highlight class="normal">checked<sp/>into<sp/>the<sp/>repository.<sp/>Simply<sp/>ignore<sp/>them.<sp/>Do<sp/>not<sp/>try<sp/>to<sp/>edit</highlight></codeline>
+<codeline><highlight class="normal">generated<sp/>Makefiles,<sp/>do<sp/>not<sp/>move<sp/>or<sp/>rename<sp/>any<sp/>of<sp/>the<sp/>shell<sp/>scripts</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>autoreconf<sp/>puts<sp/>in<sp/>place<sp/>to<sp/>let<sp/>autotools<sp/>work.<sp/>These<sp/>files<sp/>have</highlight></codeline>
+<codeline><highlight class="normal">been<sp/>added<sp/>to<sp/>.gitignore<sp/>and<sp/>should<sp/>never<sp/>be<sp/>added<sp/>to<sp/>the<sp/>repo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>How<sp/>to<sp/>Build<sp/>FMS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Previously,<sp/>everyone<sp/>built<sp/>FMS<sp/>by<sp/>checking<sp/>out<sp/>code<sp/>from<sp/>git.<sp/>However,</highlight></codeline>
+<codeline><highlight class="normal">with<sp/>the<sp/>new<sp/>build<sp/>system,<sp/>only<sp/>those<sp/>who<sp/>want<sp/>to<sp/>contribute<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">code<sp/>base<sp/>need<sp/>to<sp/>check<sp/>out<sp/>the<sp/>code<sp/>from<sp/>git.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>As<sp/>an<sp/>FMS<sp/>Developer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>FMS<sp/>developers<sp/>will<sp/>need<sp/>a<sp/>reasonably<sp/>recent<sp/>version<sp/>of<sp/>tools</highlight></codeline>
+<codeline><highlight class="normal">autoconf,<sp/>automake,<sp/>and<sp/>libtool.<sp/>These<sp/>are<sp/>available<sp/>on<sp/>package</highlight></codeline>
+<codeline><highlight class="normal">management<sp/>systems.<sp/>(Ex.<sp/>yum<sp/>install<sp/>automake<sp/>autoconf<sp/>libtool).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>process<sp/>of<sp/>building<sp/>FMS<sp/>from<sp/>the<sp/>repo<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Clone<sp/>repo<sp/>and<sp/>cd<sp/>into<sp/>repo<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Run<sp/>autoreconf<sp/>-i<sp/>to<sp/>build<sp/>the<sp/>developer<sp/>build<sp/>system.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Run<sp/>./configure<sp/>to<sp/>configure.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Run<sp/>make<sp/>to<sp/>build.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>As<sp/>an<sp/>FMS<sp/>User</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Users<sp/>start<sp/>with<sp/>a<sp/>tarball,<sp/>not<sp/>the<sp/>git<sp/>repo.<sp/>They<sp/>do<sp/>not<sp/>have<sp/>to<sp/>have</highlight></codeline>
+<codeline><highlight class="normal">any<sp/>of<sp/>the<sp/>autotools<sp/>installed.<sp/>Their<sp/>build<sp/>process<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Unpack<sp/>the<sp/>tarball<sp/>and<sp/>cd<sp/>into<sp/>the<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Run<sp/>./configure<sp/>--prefix=/my/installdir</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Run<sp/>make<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Precious<sp/>Flags<sp/>for<sp/>configure</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>environment<sp/>variables<sp/>are<sp/>important<sp/>to<sp/>the<sp/>autotools<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">system,<sp/>these<sp/>are<sp/>known<sp/>as<sp/>&quot;precious&quot;<sp/>variables.<sp/>One<sp/>example<sp/>is<sp/>CC,</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>should<sp/>be<sp/>set<sp/>to<sp/>the<sp/>C<sp/>compiler.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It&apos;s<sp/>common<sp/>to<sp/>set<sp/>some<sp/>precious<sp/>vars<sp/>before<sp/>the<sp/>build.<sp/>Commonly<sp/>used</highlight></codeline>
+<codeline><highlight class="normal">ones<sp/>include:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>CC<sp/>the<sp/>C<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>FC<sp/>the<sp/>Fortran<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>CPPFLAGS<sp/>C<sp/>(and<sp/>Fortran)<sp/>pre-processor<sp/>flags</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>FCFLAGS<sp/>Fortran<sp/>compiler<sp/>flags</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>LDFLAGS<sp/>Linker<sp/>flags</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Standard<sp/>Configure<sp/>Options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>configure<sp/>script<sp/>has<sp/>some<sp/>standard<sp/>options,<sp/>including:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>--prefix<sp/>allows<sp/>user<sp/>to<sp/>specify<sp/>install<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>--disable-shared<sp/>disables<sp/>building<sp/>of<sp/>shared<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>--help<sp/>prints<sp/>message<sp/>showing<sp/>all<sp/>options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>FMS<sp/>Configure<sp/>Options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Configure<sp/>build<sp/>options<sp/>for<sp/>FMS:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--with-yaml`<sp/>:<sp/>Build<sp/>with<sp/>support<sp/>for<sp/>yaml<sp/>input<sp/>files(requires<sp/>the<sp/>libyaml<sp/>library<sp/>and<sp/>headers)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--enable-mixed-mode`<sp/>:<sp/>Build<sp/>in<sp/>mixed<sp/>precision<sp/>mode,<sp/>with<sp/>default<sp/>4<sp/>byte<sp/>reals<sp/>and<sp/>8<sp/>byte<sp/>real<sp/>overloads</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--disable-setting-flags`<sp/>:<sp/>Build<sp/>without<sp/>automatically<sp/>setting<sp/>flags<sp/>during<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--with-mpi`<sp/>:<sp/>Build<sp/>with<sp/>MPI<sp/>support,<sp/>enabled<sp/>by<sp/>default</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--enable-overload-r4`<sp/>:<sp/>Compiles<sp/>with<sp/>4<sp/>byte<sp/>real<sp/>routine<sp/>overloads</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--enable-overload-c4`<sp/>:<sp/>Compiles<sp/>with<sp/>4<sp/>byte<sp/>complex<sp/>routine<sp/>overloads</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--enable-overload-c8`<sp/>:<sp/>Compiles<sp/>with<sp/>8<sp/>byte<sp/>complex<sp/>routine<sp/>overloads</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`--disable-8byte-int`<sp/><sp/>:<sp/>Compiles<sp/>with<sp/>only<sp/>4<sp/>byte<sp/>integer<sp/>routines</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Standard<sp/>Make<sp/>Targets</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>of<sp/>the<sp/>useful<sp/>make<sp/>targets<sp/>include:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>or<sp/>make<sp/>all<sp/>-<sp/>build<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>install<sp/>-<sp/>build<sp/>code<sp/>(as<sp/>needed)<sp/>and<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>check<sp/>-<sp/>build<sp/>code<sp/>(as<sp/>needed)<sp/>and<sp/>run<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>clean<sp/>-<sp/>clean<sp/>back<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>distclean<sp/>-<sp/>clean<sp/>configure<sp/>output<sp/>and<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>dist<sp/>-<sp/>create<sp/>a<sp/>tarball<sp/>for<sp/>distribution</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>make<sp/>distcheck<sp/>-<sp/>create<sp/>a<sp/>tarball,<sp/>unpack<sp/>it,<sp/>build<sp/>and<sp/>run<sp/>tests,<sp/>then<sp/>then<sp/>clean<sp/>it.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/AUTOTOOLS_INSTRUCTIONS.md"/>
+  </compounddef>
+</doxygen>

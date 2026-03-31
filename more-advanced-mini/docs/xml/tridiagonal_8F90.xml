@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="tridiagonal_8F90" kind="file" language="Fortran">
+    <compoundname>tridiagonal.F90</compoundname>
+    <includes local="yes">tridiagonal_r4.fh</includes>
+    <includes local="yes">tridiagonal_r8.fh</includes>
+    <incdepgraph>
+      <node id="1031">
+        <label>tridiagonal_r4.fh</label>
+      </node>
+      <node id="1032">
+        <label>tridiagonal_r8.fh</label>
+      </node>
+      <node id="1030">
+        <label>/home/Ryan.Mulhall/FMS-1/tridiagonal/tridiagonal.F90</label>
+        <link refid="tridiagonal_8F90"/>
+        <childnode refid="1031" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacetridiagonal__mod_1_1tri__invert" prot="public">tridiagonal_mod::tri_invert</innerclass>
+    <innerclass refid="structtridiagonal__mod_1_1tridiag__reals__r4" prot="public">tridiagonal_mod::tridiag_reals_r4</innerclass>
+    <innerclass refid="structtridiagonal__mod_1_1tridiag__reals__r8" prot="public">tridiagonal_mod::tridiag_reals_r8</innerclass>
+    <innernamespace refid="namespacetridiagonal__mod">tridiagonal_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>tridiagonal_mod<sp/>tridiagonal_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>tridiagonal</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Solves<sp/>a<sp/>tridiagonal<sp/>system<sp/>of<sp/>equations.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!&gt;<sp/>The<sp/>following<sp/>schematic<sp/>represents<sp/>the<sp/>system<sp/>of<sp/>equations<sp/>solved,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>where<sp/>X<sp/>is<sp/>the<sp/>solution.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>&lt;PRE&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/>B(1)<sp/><sp/>A(1)<sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.......<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/>|<sp/><sp/>|X(1)|<sp/><sp/><sp/>|D(1)|</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/>C(2)<sp/><sp/>B(2)<sp/><sp/>A(2)<sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.......<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/>|<sp/><sp/>|X(2)|<sp/><sp/><sp/>|D(2)|</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>0<sp/><sp/><sp/><sp/>C(3)<sp/><sp/>B(3)<sp/><sp/>A(3)<sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.......<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/>|<sp/><sp/>|<sp/>..<sp/>|<sp/><sp/><sp/>|<sp/>..<sp/>|</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>..........................................<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>|<sp/>..<sp/>|<sp/>=<sp/>|<sp/>..<sp/>|</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>..........................................<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>|<sp/>..<sp/>|<sp/><sp/><sp/>|<sp/>..<sp/>|</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C(N-2)<sp/>B(N-2)<sp/>A(N-2)<sp/><sp/>0<sp/><sp/><sp/><sp/>|<sp/><sp/>|<sp/>..<sp/>|<sp/><sp/><sp/>|<sp/>..<sp/>|</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/>C(N-1)<sp/>B(N-1)<sp/>A(N-1)|<sp/><sp/>|<sp/>..<sp/>|<sp/><sp/><sp/>|<sp/>..<sp/>|</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/>C(N)<sp/><sp/><sp/>B(N)<sp/><sp/>|<sp/><sp/>|X(N)|<sp/><sp/><sp/>|D(N)|</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">!!<sp/>&lt;/PRE&gt;</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">!!<sp/><sp/>To<sp/>solve<sp/>this<sp/>system</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">!!<sp/>&lt;PRE&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">!!<sp/><sp/><sp/>call<sp/>tri_invert(X,D,A,B,C)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>real,<sp/>intent(out),<sp/>dimension(:,:,:)<sp/>::<sp/>X</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>real,<sp/>intent(in),<sp/><sp/>dimension(:,:,:)<sp/>::<sp/>D</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/>real,<sp/>optional,<sp/><sp/><sp/><sp/>dimension(:,:,:)<sp/>::<sp/>A,B,C</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">!!<sp/>&lt;/PRE&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">!!<sp/>For<sp/>simplicity<sp/>(?),<sp/>A<sp/>and<sp/>C<sp/>are<sp/>assumed<sp/>to<sp/>be<sp/>dimensioned<sp/>the<sp/>same<sp/>size</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">!!<sp/>as<sp/>B,<sp/>D,<sp/>and<sp/>X,<sp/>although<sp/>any<sp/>input<sp/>values<sp/>for<sp/>A(N)<sp/>and<sp/>C(1)<sp/>are<sp/>ignored.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">!!<sp/>(some<sp/>checks<sp/>are<sp/>needed<sp/>here)</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">!!<sp/>If<sp/>A<sp/>is<sp/>not<sp/>present,<sp/>it<sp/>is<sp/>assumed<sp/>that<sp/>the<sp/>matrix<sp/>(A,B.C)<sp/>has<sp/>not<sp/>been<sp/>changed</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">!!<sp/>since<sp/>the<sp/>last<sp/>call<sp/>to<sp/>tri_invert.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">!!<sp/>To<sp/>release<sp/>memory,</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">!!<sp/>&lt;PRE&gt;</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">!!<sp/><sp/><sp/><sp/>call<sp/>close_tridiagonal</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">!!<sp/>&lt;/PRE&gt;</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">!!<sp/>Arguments<sp/>A,<sp/>B,<sp/>and<sp/>C<sp/>are<sp/>optional,<sp/>and<sp/>are<sp/>saved<sp/>as<sp/>module<sp/>variables</highlight></codeline>
+<codeline lineno="57"><highlight class="comment">!!<sp/>if<sp/>one<sp/>recalls<sp/>tri_invert<sp/>without<sp/>changing<sp/>(A,B,C)</highlight></codeline>
+<codeline lineno="58"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">!!<sp/>@note</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>Optional<sp/>arguments<sp/>A,B,C<sp/>have<sp/>no<sp/>intent<sp/>declaration,</highlight></codeline>
+<codeline lineno="61"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>so<sp/>the<sp/>default<sp/>intent<sp/>is<sp/>inout.<sp/>The<sp/>value<sp/>of<sp/>A(N)<sp/>is<sp/>modified</highlight></codeline>
+<codeline lineno="62"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/>on<sp/>output,<sp/>and<sp/>B<sp/>and<sp/>C<sp/>are<sp/>unchanged.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">!!<sp/><sp/>The<sp/>following<sp/>private<sp/>allocatable<sp/>arrays<sp/>save<sp/>the<sp/>relevant<sp/>information</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">!!<sp/><sp/>if<sp/>one<sp/>recalls<sp/>tri_invert<sp/>without<sp/>changing<sp/>(A,B,C):</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">!!<sp/><sp/>&lt;PRE&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allocate<sp/>(<sp/>e<sp/><sp/>(size(x,1),<sp/>size(x,2),<sp/>size(x,3))<sp/>)</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allocate<sp/>(<sp/>g<sp/><sp/>(size(x,1),<sp/>size(x,2),<sp/>size(x,3))<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allocate<sp/>(<sp/>cc<sp/>(size(x,1),<sp/>size(x,2),<sp/>size(x,3))<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allocate<sp/>(<sp/>bb<sp/>(size(x,1),<sp/>size(x,2))<sp/>)</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">!!<sp/>&lt;/PRE&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">!!<sp/><sp/>This<sp/>storage<sp/>is<sp/>deallocated<sp/>when<sp/>close_tridiagonal<sp/>is<sp/>called.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="74"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>tridiagonal_mod</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>tridiagonal_mod</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="structtridiagonal__mod_1_1tridiag__reals__r4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/>::<sp/><ref refid="structtridiagonal__mod_1_1tridiag__reals__r4" kindref="compound">tridiag_reals_r4</ref></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>e,<sp/>g,<sp/>cc</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>bb</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structtridiagonal__mod_1_1tridiag__reals__r8" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/>::<sp/><ref refid="structtridiagonal__mod_1_1tridiag__reals__r8" kindref="compound">tridiag_reals_r8</ref></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:,:)</highlight><highlight class="normal"><sp/>::<sp/>e,<sp/>g,<sp/>cc</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>bb</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtridiagonal__mod_1_1tridiag__reals__r4" kindref="compound">tridiag_reals_r4</ref>)<sp/>::<sp/><ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref></highlight><highlight class="comment"><sp/>!&lt;<sp/>holds<sp/>reals<sp/>stored<sp/>from<sp/>r4_kind<sp/>calls<sp/>to<sp/>tri_invert</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtridiagonal__mod_1_1tridiag__reals__r8" kindref="compound">tridiag_reals_r8</ref>)<sp/>::<sp/><ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref></highlight><highlight class="comment"><sp/>!&lt;<sp/>holds<sp/>reals<sp/>stored<sp/>from<sp/>r8_kind<sp/>calls<sp/>to<sp/>tri_invert</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="group__tridiagonal__mod_1ga42fbcafd67446a5ef47fe02cb4b20676" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__tridiagonal__mod_1ga42fbcafd67446a5ef47fe02cb4b20676" kindref="member">init_tridiagonal_r4</ref><sp/>=<sp/>.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>true<sp/>when<sp/>fields<sp/>in<sp/>tridiag_r4<sp/>are<sp/>allocated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="group__tridiagonal__mod_1gafeceb3ce960bb62610510e6c9ea97e57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"><sp/>::<sp/><ref refid="group__tridiagonal__mod_1gafeceb3ce960bb62610510e6c9ea97e57" kindref="member">init_tridiagonal_r8</ref><sp/>=<sp/>.false.<sp/></highlight><highlight class="comment">!&lt;<sp/>true<sp/>when<sp/>fields<sp/>in<sp/>tridiag_r8<sp/>are<sp/>allocated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>Interface<sp/>to<sp/>solve<sp/>tridiagonal<sp/>systems<sp/>of<sp/>equations<sp/>for<sp/>either<sp/>kind<sp/>value.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>Module<sp/>level<sp/>variables<sp/>will<sp/>be<sp/>deallocated<sp/>and<sp/>allocated<sp/>for<sp/>every</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>Since<sp/>this<sp/>relies<sp/>on<sp/>the<sp/>state<sp/>of<sp/>module<sp/>variables<sp/>(unless<sp/>A,B,C<sp/>are<sp/>specified)</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>the<sp/>values<sp/>stored<sp/>are<sp/>distinct<sp/>for<sp/>each<sp/>kind<sp/>call<sp/>unless<sp/>the<sp/>added<sp/>optional<sp/>argument<sp/>store_both_kinds</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>is<sp/>true.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="interfacetridiagonal__mod_1_1tri__invert" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacetridiagonal__mod_1_1tri__invert" kindref="compound">tri_invert</ref></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>tri_invert_r4</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>tri_invert_r8</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacetridiagonal__mod_1_1tri__invert" kindref="compound">tri_invert</ref></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>@brief<sp/>Releases<sp/>memory<sp/>used<sp/>by<sp/>the<sp/>solver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__tridiagonal__mod_1gac20f9a37588dd7974b825e2762dbc429" kindref="member">close_tridiagonal</ref></highlight></codeline>
+<codeline lineno="114" refid="group__tridiagonal__mod_1gac20f9a37588dd7974b825e2762dbc429" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(.not.<sp/><ref refid="group__tridiagonal__mod_1ga42fbcafd67446a5ef47fe02cb4b20676" kindref="member">init_tridiagonal_r4</ref><sp/>.and.<sp/>.not.<sp/><ref refid="group__tridiagonal__mod_1gafeceb3ce960bb62610510e6c9ea97e57" kindref="member">init_tridiagonal_r8</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!$OMP<sp/>SINGLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%e))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%e)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%g))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%g)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%cc))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%cc)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%bb))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gab7a9bca76833cc5c896eebb13591fe24" kindref="member">tridiag_r4</ref>%bb)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%e))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%e)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%g))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%g)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%cc))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%cc)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">allocated</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%bb))<sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<ref refid="group__tridiagonal__mod_1gaffe39413d752f9f878f180085f7cb4d4" kindref="member">tridiag_r8</ref>%bb)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__tridiagonal__mod_1ga42fbcafd67446a5ef47fe02cb4b20676" kindref="member">init_tridiagonal_r4</ref><sp/>=<sp/>.false.;<sp/><ref refid="group__tridiagonal__mod_1gafeceb3ce960bb62610510e6c9ea97e57" kindref="member">init_tridiagonal_r8</ref><sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!$OMP<sp/>END<sp/>SINGLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="group__tridiagonal__mod_1gac20f9a37588dd7974b825e2762dbc429" kindref="member">close_tridiagonal</ref></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tridiagonal_r4.fh&quot;</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;tridiagonal_r8.fh&quot;</highlight></codeline>
+<codeline lineno="131"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">tridiagonal_mod</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="134"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">!<sp/></highlight><highlight class="keyword">close</highlight><highlight class="normal"><sp/>documentation<sp/>grouping</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/tridiagonal/tridiagonal.F90"/>
+  </compounddef>
+</doxygen>

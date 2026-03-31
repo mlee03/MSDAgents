@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefm__yaml__mod" kind="namespace" language="Fortran">
+    <compoundname>fm_yaml_mod</compoundname>
+    <innerclass refid="structfm__yaml__mod_1_1fmattr__t" prot="public">fm_yaml_mod::fmattr_t</innerclass>
+    <innerclass refid="structfm__yaml__mod_1_1fmmodel__t" prot="public">fm_yaml_mod::fmmodel_t</innerclass>
+    <innerclass refid="structfm__yaml__mod_1_1fmtable__t" prot="public">fm_yaml_mod::fmtable_t</innerclass>
+    <innerclass refid="structfm__yaml__mod_1_1fmtype__t" prot="public">fm_yaml_mod::fmtype_t</innerclass>
+    <innerclass refid="structfm__yaml__mod_1_1fmvar__t" prot="public">fm_yaml_mod::fmvar_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fm__yaml__mod_1ga8c11cbd98bf5a850339c0287ed9282d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fm_yaml_mod::build_fmmodel</definition>
+        <argsstring>(fmModel, yfid)</argsstring>
+        <name>build_fmmodel</name>
+        <param>
+          <type>fmModel</type>
+          <defname>fmModel</defname>
+        </param>
+        <param>
+          <type>yfid</type>
+          <defname>yfid</defname>
+        </param>
+        <briefdescription>
+<para>Populates an fmModel, which is assumed to already have its <computeroutput>id</computeroutput> parameter set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fmmodel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>model object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yfid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file id of the yaml file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="156" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="157" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fm__yaml__mod_1gaadbdc3362c9e7ca2972b72a1567fde39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fm_yaml_mod::build_fmtable</definition>
+        <argsstring>(fmTable, filename)</argsstring>
+        <name>build_fmtable</name>
+        <param>
+          <type>fmTable</type>
+          <defname>fmTable</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine to populate an fmTable by reading a yaml file, given an optional filename. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">fmtable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the field table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the yaml file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="96" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="97" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fm__yaml__mod_1ga2c8537642cbbb8b178f3074ce6e92b71" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fm_yaml_mod::build_fmtype</definition>
+        <argsstring>(fmType, yfid)</argsstring>
+        <name>build_fmtype</name>
+        <param>
+          <type>fmType</type>
+          <defname>fmType</defname>
+        </param>
+        <param>
+          <type>yfid</type>
+          <defname>yfid</defname>
+        </param>
+        <briefdescription>
+<para>Populates an fmType, which is assumed to already have its <computeroutput>id</computeroutput> parameter set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fmtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yfid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file id of the yaml file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="121" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="122" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fm__yaml__mod_1gafaeb62039b869ed8f5b778a651d325bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fm_yaml_mod::build_fmvar</definition>
+        <argsstring>(fmVar, yfid)</argsstring>
+        <name>build_fmvar</name>
+        <param>
+          <type>fmVar</type>
+          <defname>fmVar</defname>
+        </param>
+        <param>
+          <type>yfid</type>
+          <defname>yfid</defname>
+        </param>
+        <briefdescription>
+<para>Populates an fmVar and creates any associated fmAttrs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fmvar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yfid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file id of the yaml file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="191" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="192" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fm__yaml__mod_1ga52ddc56f6ec13b979370db7e53af09f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fm_yaml_mod::fmvar_read_attrs</definition>
+        <argsstring>(fmVar, yfid, method_keys, method_values)</argsstring>
+        <name>fmvar_read_attrs</name>
+        <param>
+          <type>fmVar</type>
+          <defname>fmVar</defname>
+        </param>
+        <param>
+          <type>yfid</type>
+          <defname>yfid</defname>
+        </param>
+        <param>
+          <type>method_keys</type>
+          <defname>method_keys</defname>
+        </param>
+        <param>
+          <type>method_values</type>
+          <defname>method_values</defname>
+        </param>
+        <briefdescription>
+<para>Reads the attribute blocks attached to a variable and populates the associated fmAttr structures. Returns two arrays containing key/value pairs of all methods defined via attribute blocks. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fmvar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yfid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file id of the yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_keys</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Method keys (names of attribute blocks)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">method_values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Method values from attribute blocks </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="265" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="266" bodyend="353"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="32" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacetracer__manager__mod_1_1get__tracer__index" kind="interface" language="Fortran" prot="private">
+    <compoundname>tracer_manager_mod::get_tracer_index</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacetracer__manager__mod_1_1get__tracer__index_1ae5b2c7a3248939629c2cd852b7b50dab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function get_tracer_index_integer</definition>
+        <argsstring>(model, name, indices, verbose)</argsstring>
+        <name>get_tracer_index_integer</name>
+        <param>
+          <type>model</type>
+          <defname>model</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+<para>Function which returns the number assigned to the tracer name. </para>        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="interfacetracer__manager__mod_1_1get__tracer__index" kindref="compound">get_tracer_index</ref> Interface for more information. <simplesect kind="return"><para>index of given tracer name if present, otherwise returns NO_TRACER</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter to identify which model is used</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the tracer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of indices, limits search to tracers whose indices are within the array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>debug flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" line="737" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" bodystart="738" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetracer__manager__mod_1_1get__tracer__index_1a3527fdad0336e4c494959d4fcd65d63e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function get_tracer_index_logical</definition>
+        <argsstring>(model, name, index, indices, verbose)</argsstring>
+        <name>get_tracer_index_logical</name>
+        <param>
+          <type>model</type>
+          <defname>model</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>index</type>
+          <defname>index</defname>
+        </param>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+<para>Checks if tracer is present, and returns it&apos;s position in index. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter for which model is used</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of given drifter</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returned drifter index</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional list of indices to limit results to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>debug flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" line="786" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" bodystart="787" bodyend="801"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Function which returns the number assigned to the tracer name. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is a function which returns the index, as implied within the component model. There are two overloaded interfaces: one of type integer, one logical.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A integer parameter to identify which model is being used </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the tracer (as assigned in the field table). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array indices. When present, the returned index will limit the search for the tracer to thos tracers whose indices are among those in array &apos;indices&apos;. This would be useful when it is desired to limit the search to a subset of the tracers. Such a subset might be the diagnostic or prognostic tracers.(note that get_tracer_indices returns these subsets) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional flag for debugging </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Holds the returned index if given </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The integer function returns the index of the tracer named &quot;name&quot;. If no tracer by that name exists then the returned value is NO_TRACER. The logical function returns false if no tracer by the given name exists and true otherwise, and stores the returned value in index.</para></simplesect>
+<linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keywordtype">integer</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>index<sp/>=<sp/>get_tracer_index(model,<sp/>name,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indices,<sp/>verbose)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>get_tracer_index(model,<sp/>name,<sp/>index,<sp/>indices,<sp/>verbose)<sp/>)<sp/>then</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" line="125" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/tracer_manager/tracer_manager.F90" bodystart="125" bodyend="126"/>
+    <listofallmembers>
+      <member refid="interfacetracer__manager__mod_1_1get__tracer__index_1ae5b2c7a3248939629c2cd852b7b50dab" prot="private" virt="non-virtual"><scope>tracer_manager_mod::get_tracer_index</scope><name>get_tracer_index_integer</name></member>
+      <member refid="interfacetracer__manager__mod_1_1get__tracer__index_1a3527fdad0336e4c494959d4fcd65d63e" prot="private" virt="non-virtual"><scope>tracer_manager_mod::get_tracer_index</scope><name>get_tracer_index_logical</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

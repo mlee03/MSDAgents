@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structYamlFile" kind="struct" language="C++" prot="public">
+    <compoundname>YamlFile</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structYamlFile_1a11111208335aafba9ba8cfd354f8a233" prot="public" static="no" mutable="no">
+        <type>AnchorsType *</type>
+        <definition>AnchorsType* Anchors</definition>
+        <argsstring></argsstring>
+        <name>Anchors</name>
+        <briefdescription>
+<para>Array of anchors in the yaml file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="84" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structYamlFile_1a1cf22dcaec6b5712487c3e0ed134aec7" prot="public" static="no" mutable="no">
+        <type>KeyValuePairs *</type>
+        <definition>KeyValuePairs* keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+<para>Array of key-value pairs. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="83" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structYamlFile_1acbe507aeb37c33c79322fd79296284d8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nanchors</definition>
+        <argsstring></argsstring>
+        <name>nanchors</name>
+        <briefdescription>
+<para>Number of anchors that have been defined in the file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="85" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structYamlFile_1a6ff12b06d4139707ae27dbd8381cc2a5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nkeys</definition>
+        <argsstring></argsstring>
+        <name>nkeys</name>
+        <briefdescription>
+<para>Number of keys defined in the YAML file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="82" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the contents of a YAML file as an array of key-value pairs. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2078">
+        <label>YamlFile</label>
+        <childnode refid="2079" relation="usage">
+          <edgelabel>nanchors</edgelabel>
+          <edgelabel>nkeys</edgelabel>
+        </childnode>
+        <childnode refid="2080" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="2082" relation="usage">
+          <edgelabel>Anchors</edgelabel>
+        </childnode>
+      </node>
+      <node id="2079">
+        <label>int</label>
+      </node>
+      <node id="2080">
+        <label>KeyValuePairs</label>
+        <childnode refid="2081" relation="usage">
+          <edgelabel>parent_name</edgelabel>
+          <edgelabel>key</edgelabel>
+          <edgelabel>value</edgelabel>
+        </childnode>
+        <childnode refid="2079" relation="usage">
+          <edgelabel>key_id</edgelabel>
+          <edgelabel>parent_key</edgelabel>
+        </childnode>
+      </node>
+      <node id="2082">
+        <label>AnchorsType</label>
+        <childnode refid="2081" relation="usage">
+          <edgelabel>anchor_name</edgelabel>
+          <edgelabel>parent_names</edgelabel>
+        </childnode>
+        <childnode refid="2079" relation="usage">
+          <edgelabel>pid</edgelabel>
+          <edgelabel>nkeys</edgelabel>
+          <edgelabel>nlevels</edgelabel>
+        </childnode>
+        <childnode refid="2080" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="2081">
+        <label>char</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="81" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="81" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structYamlFile_1a11111208335aafba9ba8cfd354f8a233" prot="public" virt="non-virtual"><scope>YamlFile</scope><name>Anchors</name></member>
+      <member refid="structYamlFile_1a1cf22dcaec6b5712487c3e0ed134aec7" prot="public" virt="non-virtual"><scope>YamlFile</scope><name>keys</name></member>
+      <member refid="structYamlFile_1acbe507aeb37c33c79322fd79296284d8" prot="public" virt="non-virtual"><scope>YamlFile</scope><name>nanchors</name></member>
+      <member refid="structYamlFile_1a6ff12b06d4139707ae27dbd8381cc2a5" prot="public" virt="non-virtual"><scope>YamlFile</scope><name>nkeys</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

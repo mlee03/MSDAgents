@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacefms__io__utils__mod_1_1get__mosaic__tile__file" kind="interface" language="Fortran" prot="private">
+    <compoundname>fms_io_utils_mod::get_mosaic_tile_file</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacefms__io__utils__mod_1_1get__mosaic__tile__file_1a3f9c6a159e64240f438d3d02ec8bdf07" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_mosaic_tile_file_sg</definition>
+        <argsstring>(file_in, file_out, is_no_domain, domain, tile_count)</argsstring>
+        <name>get_mosaic_tile_file_sg</name>
+        <param>
+          <type>file_in</type>
+          <defname>file_in</defname>
+        </param>
+        <param>
+          <type>file_out</type>
+          <defname>file_out</defname>
+        </param>
+        <param>
+          <type>is_no_domain</type>
+          <defname>is_no_domain</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Determine tile_file for structured grid based on filename and current tile on mpp_domain (this is mostly used for ongrid data_overrides) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of &apos;base&apos; file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of tile_file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_no_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>are we providing a domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>domain provided</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tile count </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="741" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="742" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefms__io__utils__mod_1_1get__mosaic__tile__file_1aa9d140a80c2bd5a77f76d139500ce7e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_mosaic_tile_file_ug</definition>
+        <argsstring>(file_in, file_out, domain)</argsstring>
+        <name>get_mosaic_tile_file_ug</name>
+        <param>
+          <type>file_in</type>
+          <defname>file_in</defname>
+        </param>
+        <param>
+          <type>file_out</type>
+          <defname>file_out</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <briefdescription>
+<para>Determine tile_file for unstructured grid based on filename and current tile on mpp_domain (this is mostly used for ongrid data_overrides) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of base file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of tile file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>domain provided </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="802" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="803" bodyend="838"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Constructs the file name to be used when utilizing a multi-tile mosaic. This is currenly used in the diag_manager and data_override in so that any output files will include the tile number of the writer. Uses the format &quot;filename.tileN.nc&quot; and requires the filename to already include the .nc suffix. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="117" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="117" bodyend="119"/>
+    <listofallmembers>
+      <member refid="interfacefms__io__utils__mod_1_1get__mosaic__tile__file_1a3f9c6a159e64240f438d3d02ec8bdf07" prot="private" virt="non-virtual"><scope>fms_io_utils_mod::get_mosaic_tile_file</scope><name>get_mosaic_tile_file_sg</name></member>
+      <member refid="interfacefms__io__utils__mod_1_1get__mosaic__tile__file_1aa9d140a80c2bd5a77f76d139500ce7e9" prot="private" virt="non-virtual"><scope>fms_io_utils_mod::get_mosaic_tile_file</scope><name>get_mosaic_tile_file_ug</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

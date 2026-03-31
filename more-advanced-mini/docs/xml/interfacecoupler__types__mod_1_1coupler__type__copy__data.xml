@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__copy__data" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_copy_data</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy__data_1ad40bcdd08b78cb5a94fcfcde81ea360d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_copy_data_2d</definition>
+        <argsstring>(var_in, var, halo_size, bc_index, field_index, exclude_flux_type, only_flux_type, pass_through_ice)</argsstring>
+        <name>ct_copy_data_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>halo_size</type>
+          <defname>halo_size</defname>
+        </param>
+        <param>
+          <type>bc_index</type>
+          <defname>bc_index</defname>
+        </param>
+        <param>
+          <type>field_index</type>
+          <defname>field_index</defname>
+        </param>
+        <param>
+          <type>exclude_flux_type</type>
+          <defname>exclude_flux_type</defname>
+        </param>
+        <param>
+          <type>only_flux_type</type>
+          <defname>only_flux_type</defname>
+        </param>
+        <param>
+          <type>pass_through_ice</type>
+          <defname>pass_through_ice</defname>
+        </param>
+        <briefdescription>
+<para>Copy all elements of <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref>. Do a direct copy of the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> into another. Both must have the same array sizes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index is present and exceeds var_in%num_bcs.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>field_index is present and exceeds num_fields for var_in%bc(bc_incdx)%name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index must be present if field_index is present.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an i-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an j-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to copy</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The recipient BC_type structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halo_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extent of the halo to copy; 0 by default</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bc_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the field in the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">exclude_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to exclude from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">only_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to include from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pass_through_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, only copy BCs whose value of pass_through ice matches this </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1675" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1677" bodyend="1805"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy__data_1acf804665fb2059ad151d3776c05e0484" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_copy_data_2d_3d</definition>
+        <argsstring>(var_in, var, halo_size, bc_index, field_index, exclude_flux_type, only_flux_type, pass_through_ice, ind3_start, ind3_end)</argsstring>
+        <name>ct_copy_data_2d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>halo_size</type>
+          <defname>halo_size</defname>
+        </param>
+        <param>
+          <type>bc_index</type>
+          <defname>bc_index</defname>
+        </param>
+        <param>
+          <type>field_index</type>
+          <defname>field_index</defname>
+        </param>
+        <param>
+          <type>exclude_flux_type</type>
+          <defname>exclude_flux_type</defname>
+        </param>
+        <param>
+          <type>only_flux_type</type>
+          <defname>only_flux_type</defname>
+        </param>
+        <param>
+          <type>pass_through_ice</type>
+          <defname>pass_through_ice</defname>
+        </param>
+        <param>
+          <type>ind3_start</type>
+          <defname>ind3_start</defname>
+        </param>
+        <param>
+          <type>ind3_end</type>
+          <defname>ind3_end</defname>
+        </param>
+        <briefdescription>
+<para>Copy all elements of <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> to <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do a direct copy of the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__2d__bc__type" kindref="compound">coupler_2d_bc_type</ref> into a <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. Both must have the same array sizes for the first two dimensions, while the extend of the 3rd dimension that is being filled may be specified via optional arguments..</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index is present and exceeds var_in%num_bcs.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>field_index is present and exceeds num_fields for var_in%bc(bc_incdx)%name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index must be present if field_index is present.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an i-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an j-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to copy</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The recipient BC_type structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halo_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extent of the halo to copy; 0 by default</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bc_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the field in the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">exclude_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to exclude from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">only_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to include from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pass_through_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, only copy BCs whose value of pass_through ice matches this</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ind3_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting value of the 3rd index of the 3d type to fill in.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ind3_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending value of the 3rd index of the 3d type to fill in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1974" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1977" bodyend="2116"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__copy__data_1a25358a7a7b219f98142eadc4185f26fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_copy_data_3d</definition>
+        <argsstring>(var_in, var, halo_size, bc_index, field_index, exclude_flux_type, only_flux_type, pass_through_ice)</argsstring>
+        <name>ct_copy_data_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>halo_size</type>
+          <defname>halo_size</defname>
+        </param>
+        <param>
+          <type>bc_index</type>
+          <defname>bc_index</defname>
+        </param>
+        <param>
+          <type>field_index</type>
+          <defname>field_index</defname>
+        </param>
+        <param>
+          <type>exclude_flux_type</type>
+          <defname>exclude_flux_type</defname>
+        </param>
+        <param>
+          <type>only_flux_type</type>
+          <defname>only_flux_type</defname>
+        </param>
+        <param>
+          <type>pass_through_ice</type>
+          <defname>pass_through_ice</defname>
+        </param>
+        <briefdescription>
+<para>Copy all elements of <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do a direct copy of the data in all elements of one <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref> into another. Both must have the same array sizes.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index is present and exceeds var_in%num_bcs.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>field_index is present and exceeds num_fields for var_in%bc(bc_incdx)%name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>bc_index must be present if field_index is present.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an i-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an j-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>There is an k-direction computational domain size mismatch.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive i-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Excessive k-direction halo size for the input structure.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure with the data to copy</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The recipient BC_type structure</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">halo_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extent of the halo to copy; 0 by default</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bc_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the field in the boundary condition that is being copied</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">exclude_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to exclude from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">only_flux_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string describing which types of fluxes to include from this copy.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pass_through_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, only copy BCs whose value of pass_through ice matches this </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1822" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1824" bodyend="1958"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to copy the field data from one coupler_bc_type to another of the same rank, size and decomposition. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="394" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="394" bodyend="395"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy__data_1ad40bcdd08b78cb5a94fcfcde81ea360d" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy_data</scope><name>ct_copy_data_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy__data_1acf804665fb2059ad151d3776c05e0484" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy_data</scope><name>ct_copy_data_2d_3d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__copy__data_1a25358a7a7b219f98142eadc4185f26fb" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_copy_data</scope><name>ct_copy_data_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

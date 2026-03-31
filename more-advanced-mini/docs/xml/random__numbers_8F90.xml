@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="random__numbers_8F90" kind="file" language="Fortran">
+    <compoundname>random_numbers.F90</compoundname>
+    <includes local="yes">random_numbers_r4.fh</includes>
+    <includes local="yes">random_numbers_r8.fh</includes>
+    <incdepgraph>
+      <node id="587">
+        <label>/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90</label>
+        <link refid="random__numbers_8F90"/>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+      </node>
+      <node id="589">
+        <label>random_numbers_r8.fh</label>
+      </node>
+      <node id="588">
+        <label>random_numbers_r4.fh</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacerandom__numbers__mod_1_1getrandomnumbers" prot="private">random_numbers_mod::getrandomnumbers</innerclass>
+    <innerclass refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" prot="private">random_numbers_mod::initializerandomnumberstream</innerclass>
+    <innerclass refid="structrandom__numbers__mod_1_1randomnumberstream" prot="private">random_numbers_mod::randomnumberstream</innerclass>
+    <innernamespace refid="namespacerandom__numbers__mod">random_numbers_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>random_numbers_mod<sp/>random_numbers_mod</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>random_numbers</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!&gt;<sp/>@brief<sp/>Generic<sp/>module<sp/>to<sp/>wrap<sp/>random<sp/>number<sp/>generators.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!&gt;<sp/>The<sp/>module<sp/>defines<sp/>a<sp/>type<sp/>that<sp/>identifies<sp/>the<sp/>particular<sp/>stream<sp/>of<sp/>random</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/><sp/>numbers,<sp/>and<sp/>has<sp/>procedures<sp/>for<sp/>initializing<sp/>it<sp/>and<sp/>getting<sp/>real<sp/>numbers</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">!!<sp/><sp/>in<sp/>the<sp/>range<sp/>0<sp/>to<sp/>1.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!!<sp/><sp/>This<sp/>version<sp/>uses<sp/>the<sp/>Mersenne<sp/>Twister<sp/>to<sp/>generate<sp/>random<sp/>numbers<sp/>on<sp/>[0,<sp/>1].</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>random_numbers_mod</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mersennetwister_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structmersennetwister__mod_1_1randomnumbersequence" kindref="compound">randomnumbersequence</ref>,<sp/>&amp;<sp/></highlight><highlight class="comment">!<sp/>The<sp/>random<sp/>number<sp/>engine.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacemersennetwister__mod_1_1new__randomnumbersequence" kindref="compound">new_randomnumbersequence</ref>,<sp/>getrandomreal</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">time_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>,<sp/><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Type<sp/>to<sp/>hold<sp/>a<sp/>stream<sp/>of<sp/>randomly<sp/>generated<sp/>numbers</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@ingroup<sp/>random_numbers_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structrandom__numbers__mod_1_1randomnumberstream" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(randomNumberSequence)<sp/>::<sp/>theNumbers</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>type<sp/></highlight><highlight class="normal"><ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Returns<sp/>scalar,<sp/>1<sp/>or<sp/>2<sp/>D<sp/>random<sp/>real<sp/>numbers</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/>!!</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param<sp/>stream<sp/>@ref<sp/>randomNumberStream<sp/>to<sp/>generate<sp/>from</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@param[out]<sp/>number<sp/>output<sp/>number(s)</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@ingroup<sp/>random_numbers_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="interfacerandom__numbers__mod_1_1getrandomnumbers" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>::<sp/>get_random_number_0d_r4,<sp/>get_random_number_0d_r8</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>::<sp/>get_random_number_1d_r4,<sp/>get_random_number_1d_r8</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>::<sp/>get_random_number_2d_r4,<sp/>get_random_number_2d_r8</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Initializes<sp/>stream<sp/>for<sp/>generating<sp/>random<sp/>numbers.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@ingroup<sp/>random_numbers_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/><ref refid="group__random__numbers__mod_1gaed0dc14ae47a52b6a5e1f93afac1d37a" kindref="member">initializerandomnumberstream_s</ref>,<sp/>initializerandomnumberstream_v</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacerandom__numbers__mod_1_1initializerandomnumberstream" kindref="compound">initializerandomnumberstream</ref>,<sp/><ref refid="interfacerandom__numbers__mod_1_1getrandomnumbers" kindref="compound">getrandomnumbers</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" kindref="member">constructseed</ref></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>random_numbers_mod</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__random__numbers__mod_1gaed0dc14ae47a52b6a5e1f93afac1d37a" kindref="member">initializerandomnumberstream_s</ref>(seed)<sp/></highlight><highlight class="keyword">result</highlight><highlight class="normal">(new)</highlight></codeline>
+<codeline lineno="72" refid="group__random__numbers__mod_1gaed0dc14ae47a52b6a5e1f93afac1d37a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(<sp/>in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>::<sp/>seed</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref>)<sp/>::<sp/>new</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>new%theNumbers<sp/>=<sp/><ref refid="interfacemersennetwister__mod_1_1new__randomnumbersequence" kindref="compound">new_randomnumbersequence</ref>(seed)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__random__numbers__mod_1gaed0dc14ae47a52b6a5e1f93afac1d37a" kindref="member">initializerandomnumberstream_s</ref></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>function<sp/></highlight><highlight class="normal">initializerandomnumberstream_v(seed)<sp/></highlight><highlight class="keyword">result</highlight><highlight class="normal">(new)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(<sp/>in)</highlight><highlight class="normal"><sp/>::<sp/>seed</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structrandom__numbers__mod_1_1randomnumberstream" kindref="compound">randomnumberstream</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>new</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>new%theNumbers<sp/>=<sp/><ref refid="interfacemersennetwister__mod_1_1new__randomnumbersequence" kindref="compound">new_randomnumbersequence</ref>(seed)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">initializerandomnumberstream_v</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/>!&gt;<sp/>Constructs<sp/>a<sp/>unique<sp/>seed<sp/>from<sp/>grid<sp/>cell<sp/>index<sp/>and<sp/>model<sp/>date/time</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>The<sp/>perm<sp/>is<sp/>supplied<sp/>we<sp/>generate<sp/>a<sp/>different<sp/>seed<sp/>by</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>circularly<sp/>shifting<sp/>the<sp/>bits<sp/>of<sp/>the<sp/>seed<sp/>-<sp/>this<sp/>is<sp/>useful</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>if<sp/>we<sp/>want<sp/>to<sp/>create<sp/>more<sp/>than<sp/>one<sp/>seed<sp/>for<sp/>a<sp/>given</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>column<sp/>and<sp/>model<sp/>date/time.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>Note<sp/>that<sp/>abs(perm)<sp/>must<sp/>be<sp/>&lt;=<sp/>the<sp/>number<sp/>of<sp/>bits<sp/>used</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/>!!<sp/><sp/><sp/>to<sp/>represent<sp/>the<sp/>default<sp/>integer<sp/>(likely<sp/>32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" kindref="member">constructseed</ref>(i,<sp/>j,<sp/>time,<sp/>perm)<sp/></highlight><highlight class="keyword">result</highlight><highlight class="normal">(seed)</highlight></codeline>
+<codeline lineno="94" refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(<sp/>in)</highlight><highlight class="normal"><sp/><sp/>::<sp/>i,<sp/>j</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>),<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(<sp/>in)</highlight><highlight class="normal"><sp/>::<sp/>time</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(<sp/>in)</highlight><highlight class="normal"><sp/>::<sp/>perm</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(8)</highlight><highlight class="normal"><sp/>::<sp/>seed</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Local<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" kindref="member">get_date</ref>(time,<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>seed<sp/>=<sp/>(/<sp/>i,<sp/>j,<sp/>year,<sp/>month,<sp/>day,<sp/>hour,<sp/>minute,<sp/>second<sp/>/)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(perm))<sp/>seed<sp/>=<sp/>ishftc(seed,<sp/>perm)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="group__random__numbers__mod_1ga26dcee1382874932265d81f685e89737" kindref="member">constructseed</ref></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;random_numbers_r4.fh&quot;</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;random_numbers_r8.fh&quot;</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">random_numbers_mod</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="113"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/random_numbers/random_numbers.F90"/>
+  </compounddef>
+</doxygen>

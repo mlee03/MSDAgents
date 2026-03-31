@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="diag__yaml__format_8md" kind="file" language="Markdown">
+    <compoundname>diag_yaml_format.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">##<sp/>Diag<sp/>Table<sp/>Yaml<sp/>Format:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>purpose<sp/>of<sp/>this<sp/>document<sp/>is<sp/>to<sp/>explain<sp/>the<sp/>diag_table<sp/>yaml<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[1.<sp/>Converting<sp/>from<sp/>legacy<sp/>ascii<sp/>diag_table<sp/>format](diag_yaml_format.md#1-converting-from-legacy-ascii-diag_table-format)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.<sp/>Diag<sp/>table<sp/>yaml<sp/>sections](diag_yaml_format.md#2-diag-table-yaml-sections)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.1<sp/>Global<sp/>Section](diag_yaml_format.md#21-global-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.2<sp/>File<sp/>Section](diag_yaml_format.md#22-file-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.2.1<sp/>Flexible<sp/>output<sp/>timings](diag_yaml_format.md#221-flexible-output-timings)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.2.2<sp/>Coupled<sp/>Model<sp/>Diag<sp/>Files](diag_yaml_format.md#222-coupled-model-diag-files)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.3<sp/>Variable<sp/>Section](diag_yaml_format.md#23-variable-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.4<sp/>Variable<sp/>Metadata<sp/>Section](diag_yaml_format.md#24-variable-metadata-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.5<sp/>Global<sp/>Meta<sp/>Data<sp/>Section](diag_yaml_format.md#25-global-meta-data-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.6<sp/>Sub_region<sp/>Section](diag_yaml_format.md#26-sub_region-section)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[3.<sp/>More<sp/>examples](diag_yaml_format.md#3-more-examples)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[4.<sp/>Schema](diag_yaml_format.md#4-schema)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[5.<sp/>Ensemble<sp/>and<sp/>Nest<sp/>Support](diag_yaml_format.md#5-ensemble-and-nest-support)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[6.<sp/>Reducing<sp/>Diag<sp/>Table<sp/>Yaml<sp/>Length](diag_yaml_format.md#6-reducing-diag-table-yaml-length)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[7.<sp/>Improving<sp/>Performance<sp/>at<sp/>High<sp/>Resolutions](diag_yaml_format.md#7-improving-performance-at-high-resolutions)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Converting<sp/>from<sp/>legacy<sp/>ascii<sp/>diag_table<sp/>format</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>convert<sp/>the<sp/>legacy<sp/>ascii<sp/>diad_table<sp/>format<sp/>to<sp/>this<sp/>yaml<sp/>format,<sp/>the<sp/>python<sp/>script<sp/>[**diag_table_to_yaml.py**](https://github.com/NOAA-GFDL/fms_yaml_tools/blob/aafc3293d45df2fc173d3c7afd8b8b0adc18fde4/fms_yaml_tools/diag_table/diag_table_to_yaml.py#L23-L26)<sp/>can<sp/>be<sp/>used.<sp/>To<sp/>confirm<sp/>that<sp/>your<sp/>diag_table.yaml<sp/>was<sp/>created<sp/>correctly,<sp/>the<sp/>python<sp/>script<sp/>[**is_valid_diag_table_yaml.py**](https://github.com/NOAA-GFDL/fms_yaml_tools/blob/aafc3293d45df2fc173d3c7afd8b8b0adc18fde4/fms_yaml_tools/diag_table/is_valid_diag_table_yaml.py#L24-L27)<sp/>can<sp/>be<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Diag<sp/>table<sp/>yaml<sp/>sections</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>diag_table.yaml<sp/>is<sp/>organized<sp/>by<sp/>file.<sp/><sp/>Each<sp/>file<sp/>has<sp/>the<sp/>required<sp/>and<sp/>optional<sp/>key/value<sp/>pairs<sp/>for<sp/>the<sp/>file,<sp/>an<sp/>optional<sp/>subsection<sp/>defining<sp/>any<sp/>additional<sp/>global<sp/>metadata<sp/>to<sp/>add<sp/>to<sp/>the<sp/>file,<sp/>an<sp/>optional<sp/>subsection<sp/>defining<sp/>a<sp/>subregion<sp/>of<sp/>the<sp/>grid<sp/>to<sp/>output<sp/>the<sp/>data<sp/>for<sp/>and<sp/>a<sp/>required<sp/>subsection<sp/>for<sp/>all<sp/>of<sp/>the<sp/>variables<sp/>in<sp/>the<sp/>file.<sp/>Each<sp/>variable<sp/>has<sp/>the<sp/>required<sp/>and<sp/>optional<sp/>key/value<sp/>pairs<sp/>for<sp/>the<sp/>variable<sp/>and<sp/>an<sp/>optional<sp/>subsection<sp/>defining<sp/>any<sp/>additional<sp/>variable<sp/>attributes<sp/>to<sp/>add<sp/>to<sp/>the<sp/>file.<sp/>The<sp/>hierarchical<sp/>structure<sp/>looks<sp/>like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:</highlight></codeline>
+<codeline><highlight class="normal">base_date:</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#key/value<sp/>pairs<sp/>for<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>#key/value<sp/>pairs<sp/>for<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>#atributes<sp/>for<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>global_metadata:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#global<sp/>attributes<sp/>for<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>subregion:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#subregion<sp/>for<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.1<sp/>Global<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>diag_yaml<sp/>requires<sp/>“title”<sp/>and<sp/>the<sp/>“baseDate”.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>**title**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>labels<sp/>the<sp/>diag<sp/>yaml.<sp/><sp/>The<sp/>equivalent<sp/>in<sp/>the<sp/>legacy<sp/>diag_table<sp/>would<sp/>be<sp/>the<sp/>experiment.<sp/><sp/>It<sp/>is<sp/>recommended<sp/>that<sp/>each<sp/>diag_yaml<sp/>have<sp/>a<sp/>separate<sp/>title<sp/>label<sp/>that<sp/>is<sp/>descriptive<sp/>of<sp/>the<sp/>experiment<sp/>that<sp/>is<sp/>using<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>**basedate**<sp/>is<sp/>an<sp/>array<sp/>of<sp/>6<sp/>integers<sp/>indicating<sp/>the<sp/>base_date<sp/>in<sp/>the<sp/>format<sp/>[year<sp/>month<sp/>day<sp/>hour<sp/>minute<sp/>second].</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>YAML<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>ESM4_piControl</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2022<sp/>5<sp/>26<sp/>12<sp/>3<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>legacy<sp/>ascii<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ESM4_piControl</highlight></codeline>
+<codeline><highlight class="normal">2022<sp/>5<sp/>26<sp/>12<sp/>3<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2<sp/>File<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>files<sp/>are<sp/>listed<sp/>under<sp/>the<sp/>diagFiles<sp/>section<sp/>as<sp/>a<sp/>dashed<sp/>array.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>are<sp/>the<sp/>**required**<sp/>keys<sp/>needed<sp/>to<sp/>define<sp/>each<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**file_name**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>name<sp/>of<sp/>the<sp/>file.<sp/>Do<sp/>not<sp/>add<sp/>&quot;.nc&quot;<sp/>and<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>as<sp/>this<sp/>will<sp/>be<sp/>handled<sp/>by<sp/>FMS.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**freq**<sp/>defines<sp/>the<sp/>frequency<sp/>and<sp/>the<sp/>units<sp/>that<sp/>data<sp/>will<sp/>be<sp/>written</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>acceptable<sp/>values<sp/>for<sp/>freq<sp/>are:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>=-1:<sp/>output<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>run<sp/>only</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>=0:<sp/>output<sp/>every<sp/>timestep</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>\&gt;0<sp/>units:<sp/>output<sp/>frequency<sp/>and<sp/>units<sp/>(with<sp/>a<sp/>space<sp/>between<sp/>the<sp/>frequency<sp/>number<sp/>and<sp/>units<sp/>e.g<sp/>24<sp/>hours)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Values<sp/>of<sp/>-1<sp/>or<sp/>0<sp/>do<sp/>not<sp/>require<sp/>units.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>acceptable<sp/>values<sp/>for<sp/>units<sp/>are<sp/>seconds,<sp/>minutes,<sp/>hours,<sp/>days,<sp/>months,<sp/>years.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**time_units**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>units<sp/>for<sp/>time.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>seconds,<sp/>minutes,<sp/>hours,<sp/>days,<sp/>months,<sp/>years.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**unlimdim**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>name<sp/>of<sp/>the<sp/>unlimited<sp/>dimension<sp/>in<sp/>the<sp/>output<sp/>netcdf<sp/>file,<sp/>usually<sp/>“time”.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**varlist**<sp/>is<sp/>a<sp/>subsection<sp/>that<sp/>list<sp/>all<sp/>of<sp/>the<sp/>variable<sp/>in<sp/>the<sp/>file</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**<sp/>The<sp/>following<sp/>creates<sp/>a<sp/>file<sp/>with<sp/>data<sp/>written<sp/>every<sp/>6<sp/>hours.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>YAML<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>atmos_6hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>varinfo</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>legacy<sp/>ascii<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;atmos_6hours&quot;,<sp/><sp/><sp/><sp/><sp/><sp/>6,<sp/><sp/>&quot;hours&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;time&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NOTE:**<sp/>The<sp/>fourth<sp/>column<sp/>(file_format)<sp/>has<sp/>been<sp/>deprecated.<sp/>Netcdf<sp/>files<sp/>will<sp/>always<sp/>be<sp/>written.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>are<sp/>some<sp/>*optional*<sp/>keys<sp/>that<sp/>may<sp/>be<sp/>added.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**write_file**<sp/>is<sp/>a<sp/>logical<sp/>that<sp/>indicates<sp/>if<sp/>you<sp/>want<sp/>the<sp/>file<sp/>to<sp/>be<sp/>created<sp/>(default<sp/>is<sp/>true).<sp/>This<sp/>is<sp/>a<sp/>new<sp/>feature<sp/>that<sp/>is<sp/>not<sp/>supported<sp/>by<sp/>the<sp/>legacy<sp/>ascii<sp/>data_table.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**new_file_freq**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>frequency<sp/>and<sp/>the<sp/>frequency<sp/>units<sp/>(with<sp/>a<sp/>space<sp/>between<sp/>the<sp/>frequency<sp/>number<sp/>and<sp/>units)<sp/>for<sp/>closing<sp/>the<sp/>existing<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**start_time**<sp/>is<sp/>an<sp/>array<sp/>of<sp/>6<sp/>integer<sp/>indicating<sp/>when<sp/>to<sp/>start<sp/>the<sp/>file<sp/>for<sp/>the<sp/>first<sp/>time.<sp/>It<sp/>is<sp/>in<sp/>the<sp/>format<sp/>[year<sp/>month<sp/>day<sp/>hour<sp/>minute<sp/>second].<sp/>Requires<sp/>“new_file_freq”</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**filename_time**<sp/>is<sp/>the<sp/>time<sp/>used<sp/>to<sp/>set<sp/>the<sp/>name<sp/>of<sp/>new<sp/>files<sp/>when<sp/>using<sp/>new_file_freq.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>begin<sp/>(which<sp/>will<sp/>use<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>file&apos;s<sp/>time<sp/>bounds),<sp/>middle<sp/>(which<sp/>will<sp/>use<sp/>the<sp/>middle<sp/>of<sp/>the<sp/>file&apos;s<sp/>time<sp/>bounds),<sp/>and<sp/>end<sp/>(which<sp/>will<sp/>use<sp/>the<sp/>end<sp/>of<sp/>the<sp/>file&apos;s<sp/>time<sp/>bounds).<sp/>The<sp/>default<sp/>is<sp/>middle</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**reduction**<sp/>is<sp/>the<sp/>reduction<sp/>method<sp/>that<sp/>will<sp/>be<sp/>used<sp/>for<sp/>all<sp/>the<sp/>variables<sp/>in<sp/>the<sp/>file.<sp/>This<sp/>is<sp/>overridden<sp/>if<sp/>the<sp/>reduction<sp/>is<sp/>specified<sp/>at<sp/>the<sp/>variable<sp/>level.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>average,<sp/>diurnalXX<sp/>(where<sp/>XX<sp/>is<sp/>the<sp/>number<sp/>of<sp/>diurnal<sp/>samples),<sp/>powXX<sp/>(where<sp/>XX<sp/>is<sp/>the<sp/>power<sp/>level),<sp/>min,<sp/>max,<sp/>none,<sp/>rms,<sp/>and<sp/>sum.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**kind**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>type<sp/>of<sp/>variable<sp/>as<sp/>it<sp/>will<sp/>be<sp/>written<sp/>out<sp/>in<sp/>the<sp/>file.<sp/>This<sp/>is<sp/>overridden<sp/>if<sp/>the<sp/>kind<sp/>is<sp/>specified<sp/>at<sp/>the<sp/>variable<sp/>level.<sp/>Acceptable<sp/>values<sp/>are<sp/>r4,<sp/>r8,<sp/>i4,<sp/>and<sp/>i8.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**module**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>module<sp/>where<sp/>the<sp/>variable<sp/>is<sp/>registered<sp/>in<sp/>the<sp/>model<sp/>code.<sp/>This<sp/>is<sp/>overridden<sp/>if<sp/>the<sp/>module<sp/>is<sp/>specified<sp/>at<sp/>the<sp/>variable<sp/>level.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**<sp/>The<sp/>following<sp/>will<sp/>create<sp/>a<sp/>new<sp/>file<sp/>every<sp/>6<sp/>hours<sp/>starting<sp/>at<sp/>Jan<sp/>1<sp/>2020.<sp/>Variable<sp/>data<sp/>will<sp/>be<sp/>written<sp/>to<sp/>the<sp/>file<sp/>every<sp/>6<sp/>hours.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>YAML<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>ocn%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2020<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>legacy<sp/>ascii<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;ocn%4yr%2mo%2dy%2hr&quot;,<sp/><sp/><sp/><sp/><sp/><sp/>6,<sp/><sp/>&quot;hours&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;time&quot;,<sp/>6,<sp/>&quot;hours&quot;,<sp/>&quot;1901<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Because<sp/>this<sp/>is<sp/>using<sp/>the<sp/>default<sp/>`filename_time`<sp/>(middle),<sp/>this<sp/>example<sp/>will<sp/>create<sp/>the<sp/>files:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_03.nc<sp/>for<sp/>time_bnds<sp/>[0,6]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_09.nc<sp/>for<sp/>time_bnds<sp/>[6,12]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_15.nc<sp/>for<sp/>time_bnds<sp/>[12,18]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_21.nc<sp/>for<sp/>time_bnds<sp/>[18,24]</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NOTE**<sp/>If<sp/>using<sp/>the<sp/>new_file_freq,<sp/>there<sp/>must<sp/>be<sp/>a<sp/>way<sp/>to<sp/>distinguish<sp/>each<sp/>file,<sp/>as<sp/>it<sp/>was<sp/>done<sp/>in<sp/>the<sp/>example<sp/>above.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**file_duration**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>how<sp/>long<sp/>the<sp/>file<sp/>should<sp/>receive<sp/>data<sp/>after<sp/>start<sp/>time<sp/>in<sp/>“file_duration_units”.<sp/><sp/>This<sp/>optional<sp/>field<sp/>can<sp/>only<sp/>be<sp/>used<sp/>if<sp/>the<sp/>start_time<sp/>field<sp/>is<sp/>present.<sp/><sp/>If<sp/>this<sp/>field<sp/>is<sp/>absent,<sp/>then<sp/>the<sp/>file<sp/>duration<sp/>will<sp/>be<sp/>equal<sp/>to<sp/>the<sp/>frequency<sp/>for<sp/>creating<sp/>new<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**global_meta**<sp/>is<sp/>a<sp/>subsection<sp/>that<sp/>lists<sp/>any<sp/>additional<sp/>global<sp/>metadata<sp/>to<sp/>add<sp/>to<sp/>the<sp/>file.<sp/>This<sp/>is<sp/>a<sp/>new<sp/>feature<sp/>that<sp/>is<sp/>not<sp/>supported<sp/>by<sp/>the<sp/>legacy<sp/>ascii<sp/>data_table.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**sub_region**<sp/>is<sp/>a<sp/>subsection<sp/>that<sp/>defines<sp/>the<sp/>four<sp/>corners<sp/>of<sp/>a<sp/>subregional<sp/>section<sp/>to<sp/>capture.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2.1<sp/>Flexible<sp/>output<sp/>timings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>provide<sp/>more<sp/>flexibility<sp/>in<sp/>output<sp/>timings,<sp/>the<sp/>diag_table<sp/>yaml<sp/>format<sp/>allows<sp/>for<sp/>different<sp/>file<sp/>frequencies<sp/>for<sp/>the<sp/>same<sp/>file<sp/>by<sp/>allowing<sp/>the<sp/>`freq`,<sp/>`new_file_freq`,<sp/>and<sp/><sp/>`file_duration`<sp/>keys<sp/>to<sp/>accept<sp/>a<sp/>comma<sp/>separated<sp/>list.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>example,</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>yaml</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>flexible_timing%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>hours,<sp/>1<sp/>hours,<sp/>1<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours,<sp/>3<sp/>hours,<sp/>1<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>file_duration:<sp/>12<sp/>hours,<sp/>3<sp/>hours,<sp/>9<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>filename_time:<sp/>begin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>create<sp/>a<sp/>file<sp/>every<sp/>6<sp/>hours<sp/>for<sp/>12<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_00.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>0<sp/>to<sp/>hour<sp/>6</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_06.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>6<sp/>to<sp/>hour<sp/>12</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>it<sp/>will<sp/>create<sp/>a<sp/>file<sp/>every<sp/>3<sp/>hours<sp/>for<sp/>3<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_12.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>12<sp/>to<sp/>hour<sp/>15</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>it<sp/>will<sp/>create<sp/>a<sp/>file<sp/>every<sp/>1<sp/>hour<sp/>for<sp/>9<sp/>hours.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_15.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>15<sp/>to<sp/>hour<sp/>16</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_16.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>16<sp/>to<sp/>hour<sp/>17</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_17.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>17<sp/>to<sp/>hour<sp/>18</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_18.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>18<sp/>to<sp/>hour<sp/>19</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_19.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>19<sp/>to<sp/>hour<sp/>20</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_20.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>20<sp/>to<sp/>hour<sp/>21</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_21.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>21<sp/>to<sp/>hour<sp/>22</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_22.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>22<sp/>to<sp/>hour<sp/>23</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_23.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>23<sp/>to<sp/>hour<sp/>24</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2.2<sp/>Coupled<sp/>Model<sp/>Diag<sp/>Files</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>*legacy<sp/>ascii<sp/>diag_table*,<sp/>when<sp/>running<sp/>a<sp/>coupled<sp/>model<sp/>(ATM<sp/>+<sp/>OCN)<sp/>in<sp/>a<sp/>separate<sp/>PE<sp/>list:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>ATM<sp/>PEs<sp/>ignored<sp/>the<sp/>files<sp/>in<sp/>the<sp/>diag_table<sp/>that<sp/>contain<sp/>&quot;OCEAN&quot;<sp/>in<sp/>the<sp/>filename</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>OCN<sp/>PEs<sp/>ignored<sp/>the<sp/>files<sp/>in<sp/>the<sp/>diag_table<sp/>that<sp/>did<sp/>not<sp/>contain<sp/>&quot;OCEAN&quot;<sp/>in<sp/>the<sp/>filename</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>*yaml<sp/>diag_table*:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>ATM<sp/>PEs<sp/>will<sp/>ignore<sp/>the<sp/>files<sp/>in<sp/>the<sp/>diag_table.yaml<sp/>that<sp/>contain<sp/>the<sp/>key/value<sp/>pair<sp/>`is_ocean:<sp/>true`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>OCN<sp/>PEs<sp/>will<sp/>ignore<sp/>the<sp/>files<sp/>in<sp/>the<sp/>diag_table.yaml<sp/>that<sp/>do<sp/>not<sp/>contain<sp/>the<sp/>key/value<sp/>pair<sp/>`is_ocean:<sp/>true`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.3<sp/>Variable<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>variables<sp/>in<sp/>each<sp/>file<sp/>are<sp/>listed<sp/>under<sp/>the<sp/>varlist<sp/>section<sp/>as<sp/>a<sp/>dashed<sp/>array.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**var_name:**<sp/><sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>variable<sp/>name<sp/>as<sp/>it<sp/>is<sp/>defined<sp/>in<sp/>the<sp/>register_diag_field<sp/>call<sp/>in<sp/>the<sp/>model</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**reduction:**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>describes<sp/>the<sp/>data<sp/>reduction<sp/>method<sp/>to<sp/>perform<sp/>prior<sp/>to<sp/>writing<sp/>data<sp/>to<sp/>disk.<sp/>Acceptable<sp/>values<sp/>are<sp/>average,<sp/>diurnalXX<sp/>(where<sp/>XX<sp/>is<sp/>the<sp/>number<sp/>of<sp/>diurnal<sp/>samples),<sp/>powXX<sp/>(where<sp/>XX<sp/>is<sp/>the<sp/>power<sp/>level),<sp/>min,<sp/>max,<sp/>none,<sp/>rms,<sp/>and<sp/>sum.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**module:**<sp/><sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>module<sp/>where<sp/>the<sp/>variable<sp/>is<sp/>registered<sp/>in<sp/>the<sp/>model<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**kind:**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>type<sp/>of<sp/>variable<sp/>as<sp/>it<sp/>will<sp/>be<sp/>written<sp/>out<sp/>in<sp/>the<sp/>file.<sp/>Acceptable<sp/>values<sp/>are<sp/>r4,<sp/>r8,<sp/>i4,<sp/>and<sp/>i8</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>YAML<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>moist</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>precip</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>legacy<sp/>ascii<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&quot;moist&quot;,<sp/><sp/><sp/><sp/><sp/>&quot;precip&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;precip&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;atmos_8xdaily&quot;,<sp/><sp/><sp/>&quot;all&quot;,<sp/>.true.,<sp/><sp/>&quot;none&quot;,<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">**NOTE:**<sp/>The<sp/>fifth<sp/>column<sp/>(time_sampling)<sp/>has<sp/>been<sp/>deprecated.<sp/>The<sp/>reduction_method<sp/>(`.true.`)<sp/>has<sp/>been<sp/>replaced<sp/>with<sp/>`average`.<sp/>The<sp/>output<sp/>name<sp/>was<sp/>not<sp/>included<sp/>in<sp/>the<sp/>yaml<sp/>because<sp/>it<sp/>is<sp/>the<sp/>same<sp/>as<sp/>the<sp/>var_name.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">which<sp/>corresponds<sp/>to<sp/>the<sp/>following<sp/>model<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">id_precip<sp/>=<sp/>register_diag_field<sp/>(<sp/>&apos;moist&apos;,<sp/>&apos;precip&apos;,<sp/>axes,<sp/>Time)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">where:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`moist`<sp/>corresponds<sp/>to<sp/>the<sp/>module<sp/>key<sp/>in<sp/>the<sp/>diag_table.yaml</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`precip`<sp/>corresponds<sp/>to<sp/>the<sp/>var_name<sp/>key<sp/>in<sp/>the<sp/>diag_table.yaml</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`axes`<sp/>are<sp/>the<sp/>ids<sp/>of<sp/>the<sp/>axes<sp/>the<sp/>variable<sp/>is<sp/>a<sp/>function<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`Time`<sp/>is<sp/>the<sp/>model<sp/>time</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>are<sp/>some<sp/>*optional*<sp/>keys<sp/>that<sp/>may<sp/>be<sp/>added.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**write_var:**<sp/>is<sp/>a<sp/>logical<sp/>that<sp/>is<sp/>set<sp/>to<sp/>false<sp/>if<sp/>the<sp/>user<sp/>doesn’t<sp/>want<sp/>the<sp/>variable<sp/>to<sp/>be<sp/>written<sp/>to<sp/>the<sp/>file<sp/>(default:<sp/>true).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**out_name:**<sp/>is<sp/>a<sp/>string<sp/>that<sp/>defines<sp/>the<sp/>name<sp/>of<sp/>the<sp/>variable<sp/>that<sp/>will<sp/>be<sp/>written<sp/>to<sp/>the<sp/>file<sp/>(default<sp/>same<sp/>as<sp/>var_name)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**long_name:**<sp/>is<sp/>a<sp/>string<sp/>defining<sp/>the<sp/>long_name<sp/>attribute<sp/>of<sp/>the<sp/>variable.<sp/>It<sp/>overwrites<sp/>the<sp/>long_name<sp/>in<sp/>the<sp/>variable&apos;s<sp/>register_diag_field<sp/>call</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**attributes:**<sp/>is<sp/>a<sp/>subsection<sp/>with<sp/>any<sp/>additional<sp/>metadata<sp/>to<sp/>add<sp/>to<sp/>the<sp/>variable<sp/>in<sp/>the<sp/>netcdf<sp/>file.<sp/>This<sp/>is<sp/>a<sp/>new<sp/>feature<sp/>that<sp/>is<sp/>not<sp/>supported<sp/>by<sp/>the<sp/>legacy<sp/>ascii<sp/>data_table.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**zbounds:**<sp/>is<sp/>a<sp/>2<sp/>member<sp/>array<sp/>of<sp/>integers<sp/>that<sp/>define<sp/>the<sp/>bounds<sp/>of<sp/>the<sp/>z<sp/>axis<sp/>(zmin,<sp/>zmin),<sp/>optional<sp/>default<sp/>is<sp/>no<sp/>limits.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.4<sp/>Variable<sp/>Metadata<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">Any<sp/>additional<sp/>variable<sp/>attributes<sp/>can<sp/>be<sp/>added<sp/>for<sp/>each<sp/>variable<sp/>can<sp/>be<sp/>listed<sp/>under<sp/>the<sp/>attributes<sp/>section<sp/>as<sp/>a<sp/>dashed<sp/>array.<sp/>The<sp/>key<sp/>is<sp/>attribute<sp/>name<sp/>and<sp/>the<sp/>value<sp/>is<sp/>the<sp/>attribute<sp/>value.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Although<sp/>this<sp/>was<sp/>not<sp/>supported<sp/>by<sp/>the<sp/>legacy<sp/>ascii<sp/>data_table,<sp/>with<sp/>the<sp/>legacy<sp/>diag_manager,<sp/>a<sp/>call<sp/>to<sp/>`diag_field_add_attribute`<sp/>could<sp/>have<sp/>been<sp/>used<sp/>to<sp/>do<sp/>the<sp/>same<sp/>thing.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```F90</highlight></codeline>
+<codeline><highlight class="normal">call<sp/>diag_field_add_attribute(diag_field_id,<sp/>attribute_name,<sp/>attribute_value)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.5<sp/>Global<sp/>Meta<sp/>Data<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">Any<sp/>additional<sp/>global<sp/>attributes<sp/>can<sp/>be<sp/>added<sp/>for<sp/>each<sp/>file<sp/>can<sp/>be<sp/>listed<sp/>under<sp/>the<sp/>global_meta<sp/>section<sp/>as<sp/>a<sp/>dashed<sp/>array.<sp/><sp/>The<sp/>key<sp/>is<sp/>the<sp/>attribute<sp/>name<sp/>and<sp/>the<sp/>value<sp/>is<sp/>the<sp/>attribute<sp/>value.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>global_meta:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.6<sp/>Sub_region<sp/>Section</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>sub<sp/>region<sp/>can<sp/>be<sp/>listed<sp/>under<sp/>the<sp/>sub_region<sp/>section<sp/>as<sp/>a<sp/>dashed<sp/>array.<sp/>The<sp/>legacy<sp/>ascii<sp/>diag_table<sp/>only<sp/>allows<sp/>regions<sp/>to<sp/>be<sp/>defined<sp/>using<sp/>the<sp/>latitude<sp/>and<sp/>longitude,<sp/>and<sp/>it<sp/>only<sp/>allowed<sp/>rectangular<sp/>sub<sp/>regions.<sp/>With<sp/>the<sp/>yaml<sp/>diag_table,<sp/>you<sp/>can<sp/>use<sp/>indices<sp/>to<sp/>defined<sp/>the<sp/>sub_region<sp/>and<sp/>you<sp/>can<sp/>define<sp/>**any**<sp/>four<sp/>corner<sp/>shape.<sp/>Each<sp/>file<sp/>can<sp/>only<sp/>have<sp/>1<sp/>sub_region<sp/>defined.<sp/>These<sp/>are<sp/>keys<sp/>that<sp/>can<sp/>be<sp/>used:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**grid_type:**<sp/>is<sp/>a<sp/>**required**<sp/>string<sp/>defining<sp/>the<sp/>method<sp/>used<sp/>to<sp/>define<sp/>the<sp/><sp/>fourth<sp/>sub_region<sp/>corners.<sp/>The<sp/>acceptable<sp/>values<sp/>are<sp/>&quot;latlon&quot;<sp/>if<sp/>using<sp/>latitude/longitude<sp/>or<sp/>&quot;indices&quot;<sp/>if<sp/>using<sp/>the<sp/>indices<sp/>of<sp/>the<sp/>corners.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**corner1:**<sp/>is<sp/>a<sp/>**required**<sp/>2<sp/>member<sp/>array<sp/>of<sp/>reals<sp/>if<sp/>using<sp/>(grid_type=&quot;latlon&quot;)<sp/>or<sp/>integers<sp/>if<sp/>using<sp/>(grid_type=&quot;indices&quot;)<sp/>defining<sp/>the<sp/>x<sp/>and<sp/>y<sp/>points<sp/>of<sp/>the<sp/>first<sp/>corner<sp/>of<sp/>a<sp/>sub_grid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**corner2:**<sp/>is<sp/>a<sp/>**required**<sp/>2<sp/>member<sp/>array<sp/>of<sp/>reals<sp/>if<sp/>using<sp/>(grid_type=&quot;latlon&quot;)<sp/>or<sp/>integers<sp/>if<sp/>using<sp/>(grid_type=&quot;indices&quot;)<sp/>defining<sp/>the<sp/>x<sp/>and<sp/>y<sp/>points<sp/>of<sp/>the<sp/>second<sp/>corner<sp/>of<sp/>a<sp/>sub_grid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**corner3:**<sp/>is<sp/>a<sp/>**required**<sp/>2<sp/>member<sp/>array<sp/>of<sp/>reals<sp/>if<sp/>using<sp/>(grid_type=&quot;latlon&quot;)<sp/>or<sp/>integers<sp/>if<sp/>using<sp/>(grid_type=&quot;indices&quot;)<sp/>defining<sp/>the<sp/>x<sp/>and<sp/>y<sp/>points<sp/>of<sp/>the<sp/>third<sp/>corner<sp/>of<sp/>a<sp/>sub_grid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**corner4:**<sp/>is<sp/>a<sp/>**required**<sp/>2<sp/>member<sp/>array<sp/>of<sp/>reals<sp/>if<sp/>using<sp/>(grid_type=&quot;latlon&quot;)<sp/>or<sp/>integers<sp/>if<sp/>using<sp/>(grid_type=&quot;indices&quot;)<sp/>defining<sp/>the<sp/>x<sp/>and<sp/>y<sp/>points<sp/>of<sp/>the<sp/>fourth<sp/>corner<sp/>of<sp/>a<sp/>sub_grid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**tile:**<sp/>is<sp/>an<sp/>integer<sp/>defining<sp/>the<sp/>tile<sp/>number<sp/>the<sp/>sub_grid<sp/>is<sp/>on.<sp/>It<sp/>is<sp/>**required**<sp/>only<sp/>if<sp/>using<sp/>(grid_type=&quot;indices&quot;).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sub_region:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>grid_type:<sp/>latlon</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner1:<sp/>-80,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner2:<sp/>-80,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner3:<sp/>-60,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner4:<sp/>-60,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>More<sp/>examples</highlight></codeline>
+<codeline><highlight class="normal">Below<sp/>is<sp/>a<sp/>complete<sp/>example<sp/>of<sp/>diag_table.yaml:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_diag_manager</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>wild_card_name%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>file_duration:<sp/>12<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sst</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>global_meta:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>is_a_file:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>24<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sst</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>write_var:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>do_sst:<sp/>.true.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sub_region:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>grid_type:<sp/>latlon</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner1:<sp/>-80,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner2:<sp/>-80,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner3:<sp/>-60,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner4:<sp/>-60,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>-1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>write_file:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sstt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>long_name:<sp/>S<sp/>S<sp/>T</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sstt2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>write_var:<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sub_region:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>grid_type:<sp/>index</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tile:<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner1:<sp/>10,<sp/>15</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner2:<sp/>20,<sp/>15</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner3:<sp/>10,<sp/>25</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner4:<sp/>20,<sp/>25</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>-1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>write_file:<sp/>false</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>4.<sp/>Schema</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>formal<sp/>specification<sp/>of<sp/>the<sp/>file<sp/>format,<sp/>in<sp/>the<sp/>form<sp/>of<sp/>a<sp/>JSON<sp/>schema,<sp/>can<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">found<sp/>in<sp/>the<sp/>[gfdl_msd_schemas](https://github.com/NOAA-GFDL/gfdl_msd_schemas)</highlight></codeline>
+<codeline><highlight class="normal">repository<sp/>on<sp/>Github.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>5.<sp/>Ensemble<sp/>and<sp/>Nest<sp/>Support</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>using<sp/>nests,<sp/>it<sp/>may<sp/>be<sp/>desired<sp/>for<sp/>a<sp/>nest<sp/>to<sp/>have<sp/>a<sp/>different<sp/>file<sp/>frequency<sp/>or<sp/>number<sp/>of<sp/>variables<sp/>from<sp/>the<sp/>parent<sp/>grid.<sp/>This<sp/>may<sp/>allow<sp/>users<sp/>to<sp/>save<sp/>disk<sp/>space<sp/>and<sp/>reduce<sp/>simulations<sp/>time.<sp/>In<sp/>order<sp/>to<sp/>support<sp/>this,<sp/>FMS<sp/>allows<sp/>each<sp/>nest<sp/>to<sp/>have<sp/>a<sp/>different<sp/>diag_table.yaml<sp/>from<sp/>the<sp/>parent<sp/>grid.<sp/>For<sp/>example,<sp/>if<sp/>running<sp/>with<sp/>1<sp/>nest<sp/>FMS<sp/>will<sp/>use<sp/>diag_table.yaml<sp/>for<sp/>the<sp/>parent<sp/>grid<sp/>and<sp/>diag_table.nest_01.yaml<sp/>for<sp/>the<sp/>first<sp/>nest.<sp/>Similary,<sp/>each<sp/>ensemble<sp/>member<sp/>can<sp/>have<sp/>its<sp/>own<sp/>diag_table<sp/>(diag_table_ens_XX.yaml,<sp/>where<sp/>XX<sp/>is<sp/>the<sp/>ensemble<sp/>number).<sp/>However,<sp/>for<sp/>the<sp/>ensemble<sp/>case<sp/>if<sp/>both<sp/>the<sp/>diag_table.yaml<sp/>and<sp/>the<sp/>diag_table_ens_*<sp/>files<sp/>are<sp/>present,<sp/>the<sp/>code<sp/>will<sp/>crash<sp/>as<sp/>only<sp/>1<sp/>option<sp/>is<sp/>allowed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>6.<sp/>Reducing<sp/>Diag<sp/>Table<sp/>Yaml<sp/>Length</highlight></codeline>
+<codeline><highlight class="normal">There<sp/>may<sp/>be<sp/>scenarios<sp/>where<sp/>the<sp/>diag_table.yaml<sp/>becomes<sp/>long<sp/>and<sp/>contains<sp/>a<sp/>lot<sp/>of<sp/>repeated<sp/>content.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>example,<sp/>the<sp/>keys<sp/>`module`,<sp/>`reduction`,<sp/>and<sp/>`kind`<sp/>often<sp/>have<sp/>the<sp/>same<sp/>values<sp/>across<sp/>many<sp/>variables.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>reduce<sp/>size<sp/>and<sp/>improve<sp/>readability,<sp/>you<sp/>can<sp/>**define<sp/>these<sp/>keys<sp/>at<sp/>the<sp/>file<sp/>level,<sp/>and<sp/>override<sp/>them<sp/>at<sp/>the<sp/>variable<sp/>level<sp/>if<sp/>needed**:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">However,<sp/>there<sp/>may<sp/>be<sp/>cases<sp/>where<sp/>a<sp/>file<sp/>contains<sp/>a<sp/>large<sp/>number<sp/>of<sp/>variables<sp/>from<sp/>different<sp/>modules,<sp/>requiring<sp/>duplication<sp/>of<sp/>the<sp/>module<sp/>key<sp/>across<sp/>multiple<sp/>lines.<sp/>For<sp/>example:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>radiation_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>address<sp/>this,<sp/>you<sp/>can<sp/>group<sp/>variables<sp/>by<sp/>module:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>modules:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>radiation_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var5</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Another<sp/>option<sp/>**to<sp/>reduce<sp/>its<sp/>size<sp/>and<sp/>improve<sp/>readability,<sp/>is<sp/>to<sp/>use<sp/>yaml<sp/>anchors**.<sp/>For<sp/>example,<sp/>instead<sp/>of<sp/>writing:</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_daily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>define<sp/>an<sp/>anchor<sp/>and<sp/>reuse<sp/>it:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">name:<sp/>&amp;name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:<sp/>*name</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_daily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>*name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>variable_name:<sp/>var773</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>7.<sp/>Improving<sp/>Performance<sp/>at<sp/>High<sp/>Resolutions</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>very<sp/>high<sp/>resolutions<sp/>(e.g.,<sp/>C3072L65),<sp/>performance<sp/>can<sp/>be<sp/>greatly<sp/>improved<sp/>by<sp/>using<sp/>NETCDF-4<sp/>with<sp/>collective<sp/>MPI<sp/>writes.<sp/>Tests<sp/>have<sp/>shown<sp/>up<sp/>to<sp/>a<sp/>70%<sp/>speedup<sp/>when<sp/>writing<sp/>hourly<sp/>diagnostic<sp/>output.<sp/>This<sp/>approach<sp/>also<sp/>simplifies<sp/>the<sp/>workflow,<sp/>as<sp/>it<sp/>does<sp/>not<sp/>use<sp/>the<sp/>IO<sp/>domain<sp/>and<sp/>does<sp/>not<sp/>create<sp/>distributed<sp/>files.<sp/>To<sp/>enable<sp/>this<sp/>feature,<sp/>set<sp/>`use_collective_writes:<sp/>True`<sp/>for<sp/>each<sp/>file.<sp/>For<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Chunking<sp/>can<sp/>also<sp/>have<sp/>a<sp/>major<sp/>impact<sp/>on<sp/>performance.<sp/>You<sp/>can<sp/>set<sp/>chunk<sp/>sizes<sp/>for<sp/>all<sp/>variables<sp/>in<sp/>a<sp/>file<sp/>using<sp/>the<sp/>`chunksizes`<sp/>key<sp/>at<sp/>the<sp/>file<sp/>level.<sp/>By<sp/>default,<sp/>the<sp/>diag<sp/>manager<sp/>will<sp/>choose<sp/>chunk<sp/>sizes<sp/>equal<sp/>to<sp/>the<sp/>compute<sp/>domain<sp/>for<sp/>domain-decomposed<sp/>dimensions<sp/>(e.g.,<sp/>for<sp/>C3072L65<sp/>and<sp/>a<sp/>layout<sp/>of<sp/>32,64,<sp/>the<sp/>chunksizes<sp/>would<sp/>be<sp/>96,48,nz).<sp/>For<sp/>dimensions<sp/>that<sp/>are<sp/>not<sp/>domain-decomposed<sp/>(e.g.,<sp/>the<sp/>vertical<sp/>z<sp/>dimension),<sp/>the<sp/>chunk<sp/>size<sp/>defaults<sp/>to<sp/>the<sp/>full<sp/>length<sp/>of<sp/>the<sp/>dimension.<sp/>This<sp/>effectively<sp/>means<sp/>the<sp/>entire<sp/>z-dimension<sp/>is<sp/>stored<sp/>as<sp/>a<sp/>single<sp/>chunk.<sp/>For<sp/>unlimited<sp/>dimensions<sp/>(time),<sp/>the<sp/>chunk<sp/>size<sp/>is<sp/>always<sp/>1.<sp/>For<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>override<sp/>chunk<sp/>sizes<sp/>for<sp/>individual<sp/>variables<sp/>by<sp/>specifying<sp/>`chunksizes`<sp/>at<sp/>the<sp/>variable<sp/>level.<sp/>For<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal">```yaml</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>chunksizes:<sp/>96,<sp/>4,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Things<sp/>to<sp/>consider:**</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/><sp/>This<sp/>option<sp/>currently<sp/>only<sp/>works<sp/>for<sp/>files<sp/>with<sp/>variables<sp/>that<sp/>are<sp/>domain-decomposed<sp/>(i.e.,<sp/>multiple<sp/>mpi-tasks<sp/>each<sp/>with<sp/>their<sp/>own<sp/>section<sp/>of<sp/>data).<sp/>Support<sp/>for<sp/>land&apos;s<sp/>unstructured<sp/>grid<sp/>and<sp/>icebergs<sp/>will<sp/>be<sp/>added<sp/>in<sp/>the<sp/>future;<sp/>at<sp/>present,<sp/>using<sp/>this<sp/>option<sp/>with<sp/>those<sp/>grids<sp/>will<sp/>result<sp/>in<sp/>a<sp/>FATAL<sp/>error.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/><sp/>The<sp/>domain<sp/>must<sp/>be<sp/>evenly<sp/>decomposed,<sp/>meaning<sp/>each<sp/>processor<sp/>has<sp/>the<sp/>same<sp/>amount<sp/>of<sp/>data.<sp/>For<sp/>example,<sp/>a<sp/>C3072L65<sp/>grid<sp/>with<sp/>a<sp/>layout<sp/>of<sp/>(30,<sp/>32)<sp/>will<sp/>not<sp/>work<sp/>and<sp/>will<sp/>result<sp/>in<sp/>a<sp/>FATAL<sp/>error,<sp/>since<sp/>3072<sp/>is<sp/>not<sp/>evenly<sp/>divisible<sp/>by<sp/>30.<sp/>This<sp/>limitation<sp/>exists<sp/>because<sp/>NetCDF<sp/>collective<sp/>I/O<sp/>requires<sp/>each<sp/>process<sp/>to<sp/>access<sp/>the<sp/>same<sp/>pattern<sp/>of<sp/>chunks.<sp/>With<sp/>uneven<sp/>decomposition,<sp/>the<sp/>chunk<sp/>shapes<sp/>per<sp/>process<sp/>vary,<sp/>making<sp/>it<sp/>impossible<sp/>to<sp/>determine<sp/>a<sp/>consistent<sp/>chunking<sp/>strategy.<sp/>Currently<sp/>there<sp/>are<sp/>no<sp/>plans<sp/>to<sp/>support<sp/>this<sp/>in<sp/>the<sp/>future.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>The<sp/>chunksizes<sp/>must<sp/>be<sp/>a<sp/>comma<sp/>seperated<sp/>list<sp/>of<sp/>five<sp/>integers<sp/>1<sp/>for<sp/>each<sp/>dimension.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Chunking<sp/>is<sp/>supported<sp/>even<sp/>when<sp/>not<sp/>using<sp/>collective<sp/>writes<sp/>as<sp/>long<sp/>as<sp/>netcdf-4<sp/>file<sp/>are<sp/>being<sp/>used<sp/>(by<sp/>setting<sp/>fms2_io_nml::netcdf_default_format=&quot;netcdf4)</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_yaml_format.md"/>
+  </compounddef>
+</doxygen>

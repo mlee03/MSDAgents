@@ -1,0 +1,2964 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__diag__yaml__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_diag_yaml_mod</compoundname>
+    <innerclass refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type" prot="private">fms_diag_yaml_mod::diagyamlfiles_type</innerclass>
+    <innerclass refid="structfms__diag__yaml__mod_1_1diagyamlfilesvar__type" prot="private">fms_diag_yaml_mod::diagyamlfilesvar_type</innerclass>
+    <innerclass refid="structfms__diag__yaml__mod_1_1diagyamlobject__type" prot="private">fms_diag_yaml_mod::diagyamlobject_type</innerclass>
+    <innerclass refid="structfms__diag__yaml__mod_1_1filelist__type" prot="private">fms_diag_yaml_mod::filelist_type</innerclass>
+    <innerclass refid="structfms__diag__yaml__mod_1_1subregion__type" prot="private">fms_diag_yaml_mod::subregion_type</innerclass>
+    <innerclass refid="structfms__diag__yaml__mod_1_1varlist__type" prot="private">fms_diag_yaml_mod::varlist_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1a807f7f54c5a67b844ebb65a6d711ab8e" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter basedate_size</definition>
+        <argsstring></argsstring>
+        <name>basedate_size</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="66" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1ab034d92c7ae97e4c80726eafa86b8bfd" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlobject__type" kindref="compound">diagyamlobject_type</ref>), target, public</type>
+        <definition>type (diagyamlobject_type), target, public diag_yaml</definition>
+        <argsstring></argsstring>
+        <name>diag_yaml</name>
+        <briefdescription>
+<para>Obj containing the contents of the diag_table.yaml. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="282" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="282" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1aabd68b380076d0ea17b7c15852e92d6c" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private diag_yaml_module_initialized</definition>
+        <argsstring></argsstring>
+        <name>diag_yaml_module_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="286" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="286" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1a32d69fd6ac699ed63795289c4b21f65f" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1filelist__type" kindref="compound">filelist_type</ref>), save</type>
+        <definition>type (filelist_type), save file_list</definition>
+        <argsstring></argsstring>
+        <name>file_list</name>
+        <briefdescription>
+<para>List of all files in the diag_table.yaml. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="284" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="284" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1ac4f9f59a711c86328fa788ecd4e0c18a" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_freq</definition>
+        <argsstring></argsstring>
+        <name>max_freq</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="68" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1a24c7b93756cade0e26e6462317730a3e" prot="public" static="no" mutable="no">
+        <type>integer, public</type>
+        <definition>integer, public max_subaxes</definition>
+        <argsstring></argsstring>
+        <name>max_subaxes</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Max number of subaxis, set in diag_yaml_object_init depending on what is in the diag yaml. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1a5fa8dc7639f87b348ea1304930e49512" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter num_sub_region_array</definition>
+        <argsstring></argsstring>
+        <name>num_sub_region_array</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="67" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__yaml_8F90_1ad9280ffa440b5a35eafa549c17b9b656" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1varlist__type" kindref="compound">varlist_type</ref>), save</type>
+        <definition>type (varlist_type), save variable_list</definition>
+        <argsstring></argsstring>
+        <name>variable_list</name>
+        <briefdescription>
+<para>List of all the variables in the diag_table.yaml. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="283" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="283" bodyend="283"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga6a8d5332750ad96fa86a9fcd41b8fef3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::add_axis_name</definition>
+        <argsstring>(this, axis_name)</argsstring>
+        <name>add_axis_name</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_name</type>
+          <defname>axis_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="2205" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="2206" bodyend="2211"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga225afc31d94b2544a713bd739ed4cfa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::add_standname</definition>
+        <argsstring>(this, standard_name)</argsstring>
+        <name>add_standname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <briefdescription>
+<para>Adds the standname for the DiagYamlFilesVar_type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="2215" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="2216" bodyend="2223"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gafd101060ca732e9b6b23445533e77b74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::diag_get_value_from_key</definition>
+        <argsstring>(diag_file_id, par_id, key_name, value_name, is_optional)</argsstring>
+        <name>diag_get_value_from_key</name>
+        <param>
+          <type>diag_file_id</type>
+          <defname>diag_file_id</defname>
+        </param>
+        <param>
+          <type>par_id</type>
+          <defname>par_id</defname>
+        </param>
+        <param>
+          <type>key_name</type>
+          <defname>key_name</defname>
+        </param>
+        <param>
+          <type>value_name</type>
+          <defname>value_name</defname>
+        </param>
+        <param>
+          <type>is_optional</type>
+          <defname>is_optional</defname>
+        </param>
+        <briefdescription>
+<para>diag_manager wrapper to get_value_from_key to use for allocatable string variables </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the file block in the yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">par_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the parent block in the yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key to look for in the parent block</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the key</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_optional</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if the key is optional </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="832" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="833" bodyend="845"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga6f180912d4c33591f15aaeb2e41e8e05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::diag_yaml_files_obj_init</definition>
+        <argsstring>(obj)</argsstring>
+        <name>diag_yaml_files_obj_init</name>
+        <param>
+          <type>obj</type>
+          <defname>obj</defname>
+        </param>
+        <briefdescription>
+<para>Initializes the non string values of a diagYamlFiles_type to its default values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1383" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1384" bodyend="1392"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga1f27e5a0bc775fa23b9444fe8d413ca9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_yaml_mod::diag_yaml_object_end</definition>
+        <argsstring>()</argsstring>
+        <name>diag_yaml_object_end</name>
+        <briefdescription>
+<para>Destroys the diag_yaml object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="600" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="601" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga782127a42f71d64aa0c99e721e50264e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_yaml_mod::diag_yaml_object_init</definition>
+        <argsstring>(diag_subset_output)</argsstring>
+        <name>diag_yaml_object_init</name>
+        <param>
+          <type>diag_subset_output</type>
+          <defname>diag_subset_output</defname>
+        </param>
+        <briefdescription>
+<para>Uses the yaml_parser_mod to read in the diag_table and fill in the diag_yaml object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_subset_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DIAG_ALL - Current PE is in the one and only pelist DIAG_OTHER - Current PE is not in the ocean pelist and there are multiple pelists DIAG_OCEAN - Current PE is in the ocean pelist and there are multiple pelists </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Loop through the number of nfiles and fill in the diag_yaml obj</para><para>Save the file name in the file_list</para><para>Save the filename in the diag_field type</para><para>initialize axes string</para><para>Save the variable name in the diag_file type</para><para>Save the variable name and the module name in the variable_list</para><para>Sort the file list in alphabetical order </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="371" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="372" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga90abeeab5db5ccb2cc15fedf7976bae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_yaml_mod::dump_diag_yaml_obj</definition>
+        <argsstring>(filename)</argsstring>
+        <name>dump_diag_yaml_obj</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Prints out values from diag_yaml object for debugging. Only writes on root. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional name of logfile to write to, otherwise prints to stdout </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1708" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1709" bodyend="1769"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga8b92859aa696b575188964b1c1195721" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::fill_in_diag_fields</definition>
+        <argsstring>(diag_file_id, yaml_fileobj, var_id, field, allow_averages, has_module_block, mod_name)</argsstring>
+        <name>fill_in_diag_fields</name>
+        <param>
+          <type>diag_file_id</type>
+          <defname>diag_file_id</defname>
+        </param>
+        <param>
+          <type>yaml_fileobj</type>
+          <defname>yaml_fileobj</defname>
+        </param>
+        <param>
+          <type>var_id</type>
+          <defname>var_id</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>allow_averages</type>
+          <defname>allow_averages</defname>
+        </param>
+        <param>
+          <type>has_module_block</type>
+          <defname>has_module_block</defname>
+        </param>
+        <param>
+          <type>mod_name</type>
+          <defname>mod_name</defname>
+        </param>
+        <briefdescription>
+<para>Fills in a diagYamlFilesVar_type with the contents of a variable block in diag_table.yaml. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the file block in the yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The yaml file obj for the variables</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the variable block in the yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFilesVar_type obj to read the contents into</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allow_averages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if averages are allowed for this file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Set the zbounds if they exist </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="730" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="732" bodyend="827"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gad72590b79bd640ac2cc7e28feec57952" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::fill_in_diag_files</definition>
+        <argsstring>(diag_yaml_id, diag_file_id, yaml_fileobj)</argsstring>
+        <name>fill_in_diag_files</name>
+        <param>
+          <type>diag_yaml_id</type>
+          <defname>diag_yaml_id</defname>
+        </param>
+        <param>
+          <type>diag_file_id</type>
+          <defname>diag_file_id</defname>
+        </param>
+        <param>
+          <type>yaml_fileobj</type>
+          <defname>yaml_fileobj</defname>
+        </param>
+        <briefdescription>
+<para>Fills in a diagYamlFiles_type with the contents of a file block in diag_table.yaml. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the diag_table.yaml</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the file block to read</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">yaml_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type obj to read the contents into </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="628" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="629" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gad89be29334b37e8fbde6f4633a4a2a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, dimension(:), allocatable, public</type>
+        <definition>integer function, dimension(:), allocatable, public fms_diag_yaml_mod::find_diag_field</definition>
+        <argsstring>(diag_field_name, module_name)</argsstring>
+        <name>find_diag_field</name>
+        <param>
+          <type>diag_field_name</type>
+          <defname>diag_field_name</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <briefdescription>
+<para>Determines if a diag_field is in the diag_yaml_object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Indices of the locations where the field was found</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag_field name to search for</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the module, the variable is in </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1620" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1622" bodyend="1629"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga5a69f2f67fa04ba727cdbe0c94e90ece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_yaml_mod::fms_diag_yaml_out</definition>
+        <argsstring>(ntimes, ntiles, ndistributedfiles)</argsstring>
+        <name>fms_diag_yaml_out</name>
+        <param>
+          <type>ntimes</type>
+          <defname>ntimes</defname>
+        </param>
+        <param>
+          <type>ntiles</type>
+          <defname>ntiles</defname>
+        </param>
+        <param>
+          <type>ndistributedfiles</type>
+          <defname>ndistributedfiles</defname>
+        </param>
+        <briefdescription>
+<para>Writes an output yaml with all available information on the written files. Will only write with root pe. Global attributes are limited to 16 per file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ntimes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of time levels that were written for each file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ntiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of tiles for each file domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ndistributedfiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of distributed files </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1775" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1776" bodyend="2141"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga59cd39f02bf07eb1520b643cf0e9ff4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(basedate_size)</type>
+        <definition>pure integer function, dimension (basedate_size) fms_diag_yaml_mod::get_basedate</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_basedate</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>get the basedate of a diag_yaml type </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the basedate as an integer array</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Basedate array result to return </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="304" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gad8fbae49467d887ff3cb223758ba1726" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(max_dimensions)</type>
+        <definition>pure integer function, dimension(max_dimensions) fms_diag_yaml_mod::get_chunksizes</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_chunksizes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for chunksizes. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the chunksizes for the fiel</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1362" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1364" bodyend="1367"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga995e9161be57f7206fd1c38b520c2c5f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlfilesvar__type" kindref="compound">diagyamlfilesvar_type</ref>) function, pointer</type>
+        <definition>type(diagyamlfilesvar_type) function, pointer fms_diag_yaml_mod::get_diag_field_from_id</definition>
+        <argsstring>(this, yaml_id)</argsstring>
+        <name>get_diag_field_from_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>yaml_id</type>
+          <defname>yaml_id</defname>
+        </param>
+        <briefdescription>
+<para>Get the diag_field yaml corresponding to a yaml_id. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the diag_field yaml entry</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Yaml id</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Diag fields info </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="345" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="347" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga7055f0d0271199d6ea785df3157246d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, dimension(:), allocatable, public</type>
+        <definition>integer function, dimension(:), allocatable, public fms_diag_yaml_mod::get_diag_field_ids</definition>
+        <argsstring>(indices)</argsstring>
+        <name>get_diag_field_ids</name>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <briefdescription>
+<para>Gets field indices corresponding to the indices (input argument) in the sorted variable_list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Copy of array of field indices</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of the fields in the sorted variable_list array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1654" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1655" bodyend="1665"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gab7a3231f3c21087ea63cc451a320ad3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlfilesvar__type" kindref="compound">diagyamlfilesvar_type</ref>) function, dimension(:), allocatable</type>
+        <definition>pure type(diagyamlfilesvar_type) function, dimension (:), allocatable fms_diag_yaml_mod::get_diag_fields</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_diag_fields</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>get the diag_fields of a diag_yaml type </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the diag_fields</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Diag fields info </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="363" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga0c222558d31fe8a797f7b279d3e8b148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlfilesvar__type" kindref="compound">diagyamlfilesvar_type</ref>) function, dimension(:), allocatable, public</type>
+        <definition>type(diagyamlfilesvar_type) function, dimension (:), allocatable, public fms_diag_yaml_mod::get_diag_fields_entries</definition>
+        <argsstring>(indices)</argsstring>
+        <name>get_diag_fields_entries</name>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <briefdescription>
+<para>Gets the diag_field entries corresponding to the indices of the sorted variable_list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array of diag_fields</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of the field in the sorted variable_list array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1634" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1636" bodyend="1649"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga472712aef0e043c328c6cf7a40ef0ff0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlfiles__type" kindref="compound">diagyamlfiles_type</ref>) function, dimension(:), allocatable</type>
+        <definition>type(diagyamlfiles_type) function, dimension (:), allocatable fms_diag_yaml_mod::get_diag_files</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_diag_files</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>get the diag_files of a diag_yaml type </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the diag_files</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>History file info </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="335" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="337" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gae7efffcc5853eccd36bf16ce9dfdb35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, dimension(:), allocatable, public</type>
+        <definition>integer function, dimension(:), allocatable, public fms_diag_yaml_mod::get_diag_files_id</definition>
+        <argsstring>(indices)</argsstring>
+        <name>get_diag_files_id</name>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <briefdescription>
+<para>Finds the indices of the diag_yamldiag_files(:) corresponding to fields in variable_list(indices) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>indices of the diag_yamldiag_files(:)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of the field in the sorted variable_list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1670" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1672" bodyend="1703"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaca056298a758dbe11bdaab297448ed97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=8 *max_freq) function</type>
+        <definition>pure character(len=8 * max_freq) function fms_diag_yaml_mod::get_diag_reduction_string</definition>
+        <argsstring>(reduction_val)</argsstring>
+        <name>get_diag_reduction_string</name>
+        <param>
+          <type>reduction_val</type>
+          <defname>reduction_val</defname>
+        </param>
+        <briefdescription>
+<para>private function for getting reduction type string from parameter values </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">reduction_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reduction types (eg. time_average) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="2175" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="2176" bodyend="2202"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga74d491de7114d717a30ce2db82f87979" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=8 *size(unit_param)) function</type>
+        <definition>pure character(len=8 * size(unit_param)) function fms_diag_yaml_mod::get_diag_unit_string</definition>
+        <argsstring>(unit_param)</argsstring>
+        <name>get_diag_unit_string</name>
+        <param>
+          <type>unit_param</type>
+          <defname>unit_param</defname>
+        </param>
+        <briefdescription>
+<para>private function for getting unit string from diag_data parameter values </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">unit_param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag unit parameter values from diag_data_mod. <linebreak/>
+eg. DIAG_SECONDS, DIAG_MINUTES,DIAG_HOURS, DIAG_DAYS, DIAG_YEARS </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="2145" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="2146" bodyend="2171"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga089cda41de260fc767ee0835ce887117" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1diagyamlobject__type" kindref="compound">diagyamlobject_type</ref>) function, pointer, public</type>
+        <definition>type (diagyamlobject_type) function, pointer, public fms_diag_yaml_mod::get_diag_yaml_obj</definition>
+        <argsstring>()</argsstring>
+        <name>get_diag_yaml_obj</name>
+        <briefdescription>
+<para>gets the diag_yaml module variable </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the diag_yaml module variable </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="295" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="297" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gad6cbeb1c961bece4629b33513d9973fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_duration</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_duration</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_duration. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_duration of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1186" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1188" bodyend="1190"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga470144e688a2fd7cf7ce7509b7396fc3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_duration_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_duration_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_duration_units. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_duration_units of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1194" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1196" bodyend="1198"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga9ae4a5b97add3be8ffbe0a4e62f554ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_file_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_fname. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_fname of a diag_yaml_file obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1114" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1116" bodyend="1118"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gae7bbf4e5d5eeef8c6f8707e010ac379a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_freq. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_freq of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1130" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1132" bodyend="1134"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga9709b1734febf5d1334e5deb05828116" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_frequnit</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_frequnit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_frequnit. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_frequnit of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1124" bodyend="1126"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga9e812b9d1859286e22a8f33030064fec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=max_str_len) function, dimension(:,:), allocatable</type>
+        <definition>pure character (len=max_str_len) function, dimension(:,:), allocatable fms_diag_yaml_mod::get_file_global_meta</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_global_meta</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_global_meta. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_global_meta of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1210" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1212" bodyend="1214"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaa4a4cddba997c07016548640638fca12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_new_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_new_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_new_file_freq. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_new_file_freq of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1162" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1164" bodyend="1166"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga20481cace7b52b4bbf5bdf3979c50719" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_new_file_freq_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_new_file_freq_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_new_file_freq_units. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_new_file_freq_units of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1170" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1172" bodyend="1174"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gab09f931bb0588d3b3cfe580879518281" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>pure type(time_type) function fms_diag_yaml_mod::get_file_start_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_start_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_start_time. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_start_time of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1180" bodyend="1182"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gae79aaaaeaf429966a921d30e479dba31" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__yaml__mod_1_1subregion__type" kindref="compound">subregion_type</ref>) function, pointer</type>
+        <definition>type(subregion_type) function, pointer fms_diag_yaml_mod::get_file_sub_region</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_sub_region</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_subregion. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_sub_region of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1156" bodyend="1158"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga69ac6a144a70060494f4bce6465e63c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_file_timeunit</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_timeunit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_timeunit. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_timeunit of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1138" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1140" bodyend="1142"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gabd6e470a65828fa292fba65bcb6f6941" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_file_unlimdim</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_unlimdim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_unlimdim. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_unlimdim of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1146" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1148" bodyend="1150"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga91f7c3d2fb9fba44f059825a03e89522" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(:) function, dimension(:), allocatable</type>
+        <definition>pure character (:) function, dimension(:), allocatable fms_diag_yaml_mod::get_file_varlist</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_file_varlist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_files_objfile_varlist. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file_varlist of a diag_yaml_file_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1202" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1204" bodyend="1206"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga0ef42f473c610ff2e2631117d34d90f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_filename_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_filename_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Get the integer equivalent of the time to use to determine the filename, if using a wildcard file name (i.e ocn%4yr%2mo%2dy%2hr) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the integer equivalent of the time to use to determine the filename</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1219" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1221" bodyend="1223"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaaa32938a81f0dd0122a9dfa6b314a1b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_n_diurnal</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_n_diurnal</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objn_diurnal. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the number of diurnal samples of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1345" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1347" bodyend="1349"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga91c9d953c13c09632fddf2767c93371b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_yaml_mod::get_num_unique_fields</definition>
+        <argsstring>()</argsstring>
+        <name>get_num_unique_fields</name>
+        <briefdescription>
+<para>Determine the number of unique diag_fields in the diag_yaml_object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of unique diag_fields </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1611" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1613" bodyend="1615"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga1f5fdae4fb2f848465cde2396ebf81f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::get_pow_value</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_pow_value</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objpow_value. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the pow_value of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1353" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1355" bodyend="1357"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga638865e0a681aeeca2d3e6b49fccc5d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::get_sub_region</definition>
+        <argsstring>(diag_yaml_id, sub_region_id, sub_region, grid_type, fname)</argsstring>
+        <name>get_sub_region</name>
+        <param>
+          <type>diag_yaml_id</type>
+          <defname>diag_yaml_id</defname>
+        </param>
+        <param>
+          <type>sub_region_id</type>
+          <defname>sub_region_id</defname>
+        </param>
+        <param>
+          <type>sub_region</type>
+          <defname>sub_region</defname>
+        </param>
+        <param>
+          <type>grid_type</type>
+          <defname>grid_type</defname>
+        </param>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+<para>gets the lat/lon of the sub region to use in a diag_table yaml </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the diag_table yaml file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sub_region_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the region block to read from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sub_region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type that stores the sub_region</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grid_type as it is read from the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename of the subregion (for error messages) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="849" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="850" bodyend="878"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gae791bf323ce569677dc72d0f23247993" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character(len=:) function, allocatable fms_diag_yaml_mod::get_title</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_title</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>get the title of a diag_yaml type </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the title of the diag table as an allocated string</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Basedate array result to return </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="325" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="327" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga934af718a27c02dde76eea8f2c27a71f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_yaml_mod::get_total_num_vars</definition>
+        <argsstring>(diag_yaml_id, diag_file_id)</argsstring>
+        <name>get_total_num_vars</name>
+        <param>
+          <type>diag_yaml_id</type>
+          <defname>diag_yaml_id</defname>
+        </param>
+        <param>
+          <type>diag_file_id</type>
+          <defname>diag_file_id</defname>
+        </param>
+        <briefdescription>
+<para>gets the total number of variables in the diag_table yaml file </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>total number of variables</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_yaml_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id for the diag_table yaml</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_file_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the file in the diag_table yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="883" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="885" bodyend="905"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gacbc3bd70d115e36755e55fac50d4c841" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=max_str_len) function, dimension(:,:), allocatable</type>
+        <definition>pure character (len=max_str_len) function, dimension (:,:), allocatable fms_diag_yaml_mod::get_var_attributes</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_attributes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_attributes. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_attributes of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1337" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1339" bodyend="1341"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga667bb7c8b4e890d5d0136d1bc2b825d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_fname. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_fname of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1260" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1262" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga90c0718e3d505e96ba5d8daa94d0fce1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, allocatable</type>
+        <definition>pure integer function, allocatable fms_diag_yaml_mod::get_var_kind</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_kind</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_kind. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_kind of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1292" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1294" bodyend="1296"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gac70d48826d20b8d5323ca78597ac036b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_longname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_longname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_longname. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_longname of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1313" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1315" bodyend="1317"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga4b85fa2cbd13a3b4ca8cad5ef847692c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_module</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_module</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_module of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1284" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1286" bodyend="1288"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gac3fd3910cd2f8fc14e0433ec8affba21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_outname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_outname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_outname. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_outname of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned</para></simplesect>
+<simplesect kind="return"><para>If outname is not set, the variable name will be used </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1302" bodyend="1309"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga43db9e85b2521ad678b5b0fb3e9cfbb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, allocatable</type>
+        <definition>pure integer function, allocatable fms_diag_yaml_mod::get_var_reduction</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_reduction</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_reduction. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_reduction of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1276" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1278" bodyend="1280"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga8b73744148274bffaea2848750643bfb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_units. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_units of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1321" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1323" bodyend="1325"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaa2acf3399fdde7bca518253821fbc50e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=:) function, allocatable</type>
+        <definition>pure character (len=:) function, allocatable fms_diag_yaml_mod::get_var_varname</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_varname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_varname. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_varname of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1268" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1270" bodyend="1272"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga5898ab9074ca55641c29cbb4ce640232" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure real(kind=r4_kind) function, dimension(2)</type>
+        <definition>pure real(kind=r4_kind) function, dimension(2) fms_diag_yaml_mod::get_var_zbounds</definition>
+        <argsstring>(this)</argsstring>
+        <name>get_var_zbounds</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for diag_yaml_files_var_objvar_zbounds. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>var_zbounds of a diag_yaml_files_var_obj</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>What is returned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1331" bodyend="1333"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga036ccb8d20838ebbd9860a7d8d3392e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_chunksizes</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_chunksizes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if chunksizes is set for the diag field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if chunksizes is set for the diag field</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to inquire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1579" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1580" bodyend="1581"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga083ffda252b5345e38e615e6b3f8073d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_diag_basedate</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_diag_basedate</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objdiag_basedate is on the stack, so this is always true </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlObject_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1592" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1593" bodyend="1594"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaa83800339e3ceb42036812955170cba8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_diag_fields</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_diag_fields</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objdiag_fields is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objdiag_fields is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlObject_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1604" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1605" bodyend="1606"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaca577c914d360bed861ce2a0cec116b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_diag_files</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_diag_files</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objdiag_files is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objdiag_files is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlObject_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1598" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1599" bodyend="1600"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga6386a7d396ae0c16184674edca85e439" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_diag_title</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_diag_title</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objdiag_title is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objdiag_title is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlObject_type object to inquire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1586" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1587" bodyend="1588"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaff2f779d1ac8a6b579feb38594829923" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_duration</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_duration</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objfile_duration is allocated on th stack, so this is always true </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1461" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1462" bodyend="1463"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga181421bb6e45681160a1c65c8a028f8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_duration_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_duration_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objfile_duration_units is on the stack, so this will retrun true </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1467" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1468" bodyend="1469"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gafe3c228c4bf3f5ecc123cd9f9d673eff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_fname is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_fname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1397" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1398" bodyend="1399"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaab2a67eb77cc7d6b58ce6e7a3ddb0672" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objfile_freq is on the stack, so the object always has it </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_freq is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1409" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1410" bodyend="1411"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga4c4589bbab79c502d9cc3ae14ded48e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_frequnit</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_frequnit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_frequnit is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_frequnit is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1403" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1404" bodyend="1405"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga480b280af60a593b8d2f2d732cff2ea0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_global_meta</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_global_meta</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_global_meta is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_global_meta is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1479" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1480" bodyend="1481"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gab372730be17f5fa9cbe0e8b24762b61d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_new_file_freq</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_new_file_freq</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objfile_new_file_freq is defined on the stack, so this will return true </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1443" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1444" bodyend="1445"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga9d6bc9000d4e71f0c115ff6189accb29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_new_file_freq_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_new_file_freq_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_new_file_freq_units is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_new_file_freq_units is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1449" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1450" bodyend="1451"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga3cb6d218240fc4d868a84e9b2f1eb5dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_start_time</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_start_time</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_start_time is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_start_time is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1455" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1456" bodyend="1457"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga41c26466c6b1aa4146c585cc07e55e7d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_sub_region</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_sub_region</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_sub_region is being used and has the sub region variables allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_sub_region sub region variables are allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1433" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1434" bodyend="1439"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga35d836dacb9900e786cdc0251168340a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_timeunit</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_timeunit</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_timeunit is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_timeunit is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1415" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1416" bodyend="1417"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gafb917c4ef19986a050f9d6269e4da2f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_unlimdim</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_unlimdim</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_unlimdim is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_unlimdim is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1421" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1422" bodyend="1423"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gabe1320adb0b54e5ac77ff9520b0a19f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_varlist</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_varlist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_varlist is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objfile_varlist is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1473" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1474" bodyend="1475"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaef569143cbf6e6fbd0c7142e3e26a57d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_file_write</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_file_write</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objfile_write is on the stack, so this will always be true. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1427" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1428" bodyend="1429"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga1e29b4013d520a62f94862e1f3af615c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_n_diurnal</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_n_diurnal</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objn_diurnal is set. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objn_diurnal is set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to inquire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1560" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1561" bodyend="1562"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaf4c718dfec5f58b68409c07723d0e618" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_pow_value</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_pow_value</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objpow_value is set. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objpow_value is set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to inquire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1566" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1567" bodyend="1568"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga68b6c937fd45e80c807d6926b5665d21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_standname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_standname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objstandname is set. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objstandname is set</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to inquire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1572" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1573" bodyend="1574"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga185a1e7943d247388efc00b41051f6c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_attributes</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_attributes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_attributes is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_attributes is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1554" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1555" bodyend="1556"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaf7dd9c332835e3094249265406d02022" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_fname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_fname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_fname is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_fname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1486" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1487" bodyend="1488"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gad62f0592b1f47a4979c071b10728171f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_kind</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_kind</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_kind is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_kind is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1510" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1511" bodyend="1512"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga487cb33c1f0fb89ba8949fb651a338e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_longname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_longname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_longname is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_longname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1536" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1537" bodyend="1538"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gab85b1757ee9bb8f852cbe9adbd32a994" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_module</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_module</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_module is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_module is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1504" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1505" bodyend="1506"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga9bdc9e56c3693f1ad5b27c392e4cf8c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_outname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_outname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_outname is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_outname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1522" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1523" bodyend="1532"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga18322ff6173fe4b5b1c5922890265731" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_reduction</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_reduction</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_reduction is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_reduction is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1498" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1499" bodyend="1500"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaf663181bd2576725ed153853134a2e53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_units</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_units</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_units is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_units is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1542" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1543" bodyend="1544"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga2f81159011d0d95f61e2ef1b8b5a889c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_varname</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_varname</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_varname is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_varname is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1492" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1493" bodyend="1494"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga84e8b0c3b6aa408d51924a6cab9362c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_write</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_write</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>diag_file_objvar_write is on the stack, so this returns true </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1516" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1517" bodyend="1518"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gae59f73cfaf1f34e2a7f66dc573f1ce16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::has_var_zbounds</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_var_zbounds</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Checks if diag_file_objvar_zbounds is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if diag_file_objvar_zbounds is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlvar_type object to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1548" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1549" bodyend="1550"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga6b45799ca7ef42a45f9578e8f71af7aa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::increase_new_file_freq_index</definition>
+        <argsstring>(this)</argsstring>
+        <name>increase_new_file_freq_index</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Increate the current_new_file_freq_index by 1. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1247" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1248" bodyend="1249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gafd6e2a6e78872c70fc922944a8d92f9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::is_file_subregional</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_file_subregional</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="2226" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="2228" bodyend="2231"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga5400891be68d64fea617cbd46e6e55ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_yaml_mod::is_global_meta</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_global_meta</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for whether file_global_meta is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag indicating if file_global_meta is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1227" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1229" bodyend="1233"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga56e49319fc7e216163f984d10da9df96" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_yaml_mod::is_using_collective_writes</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_using_collective_writes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Determines whether or not the file is using netcdf collective writes. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical indicating whether or not the file is using netcdf collective writes</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1238" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1240" bodyend="1243"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga850cbe3f8ef40323a7c5de39ef047849" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_yaml_mod::is_var_attributes</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_var_attributes</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Inquiry for whether var_attributes is allocated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag indicating if var_attributes is allocated</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1372" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1374" bodyend="1378"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaee9b2767d7e7d64f51b26530d4f328ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::parse_key</definition>
+        <argsstring>(filename, buffer, file_freq, file_frequnit, var)</argsstring>
+        <name>parse_key</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>buffer</type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>file_freq</type>
+          <defname>file_freq</defname>
+        </param>
+        <param>
+          <type>file_frequnit</type>
+          <defname>file_frequnit</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <briefdescription>
+<para>This parses the freq, new_file_freq, or file_duration keys which are read in as a comma list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the file (for error messages)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer that was read in from the yaml</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer to store the freq, new_file_freq, or file_duration after it is parsed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_frequnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer to store the freq units, new_file_freq units, or file_duration units after it is parsed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the key parsing </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="909" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="910" bodyend="966"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaab7262eeb66917504ea0f2c778e52e10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::set_field_kind</definition>
+        <argsstring>(field, skind)</argsstring>
+        <name>set_field_kind</name>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>skind</type>
+          <defname>skind</defname>
+        </param>
+        <briefdescription>
+<para>This checks if the kind of a diag field is valid and sets it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFilesVar_type obj to read the contents into</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">skind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable kind as read from diag_yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="999" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1000" bodyend="1017"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1gaa704a86877f3624ff121c4d1b0ef0743" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::set_field_reduction</definition>
+        <argsstring>(field, reduction_method)</argsstring>
+        <name>set_field_reduction</name>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>reduction_method</type>
+          <defname>reduction_method</defname>
+        </param>
+        <briefdescription>
+<para>This checks if the reduction of a diag field is valid and sets it If the reduction method is diurnalXX or powXX, it gets the number of diurnal sample and the power value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFilesVar_type obj to read the contents into</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reduction_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reduction method as read from the yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1022" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1023" bodyend="1071"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga33026be80c87732ec37280f8721c69b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::set_file_time_units</definition>
+        <argsstring>(yaml_fileobj, file_timeunit)</argsstring>
+        <name>set_file_time_units</name>
+        <param>
+          <type>yaml_fileobj</type>
+          <defname>yaml_fileobj</defname>
+        </param>
+        <param>
+          <type>file_timeunit</type>
+          <defname>file_timeunit</defname>
+        </param>
+        <briefdescription>
+<para>This checks if the time unit in a diag file is valid and sets the integer equivalent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">yaml_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type obj to checK</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_timeunit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file_timeunit as it is read from the diag_table </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="970" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="971" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga1aa9ef6045ca7468fd918568526a1717" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_yaml_mod::set_filename_time</definition>
+        <argsstring>(yaml_fileobj, filename_time)</argsstring>
+        <name>set_filename_time</name>
+        <param>
+          <type>yaml_fileobj</type>
+          <defname>yaml_fileobj</defname>
+        </param>
+        <param>
+          <type>filename_time</type>
+          <defname>filename_time</defname>
+        </param>
+        <briefdescription>
+<para>This checks if the filename_time in a diag file is correct and sets the integer equivalent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">yaml_fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diagYamlFiles_type obj to check</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filename_time as it is read from the yaml</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This is the default </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="978" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="979" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga6312d151826200837aa8813969929d09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_yaml_mod::set_valid_time_units</definition>
+        <argsstring>(time_units, error_msg)</argsstring>
+        <name>set_valid_time_units</name>
+        <param>
+          <type>time_units</type>
+          <defname>time_units</defname>
+        </param>
+        <param>
+          <type>error_msg</type>
+          <defname>error_msg</defname>
+        </param>
+        <briefdescription>
+<para>This checks if a time unit is valid and if it is, it assigns the integer equivalent. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The integer equivalent to the time units</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time_units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time_units as a string</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">error_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message to append</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The integer equivalent of the time_units </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1076" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1078" bodyend="1101"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga35e07d34f88039f0878780168c10c9ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function fms_diag_yaml_mod::size_diag_files</definition>
+        <argsstring>(this)</argsstring>
+        <name>size_diag_files</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Find the number of files listed in the diag yaml. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the number of files in the diag yaml</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag_yaml </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="314" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="315" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__yaml__mod_1ga05cabfdc9e47bda2a8db410211dd31b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer pure function</type>
+        <definition>integer pure function fms_diag_yaml_mod::size_file_varlist</definition>
+        <argsstring>(this)</argsstring>
+        <name>size_file_varlist</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Finds the number of variables in the file_varlist. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the size of the diag_files_objfile_varlist array</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object being inquiried </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="1107" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" bodystart="1108" bodyend="1109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_yaml.F90" line="30" column="1"/>
+  </compounddef>
+</doxygen>

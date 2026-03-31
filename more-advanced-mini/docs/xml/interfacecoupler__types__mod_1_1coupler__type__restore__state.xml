@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__restore__state" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_restore_state</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__restore__state_1a82fa92002fcd5f0871de9b0409c780e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_restore_state_2d</definition>
+        <argsstring>(var, use_fms2_io, directory, all_or_nothing, all_required, test_by_field)</argsstring>
+        <name>ct_restore_state_2d</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>use_fms2_io</type>
+          <defname>use_fms2_io</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>all_or_nothing</type>
+          <defname>all_or_nothing</defname>
+        </param>
+        <param>
+          <type>all_required</type>
+          <defname>all_required</defname>
+        </param>
+        <param>
+          <type>test_by_field</type>
+          <defname>test_by_field</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure to restore from restart files</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A directory where the restart files should be found. The default for FMS is &apos;INPUT&apos;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">all_or_nothing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true and there are non-mandatory restart fields, it is still an error if some fields are read successfully but others are not.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">all_required</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, all fields must be successfully read from the restart file, even if they were registered as not mandatory.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">test_by_field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, all or none of the variables in a single field must be read successfully.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_fms2_io</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This is just to distinguish the interfaces </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="3514" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="3515" bodyend="3615"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__restore__state_1afc9ddaeb25517e452e5ec3260b1f83e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_restore_state_3d</definition>
+        <argsstring>(var, use_fms2_io, directory, all_or_nothing, all_required, test_by_field)</argsstring>
+        <name>ct_restore_state_3d</name>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>use_fms2_io</type>
+          <defname>use_fms2_io</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>all_or_nothing</type>
+          <defname>all_or_nothing</defname>
+        </param>
+        <param>
+          <type>all_required</type>
+          <defname>all_required</defname>
+        </param>
+        <param>
+          <type>test_by_field</type>
+          <defname>test_by_field</defname>
+        </param>
+        <briefdescription>
+<para>Read in fields from restart files into a <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This subroutine reads in the fields in a <ref refid="structcoupler__types__mod_1_1coupler__3d__bc__type" kindref="compound">coupler_3d_bc_type</ref> that have been saved in restart files.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BC_type structure to restore from restart files</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A directory where the restart files should be found. The default for FMS is &apos;INPUT&apos;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_fms2_io</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This is just to distinguish the interfaces</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">all_or_nothing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true and there are non-mandatory restart fields, it is still an error if some fields are read successfully but others are not.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">all_required</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, all fields must be successfully read from the restart file, even if they were registered as not mandatory.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">test_by_field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, all or none of the variables in a single field must be read successfully. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="3622" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="3623" bodyend="3726"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to read in the fields in a coupler_bc_type that have been saved in restart files. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="470" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="470" bodyend="471"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__restore__state_1a82fa92002fcd5f0871de9b0409c780e4" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_restore_state</scope><name>ct_restore_state_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__restore__state_1afc9ddaeb25517e452e5ec3260b1f83e5" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_restore_state</scope><name>ct_restore_state_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

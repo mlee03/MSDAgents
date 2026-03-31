@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="doxygenGuide_8md" kind="file" language="Markdown">
+    <compoundname>doxygenGuide.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Documentation<sp/>Style<sp/>and<sp/>Building<sp/>Guide</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Best<sp/>practices<sp/>for<sp/>documenting<sp/>FMS<sp/>code<sp/>with<sp/>Doxygen,<sp/>as<sp/>well<sp/>as<sp/>instructions<sp/>for<sp/>generating<sp/>the<sp/>site.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Basics</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>.F90<sp/>files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`!&gt;`<sp/>Starts<sp/>or<sp/>continues<sp/>a<sp/>multi-line<sp/>doxygen<sp/>comment</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`!!`<sp/>Continues<sp/>a<sp/>comment</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`!&lt;`<sp/>Starts<sp/>a<sp/>same-line<sp/>comment<sp/>(used<sp/>for<sp/>documenting<sp/>variable/parameter<sp/>declarations)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`@commandname`<sp/>to<sp/>use<sp/>a<sp/>given<sp/>doxygen<sp/>command</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>.c<sp/>files,<sp/>javadoc-style<sp/>comments<sp/>are<sp/>used<sp/>(`///`<sp/>or<sp/>multi-line<sp/>with<sp/>`/**`<sp/>and<sp/>`*/`),<sp/>and<sp/>the<sp/>command<sp/>specifier<sp/>is<sp/>instead<sp/>`\commandname`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Certain<sp/>doxygen<sp/>commands<sp/>must<sp/>be<sp/>terminated<sp/>with<sp/>an<sp/>empty<sp/>comment<sp/>line,<sp/>mainly<sp/>`@brief`<sp/>and<sp/>`@author`</highlight></codeline>
+<codeline><highlight class="normal">,<sp/>otherwise<sp/>will<sp/>include<sp/>any<sp/>additional<sp/>documentation<sp/>below<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>previously<sp/>used<sp/>commands<sp/>are<sp/>invalid:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`@email`,<sp/>email<sp/>can<sp/>be<sp/>included<sp/>in<sp/>`@author`<sp/>line</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`@description`,<sp/>`@details`<sp/>can<sp/>be<sp/>used,<sp/>but<sp/>is<sp/>also<sp/>implied<sp/>by<sp/>`!&gt;`<sp/>if<sp/>a<sp/>brief<sp/>description<sp/>is<sp/>already<sp/>given</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`@example`,<sp/>not<sp/>actually<sp/>invalid,<sp/>but<sp/>should<sp/>not<sp/>be<sp/>used<sp/>in<sp/>subroutine/function<sp/>descriptions<sp/>as<sp/>it<sp/>is<sp/>for<sp/>presenting<sp/>examples<sp/>of<sp/>source<sp/>code<sp/>separately.<sp/>Some<sp/>examples<sp/>of<sp/>what<sp/>can<sp/>be<sp/>used<sp/>for<sp/>programming<sp/>examples<sp/>in<sp/>descriptions<sp/>are<sp/>below.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>html<sp/>commands,<sp/>such<sp/>as<sp/>`&lt;TT&gt;`<sp/>and<sp/>`&lt;br&gt;`<sp/>are<sp/>allowed.<sp/>Full<sp/>list<sp/>can<sp/>be<sp/>found</highlight></codeline>
+<codeline><highlight class="normal">[**here**](https://www.doxygen.nl/manual/htmlcmds.html).<sp/>Coding<sp/>examples<sp/>can<sp/>be<sp/>formatted<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">either<sp/>tabbing,<sp/>or<sp/>within<sp/>the<sp/>`@code`<sp/>commands(see<sp/>full<sp/>subroutine<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">below<sp/>for<sp/>examples<sp/>of<sp/>both).<sp/>Links<sp/>to<sp/>other<sp/>pages<sp/>within<sp/>the<sp/>documentation<sp/>can<sp/>be<sp/>created<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">`@ref<sp/>name`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Documenting<sp/>Subroutines<sp/>and<sp/>Functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>`!&gt;`<sp/>comment<sp/>above<sp/>a<sp/>routine<sp/>implicitly<sp/>starts<sp/>the<sp/>brief<sp/>description,<sp/>and<sp/>the<sp/>second<sp/>`!&gt;`</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>start<sp/>the<sp/>full<sp/>description<sp/>(as<sp/>long<sp/>as<sp/>the<sp/>brief<sp/>description<sp/>is<sp/>terminated).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Simple<sp/>subroutine/function<sp/>documentation:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@code{.F90}</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>continued<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">function<sp/>foo(bar)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>integer,<sp/>intent(inout)<sp/>::<sp/>bar<sp/>!&lt;<sp/>argument<sp/>description</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">@endcode</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Full<sp/>subroutine/function<sp/>documentation:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@code{.F90}</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@brief<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>continued<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Long<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>continued<sp/>long<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>&lt;br&gt;Example<sp/>1:</highlight></codeline>
+<codeline><highlight class="normal">!!</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/><sp/><sp/><sp/><sp/><sp/>foo()</highlight></codeline>
+<codeline><highlight class="normal">!!</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>Example<sp/>2:</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>@code{.F90}</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>foo()</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>endcode<sp/>(`@`<sp/>omitted<sp/>to<sp/>not<sp/>close<sp/>this<sp/>example)</highlight></codeline>
+<codeline><highlight class="normal">subroutine<sp/>foo()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>integer<sp/>::<sp/>bar<sp/>!&lt;<sp/>variable<sp/>description</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">@endcode</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Module<sp/>Grouping</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>the<sp/>modules<sp/>parsed<sp/>correctly,<sp/>each<sp/>module<sp/>page<sp/>is<sp/>created<sp/>through<sp/>a<sp/>grouping<sp/>defined<sp/>at<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">top<sp/>of<sp/>the<sp/>file.<sp/>Each<sp/>FMS<sp/>module<sp/>is<sp/>then<sp/>also<sp/>in<sp/>a<sp/>group<sp/>corresponding<sp/>to<sp/>its<sp/>subdirectory,<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">these<sp/>groups<sp/>defined<sp/>in<sp/>`docs/grouping.h`.<sp/>The<sp/>groups<sp/>can<sp/>also<sp/>contain<sp/>any<sp/>other<sp/>relevant</highlight></codeline>
+<codeline><highlight class="normal">files,<sp/>such<sp/>as<sp/>additional<sp/>documentation<sp/>files,<sp/>header,<sp/>or<sp/>include<sp/>files.<sp/><sp/>Files<sp/>or<sp/>additional</highlight></codeline>
+<codeline><highlight class="normal">documentation<sp/>can<sp/>be<sp/>added<sp/>to<sp/>either<sp/>directory<sp/>or<sp/>module<sp/>groups<sp/>by<sp/>adding<sp/>`@ingroup<sp/>group_name`</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>a<sp/>specific<sp/>objects<sp/>documentation<sp/>block,<sp/>or<sp/>to<sp/>enclose<sp/>any<sp/>section<sp/>of<sp/>code<sp/>with<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@code{.F90}</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@addtogroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@{</highlight></codeline>
+<codeline><highlight class="normal">&lt;<sp/>any<sp/>documented<sp/>code<sp/>within<sp/>here<sp/>will<sp/>be<sp/>included<sp/>in<sp/>foo_mod<sp/>&gt;</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@}</highlight></codeline>
+<codeline><highlight class="normal">@endcode</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Documenting<sp/>Interfaces<sp/>and<sp/>Type<sp/>Definitions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Interfaces<sp/>and<sp/>type<sp/>definitions<sp/>can<sp/>be<sp/>documented<sp/>in<sp/>a<sp/>similar<sp/>way<sp/>as<sp/>subroutines/functions.</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>documentation<sp/>they<sp/>will<sp/>both<sp/>be<sp/>listed<sp/>data<sp/>types<sp/>and<sp/>will<sp/>show<sp/>any<sp/>included<sp/>subroutines</highlight></codeline>
+<codeline><highlight class="normal">or<sp/>variables<sp/>with<sp/>links<sp/>if<sp/>available.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>interfaces<sp/>and<sp/>type<sp/>definitions,<sp/>duplicates<sp/>can<sp/>appear<sp/>for<sp/>subroutines/functions<sp/>and<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal">contained<sp/>in<sp/>interfaces<sp/>and<sp/>typedefs<sp/>if<sp/>they<sp/>are<sp/>included<sp/>in<sp/>the<sp/>module<sp/>group<sp/>as<sp/>well.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>can<sp/>be<sp/>avoided<sp/>by<sp/>ending<sp/>the<sp/>module<sp/>group<sp/>before<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">interface<sp/>is<sp/>defined<sp/>with<sp/>`!&gt;<sp/>@}`<sp/>and<sp/>adding<sp/>`@ingroup<sp/>module_name_mod`<sp/>to<sp/>the<sp/>interface</highlight></codeline>
+<codeline><highlight class="normal">documentation<sp/>blocks.<sp/>This<sp/>will<sp/>add<sp/>the<sp/>interface/type<sp/>to<sp/>the<sp/>module<sp/>page<sp/>without<sp/>any<sp/>redundant</highlight></codeline>
+<codeline><highlight class="normal">items.<sp/>After<sp/>any<sp/>interface<sp/>or<sp/>type<sp/>definitions<sp/>are<sp/>defined,<sp/>`!&gt;<sp/>@addtogroup<sp/>mod_name_mod`<sp/>and<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">following<sp/>`!&gt;<sp/>@{`<sp/>must<sp/>be<sp/>added<sp/>after<sp/>or<sp/>else<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>module<sp/>will<sp/>be<sp/>excluded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Example:</highlight></codeline>
+<codeline><highlight class="normal">@code{.F90}</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@}</highlight></codeline>
+<codeline><highlight class="normal">!<sp/>closes<sp/>module<sp/>group<sp/>started<sp/>at<sp/>beginning<sp/>of<sp/>file</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@brief<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>Longer<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>@param[inout]<sp/>arg1<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!!<sp/>@returns<sp/>retval<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@ingroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="normal">interface<sp/>foo</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">end<sp/>interface<sp/>foo</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@ingroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="normal">type,<sp/>public<sp/>::<sp/>typename</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>integer<sp/>::<sp/>num<sp/>!&lt;<sp/>description</highlight></codeline>
+<codeline><highlight class="normal">end<sp/>type<sp/>typename</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;<sp/>any<sp/>other<sp/>interface/type<sp/>definitions<sp/>and<sp/>documentation<sp/>&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">!<sp/>add<sp/>rest<sp/>of<sp/>module</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@addtogroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="normal">!&gt;<sp/>@{</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">@endcode</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Generating<sp/>the<sp/>Doxygen<sp/>Site</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>site<sp/>can<sp/>be<sp/>generated<sp/>from<sp/>the<sp/>source<sp/>code<sp/>either<sp/>manually<sp/>(must<sp/>have<sp/>doxygen<sp/>installed),</highlight></codeline>
+<codeline><highlight class="normal">or<sp/>through<sp/>a<sp/>github<sp/>action.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>generate<sp/>it<sp/>manually<sp/>from<sp/>the<sp/>repository:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">autoreconf<sp/>-it</highlight></codeline>
+<codeline><highlight class="normal">./configure<sp/>--enable-docs</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>-C<sp/>docs</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>have<sp/>the<sp/>site<sp/>generated<sp/>through<sp/>a<sp/>github<sp/>action,<sp/>you<sp/>can<sp/>go<sp/>to<sp/>the<sp/>*Actions*<sp/>tab</highlight></codeline>
+<codeline><highlight class="normal">on<sp/>your<sp/>forked<sp/>FMS<sp/>repository.<sp/>From<sp/>there<sp/>you<sp/>can<sp/>click<sp/>on<sp/>*Select<sp/>Workflow*<sp/>and<sp/>select<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">*Generate<sp/>and<sp/>deploy<sp/>documentationon<sp/>GH<sp/>pages*<sp/>action.<sp/>This<sp/>will<sp/>show<sp/>all<sp/>previous<sp/>runs,<sp/>and<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">display<sp/>a<sp/>button<sp/>to<sp/>run<sp/>the<sp/>doxygen<sp/>workflow<sp/>on<sp/>whichever<sp/>branch<sp/>is<sp/>desired.<sp/>After<sp/>completion,<sp/>the<sp/>page<sp/>will<sp/>be<sp/>available<sp/>at:</highlight></codeline>
+<codeline><highlight class="normal">\&lt;your<sp/>github<sp/>username\&gt;.github.io/FMS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>not<sp/>available,<sp/>settings<sp/>for<sp/>the<sp/>site<sp/>can<sp/>be<sp/>found<sp/>in<sp/>the<sp/>forked<sp/>repositories<sp/>*Settings*<sp/>tab,<sp/>under<sp/>*Pages*.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/docs/doxygenGuide.md"/>
+  </compounddef>
+</doxygen>

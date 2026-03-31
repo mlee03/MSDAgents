@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__mpp_8F90" kind="file" language="Fortran">
+    <compoundname>test_mpp.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__mpp_8F90_1a9bc57b8dbe7c3e1b9db72b918a1b6bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" line="23" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp_8F90_1af72b1ce2fdb02f410d55554dd8c0cac7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test::test_mpp_commid</definition>
+        <argsstring></argsstring>
+        <name>test_mpp_commid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" line="112" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" bodystart="113" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp_8F90_1a20e86fd9678008de5daf141bf8eefde5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test::test_mpp_max</definition>
+        <argsstring></argsstring>
+        <name>test_mpp_max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" line="79" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" bodystart="80" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp_8F90_1a6d60582b01862e4951d184baae4e1041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test::test_shared_pointers</definition>
+        <argsstring>(locd, n)</argsstring>
+        <name>test_shared_pointers</name>
+        <param>
+          <type>locd</type>
+          <defname>locd</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" line="134" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90" bodystart="135" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SYSTEM_CLOCK</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#undef<sp/>SYSTEM_CLOCK</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test<sp/><sp/><sp/></highlight><highlight class="comment">!test<sp/>various<sp/>aspects<sp/>of<sp/>mpp_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/>mpp_root_pe,<sp/>mpp_commid,<sp/><ref refid="group__mpp__mod_1ga172901d39c9b0cf14aa83b1e94fdf21b" kindref="member">stdout</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>,<sp/>mpp_clock_begin,<sp/>mpp_clock_end,<sp/><ref refid="group__mpp__mod_1gad75482ebfad2337cd236ef0998accdc4" kindref="member">mpp_sync</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>,<sp/><ref refid="group__mpp__mod_1ga2238aa842b4c9e899d733ef41b71bb71" kindref="member">mpp_set_current_pelist</ref>,<sp/><ref refid="group__mpp__mod_1gac00f997102c5613d8c547f1ee10fa49c" kindref="member">mpp_set_stack_size</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__transmit" kindref="compound">mpp_transmit</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__sum" kindref="compound">mpp_sum</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>,<sp/>all_pes</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="interfacempp__mod_1_1mpp__gather" kindref="compound">mpp_gather</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1ga09e69243d8c67e6a6e6e4fd9e93d0870" kindref="member">mpp_sync_self</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>n=1048576</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/>::<sp/>a,<sp/>b,<sp/>c</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/>::<sp/>d</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer(i8_kind)</highlight><highlight class="normal"><sp/>::<sp/>locd</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>tick,<sp/>tick0,<sp/>ticks_per_sec,<sp/>id</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>pe,<sp/>npes,<sp/>root,<sp/>i,<sp/>j,<sp/>k,<sp/>l,<sp/>m,<sp/>n2,<sp/>istat</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>out_unit</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dt</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>()</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1gac00f997102c5613d8c547f1ee10fa49c" kindref="member">mpp_set_stack_size</ref>(3145746)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>pe<sp/>=<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>npes<sp/>=<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>root<sp/>=<sp/>mpp_root_pe()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>out_unit<sp/>=<sp/><ref refid="group__mpp__mod_1ga172901d39c9b0cf14aa83b1e94fdf21b" kindref="member">stdout</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">system_clock(<sp/>count_rate=ticks_per_sec<sp/>)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)<sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;------------------&gt;<sp/>Calling<sp/>test_mpp_commID<sp/>&lt;------------------&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_mpp_commid()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)<sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;------------------&gt;<sp/>Finished<sp/>test_mpp_commID<sp/>&lt;------------------&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)<sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;------------------&gt;<sp/>Calling<sp/>test_mpp_max<sp/>&lt;------------------&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_mpp_max()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)<sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;------------------&gt;<sp/>Finished<sp/>test_mpp_max<sp/>&lt;------------------&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">!test<sp/>of<sp/>pointer<sp/>sharing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>d(n)<sp/>)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>locd<sp/>=<sp/>loc(d)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>(locd,root)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">random_number(d)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1gad75482ebfad2337cd236ef0998accdc4" kindref="member">mpp_sync</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>call<sp/>test_shared_pointers(locd,n)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(<sp/>d<sp/>)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">test_mpp_max</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(<sp/>a(n),<sp/>b(n)<sp/>)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>a<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(pe+1)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;pe,<sp/><sp/><sp/><sp/><sp/>pe+1<sp/>=&apos;</highlight><highlight class="normal">,<sp/>pe,<sp/>a(1)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>(<sp/>a(1)<sp/>)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;pe,<sp/>max(pe+1)=&apos;</highlight><highlight class="normal">,<sp/>pe,<sp/>a(1)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!pelist<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1gad75482ebfad2337cd236ef0998accdc4" kindref="member">mpp_sync</ref>()</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">flush</highlight><highlight class="normal">(out_unit)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>npes.GE.2<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;Test<sp/>of<sp/>pelists:<sp/>bcast,<sp/>sum<sp/>and<sp/>max<sp/>using<sp/>PEs<sp/>0...npes-2<sp/>(excluding<sp/>last<sp/>PE)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(<sp/>(/(i,i=0,npes-2)/)<sp/>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>a<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(pe+1)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.NE.npes-1<sp/>)</highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__broadcast" kindref="compound">mpp_broadcast</ref>(<sp/>a,<sp/>n,<sp/>npes-2,<sp/>(/(i,i=0,npes-2)/)<sp/>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;bcast(npes-1)<sp/>from<sp/>0<sp/>to<sp/>npes-2=&apos;</highlight><highlight class="normal">,<sp/>pe,<sp/>a(1)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>a<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(pe+1)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.NE.npes-1<sp/>)</highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga2238aa842b4c9e899d733ef41b71bb71" kindref="member">mpp_set_current_pelist</ref>(<sp/>(/(i,i=0,npes-2)/)<sp/>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>id<sp/>=<sp/><ref refid="group__mpp__mod_1gad8a8ce219707a7f392329dc177da2689" kindref="member">mpp_clock_id</ref>(<sp/></highlight><highlight class="stringliteral">&apos;Partial<sp/>mpp_sum&apos;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_clock_begin(id)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__sum" kindref="compound">mpp_sum</ref>(<sp/>a(1:1000),<sp/>1000,<sp/>(/(i,i=0,npes-2)/)<sp/>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_clock_end<sp/><sp/>(id)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;sum(pe+1)<sp/>from<sp/>0<sp/>to<sp/>npes-2=&apos;</highlight><highlight class="normal">,<sp/>a(1)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>a<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(pe+1)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.NE.npes-1<sp/>)</highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__max" kindref="compound">mpp_max</ref>(<sp/>a(1),<sp/>(/(i,i=0,npes-2)/)<sp/>)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pe.EQ.root<sp/>)print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;max(pe+1)<sp/>from<sp/>0<sp/>to<sp/>npes-2=&apos;</highlight><highlight class="normal">,<sp/>a(1)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga2238aa842b4c9e899d733ef41b71bb71" kindref="member">mpp_set_current_pelist</ref>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">test_mpp_max</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">test_mpp_commid</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>commID</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>pelist(:)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Check<sp/>if<sp/>commID<sp/>is<sp/>valid<sp/>(checks<sp/>peset%id<sp/>for<sp/>default<sp/>value,<sp/>-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mpp_commid().EQ.-1)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(</highlight><highlight class="stringliteral">&apos;test_mpp_commID&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;CommID<sp/>Test<sp/>after<sp/>mpp_init<sp/>Failed:<sp/>mpp_commID<sp/>returned<sp/>an<sp/>invalid<sp/>ID&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Get<sp/>commID<sp/>for<sp/>current<sp/>pelist<sp/>(should<sp/>be<sp/>global<sp/>pelist)<sp/>via<sp/>and<sp/>compare<sp/>with<sp/>mpp_commID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pelist(npes))</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>pelist<sp/>=<sp/>(/<sp/>(i,<sp/>i=0,<sp/>npes-1)<sp/>/)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(pelist,<sp/>commid<sp/>=<sp/>commid)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mpp_commid().NE.commid)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(</highlight><highlight class="stringliteral">&apos;test_mpp_commID&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Test<sp/>failed:<sp/>mpp_commID<sp/>returned<sp/>a<sp/>different<sp/>ID<sp/>than<sp/>expected.&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(pelist)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">test_mpp_commid</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">test_shared_pointers(locd,n)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>locd</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>n</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/>::<sp/>dd(n)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>pointer(<sp/>p,<sp/>dd<sp/>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>locd</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;TEST_SHARED_POINTERS:<sp/>pe,<sp/>locd=&apos;</highlight><highlight class="normal">,<sp/>pe,<sp/>locd</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>print<sp/>*,<sp/>&apos;TEST_SHARED_POINTERS:<sp/>pe,<sp/>chksum(d)=&apos;,<sp/>pe,<sp/>mpp_chksum(dd,(/pe/))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>*,<sp/></highlight><highlight class="stringliteral">&apos;TEST_SHARED_POINTERS:<sp/>pe,<sp/>sum(d)=&apos;</highlight><highlight class="normal">,<sp/>pe,<sp/>sum(dd)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">test_shared_pointers</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp.F90"/>
+  </compounddef>
+</doxygen>

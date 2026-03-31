@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacehoriz__interp__bilinear__mod" kind="namespace" language="Fortran">
+    <compoundname>horiz_interp_bilinear_mod</compoundname>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear" prot="private">horiz_interp_bilinear_mod::horiz_interp_bilinear</innerclass>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" prot="private">horiz_interp_bilinear_mod::horiz_interp_bilinear_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__read__weights__bilinear" prot="private">horiz_interp_bilinear_mod::horiz_interp_read_weights_bilinear</innerclass>
+    <innerclass refid="interfacehoriz__interp__bilinear__mod_1_1intersect" prot="private">horiz_interp_bilinear_mod::intersect</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1ga66f2fd468ffa98f7bc06d64e79d67ac7" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter dummy</definition>
+        <argsstring></argsstring>
+        <name>dummy</name>
+        <initializer>= -999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="74" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>=1.e-10_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1ga2f318fd686588d9c67d1a444254b1e19" prot="private" static="no" mutable="no">
+        <type>real(r4_kind), parameter</type>
+        <definition>real(r4_kind), parameter epsln_r4</definition>
+        <argsstring></argsstring>
+        <name>epsln_r4</name>
+        <initializer>=1.e-4_r4_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__bilinear__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="85" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="85" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1ga33f7657fee7ef736ce2babf1f9027113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_bilinear_mod::horiz_interp_bilinear_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_bilinear_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;horiz_interp_type&quot; variables. </para>        </briefdescription>
+        <detaileddescription>
+<para>Must be called before reinitializing with <ref refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" kindref="compound">horiz_interp_bilinear_new</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to <ref refid="interfacehoriz__interp__bilinear__mod_1_1horiz__interp__bilinear__new" kindref="compound">horiz_interp_bilinear_new</ref>. The input variable must have allocated arrays. The returned variable will contain deallocated arrays </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="101" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="102" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__bilinear__mod_1gad9333ccf7fd748ffd664e364dc66200b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_bilinear_mod::horiz_interp_bilinear_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_bilinear_init</name>
+        <briefdescription>
+<para>Initialize this module and writes version number to logfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="90" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" bodystart="91" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_bilinear.F90" line="29" column="1"/>
+  </compounddef>
+</doxygen>

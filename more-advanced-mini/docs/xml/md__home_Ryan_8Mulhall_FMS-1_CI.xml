@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__home_Ryan_8Mulhall_FMS-1_CI" kind="page">
+    <compoundname>md__home_Ryan.Mulhall_FMS-1_CI</compoundname>
+    <title>CI Information</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The CI workflows and checks, and associated container environments for this repository are listed below. Actions run via Github-hosted runners unless otherwise noted. Required CI for pull requests are listed first.</para><para><heading level="2">Pull Request CI and checks</heading>
+</para><para><heading level="3">Build libFMS with autotools</heading>
+</para><para>Required GNU build test for all pull requests/pushes. Runs <computeroutput>make distcheck</computeroutput> after configuring via GNU autotools.</para><para>Runs on a container image with spack installed dependencies, on top a rocky linux base.</para><para>Dockerfile for image is stored at .github/workflows/Dockerfile.gnu for more specific information on the CI environment.</para><para>Container environment: gcc v12.3.0 mpich v4.0.2 netcdf v4.9.0 netcdf-fortran v4.6.0 autoconf v2.69 libyaml v0.2.5</para><para><computeroutput>./configure</computeroutput> flags tested:<itemizedlist>
+<listitem><para><computeroutput>--disable-openmp</computeroutput></para></listitem><listitem><para><computeroutput>--enable-mixed-mode</computeroutput></para></listitem><listitem><para><computeroutput>--with-mpi=no</computeroutput> (disables unit testing)</para></listitem><listitem><para><computeroutput>--disable-setting-flags</computeroutput></para></listitem><listitem><para><computeroutput>--with-yaml</computeroutput></para></listitem><listitem><para><computeroutput>--enable-test-input=/home/unit_tests_input</computeroutput></para></listitem></itemizedlist>
+</para><para><heading level="3">Build libfms with cmake</heading>
+</para><para>Required GNU build test for all pull requests/pushes. Runs <computeroutput>make</computeroutput> after configuring via cmake.</para><para>Container environment: gcc v7.3.0 mpich v3.3a2 netcdf v4.6.0 netcdf-fortran v4.4.4 cmake v3.22.0</para><para>container hosted at <ulink url="https://hub.docker.com/r/noaagfdl/ubuntu_libfms_gnu">noaagfdl/ubuntu_libfms_gnu:latest</ulink></para><para>cmake flags:<itemizedlist>
+<listitem><para><computeroutput>-DOPENMP=on</computeroutput></para></listitem><listitem><para><computeroutput>-DOPENMP=on</computeroutput></para></listitem><listitem><para><computeroutput>-DWITH_YAML=on</computeroutput></para></listitem><listitem><para><computeroutput>-D64BIT=on</computeroutput></para></listitem></itemizedlist>
+</para><para><heading level="3">libFMS lint tests</heading>
+</para><para>Required test for all pull requests. Checks code for line lengths, tabs, and trailing whitespace in accordance with the project&apos;s https://github.com/NOAA-GFDL/FMS/blob/main/CODE_STYLE.md &quot;style guide&quot;. The action is hosted on github <ulink url="https://github.com/NOAA-GFDL/simple_lint">here</ulink>.</para><para><heading level="2">Parallelworks CI</heading>
+</para><para>The following CI workflows run on self-hosted runners through the parallelworks platform. <heading level="3">Pull Request CI libFMS with intel</heading>
+</para><para>Optional(does not need to pass to merge) intel build test hosted on the parallelworks platform. Runs <computeroutput>make check</computeroutput> with intel 18 and 21 compilers for all pull requests.</para><para><heading level="3">Tag CI libFMS with AM4 regression</heading>
+</para><para>On alpha or beta tag creation, compiles and runs full AM4 model regression testing using the new FMS tag on parallelworks. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacehoriz__interp__conserve__mod" kind="namespace" language="Fortran">
+    <compoundname>horiz_interp_conserve_mod</compoundname>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1data__sum" prot="private">horiz_interp_conserve_mod::data_sum</innerclass>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve" prot="private">horiz_interp_conserve_mod::horiz_interp_conserve</innerclass>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve__new" prot="private">horiz_interp_conserve_mod::horiz_interp_conserve_new</innerclass>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve__version1" prot="private">horiz_interp_conserve_mod::horiz_interp_conserve_version1</innerclass>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve__version2" prot="private">horiz_interp_conserve_mod::horiz_interp_conserve_version2</innerclass>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1stats" prot="private">horiz_interp_conserve_mod::stats</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1ga8f09dffd1d295d3cfc4a2bc5f76ff2e8" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical great_circle_algorithm</definition>
+        <argsstring></argsstring>
+        <name>great_circle_algorithm</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="141" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="139" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1ga8a5f299eef1abe4c0df23ebd220ce83e" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer pe</definition>
+        <argsstring></argsstring>
+        <name>pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="135" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1gab96da8c443f9c55ebfefe033da98ab47" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer root_pe</definition>
+        <argsstring></argsstring>
+        <name>root_pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="135" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1gaae5bc9b6efb0f13f8edab86497797547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_conserve_mod::horiz_interp_conserve_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_conserve_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;HI_KIND_TYPE&quot; variables. Must be called before reinitializing with horiz_interp_new. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to horiz_interp_new. The input variable must have allocated arrays. The returned variable will contain deallocated arrays. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="159" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="160" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga35f55bcdce44e601e1b23e6da4d0d2c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_conserve_mod::horiz_interp_conserve_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_conserve_init</name>
+        <briefdescription>
+<para>Writes version number to logfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="146" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="147" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="37" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfaceastronomy__mod_1_1get__period" kind="interface" language="Fortran" prot="private">
+    <compoundname>astronomy_mod::get_period</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1get__period_1ac0b497e04ebb539076ce702cdc3aa85f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_period_integer</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_integer</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_integer returns the length of the year as an integer number of seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year [seconds] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="570" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="571" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1get__period_1a025f01b43c4d84ce9547886a7dd916c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine get_period_time_type</definition>
+        <argsstring>(period_out)</argsstring>
+        <name>get_period_time_type</name>
+        <param>
+          <type>period_out</type>
+          <defname>period_out</defname>
+        </param>
+        <briefdescription>
+<para>get_period_time_type returns the length of the year as a time_type variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>astronomy_mod module has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">period_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year as time_type variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="598" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="599" bodyend="612"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Gets the length of year for current calendar. </para>    </briefdescription>
+    <detaileddescription>
+<para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">get_period<sp/>(period)</highlight></codeline>
+</programlisting></para><para>Separate routines exist within this interface for integer and time_type output:</para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>period</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type),<sp/></highlight><highlight class="keywordtype">intent(out)</highlight><highlight class="normal"><sp/>::<sp/>period</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;period_out&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of year for calendar in use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="274" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="274" bodyend="275"/>
+    <listofallmembers>
+      <member refid="interfaceastronomy__mod_1_1get__period_1ac0b497e04ebb539076ce702cdc3aa85f" prot="private" virt="non-virtual"><scope>astronomy_mod::get_period</scope><name>get_period_integer</name></member>
+      <member refid="interfaceastronomy__mod_1_1get__period_1a025f01b43c4d84ce9547886a7dd916c7" prot="private" virt="non-virtual"><scope>astronomy_mod::get_period</scope><name>get_period_time_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__diag__object__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_diag_object_mod</compoundname>
+    <innerclass refid="structfms__diag__object__mod_1_1fmsdiagobject__type" prot="private">fms_diag_object_mod::fmsdiagobject_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fms__diag__object_8F90_1aa7b6b6b6bf776479e9f09cacf06c0ef6" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structfms__diag__object__mod_1_1fmsdiagobject__type" kindref="compound">fmsdiagobject_type</ref>), target, public</type>
+        <definition>type (fmsdiagobject_type), target, public fms_diag_object</definition>
+        <argsstring></argsstring>
+        <name>fms_diag_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="107" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__diag__object_8F90_1a3e574a0d8d9069078a7e8a5aea80bd96" prot="private" static="no" mutable="no">
+        <type>integer, private</type>
+        <definition>integer, private registered_variables</definition>
+        <argsstring></argsstring>
+        <name>registered_variables</name>
+        <briefdescription>
+<para>Number of registered variables. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="117" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="117" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fms__diag__object_8F90_1ac4f5e6f8e5ee360bf408afafe738ed13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::allocate_diag_field_output_buffers</definition>
+        <argsstring>(this, field_data, field_id)</argsstring>
+        <name>allocate_diag_field_output_buffers</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>field_id</type>
+          <defname>field_id</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the output buffers of the fields corresponding to the registered variable Input arguments are the field and its ID passed to routine fms_diag_accept_data() </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the field data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1434" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1435" bodyend="1504"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a95e37f06e00fdaf3556c6b8f636bbb49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::do_buffer_math</definition>
+        <argsstring>(this)</argsstring>
+        <name>do_buffer_math</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Clean up, clean up, everybody do your share </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="758" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="759" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1afb9a0f71e806e49749d37ae26e5ed8f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_object_mod::dump_diag_obj</definition>
+        <argsstring>(filename)</argsstring>
+        <name>dump_diag_obj</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Dumps as much data as it can from the fmsDiagObject_type. Will dump any fields and files as well (see d) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional filename to print to, otherwise prints to stdout </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1382" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1383" bodyend="1429"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a2a0e0e93eaae835d06466617931ecd77" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_accept_data</definition>
+        <argsstring>(this, diag_field_id, field_data, mask, rmask, time, is_in, js_in, ks_in, ie_in, je_in, ke_in, weight, err_msg)</argsstring>
+        <name>fms_diag_accept_data</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type>rmask</type>
+          <defname>rmask</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>is_in</type>
+          <defname>is_in</defname>
+        </param>
+        <param>
+          <type>js_in</type>
+          <defname>js_in</defname>
+        </param>
+        <param>
+          <type>ks_in</type>
+          <defname>ks_in</defname>
+        </param>
+        <param>
+          <type>ie_in</type>
+          <defname>ie_in</defname>
+        </param>
+        <param>
+          <type>je_in</type>
+          <defname>je_in</defname>
+        </param>
+        <param>
+          <type>ke_in</type>
+          <defname>ke_in</defname>
+        </param>
+        <param>
+          <type>weight</type>
+          <defname>weight</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Accepts data from the send_data functions. If this is in an openmp region with more than one thread, the data is buffered in the field object and processed later. If only a single thread is being used, then the processing can be done and stored in the buffer object. The hope is that the increase in memory footprint related to buffering can be handled by the shared memory of the multithreaded case. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>If some of the diag manager is offloaded in the future, then it should be treated similarly to the multi-threaded option for processing later</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the diag field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data for the diag_field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical mask indicating the grid points to mask (null if no mask)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rmask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>real mask indicating the grid points to mask (null if no mask)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The weight used for averaging</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ks_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting indices</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending indices</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An error message returned </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Does the user want to push off calculations until send_diag_complete?</para><para>initialize the number of threads and level to be 0</para><para>Calculate the i,j,k start and end</para><para>Only 1 thread allocates the output buffer and sets set_math_needs_to_be_done</para><para>Return false if nothing is done </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="576" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="579" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1ad99e118cf39e111c033c71a7f37f7a79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_axis_add_attribute</definition>
+        <argsstring>(this, axis_id, att_name, att_value)</argsstring>
+        <name>fms_diag_axis_add_attribute</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_id</type>
+          <defname>axis_id</defname>
+        </param>
+        <param>
+          <type>att_name</type>
+          <defname>att_name</defname>
+        </param>
+        <param>
+          <type>att_value</type>
+          <defname>att_value</defname>
+        </param>
+        <briefdescription>
+<para>Add an attribute to an axis. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the axis to add the attribute to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute value to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1193" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1194" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1ae4ebac33557825c0ea5d7f95b019a286" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_object_mod::fms_diag_axis_init</definition>
+        <argsstring>(this, axis_name, axis_data, units, cart_name, axis_length, long_name, direction, set_name, edges, Domain, Domain2, DomainU, aux, req, tile_count, domain_position)</argsstring>
+        <name>fms_diag_axis_init</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_name</type>
+          <defname>axis_name</defname>
+        </param>
+        <param>
+          <type>axis_data</type>
+          <defname>axis_data</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>cart_name</type>
+          <defname>cart_name</defname>
+        </param>
+        <param>
+          <type>axis_length</type>
+          <defname>axis_length</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>direction</type>
+          <defname>direction</defname>
+        </param>
+        <param>
+          <type>set_name</type>
+          <defname>set_name</defname>
+        </param>
+        <param>
+          <type>edges</type>
+          <defname>edges</defname>
+        </param>
+        <param>
+          <type>Domain</type>
+          <defname>Domain</defname>
+        </param>
+        <param>
+          <type>Domain2</type>
+          <defname>Domain2</defname>
+        </param>
+        <param>
+          <type>DomainU</type>
+          <defname>DomainU</defname>
+        </param>
+        <param>
+          <type>aux</type>
+          <defname>aux</defname>
+        </param>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>domain_position</type>
+          <defname>domain_position</defname>
+        </param>
+        <briefdescription>
+<para>Wrapper for the register_diag_axis subroutine. This is needed to keep the diag_axis_init interface the same. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Axis id</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of coordinate values</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units for the axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cart_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cartesian axis (&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;, &quot;T&quot;, &quot;U&quot;, &quot;N&quot;)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the axis size(axis_data(:))</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long name for the axis.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">set_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the parent axis, if it is a subaxis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates the direction of the axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">edges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis ID for the previously defined &quot;edges axis&quot;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1D domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domainu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unstructured domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Auxiliary name, can only be <computeroutput>geolon_t</computeroutput> or <computeroutput>geolat_t</computeroutput></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">req</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Required field names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of tiles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain position, &quot;NORTH&quot; or &quot;EAST&quot; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="510" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="513" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1af56ddc0b1979cb481b575798337f99f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_diag_object_mod::fms_diag_compare_window</definition>
+        <argsstring>(this, field, field_id, is_in, ie_in, js_in, je_in, ks_in, ke_in)</argsstring>
+        <name>fms_diag_compare_window</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <param>
+          <type>field_id</type>
+          <defname>field_id</defname>
+        </param>
+        <param>
+          <type>is_in</type>
+          <defname>is_in</defname>
+        </param>
+        <param>
+          <type>ie_in</type>
+          <defname>ie_in</defname>
+        </param>
+        <param>
+          <type>js_in</type>
+          <defname>js_in</defname>
+        </param>
+        <param>
+          <type>je_in</type>
+          <defname>je_in</defname>
+        </param>
+        <param>
+          <type>ks_in</type>
+          <defname>ks_in</defname>
+        </param>
+        <param>
+          <type>ke_in</type>
+          <defname>ke_in</defname>
+        </param>
+        <briefdescription>
+<para>Determines if the window defined by the input bounds is a physics window. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TRUE if the window size is less then the actual field size else FALSE.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag Object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the input field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting field indices for the first 2 dimensions; pass reconditioned indices fis and fjs which are computed elsewhere.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending field indices for the first 2 dimensions; pass reconditioned indices fie and fje which are computed elsewhere.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ke_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting and ending indices of the field in 3rd dimension</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return flag </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Determine shape of the field defined by the input bounds </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1509" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1511" bodyend="1550"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a01221e5f79b6b2f306a6465f50ce0fec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_do_io</definition>
+        <argsstring>(this, end_time)</argsstring>
+        <name>fms_diag_do_io</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>end_time</type>
+          <defname>end_time</defname>
+        </param>
+        <briefdescription>
+<para>Loops through all the files, open the file, writes out axis and variable metadata and data when necessary. TODO: passing in the saved mask from the field obj to diag_reduction_done_wrapper for performance. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">end_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the model end_time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="839" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="840" bodyend="942"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a759383177b12aa3cf7b4292fe2f32f09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=150) function</type>
+        <definition>character(len=150) function fms_diag_object_mod::fms_diag_do_reduction</definition>
+        <argsstring>(this, field_data, diag_field_id, oor_mask, weight, bounds, using_blocking, time)</argsstring>
+        <name>fms_diag_do_reduction</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_data</type>
+          <defname>field_data</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>oor_mask</type>
+          <defname>oor_mask</defname>
+        </param>
+        <param>
+          <type>weight</type>
+          <defname>weight</defname>
+        </param>
+        <param>
+          <type>bounds</type>
+          <defname>bounds</defname>
+        </param>
+        <param>
+          <type>using_blocking</type>
+          <defname>using_blocking</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Computes average, min, max, rms error, etc. based on the specified reduction method for the field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Empty string if successful, error message if it fails</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag Object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the input field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">oor_mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mask</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Must be a updated weight</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bounds for the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">using_blocking</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if field data is passed in blocks</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Error message to check </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="948" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="951" bodyend="1156"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a28d70f3b52d13bae74eed179e7fda976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_diag_object_mod::fms_diag_field_add_attribute</definition>
+        <argsstring>(this, diag_field_id, att_name, att_value)</argsstring>
+        <name>fms_diag_field_add_attribute</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>att_name</type>
+          <defname>att_name</defname>
+        </param>
+        <param>
+          <type>att_value</type>
+          <defname>att_value</defname>
+        </param>
+        <briefdescription>
+<para>Add a attribute to the diag_obj using the diag_field_id. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the axis to add the attribute to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">att_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute value to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1174" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1175" bodyend="1189"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a7834a9c2e0b12675e7013a0b9f2c34d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_field_add_cell_measures</definition>
+        <argsstring>(this, diag_field_id, area, volume)</argsstring>
+        <name>fms_diag_field_add_cell_measures</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_field_id</type>
+          <defname>diag_field_id</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <briefdescription>
+<para>Adds the diag ids of the Area and or Volume of the diag_field_object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag_field to add the are and volume to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag ids of area</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag ids of volume </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1160" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1161" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a90b1d4d74e8cb7b2d1b415472c6d3bf7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_object_end</definition>
+        <argsstring>(this, time)</argsstring>
+        <name>fms_diag_object_end</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Loops through all files and does one final write. Closes all files Deallocates all buffers, fields, and files Uninitializes the fms_diag_object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="191" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="192" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1abfbdd779e5bc2b1ad20845d54ca8f843" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_object_init</definition>
+        <argsstring>(this, diag_subset_output, time_init)</argsstring>
+        <name>fms_diag_object_init</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>diag_subset_output</type>
+          <defname>diag_subset_output</defname>
+        </param>
+        <param>
+          <type>time_init</type>
+          <defname>time_init</defname>
+        </param>
+        <briefdescription>
+<para>Initiliazes the fms_diag_object. Reads the diag_table.yaml and fills in the yaml object Allocates the diag manager object arrays for files, fields, and buffers Initializes variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag mediator/controller object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>diag_subset_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subset of the diag output?</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_init</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model time diag_manager initialized </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="126" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="127" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1af9ca27667190e9e52597d77accf0af1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::fms_diag_send_complete</definition>
+        <argsstring>(this, time_step)</argsstring>
+        <name>fms_diag_send_complete</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_step</type>
+          <defname>time_step</defname>
+        </param>
+        <briefdescription>
+<para>Loops through all the files, open the file, writes out axis and variable metadata and data when necessary. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time_step</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Go away if there is no new data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="817" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="818" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a2b8c1a8ddac1b4b55a70d1ba834e7c79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_diag_object_mod::fms_get_axis_length</definition>
+        <argsstring>(this, axis_id)</argsstring>
+        <name>fms_get_axis_length</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_id</type>
+          <defname>axis_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the length of the axis based on the axis_id. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Axis_length</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis ID of the axis to the length of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1327" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1328" bodyend="1346"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1abf4ded879550f443524e8e9f22963d5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, allocatable</type>
+        <definition>character (len=:) function, allocatable fms_diag_object_mod::fms_get_axis_name_from_id</definition>
+        <argsstring>(this, axis_id)</argsstring>
+        <name>fms_get_axis_name_from_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>axis_id</type>
+          <defname>axis_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the name of the axis based on the axis_id. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The axis_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis ID of the axis to the length of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1351" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1353" bodyend="1377"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a0cf505efb0902ffd9f10ff9a77b33f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_object_mod::fms_get_diag_field_id_from_name</definition>
+        <argsstring>(this, module_name, field_name)</argsstring>
+        <name>fms_get_diag_field_id_from_name</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+<para>Gets the diag field ID from the module name and field name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the ID of the diag field or DIAG_FIELD_NOT_FOUND if the field is not registered</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object, the caller</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module name that registered the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Loop through fields to find it. </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1256" bodyend="1284"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a8e0f2f754d775fdadb6d835467f7a7d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>) function</type>
+        <definition>type(domain2d) function fms_diag_object_mod::fms_get_domain2d</definition>
+        <argsstring>(this, ids)</argsstring>
+        <name>fms_get_domain2d</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>ids</type>
+          <defname>ids</defname>
+        </param>
+        <briefdescription>
+<para>Return the 2D domain for the axis IDs given. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>2D domain for the axis IDs given</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axis IDs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1304" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1305" bodyend="1322"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a82137eeef2feaeffd1378388acfedec6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=:) function, allocatable</type>
+        <definition>character(len=:) function, allocatable fms_diag_object_mod::fms_get_field_name_from_id</definition>
+        <argsstring>(this, field_id)</argsstring>
+        <name>fms_get_field_name_from_id</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>field_id</type>
+          <defname>field_id</defname>
+        </param>
+        <briefdescription>
+<para>Gets the field_name from the diag_field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the field_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diag object, the caller</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field id to get the name for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1239" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1241" bodyend="1249"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a23b563859d62e386cbfb3463ddf9e94b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_object_mod::fms_register_diag_field_array</definition>
+        <argsstring>(this, module_name, field_name, axes, init_time, long_name, units, missing_value, var_range, mask_variant, standard_name, verbose, do_not_log, err_msg, interp_method, tile_count, area, volume, realm, multiple_send_data)</argsstring>
+        <name>fms_register_diag_field_array</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>var_range</type>
+          <defname>var_range</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <param>
+          <type>multiple_send_data</type>
+          <defname>multiple_send_data</defname>
+        </param>
+        <briefdescription>
+<para>Registers an array field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index to be used in subsequent calls to send_data or DIAG_FIELD_NOT_FOUND if the field is not in the diag_table.yaml</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module where the field comes from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ids corresponding to the variable axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to start writing data from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long_name to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units to add as a variable_attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to add a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard_name to name the variable in the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Print more information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If TRUE, field information is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error_msg from call</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to be used when regridding the field in post-processing. Valid options are &quot;conserve_order1&quot;, &quot;conserve_order2&quot;, and &quot;none&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current tile number</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the area field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the volume field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the modeling_realm attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">multiple_send_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if send data is called, multiple times for the same time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="409" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="413" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1aa32f1c1768d8fd81fa9ad66ee4acca00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_object_mod::fms_register_diag_field_obj</definition>
+        <argsstring>(this, modname, varname, axes, init_time, longname, units, missing_value, varRange, mask_variant, standname, do_not_log, err_msg, interp_method, tile_count, area, volume, realm, static, multiple_send_data)</argsstring>
+        <name>fms_register_diag_field_obj</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>modname</type>
+          <defname>modname</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>longname</type>
+          <defname>longname</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>varRange</type>
+          <defname>varRange</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>standname</type>
+          <defname>standname</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <param>
+          <type>static</type>
+          <defname>static</defname>
+        </param>
+        <param>
+          <type>multiple_send_data</type>
+          <defname>multiple_send_data</defname>
+        </param>
+        <briefdescription>
+<para>Registers a field.  This to avoid having duplicate code in each of the _scalar, _array and _static register calls. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index to be used in subsequent calls to send_data or DIAG_FIELD_NOT_FOUND if the field is not in the diag_table.yaml</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The module name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axes indicies</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">longname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>THe variables long name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The units of the variables</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variables stanard name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to add as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varrange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to add as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if TRUE, field info is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message to be passed back up</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to be used when regridding the field in post-processing. Valid options are &quot;conserve_order1&quot;, &quot;conserve_order2&quot;, and &quot;none&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of tiles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag_field_id of the cell area field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>diag_field_id of the cell volume field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the value to the modeling_realm attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the variable is static</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">multiple_send_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if send data is called, multiple times for the same time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Use pointers for convenience</para><para>Get the file IDs from the field indicies from the yaml</para><para>Allocate and initialize member buffer_allocated of this field</para><para>Register the data for the field</para><para>Add the axis information, initial time, and field IDs to the files</para><para>Initialize buffer_ids of this field with the diag_field_indices(diag_field_indices) of the sorted variable list </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="222" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="227" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1ab1d082044ce58278932fdcf1b21b1add" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_object_mod::fms_register_diag_field_scalar</definition>
+        <argsstring>(this, module_name, field_name, init_time, long_name, units, missing_value, var_range, standard_name, do_not_log, err_msg, area, volume, realm, multiple_send_data)</argsstring>
+        <name>fms_register_diag_field_scalar</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>init_time</type>
+          <defname>init_time</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>var_range</type>
+          <defname>var_range</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <param>
+          <type>multiple_send_data</type>
+          <defname>multiple_send_data</defname>
+        </param>
+        <briefdescription>
+<para>Registers a scalar field. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index to be used in subsequent calls to send_data or DIAG_FIELD_NOT_FOUND if the field is not in the diag_table.yaml</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module where the field comes from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">init_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to start writing data from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Long_name to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units to add as a variable_attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard_name to name the variable in the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to add as a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to add a variable attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If TRUE, field information is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error_msg from call</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the area field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the volume field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the modeling_realm attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">multiple_send_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if send data is called, multiple times for the same time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="374" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="377" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a06fc6374af4cd53fd22badf2443d2470" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public fms_diag_object_mod::fms_register_static_field</definition>
+        <argsstring>(this, module_name, field_name, axes, long_name, units, missing_value, range, mask_variant, standard_name, DYNAMIC, do_not_log, interp_method, tile_count, area, volume, realm)</argsstring>
+        <name>fms_register_static_field</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>module_name</type>
+          <defname>module_name</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>missing_value</type>
+          <defname>missing_value</defname>
+        </param>
+        <param>
+          <type>range</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>mask_variant</type>
+          <defname>mask_variant</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>DYNAMIC</type>
+          <defname>DYNAMIC</defname>
+        </param>
+        <param>
+          <type>do_not_log</type>
+          <defname>do_not_log</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>volume</type>
+          <defname>volume</defname>
+        </param>
+        <param>
+          <type>realm</type>
+          <defname>realm</defname>
+        </param>
+        <briefdescription>
+<para>Return field index for subsequent call to send_data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>field index to be used in subsequent calls to send_data or DIAG_FIELD_NOT_FOUND if the field is not in the diag_table.yaml</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diaj_obj to fill</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the module, the field is on</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Axes_id of the field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longname to be added as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Units to be added as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard name to be added as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">missing_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value to be added as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range to be added as a attribute</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.True. if mask changes over time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dynamic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if the field is dynamic</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">do_not_log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if TRUE, field information is not logged</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interp_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interp method to be used when regridding the field in post-processing Valid options are &quot;conserve_order1&quot;, &quot;conserve_order2&quot;, and &quot;none&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field ID for the area field associated with this field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field ID for the volume field associated with this field</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to set as the value to the modeling_realm attribute </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="455" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="458" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1aec0e800b1b6f341f733ce367ec95815d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structfms__diag__output__buffer__mod_1_1fmsdiagoutputbuffer__type" kindref="compound">fmsdiagoutputbuffer_type</ref>) function, allocatable</type>
+        <definition>type(fmsdiagoutputbuffer_type) function, allocatable fms_diag_object_mod::get_diag_buffer</definition>
+        <argsstring>(this, bufferid)</argsstring>
+        <name>get_diag_buffer</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>bufferid</type>
+          <defname>bufferid</defname>
+        </param>
+        <briefdescription>
+<para>returns the buffer object for the given id actual data comes from get_buffer_data() on the returned object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1290" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1292" bodyend="1298"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1aefb18bc00201a3f79cb973fcc1070c00" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::set_time_end</definition>
+        <argsstring>(this, time_end_in)</argsstring>
+        <name>set_time_end</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>time_end_in</type>
+          <defname>time_end_in</defname>
+        </param>
+        <briefdescription>
+<para>Set the model_end_time in a diag object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag Object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_end_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time at the end of the simulation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="1554" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="1555" bodyend="1559"/>
+      </memberdef>
+      <memberdef kind="function" id="fms__diag__object_8F90_1a476f793e8d8a95725d4ba6cf864f46de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_object_mod::write_diag_manifest</definition>
+        <argsstring>(this)</argsstring>
+        <name>write_diag_manifest</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Writes out the diag manifest file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="158" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" bodystart="159" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_object.F90" line="18" column="1"/>
+  </compounddef>
+</doxygen>

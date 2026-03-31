@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__diag__ocean_8F90" kind="file" language="Fortran">
+    <compoundname>test_diag_ocean.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__diag__ocean_8F90_1acfce576191a6df397b3d3fa2587f31ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_diag_ocean</definition>
+        <argsstring></argsstring>
+        <name>test_diag_ocean</name>
+        <briefdescription>
+<para>This program tests the diag_model_subset feature of diag_mananger_init It requires two PEs to run and it runs with diag_table_yaml_27. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_ocean.F90" line="21" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_ocean.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/>This<sp/>program<sp/>tests<sp/>the<sp/>diag_model_subset<sp/>feature<sp/>of<sp/>diag_mananger_init</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!<sp/>It<sp/>requires<sp/>two<sp/>PEs<sp/>to<sp/>run<sp/>and<sp/>it<sp/>runs<sp/>with<sp/>diag_table_yaml_27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_diag_ocean</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>use_yaml</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref>,<sp/>string</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_diag_yaml_mod</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">diag_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__diag__manager__mod_1gab78722b306c31534a1b7870aaef28c6c" kindref="member">diag_manager_init</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">diag_data_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>diag_null,<sp/>diag_ocean,<sp/>diag_other</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(diagYamlObject_type),<sp/></highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal"><sp/>::<sp/>my_yaml</highlight><highlight class="comment"><sp/>!&lt;<sp/>diagYamlObject<sp/>obtained<sp/>from<sp/>diag_yaml_object_init</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(diagYamlFiles_type),<sp/></highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension<sp/>(:)</highlight><highlight class="normal"><sp/>::<sp/>diag_files</highlight><highlight class="comment"><sp/>!&lt;<sp/>Files<sp/>from<sp/>the<sp/>diag_yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(diagYamlFilesVar_type),<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal"><sp/>::<sp/>diag_fields</highlight><highlight class="comment"><sp/>!&lt;<sp/>Fields<sp/>from<sp/>the<sp/>diag_yaml</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=10)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>file_names(:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>expected<sp/>names<sp/>of<sp/>the<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=10)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>var_names(:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>expected<sp/>names<sp/>of<sp/>the<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>diag_subset</highlight><highlight class="comment"><sp/>!&lt;<sp/>Diag_subset<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>diag_manager_init</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>nfiles</highlight><highlight class="comment"><sp/>!&lt;<sp/>Expected<sp/>number<sp/>of<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>nvariables</highlight><highlight class="comment"><sp/>!&lt;<sp/>Expected<sp/>number<sp/>of<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i</highlight><highlight class="comment"><sp/>!&lt;<sp/>For<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()<sp/>.ne.<sp/>2)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_diag_ocean<sp/>requires<sp/>two<sp/>PEs!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment">!&gt;<sp/>PE<sp/>0<sp/>is<sp/>not<sp/>going<sp/>to<sp/>include<sp/>the<sp/>file<sp/>with<sp/>is_ocean<sp/>=<sp/>.true.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>.eq.<sp/>0)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>diag_subset<sp/>=<sp/>diag_other</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>nfiles<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(file_names(nfiles))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>file_names<sp/>=<sp/>(/</highlight><highlight class="stringliteral">&quot;file1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;file3&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>nvariables<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_names(nvariables))</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>var_names<sp/>=<sp/>(/</highlight><highlight class="stringliteral">&quot;sst1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;sst3&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;sst4&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">!&gt;<sp/>PE<sp/>1<sp/>is<sp/>only<sp/>going<sp/>to<sp/>include<sp/>the<sp/>file<sp/>with<sp/>is_ocean<sp/>=<sp/>.true.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>.eq.<sp/>1)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>diag_subset<sp/>=<sp/>diag_ocean</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>nfiles<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(file_names(nfiles))</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>file_names<sp/>=<sp/>(/</highlight><highlight class="stringliteral">&quot;file2&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>nvariables<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_names(nvariables))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>var_names<sp/>=<sp/>(/</highlight><highlight class="stringliteral">&quot;sst2&quot;</highlight><highlight class="normal">/)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__diag__manager__mod_1gab78722b306c31534a1b7870aaef28c6c" kindref="member">diag_manager_init</ref>(diag_model_subset=diag_subset)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">my_yaml<sp/>=&gt;<sp/><ref refid="group__fms__diag__yaml__mod_1ga089cda41de260fc767ee0835ce887117" kindref="member">get_diag_yaml_obj</ref>()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">diag_files<sp/>=&gt;<sp/>my_yaml%diag_files</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(diag_files)<sp/>.ne.<sp/>nfiles)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>number<sp/>of<sp/>files<sp/>should<sp/>be<sp/>&quot;</highlight><highlight class="normal">//string(nfiles))</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nfiles</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trim(file_names(i))<sp/>.ne.<sp/>diag_files(i)%get_file_fname())<sp/>&amp;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>file_name<sp/>should<sp/>of<sp/>the<sp/>&quot;</highlight><highlight class="normal">//string(i)//</highlight><highlight class="stringliteral">&quot;<sp/>file<sp/>should<sp/>be<sp/>&quot;</highlight><highlight class="normal">//&amp;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;trim(file_names(i))//</highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>&quot;</highlight><highlight class="normal">//diag_files(i)%get_file_fname())</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordflow">end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">diag_fields<sp/>=<sp/>my_yaml%get_diag_fields()</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">size</highlight><highlight class="normal">(diag_fields)<sp/>.ne.<sp/>nvariables)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>number<sp/>of<sp/>variables<sp/>should<sp/>be<sp/>&quot;</highlight><highlight class="normal">//string(nvariables))</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>nvariables</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trim(var_names(i))<sp/>.ne.<sp/>diag_fields(i)%get_var_varname())<sp/>&amp;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>var_name<sp/>should<sp/>of<sp/>the<sp/>&quot;</highlight><highlight class="normal">//string(i)//</highlight><highlight class="stringliteral">&quot;<sp/>field<sp/>should<sp/>be<sp/>&quot;</highlight><highlight class="normal">//&amp;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;trim(var_names(i))//</highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>&quot;</highlight><highlight class="normal">//diag_fields(i)%get_var_varname())</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordflow">end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">nullify</highlight><highlight class="normal">(diag_files)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(diag_fields)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(file_names)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(var_names)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__diag__yaml__mod_1ga1f27e5a0bc775fa23b9444fe8d413ca9" kindref="member">diag_yaml_object_end</ref></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref>()</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_diag_ocean</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/diag_manager/test_diag_ocean.F90"/>
+  </compounddef>
+</doxygen>

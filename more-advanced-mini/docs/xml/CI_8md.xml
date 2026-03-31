@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CI_8md" kind="file" language="Markdown">
+    <compoundname>CI.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>CI<sp/>Information</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>CI<sp/>workflows<sp/>and<sp/>checks,<sp/>and<sp/>associated<sp/>container<sp/>environments<sp/>for<sp/>this<sp/>repository</highlight></codeline>
+<codeline><highlight class="normal">are<sp/>listed<sp/>below.</highlight></codeline>
+<codeline><highlight class="normal">Actions<sp/>run<sp/>via<sp/>Github-hosted<sp/>runners<sp/>unless<sp/>otherwise<sp/>noted.</highlight></codeline>
+<codeline><highlight class="normal">Required<sp/>CI<sp/>for<sp/>pull<sp/>requests<sp/>are<sp/>listed<sp/>first.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Pull<sp/>Request<sp/>CI<sp/>and<sp/>checks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>libFMS<sp/>with<sp/>autotools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Required<sp/>GNU<sp/>build<sp/>test<sp/>for<sp/>all<sp/>pull<sp/>requests/pushes.</highlight></codeline>
+<codeline><highlight class="normal">Runs<sp/>`make<sp/>distcheck`<sp/>after<sp/>configuring<sp/>via<sp/>GNU<sp/>autotools.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Runs<sp/>on<sp/>a<sp/>container<sp/>image<sp/>with<sp/>spack<sp/>installed<sp/>dependencies,<sp/>on<sp/>top<sp/>a<sp/>rocky<sp/>linux<sp/>base.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Dockerfile<sp/>for<sp/>image<sp/>is<sp/>stored<sp/>at<sp/>.github/workflows/Dockerfile.gnu<sp/>for<sp/>more<sp/>specific<sp/>information<sp/>on<sp/>the<sp/>CI<sp/>environment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Container<sp/>environment:</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v12.3.0</highlight></codeline>
+<codeline><highlight class="normal">mpich<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v4.0.2</highlight></codeline>
+<codeline><highlight class="normal">netcdf<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v4.9.0</highlight></codeline>
+<codeline><highlight class="normal">netcdf-fortran<sp/>v4.6.0</highlight></codeline>
+<codeline><highlight class="normal">autoconf<sp/><sp/><sp/><sp/><sp/><sp/><sp/>v2.69</highlight></codeline>
+<codeline><highlight class="normal">libyaml<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v0.2.5</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`./configure`<sp/>flags<sp/>tested:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--disable-openmp`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--enable-mixed-mode`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--with-mpi=no`<sp/>(disables<sp/>unit<sp/>testing)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--disable-setting-flags`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--with-yaml`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--enable-test-input=/home/unit_tests_input`</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>libfms<sp/>with<sp/>cmake</highlight></codeline>
+<codeline><highlight class="normal">Required<sp/>GNU<sp/>build<sp/>test<sp/>for<sp/>all<sp/>pull<sp/>requests/pushes.</highlight></codeline>
+<codeline><highlight class="normal">Runs<sp/>`make`<sp/>after<sp/>configuring<sp/>via<sp/>cmake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Container<sp/>environment:</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v7.3.0</highlight></codeline>
+<codeline><highlight class="normal">mpich<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v3.3a2</highlight></codeline>
+<codeline><highlight class="normal">netcdf<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v4.6.0</highlight></codeline>
+<codeline><highlight class="normal">netcdf-fortran<sp/>v4.4.4</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v3.22.0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">container<sp/>hosted<sp/>at<sp/>[noaagfdl/ubuntu_libfms_gnu:latest](https://hub.docker.com/r/noaagfdl/ubuntu_libfms_gnu)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cmake<sp/>flags:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-DOPENMP=on`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-DOPENMP=on`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-DWITH_YAML=on`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-D64BIT=on`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>libFMS<sp/>lint<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">Required<sp/>test<sp/>for<sp/>all<sp/>pull<sp/>requests.</highlight></codeline>
+<codeline><highlight class="normal">Checks<sp/>code<sp/>for<sp/>line<sp/>lengths,<sp/>tabs,<sp/>and<sp/>trailing<sp/>whitespace<sp/>in<sp/>accordance<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>project&apos;s<sp/>[style<sp/>guide](https://github.com/NOAA-GFDL/FMS/blob/main/CODE_STYLE.md).</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>action<sp/>is<sp/>hosted<sp/>on<sp/>github<sp/>[here](https://github.com/NOAA-GFDL/simple_lint).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Parallelworks<sp/>CI</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>CI<sp/>workflows<sp/>run<sp/>on<sp/>self-hosted<sp/>runners<sp/>through<sp/>the<sp/>parallelworks<sp/>platform.</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Pull<sp/>Request<sp/>CI<sp/>libFMS<sp/>with<sp/>intel</highlight></codeline>
+<codeline><highlight class="normal">Optional(does<sp/>not<sp/>need<sp/>to<sp/>pass<sp/>to<sp/>merge)<sp/>intel<sp/>build<sp/>test<sp/>hosted<sp/>on<sp/>the<sp/>parallelworks<sp/>platform.</highlight></codeline>
+<codeline><highlight class="normal">Runs<sp/>`make<sp/>check`<sp/>with<sp/>intel<sp/>18<sp/>and<sp/>21<sp/>compilers<sp/>for<sp/>all<sp/>pull<sp/>requests.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>CI<sp/>libFMS<sp/>with<sp/>AM4<sp/>regression</highlight></codeline>
+<codeline><highlight class="normal">On<sp/>alpha<sp/>or<sp/>beta<sp/>tag<sp/>creation,<sp/>compiles<sp/>and<sp/>runs<sp/>full<sp/>AM4<sp/>model<sp/>regression<sp/>testing<sp/>using<sp/>the<sp/>new<sp/>FMS<sp/>tag<sp/>on<sp/>parallelworks.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/CI.md"/>
+  </compounddef>
+</doxygen>

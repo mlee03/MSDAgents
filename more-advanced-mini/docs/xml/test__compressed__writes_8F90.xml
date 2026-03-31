@@ -1,0 +1,680 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__compressed__writes_8F90" kind="file" language="Fortran">
+    <compoundname>test_compressed_writes.F90</compoundname>
+    <innerclass refid="structdata__type" prot="public">data_type</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__compressed__writes_8F90_1ac2100f1674ff25c2446847ee870bf6fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::compare_var_data</definition>
+        <argsstring>(check_sum_in, check_sum_ref, varname)</argsstring>
+        <name>compare_var_data</name>
+        <param>
+          <type>check_sum_in</type>
+          <defname>check_sum_in</defname>
+        </param>
+        <param>
+          <type>check_sum_ref</type>
+          <defname>check_sum_ref</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <briefdescription>
+<para>Compares two checksums and crashes if they are not the same. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">check_sum_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The checksum calculated from the data read</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">check_sum_ref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The checksum to compare to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name for reference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="280" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="281" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a2d40466232668e9db213d46b5d568670" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::read_data_wrapper</definition>
+        <argsstring>(fileob, var_name, dim, var_data, ref_data)</argsstring>
+        <name>read_data_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_name</type>
+          <defname>var_name</defname>
+        </param>
+        <param>
+          <type>dim</type>
+          <defname>dim</defname>
+        </param>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>ref_data</type>
+          <defname>ref_data</defname>
+        </param>
+        <briefdescription>
+<para>Reads the data and compares it with reference data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kind of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data to read to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ref_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data to compare to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="163" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="164" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1aa494382b83bf42234eff29b620281c43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::register_field_wrapper</definition>
+        <argsstring>(fileob, var_name, dimension_names, ndim)</argsstring>
+        <name>register_field_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_name</type>
+          <defname>var_name</defname>
+        </param>
+        <param>
+          <type>dimension_names</type>
+          <defname>dimension_names</defname>
+        </param>
+        <param>
+          <type>ndim</type>
+          <defname>ndim</defname>
+        </param>
+        <briefdescription>
+<para>registers all of the possible variable types for a given number of dimensions </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension_names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dimension names</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ndim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of dimension </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="108" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="109" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a8fda5392c9de4fce78dc892a7a78abae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_compressed_writes</definition>
+        <argsstring></argsstring>
+        <name>test_compressed_writes</name>
+        <briefdescription>
+<para>This programs tests the compressed writes in fms2_io. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="20" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a5f08cfd913a67ba593987a1c2141e579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::var_data_alloc</definition>
+        <argsstring>(var_data, dim2, dim3, dim4, dim5, compressed_dim)</argsstring>
+        <name>var_data_alloc</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>dim2</type>
+          <defname>dim2</defname>
+        </param>
+        <param>
+          <type>dim3</type>
+          <defname>dim3</defname>
+        </param>
+        <param>
+          <type>dim4</type>
+          <defname>dim4</defname>
+        </param>
+        <param>
+          <type>dim5</type>
+          <defname>dim5</defname>
+        </param>
+        <param>
+          <type>compressed_dim</type>
+          <defname>compressed_dim</defname>
+        </param>
+        <briefdescription>
+<para>Allocates the variable to be the size of data compute domain for x and y and for a given size for the 3rd 4th and 5th dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim3</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim3</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim4</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of dim5</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">compressed_dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the compressed dimension </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="123" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a8a0aec6e3f16aaaf4d441e0dd1916ca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::var_data_set</definition>
+        <argsstring>(var_data, var_value)</argsstring>
+        <name>var_data_set</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <param>
+          <type>var_value</type>
+          <defname>var_value</defname>
+        </param>
+        <briefdescription>
+<para>Sets the data to some value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set the data as </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="138" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="139" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a0b96509fd39035b7ee97b98833fc8fdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::var_data_set_ref</definition>
+        <argsstring>(var_data)</argsstring>
+        <name>var_data_set_ref</name>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <briefdescription>
+<para>Sets the data to the expected answer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data to set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="260" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="261" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="test__compressed__writes_8F90_1a7b5ce166934fb7eb865392916ccfefa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_compressed_writes::write_data_wrapper</definition>
+        <argsstring>(fileob, var_kind, var_data)</argsstring>
+        <name>write_data_wrapper</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>var_kind</type>
+          <defname>var_kind</defname>
+        </param>
+        <param>
+          <type>var_data</type>
+          <defname>var_data</defname>
+        </param>
+        <briefdescription>
+<para>Writes the data for a give variable type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2io fileobj for domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kind of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">var_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" line="149" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90" bodystart="150" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/><sp/>This<sp/>programs<sp/>tests<sp/>the<sp/>compressed<sp/>writes<sp/>in<sp/>fms2_io</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_compressed_writes</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms2_io_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>,<sp/>fmsnetcdffile_t,<sp/><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/>mpp_get_current_pelist,<sp/>fatal,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind,<sp/>i4_kind,<sp/>i8_kind</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Dummy<sp/>type<sp/>to<sp/>hold<sp/>variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structdata__type" kindref="compound">data_type</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r4_kind)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_r4(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_r8(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i4_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_i4(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/>::<sp/>var_i8(:,:,:,:,:)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(len=6)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(5)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>names</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Dimensions<sp/>names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data_in</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>written<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data_out</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_data_ref</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim2<sp/>=<sp/>2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>size<sp/>of<sp/>the<sp/>second<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim3<sp/>=<sp/>3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>size<sp/>of<sp/>the<sp/>third<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim4<sp/>=<sp/>4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>size<sp/>of<sp/>the<sp/>fourth<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ndim5<sp/>=<sp/>1</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>size<sp/>of<sp/>the<sp/>fifth<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>pes(:)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>pelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pes(<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_get_current_pelist(pes)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;test_compressed_writes.nc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;overwrite&quot;</highlight><highlight class="normal">,<sp/>nc_format=</highlight><highlight class="stringliteral">&quot;netcdf4&quot;</highlight><highlight class="normal">,<sp/>pelist=pes))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>names(1)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;c_xy&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>names(2)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim2&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>names(3)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim3&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>names(4)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim4&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>names(5)<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;dim5&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;c_xy&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()+1,<sp/>is_compressed=.true.)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim2&quot;</highlight><highlight class="normal">,<sp/>ndim2)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim3&quot;</highlight><highlight class="normal">,<sp/>ndim3)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim4&quot;</highlight><highlight class="normal">,<sp/>ndim4)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;dim5&quot;</highlight><highlight class="normal">,<sp/>ndim5)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var1&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>1)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var2&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>2)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var3&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>3)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var4&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>4)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">register_field_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var5&quot;</highlight><highlight class="normal">,<sp/>names,<sp/>5)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_alloc(var_data_in,<sp/>ndim2,<sp/>ndim3,<sp/>ndim4,<sp/>ndim5,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()+1)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data_in,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>())</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;r4&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_r4)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;r8&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_r8)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;i4&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_i4)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">write_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;i8&quot;</highlight><highlight class="normal">,<sp/>var_data_in%var_i8)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!&lt;<sp/>Now<sp/>check<sp/>answers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>.eq.<sp/>mpp_root_pe())<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!call<sp/>mpp_set_current_pelist((/mpp_pe()/))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;test_compressed_writes.nc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;read&quot;</highlight><highlight class="normal">,<sp/>nc_format=</highlight><highlight class="stringliteral">&quot;netcdf4&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_alloc(var_data_out,<sp/>ndim2,<sp/>ndim3,<sp/>ndim4,<sp/>ndim5,<sp/>sum(pes)+<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>())</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_alloc(var_data_ref,<sp/>ndim2,<sp/>ndim3,<sp/>ndim4,<sp/>ndim5,<sp/>sum(pes)+<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>())</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set_ref(var_data_ref)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var2&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>var_data_out,<sp/>var_data_ref)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var2&quot;</highlight><highlight class="normal">,<sp/>2,<sp/>var_data_out,<sp/>var_data_ref)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var3&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>var_data_out,<sp/>var_data_ref)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var4&quot;</highlight><highlight class="normal">,<sp/>4,<sp/>var_data_out,<sp/>var_data_ref)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">read_data_wrapper(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;var5&quot;</highlight><highlight class="normal">,<sp/>5,<sp/>var_data_out,<sp/>var_data_ref)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>registers<sp/>all<sp/>of<sp/>the<sp/>possible<sp/>variable<sp/>types<sp/>for<sp/>a<sp/>given</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/>!!<sp/>number<sp/>of<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">register_field_wrapper(fileob,<sp/>var_name,<sp/>dimension_names,<sp/>ndim)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_name</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>dimension_names(:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>dimension<sp/>names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>ndim</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Number<sp/>of<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;double&quot;</highlight><highlight class="normal">,<sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">,<sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;int64&quot;</highlight><highlight class="normal">,<sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>dimension_names(1:ndim))</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">register_field_wrapper</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="120"><highlight class="comment">!&gt;<sp/>@brief<sp/>Allocates<sp/>the<sp/>variable<sp/>to<sp/>be<sp/>the<sp/>size<sp/>of<sp/>data<sp/>compute<sp/>domain<sp/>for<sp/>x<sp/>and<sp/>y</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/>!!<sp/>and<sp/>for<sp/>a<sp/>given<sp/>size<sp/>for<sp/>the<sp/>3rd<sp/>4th<sp/>and<sp/>5th<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_alloc(var_data,<sp/>dim2,<sp/>dim3,<sp/>dim4,<sp/>dim5,<sp/>compressed_dim)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim2</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim3</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim4</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>dim5</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>dim5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>compressed_dim</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>Size<sp/>of<sp/>the<sp/>compressed<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_r4(compressed_dim,<sp/>dim2,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_r8(compressed_dim,<sp/>dim2,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_i4(compressed_dim,<sp/>dim2,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(var_data%var_i8(compressed_dim,<sp/>dim2,<sp/>dim3,<sp/>dim4,<sp/>dim5))</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">var_data_alloc</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Sets<sp/>the<sp/>data<sp/>to<sp/>some<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>var_value)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>var_value</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Value<sp/>to<sp/>set<sp/>the<sp/>data<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_r4<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(var_value,<sp/>kind=r4_kind)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_r8<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(var_value,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_i4<sp/>=<sp/>int(var_value,<sp/>kind=i4_kind)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>var_data%var_i8<sp/>=<sp/>int(var_value,<sp/>kind=i8_kind)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">var_data_set</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Writes<sp/>the<sp/>data<sp/>for<sp/>a<sp/>give<sp/>variable<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">write_data_wrapper(fileob,<sp/>var_kind,<sp/>var_data)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_kind</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>kind<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">class</highlight><highlight class="normal">(*),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_data(:,:,:,:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>Variable<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var1_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,1,1,1,1))</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var2_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var3_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var4_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>(fileob,<sp/></highlight><highlight class="stringliteral">&quot;var5_&quot;</highlight><highlight class="normal">//trim(var_kind),<sp/>var_data(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Reads<sp/>the<sp/>data<sp/>and<sp/>compares<sp/>it<sp/>with<sp/>reference<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">read_data_wrapper(fileob,<sp/>var_name,<sp/>dim,<sp/>var_data,<sp/>ref_data)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fileob</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>fms2io<sp/>fileobj<sp/>for<sp/>domain<sp/>decomposed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>var_name</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>kind<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>dim</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>The<sp/>dimension<sp/>of<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>to<sp/>read<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>ref_data</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>data<sp/>to<sp/>compare<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">select<sp/>case</highlight><highlight class="normal">(dim)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(1)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>-999)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,1,1,1,1))</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,1,1,1,1))</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,1,1,1,1))</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,1,1,1,1))</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,1,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(2)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>-999)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,1,1,1))</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,1,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var2_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(3)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>-999)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var3_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var3_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var3_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,1,1))</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,1,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var3_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(4)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>-999)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var4_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var4_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var4_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,:,1))</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,:,1),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var4_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">(5)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">var_data_set(var_data,<sp/>-999)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r4(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r4(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r4(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var5_r4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_r8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_r8(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_r8(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_r8(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var5_r8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i4&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i4(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i4(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i4(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var5_i4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1read__data" kindref="compound">read_data</ref>(fileob,<sp/>trim(var_name)//</highlight><highlight class="stringliteral">&quot;_i8&quot;</highlight><highlight class="normal">,<sp/>var_data%var_i8(:,:,:,:,:))</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compare_var_data(<ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(var_data%var_i8(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacempp__mod_1_1mpp__chksum" kindref="compound">mpp_chksum</ref>(ref_data%var_i8(:,:,:,:,:),<sp/>(/<ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()/)),<sp/></highlight><highlight class="stringliteral">&quot;var5_i8&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="259"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Sets<sp/>the<sp/>data<sp/>to<sp/>the<sp/>expected<sp/>answer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">var_data_set_ref(var_data)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(data_type),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>var_data</highlight><highlight class="comment"><sp/>!&lt;<sp/>Variable<sp/>data<sp/>to<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>starting_index</highlight><highlight class="comment"><sp/>!&lt;<sp/>Starting<sp/>index<sp/>of<sp/>the<sp/>current<sp/>pes<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>ending_index</highlight><highlight class="comment"><sp/><sp/><sp/>!&lt;<sp/>Ending<sp/>index<sp/>of<sp/>the<sp/>current<sp/>pes<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>for<sp/>do<sp/>loops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal">ing_index<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(pes)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_index<sp/>=<sp/>ending_index<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal">ing_index<sp/>=<sp/>starting_index<sp/>+<sp/>pes(i)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_r4(starting_index:ending_index,:,:,:,:)<sp/>=<sp/></highlight><highlight class="keywordtype">real(pes(i)</highlight><highlight class="normal">,<sp/>kind=r4_kind)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_r8(starting_index:ending_index,:,:,:,:)<sp/>=<sp/></highlight><highlight class="keywordtype">real(pes(i)</highlight><highlight class="normal">,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_i4(starting_index:ending_index,:,:,:,:)<sp/>=<sp/>int(pes(i),<sp/>kind=i4_kind)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var_data%var_i8(starting_index:ending_index,:,:,:,:)<sp/>=<sp/>int(pes(i),<sp/>kind=i8_kind)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/>!&gt;<sp/>@brief<sp/>Compares<sp/>two<sp/>checksums<sp/>and<sp/>crashes<sp/>if<sp/>they<sp/>are<sp/>not<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">compare_var_data(check_sum_in,<sp/>check_sum_ref,<sp/>varname)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>check_sum_in</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>The<sp/>checksum<sp/>calculated<sp/>from<sp/>the<sp/>data<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(kind=i8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>check_sum_ref</highlight><highlight class="comment"><sp/>!&lt;<sp/>The<sp/>checksum<sp/>to<sp/>compare<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>varname</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>Variable<sp/>name<sp/>for<sp/>reference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_sum_ref<sp/>.ne.<sp/>check_sum_in)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>&amp;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Checksums<sp/>do<sp/>not<sp/>match<sp/>for<sp/>variable:<sp/>&quot;</highlight><highlight class="normal">//trim(varname))</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">compare_var_data</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_compressed_writes</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_compressed_writes.F90"/>
+  </compounddef>
+</doxygen>

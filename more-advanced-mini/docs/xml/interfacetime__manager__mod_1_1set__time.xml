@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacetime__manager__mod_1_1set__time" kind="interface" language="Fortran" prot="private">
+    <compoundname>time_manager_mod::set_time</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacetime__manager__mod_1_1set__time_1ac5042990a799484c2db3829eeeb4f5a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function set_time_c</definition>
+        <argsstring>(string, err_msg, allow_rounding)</argsstring>
+        <name>set_time_c</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_rounding</type>
+          <defname>allow_rounding</defname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> set to the given amount of time via a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains days and seconds separated by a single blank. days must be integer, seconds may be integer or real. Examples: &apos;100 43200&apos; &apos;100 43200.50&apos;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: if(err_msg /= &apos;&apos;) call error_mesg(&apos;my_routine&apos;,&apos;additional info: &apos;//trim(err_msg),FATAL)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allow_rounding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When .true., any fractions of a second will be rounded off to the nearest tick. When .false., it is a fatal error if the second fraction cannot be exactly represented by a number of ticks. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="359" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="360" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetime__manager__mod_1_1set__time_1aa88336b180e60ddff914c0f6b9a3684b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function set_time_i</definition>
+        <argsstring>(seconds, days, ticks, err_msg)</argsstring>
+        <name>set_time_i</name>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> set to the given amount of time via integer amounts. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of seconds</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">days</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of days</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of ticks</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: if(err_msg /= &apos;&apos;) call error_mesg(&apos;my_routine&apos;,&apos;additional info: &apos;//trim(err_msg),FATAL) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="332" bodyend="354"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Given some number of seconds and days, returns the corresponding <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Given some number of seconds and days, returns the corresponding <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>. <ref refid="interfacetime__manager__mod_1_1set__time" kindref="compound">set_time</ref> has two forms; one accepts integer input, the other a character string with the day and second counts. For the first form, there are no restrictions on the range of the inputs, except that the result must be positive time. e.g. days=-1, seconds=86401 is acceptable. For the second form, days and seconds must both be positive.</para><para><linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keywordtype">type</highlight><highlight class="normal">(time_type)<sp/>::<sp/>time1,<sp/>time2</highlight></codeline>
+<codeline><highlight class="normal">time1<sp/>=<sp/>set_time(seconds,<sp/>days,<sp/>ticks,<sp/>err_msg)</highlight></codeline>
+<codeline><highlight class="normal">time2<sp/>=<sp/>set_time(</highlight><highlight class="stringliteral">&quot;100<sp/>43200&quot;</highlight><highlight class="normal">,<sp/>err_msg,<sp/>allow_rounding)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="206" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="206" bodyend="207"/>
+    <listofallmembers>
+      <member refid="interfacetime__manager__mod_1_1set__time_1ac5042990a799484c2db3829eeeb4f5a4" prot="private" virt="non-virtual"><scope>time_manager_mod::set_time</scope><name>set_time_c</name></member>
+      <member refid="interfacetime__manager__mod_1_1set__time_1aa88336b180e60ddff914c0f6b9a3684b" prot="private" virt="non-virtual"><scope>time_manager_mod::set_time</scope><name>set_time_i</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -3,15 +3,15 @@ from bs4 import BeautifulSoup
 import chromadb
 
 # read and parse xml file
-xmlfile = "/home/Mikyung.Lee/fmscoupler/FMSCoupler/docs/xml/namespaceatm__land__ice__flux__exchange__mod.xml"
+xmlfile = "docs/xml/group__fms2__io__mod.xml"
 with open(xmlfile, "r") as openedfile:
   xmlsoup = BeautifulSoup(openedfile, "lxml-xml")
 subroutines = xmlsoup.find_all("memberdef", {"kind": "function"})
 variables = xmlsoup.find_all("memberdef", {"kind": "variable"})
 
 # initialize database, use default embedding function
-db_path = "./atm-land-ice-flux-exchange-human"
-collection_name = "atm-land-ice-flux-exchange-human"
+db_path = "./fms2-io-db"
+collection_name = "fms2-io-collection"
 collection = chromadb.PersistentClient(path=db_path).get_or_create_collection(
   name=collection_name,
   metadata = {

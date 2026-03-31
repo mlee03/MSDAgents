@@ -1,0 +1,985 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacediag__output__mod" kind="namespace" language="Fortran">
+    <compoundname>diag_output_mod</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__output__mod_1ga5172d8bcc7dc9109fbb44737313f85fe" prot="private" static="no" mutable="no">
+        <type>integer, dimension(max_axis_num)</type>
+        <definition>integer, dimension(max_axis_num) axis_in_file</definition>
+        <argsstring></argsstring>
+        <name>axis_in_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1ga21f02718f861f6437197ce0645659210" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer current_file_unit</definition>
+        <argsstring></argsstring>
+        <name>current_file_unit</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="66" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="variable" id="diag__output_8F90_1aa98a679bb29f31bd4a342a9823835a60" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structdiag__data__mod_1_1diag__global__att__type" kindref="compound">diag_global_att_type</ref>), save</type>
+        <definition>type(diag_global_att_type), save diag_global_att</definition>
+        <argsstring></argsstring>
+        <name>diag_global_att</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="61" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1ga3431fc881df35752c9d81e10e5c8a66d" prot="private" static="no" mutable="no">
+        <type>logical, dimension(max_axis_num)</type>
+        <definition>logical, dimension(max_axis_num) edge_axis_flag</definition>
+        <argsstring></argsstring>
+        <name>edge_axis_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gabe28d7dee61a2a720f256ec02590bd67" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_axis_num</definition>
+        <argsstring></argsstring>
+        <name>max_axis_num</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="70" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1ga549d6661701988860ad05186e3ffc051" prot="private" static="no" mutable="no">
+        <type>integer, dimension(2, 2)</type>
+        <definition>integer, dimension(2,2) max_range</definition>
+        <argsstring></argsstring>
+        <name>max_range</name>
+        <initializer>= RESHAPE((/ -32767, 32767, -127,   127 /), (/2,2/))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="67" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gad9c1c2c687ee9ac9bd1a446f46b426b9" prot="private" static="no" mutable="no">
+        <type>integer, dimension(2)</type>
+        <definition>integer, dimension(2) missval</definition>
+        <argsstring></argsstring>
+        <name>missval</name>
+        <initializer>= (/ -32768, -128 /)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="68" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="75" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gabc3f121580cdcc6ef7124065a3537ee3" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter mxch</definition>
+        <argsstring></argsstring>
+        <name>mxch</name>
+        <initializer>= 128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="64" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1ga24dd5460a89e6353247a23f0eadf3495" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter mxchl</definition>
+        <argsstring></argsstring>
+        <name>mxchl</name>
+        <initializer>= 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="65" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gab30b1133c14729a00bcf0dcef6d4bfa3" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter netcdf1</definition>
+        <argsstring></argsstring>
+        <name>netcdf1</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="63" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1ga3ef0bf4feba41f375a8b4ee4f88a17d4" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer num_axis_in_file</definition>
+        <argsstring></argsstring>
+        <name>num_axis_in_file</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gace088c5557f7fee088b19fe4cf3cb5f1" prot="private" static="no" mutable="no">
+        <type>logical, dimension(max_axis_num)</type>
+        <definition>logical, dimension(max_axis_num) time_axis_flag</definition>
+        <argsstring></argsstring>
+        <name>time_axis_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__output__mod_1gaf792cbce79e2f7b8dfcb1bfa182a91c6" prot="private" static="no" mutable="no">
+        <type>character(len= *), parameter</type>
+        <definition>character(len=*), parameter version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <initializer>= &apos;2020.03&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="78" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="78" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__output__mod_1ga2c94a63acb23aaf6adac80f99b2ef019" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::diag_field_write</definition>
+        <argsstring>(varname, buffer, static, file_num, fileobjU, fileobj, fileobjND, fnum_for_domain, time_in)</argsstring>
+        <name>diag_field_write</name>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>buffer</type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>static</type>
+          <defname>static</defname>
+        </param>
+        <param>
+          <type>file_num</type>
+          <defname>file_num</defname>
+        </param>
+        <param>
+          <type>fileobjU</type>
+          <defname>fileobjU</defname>
+        </param>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>fileobjND</type>
+          <defname>fileobjND</defname>
+        </param>
+        <param>
+          <type>fnum_for_domain</type>
+          <defname>fnum_for_domain</defname>
+        </param>
+        <param>
+          <type>time_in</type>
+          <defname>time_in</defname>
+        </param>
+        <briefdescription>
+<para>Writes diagnostic data out using fms2_io routine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer containing the variable data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">static</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if a variable is static</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index in the fileobj* types array</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobju</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of non domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobjnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of unstructured domain fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fnum_for_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String indicating the type of domain &quot;2d&quot; domain decomposed &quot;ug&quot; unstructured domain decomposed &quot;nd&quot; no domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Set up the time. Static field and default time is 0</para><para>If the variable is 1D, switch the buffer so that n_diurnal_samples is the second dimension (nx, n_diurnal_samples, 1, 1)</para><para>If the variable is 2D, switch the n_diurnal_samples and nz dimension, so local_buffer has dimension (nx, ny, n_diurnal_samples, 1).</para><para>Figure out which file object to write output to </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="801" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="803" bodyend="860"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1ga78dd63a7c9c12ab0934e8f9680d6094c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::diag_flush</definition>
+        <argsstring>(file_num, fileobjU, fileobj, fileobjND, fnum_for_domain)</argsstring>
+        <name>diag_flush</name>
+        <param>
+          <type>file_num</type>
+          <defname>file_num</defname>
+        </param>
+        <param>
+          <type>fileobjU</type>
+          <defname>fileobjU</defname>
+        </param>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>fileobjND</type>
+          <defname>fileobjND</defname>
+        </param>
+        <param>
+          <type>fnum_for_domain</type>
+          <defname>fnum_for_domain</defname>
+        </param>
+        <briefdescription>
+<para>Flushes the file into disk. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index in the fileobj* types array</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobju</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of non domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobjnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of unstructured domain fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fnum_for_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String indicating the type of domain &quot;2d&quot; domain decomposed &quot;ug&quot; unstructured domain decomposed &quot;nd&quot; no domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="929" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="930" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1ga3c948d95de7021b5b511e4e9371120c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::diag_output_init</definition>
+        <argsstring>(file_name, file_title, file_unit, domain, domainU, fileobj, fileobjU, fileobjND, fnum_domain, attributes)</argsstring>
+        <name>diag_output_init</name>
+        <param>
+          <type>file_name</type>
+          <defname>file_name</defname>
+        </param>
+        <param>
+          <type>file_title</type>
+          <defname>file_title</defname>
+        </param>
+        <param>
+          <type>file_unit</type>
+          <defname>file_unit</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>domainU</type>
+          <defname>domainU</defname>
+        </param>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>fileobjU</type>
+          <defname>fileobjU</defname>
+        </param>
+        <param>
+          <type>fileobjND</type>
+          <defname>fileobjND</defname>
+        </param>
+        <param>
+          <type>fnum_domain</type>
+          <defname>fnum_domain</defname>
+        </param>
+        <param>
+          <type>attributes</type>
+          <defname>attributes</defname>
+        </param>
+        <briefdescription>
+<para>Opens the output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">file_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Descriptive title for the file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File unit number assigned to the output file. Needed for subsuquent calls to diag_output_mod</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain associated with file, if domain decomposed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domainu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unstructure domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobju</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unstructured domain fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobjnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non domain decomposed fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">fnum_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String indicating the type of fileobj was used: &quot;2d&quot; domain decomposed &quot;ug&quot; unstrucuted domain decomposed &quot;nd&quot; no domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attributes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of global attributes to be written to file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Checks to make sure that only domain2D or domainUG is used. If both are not null, then FATAL</para><para>Check if there is an io_domain </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="86" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="89" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1gad53355722ce2fc05b2f0d319cc87274c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::diag_write_time</definition>
+        <argsstring>(fileob, rtime_value, time_index, time_name)</argsstring>
+        <name>diag_write_time</name>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>rtime_value</type>
+          <defname>rtime_value</defname>
+        </param>
+        <param>
+          <type>time_index</type>
+          <defname>time_index</defname>
+        </param>
+        <param>
+          <type>time_name</type>
+          <defname>time_name</defname>
+        </param>
+        <briefdescription>
+<para>Writes the time data to the history file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fms2_io file object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rtime_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of time to be written</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the time variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the time variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Get the name of the time variable</para><para>Write the time data</para><para>Cleanup </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="864" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="865" bodyend="882"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1gad319750dc385752038f14d79a36d0d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::done_meta_data</definition>
+        <argsstring>(file_unit)</argsstring>
+        <name>done_meta_data</name>
+        <param>
+          <type>file_unit</type>
+          <defname>file_unit</defname>
+        </param>
+        <briefdescription>
+<para>Writes axis data to file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes axis data to file. This subroutine is to be called once per file after all <computeroutput>write_meta_data</computeroutput> calls, and before the first <computeroutput>diag_field_out</computeroutput> call.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file unit number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="793" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="794" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1ga9574e293cd049b0e355df0f020e65ab5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function diag_output_mod::get_axis_index</definition>
+        <argsstring>(num)</argsstring>
+        <name>get_axis_index</name>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>Return the axis index number. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer index </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="887" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="888" bodyend="902"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1ga4c8757ca8d742058a56776efb8e6b6b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::get_diag_global_att</definition>
+        <argsstring>(gAtt)</argsstring>
+        <name>get_diag_global_att</name>
+        <param>
+          <type>gAtt</type>
+          <defname>gAtt</defname>
+        </param>
+        <briefdescription>
+<para>Return the global attribute type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="906" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="907" bodyend="909"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1ga70c6d24bf70baefa70565540a5a6b7ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::set_diag_global_att</definition>
+        <argsstring>(component, gridType, tileName)</argsstring>
+        <name>set_diag_global_att</name>
+        <param>
+          <type>component</type>
+          <defname>component</defname>
+        </param>
+        <param>
+          <type>gridType</type>
+          <defname>gridType</defname>
+        </param>
+        <param>
+          <type>tileName</type>
+          <defname>tileName</defname>
+        </param>
+        <briefdescription>
+<para>Set the global attribute type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="913" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="914" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1gac022b16344a256e172738d4ca5d95506" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_output_mod::write_attribute_meta</definition>
+        <argsstring>(file_unit, num_attributes, attributes, time_method, err_msg, varname, fileob)</argsstring>
+        <name>write_attribute_meta</name>
+        <param>
+          <type>file_unit</type>
+          <defname>file_unit</defname>
+        </param>
+        <param>
+          <type>num_attributes</type>
+          <defname>num_attributes</defname>
+        </param>
+        <param>
+          <type>attributes</type>
+          <defname>attributes</defname>
+        </param>
+        <param>
+          <type>time_method</type>
+          <defname>time_method</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>varname</type>
+          <defname>varname</defname>
+        </param>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <briefdescription>
+<para>Write out attribute meta data to file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write out the attribute meta data to file, for field and axes</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File unit number</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_attributes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of attributes to write</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attributes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of attributes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>To include in cell_methods attribute if present</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return error message</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">varname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the variable</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FMS2_io fileobj </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="731" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="732" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1gae4be5d97b5c60f844df86228b3ab46bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_output_mod::write_axis_meta_data</definition>
+        <argsstring>(file_unit, axes, fileob, time_ops, time_axis_registered)</argsstring>
+        <name>write_axis_meta_data</name>
+        <param>
+          <type>file_unit</type>
+          <defname>file_unit</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <param>
+          <type>time_ops</type>
+          <defname>time_ops</defname>
+        </param>
+        <param>
+          <type>time_axis_registered</type>
+          <defname>time_axis_registered</defname>
+        </param>
+        <briefdescription>
+<para>Write the axis meta data to file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File unit number</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of axis ID&apos;s, including the time axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FMS2_io fileobj</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.TRUE. if this file contains any min, max, time_rms, or time_average</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">time_axis_registered</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>.TRUE. if the time axis was already written to the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>If the axis is domain decomposed and the type is FmsNetcdfFile_t, this is regional diagnostic So treat it as any other dimension</para><para>For regional subaxis add the &quot;domain_decomposition&quot; attribute, which is added fms2_io for (other) domains with sufficient decomposition info.</para><para>If the axis is domain decomposed and the type is FmsNetcdfDomainFile_t, this is a domain decomposed dimension so register it as one</para><para>If the axis is in unstructured domain and the type is FmsNetcdfUnstructuredDomainFile_t, this is an unstrucutred axis so register it as one</para><para>If the axis is not in a domain, register it as a normal dimension</para><para><simplesect kind="note"><para>Check if the time variable is registered. It&apos;s possible that is_time_axis_registered is set to true if using time-templated files because they aren&apos;t closed when done writing. An alternative to this set up would be to put variable_exists into the if statement with an .or. so that it gets registered.</para></simplesect>
+Add the attributes</para><para>If not a time axis, add the positive attribute and write the data</para><para>Write additional axis attributes, from diag_axis_add_attribute calls</para><para>Write additional attribute (calendar_type) for time axis -<mdash/> <simplesect kind="note"><para>calendar attribute is compliant with CF convention <ulink url="http://www.cgd.ucar.edu/cms/eaton/netcdf/CF-current.htm#cal">http://www.cgd.ucar.edu/cms/eaton/netcdf/CF-current.htm#cal</ulink></para></simplesect>
+Deallocate attributes</para><para>Add edges axis with fms2_io </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="209" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="210" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__output__mod_1gae75520d0052d090a988c5d56e36b6e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structdiag__data__mod_1_1diag__fieldtype" kindref="compound">diag_fieldtype</ref>) function, public</type>
+        <definition>type(diag_fieldtype) function, public diag_output_mod::write_field_meta_data</definition>
+        <argsstring>(file_unit, name, axes, units, long_name, range, pack, mval, avg_name, time_method, standard_name, interp_method, attributes, num_attributes, use_UGdomain, fileob)</argsstring>
+        <name>write_field_meta_data</name>
+        <param>
+          <type>file_unit</type>
+          <defname>file_unit</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>axes</type>
+          <defname>axes</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>long_name</type>
+          <defname>long_name</defname>
+        </param>
+        <param>
+          <type>range</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>pack</type>
+          <defname>pack</defname>
+        </param>
+        <param>
+          <type>mval</type>
+          <defname>mval</defname>
+        </param>
+        <param>
+          <type>avg_name</type>
+          <defname>avg_name</defname>
+        </param>
+        <param>
+          <type>time_method</type>
+          <defname>time_method</defname>
+        </param>
+        <param>
+          <type>standard_name</type>
+          <defname>standard_name</defname>
+        </param>
+        <param>
+          <type>interp_method</type>
+          <defname>interp_method</defname>
+        </param>
+        <param>
+          <type>attributes</type>
+          <defname>attributes</defname>
+        </param>
+        <param>
+          <type>num_attributes</type>
+          <defname>num_attributes</defname>
+        </param>
+        <param>
+          <type>use_UGdomain</type>
+          <defname>use_UGdomain</defname>
+        </param>
+        <param>
+          <type>fileob</type>
+          <defname>fileob</defname>
+        </param>
+        <briefdescription>
+<para>Write the field meta data to file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>diag_fieldtype Field</para></simplesect>
+The meta data for the field is written to the file indicated by file_unit</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file unit number</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of axis IDs</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">units</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field units</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">long_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field&apos;s long name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valid range (min, max). If min &gt; max, the range will be ignored</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Missing value, must be within valid range</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Packing flag. Only valid when range specified. Valid values: <table rows="5" cols="2"><row>
+<entry thead="yes"><para>Flag  </para></entry><entry thead="yes"><para>Si   </para></entry></row>
+<row>
+<entry thead="no"><para>1  </para></entry><entry thead="no"><para>64bit   </para></entry></row>
+<row>
+<entry thead="no"><para>2  </para></entry><entry thead="no"><para>32bit   </para></entry></row>
+<row>
+<entry thead="no"><para>4  </para></entry><entry thead="no"><para>16bit   </para></entry></row>
+<row>
+<entry thead="no"><para>8  </para></entry><entry thead="no"><para>8bit   </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">avg_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of variable containing time averaging info</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of transformation applied to the time-varying data, i.e. &quot;avg&quot;, &quot;min&quot;, &quot;max&quot;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">standard_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard name of field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="467" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" bodystart="470" bodyend="725"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_output.F90" line="27" column="1"/>
+  </compounddef>
+</doxygen>

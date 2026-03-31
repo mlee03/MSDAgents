@@ -1,0 +1,548 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__axis__utils2__mod" kind="group">
+    <compoundname>axis_utils2_mod</compoundname>
+    <title>axis_utils2_mod</title>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1axis__edges" prot="private">axis_utils2_mod::axis_edges</innerclass>
+    <innernamespace refid="namespaceaxis__utils2__mod">axis_utils2_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__axis__utils2__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>= 1.e-10_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="42" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__axis__utils2__mod_1ga38b65255456e46b052e8dd528dc64d33" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter f360</definition>
+        <argsstring></argsstring>
+        <name>f360</name>
+        <initializer>= 360.0_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__axis__utils2__mod_1gacf713b5ceb083ceeb5730d92b8b53ac3" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter fp5</definition>
+        <argsstring></argsstring>
+        <name>fp5</name>
+        <initializer>= 0.5_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga04e0808202ed586a6f8704dd24bb891a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine axis_edges_</definition>
+        <argsstring>(fileobj, name, edge_data, reproduce_null_char_bug_flag)</argsstring>
+        <name>axis_edges_</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>edge_data</type>
+          <defname>edge_data</defname>
+        </param>
+        <param>
+          <type>reproduce_null_char_bug_flag</type>
+          <defname>reproduce_null_char_bug_flag</defname>
+        </param>
+        <briefdescription>
+<para>get axis edge data from a given file </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object to read from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of a given axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">edge_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returned edge data from given axis name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reproduce_null_char_bug_flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating to reproduce the mpp_io bug where the null characters were not removed after reading a string attribute </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="28" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="29" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga5895d1e46e51d5e1a6f70874337cb33d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine find_index_</definition>
+        <argsstring>(grid1, xs, xe, ks, ke)</argsstring>
+        <name>find_index_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>xs</type>
+          <defname>xs</defname>
+        </param>
+        <param>
+          <type>xe</type>
+          <defname>xe</defname>
+        </param>
+        <param>
+          <type>ks</type>
+          <defname>ks</defname>
+        </param>
+        <param>
+          <type>ke</type>
+          <defname>ke</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="613" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="614" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga4fb7527bcd6caf434335315be97f8bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_au_kind_) function</type>
+        <definition>real(kind=fms_au_kind_) function frac_index_</definition>
+        <argsstring>(rval, array)</argsstring>
+        <name>frac_index_</name>
+        <param>
+          <type>rval</type>
+          <defname>rval</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arbitrary data...same units as elements in &quot;array&quot;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of data points (must be monotonically increasing) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="225" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="226" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga66e6c18dfe1a034cec361cfdf195b2d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public axis_utils2_mod::get_axis_cart</definition>
+        <argsstring>(fileobj, axisname, cart)</argsstring>
+        <name>get_axis_cart</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <param>
+          <type>cart</type>
+          <defname>cart</defname>
+        </param>
+        <briefdescription>
+<para>Returns X,Y,Z or T cartesian attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object to read from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axisname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of axis to retrieve</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returned attribute axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="103" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="104" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga8cb644e05d76c629b12f6f9d9dfabb05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public axis_utils2_mod::get_axis_modulo</definition>
+        <argsstring>(fileobj, axisname)</argsstring>
+        <name>get_axis_modulo</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <briefdescription>
+<para>Checks if &apos;modulo&apos; variable exists for a given axis. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if modulo variable exists in fileobj for the given axis name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="179" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gae94bc29c04cf8d166261bbaa7a3301c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public axis_utils2_mod::get_axis_modulo_times</definition>
+        <argsstring>(fileobj, axisname, tbeg, tend)</argsstring>
+        <name>get_axis_modulo_times</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <param>
+          <type>tbeg</type>
+          <defname>tbeg</defname>
+        </param>
+        <param>
+          <type>tend</type>
+          <defname>tend</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if modulo_beg and modulo_end exist in fileobj with the given axis, and returns their values in tbeg and tend. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="188" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="189" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga54f70f8eebc238d13f203cfdd475c6c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine interp_1d_1d_</definition>
+        <argsstring>(grid1, grid2, data1, data2, method, yp1, yp2)</argsstring>
+        <name>interp_1d_1d_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>grid2</type>
+          <defname>grid2</defname>
+        </param>
+        <param>
+          <type>data1</type>
+          <defname>data1</defname>
+        </param>
+        <param>
+          <type>data2</type>
+          <defname>data2</defname>
+        </param>
+        <param>
+          <type>method</type>
+          <defname>method</defname>
+        </param>
+        <param>
+          <type>yp1</type>
+          <defname>yp1</defname>
+        </param>
+        <param>
+          <type>yp2</type>
+          <defname>yp2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="494" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="495" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gab5000f02dfbe42381d47871ca5ab49ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine interp_1d_2d_</definition>
+        <argsstring>(grid1, grid2, data1, data2)</argsstring>
+        <name>interp_1d_2d_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>grid2</type>
+          <defname>grid2</defname>
+        </param>
+        <param>
+          <type>data1</type>
+          <defname>data1</defname>
+        </param>
+        <param>
+          <type>data2</type>
+          <defname>data2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="533" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="534" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga05b85f6b80c42044371c01613abd15ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine interp_1d_3d_</definition>
+        <argsstring>(grid1, grid2, data1, data2, method, yp1, yp2)</argsstring>
+        <name>interp_1d_3d_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>grid2</type>
+          <defname>grid2</defname>
+        </param>
+        <param>
+          <type>data1</type>
+          <defname>data1</defname>
+        </param>
+        <param>
+          <type>data2</type>
+          <defname>data2</defname>
+        </param>
+        <param>
+          <type>method</type>
+          <defname>method</defname>
+        </param>
+        <param>
+          <type>yp1</type>
+          <defname>yp1</defname>
+        </param>
+        <param>
+          <type>yp2</type>
+          <defname>yp2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="557" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="558" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gae7d57adefe04e06005d8ea6ef86ecf82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine interp_1d_cubic_spline_</definition>
+        <argsstring>(grid1, grid2, data1, data2, yp1, ypn)</argsstring>
+        <name>interp_1d_cubic_spline_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>grid2</type>
+          <defname>grid2</defname>
+        </param>
+        <param>
+          <type>data1</type>
+          <defname>data1</defname>
+        </param>
+        <param>
+          <type>data2</type>
+          <defname>data2</defname>
+        </param>
+        <param>
+          <type>yp1</type>
+          <defname>yp1</defname>
+        </param>
+        <param>
+          <type>ypn</type>
+          <defname>ypn</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="414" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="415" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gacf210958a8ec3d59e3367ac11400d5b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine interp_1d_linear_</definition>
+        <argsstring>(grid1, grid2, data1, data2)</argsstring>
+        <name>interp_1d_linear_</name>
+        <param>
+          <type>grid1</type>
+          <defname>grid1</defname>
+        </param>
+        <param>
+          <type>grid2</type>
+          <defname>grid2</defname>
+        </param>
+        <param>
+          <type>data1</type>
+          <defname>data1</defname>
+        </param>
+        <param>
+          <type>data2</type>
+          <defname>data2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="368" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="369" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gac0329709859bc607348d044fd31a3137" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=fms_au_kind_) function</type>
+        <definition>real(kind=fms_au_kind_) function lon_in_range_</definition>
+        <argsstring>(lon, l_strt)</argsstring>
+        <name>lon_in_range_</name>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>l_strt</type>
+          <defname>l_strt</defname>
+        </param>
+        <briefdescription>
+<para>Returns lon_strt &lt;= longitude &lt;= lon_strt+360. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>real lon_in_range */ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="140" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="141" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga616043a567de0252650219360f799948" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function nearest_index_</definition>
+        <argsstring>(rval, array)</argsstring>
+        <name>nearest_index_</name>
+        <param>
+          <type>rval</type>
+          <defname>rval</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <briefdescription>
+<para>Return index of nearest point along axis. </para>        </briefdescription>
+        <detaileddescription>
+<para>nearest_index = index of nearest data point within &quot;array&quot; corresponding to &quot;value&quot;.</para><para>inputs:</para><para>rval = arbitrary data...same units as elements in &quot;array&quot; array = array of data points (must be monotonically) ia = dimension of &quot;array&quot;</para><para>output:</para><para>nearest_index = index of nearest data point to &quot;value&quot; if &quot;value&quot; is outside the domain of &quot;array&quot; then nearest_index = 1 or &quot;ia&quot; depending on whether array(1) or array(ia) is closest to &quot;value&quot;</para><para>note: if &quot;array&quot; is dimensioned array(0:ia) in the calling program, then the returned index should be reduced by one to account for the zero base.</para><para>example:</para><para>let model depths be defined by the following: parameter (km=5) dimension z(km) data z /5.0, 10.0, 50.0, 100.0, 250.0/</para><para>k1 = nearest_index (12.5, z, km) k2 = nearest_index (0.0, z, km)</para><para>k1 would be set to 2, and k2 would be set to 1 so that z(k1) would be the nearest data point to 12.5 and z(k2) would be the nearest data point to 0.0 <simplesect kind="return"><para>integer nearest_index</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arbitrary data...same units as elements in &quot;array&quot;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of data points (must be monotonic) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="301" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga84f5e7e9f461ac9444d07f95af5a1046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine tranlon_</definition>
+        <argsstring>(lon, lon_start, istrt)</argsstring>
+        <name>tranlon_</name>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>lon_start</type>
+          <defname>lon_start</defname>
+        </param>
+        <param>
+          <type>istrt</type>
+          <defname>istrt</defname>
+        </param>
+        <briefdescription>
+<para>Returns monotonic array of longitudes s.t., lon_strt &lt;= lon(:) &lt; lon_strt+360. </para>        </briefdescription>
+        <detaileddescription>
+<para>This may require that entries be moved from the beginning of the array to the end. If no entries are moved (i.e., if lon(:) is already monotonic in the range from lon_start to lon_start + 360), then istrt is set to 0. If any entries are moved, then istrt is set to the original index of the entry which becomes lon(1).</para><para>e.g., <verbatim>   lon = 0 1 2 3 4 5  ...  358 359; lon_strt = 3
+</verbatim> ==&gt; lon = 3 4 5 6 7 8 ... 359 360 361 362; istrt = 4 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" line="184" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/include/axis_utils2.inc" bodystart="185" bodyend="221"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A set of utilities for manipulating axes and extracting axis attributes. FMS2_IO equivalent version of axis_utils_mod. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M.J. Harrison </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

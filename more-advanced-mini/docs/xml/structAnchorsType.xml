@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structAnchorsType" kind="struct" language="C++" prot="public">
+    <compoundname>AnchorsType</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structAnchorsType_1a5e9f221fd6562c26e9a56101a7e8e7a2" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char anchor_name[ 255]</definition>
+        <argsstring>[255]</argsstring>
+        <name>anchor_name</name>
+        <briefdescription>
+<para>Name of the anchor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAnchorsType_1a1cf22dcaec6b5712487c3e0ed134aec7" prot="public" static="no" mutable="no">
+        <type>KeyValuePairs *</type>
+        <definition>KeyValuePairs* keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+<para>Array of key-value pairs. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAnchorsType_1a6ff12b06d4139707ae27dbd8381cc2a5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nkeys</definition>
+        <argsstring></argsstring>
+        <name>nkeys</name>
+        <briefdescription>
+<para>Number of keys defined for the anchor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="70" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAnchorsType_1a020dd33db02b12236fe2587e22878fdc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nlevels</definition>
+        <argsstring></argsstring>
+        <name>nlevels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAnchorsType_1a886bf950789492ddf151afb6f098d08b" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char parent_names[10][ 255]</definition>
+        <argsstring>[10][255]</argsstring>
+        <name>parent_names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="75" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAnchorsType_1a320c74fe2737453d2b89f01013ce29fc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pid[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>pid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="74" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the contents of a YAML anchor as an array of key-value pairs. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="17">
+        <label>int</label>
+      </node>
+      <node id="18">
+        <label>KeyValuePairs</label>
+        <childnode refid="16" relation="usage">
+          <edgelabel>parent_name</edgelabel>
+          <edgelabel>key</edgelabel>
+          <edgelabel>value</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>key_id</edgelabel>
+          <edgelabel>parent_key</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>AnchorsType</label>
+        <childnode refid="16" relation="usage">
+          <edgelabel>anchor_name</edgelabel>
+          <edgelabel>parent_names</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>pid</edgelabel>
+          <edgelabel>nkeys</edgelabel>
+          <edgelabel>nlevels</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>char</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/parser/yaml_parser_binding.c" bodystart="69" bodyend="76"/>
+    <listofallmembers>
+      <member refid="structAnchorsType_1a5e9f221fd6562c26e9a56101a7e8e7a2" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>anchor_name</name></member>
+      <member refid="structAnchorsType_1a1cf22dcaec6b5712487c3e0ed134aec7" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>keys</name></member>
+      <member refid="structAnchorsType_1a6ff12b06d4139707ae27dbd8381cc2a5" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>nkeys</name></member>
+      <member refid="structAnchorsType_1a020dd33db02b12236fe2587e22878fdc" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>nlevels</name></member>
+      <member refid="structAnchorsType_1a886bf950789492ddf151afb6f098d08b" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>parent_names</name></member>
+      <member refid="structAnchorsType_1a320c74fe2737453d2b89f01013ce29fc" prot="public" virt="non-virtual"><scope>AnchorsType</scope><name>pid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

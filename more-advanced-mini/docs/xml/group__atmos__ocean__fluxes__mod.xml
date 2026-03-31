@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__atmos__ocean__fluxes__mod" kind="group">
+    <compoundname>atmos_ocean_fluxes_mod</compoundname>
+    <title>atmos_ocean_fluxes_mod</title>
+    <innernamespace refid="namespaceatmos__ocean__fluxes__mod">atmos_ocean_fluxes_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__atmos__ocean__fluxes__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>=1.0e-30_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" line="75" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" bodystart="75" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__atmos__ocean__fluxes__mod_1ga1bd0443a803dd443bd7a4f24dae28e13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public atmos_ocean_fluxes_mod::aof_set_coupler_flux</definition>
+        <argsstring>(name, flux_type, implementation, atm_tr_index, param, flag, mol_wt, ice_restart_file, ocean_restart_file, units, caller, verbosity)</argsstring>
+        <name>aof_set_coupler_flux</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>flux_type</type>
+          <defname>flux_type</defname>
+        </param>
+        <param>
+          <type>implementation</type>
+          <defname>implementation</defname>
+        </param>
+        <param>
+          <type>atm_tr_index</type>
+          <defname>atm_tr_index</defname>
+        </param>
+        <param>
+          <type>param</type>
+          <defname>param</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>mol_wt</type>
+          <defname>mol_wt</defname>
+        </param>
+        <param>
+          <type>ice_restart_file</type>
+          <defname>ice_restart_file</defname>
+        </param>
+        <param>
+          <type>ocean_restart_file</type>
+          <defname>ocean_restart_file</defname>
+        </param>
+        <param>
+          <type>units</type>
+          <defname>units</defname>
+        </param>
+        <param>
+          <type>caller</type>
+          <defname>caller</defname>
+        </param>
+        <param>
+          <type>verbosity</type>
+          <defname>verbosity</defname>
+        </param>
+        <briefdescription>
+<para>Set the values for a coupler flux. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>its index (0 on error) </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Empty name given</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name is empty </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not get coupler flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coupler_index is less than 1 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not set coupler flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coupler_index is less than 1 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not get the current list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current list is empty </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not change to the new list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fm_change_list(coupler_list) returns false </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Blank flux_type given</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type or implementation is empty </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type given from field_table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type given as argument to the subroutine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type/implementation (implementation given from field_table)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type/implementation (flux_type given from field_table)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type/implementation (both given from field_table)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type/implementation given as argument to the subroutine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flux_type does not equal flux_type_test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NOTE</parametername>
+<parametername>Number of parameters provided for [variable] does not match the number of parameters required</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mismatch between parameter input and the parameters being replaced </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not change back to [current_list]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Empty [name] list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">verbosity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 0-9 integer indicating a level of verbosity. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" line="113" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" bodystart="116" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="group__atmos__ocean__fluxes__mod_1ga7c1d41b9bee2b327afdd8a0f3794f3be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public atmos_ocean_fluxes_mod::atmos_ocean_fluxes_init</definition>
+        <argsstring>(gas_fluxes, gas_fields_atm, gas_fields_ice, verbosity, use_r4_kind)</argsstring>
+        <name>atmos_ocean_fluxes_init</name>
+        <param>
+          <type>gas_fluxes</type>
+          <defname>gas_fluxes</defname>
+        </param>
+        <param>
+          <type>gas_fields_atm</type>
+          <defname>gas_fields_atm</defname>
+        </param>
+        <param>
+          <type>gas_fields_ice</type>
+          <defname>gas_fields_ice</defname>
+        </param>
+        <param>
+          <type>verbosity</type>
+          <defname>verbosity</defname>
+        </param>
+        <param>
+          <type>use_r4_kind</type>
+          <defname>use_r4_kind</defname>
+        </param>
+        <briefdescription>
+<para>Initialize gas flux structures. Will allocate to r8_kind unless use_r4_kind is present and true. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could not get number of fluxes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of gas fluxes is not a valid number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NOTE</parametername>
+<parametername>No gas fluxes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>No gas fluxes were found </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NOTE</parametername>
+<parametername>Processing [gas_fluxes%num_bcs] gas fluxes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gas fluxes were found </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>[name] is not a list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name needs to be a list, or typ is incorrectly defined </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Flux index, [ind] does not match array index, [n] for [name]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Problem changing to [name]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Undefined flux_type given for [name]: [gas_fluxes%bc(n)%flux_type]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>&quot;Undefined</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>implementation given for [name]: [gas_fluxesbc(n)flux_type]/implementation/[gas_fluxesbc(n)implementation]&quot;
+ @throw FATAL, &quot;No param for [name]: need [num_parameters]&quot;
+ @throw FATAL, &quot;Wrong number of param for [name]: [size(gas_fluxesbc(n)param(:))] given, need [num_parameters]&quot;
+ @throw FATAL, &quot;No params needed for [name] but has size of [size(gas_fluxesbc(n)param(:))]&quot;
+ @throw FATAL, &quot;Num_parameters is negative for [name]: [num_parameters]&quot;
+ @throw FATAL, &quot;No flag for [name]: need [num_flags]&quot;
+ @throw FATAL, &quot;Wrong number of flag for [name]: [size(gas_fluxesbc(n)flag(:))] given, need [num_flags]&quot;
+ @throw FATAL, &quot;No flags needed for [name] but has size of [size(gas_fluxesbc(n)flag(:))]&quot;
+ @throw FATAL, &quot;Num_flags is negative for [name]: [num_flags]&quot;
+ @throw FATAL, &quot;Problem dumping fluxes tracer tree&quot;
+ @throw FATAL, &quot;Number of fluxes does not match across the processors: [gas_fluxesnum_bcs] fluxes"</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">gas_fluxes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Structure containing the gas fluxes between the atmosphere and the ocean and parameters related to the calculation of these fluxes. The properties stored in this type are set here, but the actual value arrays are set later.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">gas_fields_atm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Structure containing atmospheric surface variables that are used in the calculation of the atmosphere-ocean gas fluxes. The properties stored in this type are set here, but the actual value arrays are set later.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">gas_fields_ice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Structure containing ice-top and ocean surface variables that are used in the calculation of the atmosphere-ocean gas fluxes. The properties stored in this type are set here, but the actual value arrays are set later.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbosity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 0-9 integer indicating a level of verbosity.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_r4_kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allocate field data to r4 kind instead of r8 kind. Defaults to r8_kind if not present. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" line="447" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" bodystart="448" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="group__atmos__ocean__fluxes__mod_1ga1be62040e5fb14991285cc66a4105717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public atmos_ocean_fluxes_mod::atmos_ocean_type_fluxes_init</definition>
+        <argsstring>(verbosity)</argsstring>
+        <name>atmos_ocean_type_fluxes_init</name>
+        <param>
+          <type>verbosity</type>
+          <defname>verbosity</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the coupler type flux tracers Initialize the /coupler_mod/types/ fields in the field manager. These fields include: </para>        </briefdescription>
+        <detaileddescription>
+<para><verbatim> air_sea_gas_flux_generic/
+                          implementation/
+                                         ocmip2/
+                                                num_parameters = 2
+                          num_flags = 0
+                          use_atm_pressure = t
+                          use_10m_wind_speed = t
+                          pass_through_ice = f
+                          atm/
+                              name/
+                                   pcair, u10, psurf
+                              long_name/
+                                        &apos;Atmospheric concentration&apos;
+                                        &apos;Wind speed at 10 m&apos;
+                                        &apos;Surface atmospheric pressure&apos;
+                              units/
+                                    &apos;mol/mol&apos;, &apos;m/s&apos;, &apos;Pa&apos;
+                          ice/
+                              name/
+                                   alpha, csurf, sc_no
+                              long_name/
+                                        &apos;Solubility from atmosphere&apos;
+                                        &apos;Surface concentration from ocean&apos;
+                                        &apos;Schmidt number&apos;
+                              units/
+                                    &apos;mol/m^3/atm&apos;, &apos;mol/m^3&apos;, &apos;dimensionless&apos;
+                          flux/
+                               name/
+                                    flux, deltap, kw
+                               long_name/
+                                         &apos;Surface gas flux&apos;
+                                         &apos;ocean-air delta pressure&apos;
+                                         &apos;piston velocity&apos;
+                               units/
+                                     &apos;mol/m^2/s&apos;, &apos;uatm&apos;, &apos;m/s&apos;
+ air_sea_gas_flux/
+                  implementation/
+                                 ocmip2/
+                                        num_parameters = 2
+                                 ocmip2_data/
+                                             num_parameters = 2
+                                 linear/
+                                        num_parameters = 3
+                  num_flags = 0
+                  use_atm_pressure = t
+                  use_10m_wind_speed = t
+                  pass_through_ice = f
+                  atm/
+                      name/
+                           pcair, u10, psurf
+                      long_name/
+                                &apos;Atmospheric concentration&apos;
+                                &apos;Wind speed at 10 m&apos;
+                                &apos;Surface atmospheric pressure&apos;
+                      units/
+                            &apos;mol/mol&apos;, &apos;m/s&apos;, &apos;Pa&apos;
+                  ice/
+                      name/
+                           alpha, csurf
+                      long_name/
+                                &apos;Solubility from atmosphere&apos;
+                                &apos;Surface concentration from ocean&apos;
+                      units/
+                            &apos;mol/m^3/atm&apos;, &apos;mol/m^3&apos;
+                  flux/
+                       name/
+                            flux
+                       long_name/
+                                 &apos;Surface gas flux&apos;
+                       units/
+                             &apos;mol/m^2/s&apos;
+ air_sea_deposition/
+                    implementation/
+                                   dry/
+                                       num_parameters = 1
+                                   wet/
+                                       num_parameters = 1
+                    num_flags = 0
+                    use_atm_pressure = f
+                    use_10m_wind_speed = f
+                    pass_through_ice = t
+                    atm/
+                        name/
+                             depostion
+                        long_name/
+                                  &apos;Atmospheric deposition&apos;
+                        units/
+                              &apos;kg/m^2/s&apos;
+                    ice/
+                        name/
+                        long_name/
+                        units/
+                    flux/
+                         name/
+                              flux
+                         long_name/
+                                   &apos;Surface deposition&apos;
+                         units/
+                               &apos;mol/m^2/s&apos;
+ land_sea_runoff/
+                 implementation/
+                                river/
+                                      num_parameters = 1
+                 num_flags = 0
+                 use_atm_pressure = f
+                 use_10m_wind_speed = f
+                 pass_through_ice = t
+                 atm/                  ! really land (perhaps should change this?)
+                     name/
+                          runoff
+                     long_name/
+                               &apos;Concentration in land runoff&apos;
+                     units/
+                           &apos;kg/m^3&apos;
+                 ice/
+                     name/
+                     long_name/
+                     units/
+                 flux/
+                      name/
+                           flux
+                      long_name/
+                                &apos;Concentration in land runoff&apos;
+                      units/
+                            &apos;mol/m^3&apos;</verbatim></para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \/coupler_mod/fluxes\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \/coupler_mod/types\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not change to \/coupler_mod/types </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/ocmip2\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /atm\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /ice\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /flux\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/ocmip2\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/ocmip2_data\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/linear\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /atm\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /ice\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /flux\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/dry\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/wet\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /atm\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /ice\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /flux\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the \ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /implementation/river\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /atm\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /ice\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not set the /flux\ list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Could</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>not change to \/ </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Problem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dumping /coupler_mod/types tree</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">verbosity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 0-9 integer indicating a level of verbosity. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" line="1102" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/atmos_ocean_fluxes.F90" bodystart="1103" bodyend="1435"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of routines to solve the gas fluxes at the ocean surface for a coupled model as outlined in the Biotic-HOWTO documentation below, revision 1.7, 1999/10/05. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Richard Slater, John Dunne</para></simplesect>
+Ocean Carbon Model Intercomparison Study II: Gas exchange coupler.</para><para>This module will take fields from an atmospheric and an oceanic model and calculate ocean surface fluxes for CO2, O2, CFC-11 or CFC-12 as outlined in the various HOWTO documents at the OCMIP2 website. Multiple instances of a given tracer may be given, resulting in multiple surface fluxes. Additionally, data may be overridden at the individual fields, or fluxes. This could be used in the absence of an atmospheric or oceanic model. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

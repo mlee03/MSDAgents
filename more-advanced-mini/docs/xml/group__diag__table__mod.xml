@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__diag__table__mod" kind="group">
+    <compoundname>diag_table_mod</compoundname>
+    <title>diag_table_mod</title>
+    <innerclass refid="structdiag__table__mod_1_1field__description__type" prot="private">diag_table_mod::field_description_type</innerclass>
+    <innerclass refid="structdiag__table__mod_1_1file__description__type" prot="private">diag_table_mod::file_description_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__table__mod_1ga4576f6f6d43aeb8da109bcc9c56e032b" prot="private" static="no" mutable="no">
+        <type>character(len= *), parameter</type>
+        <definition>character(len=*), parameter unallowed_all</definition>
+        <argsstring></argsstring>
+        <name>unallowed_all</name>
+        <initializer>= UNALLOWED_QTE//&quot;,&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="301" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="301" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__table__mod_1gaa50c2697fd0d2c5e8c1cd58cd76a30c9" prot="private" static="no" mutable="no">
+        <type>character(len= *), parameter</type>
+        <definition>character(len=*), parameter unallowed_qte</definition>
+        <argsstring></argsstring>
+        <name>unallowed_qte</name>
+        <initializer>= &quot;&apos;&quot;//&apos;&quot;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="300" bodyend="300"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__table__mod_1gae21e54693ac29ba6ea341f068b8a1d5b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function</type>
+        <definition>pure integer function diag_table_mod::find_unit_ivalue</definition>
+        <argsstring>(unit_string)</argsstring>
+        <name>find_unit_ivalue</name>
+        <param>
+          <type>unit_string</type>
+          <defname>unit_string</defname>
+        </param>
+        <briefdescription>
+<para>Return the integer value for the given time unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer find_unit_ivalue</para></simplesect>
+Returns the corresponding integer value for the given time unit. <itemizedlist>
+<listitem>
+<para>seconds = 1  </para></listitem>
+<listitem>
+<para>minutes = 2  </para></listitem>
+<listitem>
+<para>hours = 3  </para></listitem>
+<listitem>
+<para>days = 4  </para></listitem>
+<listitem>
+<para>months = 5  </para></listitem>
+<listitem>
+<para>years = 6  </para></listitem>
+<listitem>
+<para>unknown = -1  </para></listitem>
+</itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">unit_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string, containing the unit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="815" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="816" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga1695d1a295ffad87a6bccd0bcd238b40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure character(len=128) function</type>
+        <definition>pure character(len=128) function diag_table_mod::fix_file_name</definition>
+        <argsstring>(file_name_string)</argsstring>
+        <name>fix_file_name</name>
+        <param>
+          <type>file_name_string</type>
+          <defname>file_name_string</defname>
+        </param>
+        <briefdescription>
+<para>Fixes the file name for use with diagnostic file and field initializations. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Character(len=128) fix_file_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_name_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the file name from the <computeroutput>diag_table</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="779" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="780" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga370403e27e2c23871182969e879e85b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_table_mod::initialize_output_arrays</definition>
+        <argsstring>()</argsstring>
+        <name>initialize_output_arrays</name>
+        <briefdescription>
+<para>Allocate the file, in and out field arrays after reading the <computeroutput>diag_table</computeroutput> file. (CURRENTLY EMPTY) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="837" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="838" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1gac12da4fcfab0b5745219b11be2c552ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function diag_table_mod::is_a_file</definition>
+        <argsstring>(line)</argsstring>
+        <name>is_a_file</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <briefdescription>
+<para>Determines if a line from the diag_table file is a file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Logical is_a_file</para></simplesect>
+<computeroutput>is_a_file</computeroutput> checks a diag_table line to determine if the line describes a file. If the line describes a file, the <computeroutput>is_a_file</computeroutput> will return <computeroutput>.TRUE.</computeroutput>. Otherwise, it will return <computeroutput>.FALSE.</computeroutput></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String containing the <computeroutput>diag_table</computeroutput> line. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="748" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="749" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1gadadc44257b97056c277261b4ada5098b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_table_mod::parse_diag_table</definition>
+        <argsstring>(diag_subset, istat, err_msg)</argsstring>
+        <name>parse_diag_table</name>
+        <param>
+          <type>diag_subset</type>
+          <defname>diag_subset</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Parse the <computeroutput>diag_table</computeroutput> in preparation for diagnostic output. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>parse_diag_table</computeroutput> is the public interface to parse the diag_table, and setup the arrays needed to store the requested diagnostics from the <computeroutput>diag_table</computeroutput>. <computeroutput>parse_diag_table</computeroutput> will return a non-zero <computeroutput>istat</computeroutput> if a problem parsing the <computeroutput>diag_table</computeroutput>.</para><para>NOT YET IMPLEMENTED: <computeroutput>parse_diag_table</computeroutput> will parse through the <computeroutput>diag_table</computeroutput> twice. The first pass, will be to get a good &quot;guess&quot; of array sizes. These arrays, that will hold the requested diagnostic fields and files, will then be allocated to the size of the &quot;guess&quot; plus a slight increase.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">diag_subset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Diagnostic sampling subset.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of parsing the <computeroutput>diag_table</computeroutput>. A non-zero status indicates a problem parsing the table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message corresponding to the <computeroutput>istat</computeroutput> return value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="317" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="318" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga79d5f5b384aadde19cb96e1485795d6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(field_description_type) function</type>
+        <definition>type(field_description_type) function diag_table_mod::parse_field_line</definition>
+        <argsstring>(line, istat, err_msg)</argsstring>
+        <name>parse_field_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Parse a field description line from the <computeroutput>diag_table</computeroutput> file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="structdiag__table__mod_1_1field__description__type" kindref="compound">field_description_type</ref> parse_field_line</para></simplesect>
+<computeroutput>parse_field_line</computeroutput> parses a field description line from the <computeroutput>diag_table</computeroutput> file, and returns a <computeroutput>TYPE(field_description_type)</computeroutput>. The calling function, would then need to call the <computeroutput>init_input_field</computeroutput> and <computeroutput>init_output_field</computeroutput> to initialize the diagnostic output field.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line to parse from the <computeroutput>diag_table</computeroutput> file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return state of the function. A value of 0 indicates success. A positive value indicates a <computeroutput>FATAL</computeroutput> error occurred, and a negative value indicates a <computeroutput>WARNING</computeroutput> should be issued.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error string to include in the <computeroutput>FATAL</computeroutput> or <computeroutput>WARNING</computeroutput> message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="659" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="660" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__table__mod_1ga879e2779d113e53e31b3625b322d6bee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(file_description_type) function</type>
+        <definition>type(file_description_type) function diag_table_mod::parse_file_line</definition>
+        <argsstring>(line, istat, err_msg)</argsstring>
+        <name>parse_file_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>istat</type>
+          <defname>istat</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para><computeroutput>parse_file_line</computeroutput> parses a file description line from the <computeroutput>diag_table</computeroutput> file, and returns a <computeroutput>TYPE(file_description_type)</computeroutput>. The calling function, would then need to call the <computeroutput>init_file</computeroutput> to initialize the diagnostic output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="structdiag__table__mod_1_1file__description__type" kindref="compound">file_description_type</ref> parse_file_line</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line to parse from the <computeroutput>diag_table</computeroutput> file.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return state of the function. A value of 0 indicates success. A positive value indicates a <computeroutput>FATAL</computeroutput> error occurred, and a negative value indicates a <computeroutput>WARNING</computeroutput> should be issued.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error string to include in the <computeroutput>FATAL</computeroutput> or <computeroutput>WARNING</computeroutput> message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" line="490" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_table.F90" bodystart="491" bodyend="649"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><computeroutput>diag_table_mod</computeroutput> is a set of subroutines use to parse out the data from a <computeroutput>diag_table</computeroutput>. This module will also setup the arrays required to store the information by counting the number of input fields, output files, and files. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Seth Underwood</para></simplesect>
+<computeroutput>diag_table_mod</computeroutput> parses the <computeroutput>diag_table</computeroutput> file, and sets up the required arrays to hold the information needed for the <computeroutput>diag_manager_mod</computeroutput> to correctly write out the model history files.</para><para>The <emphasis>diagnostics table</emphasis> allows users to specify sampling rates and the choice of fields at run time. The <computeroutput>diag_table</computeroutput> file consists of comma-separated ASCII values. The <computeroutput>diag_table</computeroutput> essentially has three sections: <bold>Global</bold>, <bold>File</bold>, and <bold>Field</bold> sections. The <bold>Global</bold> section must be the first two lines of the file, whereas the <bold>File</bold> and <bold>Field</bold> sections can be inter mixed to allow the file to be organized as desired. Comments can be added to the <computeroutput>diag_table</computeroutput> file by using the hash symbol (#) as the first character in the line.</para><para>All errors in the <computeroutput>diag_table</computeroutput> will throw a <computeroutput>FATAL</computeroutput> error. A simple utility <computeroutput>diag_table_chk</computeroutput>has been added to the FRE tools suite to check a <computeroutput>diag_table</computeroutput> for errors. A brief usage statement can be obtained by running <computeroutput>diag_table_chk <ndash/>help</computeroutput>, and a man page like description can views by running <computeroutput>perldoc diag_table_chk</computeroutput>.</para><para>Below is a description of the three sections. <orderedlist>
+<listitem>
+<para><bold>Global Section:</bold> The first two lines of the <computeroutput>diag_table</computeroutput> must contain the <emphasis>title</emphasis> and the <emphasis>base date</emphasis> of the experiment respectively. The <emphasis>title</emphasis> must be a Fortran CHARACTER string. The <emphasis>base date</emphasis> is the reference time used for the time units, and must be greater than or equal to the model start time. The <emphasis>base date</emphasis> consists of six space-separated integer in the following format.<linebreak/>
+ <computeroutput> year month day hour minute second </computeroutput><linebreak/>
+  </para></listitem>
+<listitem>
+<para><bold>File Section:</bold> File lines contain 6 required and 5 optional fields (optional fields are surrounded with square brackets ([]). File lines can be intermixed with the field lines, but the file must be defined before any fields that are to be written to the file. File lines have the following format:<linebreak/>
+ &quot;file_name&quot;, output_freq, &quot;output_freq_units&quot;, file_format, &quot;time_axis_units&quot;, &quot;time_axis_name&quot; [, new_file_freq, &quot;new_file_freq_units&quot;[, &quot;start_time&quot;[, file_duration, &quot;file_duration_units&quot;]]] <linebreak/>
+ with the following descriptions. <variablelist>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: file_name</computeroutput> </term></varlistentry>
+<listitem><para>Output file name without the trailing <computeroutput>&quot;.nc&quot;</computeroutput>.</para><para>A single file description can produce multiple files using special time string suffix keywords. This time string will append the time strings to the base file name each time a new file is opened. They syntax for the time string suffix keywords are <computeroutput>%#tt</computeroutput> Where <computeroutput>#</computeroutput> is a mandatory single digit number specifying the width of the field, and <computeroutput>tt</computeroutput> can be as follows: <itemizedlist>
+<listitem>
+<para><computeroutput>yr</computeroutput> Years </para></listitem>
+<listitem>
+<para><computeroutput>mo</computeroutput> Months </para></listitem>
+<listitem>
+<para><computeroutput>dy</computeroutput> Days </para></listitem>
+<listitem>
+<para><computeroutput>hr</computeroutput> Hours </para></listitem>
+<listitem>
+<para><computeroutput>mi</computeroutput> Minutes </para></listitem>
+<listitem>
+<para><computeroutput>sc</computeroutput> Seconds </para></listitem>
+</itemizedlist>
+Thus, a file name of <computeroutput>file2_yr_dy%1yr%3dy</computeroutput> will have a base file name of <computeroutput>file2_yr_dy_1_001</computeroutput> if the file is created on year 1 day 1 of the model run. <bold><emphasis>NOTE:</emphasis></bold> The time suffix keywords must be used if the optional fields <computeroutput>new_file_freq</computeroutput> and <computeroutput>new_file_freq_units</computeroutput> are used, otherwise a <computeroutput>FATAL</computeroutput> error will occur. </para><para></para></listitem>
+<varlistentry><term><computeroutput>INTEGER :: output_freq</computeroutput> </term></varlistentry>
+<listitem><para>How often to write fields to file. <itemizedlist>
+<listitem>
+<para><computeroutput>&gt; 0</computeroutput> &lt;EN&gt; Output frequency in <computeroutput>output_freq_units</computeroutput>. </para></listitem>
+<listitem>
+<para><computeroutput>= 0</computeroutput> &lt;EN&gt; Output frequency every time set. (<computeroutput>output_freq_units</computeroutput> is ignored.) </para></listitem>
+<listitem>
+<para><computeroutput>=-1</computeroutput> &lt;EN&gt; Output at end of run only. (<computeroutput>output_freq_units</computeroutput> is ignored.) </para></listitem>
+</itemizedlist>
+</para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=10) :: output_freq_units</computeroutput> </term></varlistentry>
+<listitem><para>Time units for output. Can be either <computeroutput>years</computeroutput>, <computeroutput>months</computeroutput>, <computeroutput>days</computeroutput>, <computeroutput>minutes</computeroutput>, <computeroutput>hours</computeroutput>, or <computeroutput>seconds</computeroutput>.  </para></listitem>
+<varlistentry><term><computeroutput>INTEGER :: file_format</computeroutput> </term></varlistentry>
+<listitem><para>Output file format. Currently only the <emphasis>netCDF</emphasis> file format is supported. <itemizedlist>
+<listitem>
+<para><computeroutput>= 1</computeroutput> &lt;EN&gt; netCDF </para></listitem>
+</itemizedlist>
+</para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=10) :: time_axis_units</computeroutput> </term></varlistentry>
+<listitem><para>Time units for the output file time axis. Can be either <computeroutput>years</computeroutput>, <computeroutput>months</computeroutput>, <computeroutput>days</computeroutput>, <computeroutput>minutes</computeroutput>, <computeroutput>hours</computeroutput>, or <computeroutput>seconds</computeroutput>.  </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: time_axis_name</computeroutput> </term></varlistentry>
+<listitem><para>Axis name for the output file time axis. The character sting must contain the string &apos;time&apos;. (mixed upper and lowercase allowed.)  </para></listitem>
+<varlistentry><term><computeroutput>INTEGER, OPTIONAL :: new_file_freq</computeroutput> </term></varlistentry>
+<listitem><para>Frequency for closing the existing file, and creating a new file in <computeroutput>new_file_freq_units</computeroutput>.  </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=10), OPTIONAL :: new_file_freq_units</computeroutput> </term></varlistentry>
+<listitem><para>Time units for creating a new file. Can be either <computeroutput>years</computeroutput>, <computeroutput>months</computeroutput>, <computeroutput>days</computeroutput>, <computeroutput>minutes</computeroutput>, <computeroutput>hours</computeroutput>, or <computeroutput>seconds</computeroutput>. <bold><emphasis>NOTE:</emphasis></bold> If the <computeroutput>new_file_freq</computeroutput> field is present, then this field must also be present.  </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=25), OPTIONAL :: start_time</computeroutput> </term></varlistentry>
+<listitem><para>Time to start the file for the first time. The format of this string is the same as the <emphasis>global date</emphasis>. <bold><emphasis> NOTE:</emphasis></bold> The <computeroutput>new_file_freq</computeroutput> and the <computeroutput>new_file_freq_units</computeroutput> fields must be present to use this field.  </para></listitem>
+<varlistentry><term><computeroutput>INTEGER, OPTIONAL :: file_duration</computeroutput> </term></varlistentry>
+<listitem><para>How long file should receive data after start time in <computeroutput>file_duration_units</computeroutput>. This optional field can only be used if the <computeroutput>start_time</computeroutput> field is present. If this field is absent, then the file duration will be equal to the frequency for creating new files. <bold><emphasis>NOTE:</emphasis></bold> The <computeroutput>file_duration_units</computeroutput> field must also be present if this field is present.  </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=10), OPTIONAL :: file_duration_units</computeroutput> </term></varlistentry>
+<listitem><para>File duration units. Can be either <computeroutput>years</computeroutput>, <computeroutput>months</computeroutput>, <computeroutput>days</computeroutput>, <computeroutput>minutes</computeroutput>, <computeroutput>hours</computeroutput>, or <computeroutput>seconds</computeroutput>. <bold><emphasis>NOTE:</emphasis></bold> If the <computeroutput>file_duration</computeroutput> field is present, then this field must also be present.  </para></listitem>
+</variablelist>
+</para></listitem>
+<listitem>
+<para><bold>Field Section:</bold> Field lines contain 8 fields. Field lines can be intermixed with file lines. Fields line can contain fields that are not written to any files. The file name for these fields is <computeroutput>null</computeroutput>.</para><para>Field lines have the following format:<linebreak/>
+ <preformatted>
+ &quot;module_name&quot;, &quot;field_name&quot;, &quot;output_name&quot;, &quot;file_name&quot;, &quot;time_sampling&quot;, &quot;reduction_method&quot;,
+ &quot;regional_section&quot;, packing
+       </preformatted> with the following descriptions. <variablelist>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: module_name</computeroutput> </term></varlistentry>
+<listitem><para>Module that contains the <computeroutput>field_name</computeroutput> variable. (e.g. <computeroutput>atmos_mod</computeroutput>, <computeroutput>land_mod</computeroutput>) </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: field_name</computeroutput> </term></varlistentry>
+<listitem><para>Module variable name that has data to be written to file. </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: output_name</computeroutput> </term></varlistentry>
+<listitem><para>Name of the field as written in <computeroutput>file_name</computeroutput>. </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=128) :: file_name</computeroutput> </term></varlistentry>
+<listitem><para>Name of the file where the field is to be written. <bold><emphasis>NOTE:</emphasis></bold> The file <computeroutput>file_name</computeroutput> must be defined first.  </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=50) :: time_sampling</computeroutput> </term></varlistentry>
+<listitem><para>Currently not used. Please use the string &quot;all&quot;. </para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=50) :: reduction_method</computeroutput> </term></varlistentry>
+<listitem><para>The data reduction method to perform prior to writing data to disk. Valid options are (redundant names are separated with commas): <variablelist>
+<varlistentry><term><computeroutput>.TRUE.</computeroutput>, average, avg, mean </term></varlistentry>
+<listitem><para>Average from the last time written to the current time. </para></listitem>
+<varlistentry><term><computeroutput>.FALSE.</computeroutput>, none </term></varlistentry>
+<listitem><para>No reduction performed. Write current time step value only. </para></listitem>
+<varlistentry><term>rms </term></varlistentry>
+<listitem><para>Calculate the root mean square from the last time written to the current time. </para></listitem>
+<varlistentry><term>pow## </term></varlistentry>
+<listitem><para>Calculate the mean of the power ## from the last time written to the current time. </para></listitem>
+<varlistentry><term>min </term></varlistentry>
+<listitem><para>Minimum value from last write to current time. </para></listitem>
+<varlistentry><term>max </term></varlistentry>
+<listitem><para>Maximum value from last write to current time. </para></listitem>
+<varlistentry><term>diurnal## </term></varlistentry>
+<listitem><para>## diurnal averages </para></listitem>
+</variablelist>
+</para></listitem>
+<varlistentry><term><computeroutput>CHARACTER(len=50) :: regional_section</computeroutput> </term></varlistentry>
+<listitem><para>Bounds of the regional section to capture. A value of <computeroutput>none</computeroutput> indicates a global region. The regional section has the following format:<linebreak/>
+ <computeroutput>lat_min, lat_max, lon_min, lon_max, vert_min, vert_max</computeroutput><linebreak/>
+ Use <computeroutput>vert_min = -1</computeroutput> and <computeroutput>vert_max = -1</computeroutput> to get the entire vertical axis. <bold><emphasis>NOTE:</emphasis></bold> Currently, the defined region <emphasis>MUST</emphasis> be confined to a single tile.  </para></listitem>
+<varlistentry><term><computeroutput>INTEGER :: packing</computeroutput> </term></varlistentry>
+<listitem><para>Fortran number <computeroutput>KIND</computeroutput> of the data written. Valid values:<itemizedlist>
+<listitem><para><computeroutput>= 1</computeroutput> &lt;EN&gt; double precision</para></listitem><listitem><para><computeroutput>= 2</computeroutput> &lt;EN&gt; float</para></listitem><listitem></listitem></itemizedlist>
+</para></listitem>
+</variablelist>
+</para></listitem>
+<listitem>
+<para><computeroutput>= 4</computeroutput> &lt;EN&gt; packed 16-bit integers<itemizedlist>
+<listitem><para><computeroutput>= 8</computeroutput> &lt;EN&gt; packed 1-byte (not tested)  </para></listitem></itemizedlist>
+</para></listitem>
+</orderedlist>
+</para><para><heading level="4"><bold>Sample <computeroutput>diag_table</computeroutput></bold></heading>
+</para><para><preformatted>
+ &quot;diag manager test&quot;
+ 1999 1 1 0 0 0</preformatted></para><para><preformatted> #output files
+ 10_days,               10, &quot;days&quot;, 1, &quot;hours&quot;, &quot;Time&quot;
+ &quot;file1_hr%hr3&quot;,         5, &quot;days&quot;, 1, &quot;hours&quot;, &quot;Time&quot;, 15, &quot;days&quot;
+ &quot;file2_yr_dy%yr1%dy3&quot;,  5, &quot;days&quot;, 1, &quot;hours&quot;, &quot;Time&quot;, 10, &quot;days&quot;, &quot;1 1 7 0 0 0&quot;
+ &quot;file3_yr_dy%yr1%dy3&quot;,  5, &quot;days&quot;, 1, &quot;hours&quot;, &quot;Time&quot;, 20, &quot;days&quot;, &quot;1 1 7 0 0 0&quot;, 5, &quot;years&quot;</preformatted></para><para><preformatted> #output variables
+ &quot;ice_mod&quot;, &quot;ice&quot;, &quot;ice&quot;, &quot;10_days&quot;, &quot;all&quot;, .false., &quot;none&quot;, 2</preformatted></para><para><preformatted> # temp_local file and fields.
+ temp_local, 1, &quot;days&quot;, 1, &quot;hours&quot;, &quot;Time&quot;
+ &quot;ocean_mod&quot;, &quot;temp&quot;, &quot;temp&quot;, &quot;temp_local&quot;, &quot;all&quot;, .FALSE., &quot;5 259.5 -59.5 59.5 1 1&quot;, 2
+       </preformatted>  </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

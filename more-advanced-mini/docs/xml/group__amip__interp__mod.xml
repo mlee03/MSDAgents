@@ -1,0 +1,734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__amip__interp__mod" kind="group">
+    <compoundname>amip_interp_mod</compoundname>
+    <title>amip_interp_mod</title>
+    <innerclass refid="interfaceamip__interp__mod_1_1amip__interp__new" prot="private">amip_interp_mod::amip_interp_new</innerclass>
+    <innerclass refid="structamip__interp__mod_1_1amip__interp__type" prot="private">amip_interp_mod::amip_interp_type</innerclass>
+    <innerclass refid="interfaceamip__interp__mod_1_1assignment_07_0A_08" prot="private">amip_interp_mod::assignment(=)</innerclass>
+    <innerclass refid="structamip__interp__mod_1_1date__type" prot="private">amip_interp_mod::date_type</innerclass>
+    <innerclass refid="interfaceamip__interp__mod_1_1operator_07_2_0A_08" prot="private">amip_interp_mod::operator(/=)</innerclass>
+    <innerclass refid="interfaceamip__interp__mod_1_1operator_07_0A_0A_08" prot="private">amip_interp_mod::operator(==)</innerclass>
+    <innerclass refid="interfaceamip__interp__mod_1_1operator_07_4_08" prot="private">amip_interp_mod::operator(&gt;)</innerclass>
+    <innernamespace refid="namespaceamip__interp__mod">amip_interp_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__amip__interp__mod_1gab7579e5e6f55370c72227a97cb2ccdfc" prot="private" static="no" mutable="no">
+        <type>integer, dimension(3)</type>
+        <definition>integer, dimension(3) amip_date</definition>
+        <argsstring></argsstring>
+        <name>amip_date</name>
+        <initializer>=(/-1,-1,-1/)</initializer>
+        <briefdescription>
+<para>amip date for repeating single day (rsd) option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="336" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="336" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga06e699b9198725561a4ec7a88a2a59da" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter big_number</definition>
+        <argsstring></argsstring>
+        <name>big_number</name>
+        <initializer>= 1.E30_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="156" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaff99ebb920f71a47757310bf22cd0bab" prot="private" static="no" mutable="no">
+        <type>type(date_type)</type>
+        <definition>type (date_type) curr_date</definition>
+        <argsstring></argsstring>
+        <name>curr_date</name>
+        <initializer>= date_type( -99, -99, -99 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="308" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="308" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga152699dfbacd6122d5bb6be55ad94ff9" prot="private" static="no" mutable="no">
+        <type>character(len=24)</type>
+        <definition>character(len=24) data_set</definition>
+        <argsstring></argsstring>
+        <name>data_set</name>
+        <initializer>= &apos;amip1&apos;</initializer>
+        <briefdescription>
+<para>use &apos;amip1&apos;, &apos;amip2&apos;, &apos;reynolds_eof&apos; &apos;reynolds_oi&apos;, &apos;hurrell&apos;, or &apos;daily&apos;, when &quot;use_daily=.T.&quot; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="319" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gad436fbf96f533e6e75a4ae917eaee976" prot="private" static="no" mutable="no">
+        <type>type(date_type)</type>
+        <definition>type (date_type) date_end</definition>
+        <argsstring></argsstring>
+        <name>date_end</name>
+        <initializer>= date_type( -99, -99, -99 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="309" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="309" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaa167c4eb43e85f8c99c1a8a1b180d7cd" prot="private" static="no" mutable="no">
+        <type>character(len=16)</type>
+        <definition>character(len=16) date_out_of_range</definition>
+        <argsstring></argsstring>
+        <name>date_out_of_range</name>
+        <initializer>= &apos;fail&apos;</initializer>
+        <briefdescription>
+<para>use &apos;fail&apos;, &apos;initclimo&apos;, or &apos;climo&apos; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="324" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="324" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gad16340f25534d9f3a022a974c89e9938" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical do_sst_pert</definition>
+        <argsstring></argsstring>
+        <name>do_sst_pert</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="341" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="341" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gadd61cacd23fac1a6038a129f3f6d1182" prot="private" static="no" mutable="no">
+        <type>character(len=fms_file_len)</type>
+        <definition>character(len=fms_file_len) file_name_ice</definition>
+        <argsstring></argsstring>
+        <name>file_name_ice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="305" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga2da1c6e112bef84b14475c03a9a7c511" prot="private" static="no" mutable="no">
+        <type>character(len=fms_file_len)</type>
+        <definition>character(len=fms_file_len) file_name_sst</definition>
+        <argsstring></argsstring>
+        <name>file_name_sst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="305" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="305" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga2b4e03a3579959b3846fa539b82dbc72" prot="private" static="no" mutable="no">
+        <type>type(fmsnetcdffile_t), target</type>
+        <definition>type(fmsnetcdffile_t), target fileobj_ice</definition>
+        <argsstring></argsstring>
+        <name>fileobj_ice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="306" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gac672032227f69a6d17f194b71fb5e10a" prot="private" static="no" mutable="no">
+        <type>type(fmsnetcdffile_t), target</type>
+        <definition>type(fmsnetcdffile_t), target fileobj_sst</definition>
+        <argsstring></argsstring>
+        <name>fileobj_sst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="306" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="306" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga63021f1ba4626283f6f058bcc5dfd3d3" prot="public" static="no" mutable="no">
+        <type>logical, public</type>
+        <definition>logical, public forecast_mode</definition>
+        <argsstring></argsstring>
+        <name>forecast_mode</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="157" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaff066080a59ed73ab69011084c81dfc1" prot="private" static="no" mutable="no">
+        <type>integer(i2_kind)</type>
+        <definition>integer(i2_kind) ice_crit</definition>
+        <argsstring></argsstring>
+        <name>ice_crit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="312" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="312" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga511b7b7c62eb96e43555efe14f080592" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical interp_oi_sst</definition>
+        <argsstring></argsstring>
+        <name>interp_oi_sst</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>changed to false for regular runs </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="349" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="349" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga0cbab7199f3beb93228140e489869380" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer iunit</definition>
+        <argsstring></argsstring>
+        <name>iunit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="304" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="304" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga9a9631f609f50e2ecfaa38396b9d143b" prot="public" static="no" mutable="no">
+        <type>integer, public</type>
+        <definition>integer, public j_sst</definition>
+        <argsstring></argsstring>
+        <name>j_sst</name>
+        <initializer>= 600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="155" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gad5f1239553730103f59e3477fd1ebf9e" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), allocatable</type>
+        <definition>real(r8_kind), dimension(:), allocatable lat_bnd</definition>
+        <argsstring></argsstring>
+        <name>lat_bnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga9646f057fee76f19fbbcbeaef0ee9c94" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), allocatable</type>
+        <definition>real(r8_kind), dimension(:), allocatable lon_bnd</definition>
+        <argsstring></argsstring>
+        <name>lon_bnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="300" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="300" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga82381de27effbea5ce679054ecc3894d" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer mobs</definition>
+        <argsstring></argsstring>
+        <name>mobs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="299" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="299" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="314" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="314" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga72b96b8935f8eb6e7dbd3e668ce8be3f" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical no_anom_sst</definition>
+        <argsstring></argsstring>
+        <name>no_anom_sst</name>
+        <initializer>= .true.</initializer>
+        <briefdescription>
+<para>SJL: During nudging: use_ncep_sst = .T.; no_anom_sst = .T. during forecast: use_ncep_sst = .T.; no_anom_sst = .F. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="346" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga3570b7c27b1b8a39c1e1f2ba289e9656" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nobs</definition>
+        <argsstring></argsstring>
+        <name>nobs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="299" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga9667c20028880b1a10e5ab29c86ef5c1" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) sst_pert</definition>
+        <argsstring></argsstring>
+        <name>sst_pert</name>
+        <initializer>= 0._r8_kind</initializer>
+        <briefdescription>
+<para>global temperature perturbation used for sensitivity experiments </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="338" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaf4fb7af1b7c7fcaae5bf08f5ae35255f" prot="private" static="no" mutable="no">
+        <type>character(len=6)</type>
+        <definition>character(len=6) sst_pert_type</definition>
+        <argsstring></argsstring>
+        <name>sst_pert_type</name>
+        <initializer>= &apos;fixed&apos;</initializer>
+        <briefdescription>
+<para>use &apos;random&apos; or &apos;fixed&apos; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="340" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="340" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga6a3b9bf5d6c03dcc03c5c5143b4c279d" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) tann</definition>
+        <argsstring></argsstring>
+        <name>tann</name>
+        <initializer>= 20._r8_kind</initializer>
+        <briefdescription>
+<para>parameters for prescribed zonal sst option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="332" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="332" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gafd4c6177b89c4d2899adecd27f065d58" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) tdif</definition>
+        <argsstring></argsstring>
+        <name>tdif</name>
+        <initializer>= 50._r8_kind</initializer>
+        <briefdescription>
+<para>parameters for prescribed zonal sst option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="331" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaefde2186292252702d605f9094ff637f" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), allocatable</type>
+        <definition>real(r8_kind), dimension(:,:), allocatable tempamip</definition>
+        <argsstring></argsstring>
+        <name>tempamip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="170" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="170" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga19f26ee8bae629f1a3fd01de7cfa6adf" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) teq</definition>
+        <argsstring></argsstring>
+        <name>teq</name>
+        <initializer>= 305._r8_kind</initializer>
+        <briefdescription>
+<para>parameters for prescribed zonal sst option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="330" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="330" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga0509cf3cef9ed7010dfd4fc5e7a556de" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) tice_crit</definition>
+        <argsstring></argsstring>
+        <name>tice_crit</name>
+        <initializer>= -1.80_r8_kind</initializer>
+        <briefdescription>
+<para>in degC or degK </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="326" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga143381f8bf851413c32339a519c79b16" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) tice_crit_k</definition>
+        <argsstring></argsstring>
+        <name>tice_crit_k</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="311" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="311" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gab00380e718719fa3293584d44b0c036c" prot="private" static="no" mutable="no">
+        <type>real(r8_kind)</type>
+        <definition>real(r8_kind) tlag</definition>
+        <argsstring></argsstring>
+        <name>tlag</name>
+        <initializer>= 0.875_r8_kind</initializer>
+        <briefdescription>
+<para>parameters for prescribed zonal sst option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="333" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="333" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gacb88542e724acc5be8b5ee0d91a273ea" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_daily</definition>
+        <argsstring></argsstring>
+        <name>use_daily</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>if &apos;.true.&apos;, give &apos;data_set = &apos;daily&apos;&apos; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="342" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="342" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga6354efeadfde9254bc8a3c2698bff1a0" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_mpp_io</definition>
+        <argsstring></argsstring>
+        <name>use_mpp_io</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Set to .true. to use mpp_io, otherwise fms2io is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="350" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="350" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga76b02f44ed43c67c14731a011046e039" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_ncep_ice</definition>
+        <argsstring></argsstring>
+        <name>use_ncep_ice</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>For seasonal forecast: use_ncep_ice = .F. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="348" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="348" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gaa8eedc1bda43c7a973f0ee345f1703f5" prot="public" static="no" mutable="no">
+        <type>logical, public</type>
+        <definition>logical, public use_ncep_sst</definition>
+        <argsstring></argsstring>
+        <name>use_ncep_sst</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>SJL: During nudging: use_ncep_sst = .T.; no_anom_sst = .T. during forecast: use_ncep_sst = .T.; no_anom_sst = .F. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="344" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="344" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1gacb2ca3b0d018a1722dc8ed8a4bc2963a" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical use_zonal</definition>
+        <argsstring></argsstring>
+        <name>use_zonal</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>parameters for prescribed zonal sst option </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="329" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__amip__interp__mod_1ga9e8dcf56a77b1b156ccc0fa7e082a46b" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>0 &lt;= verbose &lt;= 3 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="327" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="327" bodyend="327"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__amip__interp__mod_1gaa680c8750f89c6444c6caf3d93b54cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public amip_interp_mod::amip_interp_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>amip_interp_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Frees data associated with a <ref refid="structamip__interp__mod_1_1amip__interp__type" kindref="compound">amip_interp_type</ref> variable. Should be used for any variables initialized via <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">Interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A defined data type variable initialized by <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref> and used when calling <ref refid="interfaceamip__interp__mod_1_1get__amip__sst" kindref="compound">get_amip_sst</ref> and <ref refid="interfaceamip__interp__mod_1_1get__amip__ice" kindref="compound">get_amip_ice</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="565" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="566" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1ga58848ae4852e72a6ae3bc509b38af2e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public amip_interp_mod::amip_interp_init</definition>
+        <argsstring></argsstring>
+        <name>amip_interp_init</name>
+        <briefdescription>
+<para>initialize <ref refid="group__amip__interp__mod" kindref="compound">amip_interp_mod</ref> for use </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="367" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="368" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1gaeba1dc21cf01a9f9feebae218b3b4f65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine amip_interp_mod::amip_interp_type_eq</definition>
+        <argsstring>(amip_interp_out, amip_interp_in)</argsstring>
+        <name>amip_interp_type_eq</name>
+        <param>
+          <type>amip_interp_out</type>
+          <defname>amip_interp_out</defname>
+        </param>
+        <param>
+          <type>amip_interp_in</type>
+          <defname>amip_interp_in</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amip_interp_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>missing assignment statement; added by GPP </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="644" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="645" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1ga78cc915a2f75e5194c47758fb9cb1654" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function amip_interp_mod::date_equals</definition>
+        <argsstring>(Left, Right)</argsstring>
+        <name>date_equals</name>
+        <param>
+          <type>Left</type>
+          <defname>Left</defname>
+        </param>
+        <param>
+          <type>Right</type>
+          <defname>Right</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical answer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="597" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="598" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1gae2ca4248791964f82f9a57dd37d893fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function amip_interp_mod::date_gt</definition>
+        <argsstring>(Left, Right)</argsstring>
+        <name>date_gt</name>
+        <param>
+          <type>Left</type>
+          <defname>Left</defname>
+        </param>
+        <param>
+          <type>Right</type>
+          <defname>Right</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical answer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="625" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="626" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1ga3c40cf9b8032cf49729e129ba7f82ee6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function amip_interp_mod::date_not_equals</definition>
+        <argsstring>(Left, Right)</argsstring>
+        <name>date_not_equals</name>
+        <param>
+          <type>Left</type>
+          <defname>Left</defname>
+        </param>
+        <param>
+          <type>Right</type>
+          <defname>Right</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>logical answer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="611" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="612" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1gaea83ce3a245a88edbea7527ab57f09e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine amip_interp_mod::get_sst_grid_size</definition>
+        <argsstring>(nlon, nlat)</argsstring>
+        <name>get_sst_grid_size</name>
+        <param>
+          <type>nlon</type>
+          <defname>nlon</defname>
+        </param>
+        <param>
+          <type>nlat</type>
+          <defname>nlat</defname>
+        </param>
+        <briefdescription>
+<para>Returns the size (i.e., number of longitude and latitude points) of the observed data grid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>have not called <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref> Must call <ref refid="interfaceamip__interp__mod_1_1amip__interp__new" kindref="compound">amip_interp_new</ref> before get_sst_grid_size. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="585" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="586" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1gadc198481a3b7c3f3c321129e70d734eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine amip_interp_mod::set_sst_grid_edges_amip1</definition>
+        <argsstring></argsstring>
+        <name>set_sst_grid_edges_amip1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="498" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="499" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amip__interp__mod_1ga336ba3df4a1ef5eebfece6391afffc47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine amip_interp_mod::set_sst_grid_edges_oi</definition>
+        <argsstring></argsstring>
+        <name>set_sst_grid_edges_oi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" line="527" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/amip_interp/amip_interp.F90" bodystart="528" bodyend="558"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides observed sea surface temperature and ice mask data sets that have been interpolated onto your model&apos;s grid. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Bruce Wyman</para></simplesect>
+When using these routines three possible data sets are available:</para><para><orderedlist>
+<listitem><para>AMIP <ulink url="http://www.pcmdi.github.io/mips/amip">http://www.pcmdi.github.io/mips/amip</ulink> from Jan 1979 to Jan 1989 (2 deg x 2 deg)</para></listitem><listitem><para>Reynolds OI amip_interp.rey_oi.txt from Nov 1981 to Jan 1999 (1 deg x 1 deg)</para></listitem><listitem><para>Reynolds EOF podaac.jpl.nasa.gov/ from Jan 1950 to Dec 1998 (2 deg x 2 deg)</para></listitem></orderedlist>
+</para><para>All original data are observed monthly means. This module interpolates linearly in time between pairs of monthly means. Horizontal interpolation is done using the horiz_interp module.</para><para>When a requested date falls outside the range of dates available a namelist option allows for use of the climatological monthly mean values which are computed from all of the data in a particular data set. <linebreak/>
+ <linebreak/>
+ AMIP 1:<linebreak/>
+ from Jan 1979 to Jan 1989 (2 deg x 2 deg).<linebreak/>
+<linebreak/>
+ Reynolds OI:<linebreak/>
+ from Nov 1981 to Jan 1999 (1 deg x 1 deg)<linebreak/>
+ The analysis uses in situ and satellite SST&apos;s plus SST&apos;s simulated by sea-ice cover.<linebreak/>
+<linebreak/>
+ Reynold&apos;s EOF:<linebreak/>
+ from Jan 1950 to Dec 1998 (2 deg x 2 deg)<linebreak/>
+ NCEP Reynolds Historical Reconstructed Sea Surface Temperature The analysis uses both in-situ SSTs and satellite derived SSTs from the NOAA Advanced Very High Resolution Radiometer. In-situ data is used from 1950 to 1981, while both AVHRR derived satellite SSTs and in-situ data are used from 1981 to the end of 1998.</para><para><simplesect kind="note"><para>The data set used by this module have been reformatted as 32-bit IEEE. The data values are packed into 16-bit integers.</para></simplesect>
+The data sets are read from the following files: <verbatim>  amip1           INPUT/amip1_sst.data
+  reynolds_io     INPUT/reyoi_sst.data
+  reynolds_eof    INPUT/reynolds_sst.data</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

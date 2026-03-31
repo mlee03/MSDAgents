@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__mpp__global__field_8F90" kind="file" language="Fortran">
+    <compoundname>test_mpp_global_field.F90</compoundname>
+    <innerclass refid="structtest__params__t" prot="public">test_params_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__mpp__global__field_8F90_1a4ffebe48892c99928dda2ce2619251ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_mpp_global_field::run_tests_2d</definition>
+        <argsstring>(test_params, p)</argsstring>
+        <name>run_tests_2d</name>
+        <param>
+          <type>test_params</type>
+          <defname>test_params</defname>
+        </param>
+        <param>
+          <type>p</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>call mpp_init </para>        </briefdescription>
+        <detaileddescription>
+<para>get pe info initialize mpp domain(s) exit</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Permutation of array indices (ranges from 1 to rank!) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>set up domain</para><para>get compute domain</para><para>get data domain</para><para>assign global</para><para>allocate for global domain</para><para>test the data on data domain</para><para>Since in the disjoint redistribute mpp test, pelist1 = (npes/2+1 .. npes-1) will be declared. But for the x-direction global field, mpp_sync_self will be called. For some pe count, pelist1 will be set (only on pe of pelist1) in the mpp_sync_self call, later when calling mpp_declare_pelist(pelist1), deadlock will happen. For example npes = 6 and layout = (2,3), pelist = (4,5) will be set in mpp_sync_self. To solve the problem, some explicit mpp_declare_pelist on all pe is needed for those partial pelist. But for y-update, it is ok. because the pelist in y-update is not continous.</para><para>xupdate</para><para>yupdate</para><para>test the data on compute domain</para><para>xupdate</para><para>yupdate </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" line="84" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" bodystart="85" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp__global__field_8F90_1a6e8998d9dd11389a488f9e1ddbde340f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_mpp_global_field::run_tests_3d</definition>
+        <argsstring>(test_params, p)</argsstring>
+        <name>run_tests_3d</name>
+        <param>
+          <type>test_params</type>
+          <defname>test_params</defname>
+        </param>
+        <param>
+          <type>p</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Permutation of array indices (ranges from 1 to rank!) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>set up domain</para><para>get compute domain</para><para>get data domain</para><para>assign global0</para><para>for data domain</para><para>test the data on data domain</para><para>Since in the disjoint redistribute mpp test, pelist1 = (npes/2+1 .. npes-1) will be declared. But for the x-direction global field, mpp_sync_self will be called. For some pe count, pelist1 will be set (only on pe of pelist1) in the mpp_sync_self call, later when calling mpp_declare_pelist(pelist1), deadlock will happen. For example npes = 6 and layout = (2,3), pelist = (4,5) will be set in mpp_sync_self. To solve the problem, some explicit mpp_declare_pelist on all pe is needed for those partial pelist. But for y-update, it is ok. because the pelist in y-update is not continous.</para><para>xupdate</para><para>yupdate</para><para>test the data on compute domain</para><para>xupdate</para><para>yupdate </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" line="204" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" bodystart="205" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="test__mpp__global__field_8F90_1a40c7e29053304fde140dbbff49e591d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_mpp_global_field</definition>
+        <argsstring></argsstring>
+        <name>test_mpp_global_field</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" line="18" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_mpp_global_field</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal,<sp/>mpp_init_test_requests_allocated</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/>mpp_root_pe</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>center,<sp/>east,<sp/>north,<sp/>corner,<sp/>xupdate,<sp/>yupdate</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__domains__mod_1ga395663978bf22825d9d8a8b4c29a5510" kindref="member">mpp_domains_init</ref>,<sp/><ref refid="group__mpp__domains__mod_1ga9a55eba87e8167e3f3ba2dc913a1d9d8" kindref="member">mpp_domains_exit</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__domains__mod_1_1mpp__define__layout" kindref="compound">mpp_define_layout</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>,<sp/><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>,<sp/><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_domains_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_test_mod,<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="structfms__test__mod_1_1permutable__indices__2d" kindref="compound">permutable_indices_2d</ref>,<sp/><ref refid="structfms__test__mod_1_1permutable__indices__3d" kindref="compound">permutable_indices_3d</ref>,<sp/>factorial,<sp/><ref refid="interfacefms__test__mod_1_1arr__init" kindref="compound">arr_init</ref>,<sp/><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structtest__params__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>symmetry</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>position,<sp/>shift(2)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">character(15)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>type<sp/></highlight><highlight class="normal"><ref refid="structtest__params__t" kindref="compound">test_params_t</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(test_params_t),<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>test_params(*)<sp/>=<sp/>[<sp/>&amp;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref>(symmetry=.false.,<sp/>position=center,<sp/>shift=[0,0],<sp/>name=</highlight><highlight class="stringliteral">&quot;no<sp/>symmetry&quot;</highlight><highlight class="normal">),<sp/>&amp;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref>(symmetry=.true.,<sp/><sp/>position=center,<sp/>shift=[0,0],<sp/>name=</highlight><highlight class="stringliteral">&quot;center<sp/>symmetry&quot;</highlight><highlight class="normal">),<sp/>&amp;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref>(symmetry=.true.,<sp/><sp/>position=corner,<sp/>shift=[1,1],<sp/>name=</highlight><highlight class="stringliteral">&quot;corner<sp/>symmetry&quot;</highlight><highlight class="normal">),<sp/>&amp;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref>(symmetry=.true.,<sp/><sp/>position=east,<sp/><sp/><sp/>shift=[1,0],<sp/>name=</highlight><highlight class="stringliteral">&quot;east<sp/>symmetry&quot;</highlight><highlight class="normal">),<sp/>&amp;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtest__params__t" kindref="compound">test_params_t</ref>(symmetry=.true.,<sp/><sp/>position=north,<sp/><sp/>shift=[0,1],<sp/>name=</highlight><highlight class="stringliteral">&quot;north<sp/>symmetry&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>nx=20,<sp/>ny=20,<sp/>nz=40</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>whalo=2,<sp/>ehalo=2,<sp/>shalo=2,<sp/>nhalo=2</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>stackmax=4000000</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>fms_test_type_(fms_test_kind_),<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>zero<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>pe,<sp/>npes,<sp/>ierr</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>layout(2)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i,<sp/>p</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>!&gt;<sp/>call<sp/>mpp_init</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>(test_level=mpp_init_test_requests_allocated)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>!&gt;<sp/>get<sp/>pe<sp/>info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>pe<sp/>=<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>npes<sp/>=<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>!&gt;<sp/>initialize<sp/>mpp<sp/>domain(s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1ga395663978bf22825d9d8a8b4c29a5510" kindref="member">mpp_domains_init</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1gae1f3c0c5c574686aac6c1595b1ca0b66" kindref="member">mpp_domains_set_stack_size</ref>(stackmax)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(test_params)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>2D<sp/>tests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>p=1,factorial(2)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">run_tests_2d(test_params(i),<sp/>p)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>3D<sp/>tests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>p=1,factorial(3)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">run_tests_3d(test_params(i),<sp/>p)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/>!&gt;<sp/>exit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__domains__mod_1ga9a55eba87e8167e3f3ba2dc913a1d9d8" kindref="member">mpp_domains_exit</ref>()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpi_finalize(ierr)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">run_tests_2d(test_params,<sp/>p)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(test_params_t),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>test_params</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>p</highlight><highlight class="comment"><sp/>!&lt;<sp/>Permutation<sp/>of<sp/>array<sp/>indices<sp/>(ranges<sp/>from<sp/>1<sp/>to<sp/>rank!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2D)<sp/><sp/>::<sp/>domain</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i,<sp/>j</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(permutable_indices_2d)<sp/>::<sp/>compute,<sp/>data,<sp/>global,<sp/>global_with_halo,<sp/>global_x,<sp/>global_y</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>pelist(:)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>fms_test_type_(fms_test_kind_),<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/>::<sp/>global0(:,:),<sp/>local(:,:),<sp/>global1(:,:)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>set<sp/>up<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__layout" kindref="compound">mpp_define_layout</ref>([1,nx,1,ny],<sp/>npes,<sp/>layout)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>([1,nx,1,ny],<sp/>layout,<sp/>domain,<sp/>whalo=whalo,<sp/>ehalo=ehalo,<sp/>shalo=shalo,<sp/>nhalo=nhalo,<sp/>&amp;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name=trim(test_params%name),<sp/>symmetry=test_params%symmetry)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>get<sp/>compute<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(domain,<sp/>compute%lb(1),<sp/><sp/>compute%ub(1),<sp/><sp/>compute%lb(2),<sp/><sp/>compute%ub(2))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>compute%ub<sp/>=<sp/>compute%ub<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>get<sp/>data<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>(domain,<sp/>data%lb(1),<sp/>data%ub(1),<sp/>data%lb(2),<sp/>data%ub(2))</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>data%ub<sp/>=<sp/>data%ub<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>global%lb<sp/>=<sp/>[1,<sp/>1]</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>global%ub<sp/>=<sp/>[nx,<sp/>ny]<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>global_with_halo%lb<sp/>=<sp/>global%lb<sp/>-<sp/>[whalo,<sp/>shalo]</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>global_with_halo%ub<sp/>=<sp/>global%ub<sp/>+<sp/>[ehalo,<sp/>nhalo]</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>global_x%lb<sp/>=<sp/>[global%lb(1),<sp/>compute%lb(2)]</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>global_x%ub<sp/>=<sp/>[global%ub(1),<sp/>compute%ub(2)]</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>global_y%lb<sp/>=<sp/>[compute%lb(1),<sp/>global%lb(2)]</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>global_y%ub<sp/>=<sp/>[compute%ub(1),<sp/>global%ub(2)]</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compute%permute(p)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">data%permute(p)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global%permute(p)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_with_halo%permute(p)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_x%permute(p)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_y%permute(p)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>assign<sp/>global</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global0(global_with_halo%lb(1):global_with_halo%ub(1),<sp/>global_with_halo%lb(2):global_with_halo%ub(2)))</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>global0<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__init" kindref="compound">arr_init</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2)))</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global1(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2)))</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>allocate<sp/>for<sp/>global<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local(data%lb(1):data%ub(1),<sp/>data%lb(2):data%ub(2)))</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>local(:,:)<sp/>=<sp/>global0(data%lb(1):data%ub(1),<sp/>data%lb(2):data%ub(2))</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>test<sp/>the<sp/>data<sp/>on<sp/>data<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2)),<sp/>global1,<sp/>&amp;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>Since<sp/>in<sp/>the<sp/>disjoint<sp/>redistribute<sp/>mpp<sp/>test,<sp/>pelist1<sp/>=<sp/>(npes/2+1<sp/>..<sp/>npes-1)</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>will<sp/>be<sp/>declared.<sp/>But<sp/>for<sp/>the<sp/>x-direction<sp/>global<sp/>field,<sp/>mpp_sync_self<sp/>will</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>be<sp/>called.<sp/>For<sp/>some<sp/>pe<sp/>count,<sp/>pelist1<sp/>will<sp/>be<sp/>set<sp/>(only<sp/>on<sp/>pe<sp/>of<sp/>pelist1)</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>in<sp/>the<sp/>mpp_sync_self<sp/>call,<sp/>later<sp/>when<sp/>calling<sp/>mpp_declare_pelist(pelist1),</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>deadlock<sp/>will<sp/>happen.<sp/>For<sp/>example<sp/>npes<sp/>=<sp/>6<sp/>and<sp/>layout<sp/>=<sp/>(2,3),<sp/>pelist<sp/>=<sp/>(4,5)</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>will<sp/>be<sp/>set<sp/>in<sp/>mpp_sync_self.<sp/>To<sp/>solve<sp/>the<sp/>problem,<sp/>some<sp/>explicit<sp/>mpp_declare_pelist</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>on<sp/>all<sp/>pe<sp/>is<sp/>needed<sp/>for<sp/>those<sp/>partial<sp/>pelist.<sp/>But<sp/>for<sp/>y-update,<sp/>it<sp/>is<sp/>ok.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>because<sp/>the<sp/>pelist<sp/>in<sp/>y-update<sp/>is<sp/>not<sp/>continous.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pelist(0:layout(1)-1))</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>layout(2)-1</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>layout(1)-1</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pelist(i)<sp/>=<sp/>j*layout(1)<sp/>+<sp/>i</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(pelist)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(pelist)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>xupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=xupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_x%lb(1):global_x%ub(1),global_x%lb(2):global_x%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1(global_x%lb(1):global_x%ub(1),global_x%lb(2):global_x%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>xupdate<sp/>only<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>yupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=yupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_y%lb(1):global_y%ub(1),global_y%lb(2):global_y%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1(global_y%lb(1):global_y%ub(1),global_y%lb(2):global_y%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>yupdate<sp/>only<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2)),<sp/>global1,<sp/>&amp;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>test<sp/>the<sp/>data<sp/>on<sp/>compute<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local(compute%lb(1):compute%ub(1),<sp/>compute%lb(2):compute%ub(2)))</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>local(:,:)<sp/>=<sp/>global0(compute%lb(1):compute%ub(1),<sp/>compute%lb(2):compute%ub(2))</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2)),<sp/>global1,<sp/>&amp;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>xupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=xupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_x%lb(1):global_x%ub(1),global_x%lb(2):global_x%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1(global_x%lb(1):global_x%ub(1),global_x%lb(2):global_x%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>xupdate<sp/>only<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>yupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=yupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_y%lb(1):global_y%ub(1),global_y%lb(2):global_y%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1(global_y%lb(1):global_y%ub(1),global_y%lb(2):global_y%ub(2)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>yupdate<sp/>only<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">run_tests_2d</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">run_tests_3d(test_params,<sp/>p)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(test_params_t),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>test_params</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>p</highlight><highlight class="comment"><sp/>!&lt;<sp/>Permutation<sp/>of<sp/>array<sp/>indices<sp/>(ranges<sp/>from<sp/>1<sp/>to<sp/>rank!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(domain2D)<sp/><sp/>::<sp/>domain</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>i,<sp/>j</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(permutable_indices_3d)<sp/>::<sp/>compute,<sp/>data,<sp/>global,<sp/>global_with_halo,<sp/>global_x,<sp/>global_y</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>pelist(:)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>fms_test_type_(fms_test_kind_),<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/><sp/>::<sp/>global0(:,:,:),<sp/>local(:,:,:),<sp/>global1(:,:,:)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>set<sp/>up<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__layout" kindref="compound">mpp_define_layout</ref>([1,nx,1,ny],<sp/>npes,<sp/>layout)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__define__domains" kindref="compound">mpp_define_domains</ref>([1,nx,1,ny],<sp/>layout,<sp/>domain,<sp/>whalo=whalo,<sp/>ehalo=ehalo,<sp/>shalo=shalo,<sp/>nhalo=nhalo,<sp/>&amp;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name=trim(test_params%name),<sp/>symmetry=test_params%symmetry)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>get<sp/>compute<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__compute__domain" kindref="compound">mpp_get_compute_domain</ref>(domain,<sp/>compute%lb(1),<sp/><sp/>compute%ub(1),<sp/><sp/>compute%lb(2),<sp/><sp/>compute%ub(2))</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>compute%ub(1:2)<sp/>=<sp/>compute%ub(1:2)<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>compute%lb(3)<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>compute%ub(3)<sp/>=<sp/>nz</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>get<sp/>data<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__get__data__domain" kindref="compound">mpp_get_data_domain</ref>(domain,<sp/>data%lb(1),<sp/>data%ub(1),<sp/>data%lb(2),<sp/>data%ub(2))</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>data%ub(1:2)<sp/>=<sp/>data%ub(1:2)<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>data%lb(3)<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>data%ub(3)<sp/>=<sp/>nz</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>global%lb<sp/>=<sp/>[1,<sp/>1,<sp/>1]</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>global%ub<sp/>=<sp/>[nx,<sp/>ny,<sp/>nz]</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>global%ub(1:2)<sp/>=<sp/>global%ub(1:2)<sp/>+<sp/>test_params%shift</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>global_with_halo%lb<sp/>=<sp/>global%lb<sp/>-<sp/>[whalo,<sp/>shalo,<sp/>0]</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>global_with_halo%ub<sp/>=<sp/>global%ub<sp/>+<sp/>[ehalo,<sp/>nhalo,<sp/>0]</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>global_x%lb<sp/>=<sp/>[global%lb(1),<sp/>compute%lb(2),<sp/>global%lb(3)]</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>global_x%ub<sp/>=<sp/>[global%ub(1),<sp/>compute%ub(2),<sp/>global%ub(3)]</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>global_y%lb<sp/>=<sp/>[compute%lb(1),<sp/>global%lb(2),<sp/>global%lb(3)]</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>global_y%ub<sp/>=<sp/>[compute%ub(1),<sp/>global%ub(2),<sp/>global%ub(3)]</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">compute%permute(p)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">data%permute(p)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global%permute(p)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_with_halo%permute(p)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_x%permute(p)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">global_y%permute(p)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>assign<sp/>global0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global0(global_with_halo%lb(1):global_with_halo%ub(1),<sp/>global_with_halo%lb(2):global_with_halo%ub(2),<sp/>&amp;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_with_halo%lb(3):global_with_halo%ub(3)))</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>global0<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__init" kindref="compound">arr_init</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2),<sp/>global%lb(3):global%ub(3)))</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(global1(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2),<sp/>global%lb(3):global%ub(3)))</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>for<sp/>data<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local(data%lb(1):data%ub(1),<sp/>data%lb(2):data%ub(2),<sp/>data%lb(3):data%ub(3)))</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>local(:,:,:)<sp/>=<sp/>global0(data%lb(1):data%ub(1),<sp/>data%lb(2):data%ub(2),<sp/>data%lb(3):data%ub(3))</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>test<sp/>the<sp/>data<sp/>on<sp/>data<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2),<sp/>global%lb(3):global%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1,<sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>Since<sp/>in<sp/>the<sp/>disjoint<sp/>redistribute<sp/>mpp<sp/>test,<sp/>pelist1<sp/>=<sp/>(npes/2+1<sp/>..<sp/>npes-1)</highlight></codeline>
+<codeline lineno="271"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>will<sp/>be<sp/>declared.<sp/>But<sp/>for<sp/>the<sp/>x-direction<sp/>global<sp/>field,<sp/>mpp_sync_self<sp/>will</highlight></codeline>
+<codeline lineno="272"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>be<sp/>called.<sp/>For<sp/>some<sp/>pe<sp/>count,<sp/>pelist1<sp/>will<sp/>be<sp/>set<sp/>(only<sp/>on<sp/>pe<sp/>of<sp/>pelist1)</highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>in<sp/>the<sp/>mpp_sync_self<sp/>call,<sp/>later<sp/>when<sp/>calling<sp/>mpp_declare_pelist(pelist1),</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>deadlock<sp/>will<sp/>happen.<sp/>For<sp/>example<sp/>npes<sp/>=<sp/>6<sp/>and<sp/>layout<sp/>=<sp/>(2,3),<sp/>pelist<sp/>=<sp/>(4,5)</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>will<sp/>be<sp/>set<sp/>in<sp/>mpp_sync_self.<sp/>To<sp/>solve<sp/>the<sp/>problem,<sp/>some<sp/>explicit<sp/>mpp_declare_pelist</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>on<sp/>all<sp/>pe<sp/>is<sp/>needed<sp/>for<sp/>those<sp/>partial<sp/>pelist.<sp/>But<sp/>for<sp/>y-update,<sp/>it<sp/>is<sp/>ok.</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/><sp/><sp/><sp/>!!<sp/>because<sp/>the<sp/>pelist<sp/>in<sp/>y-update<sp/>is<sp/>not<sp/>continous.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pelist(0:layout(1)-1))</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>layout(2)-1</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>layout(1)-1</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pelist(i)<sp/>=<sp/>j*layout(1)<sp/>+<sp/>i</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga7153f8320fd856cc87b937df12c78cba" kindref="member">mpp_declare_pelist</ref>(pelist)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(pelist)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>xupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=xupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_x%lb(1):global_x%ub(1),<sp/>global_x%lb(2):global_x%ub(2),<sp/>&amp;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_x%lb(3):global_x%ub(3)),<sp/>global1(global_x%lb(1):global_x%ub(1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_x%lb(2):global_x%ub(2),<sp/>global_x%lb(3):global_x%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>xupdate<sp/>only<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="295"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>yupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=yupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_y%lb(1):global_y%ub(1),<sp/>global_y%lb(2):global_y%ub(2),<sp/>&amp;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_y%lb(3):global_y%ub(3)),<sp/>global1(global_y%lb(1):global_y%ub(1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_y%lb(2):global_y%ub(2),<sp/>global_y%lb(3):global_y%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>yupdate<sp/>only<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2),<sp/>global%lb(3):global%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1,<sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>data<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>test<sp/>the<sp/>data<sp/>on<sp/>compute<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(local)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(local(compute%lb(1):compute%ub(1),<sp/>compute%lb(2):compute%ub(2),<sp/>compute%lb(3):compute%ub(3)))</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>local(:,:,:)<sp/>=<sp/>global0(compute%lb(1):compute%ub(1),<sp/>compute%lb(2):compute%ub(2),<sp/>compute%lb(3):compute%ub(3))</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global%lb(1):global%ub(1),<sp/>global%lb(2):global%ub(2),<sp/>global%lb(3):global%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global1,<sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="318"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>xupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=xupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_x%lb(1):global_x%ub(1),<sp/>global_x%lb(2):global_x%ub(2),<sp/>&amp;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_x%lb(3):global_x%ub(3)),<sp/>global1(global_x%lb(1):global_x%ub(1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_x%lb(2):global_x%ub(2),<sp/>global_x%lb(3):global_x%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>xupdate<sp/>only<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="326"><highlight class="comment"><sp/><sp/><sp/><sp/>!&gt;<sp/>yupdate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>global1<sp/>=<sp/>zero</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__global__field" kindref="compound">mpp_global_field</ref>(domain,<sp/>local,<sp/>global1,<sp/>flags=yupdate,<sp/>position=test_params%position)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms__test__mod_1_1arr__compare" kindref="compound">arr_compare</ref>(global0(global_y%lb(1):global_y%ub(1),<sp/>global_y%lb(2):global_y%ub(2),<sp/>&amp;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_y%lb(3):global_y%ub(3)),<sp/>global1(global_y%lb(1):global_y%ub(1),<sp/>&amp;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_y%lb(2):global_y%ub(2),<sp/>global_y%lb(3):global_y%ub(3)),<sp/>&amp;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;mpp_global_field<sp/>yupdate<sp/>only<sp/>on<sp/>compute<sp/>domain<sp/>with<sp/>&apos;</highlight><highlight class="normal"><sp/>//<sp/>trim(test_params%name))</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">run_tests_3d</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_mpp_global_field</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/mpp/test_mpp_global_field.F90"/>
+  </compounddef>
+</doxygen>

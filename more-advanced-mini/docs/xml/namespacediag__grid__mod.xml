@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacediag__grid__mod" kind="namespace" language="Fortran">
+    <compoundname>diag_grid_mod</compoundname>
+    <innerclass refid="structdiag__grid__mod_1_1diag__global__grid__type" prot="private">diag_grid_mod::diag_global_grid_type</innerclass>
+    <innerclass refid="structdiag__grid__mod_1_1point" prot="private">diag_grid_mod::point</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__diag__grid__mod_1ga53e348963b34cc198fb5dcf065d7fcc5" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structdiag__grid__mod_1_1diag__global__grid__type" kindref="compound">diag_global_grid_type</ref>)</type>
+        <definition>type(diag_global_grid_type) diag_global_grid</definition>
+        <argsstring></argsstring>
+        <name>diag_global_grid</name>
+        <briefdescription>
+<para>Variable to hold the global grid data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="108" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="108" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__diag__grid__mod_1ga5b81ca171d240b2f550afcb9f8cbccdc" prot="public" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical diag_grid_initialized</definition>
+        <argsstring></argsstring>
+        <name>diag_grid_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+<para>Indicates if the diag_grid_mod has been initialized. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="110" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="110" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__diag__grid__mod_1ga7c106eac542c18e69fa010f358067b65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure elemental real function</type>
+        <definition>pure elemental real function diag_grid_mod::deg2rad</definition>
+        <argsstring>(angle)</argsstring>
+        <name>deg2rad</name>
+        <param>
+          <type>angle</type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+<para>Convert an angle in degrees to radians. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a scalar, or an array of angles in degrees this function will return a scalar or array (of the same dimension) of angles in radians. <simplesect kind="return"><para>Scalar or array (depending on the size of angle) of angles in radians.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar or array of angles in degrees. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="695" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="696" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga5e5a7eeabed97e40f69b0167e44b1330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_grid_mod::diag_grid_end</definition>
+        <argsstring>()</argsstring>
+        <name>diag_grid_end</name>
+        <briefdescription>
+<para>Unallocate the diag_global_grid variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>diag_global_grid</computeroutput> variable is only needed during the register field calls, and then only if there are fields requestion regional output. Once all the register fields calls are complete (before the first <computeroutput>send_data</computeroutput> call this procedure can be called to free up memory. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="348" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="349" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga344fd60b0703604265c527332794df35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_grid_mod::diag_grid_init</definition>
+        <argsstring>(domain, glo_lat, glo_lon, aglo_lat, aglo_lon)</argsstring>
+        <name>diag_grid_init</name>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>glo_lat</type>
+          <defname>glo_lat</defname>
+        </param>
+        <param>
+          <type>glo_lon</type>
+          <defname>glo_lon</defname>
+        </param>
+        <param>
+          <type>aglo_lat</type>
+          <defname>aglo_lat</defname>
+        </param>
+        <param>
+          <type>aglo_lon</type>
+          <defname>aglo_lon</defname>
+        </param>
+        <briefdescription>
+<para>Send the global grid to the <computeroutput>diag_manager_mod</computeroutput> for regional output. </para>        </briefdescription>
+        <detaileddescription>
+<para>In order for the diag_manager to do regional output for grids other than the standard lat/lon grid, the <computeroutput> diag_manager_mod</computeroutput> needs to know the latitude and longitude values for the entire global grid. This procedure is the mechanism the models will use to share their grid with the diagnostic manager.</para><para>This procedure needs to be called after the grid is created, and before the first call to register the fields.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The domain to which the grid data corresponds.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">glo_lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude information for the grid tile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">glo_lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude information for the grid tile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aglo_lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude information for the a-grid tile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aglo_lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude information for the a-grid tile. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="130" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="131" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga19ed6b7dc3d1bf191172f00fef6a7677" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure elemental real function</type>
+        <definition>pure elemental real function diag_grid_mod::distancesqrd</definition>
+        <argsstring>(pt1, pt2)</argsstring>
+        <name>distancesqrd</name>
+        <param>
+          <type>pt1</type>
+          <defname>pt1</defname>
+        </param>
+        <param>
+          <type>pt2</type>
+          <defname>pt2</defname>
+        </param>
+        <briefdescription>
+<para>Find the distance between two points in the Cartesian coordinate space. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>distanceSqrd</computeroutput> will find the distance squared between two points in the xyz coordinate space. <computeroutput>pt1</computeroutput> and <computeroutput> pt2</computeroutput> can either be both scalars, both arrays of the same size, or one a scalar and one an array. The return value will be a scalar or array of the same size as the input array. <simplesect kind="return"><para>The return value will be a scalar or array of the same size as the input array. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="1053" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="1054" bodyend="1058"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga300b2a27d9538e7a8df1acfe6eb5313b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(2)</type>
+        <definition>pure integer function, dimension(2) diag_grid_mod::find_equator_index_agrid</definition>
+        <argsstring>(lat, lon)</argsstring>
+        <name>find_equator_index_agrid</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <briefdescription>
+<para>Return the closest index (i,j) to the given (lat,lon) point. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function searches a equator grid tile looking for the grid point closest to the give (lat, lon) location, and returns the i and j indexes of the point. <simplesect kind="return"><para>The (i, j) location of the closest grid to the given (lat, lon) location.</para></simplesect>
+<simplesect kind="return"><para>The (i, j) location of the closest grid to the given (lat, lon) location.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude location</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="872" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="873" bodyend="1005"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1gae5f402a0116ea61620bb6d8c5eac36cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine diag_grid_mod::find_nearest_agrid_index</definition>
+        <argsstring>(lat, lon, minI, minJ, minimum_distance)</argsstring>
+        <name>find_nearest_agrid_index</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>minI</type>
+          <defname>minI</defname>
+        </param>
+        <param>
+          <type>minJ</type>
+          <defname>minJ</defname>
+        </param>
+        <param>
+          <type>minimum_distance</type>
+          <defname>minimum_distance</defname>
+        </param>
+        <briefdescription>
+<para>Find the i,j indices and distance of the a-grid point nearest to the inputted lat,lon point. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="1083" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="1088" bodyend="1153"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1gad7bbed343758af1b76821fdf435217c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure integer function, dimension(2)</type>
+        <definition>pure integer function, dimension(2) diag_grid_mod::find_pole_index_agrid</definition>
+        <argsstring>(lat, lon)</argsstring>
+        <name>find_pole_index_agrid</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <briefdescription>
+<para>Return the closest index (i,j) to the given (lat,lon) point. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function searches a pole a-grid tile looking for the grid point closest to the give (lat, lon) location, and returns the i and j indexes of the point. <simplesect kind="return"><para>The (i, j) location of the closest grid to the given (lat, lon) location.</para></simplesect>
+<simplesect kind="return"><para>The (i, j) location of the closest grid to the given (lat, lon) location.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitude location</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitude location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="708" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="709" bodyend="862"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga455fb5cb69db5917fc63612dcd5088cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure elemental real function</type>
+        <definition>pure elemental real function diag_grid_mod::gcirdistance</definition>
+        <argsstring>(lat1, lon1, lat2, lon2)</argsstring>
+        <name>gcirdistance</name>
+        <param>
+          <type>lat1</type>
+          <defname>lat1</defname>
+        </param>
+        <param>
+          <type>lon1</type>
+          <defname>lon1</defname>
+        </param>
+        <param>
+          <type>lat2</type>
+          <defname>lat2</defname>
+        </param>
+        <param>
+          <type>lon2</type>
+          <defname>lon2</defname>
+        </param>
+        <briefdescription>
+<para>Find the distance, along the geodesic, between two points. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>gCirDistance</computeroutput> will find the distance, along the geodesic, between two points defined by the (lat,lon) position of each point. <simplesect kind="return"><para>real </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="1066" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="1067" bodyend="1078"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1gacd48f9784c8244ff7edc7c98f1ad51cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_grid_mod::get_local_indexes</definition>
+        <argsstring>(latStart, latEnd, lonStart, lonEnd, istart, iend, jstart, jend)</argsstring>
+        <name>get_local_indexes</name>
+        <param>
+          <type>latStart</type>
+          <defname>latStart</defname>
+        </param>
+        <param>
+          <type>latEnd</type>
+          <defname>latEnd</defname>
+        </param>
+        <param>
+          <type>lonStart</type>
+          <defname>lonStart</defname>
+        </param>
+        <param>
+          <type>lonEnd</type>
+          <defname>lonEnd</defname>
+        </param>
+        <param>
+          <type>istart</type>
+          <defname>istart</defname>
+        </param>
+        <param>
+          <type>iend</type>
+          <defname>iend</defname>
+        </param>
+        <param>
+          <type>jstart</type>
+          <defname>jstart</defname>
+        </param>
+        <param>
+          <type>jend</type>
+          <defname>jend</defname>
+        </param>
+        <briefdescription>
+<para>Find the local start and local end indexes on the local PE for regional output. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a defined region, find the local indexes on the local PE surrounding the region.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">latstart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lat start angles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lonstart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lon start angles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">latend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lat end angles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lonend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lon end angles</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">istart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i start indexes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">jstart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>j start indexes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">iend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i end indexes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">jend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>j end indexes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="389" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="391" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga8809db19aeaef7fbd8a30a94017a45af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public diag_grid_mod::get_local_indexes2</definition>
+        <argsstring>(lat, lon, iindex, jindex)</argsstring>
+        <name>get_local_indexes2</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <param>
+          <type>iindex</type>
+          <defname>iindex</defname>
+        </param>
+        <param>
+          <type>jindex</type>
+          <defname>jindex</defname>
+        </param>
+        <briefdescription>
+<para>Find the indices of the nearest grid point of the a-grid to the specified (lon,lat) location on the local PE. if desired point not within domain of local PE, return (0,0) as the indices. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lat location</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lon location</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">iindex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i indexes</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">jindex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>j indexes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="639" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="640" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1ga38d32aee9fb2540ffdfb50354b799023" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure elemental type(<ref refid="structdiag__grid__mod_1_1point" kindref="compound">point</ref>) function</type>
+        <definition>pure elemental type(point) function diag_grid_mod::latlon2xyz</definition>
+        <argsstring>(lat, lon)</argsstring>
+        <name>latlon2xyz</name>
+        <param>
+          <type>lat</type>
+          <defname>lat</defname>
+        </param>
+        <param>
+          <type>lon</type>
+          <defname>lon</defname>
+        </param>
+        <briefdescription>
+<para>Return the (x,y,z) position of a given (lat,lon) point. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a specific (lat, lon) point on the Earth, return the corresponding (x,y,z) location. The return of latlon2xyz will be either a scalar or an array of the same size as lat and lon. <simplesect kind="return"><para>The return of latlon2xyz will be either a scalar or an array of the same size as lat and lon.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The latitude of the (x,y,z) location to find. <computeroutput>lat</computeroutput> can be either a scalar or array. <computeroutput>lat</computeroutput> must be of the same rank / size as <computeroutput>lon</computeroutput>. This function assumes <computeroutput>lat</computeroutput> is in the range [-90,90].</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The longitude of the (x,y,z) location to find. <computeroutput>lon</computeroutput> can be either a scalar or array. <computeroutput>lon</computeroutput> must be of the same rank / size as <computeroutput>lat</computeroutput>. This function assumes <computeroutput>lon</computeroutput> is in the range [0,360]. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="1017" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="1018" bodyend="1041"/>
+      </memberdef>
+      <memberdef kind="function" id="group__diag__grid__mod_1gafbf2ec20333592de7c79ad330b61ad2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure elemental real function</type>
+        <definition>pure elemental real function diag_grid_mod::rad2deg</definition>
+        <argsstring>(angle)</argsstring>
+        <name>rad2deg</name>
+        <param>
+          <type>angle</type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar or array of angles in radians. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="682" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" bodystart="683" bodyend="685"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/diag_grid.F90" line="38" column="1"/>
+  </compounddef>
+</doxygen>

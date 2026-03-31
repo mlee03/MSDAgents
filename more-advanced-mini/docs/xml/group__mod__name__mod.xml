@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__mod__name__mod" kind="group">
+    <compoundname>mod_name_mod</compoundname>
+    <title>` and a</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput>and adding</computeroutput>` <linebreak/>
+documentation blocks. This will add the interface/type to the module page without any redundant items. After any interface or type definitions are defined, <computeroutput>!&gt; following</computeroutput>!&gt;` must be added after or else the rest of the module will be excluded.</para><para>Example: <programlisting filename=".F90"><codeline><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>closes<sp/>module<sp/>group<sp/>started<sp/>at<sp/>beginning<sp/>of<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@brief<sp/>short<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>Longer<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>@param[inout]<sp/>arg1<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!!<sp/>@returns<sp/>retval<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@ingroup<sp/>foo_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/>foo</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal">foo</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>description</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@ingroup<sp/>foo_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">type</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>::<sp/>typename</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>num</highlight><highlight class="comment"><sp/>!&lt;<sp/>description</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">end<sp/>type<sp/></highlight><highlight class="normal">typename</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&lt;<sp/>any<sp/>other<sp/>interface/</highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/>definitions<sp/>and<sp/>documentation<sp/>&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>add<sp/>rest<sp/>of<sp/>module</highlight><highlight class="comment"></highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>foo_mod</highlight></codeline>
+<codeline><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+</programlisting></para><para><heading level="3">Generating the Doxygen Site</heading>
+</para><para>The site can be generated from the source code either manually (must have doxygen installed), or through a github action.</para><para>To generate it manually from the repository: <programlisting><codeline><highlight class="normal">autoreconf<sp/>-it</highlight></codeline>
+<codeline><highlight class="normal">./configure<sp/>--enable-docs</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>-C<sp/>docs</highlight></codeline>
+</programlisting></para><para>To have the site generated through a github action, you can go to the <emphasis>Actions</emphasis> tab on your forked FMS repository. From there you can click on <emphasis>Select Workflow</emphasis> and select the <emphasis>Generate and deploy documentationon GH pages</emphasis> action. This will show all previous runs, and will display a button to run the doxygen workflow on whichever branch is desired. After completion, the page will be available at: &lt;your github username&gt;.github.io/FMS</para><para>If not available, settings for the site can be found in the forked repositories <emphasis>Settings</emphasis> tab, under <emphasis>Pages</emphasis>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

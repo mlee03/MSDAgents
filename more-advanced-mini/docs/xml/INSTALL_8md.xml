@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="INSTALL_8md" kind="file" language="Markdown">
+    <compoundname>INSTALL.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">\page<sp/>install<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>libFMS<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>External<sp/>Requirements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>external<sp/>libraries<sp/>are<sp/>required<sp/>when<sp/>building<sp/>libFMS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>NetCDF<sp/>C<sp/>and<sp/>Fortran<sp/>(77/90)<sp/>headers<sp/>and<sp/>libraries</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Fortran<sp/>2003<sp/>standard<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Fortran<sp/>compiler<sp/>that<sp/>supports<sp/>Cray<sp/>Pointer</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>MPI<sp/>C<sp/>and<sp/>Fortran<sp/>headers<sp/>and<sp/>libraries<sp/>(optional)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Libyaml<sp/>header<sp/>and<sp/>libraries<sp/>(optional)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Linux<sp/>or<sp/>Unix<sp/>style<sp/>system</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Supported<sp/>Compilers</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>strive<sp/>to<sp/>have<sp/>libFMS<sp/>built<sp/>with<sp/>as<sp/>many<sp/>C<sp/>and<sp/>Fortran<sp/>compilers<sp/>on<sp/>as<sp/>many</highlight></codeline>
+<codeline><highlight class="normal">Unix/Linux<sp/>type<sp/>systems<sp/>as<sp/>possible.<sp/><sp/>However,<sp/>internally,<sp/>we<sp/>only<sp/>use<sp/>libFMS</highlight></codeline>
+<codeline><highlight class="normal">compiled<sp/>with<sp/>the<sp/>Intel<sp/>compilers.<sp/><sp/>Some<sp/>groups<sp/>have<sp/>had<sp/>success<sp/>using<sp/>libFMS</highlight></codeline>
+<codeline><highlight class="normal">when<sp/>compiled<sp/>with<sp/>the<sp/>GNU<sp/>C<sp/>and<sp/>Fortran<sp/>compilers.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>MPI<sp/>Support</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>default<sp/>way<sp/>to<sp/>build<sp/>libFMS<sp/>is<sp/>with<sp/>MPI<sp/>support.<sp/><sp/>We<sp/>have<sp/>found<sp/>that<sp/>using</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>MPI<sp/>aware<sp/>compiler,<sp/>or<sp/>the<sp/>MPI<sp/>compiler<sp/>wrappers<sp/>(mpif90,<sp/>mpicc,<sp/>etc.),<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">general,<sp/>offer<sp/>the<sp/>best<sp/>results<sp/>when<sp/>building<sp/>with<sp/>MPI<sp/>support.<sp/><sp/>If<sp/>you<sp/>decide</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>not<sp/>use<sp/>an<sp/>MPI<sp/>aware<sp/>compiler,<sp/>you<sp/>should<sp/>pass<sp/>the<sp/>include<sp/>and<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">locations<sp/>to<sp/>the<sp/>build<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">libFMS<sp/>can<sp/>be<sp/>built<sp/>without<sp/>MPI<sp/>support<sp/>(sometimes<sp/>called<sp/>&quot;no-comm<sp/>mode&quot;).<sp/><sp/>To</highlight></codeline>
+<codeline><highlight class="normal">build<sp/>libFMS<sp/>without<sp/>MPI<sp/>support,<sp/>pass<sp/>to<sp/>`configure`<sp/>the<sp/>`--with-mpi=no`<sp/>flag.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Supported<sp/>Build<sp/>Systems</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>FMS<sp/>repository<sp/>has<sp/>two<sp/>build<sp/>systems<sp/>in<sp/>place,<sp/>GNU<sp/>autotools<sp/>and<sp/>CMake.</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>also<sp/>compiled<sp/>with<sp/>the<sp/>GFDL&apos;s<sp/>internally-developed<sp/>build<sp/>tool,<sp/>[mkmf](https://github.com/noaa-gfdl/mkmf)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CMake<sp/>and<sp/>Autotools<sp/>have<sp/>some<sp/>variation<sp/>in<sp/>options<sp/>and<sp/>the<sp/>resulting<sp/>build<sp/>targets.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Autotools<sp/>will<sp/>build<sp/>with<sp/>64<sp/>bit<sp/>real<sp/>defaults<sp/>unless<sp/>configured<sp/>with<sp/>`--enable-mixed-mode`<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>case<sp/>it<sp/>will<sp/>default<sp/>to<sp/>32<sp/>bit<sp/>reals<sp/>and<sp/>add<sp/>overloads<sp/>to<sp/>allow<sp/>for<sp/>both<sp/>32<sp/>bit<sp/>and<sp/>64<sp/>bit</highlight></codeline>
+<codeline><highlight class="normal">operations.<sp/>This<sp/>results<sp/>in<sp/>one<sp/>library<sp/>with<sp/>both<sp/>32<sp/>bit<sp/>and<sp/>64<sp/>bit<sp/>routines<sp/>(defaulting<sp/>to<sp/>32<sp/>bit<sp/>reals).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">By<sp/>default<sp/>CMake<sp/>will<sp/>build<sp/>the<sp/>library<sp/>with<sp/>32<sp/>bit<sp/>reals.<sp/>It<sp/>also<sp/>has<sp/>an<sp/>option<sp/>for<sp/>64<sp/>bit<sp/>defaults</highlight></codeline>
+<codeline><highlight class="normal">,<sp/>and<sp/>if<sp/>enabled<sp/>will<sp/>build<sp/>an<sp/>additional<sp/>library<sp/>with<sp/>64<sp/>bit<sp/>reals.<sp/>This<sp/>results<sp/>in<sp/>distinct<sp/>32<sp/>bit<sp/>and<sp/>64<sp/>bit<sp/>libraries<sp/>(libfms_r4.a<sp/>and<sp/>libfms_r8.a)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>GNU<sp/>Autoconf/Automake</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>many<sp/>cases,<sp/>running<sp/>the<sp/>shell<sp/>command<sp/>`./configure<sp/>&amp;&amp;<sp/>make<sp/>&amp;&amp;<sp/>make<sp/>install`</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>build<sp/>and<sp/>install<sp/>this<sp/>package.<sp/><sp/>Since<sp/>libFMS<sp/>requires<sp/>the<sp/>netCDF<sp/>libraries,</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>will<sp/>likely<sp/>need<sp/>to<sp/>tell<sp/>configure<sp/>where<sp/>to<sp/>find<sp/>the<sp/>C<sp/>and<sp/>Fortran<sp/>netCDF</highlight></codeline>
+<codeline><highlight class="normal">headers<sp/>and<sp/>libraries<sp/>via<sp/>the<sp/>`CPPFLAGS`,<sp/>`FCFLAGS`<sp/>and<sp/>`LDFLAGS`<sp/>variables</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>./configure<sp/>CPPFLAGS=&quot;-I/path/to/netcdf/include&quot;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FCFLAGS=&quot;-I/path/to/netcdff/include&quot;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LDFLAGS=&quot;-L/path/to/netcdf/lib<sp/>-L/path/to/netcdff/lib&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>building<sp/>from<sp/>a<sp/>GitHub<sp/>clone,<sp/>the<sp/>user<sp/>must<sp/>run<sp/>`autoreconf<sp/>-i`<sp/>before</highlight></codeline>
+<codeline><highlight class="normal">running<sp/>the<sp/>`./configure`<sp/>script.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`./configure`<sp/>script<sp/>will<sp/>guess<sp/>as<sp/>many<sp/>compiler<sp/>options<sp/>as<sp/>required<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">build<sp/>libFMS.<sp/><sp/>In<sp/>some<sp/>cases<sp/>you<sp/>may<sp/>be<sp/>required<sp/>to<sp/>supply<sp/>additional<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">flags<sp/>for<sp/>your<sp/>system.<sp/><sp/>Additional<sp/>compiler<sp/>options<sp/>can<sp/>be<sp/>passed<sp/>to<sp/>the<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">with<sp/>the<sp/>`CPPFLAGS`,<sp/>`CFLAGS`<sp/>and<sp/>`FCFLAGS`<sp/>variable.<sp/><sp/>The<sp/>`./configure`<sp/>option</highlight></codeline>
+<codeline><highlight class="normal">`--disable-setting-flags`<sp/>will<sp/>not<sp/>guess<sp/>required<sp/>compiler<sp/>flags.<sp/><sp/>Using<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">configure<sp/>option<sp/>will<sp/>require<sp/>the<sp/>user<sp/>to<sp/>give<sp/>all<sp/>required<sp/>flags.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>`./configure<sp/>--help`<sp/>to<sp/>see<sp/>other<sp/>available<sp/>configure<sp/>options.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information<sp/>on<sp/>building<sp/>with<sp/>autotools<sp/>and<sp/>build<sp/>options<sp/>please<sp/>see</highlight></codeline>
+<codeline><highlight class="normal"><sp/>[BUILD_SYSTEM.md](https://github.com/NOAA-GFDL/FMS/blob/main/libFMS/BUILD_SYSTEM.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>CMake</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>using<sp/>CMake,<sp/>follow<sp/>the<sp/>instructions<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">[CMAKE_INSTRUCTIONS.mk](https://github.com/NOAA-GFDL/FMS/blob/main/CMAKE_INSTRUCTIONS.md).</highlight></codeline>
+<codeline><highlight class="normal">Currently<sp/>the<sp/>CMake<sp/>configuration<sp/>is<sp/>the<sp/>most<sp/>restrictive<sp/>build<sp/>option<sp/>as<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">compiler<sp/>flags<sp/>are<sp/>immutable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>GFDL<sp/>MKMF</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Make<sp/>Makefile<sp/>([MKMF](https://github.com/NOAA-GFDL/mkmf))<sp/>is<sp/>the<sp/>GFDL<sp/>developed</highlight></codeline>
+<codeline><highlight class="normal">makefile<sp/>generator<sp/>application.<sp/><sp/>MKMF<sp/>uses<sp/>a<sp/>list<sp/>of<sp/>file,<sp/>or<sp/>a<sp/>list<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">directories<sp/>that<sp/>contain<sp/>Fortran<sp/>or<sp/>C<sp/>file,<sp/>a<sp/>Make<sp/>template<sp/>file,<sp/>and<sp/>writes</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>Makefile<sp/>with<sp/>the<sp/>correct<sp/>dependencies<sp/>to<sp/>build<sp/>a<sp/>library<sp/>or<sp/>executable.<sp/><sp/>To</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>MKMF<sp/>to<sp/>build<sp/>libFMS,<sp/>do<sp/>the<sp/>following.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Clone<sp/>the<sp/>MKMF<sp/>repository<sp/>from<sp/>GitHub</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>`git<sp/>clone<sp/>https://github.com/NOAA-GFDL/mkmf.git`</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Add<sp/>the<sp/>`mkmf/bin`<sp/>directory<sp/>to<sp/>your<sp/>PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>`export<sp/>PATH=/path/to/mkmf/bin:${PATH}`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>or</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>`setenv<sp/>PATH<sp/>/path/to/mkmf/bin:${PATH}`</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Run<sp/>the<sp/>`list_paths`<sp/>command,<sp/>on<sp/>the<sp/>FMS<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>`list_paths<sp/>path/to/FMS`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>This<sp/>will<sp/>create<sp/>a<sp/>path_names<sp/>file<sp/>in<sp/>the<sp/>current<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Pick<sp/>a<sp/>MKMF<sp/>template<sp/>from<sp/>the<sp/>`mkmf/templates`<sp/>directory<sp/>that<sp/>most<sp/>closely</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>matches<sp/>you<sp/>system<sp/>and<sp/>compiler.<sp/><sp/>Make<sp/>any<sp/>modifications<sp/>as<sp/>need</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Run<sp/>`mkmf`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```shell</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>mkmf<sp/>-c<sp/>&quot;-Duse_netCDF<sp/>-Duse_libMPI&quot;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-I<sp/>/path/to/netcdff/include<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-I<sp/>/path/to/netcdf/include<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-t<sp/>/path/to/mkmf/template.<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-p<sp/>libfms.a<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>path_names</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Once<sp/>built,<sp/>place<sp/>the<sp/>`libfms.a`,<sp/>`*.mod`,<sp/>`include/\*`<sp/>files<sp/>in<sp/>your<sp/>install</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>location.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">While<sp/>MKMF<sp/>has<sp/>been<sp/>the<sp/>build<sp/>system<sp/>used<sp/>by<sp/>GFDL<sp/>to<sp/>build<sp/>all<sp/>the<sp/>GFDL<sp/>models</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>some<sp/>time,<sp/>this<sp/>build<sp/>method<sp/>requires<sp/>the<sp/>most<sp/>user<sp/>intervention<sp/>when</highlight></codeline>
+<codeline><highlight class="normal">building<sp/>libFMS<sp/>on<sp/>a<sp/>new<sp/>system.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/INSTALL.md"/>
+  </compounddef>
+</doxygen>

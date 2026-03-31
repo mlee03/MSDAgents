@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__home_Ryan_8Mulhall_FMS-1_diag_manager_diag_yaml_format" kind="page">
+    <compoundname>md__home_Ryan.Mulhall_FMS-1_diag_manager_diag_yaml_format</compoundname>
+    <title>Diag Table Yaml Format:</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The purpose of this document is to explain the diag_table yaml format.</para><para><heading level="2">Contents</heading>
+</para><para><itemizedlist>
+<listitem><para><ulink url="diag_yaml_format.md#1-converting-from-legacy-ascii-diag_table-format">1. Converting from legacy ascii diag_table format</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#2-diag-table-yaml-sections">2. Diag table yaml sections</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#21-global-section">2.1 Global Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#22-file-section">2.2 File Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#221-flexible-output-timings">2.2.1 Flexible output timings</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#222-coupled-model-diag-files">2.2.2 Coupled Model Diag Files</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#23-variable-section">2.3 Variable Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#24-variable-metadata-section">2.4 Variable Metadata Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#25-global-meta-data-section">2.5 Global Meta Data Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#26-sub_region-section">2.6 Sub_region Section</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#3-more-examples">3. More examples</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#4-schema">4. Schema</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#5-ensemble-and-nest-support">5. Ensemble and Nest Support</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#6-reducing-diag-table-yaml-length">6. Reducing Diag Table Yaml Length</ulink></para></listitem><listitem><para><ulink url="diag_yaml_format.md#7-improving-performance-at-high-resolutions">7. Improving Performance at High Resolutions</ulink></para></listitem></itemizedlist>
+</para><para><heading level="3">1. Converting from legacy ascii diag_table format</heading>
+</para><para>To convert the legacy ascii diad_table format to this yaml format, the python script <ulink url="https://github.com/NOAA-GFDL/fms_yaml_tools/blob/aafc3293d45df2fc173d3c7afd8b8b0adc18fde4/fms_yaml_tools/diag_table/diag_table_to_yaml.py#L23-L26"><bold>diag_table_to_yaml.py</bold></ulink> can be used. To confirm that your diag_table.yaml was created correctly, the python script <ulink url="https://github.com/NOAA-GFDL/fms_yaml_tools/blob/aafc3293d45df2fc173d3c7afd8b8b0adc18fde4/fms_yaml_tools/diag_table/is_valid_diag_table_yaml.py#L24-L27"><bold>is_valid_diag_table_yaml.py</bold></ulink> can be used.</para><para><heading level="3">2. Diag table yaml sections</heading>
+</para><para>The diag_table.yaml is organized by file. Each file has the required and optional key/value pairs for the file, an optional subsection defining any additional global metadata to add to the file, an optional subsection defining a subregion of the grid to output the data for and a required subsection for all of the variables in the file. Each variable has the required and optional key/value pairs for the variable and an optional subsection defining any additional variable attributes to add to the file. The hierarchical structure looks like this:</para><para><programlisting filename=".yaml"><codeline><highlight class="normal">title:</highlight></codeline>
+<codeline><highlight class="normal">base_date:</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#key/value<sp/>pairs<sp/>for<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>#key/value<sp/>pairs<sp/>for<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>#atributes<sp/>for<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>global_metadata:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#global<sp/>attributes<sp/>for<sp/>file1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>subregion:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>#subregion<sp/>for<sp/>file1</highlight></codeline>
+</programlisting></para><para><heading level="3">2.1 Global Section</heading>
+</para><para>The diag_yaml requires “title” and the “baseDate”.<itemizedlist>
+<listitem><para>The <bold>title</bold> is a string that labels the diag yaml. The equivalent in the legacy diag_table would be the experiment. It is recommended that each diag_yaml have a separate title label that is descriptive of the experiment that is using it.</para></listitem><listitem><para>The <bold>basedate</bold> is an array of 6 integers indicating the base_date in the format [year month day hour minute second].</para></listitem></itemizedlist>
+</para><para><bold>Example:</bold></para><para>In the YAML format: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>ESM4_piControl</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2022<sp/>5<sp/>26<sp/>12<sp/>3<sp/>1</highlight></codeline>
+</programlisting></para><para>In the legacy ascii format: <programlisting><codeline><highlight class="normal">ESM4_piControl</highlight></codeline>
+<codeline><highlight class="normal">2022<sp/>5<sp/>26<sp/>12<sp/>3<sp/>1</highlight></codeline>
+</programlisting></para><para><heading level="3">2.2 File Section</heading>
+</para><para>The files are listed under the diagFiles section as a dashed array.</para><para>Below are the <bold>required</bold> keys needed to define each file.<itemizedlist>
+<listitem><para><bold>file_name</bold> is a string that defines the name of the file. Do not add &quot;.nc&quot; and &quot;tileX&quot; to the filename as this will be handled by FMS.</para></listitem><listitem><para><bold>freq</bold> defines the frequency and the units that data will be written<itemizedlist>
+<listitem><para>The acceptable values for freq are:<itemizedlist>
+<listitem><para>=-1: output at the end of the run only</para></listitem><listitem><para>=0: output every timestep</para></listitem><listitem><para>&gt;0 units: output frequency and units (with a space between the frequency number and units e.g 24 hours)</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Values of -1 or 0 do not require units.</para></listitem><listitem><para>The acceptable values for units are seconds, minutes, hours, days, months, years.</para></listitem></itemizedlist>
+</para></listitem><listitem><para><bold>time_units</bold> is a string that defines units for time. The acceptable values are seconds, minutes, hours, days, months, years.</para></listitem><listitem><para><bold>unlimdim</bold> is a string that defines the name of the unlimited dimension in the output netcdf file, usually “time”.</para></listitem><listitem><para><bold>varlist</bold> is a subsection that list all of the variable in the file</para></listitem></itemizedlist>
+</para><para><bold>Example:</bold> The following creates a file with data written every 6 hours.</para><para>In the YAML format: <programlisting filename=".yaml"><codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>atmos_6hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>varinfo</highlight></codeline>
+</programlisting></para><para>In the legacy ascii format: <programlisting><codeline><highlight class="normal">&quot;atmos_6hours&quot;,<sp/><sp/><sp/><sp/><sp/><sp/>6,<sp/><sp/>&quot;hours&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;time&quot;</highlight></codeline>
+</programlisting></para><para><bold>NOTE:</bold> The fourth column (file_format) has been deprecated. Netcdf files will always be written.</para><para>Below are some <emphasis>optional</emphasis> keys that may be added.<itemizedlist>
+<listitem><para><bold>write_file</bold> is a logical that indicates if you want the file to be created (default is true). This is a new feature that is not supported by the legacy ascii data_table.</para></listitem><listitem><para><bold>new_file_freq</bold> is a string that defines the frequency and the frequency units (with a space between the frequency number and units) for closing the existing file</para></listitem><listitem><para><bold>start_time</bold> is an array of 6 integer indicating when to start the file for the first time. It is in the format [year month day hour minute second]. Requires “new_file_freq”</para></listitem><listitem><para><bold>filename_time</bold> is the time used to set the name of new files when using new_file_freq. The acceptable values are begin (which will use the beginning of the file&apos;s time bounds), middle (which will use the middle of the file&apos;s time bounds), and end (which will use the end of the file&apos;s time bounds). The default is middle</para></listitem><listitem><para><bold>reduction</bold> is the reduction method that will be used for all the variables in the file. This is overridden if the reduction is specified at the variable level. The acceptable values are average, diurnalXX (where XX is the number of diurnal samples), powXX (where XX is the power level), min, max, none, rms, and sum.</para></listitem><listitem><para><bold>kind</bold> is a string that defines the type of variable as it will be written out in the file. This is overridden if the kind is specified at the variable level. Acceptable values are r4, r8, i4, and i8.</para></listitem><listitem><para><bold>module</bold> is a string that defines the module where the variable is registered in the model code. This is overridden if the module is specified at the variable level.</para></listitem></itemizedlist>
+</para><para><bold>Example:</bold> The following will create a new file every 6 hours starting at Jan 1 2020. Variable data will be written to the file every 6 hours.</para><para>In the YAML format: <programlisting filename=".yaml"><codeline><highlight class="normal">-<sp/>file_name:<sp/>ocn%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2020<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+</programlisting></para><para>In the legacy ascii format: <programlisting><codeline><highlight class="normal">&quot;ocn%4yr%2mo%2dy%2hr&quot;,<sp/><sp/><sp/><sp/><sp/><sp/>6,<sp/><sp/>&quot;hours&quot;,<sp/>1,<sp/>&quot;hours&quot;,<sp/>&quot;time&quot;,<sp/>6,<sp/>&quot;hours&quot;,<sp/>&quot;1901<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0&quot;</highlight></codeline>
+</programlisting></para><para>Because this is using the default <computeroutput>filename_time</computeroutput> (middle), this example will create the files: <programlisting><codeline><highlight class="normal">ocn_2020_01_01_03.nc<sp/>for<sp/>time_bnds<sp/>[0,6]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_09.nc<sp/>for<sp/>time_bnds<sp/>[6,12]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_15.nc<sp/>for<sp/>time_bnds<sp/>[12,18]</highlight></codeline>
+<codeline><highlight class="normal">ocn_2020_01_01_21.nc<sp/>for<sp/>time_bnds<sp/>[18,24]</highlight></codeline>
+</programlisting></para><para><bold>NOTE</bold> If using the new_file_freq, there must be a way to distinguish each file, as it was done in the example above.</para><para><itemizedlist>
+<listitem><para><bold>file_duration</bold> is a string that defines how long the file should receive data after start time in “file_duration_units”. This optional field can only be used if the start_time field is present. If this field is absent, then the file duration will be equal to the frequency for creating new files.</para></listitem><listitem><para><bold>global_meta</bold> is a subsection that lists any additional global metadata to add to the file. This is a new feature that is not supported by the legacy ascii data_table.</para></listitem><listitem><para><bold>sub_region</bold> is a subsection that defines the four corners of a subregional section to capture.</para></listitem></itemizedlist>
+</para><para><heading level="3">2.2.1 Flexible output timings</heading>
+</para><para>In order to provide more flexibility in output timings, the diag_table yaml format allows for different file frequencies for the same file by allowing the <computeroutput>freq</computeroutput>, <computeroutput>new_file_freq</computeroutput>, and <computeroutput>file_duration</computeroutput> keys to accept a comma separated list.</para><para>For example, <programlisting><codeline><highlight class="normal">-<sp/>file_name:<sp/>flexible_timing%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>hours,<sp/>1<sp/>hours,<sp/>1<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours,<sp/>3<sp/>hours,<sp/>1<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>file_duration:<sp/>12<sp/>hours,<sp/>3<sp/>hours,<sp/>9<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>filename_time:<sp/>begin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+</programlisting> This will create a file every 6 hours for 12 hours <programlisting><codeline><highlight class="normal">flexible_timing_0002_01_01_00.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>0<sp/>to<sp/>hour<sp/>6</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_06.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>6<sp/>to<sp/>hour<sp/>12</highlight></codeline>
+</programlisting></para><para>Then it will create a file every 3 hours for 3 hours <programlisting><codeline><highlight class="normal">flexible_timing_0002_01_01_12.nc<sp/>-<sp/>using<sp/>hourly<sp/>averaged<sp/>data<sp/>from<sp/>hour<sp/>12<sp/>to<sp/>hour<sp/>15</highlight></codeline>
+</programlisting></para><para>Then it will create a file every 1 hour for 9 hours. <programlisting><codeline><highlight class="normal">flexible_timing_0002_01_01_15.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>15<sp/>to<sp/>hour<sp/>16</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_16.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>16<sp/>to<sp/>hour<sp/>17</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_17.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>17<sp/>to<sp/>hour<sp/>18</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_18.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>18<sp/>to<sp/>hour<sp/>19</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_19.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>19<sp/>to<sp/>hour<sp/>20</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_20.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>20<sp/>to<sp/>hour<sp/>21</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_21.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>21<sp/>to<sp/>hour<sp/>22</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_22.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>22<sp/>to<sp/>hour<sp/>23</highlight></codeline>
+<codeline><highlight class="normal">flexible_timing_0002_01_01_23.nc<sp/>-<sp/>using<sp/>data<sp/>from<sp/>hour<sp/>23<sp/>to<sp/>hour<sp/>24</highlight></codeline>
+</programlisting></para><para><heading level="3">2.2.2 Coupled Model Diag Files</heading>
+</para><para>In the <emphasis>legacy ascii diag_table</emphasis>, when running a coupled model (ATM + OCN) in a separate PE list:<itemizedlist>
+<listitem><para>The ATM PEs ignored the files in the diag_table that contain &quot;OCEAN&quot; in the filename</para></listitem><listitem><para>The OCN PEs ignored the files in the diag_table that did not contain &quot;OCEAN&quot; in the filename</para></listitem></itemizedlist>
+</para><para>In the <emphasis>yaml diag_table</emphasis>:<itemizedlist>
+<listitem><para>The ATM PEs will ignore the files in the diag_table.yaml that contain the key/value pair <computeroutput>is_ocean: true</computeroutput></para></listitem><listitem><para>The OCN PEs will ignore the files in the diag_table.yaml that do not contain the key/value pair <computeroutput>is_ocean: true</computeroutput></para></listitem></itemizedlist>
+</para><para><heading level="3">2.3 Variable Section</heading>
+</para><para>The variables in each file are listed under the varlist section as a dashed array.</para><para><itemizedlist>
+<listitem><para><bold>var_name:</bold> is a string that defines the variable name as it is defined in the register_diag_field call in the model</para></listitem><listitem><para><bold>reduction:</bold> is a string that describes the data reduction method to perform prior to writing data to disk. Acceptable values are average, diurnalXX (where XX is the number of diurnal samples), powXX (where XX is the power level), min, max, none, rms, and sum.</para></listitem><listitem><para><bold>module:</bold> is a string that defines the module where the variable is registered in the model code</para></listitem><listitem><para><bold>kind:</bold> is a string that defines the type of variable as it will be written out in the file. Acceptable values are r4, r8, i4, and i8</para></listitem></itemizedlist>
+</para><para><bold>Example:</bold></para><para>In the YAML format: <programlisting filename=".yaml"><codeline><highlight class="normal">varlist:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>module:<sp/>moist</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>var_name:<sp/>precip</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+</programlisting></para><para>In the legacy ascii format: <programlisting><codeline><highlight class="normal">&quot;moist&quot;,<sp/><sp/><sp/><sp/><sp/>&quot;precip&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;precip&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;atmos_8xdaily&quot;,<sp/><sp/><sp/>&quot;all&quot;,<sp/>.true.,<sp/><sp/>&quot;none&quot;,<sp/>2</highlight></codeline>
+</programlisting> <bold>NOTE:</bold> The fifth column (time_sampling) has been deprecated. The reduction_method (<computeroutput>.true.</computeroutput>) has been replaced with <computeroutput>average</computeroutput>. The output name was not included in the yaml because it is the same as the var_name.</para><para>which corresponds to the following model code <programlisting filename=".F90"><codeline><highlight class="normal">id_precip<sp/>=<sp/>register_diag_field(<sp/></highlight><highlight class="stringliteral">&apos;moist&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;precip&apos;</highlight><highlight class="normal">,<sp/>axes,<sp/>time)</highlight></codeline>
+</programlisting> where:<itemizedlist>
+<listitem><para><computeroutput>moist</computeroutput> corresponds to the module key in the diag_table.yaml</para></listitem><listitem><para><computeroutput>precip</computeroutput> corresponds to the var_name key in the diag_table.yaml</para></listitem><listitem><para><computeroutput>axes</computeroutput> are the ids of the axes the variable is a function of</para></listitem><listitem><para><computeroutput>Time</computeroutput> is the model time</para></listitem></itemizedlist>
+</para><para>Below are some <emphasis>optional</emphasis> keys that may be added.<itemizedlist>
+<listitem><para><bold>write_var:</bold> is a logical that is set to false if the user doesn’t want the variable to be written to the file (default: true).</para></listitem><listitem><para><bold>out_name:</bold> is a string that defines the name of the variable that will be written to the file (default same as var_name)</para></listitem><listitem><para><bold>long_name:</bold> is a string defining the long_name attribute of the variable. It overwrites the long_name in the variable&apos;s register_diag_field call</para></listitem><listitem><para><bold>attributes:</bold> is a subsection with any additional metadata to add to the variable in the netcdf file. This is a new feature that is not supported by the legacy ascii data_table.</para></listitem><listitem><para><bold>zbounds:</bold> is a 2 member array of integers that define the bounds of the z axis (zmin, zmin), optional default is no limits.</para></listitem></itemizedlist>
+</para><para><heading level="3">2.4 Variable Metadata Section</heading>
+</para><para>Any additional variable attributes can be added for each variable can be listed under the attributes section as a dashed array. The key is attribute name and the value is the attribute value.</para><para><bold>Example:</bold></para><para><programlisting filename=".yaml"><codeline><highlight class="normal">attributes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+</programlisting></para><para>Although this was not supported by the legacy ascii data_table, with the legacy diag_manager, a call to <computeroutput>diag_field_add_attribute</computeroutput> could have been used to do the same thing.</para><para><programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">diag_field_add_attribute(diag_field_id,<sp/>attribute_name,<sp/>attribute_value)</highlight></codeline>
+</programlisting></para><para><heading level="3">2.5 Global Meta Data Section</heading>
+</para><para>Any additional global attributes can be added for each file can be listed under the global_meta section as a dashed array. The key is the attribute name and the value is the attribute value.</para><para><programlisting filename=".yaml"><codeline><highlight class="normal">global_meta:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>attribute_name:<sp/>attribute_value</highlight></codeline>
+</programlisting></para><para><heading level="3">2.6 Sub_region Section</heading>
+</para><para>The sub region can be listed under the sub_region section as a dashed array. The legacy ascii diag_table only allows regions to be defined using the latitude and longitude, and it only allowed rectangular sub regions. With the yaml diag_table, you can use indices to defined the sub_region and you can define <bold>any</bold> four corner shape. Each file can only have 1 sub_region defined. These are keys that can be used:<itemizedlist>
+<listitem><para><bold>grid_type:</bold> is a <bold>required</bold> string defining the method used to define the fourth sub_region corners. The acceptable values are &quot;latlon&quot; if using latitude/longitude or &quot;indices&quot; if using the indices of the corners.</para></listitem><listitem><para><bold>corner1:</bold> is a <bold>required</bold> 2 member array of reals if using (grid_type=&quot;latlon&quot;) or integers if using (grid_type=&quot;indices&quot;) defining the x and y points of the first corner of a sub_grid.</para></listitem><listitem><para><bold>corner2:</bold> is a <bold>required</bold> 2 member array of reals if using (grid_type=&quot;latlon&quot;) or integers if using (grid_type=&quot;indices&quot;) defining the x and y points of the second corner of a sub_grid.</para></listitem><listitem><para><bold>corner3:</bold> is a <bold>required</bold> 2 member array of reals if using (grid_type=&quot;latlon&quot;) or integers if using (grid_type=&quot;indices&quot;) defining the x and y points of the third corner of a sub_grid.</para></listitem><listitem><para><bold>corner4:</bold> is a <bold>required</bold> 2 member array of reals if using (grid_type=&quot;latlon&quot;) or integers if using (grid_type=&quot;indices&quot;) defining the x and y points of the fourth corner of a sub_grid.</para></listitem><listitem><para><bold>tile:</bold> is an integer defining the tile number the sub_grid is on. It is <bold>required</bold> only if using (grid_type=&quot;indices&quot;).</para></listitem></itemizedlist>
+</para><para><bold>Example:</bold></para><para><programlisting filename=".yaml"><codeline><highlight class="normal">sub_region:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>grid_type:<sp/>latlon</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>corner1:<sp/>-80,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>corner2:<sp/>-80,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>corner3:<sp/>-60,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>corner4:<sp/>-60,<sp/>75</highlight></codeline>
+</programlisting></para><para><heading level="3">3. More examples</heading>
+</para><para>Below is a complete example of diag_table.yaml: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_diag_manager</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>wild_card_name%4yr%2mo%2dy%2hr</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new_file_freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start_time:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>file_duration:<sp/>12<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sst</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>global_meta:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>is_a_file:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>24<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sst</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>write_var:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>do_sst:<sp/>.true.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sub_region:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>grid_type:<sp/>latlon</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner1:<sp/>-80,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner2:<sp/>-80,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner3:<sp/>-60,<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner4:<sp/>-60,<sp/>75</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>-1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>write_file:<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sstt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>long_name:<sp/>S<sp/>S<sp/>T</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>test_diag_manager_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>var_name:<sp/>sstt2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>average</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>write_var:<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sub_region:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>grid_type:<sp/>index</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tile:<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner1:<sp/>10,<sp/>15</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner2:<sp/>20,<sp/>15</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner3:<sp/>10,<sp/>25</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>corner4:<sp/>20,<sp/>25</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>normal3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>-1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>records</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>write_file:<sp/>false</highlight></codeline>
+</programlisting></para><para><heading level="3">4. Schema</heading>
+</para><para>A formal specification of the file format, in the form of a JSON schema, can be found in the <ulink url="https://github.com/NOAA-GFDL/gfdl_msd_schemas">gfdl_msd_schemas</ulink> repository on Github.</para><para><heading level="3">5. Ensemble and Nest Support</heading>
+</para><para>When using nests, it may be desired for a nest to have a different file frequency or number of variables from the parent grid. This may allow users to save disk space and reduce simulations time. In order to support this, FMS allows each nest to have a different diag_table.yaml from the parent grid. For example, if running with 1 nest FMS will use diag_table.yaml for the parent grid and diag_table.nest_01.yaml for the first nest. Similary, each ensemble member can have its own diag_table (diag_table_ens_XX.yaml, where XX is the ensemble number). However, for the ensemble case if both the diag_table.yaml and the diag_table_ens_* files are present, the code will crash as only 1 option is allowed.</para><para><heading level="3">6. Reducing Diag Table Yaml Length</heading>
+</para><para>There may be scenarios where the diag_table.yaml becomes long and contains a lot of repeated content.</para><para>For example, the keys <computeroutput>module</computeroutput>, <computeroutput>reduction</computeroutput>, and <computeroutput>kind</computeroutput> often have the same values across many variables.</para><para><programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+</programlisting></para><para>To reduce size and improve readability, you can <bold>define these keys at the file level, and override them at the variable level if needed</bold>:</para><para><programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+</programlisting></para><para>However, there may be cases where a file contains a large number of variables from different modules, requiring duplication of the module key across multiple lines. For example:</para><para><programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>radiation_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>module:<sp/>some_other_mod</highlight></codeline>
+</programlisting></para><para>To address this, you can group variables by module: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>modules:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>radiation_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>module:<sp/>some_other_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>var_name:<sp/>var5</highlight></codeline>
+</programlisting></para><para>Another option <bold>to reduce its size and improve readability, is to use yaml anchors</bold>. For example, instead of writing: <programlisting><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_daily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+</programlisting></para><para>You can define an anchor and reuse it: <programlisting filename=".yaml"><codeline><highlight class="normal">name:<sp/>&amp;name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>output_name:<sp/>var3_Z</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zbounds:<sp/>2.<sp/>3.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_4xdaily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:<sp/>*name</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_daily</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>1<sp/>days</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>*name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>variable_name:<sp/>var773</highlight></codeline>
+</programlisting> <heading level="3">7. Improving Performance at High Resolutions</heading>
+</para><para>For very high resolutions (e.g., C3072L65), performance can be greatly improved by using NETCDF-4 with collective MPI writes. Tests have shown up to a 70% speedup when writing hourly diagnostic output. This approach also simplifies the workflow, as it does not use the IO domain and does not create distributed files. To enable this feature, set <computeroutput>use_collective_writes: True</computeroutput> for each file. For example: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+</programlisting> Chunking can also have a major impact on performance. You can set chunk sizes for all variables in a file using the <computeroutput>chunksizes</computeroutput> key at the file level. By default, the diag manager will choose chunk sizes equal to the compute domain for domain-decomposed dimensions (e.g., for C3072L65 and a layout of 32,64, the chunksizes would be 96,48,nz). For dimensions that are not domain-decomposed (e.g., the vertical z dimension), the chunk size defaults to the full length of the dimension. This effectively means the entire z-dimension is stored as a single chunk. For unlimited dimensions (time), the chunk size is always 1. For example: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+</programlisting> You can override chunk sizes for individual variables by specifying <computeroutput>chunksizes</computeroutput> at the variable level. For example: <programlisting filename=".yaml"><codeline><highlight class="normal">title:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal">base_date:<sp/>2<sp/>1<sp/>1<sp/>0<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">diag_files:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>file_name:<sp/>test_none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>freq:<sp/>6<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>time_units:<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>unlimdim:<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>module:<sp/>ocn_mod</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>reduction:<sp/>none</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>kind:<sp/>r4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>use_collective_writes:<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>chunksizes:<sp/>96,<sp/>8,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>varlist:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>chunksizes:<sp/>96,<sp/>4,<sp/>1,<sp/>1,<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>var_name:<sp/>var4</highlight></codeline>
+</programlisting></para><para><bold>Things to consider:</bold><orderedlist>
+<listitem><para>This option currently only works for files with variables that are domain-decomposed (i.e., multiple mpi-tasks each with their own section of data). Support for land&apos;s unstructured grid and icebergs will be added in the future; at present, using this option with those grids will result in a FATAL error.</para></listitem><listitem><para>The domain must be evenly decomposed, meaning each processor has the same amount of data. For example, a C3072L65 grid with a layout of (30, 32) will not work and will result in a FATAL error, since 3072 is not evenly divisible by 30. This limitation exists because NetCDF collective I/O requires each process to access the same pattern of chunks. With uneven decomposition, the chunk shapes per process vary, making it impossible to determine a consistent chunking strategy. Currently there are no plans to support this in the future.</para></listitem><listitem><para>The chunksizes must be a comma seperated list of five integers 1 for each dimension.</para></listitem><listitem><para>Chunking is supported even when not using collective writes as long as netcdf-4 file are being used (by setting fms2_io_nml::netcdf_default_format="netcdf4) </para></listitem></orderedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

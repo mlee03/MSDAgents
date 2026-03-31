@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacefield__manager__mod_1_1find__field__index" kind="interface" language="Fortran" prot="private">
+    <compoundname>field_manager_mod::find_field_index</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacefield__manager__mod_1_1find__field__index_1a75eb5a1cb80cb2a3e48e16a078b3e7ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function find_field_index_new</definition>
+        <argsstring>(field_name)</argsstring>
+        <name>find_field_index_new</name>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of the field corresponding to field_name</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to the name of the field that an index is being requested for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1438" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1439" bodyend="1447"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefield__manager__mod_1_1find__field__index_1adbbccd801f3e7dd00c637b094dc05db8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function find_field_index_old</definition>
+        <argsstring>(model, field_name)</argsstring>
+        <name>find_field_index_old</name>
+        <param>
+          <type>model</type>
+          <defname>model</defname>
+        </param>
+        <param>
+          <type>field_name</type>
+          <defname>field_name</defname>
+        </param>
+        <briefdescription>
+<para>Function to return the index of the field. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function when passed a model number and a field name will return the index of the field within the field manager. This index can be used to access other information from the field manager. <simplesect kind="return"><para>The index of the field corresponding to field_name.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number indicating which model is used.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field that an index is being requested for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="1418" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="1419" bodyend="1434"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Returns an index corresponding to the given field name. </para>    </briefdescription>
+    <detaileddescription>
+<para>Model number can be given for old method. <linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="keywordtype">value</highlight><highlight class="normal">=<ref refid="interfacefield__manager__mod_1_1find__field__index" kindref="compound">find_field_index</ref>(<sp/>model,<sp/>field_name<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">value</highlight><highlight class="normal">=<ref refid="interfacefield__manager__mod_1_1find__field__index" kindref="compound">find_field_index</ref>(<sp/>field_name<sp/>)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" line="333" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/field_manager.F90" bodystart="333" bodyend="335"/>
+    <listofallmembers>
+      <member refid="interfacefield__manager__mod_1_1find__field__index_1a75eb5a1cb80cb2a3e48e16a078b3e7ed" prot="private" virt="non-virtual"><scope>field_manager_mod::find_field_index</scope><name>find_field_index_new</name></member>
+      <member refid="interfacefield__manager__mod_1_1find__field__index_1adbbccd801f3e7dd00c637b094dc05db8" prot="private" virt="non-virtual"><scope>field_manager_mod::find_field_index</scope><name>find_field_index_old</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

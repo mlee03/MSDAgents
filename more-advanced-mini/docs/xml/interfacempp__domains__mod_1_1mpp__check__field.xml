@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacempp__domains__mod_1_1mpp__check__field" kind="interface" language="Fortran" prot="private">
+    <compoundname>mpp_domains_mod::mpp_check_field</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacempp__domains__mod_1_1mpp__check__field_1a3fa4d75f3b1d7fb19ddc2a048e78fbfb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mpp_check_field_2d</definition>
+        <argsstring></argsstring>
+        <name>mpp_check_field_2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacempp__domains__mod_1_1mpp__check__field_1a0ef4104ad4ea7ff699432a10c27b2ce3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mpp_check_field_3d</definition>
+        <argsstring></argsstring>
+        <name>mpp_check_field_3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parallel checking between two ensembles which run on different set pes at the same time<linebreak/>
+ There are two forms for the <computeroutput><ref refid="interfacempp__domains__mod_1_1mpp__check__field" kindref="compound">mpp_check_field</ref></computeroutput> call. The 2D version is generally to be used and 3D version is built by repeated calls to the 2D version.<linebreak/>
+ <linebreak/>
+Example usage: </para>    </briefdescription>
+    <detaileddescription>
+<para><programlisting filename=".F90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__domains__mod_1_1mpp__check__field" kindref="compound">mpp_check_field</ref>(field_in,<sp/>pelist1,<sp/>pelist2,<sp/>domain,<sp/>mesg,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w_halo,<sp/>s_halo,<sp/>e_halo,<sp/>n_halo,<sp/>force_abort<sp/><sp/>)</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>field_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Field to be checked </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain of current pe </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mesg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to be printed out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w_halo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Halo size to be checked, default is 0 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s_halo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Halo size to be checked, default is 0 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e_halo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Halo size to be checked, default is 0 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_halo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Halo size to be checked, default is 0 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force_abort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When true, abort program when any difference found. Default is false. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_domains.F90" line="1750" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_domains.F90" bodystart="1750" bodyend="1752"/>
+    <listofallmembers>
+      <member refid="interfacempp__domains__mod_1_1mpp__check__field_1a3fa4d75f3b1d7fb19ddc2a048e78fbfb" prot="private" virt="non-virtual"><scope>mpp_domains_mod::mpp_check_field</scope><name>mpp_check_field_2d</name></member>
+      <member refid="interfacempp__domains__mod_1_1mpp__check__field_1a0ef4104ad4ea7ff699432a10c27b2ce3" prot="private" virt="non-virtual"><scope>mpp_domains_mod::mpp_check_field</scope><name>mpp_check_field_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

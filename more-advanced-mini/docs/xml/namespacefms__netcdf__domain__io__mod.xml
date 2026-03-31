@@ -1,0 +1,1203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__netcdf__domain__io__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_netcdf_domain_io_mod</compoundname>
+    <innerclass refid="interfacefms__netcdf__domain__io__mod_1_1compute__global__checksum" prot="public">fms_netcdf_domain_io_mod::compute_global_checksum</innerclass>
+    <innerclass refid="structfms__netcdf__domain__io__mod_1_1domaindimension__t" prot="private">fms_netcdf_domain_io_mod::domaindimension_t</innerclass>
+    <innerclass refid="structfms__netcdf__domain__io__mod_1_1fmsnetcdfdomainfile__t" prot="public">fms_netcdf_domain_io_mod::fmsnetcdfdomainfile_t</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1gaf0fec4d903929e5fb3892177c77f74c6" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter default_domain_position</definition>
+        <argsstring></argsstring>
+        <name>default_domain_position</name>
+        <initializer>= center</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="44" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1gace069f4a49be73e66960ce9ae8970d93" prot="private" static="no" mutable="no">
+        <type>character(len=16), parameter</type>
+        <definition>character(len=16), parameter domain_axis_att_name</definition>
+        <argsstring></argsstring>
+        <name>domain_axis_att_name</name>
+        <initializer>= &quot;domain_axis&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1gab85ce9015d22a7ac630774ed14997aad" prot="private" static="no" mutable="no">
+        <type>character(len=16), parameter</type>
+        <definition>character(len=16), parameter domain_pos_att</definition>
+        <argsstring></argsstring>
+        <name>domain_pos_att</name>
+        <initializer>= &quot;domain_position&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="45" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1ga3a53c500862a9a21a9e4842f20b06ba4" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public max_num_domain_decomposed_dims</definition>
+        <argsstring></argsstring>
+        <name>max_num_domain_decomposed_dims</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="42" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="fms__netcdf__domain__io_8F90_1adad340df93dc8b560f30099adda0ea45" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter no_domain_decomposed_dimension</definition>
+        <argsstring></argsstring>
+        <name>no_domain_decomposed_dimension</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="41" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1ga57119db378858956b75a0787781c7331" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter variable_not_found</definition>
+        <argsstring></argsstring>
+        <name>variable_not_found</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1ga4bb751b99487156642664892c1c472fa" prot="private" static="no" mutable="no">
+        <type>character(len=16), parameter</type>
+        <definition>character(len=16), parameter x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>= &quot;x&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="47" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__netcdf__domain__io__mod_1ga67a0ff2e184d4f7d012b88238168da7d" prot="private" static="no" mutable="no">
+        <type>character(len=16), parameter</type>
+        <definition>character(len=16), parameter y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <initializer>= &quot;y&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga1074b876833c4c30c72710594dc9a478" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_netcdf_domain_io_mod::add_domain_attribute</definition>
+        <argsstring>(fileobj, variable_name)</argsstring>
+        <name>add_domain_attribute</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <briefdescription>
+<para>Add a &quot;domain_decomposed&quot; attribute to the axis variables because it is required by mppnccombine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="558" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="559" bodyend="594"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1gacfd1c75462af10eb0f79e56594073c4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_netcdf_domain_io_mod::append_domain_decomposed_dimension</definition>
+        <argsstring>(name_, position_, array, size_)</argsstring>
+        <name>append_domain_decomposed_dimension</name>
+        <param>
+          <type>name_</type>
+          <defname>name_</defname>
+        </param>
+        <param>
+          <type>position_</type>
+          <defname>position_</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>size_</type>
+          <defname>size_</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed dimension to an array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">position_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain position.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to search through.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">size_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of spots to look in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="153" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="154" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga899d05494cbbe837adebdcb8e40944f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::close_domain_file</definition>
+        <argsstring>(fileobj)</argsstring>
+        <name>close_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <briefdescription>
+<para>Close a domain netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="481" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="482" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga4cd12c4a12cc9ceb8b15fa6873c7cda9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_netcdf_domain_io_mod::domain_offsets</definition>
+        <argsstring>(data_xsize, data_ysize, domain, xpos, ypos, isd, isc, xc_size, jsd, jsc, yc_size, buffer_includes_halos, extra_x_point, extra_y_point, msg)</argsstring>
+        <name>domain_offsets</name>
+        <param>
+          <type>data_xsize</type>
+          <defname>data_xsize</defname>
+        </param>
+        <param>
+          <type>data_ysize</type>
+          <defname>data_ysize</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>xpos</type>
+          <defname>xpos</defname>
+        </param>
+        <param>
+          <type>ypos</type>
+          <defname>ypos</defname>
+        </param>
+        <param>
+          <type>isd</type>
+          <defname>isd</defname>
+        </param>
+        <param>
+          <type>isc</type>
+          <defname>isc</defname>
+        </param>
+        <param>
+          <type>xc_size</type>
+          <defname>xc_size</defname>
+        </param>
+        <param>
+          <type>jsd</type>
+          <defname>jsd</defname>
+        </param>
+        <param>
+          <type>jsc</type>
+          <defname>jsc</defname>
+        </param>
+        <param>
+          <type>yc_size</type>
+          <defname>yc_size</defname>
+        </param>
+        <param>
+          <type>buffer_includes_halos</type>
+          <defname>buffer_includes_halos</defname>
+        </param>
+        <param>
+          <type>extra_x_point</type>
+          <defname>extra_x_point</defname>
+        </param>
+        <param>
+          <type>extra_y_point</type>
+          <defname>extra_y_point</defname>
+        </param>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+<para>Utility routine that retrieves domain indices. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_xsize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of buffer&apos;s domain &quot;x&quot; dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_ysize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of buffer&apos;s domain &quot;y&quot; dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">xpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable&apos;s domain x dimension position.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ypos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable&apos;s domain y dimension position.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">isd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for x dimension of data domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">isc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for x dimension of compute domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">xc_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of x dimension of compute domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">jsd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for y dimension of data domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">jsc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index for y dimension of compute domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">yc_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of y dimension of compute domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer_includes_halos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag telling if input buffer includes space for halos.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">extra_x_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if data_array has an extra point in x</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">extra_y_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if data_array has an extra point in y</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message appended to fatal error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="818" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="822" bodyend="883"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1gaf543117b7cf4700f0714b918f0b087e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::get_compute_domain_dimension_indices</definition>
+        <argsstring>(fileobj, dimname, indices)</argsstring>
+        <name>get_compute_domain_dimension_indices</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>dimname</type>
+          <defname>dimname</defname>
+        </param>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <briefdescription>
+<para>Return an array of compute domain indices. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of dimension variable.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Compute domain indices. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="779" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="780" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga1d70660f1187f1e04975c13c0c06fc21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_netcdf_domain_io_mod::get_domain_decomposed_dimension_index</definition>
+        <argsstring>(fileobj, variable_name, xory, broadcast)</argsstring>
+        <name>get_domain_decomposed_dimension_index</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>xory</type>
+          <defname>xory</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <briefdescription>
+<para>Given a variable, get the index of the &quot;x&quot; or &quot;y&quot; domain decomposed dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Index of the domain decomposed dimension or else no_domain_decomposed_dimension.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">xory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String telling which dimension to look for. Valid values are &quot;x&quot; or &quot;y&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the index will be broadcast to non &quot;I/O root&quot; ranks. The broadcast will be done by default. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="197" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="200" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga1e34db4585bb38a96c33ddcbf0cfc412" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_netcdf_domain_io_mod::get_domain_decomposed_index</definition>
+        <argsstring>(name_, array, size_)</argsstring>
+        <name>get_domain_decomposed_index</name>
+        <param>
+          <type>name_</type>
+          <defname>name_</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>size_</type>
+          <defname>size_</defname>
+        </param>
+        <briefdescription>
+<para>Get the index of a domain decomposed dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Index of domain decomposed dimension.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to search through.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of spots to look in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="132" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="134" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1gaf630cfea527a05fb4ead1b963d65be8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function fms_netcdf_domain_io_mod::get_domain_position</definition>
+        <argsstring>(name_, array, size_)</argsstring>
+        <name>get_domain_position</name>
+        <param>
+          <type>name_</type>
+          <defname>name_</defname>
+        </param>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>size_</type>
+          <defname>size_</defname>
+        </param>
+        <briefdescription>
+<para>Given a domain decomposed dimension, get its domain position. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Position of the domain decomposed variable.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to search through. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="180" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga57fcb120b3d6f6c9ab45914c9f6ad930" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::get_global_io_domain_indices</definition>
+        <argsstring>(fileobj, dimname, is, ie, indices)</argsstring>
+        <name>get_global_io_domain_indices</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>dimname</type>
+          <defname>dimname</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>indices</type>
+          <defname>indices</defname>
+        </param>
+        <briefdescription>
+<para>Get starting/ending global indices of the I/O domain for a domain decomposed file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of dimension variable.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting index of I/O global domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ending index of I/O global domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Global domain indices </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="889" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="890" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga781d4b742dc31657a729fb722629d706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::get_mosaic_tile_grid</definition>
+        <argsstring>(grid_file, mosaic_file, domain, tile_count)</argsstring>
+        <name>get_mosaic_tile_grid</name>
+        <param>
+          <type>grid_file</type>
+          <defname>grid_file</defname>
+        </param>
+        <param>
+          <type>mosaic_file</type>
+          <defname>mosaic_file</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Read a mosaic_file and get the grid filename for the current tile or for the tile specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">grid_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the grid file for the current domain tile or for tile specified in tile_count</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mosaic_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename that will be read</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional argument indicating the tile you want grid file name for this is for when a pe is in more than tile. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="934" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="935" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga38c0cabf566d57fdb3ba8241b99aba1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_netcdf_domain_io_mod::is_dimension_registered</definition>
+        <argsstring>(fileobj, dimension_name)</argsstring>
+        <name>is_dimension_registered</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>dimension_name</type>
+          <defname>dimension_name</defname>
+        </param>
+        <briefdescription>
+<para>Determine whether a domain-decomposed dimension has been registered to the file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the dimension is registered to the file object</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="314" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="316" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga36a0638898c9c5ba82b9b6dfbed8bd1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_netcdf_domain_io_mod::is_variable_domain_decomposed</definition>
+        <argsstring>(fileobj, variable_name, broadcast, xindex, yindex, xpos, ypos)</argsstring>
+        <name>is_variable_domain_decomposed</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>broadcast</type>
+          <defname>broadcast</defname>
+        </param>
+        <param>
+          <type>xindex</type>
+          <defname>xindex</defname>
+        </param>
+        <param>
+          <type>yindex</type>
+          <defname>yindex</defname>
+        </param>
+        <param>
+          <type>xpos</type>
+          <defname>xpos</defname>
+        </param>
+        <param>
+          <type>ypos</type>
+          <defname>ypos</defname>
+        </param>
+        <briefdescription>
+<para>Determine if a variable is &quot;domain decomposed.&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the variable is &quot;domain decomposed.&quot;</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">broadcast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag controlling whether or not the index will be broadcast to non &quot;I/O root&quot; ranks. The broadcast will be done by default.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">xindex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the domain x dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">yindex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the domain y dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">xpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain position of the x dimension.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ypos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain position of the y dimension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="253" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="256" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga821cd91eb655559cf99d99eb28c986c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_netcdf_domain_io_mod::open_domain_file</definition>
+        <argsstring>(fileobj, path, mode, domain, nc_format, is_restart, dont_add_res_to_filename, use_netcdf_mpi, use_collective)</argsstring>
+        <name>open_domain_file</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>nc_format</type>
+          <defname>nc_format</defname>
+        </param>
+        <param>
+          <type>is_restart</type>
+          <defname>is_restart</defname>
+        </param>
+        <param>
+          <type>dont_add_res_to_filename</type>
+          <defname>dont_add_res_to_filename</defname>
+        </param>
+        <param>
+          <type>use_netcdf_mpi</type>
+          <defname>use_netcdf_mpi</defname>
+        </param>
+        <param>
+          <type>use_collective</type>
+          <defname>use_collective</defname>
+        </param>
+        <briefdescription>
+<para>Open a domain netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the open completed successfully.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File path.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File mode. Allowed values are &quot;read&quot;, &quot;append&quot;, &quot;write&quot;, or &quot;overwrite&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two-dimensional domain.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nc_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Netcdf format that new files are written as. Allowed values are: &quot;64bit&quot;, &quot;classic&quot;, or &quot;netcdf4&quot;. Defaults to &quot;64bit&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_restart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag telling if this file is a restart file. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dont_add_res_to_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating not to add &quot;.res&quot; to the filename</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_netcdf_mpi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag telling if this file should be using netcdf4 parallel reads and writes. Defaults to false. nc_format is automatically set to netcdf4</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">use_collective</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating whether reads and writes should be performed collectively rather than independently. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="340" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga787c352da9d13a4c24c36f231abfa0a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::register_domain_decomposed_dimension</definition>
+        <argsstring>(fileobj, dim_name, xory, domain_position)</argsstring>
+        <name>register_domain_decomposed_dimension</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>dim_name</type>
+          <defname>dim_name</defname>
+        </param>
+        <param>
+          <type>xory</type>
+          <defname>xory</defname>
+        </param>
+        <param>
+          <type>domain_position</type>
+          <defname>domain_position</defname>
+        </param>
+        <briefdescription>
+<para>Add a dimension to a file associated with a two-dimensional domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">xory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag telling if the dimension is associated with the &quot;x&quot; or &quot;y&quot; axis of the 2d domain. Allowed values are &quot;x&quot; or &quot;y&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="494" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="495" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga5befe32cae300e436f277367895f2753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::register_domain_variable</definition>
+        <argsstring>(fileobj, variable_name, variable_type, dimensions, chunksizes)</argsstring>
+        <name>register_domain_variable</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>variable_name</type>
+          <defname>variable_name</defname>
+        </param>
+        <param>
+          <type>variable_type</type>
+          <defname>variable_type</defname>
+        </param>
+        <param>
+          <type>dimensions</type>
+          <defname>dimensions</defname>
+        </param>
+        <param>
+          <type>chunksizes</type>
+          <defname>chunksizes</defname>
+        </param>
+        <briefdescription>
+<para>Add a domain decomposed variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">variable_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable type. Allowed values are: &quot;int&quot;, &quot;int64&quot;, &quot;float&quot;, or &quot;double&quot;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension names.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">chunksizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>netcdf chunksize to use for this variable (netcdf4 only) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="599" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="600" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga9b0bc8c0bb14573119e69333279dcb93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::restore_domain_state</definition>
+        <argsstring>(fileobj, unlim_dim_level, ignore_checksum)</argsstring>
+        <name>restore_domain_state</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <param>
+          <type>ignore_checksum</type>
+          <defname>ignore_checksum</defname>
+        </param>
+        <briefdescription>
+<para>Loop through registered restart variables and read them from a netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_checksum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Checksum data integrity flag. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="690" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="691" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__netcdf__domain__io__mod_1ga243dbca03d9c9ef6047785b74f2c5b20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_netcdf_domain_io_mod::save_domain_restart</definition>
+        <argsstring>(fileobj, unlim_dim_level)</argsstring>
+        <name>save_domain_restart</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>unlim_dim_level</type>
+          <defname>unlim_dim_level</defname>
+        </param>
+        <briefdescription>
+<para>Loop through registered restart variables and write them to a netcdf file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unlim_dim_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unlimited dimension level. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="622" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" bodystart="623" bodyend="684"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_netcdf_domain_io.F90" line="29" column="1"/>
+  </compounddef>
+</doxygen>

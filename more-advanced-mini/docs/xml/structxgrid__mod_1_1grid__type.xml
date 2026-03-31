@@ -1,0 +1,990 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structxgrid__mod_1_1grid__type" kind="type" language="Fortran" prot="private">
+    <compoundname>xgrid_mod::grid_type</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a8e6e81bfbc840a93a74648486109ae05" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), pointer</type>
+        <definition>real(r8_kind), dimension(:,:), pointer area</definition>
+        <argsstring></argsstring>
+        <name>area</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>cell area </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="338" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="338" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ac9dfaf3784b1e50701e25990994ee1f5" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), pointer</type>
+        <definition>real(r8_kind), dimension(:,:), pointer area_inv</definition>
+        <argsstring></argsstring>
+        <name>area_inv</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>1 / area for normalization </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="339" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="339" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1acfd65d46c8f93e497e0ad6e044b2c83c" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structxgrid__mod_1_1grid__box__type" kindref="compound">grid_box_type</ref>)</type>
+        <definition>type(grid_box_type) box</definition>
+        <argsstring></argsstring>
+        <name>box</name>
+        <briefdescription>
+<para>used for second order remapping. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="351" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="351" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a44cfff2babb687954ffc79c677a82a4d" prot="private" static="no" mutable="no">
+        <type>type(domain2d)</type>
+        <definition>type(domain2d) domain</definition>
+        <argsstring></argsstring>
+        <name>domain</name>
+        <briefdescription>
+<para>used for conservation checks </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="348" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="348" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a63be5d31fafccbb080ee9d6d9fcc3c0b" prot="private" static="no" mutable="no">
+        <type>type(domain2d)</type>
+        <definition>type(domain2d) domain_with_halo</definition>
+        <argsstring></argsstring>
+        <name>domain_with_halo</name>
+        <briefdescription>
+<para>used for second order remapping </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="349" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="349" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a17e18ca9e65c3f74bc8567f39b337270" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer first</definition>
+        <argsstring></argsstring>
+        <name>first</name>
+        <briefdescription>
+<para>xgrid index range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="340" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="340" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ab8d65f4da625e5a7d2edf5baf292bbcc" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer first_get</definition>
+        <argsstring></argsstring>
+        <name>first_get</name>
+        <briefdescription>
+<para>xgrid index range for get_2_from_xgrid </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="342" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="342" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a237a62845f54827cfe72803d79dc5d75" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:,:), pointer</type>
+        <definition>real(r8_kind), dimension(:,:,:), pointer frac_area</definition>
+        <argsstring></argsstring>
+        <name>frac_area</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>partition fractions </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="337" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="337" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a554f96eed2727ee6aa5d0568d035e04d" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer ge</definition>
+        <argsstring></argsstring>
+        <name>ge</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="359" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a4c1772df12e325d022cd27d4c072f0cd" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer ge_me</definition>
+        <argsstring></argsstring>
+        <name>ge_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="358" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a814e096556ebe5eb5ec96433840dc228" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), pointer</type>
+        <definition>real(r8_kind), dimension(:,:), pointer geolat</definition>
+        <argsstring></argsstring>
+        <name>geolat</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>geographical grid center </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="336" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="336" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1af72ba5e05b3c96f8db035b9c485d9514" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:,:), pointer</type>
+        <definition>real(r8_kind), dimension(:,:), pointer geolon</definition>
+        <argsstring></argsstring>
+        <name>geolon</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>geographical grid center </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="335" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="335" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a5eb4bcc4256cf2be45edee5f549a5a9e" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer gs</definition>
+        <argsstring></argsstring>
+        <name>gs</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="359" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="359" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1aa17945c3d812dda1d91a2a964eb65e50" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer gs_me</definition>
+        <argsstring></argsstring>
+        <name>gs_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="358" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="358" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1abfd5f6a8aed3c2ee226d5802cb3db592" prot="private" static="no" mutable="no">
+        <type>character(len=3)</type>
+        <definition>character(len=3) id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>grid identifier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="304" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="304" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a5b1f5d6a06e5387a6225a1654cf05ddc" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer ie</definition>
+        <argsstring></argsstring>
+        <name>ie</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>domain - i-range (pe index) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="314" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="314" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a11837c8a1d5e308a1ecb90352b6036b2" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer ie_me</definition>
+        <argsstring></argsstring>
+        <name>ie_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>my domain - i-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="318" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="318" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1abcd4d5af4c68e60dc070fedded828db3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ied_me</definition>
+        <argsstring></argsstring>
+        <name>ied_me</name>
+        <briefdescription>
+<para>my data domain - i-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="322" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="322" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1af7ca956751bc7e8eb8d4d1b32166b0f7" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer im</definition>
+        <argsstring></argsstring>
+        <name>im</name>
+        <briefdescription>
+<para>global domain range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="330" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="330" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a41cd7ae083784b900d737f10562f4842" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer is</definition>
+        <argsstring></argsstring>
+        <name>is</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>domain - i-range (pe index) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="313" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="313" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ab3bf139ed12a349823585c98f3ae78d8" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical is_latlon</definition>
+        <argsstring></argsstring>
+        <name>is_latlon</name>
+        <briefdescription>
+<para>indicate if the grid is lat-lon grid or not. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="350" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="350" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ae7ac14cfdffa4f3e0d8306e548df40bb" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer is_me</definition>
+        <argsstring></argsstring>
+        <name>is_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>my domain - i-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="317" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="317" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ac301f10cc8c52ca34501248e833a286d" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical is_ug</definition>
+        <argsstring></argsstring>
+        <name>is_ug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="353" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a46f258aa455f471965f6c4988ea677d1" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer isd_me</definition>
+        <argsstring></argsstring>
+        <name>isd_me</name>
+        <briefdescription>
+<para>my data domain - i-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="321" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="321" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a4fa802b0bdb0304c17f09ea49000fa0c" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer je</definition>
+        <argsstring></argsstring>
+        <name>je</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>domain - j-range (pe index) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="316" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1af33bbb6613389cdcc73e78d59adc444d" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer je_me</definition>
+        <argsstring></argsstring>
+        <name>je_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>my domain - j-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="320" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="320" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a9c61523e06e6306407696a0829f07cd0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer jed_me</definition>
+        <argsstring></argsstring>
+        <name>jed_me</name>
+        <briefdescription>
+<para>my data domain - j-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="324" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="324" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1aefc82cdc77953d950af387146531b71c" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer jm</definition>
+        <argsstring></argsstring>
+        <name>jm</name>
+        <briefdescription>
+<para>global domain range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="331" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1aa8eaa7fd0cc38c5d3393cf4ee4a4bf8f" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer js</definition>
+        <argsstring></argsstring>
+        <name>js</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>domain - j-range (pe index) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="315" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="315" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a6837caf8f2a6fb5901931d7c1e0cc6d0" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer js_me</definition>
+        <argsstring></argsstring>
+        <name>js_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>my domain - j-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="319" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ad4147a98fc7f44ac84a1ba96be9988f0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer jsd_me</definition>
+        <argsstring></argsstring>
+        <name>jsd_me</name>
+        <briefdescription>
+<para>my data domain - j-range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="323" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="323" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a92ec8b91670b3c93225b628ae69ec355" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer km</definition>
+        <argsstring></argsstring>
+        <name>km</name>
+        <briefdescription>
+<para>global domain range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="332" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="332" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1abc458443df339de72a712fc3a9b1cf47" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer l_index</definition>
+        <argsstring></argsstring>
+        <name>l_index</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="360" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="360" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a189aaf411ce619c6b3fb901d051b1ca9" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer last</definition>
+        <argsstring></argsstring>
+        <name>last</name>
+        <briefdescription>
+<para>xgrid index range </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="341" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="341" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1adef54584a09275c44363177dc70f1990" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer last_get</definition>
+        <argsstring></argsstring>
+        <name>last_get</name>
+        <briefdescription>
+<para>xgrid index range for get_2_from_xgrid </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="343" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="343" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a0e26d160ef0242544fd4e3c374b829a1" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), pointer</type>
+        <definition>real(r8_kind), dimension(:), pointer lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>center of global grids </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="334" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="334" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1aa47610dc569b42f686b2aec4f6bd502f" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer le</definition>
+        <argsstring></argsstring>
+        <name>le</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a38df2ff13a86c28b21574c6f61b4f521" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer le_me</definition>
+        <argsstring></argsstring>
+        <name>le_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>unstruct domain </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="356" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="356" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ac1b9b7a4a8503c1798aac7d0fd128e22" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(:), pointer</type>
+        <definition>real(r8_kind), dimension(:), pointer lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>center of global grids </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="333" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="333" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1afe2da7601ec135319202df69db1ceb19" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer ls</definition>
+        <argsstring></argsstring>
+        <name>ls</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="357" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="357" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ae94ac421f211d128953396ac58dca700" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer ls_me</definition>
+        <argsstring></argsstring>
+        <name>ls_me</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>unstruct domain </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="355" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="355" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a4ae1f84b7a11820d1470fa22e6bffe43" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ni</definition>
+        <argsstring></argsstring>
+        <name>ni</name>
+        <briefdescription>
+<para>max of global size of all the tiles </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="310" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="310" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ab250c9ef1a30a7f3851a3735bfe8627d" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nj</definition>
+        <argsstring></argsstring>
+        <name>nj</name>
+        <briefdescription>
+<para>max of global size of all the tiles </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="311" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="311" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a41e7fb762a9241d5528151ca2d284ca5" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer npes</definition>
+        <argsstring></argsstring>
+        <name>npes</name>
+        <briefdescription>
+<para>number of processor on this grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="305" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="305" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1acc84eddfd8844395d9f45cc7d3a8abf0" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ntile</definition>
+        <argsstring></argsstring>
+        <name>ntile</name>
+        <briefdescription>
+<para>number of tiles in mosaic </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="309" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="309" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1acdcb6a7aab29f7038a4810ce2426abff" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nxc_me</definition>
+        <argsstring></argsstring>
+        <name>nxc_me</name>
+        <briefdescription>
+<para>compute domain size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="327" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="327" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a33a0f6f553ca7a3314f2be92936175f3" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nxd_me</definition>
+        <argsstring></argsstring>
+        <name>nxd_me</name>
+        <briefdescription>
+<para>data domain size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="325" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="325" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a067e3587dfa111cd21b4b57ae1483800" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nxl_me</definition>
+        <argsstring></argsstring>
+        <name>nxl_me</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="354" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1afb16f783c37de49e30617bbe55f3156d" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nyc_me</definition>
+        <argsstring></argsstring>
+        <name>nyc_me</name>
+        <briefdescription>
+<para>compute domain size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="328" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="328" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1aa9a30042836e3211600f48fe32794b56" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer nyd_me</definition>
+        <argsstring></argsstring>
+        <name>nyd_me</name>
+        <briefdescription>
+<para>data domain size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="326" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1af85057622bf288ed049e3d05fa6c5ee1" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical on_this_pe</definition>
+        <argsstring></argsstring>
+        <name>on_this_pe</name>
+        <briefdescription>
+<para>indicate the domain is defined on this pe </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="306" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="306" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1afdfce0929f2ad129105d69c945b83f90" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer pelist</definition>
+        <argsstring></argsstring>
+        <name>pelist</name>
+        <briefdescription>
+<para>pelist of the domain </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="308" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="308" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1ab96da8c443f9c55ebfefe033da98ab47" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer root_pe</definition>
+        <argsstring></argsstring>
+        <name>root_pe</name>
+        <briefdescription>
+<para>indicate the root pe of the domain </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="307" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="307" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a6621c7fedbd7c7baa696edda1ef5aee6" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+<para><heading level="1">xcell patterns</heading>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="344" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="344" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a9faaaa0bb65fecb4eec7776eef6e6deb" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer size_repro</definition>
+        <argsstring></argsstring>
+        <name>size_repro</name>
+        <briefdescription>
+<para><heading level="1">side 1 patterns for repro</heading>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="346" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a60a38ec6bf7b85284e06348ec5f4090b" prot="private" static="no" mutable="no">
+        <type>integer, dimension(:), pointer</type>
+        <definition>integer, dimension(:), pointer tile</definition>
+        <argsstring></argsstring>
+        <name>tile</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>tile id ( pe index ) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="312" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="312" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a05ede70ce4c21abcaf284797b6435aa9" prot="private" static="no" mutable="no">
+        <type>integer, pointer</type>
+        <definition>integer, pointer tile_me</definition>
+        <argsstring></argsstring>
+        <name>tile_me</name>
+        <briefdescription>
+<para>my tile id </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="329" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="329" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a80d51b0fedc40f5f34de51b2f40b9a02" prot="private" static="no" mutable="no">
+        <type>type(domainug)</type>
+        <definition>type(domainug) ug_domain</definition>
+        <argsstring></argsstring>
+        <name>ug_domain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="361" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a46116168b7761760f4188909ac03589b" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structxgrid__mod_1_1xcell__type" kindref="compound">xcell_type</ref>), dimension(:), pointer</type>
+        <definition>type(xcell_type), dimension(:), pointer x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>xcell patterns </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="345" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="345" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="variable" id="structxgrid__mod_1_1grid__type_1a71d8dac3214803c8ab7d2f7db389f94f" prot="private" static="no" mutable="no">
+        <type>type(<ref refid="structxgrid__mod_1_1xcell__type" kindref="compound">xcell_type</ref>), dimension(:), pointer</type>
+        <definition>type(xcell_type), dimension(:), pointer x_repro</definition>
+        <argsstring></argsstring>
+        <name>x_repro</name>
+        <initializer>=&gt;NULL()</initializer>
+        <briefdescription>
+<para>side 1 patterns for repro </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="347" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="347" bodyend="347"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private type to hold all data needed from given grid for an exchange grid. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1163">
+        <label>grid_type</label>
+        <link refid="structxgrid__mod_1_1grid__type"/>
+        <childnode refid="1164" relation="usage">
+          <edgelabel>is_ug</edgelabel>
+          <edgelabel>is_latlon</edgelabel>
+          <edgelabel>on_this_pe</edgelabel>
+        </childnode>
+        <childnode refid="1165" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>x_repro</edgelabel>
+        </childnode>
+        <childnode refid="1168" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="1169" relation="usage">
+          <edgelabel>ug_domain</edgelabel>
+        </childnode>
+        <childnode refid="1170" relation="usage">
+          <edgelabel>box</edgelabel>
+        </childnode>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>area_inv</edgelabel>
+          <edgelabel>lon</edgelabel>
+          <edgelabel>lat</edgelabel>
+          <edgelabel>frac_area</edgelabel>
+          <edgelabel>geolon</edgelabel>
+          <edgelabel>area</edgelabel>
+          <edgelabel>geolat</edgelabel>
+        </childnode>
+        <childnode refid="1167" relation="usage">
+          <edgelabel>ied_me</edgelabel>
+          <edgelabel>km</edgelabel>
+          <edgelabel>size</edgelabel>
+          <edgelabel>last_get</edgelabel>
+          <edgelabel>jm</edgelabel>
+          <edgelabel>ge_me</edgelabel>
+          <edgelabel>im</edgelabel>
+          <edgelabel>pelist</edgelabel>
+          <edgelabel>nxl_me</edgelabel>
+          <edgelabel>ie_me</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="1171" relation="usage">
+          <edgelabel>domain</edgelabel>
+          <edgelabel>domain_with_halo</edgelabel>
+        </childnode>
+      </node>
+      <node id="1171">
+        <label>type(domain2d)</label>
+      </node>
+      <node id="1164">
+        <label>logical</label>
+      </node>
+      <node id="1166">
+        <label>real(r8_kind)</label>
+      </node>
+      <node id="1169">
+        <label>type(domainug)</label>
+      </node>
+      <node id="1168">
+        <label>character(len=3)</label>
+      </node>
+      <node id="1167">
+        <label>integer</label>
+      </node>
+      <node id="1165">
+        <label>xcell_type</label>
+        <link refid="structxgrid__mod_1_1xcell__type"/>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>scale</edgelabel>
+          <edgelabel>di</edgelabel>
+          <edgelabel>dj</edgelabel>
+          <edgelabel>area</edgelabel>
+        </childnode>
+        <childnode refid="1167" relation="usage">
+          <edgelabel>pe</edgelabel>
+          <edgelabel>l1</edgelabel>
+          <edgelabel>l2</edgelabel>
+          <edgelabel>j1</edgelabel>
+          <edgelabel>j2</edgelabel>
+          <edgelabel>i1</edgelabel>
+          <edgelabel>i2</edgelabel>
+          <edgelabel>recv_pos</edgelabel>
+          <edgelabel>tile</edgelabel>
+        </childnode>
+      </node>
+      <node id="1170">
+        <label>grid_box_type</label>
+        <link refid="structxgrid__mod_1_1grid__box__type"/>
+        <childnode refid="1166" relation="usage">
+          <edgelabel>edge_s</edgelabel>
+          <edgelabel>edge_e</edgelabel>
+          <edgelabel>dx</edgelabel>
+          <edgelabel>edge_w</edgelabel>
+          <edgelabel>dy</edgelabel>
+          <edgelabel>vlon</edgelabel>
+          <edgelabel>en1</edgelabel>
+          <edgelabel>en2</edgelabel>
+          <edgelabel>vlat</edgelabel>
+          <edgelabel>edge_n</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="303" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="303" bodyend="363"/>
+    <listofallmembers>
+      <member refid="structxgrid__mod_1_1grid__type_1a8e6e81bfbc840a93a74648486109ae05" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>area</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ac9dfaf3784b1e50701e25990994ee1f5" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>area_inv</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1acfd65d46c8f93e497e0ad6e044b2c83c" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>box</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a44cfff2babb687954ffc79c677a82a4d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>domain</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a63be5d31fafccbb080ee9d6d9fcc3c0b" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>domain_with_halo</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a17e18ca9e65c3f74bc8567f39b337270" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>first</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ab8d65f4da625e5a7d2edf5baf292bbcc" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>first_get</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a237a62845f54827cfe72803d79dc5d75" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>frac_area</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a554f96eed2727ee6aa5d0568d035e04d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ge</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a4c1772df12e325d022cd27d4c072f0cd" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ge_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a814e096556ebe5eb5ec96433840dc228" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>geolat</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1af72ba5e05b3c96f8db035b9c485d9514" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>geolon</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a5eb4bcc4256cf2be45edee5f549a5a9e" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>gs</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1aa17945c3d812dda1d91a2a964eb65e50" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>gs_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1abfd5f6a8aed3c2ee226d5802cb3db592" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>id</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a5b1f5d6a06e5387a6225a1654cf05ddc" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ie</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a11837c8a1d5e308a1ecb90352b6036b2" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ie_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1abcd4d5af4c68e60dc070fedded828db3" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ied_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1af7ca956751bc7e8eb8d4d1b32166b0f7" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>im</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a41cd7ae083784b900d737f10562f4842" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>is</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ab3bf139ed12a349823585c98f3ae78d8" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>is_latlon</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ae7ac14cfdffa4f3e0d8306e548df40bb" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>is_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ac301f10cc8c52ca34501248e833a286d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>is_ug</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a46f258aa455f471965f6c4988ea677d1" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>isd_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a4fa802b0bdb0304c17f09ea49000fa0c" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>je</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1af33bbb6613389cdcc73e78d59adc444d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>je_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a9c61523e06e6306407696a0829f07cd0" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>jed_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1aefc82cdc77953d950af387146531b71c" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>jm</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1aa8eaa7fd0cc38c5d3393cf4ee4a4bf8f" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>js</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a6837caf8f2a6fb5901931d7c1e0cc6d0" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>js_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ad4147a98fc7f44ac84a1ba96be9988f0" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>jsd_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a92ec8b91670b3c93225b628ae69ec355" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>km</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1abc458443df339de72a712fc3a9b1cf47" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>l_index</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a189aaf411ce619c6b3fb901d051b1ca9" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>last</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1adef54584a09275c44363177dc70f1990" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>last_get</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a0e26d160ef0242544fd4e3c374b829a1" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>lat</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1aa47610dc569b42f686b2aec4f6bd502f" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>le</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a38df2ff13a86c28b21574c6f61b4f521" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>le_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ac1b9b7a4a8503c1798aac7d0fd128e22" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>lon</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1afe2da7601ec135319202df69db1ceb19" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ls</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ae94ac421f211d128953396ac58dca700" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ls_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a4ae1f84b7a11820d1470fa22e6bffe43" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ni</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ab250c9ef1a30a7f3851a3735bfe8627d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nj</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a41e7fb762a9241d5528151ca2d284ca5" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>npes</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1acc84eddfd8844395d9f45cc7d3a8abf0" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ntile</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1acdcb6a7aab29f7038a4810ce2426abff" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nxc_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a33a0f6f553ca7a3314f2be92936175f3" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nxd_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a067e3587dfa111cd21b4b57ae1483800" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nxl_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1afb16f783c37de49e30617bbe55f3156d" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nyc_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1aa9a30042836e3211600f48fe32794b56" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>nyd_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1af85057622bf288ed049e3d05fa6c5ee1" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>on_this_pe</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1afdfce0929f2ad129105d69c945b83f90" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>pelist</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1ab96da8c443f9c55ebfefe033da98ab47" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>root_pe</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a6621c7fedbd7c7baa696edda1ef5aee6" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>size</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a9faaaa0bb65fecb4eec7776eef6e6deb" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>size_repro</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a60a38ec6bf7b85284e06348ec5f4090b" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>tile</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a05ede70ce4c21abcaf284797b6435aa9" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>tile_me</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a80d51b0fedc40f5f34de51b2f40b9a02" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>ug_domain</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a46116168b7761760f4188909ac03589b" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>x</name></member>
+      <member refid="structxgrid__mod_1_1grid__type_1a71d8dac3214803c8ab7d2f7db389f94f" prot="private" virt="non-virtual"><scope>xgrid_mod::grid_type</scope><name>x_repro</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

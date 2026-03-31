@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__get__is__valid_8F90" kind="file" language="Fortran">
+    <compoundname>test_get_is_valid.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__get__is__valid_8F90_1ae69e4377db02f594bb31f1c13f609ace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_get_is_valid</definition>
+        <argsstring></argsstring>
+        <name>test_get_is_valid</name>
+        <briefdescription>
+<para>This programs tests calls to fms2_io get_valid and is_valid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_get_is_valid.F90" line="21" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_get_is_valid.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@brief<sp/><sp/>This<sp/>programs<sp/>tests<sp/>calls<sp/>to<sp/>fms2_io<sp/>get_valid<sp/>and<sp/>is_valid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_get_is_valid</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">fms2_io_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms2__io__mod_1gab2efb88539d9a05da43d95a501ed7e4c" kindref="member">fms2_io_init</ref>,<sp/><ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>,<sp/>fmsnetcdffile_t,<sp/>valid_t,<sp/>&amp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>,<sp/>is_valid,<sp/>get_valid</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">mpp_mod<sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>,<sp/><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref>,<sp/><ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>,<sp/>mpp_get_current_pelist,<sp/>&amp;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mpp_root_pe,<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>fatal,<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/><ref refid="group__mpp__mod_1gad75482ebfad2337cd236ef0998accdc4" kindref="member">mpp_sync</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/><sp/><sp/></highlight><highlight class="normal">netcdf<sp/><sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>nf90_create,<sp/>nf90_def_var,<sp/>nf90_put_att,<sp/>nf90_enddef,<sp/>&amp;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nf90_close,<sp/>nf90_clobber,<sp/>nf90_64bit_offset,<sp/>nf90_double</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(valid_t)<sp/>::<sp/>valid_type</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Fms2io<sp/>valid<sp/>object<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(FmsNetcdfFile_t)<sp/>::<sp/>fileobj</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Fms2io<sp/>file<sp/>obj</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>sst(10,10)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>mask_in(10,10)</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Array<sp/>defining<sp/>if<sp/>sst(:,:)<sp/>is<sp/>valid<sp/>(1)<sp/>or<sp/>not<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ncid,<sp/>varid,<sp/>err</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&gt;<sp/>Netcdf<sp/>integers<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">allocatable</highlight><highlight class="normal"><sp/>::<sp/>pes</highlight><highlight class="comment"><sp/>!&gt;<sp/>Current<sp/>pelist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga271b4c9584f2b514df4439086add4198" kindref="member">mpp_init</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms2__io__mod_1gab2efb88539d9a05da43d95a501ed7e4c" kindref="member">fms2_io_init</ref>()</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">allocate</highlight><highlight class="normal">(pes(<ref refid="group__mpp__mod_1gabf546cd336d5c539e445fb884f98ab6b" kindref="member">mpp_npes</ref>()))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">mpp_get_current_pelist(pes)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mpp_root_pe()<sp/>.eq.<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>())<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">!&gt;<sp/>Create<sp/>your<sp/>own<sp/>file<sp/>with<sp/>a<sp/>variable<sp/>to<sp/>test<sp/>with:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_create(</highlight><highlight class="stringliteral">&apos;test_file.nc&apos;</highlight><highlight class="normal">,<sp/>ior(nf90_clobber,<sp/>nf90_64bit_offset),<sp/>ncid)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_def_var(ncid,<sp/></highlight><highlight class="stringliteral">&apos;sst&apos;</highlight><highlight class="normal">,<sp/>nf90_double,varid)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_put_att(ncid,<sp/>varid,<sp/></highlight><highlight class="stringliteral">&quot;_FillValue&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(999,kind=r8_kind))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_put_att(ncid,<sp/>varid,<sp/></highlight><highlight class="stringliteral">&quot;missing_value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(999,kind=r8_kind))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_enddef(ncid)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/>err<sp/>=<sp/>nf90_close(ncid)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="57"><highlight class="comment">!&gt;<sp/>Wait<sp/>for<sp/>the<sp/>root<sp/>pe<sp/>to<sp/>catch<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1gad75482ebfad2337cd236ef0998accdc4" kindref="member">mpp_sync</ref>()</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">!&gt;<sp/>Open<sp/>the<sp/>file<sp/>and<sp/>set<sp/>up<sp/>the<sp/>valid<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="interfacefms2__io__mod_1_1open__file" kindref="compound">open_file</ref>(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;test_file.nc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;read&quot;</highlight><highlight class="normal">,<sp/>pelist=pes))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/>valid_type<sp/>=<sp/>get_valid(fileobj,<sp/></highlight><highlight class="stringliteral">&quot;sst&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacefms2__io__mod_1_1close__file" kindref="compound">close_file</ref>(fileobj)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>Error<sp/>opening<sp/>file&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">deallocate</highlight><highlight class="normal">(pes)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">!&gt;<sp/>Error<sp/>checking:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>valid_type%has_fill)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>fill<sp/>valid_type%has_fill<sp/>is<sp/>not<sp/>.true.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valid_type%fill_val<sp/>.ne.<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(999,kind=r8_kind))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>&amp;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>fill<sp/>value<sp/>is<sp/>not<sp/>correct&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>valid_type%has_missing)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>fill<sp/>valid_type%has_fill<sp/>is<sp/>not<sp/>.true.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valid_type%missing_val<sp/>.ne.<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(999,kind=r8_kind))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/>&amp;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>fill<sp/>value<sp/>is<sp/>not<sp/>correct&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>valid_type%has_range)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>valid_type%has_range<sp/>is<sp/>not<sp/>.true.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>valid_type%has_max)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>valid_type%has_max<sp/>is<sp/>not<sp/>.true.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valid_type%has_min)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_get_valid:<sp/>the<sp/>valid_type%has_min<sp/>is<sp/>.true.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment">!&gt;<sp/>Now<sp/>test<sp/>is_valid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment">!&gt;<sp/>Create<sp/>some<sp/>fake<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">mask_in<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">sst<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(0,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">sst(1,1)<sp/>=<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(999,<sp/>kind=r8_kind)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment">!&gt;<sp/>Check<sp/>where<sp/>the<sp/>data<sp/>is<sp/>valid</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">!&gt;<sp/>Set<sp/>the<sp/>mask_in<sp/>to<sp/>0<sp/>wherever<sp/>sst<sp/>is<sp/>valid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordflow">where</highlight><highlight class="normal">(is_valid(sst,valid_type))<sp/>mask_in<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment">!&gt;<sp/>Error<sp/>checking:</highlight></codeline>
+<codeline lineno="95"><highlight class="comment">!&gt;<sp/>The<sp/>sum<sp/>of<sp/>mask_in<sp/>should<sp/>be<sp/>1<sp/>because<sp/>only<sp/>one<sp/>value<sp/>is<sp/>equal<sp/>to<sp/>the<sp/>fill_value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sum(mask_in)<sp/>.ne.<sp/>1)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&quot;test_is_valid:<sp/>the<sp/>mask<sp/>should<sp/>have<sp/>a<sp/>1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__mpp__mod_1ga8d0366d81b9701ccaaf3612b666aada1" kindref="member">mpp_exit</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_get_is_valid</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/fms2_io/test_get_is_valid.F90"/>
+  </compounddef>
+</doxygen>

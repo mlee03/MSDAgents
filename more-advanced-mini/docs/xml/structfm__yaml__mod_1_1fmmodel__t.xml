@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structfm__yaml__mod_1_1fmmodel__t" kind="type" language="Fortran" prot="public">
+    <compoundname>fm_yaml_mod::fmmodel_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfm__yaml__mod_1_1fmmodel__t_1a01795d202d42911850a69913f8a8f0e8" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>block id of this model </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="70" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfm__yaml__mod_1_1fmmodel__t_1a0b2d68d4815b0bcb2fd6c2f3963a3fed" prot="public" static="no" mutable="no">
+        <type>character(len=:), allocatable</type>
+        <definition>character(len=:), allocatable name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>name of the model </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfm__yaml__mod_1_1fmmodel__t_1aa2a4c7357280de488868d74a22700467" prot="public" static="no" mutable="no">
+        <type>type(<ref refid="structfm__yaml__mod_1_1fmvar__t" kindref="compound">fmvar_t</ref>), dimension(:), allocatable</type>
+        <definition>type (fmvar_t), dimension(:), allocatable variables</definition>
+        <argsstring></argsstring>
+        <name>variables</name>
+        <briefdescription>
+<para>variables in this model </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="72" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This type represents the entries for a given model, e.g. land, ocean, atmosphere. This type contains the name of the model, the block id, and the variables within this model. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="782">
+        <label>fmmodel_t</label>
+        <link refid="structfm__yaml__mod_1_1fmmodel__t"/>
+        <childnode refid="783" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="784" relation="usage">
+          <edgelabel>variables</edgelabel>
+        </childnode>
+        <childnode refid="787" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="784">
+        <label>fmvar_t</label>
+        <link refid="structfm__yaml__mod_1_1fmvar__t"/>
+        <childnode refid="785" relation="usage">
+          <edgelabel>attributes</edgelabel>
+        </childnode>
+        <childnode refid="783" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="786" relation="usage">
+          <edgelabel>values</edgelabel>
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="787" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="785">
+        <label>fmattr_t</label>
+        <link refid="structfm__yaml__mod_1_1fmattr__t"/>
+        <childnode refid="783" relation="usage">
+          <edgelabel>paramname</edgelabel>
+        </childnode>
+        <childnode refid="786" relation="usage">
+          <edgelabel>values</edgelabel>
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="787" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="783">
+        <label>character(len=:), allocatable</label>
+      </node>
+      <node id="786">
+        <label>character(len=:), dimension(:), allocatable</label>
+      </node>
+      <node id="787">
+        <label>integer</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/field_manager/fm_yaml.F90" bodystart="69" bodyend="73"/>
+    <listofallmembers>
+      <member refid="structfm__yaml__mod_1_1fmmodel__t_1a01795d202d42911850a69913f8a8f0e8" prot="public" virt="non-virtual"><scope>fm_yaml_mod::fmmodel_t</scope><name>id</name></member>
+      <member refid="structfm__yaml__mod_1_1fmmodel__t_1a0b2d68d4815b0bcb2fd6c2f3963a3fed" prot="public" virt="non-virtual"><scope>fm_yaml_mod::fmmodel_t</scope><name>name</name></member>
+      <member refid="structfm__yaml__mod_1_1fmmodel__t_1aa2a4c7357280de488868d74a22700467" prot="public" virt="non-virtual"><scope>fm_yaml_mod::fmmodel_t</scope><name>variables</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__block__control__mod" kind="group">
+    <compoundname>block_control_mod</compoundname>
+    <title>block_control_mod</title>
+    <innerclass refid="structblock__control__mod_1_1block__control__type" prot="public">block_control_mod::block_control_type</innerclass>
+    <innerclass refid="structblock__control__mod_1_1ix__type" prot="public">block_control_mod::ix_type</innerclass>
+    <innerclass refid="structblock__control__mod_1_1pk__type" prot="public">block_control_mod::pk_type</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__block__control__mod_1gaf9b25442e22bc46f0d247a7acff71516" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public block_control_mod::define_blocks</definition>
+        <argsstring>(component, Block, isc, iec, jsc, jec, kpts, nx_block, ny_block, message)</argsstring>
+        <name>define_blocks</name>
+        <param>
+          <type>component</type>
+          <defname>component</defname>
+        </param>
+        <param>
+          <type>Block</type>
+          <defname>Block</defname>
+        </param>
+        <param>
+          <type>isc</type>
+          <defname>isc</defname>
+        </param>
+        <param>
+          <type>iec</type>
+          <defname>iec</defname>
+        </param>
+        <param>
+          <type>jsc</type>
+          <defname>jsc</defname>
+        </param>
+        <param>
+          <type>jec</type>
+          <defname>jec</defname>
+        </param>
+        <param>
+          <type>kpts</type>
+          <defname>kpts</defname>
+        </param>
+        <param>
+          <type>nx_block</type>
+          <defname>nx_block</defname>
+        </param>
+        <param>
+          <type>ny_block</type>
+          <defname>ny_block</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <briefdescription>
+<para>Sets up &quot;blocks&quot; used for OpenMP threading of column-based calculations using rad_n[x/y]xblock from coupler_nml. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">component</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component name string</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns instantiated <ref refid="structblock__control__mod_1_1block__control__type" kindref="compound">block_control_type</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag for outputting debug message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/block_control/block_control.F90" line="78" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/block_control/block_control.F90" bodystart="80" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="group__block__control__mod_1ga21fb0963e6ded8c790c9b47346221415" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public block_control_mod::define_blocks_packed</definition>
+        <argsstring>(component, Block, isc, iec, jsc, jec, kpts, blksz, message)</argsstring>
+        <name>define_blocks_packed</name>
+        <param>
+          <type>component</type>
+          <defname>component</defname>
+        </param>
+        <param>
+          <type>Block</type>
+          <defname>Block</defname>
+        </param>
+        <param>
+          <type>isc</type>
+          <defname>isc</defname>
+        </param>
+        <param>
+          <type>iec</type>
+          <defname>iec</defname>
+        </param>
+        <param>
+          <type>jsc</type>
+          <defname>jsc</defname>
+        </param>
+        <param>
+          <type>jec</type>
+          <defname>jec</defname>
+        </param>
+        <param>
+          <type>kpts</type>
+          <defname>kpts</defname>
+        </param>
+        <param>
+          <type>blksz</type>
+          <defname>blksz</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <briefdescription>
+<para>Creates and populates a data type which is used for defining the sub-blocks of the MPI-domain to enhance OpenMP and memory performance. Uses a packed concept. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">component</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component name string</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns instantiated <ref refid="structblock__control__mod_1_1block__control__type" kindref="compound">block_control_type</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">blksz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>block size</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag for outputting debug message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/block_control/block_control.F90" line="177" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/block_control/block_control.F90" bodystart="179" bodyend="258"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Routines for &quot;blocks&quot; used for OpenMP threading of column-based calculations. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

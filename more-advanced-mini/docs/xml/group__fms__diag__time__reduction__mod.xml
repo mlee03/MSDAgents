@@ -1,0 +1,692 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__fms__diag__time__reduction__mod" kind="group">
+    <compoundname>fms_diag_time_reduction_mod</compoundname>
+    <title>fms_diag_time_reduction_mod</title>
+    <innerclass refid="structfms__diag__time__reduction__mod_1_1fmsdiagtimereduction__type" prot="public">fms_diag_time_reduction_mod::fmsdiagtimereduction_type</innerclass>
+    <innernamespace refid="namespacefms__diag__time__reduction__mod">fms_diag_time_reduction_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1gaf67c0fb8798a4e268739d95ee63a46bf" prot="private" static="no" mutable="no">
+        <type>integer, private</type>
+        <definition>integer, private the_time_reduction</definition>
+        <argsstring></argsstring>
+        <name>the_time_reduction</name>
+        <briefdescription>
+<para>The time reduction type, as an integer defined above. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="63" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1gab95875c4e1d56b44678a4f834a97c288" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_average</definition>
+        <argsstring></argsstring>
+        <name>time_average</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>The reduction method is average. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="44" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1ga0f01421fb30bddb03d60ae62ad89faab" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private time_averaging</definition>
+        <argsstring></argsstring>
+        <name>time_averaging</name>
+        <briefdescription>
+<para>Set true iff time_average, time_rms, time_power or time_diurnal is true. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="64" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1ga9034559a494ef668b0ed91662d16b6b0" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_diurnal</definition>
+        <argsstring></argsstring>
+        <name>time_diurnal</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>The reduction method is diurnal. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="49" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1gaea0fd32684706ac6f1de5059c99bf479" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_max</definition>
+        <argsstring></argsstring>
+        <name>time_max</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>The reduction method is max. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1ga8b6511815ee03eb4a4202a9355114a7b" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_min</definition>
+        <argsstring></argsstring>
+        <name>time_min</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>The reduction method is min. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="47" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1ga34492eabca0e3ff2ef00dfe53547711f" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private time_ops</definition>
+        <argsstring></argsstring>
+        <name>time_ops</name>
+        <briefdescription>
+<para>Set true iff time_min, time_max, time_rms or time_average is true. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="65" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1ga947a9af9b5709c7eb581745f51573f12" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_power</definition>
+        <argsstring></argsstring>
+        <name>time_power</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>The reduction method is power. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="50" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1gac1ac589f80e677c504448699e4771df4" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_rms</definition>
+        <argsstring></argsstring>
+        <name>time_rms</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>The reduction method is rms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="45" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__fms__diag__time__reduction__mod_1gac011f0d97beddf22508643c262bae539" prot="public" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter time_sum</definition>
+        <argsstring></argsstring>
+        <name>time_sum</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>The reudction method is sum. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gaf679892eae90b4fee9a3c11adcd7f069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public copy</definition>
+        <argsstring></argsstring>
+        <name>copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="78" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga7ae37f98c5c4144ec3e665d697fdbfc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_time_reduction_mod::copy</definition>
+        <argsstring>(this, source)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>source</type>
+          <defname>source</defname>
+        </param>
+        <briefdescription>
+<para>Copy the source time reduction object into the this object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fmsDiagTimeReduction_type object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fmsDiagTimeReduction_type object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="136" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="137" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gae6d0c4f397543c2be2ad1e32d4a9bfb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public do_time_averaging</definition>
+        <argsstring>=&gt; do_time_averaging_imp</argsstring>
+        <name>do_time_averaging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="67" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga1713a3be40bcbe0ad07683b0cecbf9f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::do_time_averaging_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>do_time_averaging_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff time_averaging is true. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff time_averaging is true.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="154" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="155" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga37c4d10f9becd8b562de43f92d2a2494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class(fmsdiagtimereduction_type) function, allocatable</type>
+        <definition>class (fmsdiagtimereduction_type) function, allocatable fms_diag_time_reduction_mod::fmsdiagtimereduction_type_constructor</definition>
+        <argsstring>(dt, out_frequency)</argsstring>
+        <name>fmsdiagtimereduction_type_constructor</name>
+        <param>
+          <type>dt</type>
+          <defname>dt</defname>
+        </param>
+        <param>
+          <type>out_frequency</type>
+          <defname>out_frequency</defname>
+        </param>
+        <briefdescription>
+<para>The class contructors. Just allocates the class and calls an initializer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An allocated instance of fmsDiagTimeReduction_type, which is nitialized using provided values for arguments dt and out_freqeuncy.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The redution type (time_rms, time_power, etc)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output frequency.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The instance of the fmsDiagTimeReduction_type class allocated and returned by this constructor. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="92" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="93" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga830766d96d58f513ae0f8bf6f17be181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public has_time_ops</definition>
+        <argsstring>=&gt; has_time_ops_imp</argsstring>
+        <name>has_time_ops</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="68" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gaf84dc6ef3f2b76be36c70fc27c92078f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::has_time_ops_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>has_time_ops_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if any of time_min, time_max, time_rms or time_average is true. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if any of time_min, time_max, time_rms or time_average is true.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="146" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="147" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga8ef8778cb8b7859b0696e1cd5962e693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public initialize</definition>
+        <argsstring></argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="77" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gac4e30225c2df83943ff4544fdc8aaabd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_diag_time_reduction_mod::initialize</definition>
+        <argsstring>(this, dt, out_frequency)</argsstring>
+        <name>initialize</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>dt</type>
+          <defname>dt</defname>
+        </param>
+        <param>
+          <type>out_frequency</type>
+          <defname>out_frequency</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the object. As an alternative to the constructor, one can allocate an fmsDiagTimeReduction_type instance, then call its initialize function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fmsDiagTimeReduction_type object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The redution type (time_rms, time_porer, etc)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output frequency. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="103" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="104" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga6327c739cddf866fe610e3f12d722853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_average</definition>
+        <argsstring>=&gt; is_time_average_imp</argsstring>
+        <name>is_time_average</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="70" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gae98104bf2e7df8ba413ae281ad571355" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_average_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_average_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_average. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_average</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="162" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="163" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga53be263b55b5f78610ac0769614a0a67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_diurnal</definition>
+        <argsstring>=&gt; is_time_diurnal_imp</argsstring>
+        <name>is_time_diurnal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="75" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gaa10ff0f564d63a7f8193380ce1747744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_diurnal_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_diurnal_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_diurnal. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_diurnal</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="210" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga74f3bf0a9d3976670ff69c1f296509b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_max</definition>
+        <argsstring>=&gt; is_time_max_imp</argsstring>
+        <name>is_time_max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="72" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga5161657b0d116b5796f76da4712dab96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_max_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_max_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_max. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_max</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="186" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="187" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gaa0bff31f73dd8d732d1a415430444440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_min</definition>
+        <argsstring>=&gt; is_time_min_imp</argsstring>
+        <name>is_time_min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="73" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga20c00c55bd9c8e57063542851e0c4aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_min_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_min_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_min. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_min</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="194" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="195" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gadf1fbca16561029412a4adc0224c76ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_none</definition>
+        <argsstring>=&gt; is_time_none_imp</argsstring>
+        <name>is_time_none</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga114e0fc24393563dca0358d13a946129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_none_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_none_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_none. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_none</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="170" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="171" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga15a89a41aad1b5bb9e60363b8a18259f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_power</definition>
+        <argsstring>=&gt; is_time_power_imp</argsstring>
+        <name>is_time_power</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="76" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga9ece5fb28302f1432fe92f8a61e1bba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_power_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_power_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_power. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_power</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="218" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="219" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gafb362870849b9718bcff635f86052a78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_rms</definition>
+        <argsstring>=&gt; is_time_rms_imp</argsstring>
+        <name>is_time_rms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="71" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga4cf40e9dddfd9021dd5fdb8f7fe1b8ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_rms_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_rms_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_rms. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_rms</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="179" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1gaf5f05d53917e6307e157b9e1799178f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>procedure, public</type>
+        <definition>procedure, public is_time_sum</definition>
+        <argsstring>=&gt; is_time_sum_imp</argsstring>
+        <name>is_time_sum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="74" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__diag__time__reduction__mod_1ga15d814fafb532cf04e9f320d90aaf7cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function fms_diag_time_reduction_mod::is_time_sum_imp</definition>
+        <argsstring>(this)</argsstring>
+        <name>is_time_sum_imp</name>
+        <param>
+          <type>this</type>
+          <defname>this</defname>
+        </param>
+        <briefdescription>
+<para>Returns true iff the_time_reduction is time_sum. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true iff the_time_reduction is time_sum</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object this function is bound to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" line="202" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_manager/fms_diag_time_reduction.F90" bodystart="203" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>fms_diag_time_reduction_mod defines classes encapsulating the diag_manager time redution types. </para>    </briefdescription>
+    <detaileddescription>
+<para>This interface is for the class constructor.</para><para>Class fmsDiagTimeReduction_type has an encapsulation of the &quot;Fortran enum&quot; time reduction integer parameters, plus an encapsulation of the groupings of the time reduction types. It is intended to provide some of the functionality that was coded in the legacy function <ref refid="diag__data_8F90_source" kindref="compound">diag_data.F90</ref>:init_output_fields. The functionality in the end is used by send_data in (EFFICIENT) do loops calling the weighting or math functions to update buffers. The integer parameters above are the legal time reduction types, but they are not necessarily mutually exclusive in some contexts.</para><para><simplesect kind="author"><para>Miguel Zuniga </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

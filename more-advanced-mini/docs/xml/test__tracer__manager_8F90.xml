@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="test__tracer__manager_8F90" kind="file" language="Fortran">
+    <compoundname>test_tracer_manager.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__tracer__manager_8F90_1aab19747bab69cd6e2cfdb1a76f147095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine test_tracer_manager::test_set_tracer_profile</definition>
+        <argsstring></argsstring>
+        <name>test_set_tracer_profile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>the tracer &apos;radon&apos; profile type is &apos;fixed&apos; (see field_table) the tracer field value should be zero.</para><para>answer</para><para>check results</para><para>answer</para><para>check results</para><para>answer</para><para>check results </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/tracer_manager/test_tracer_manager.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/tracer_manager/test_tracer_manager.F90" bodystart="44" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="test__tracer__manager_8F90_1a7b48103486efd0061362450dba16eed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>program</type>
+        <definition>program test_tracer_manager</definition>
+        <argsstring></argsstring>
+        <name>test_tracer_manager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/test_fms/tracer_manager/test_tracer_manager.F90" line="26" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/test_fms/tracer_manager/test_tracer_manager.F90" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>unit test for set_tracer_profile function </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>MiKyung Lee  <ulink url="mailto:gfdl.climate.model.info@noaa.gov">gfdl.climate.model.info@noaa.gov</ulink>  This program only tests set_tracer_profile for cases where profile_type is fixed; and for cases where profile_type is profile TODO: Unit tests for the remaining subroutines and functions in tracer_manager_mod </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@file</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!!<sp/>@brief<sp/>unit<sp/>test<sp/>for<sp/>set_tracer_profile<sp/>function</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!<sp/>@author<sp/>MiKyung<sp/>Lee</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>@email<sp/>gfdl.climate.model.info@noaa.gov</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!<sp/>@description<sp/>This<sp/>program<sp/>only<sp/>tests<sp/>set_tracer_profile<sp/>for<sp/>cases<sp/>where</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>profile_type<sp/>is<sp/>fixed;<sp/>and<sp/>for<sp/>cases<sp/>where<sp/>profile_type<sp/>is<sp/>profile</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>TODO:<sp/><sp/>Unit<sp/>tests<sp/>for<sp/>the<sp/>remaining<sp/>subroutines<sp/>and<sp/>functions<sp/>in<sp/>tracer_manager_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">program</highlight><highlight class="normal"><sp/>test_tracer_manager</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref>,<sp/><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>,<sp/>fatal</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">field_manager_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__field__manager__mod_1ga8a2e295bd455ae452c73eb4a6ba85e2c" kindref="member">field_manager_init</ref>,<sp/><ref refid="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" kindref="member">model_atmos</ref>,<sp/><ref refid="group__field__manager__mod_1gac785f9b02b44de9e54cdf21ae5f6a577" kindref="member">model_ocean</ref>,<sp/><ref refid="group__field__manager__mod_1ga2a7ab4d44831425357665aeab4eb353e" kindref="member">model_land</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__field__manager__mod_1ga5aec64d0b5503d357d0b4b5c4f73725b" kindref="member">fm_change_list</ref>,<sp/><ref refid="interfacefield__manager__mod_1_1fm__get__value" kindref="compound">fm_get_value</ref>,<sp/><ref refid="group__field__manager__mod_1ga68d298c14634a808902322baab39cffd" kindref="member">fm_get_current_list</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">tracer_manager_mod</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">test_set_tracer_profile</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga46d4a91a0ec6ae17fd2386413dc8c30b" kindref="member">fms_end</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">test_set_tracer_profile</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>numlevels=10</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>npoints=5</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>tracer_index,<sp/>i,<sp/>j,<sp/>k</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/>::<sp/>success</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(TEST_FMS_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>top_value,<sp/>bottom_value,<sp/>surf_value,<sp/>multiplier</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(TEST_FMS_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>tracer_out1(1,1,1),<sp/>tracer_out2(npoints,npoints,numlevels)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(TEST_FMS_KIND_)</highlight><highlight class="normal"><sp/>::<sp/>answer1(1,1,1),<sp/>answer2(npoints,npoints,numlevels)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/>lkind=test_fms_kind_</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">character(128)</highlight><highlight class="normal"><sp/>::<sp/>err_message</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga76099928e3f2e58ea5efe717c7809fce" kindref="member">fms_init</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__tracer__manager__mod_1gad8158f9c1b49acb5c1d4e7e544af3628" kindref="member">tracer_manager_init</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!--<sp/>profile_type=fixed<sp/>--!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>!&gt;<sp/>the<sp/>tracer<sp/>&apos;radon&apos;<sp/>profile<sp/>type<sp/>is<sp/>&apos;fixed&apos;<sp/>(see<sp/>field_table)</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>!&gt;<sp/>the<sp/>tracer<sp/>field<sp/>value<sp/>should<sp/>be<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>tracer_index=<ref refid="interfacetracer__manager__mod_1_1get__tracer__index" kindref="compound">get_tracer_index</ref>(<ref refid="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" kindref="member">model_atmos</ref>,<sp/></highlight><highlight class="stringliteral">&apos;radon&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacetracer__manager__mod_1_1set__tracer__profile" kindref="compound">set_tracer_profile</ref>(<ref refid="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" kindref="member">model_atmos</ref>,<sp/>tracer_index,<sp/>tracer_out1,err_message)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/>!&gt;<sp/>answer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>answer1(1,1,1)=0.0_lkind</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/>!&gt;<sp/>check<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tracer_out1(1,1,1).ne.answer1(1,1,1))<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,</highlight><highlight class="stringliteral">&apos;ATM<sp/>tracer<sp/>field<sp/>value<sp/>should<sp/>be<sp/>0.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!--<sp/>ATM<sp/>profile_type=profile<sp/>--!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>tracer_index=<ref refid="interfacetracer__manager__mod_1_1get__tracer__index" kindref="compound">get_tracer_index</ref>(<ref refid="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" kindref="member">model_atmos</ref>,<sp/></highlight><highlight class="stringliteral">&apos;immadeup&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacetracer__manager__mod_1_1set__tracer__profile" kindref="compound">set_tracer_profile</ref>(<ref refid="group__field__manager__mod_1gae5de9d0f74e7e659a58efc0c6a1ed26c" kindref="member">model_atmos</ref>,tracer_index,tracer_out2,err_message)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/>!&gt;<sp/>answer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>success=<ref refid="interfacefield__manager__mod_1_1fm__get__value" kindref="compound">fm_get_value</ref>(</highlight><highlight class="stringliteral">&quot;/atmos_mod/tracer/immadeup/profile_type/profile/top_value&quot;</highlight><highlight class="normal">,<sp/>top_value)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>success=<ref refid="interfacefield__manager__mod_1_1fm__get__value" kindref="compound">fm_get_value</ref>(</highlight><highlight class="stringliteral">&quot;/atmos_mod/tracer/immadeup/profile_type/profile/surface_value&quot;</highlight><highlight class="normal">,<sp/>surf_value)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>multiplier<sp/>=<sp/>exp(<sp/>log(top_value/surf_value)<sp/>/</highlight><highlight class="keywordtype">real(numlevels-1,lkind)</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>answer2(:,:,1)=surf_value</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=2,numlevels</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>answer2(:,:,i)<sp/>=<sp/>answer2(:,:,i-1)*multiplier</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>do</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/>!&gt;<sp/>check<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k=1,<sp/>numlevels</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j=1,<sp/>npoints</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,<sp/>npoints</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>tracer_out2(i,j,k)<sp/>.ne.<sp/>answer2(i,j,k))<sp/>&amp;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;ATM<sp/>tracer<sp/>field<sp/>value<sp/>error<sp/>for<sp/>profile_type=profile&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!--<sp/>OCEAN<sp/>profile_type=profile<sp/>--!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>tracer_index=<ref refid="interfacetracer__manager__mod_1_1get__tracer__index" kindref="compound">get_tracer_index</ref>(<ref refid="group__field__manager__mod_1gac785f9b02b44de9e54cdf21ae5f6a577" kindref="member">model_ocean</ref>,<sp/></highlight><highlight class="stringliteral">&apos;immadeup2&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacetracer__manager__mod_1_1set__tracer__profile" kindref="compound">set_tracer_profile</ref>(<ref refid="group__field__manager__mod_1gac785f9b02b44de9e54cdf21ae5f6a577" kindref="member">model_ocean</ref>,tracer_index,tracer_out2,err_message)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/>!&gt;<sp/>answer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>success=<ref refid="interfacefield__manager__mod_1_1fm__get__value" kindref="compound">fm_get_value</ref>(</highlight><highlight class="stringliteral">&quot;/ocean_mod/tracer/immadeup2/profile_type/profile/bottom_value&quot;</highlight><highlight class="normal">,<sp/>bottom_value)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>success=<ref refid="interfacefield__manager__mod_1_1fm__get__value" kindref="compound">fm_get_value</ref>(</highlight><highlight class="stringliteral">&quot;/ocean_mod/tracer/immadeup2/profile_type/profile/surface_value&quot;</highlight><highlight class="normal">,<sp/>surf_value)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>multiplier<sp/>=<sp/>exp(<sp/>log(bottom_value/surf_value)<sp/>/</highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(numlevels-1,lkind))</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>answer2(:,:,numlevels)=surf_value</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=numlevels-1,<sp/>1,<sp/>-1</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>answer2(:,:,i)<sp/>=<sp/>answer2(:,:,i+1)*multiplier</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>do</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/>!&gt;<sp/>check<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>k=1,<sp/>numlevels</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j=1,<sp/>npoints</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i=1,<sp/>npoints</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>tracer_out2(i,j,k)<sp/>.ne.<sp/>answer2(i,j,k))<sp/>&amp;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="interfacempp__mod_1_1mpp__error" kindref="compound">mpp_error</ref>(fatal,<sp/></highlight><highlight class="stringliteral">&apos;OCEAN<sp/>tracer<sp/>field<sp/>value<sp/>error<sp/>for<sp/>profile_type=profile&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">test_set_tracer_profile</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>program<sp/></highlight><highlight class="normal">test_tracer_manager</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/test_fms/tracer_manager/test_tracer_manager.F90"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,900 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CHANGELOG_8md" kind="file" language="Markdown">
+    <compoundname>CHANGELOG.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>ChangeLog</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>notable<sp/>changes<sp/>to<sp/>this<sp/>project<sp/>will<sp/>be<sp/>documented<sp/>in<sp/>this<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>format<sp/>is<sp/>based<sp/>on<sp/>[Keep<sp/>a<sp/>Changelog](https://keepachangelog.com/en/1.0.0),</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>this<sp/>project<sp/>uses<sp/>`yyyy.rr[.pp]`,<sp/>where<sp/>`yyyy`<sp/>is<sp/>the<sp/>year<sp/>a<sp/>patch<sp/>is<sp/>released,</highlight></codeline>
+<codeline><highlight class="normal">`rr`<sp/>is<sp/>a<sp/>sequential<sp/>release<sp/>number<sp/>(starting<sp/>from<sp/>`01`),<sp/>and<sp/>an<sp/>optional<sp/>two-digit</highlight></codeline>
+<codeline><highlight class="normal">sequential<sp/>patch<sp/>number<sp/>(starting<sp/>from<sp/>`01`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2026.01]<sp/>-<sp/>2026-01-26</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>-<sp/>INTEL:<sp/>Oneapi<sp/>2025.1<sp/>is<sp/>currently<sp/>unsupported<sp/>due<sp/>to<sp/>an<sp/>internal<sp/>compiler<sp/>error.<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>intel&apos;s<sp/>LLVM<sp/>compilers(ifx/icx)<sp/>is<sp/>also<sp/>unsupported,<sp/>see<sp/>prior<sp/>release<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>these<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Modifed<sp/>and<sp/>added<sp/>tests<sp/>for<sp/>future<sp/>generalized<sp/>indices<sp/>updates<sp/>(#1763)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>OFFLOAD:<sp/>Added<sp/>a<sp/>prototype<sp/>for<sp/>offloading<sp/>io<sp/>to<sp/>a<sp/>smaller<sp/>set<sp/>of<sp/>PE&apos;s<sp/>`offloading_io_mod`<sp/>(#1774)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Legacy<sp/>field_table<sp/>and<sp/>data_table<sp/>ASCII<sp/>formats<sp/>are<sp/>now<sp/>deprecated<sp/>and<sp/>will<sp/>output<sp/>a<sp/>warning<sp/>if<sp/>used<sp/>(#1802)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Replaced<sp/>point-to-point<sp/>communication<sp/>with<sp/>collective<sp/>mode<sp/>in<sp/>`mpp_gather`<sp/>routines<sp/>(#1775)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Refactored<sp/>API<sp/>for<sp/>enabling<sp/>MPI-IO<sp/>support<sp/>(#1789)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>The<sp/>updated<sp/>diag<sp/>manager<sp/>will<sp/>now<sp/>add<sp/>the<sp/>experiment<sp/>title<sp/>as<sp/>a<sp/>global<sp/>attribute<sp/>(#1817)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>multiple<sp/>compiler<sp/>warnings<sp/>raised<sp/>from<sp/>GCC<sp/>15<sp/>(#1765)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>GNU<sp/>warnings<sp/>with<sp/>the<sp/>-DPORTABLE_KINDS<sp/>flag<sp/>(#1792)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixed<sp/>issue<sp/>with<sp/>not<sp/>getting<sp/>correct<sp/>output<sp/>name<sp/>when<sp/>adding<sp/>the<sp/>cell_measure<sp/>attribute<sp/>(#1815)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixed<sp/>error<sp/>when<sp/>setting<sp/>zbounds<sp/>for<sp/>more<sp/>than<sp/>one<sp/>variable<sp/>(#1813)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixed<sp/>handling<sp/>of<sp/>libyaml<sp/>dependency<sp/>when<sp/>using<sp/>a<sp/>r4/r8<sp/>option<sp/>(#1822)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>EXCHANGE:<sp/>Removed<sp/>cray<sp/>pointer<sp/>usage<sp/>from<sp/>`xgrid.F90`<sp/>(#1778)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.04]<sp/>-<sp/>2025-09-29</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>-<sp/>INTEL:<sp/>Oneapi<sp/>2025.1<sp/>is<sp/>currently<sp/>unsupported<sp/>due<sp/>to<sp/>an<sp/>internal<sp/>compiler<sp/>error.<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>intel&apos;s<sp/>LLVM<sp/>compilers(ifx/icx)<sp/>is<sp/>also<sp/>unsupported,<sp/>see<sp/>prior<sp/>release<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>these<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>Add<sp/>conservative<sp/>support<sp/>in<sp/>time_interp_external<sp/><sp/>(#1773)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>add<sp/>unit<sp/>testing<sp/>information<sp/>for<sp/>cmake<sp/>(#1772)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>1D<sp/>time_interp_external<sp/>and<sp/>time_interp_external_bridge<sp/>(#1758)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Feature/mpp-gather-io-write-2d-3d<sp/>(#1750)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_INTEGRAL:<sp/>set<sp/>the<sp/>init<sp/>time<sp/>to<sp/>a<sp/>value<sp/>in<sp/>diag_integral<sp/>test<sp/>(#1730)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TEST_FMS:<sp/>add<sp/>fms_end<sp/>call<sp/>to<sp/>test_grid2<sp/>(#1728)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>add<sp/>fms2_io<sp/>generalized<sp/>indices<sp/>test<sp/>(#1734)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ONEAPI:<sp/>add<sp/>checks<sp/>for<sp/>oneapi<sp/>bug<sp/>(#1712)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Add<sp/>collective<sp/>writes<sp/>(#1733)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>add<sp/>a<sp/>test<sp/>to<sp/>test<sp/>the<sp/>multi-file<sp/>capability<sp/>in<sp/>data_override<sp/>(#1745)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>update<sp/>cmake<sp/>build<sp/>for<sp/>testing,<sp/>build<sp/>types<sp/>and<sp/>mixed<sp/>precision<sp/>(#1694)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LICENSE:<sp/><sp/>update<sp/>(#1721)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Collective<sp/>IO<sp/>in<sp/>modern<sp/>diag<sp/>manager<sp/>(#1756)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MODERN_DIAG_MANAGER:<sp/>Improvements<sp/>to<sp/>the<sp/>diag_table.yaml<sp/>format<sp/>(#1731)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>update<sp/>FMS<sp/>codeowners<sp/>to<sp/>be<sp/>default<sp/>owners<sp/>only<sp/>(#1722)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>append<sp/>dev<sp/>to<sp/>version<sp/>number<sp/>post-release<sp/>(#1726)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>updates<sp/>README<sp/>for<sp/>license<sp/>update.<sp/>(#1744)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD_MANAGER:<sp/>move<sp/>the<sp/>parse.inc<sp/>in<sp/>field_manager<sp/>to<sp/>include<sp/>directory<sp/>(#1740)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>builds<sp/>for<sp/>some<sp/>stuff<sp/>that<sp/>broke<sp/>with<sp/>the<sp/>cmake<sp/>updates<sp/>on<sp/>Alpha<sp/>tag(#1759)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>HORIZ_INTERP:<sp/>fixes<sp/>the<sp/>r4<sp/>tests<sp/>to<sp/>build<sp/>properly(#1736)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>modern<sp/>diag<sp/>manager<sp/>errors<sp/>when<sp/>looping<sp/>through<sp/>number<sp/>of<sp/>variables<sp/>(#1761)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_MANAGER:<sp/>tests<sp/>with<sp/>set/get_date_gregorian_old<sp/>(#1748)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD_MANAGER:<sp/>removed<sp/>the<sp/>path<sp/>length<sp/>variable<sp/>(#1702)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR:<sp/>remove<sp/>fms2io_interpolator<sp/>init<sp/>(#1723)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>array<sp/>bounds<sp/>error<sp/>in<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>(#1751)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC2:<sp/>Grid2<sp/>mod<sp/>Initialization<sp/>Fix<sp/>(#1742)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-2025.04-beta2<sp/>0ba4c6cbaefd1363aab557a9c788d2bb4c6d6aa4</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.04-beta1<sp/>3a7ebccd33561ba076a22fbb4cb4fa6eefb0c1f5</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.04-alpha1<sp/>4f182dc459c6a60d3b3f4257cf379c8bd71e797</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.03]<sp/>-<sp/>2025-06-24</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>Oneapi<sp/>2025.1<sp/>is<sp/>currently<sp/>unsupported<sp/>due<sp/>to<sp/>an<sp/>internal<sp/>compiler<sp/>error.<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>intel&apos;s<sp/>LLVM<sp/>compilers(ifx/icx)<sp/>is<sp/>also<sp/>unsupported,<sp/>see<sp/>prior<sp/>release<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>these<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LICENSE:<sp/>added<sp/>notice<sp/>about<sp/>the<sp/>change<sp/>to<sp/>Apache<sp/>license.<sp/>(#1685)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>added<sp/>standard<sp/>name<sp/>to<sp/>diag<sp/>manifest<sp/>yaml<sp/>(#1692)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>added<sp/>netcdf<sp/>chunksizes<sp/>argument<sp/>to<sp/>register_field<sp/>routines<sp/>(#1696)<sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>added<sp/>more<sp/>robust<sp/>diag<sp/>manager<sp/>tests<sp/>for<sp/>when<sp/>outputting<sp/>data<sp/>at<sp/>every<sp/>time<sp/>step<sp/>(#1688)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FM2_IO:<sp/>added<sp/>a<sp/>test<sp/>for<sp/>collective<sp/>netcdf<sp/>mpi<sp/>io<sp/>(#1647)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>style<sp/>guide<sp/>update<sp/>(#1642)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>updates<sp/>to<sp/>contributing<sp/>guide<sp/>to<sp/>reflect<sp/>modern<sp/>FMS<sp/>practices<sp/>(#1708)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>fixed<sp/>typos<sp/>throughout<sp/>the<sp/>code<sp/>(#1703)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>simplify<sp/>argument<sp/>lists<sp/>of<sp/>subroutines<sp/>in<sp/>get_grid_version_mod<sp/>(#1514)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>fixed<sp/>the<sp/>time<sp/>variable<sp/>in<sp/>instantaneous<sp/>outputs<sp/>from<sp/>diag_manager<sp/>in<sp/>both<sp/><sp/>openmp<sp/>and<sp/>non-openmp<sp/>cases<sp/>(#1690)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>fixed<sp/>number<sp/>of<sp/>time<sp/>levels<sp/>in<sp/>diag<sp/>manifest<sp/>yaml<sp/>for<sp/>subregional<sp/>files.<sp/>(#1698)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>fixed<sp/>missed<sp/>aliases<sp/>in<sp/>libFMS<sp/>file<sp/>(#1303)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>fixed<sp/>new<sp/>file<sp/>and<sp/>file<sp/>duration<sp/>in<sp/>MODERN_DIAG_MANAGER<sp/>(#1705)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO/MPP_IO:<sp/>removed<sp/>fms_io/mpp_io<sp/>modules<sp/>(#1669)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AMIP_INTERP:<sp/>removed<sp/>the<sp/>sst_anom<sp/>and<sp/>sst_ncep<sp/>varaibles<sp/>(#1695)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.03-beta1<sp/><sp/>96e97c0e271167dd42700b5ed28fb1fe85d7ecce</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.03-alpha1<sp/>44f182dc459c6a60d3b3f4257cf379c8bd71e797</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.02]<sp/>-<sp/>2025-04-28</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER(legacy):<sp/>When<sp/>attempting<sp/>to<sp/>use<sp/>0<sp/>days<sp/>frequency<sp/>in<sp/>the<sp/>legacy<sp/>diag<sp/>manager<sp/>and<sp/>the<sp/>data<sp/>is<sp/>send<sp/>to<sp/>diag<sp/>manager<sp/>from<sp/>an<sp/>openmp<sp/>region,<sp/>the<sp/>Time<sp/>dimension<sp/>will<sp/>not<sp/>be<sp/>correct.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>Oneapi<sp/>2025.1<sp/>is<sp/>currently<sp/>unsupported<sp/>due<sp/>to<sp/>an<sp/>internal<sp/>compiler<sp/>error.<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>intel&apos;s<sp/>LLVM<sp/>compilers(ifx/icx)<sp/>is<sp/>also<sp/>unsupported,<sp/>see<sp/>prior<sp/>release<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>these<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>YAML<sp/>SUPPORT:<sp/>Messages<sp/>indicating<sp/>which<sp/>table<sp/>format<sp/>being<sp/>used<sp/>(yaml<sp/>or<sp/>legacy)<sp/>will<sp/>now<sp/>be<sp/>output<sp/>by<sp/>the<sp/>`diag_manager`,<sp/>`field_manager`,<sp/>and<sp/>`data_override`<sp/>modules.<sp/>(#1676)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Adds<sp/>the<sp/>number<sp/>of<sp/>tiles,<sp/>number<sp/>of<sp/>distributed<sp/>files,<sp/>and<sp/>number<sp/>of<sp/>time<sp/>levels<sp/>written<sp/>for<sp/>a<sp/>given<sp/>file<sp/>to<sp/>the<sp/>output<sp/>diag<sp/>manifest<sp/>yaml<sp/>file.<sp/>(#1661)<sp/>+<sp/>(#1648)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GENERIC_EXCHANGE:<sp/>Adds<sp/>a<sp/>new<sp/>&quot;gex&quot;<sp/>module<sp/>to<sp/>the<sp/>`coupler`<sp/>subdirectory<sp/>to<sp/>provide<sp/>a<sp/>generic<sp/>interface<sp/>to<sp/>pass<sp/>(non-tracer)<sp/>diagnostic<sp/>fields<sp/>across<sp/>components.<sp/>(#1637)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Optimized<sp/>`mpp_gather`<sp/>and<sp/>`mpp_scatter`<sp/>interfaces<sp/>by<sp/>leveraging<sp/>native<sp/>MPI<sp/>collectives<sp/>in<sp/>`mpp_pelist_scatter`<sp/>and<sp/>`mpp_gather_1D(_V)`<sp/>routines.<sp/>(#1655)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>`diag_out.yaml`<sp/>output<sp/>file<sp/>has<sp/>been<sp/>renamed<sp/>to<sp/>`diag_manifest`<sp/>and<sp/>will<sp/>include<sp/>the<sp/>root<sp/>PE<sp/>number<sp/>and<sp/>ensemble<sp/>number.<sp/>ie:<sp/>`diag_manifest.yaml.0`<sp/>or<sp/>`diag_manager.ens_01.yaml.0`<sp/>when<sp/>using<sp/>an<sp/>ensemble.<sp/>(#1661)<sp/>(#1654)<sp/>(#1646)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>EXCHANGE:<sp/>Increased<sp/>max<sp/>number<sp/>of<sp/>fields<sp/>for<sp/>exchange<sp/>grid<sp/>from<sp/>80<sp/>to<sp/>100<sp/>(#1637)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Initializes<sp/>both<sp/>r4<sp/>and<sp/>r8<sp/>versions<sp/>of<sp/>the<sp/>module<sp/>by<sp/>default<sp/>if<sp/>no<sp/>`mode`<sp/>argument<sp/>is<sp/>given<sp/>to<sp/>specialize<sp/>a<sp/>specific<sp/>real<sp/>size.(#1638)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Errors<sp/>from<sp/>unallocated<sp/>data<sp/>on<sp/>non-root<sp/>pes<sp/>in<sp/>mpp_scatter/gather<sp/>routines.<sp/>(#1672)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER(legacy):<sp/>Bug<sp/>with<sp/>instantaneous<sp/>output<sp/>variables<sp/>where<sp/>incorrect<sp/>time<sp/>steps<sp/>would<sp/>be<sp/>output<sp/>when<sp/>using<sp/>intervals<sp/>larger<sp/>than<sp/>the<sp/>physics<sp/>timestep<sp/>of<sp/>30<sp/>minutes.<sp/>(#1667)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Issue<sp/>causing<sp/>an<sp/>extra<sp/>unlimited<sp/>dimension<sp/>to<sp/>be<sp/>written<sp/>out<sp/>in<sp/>history<sp/>files<sp/>when<sp/>mixing<sp/>static<sp/>and<sp/>non-static<sp/>variables.(#1668)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE<sp/>BUILD:<sp/>Fixes<sp/>missing<sp/>&quot;C&quot;<sp/>component<sp/>for<sp/>OpenMP<sp/>libraries<sp/>in<sp/>FMS<sp/>export<sp/>configuration<sp/>file<sp/>(#1663)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD_MANAGER:<sp/>Removed<sp/>public<sp/>declarations<sp/>for<sp/>routines<sp/>that<sp/>are<sp/>already<sp/>included<sp/>in<sp/>public<sp/>interfaces.<sp/>(#1317)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.02-beta2<sp/><sp/>e8b8c19c5d67b35440acc10b3180f535e3c6e7d6</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.02-beta1<sp/><sp/>2df70639e371ab8d11edbbfed937951ad4e97c9d</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.02-alpha1<sp/>71957e9d79fbd832c4e25ee452eb211669e0df1d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.01.02]<sp/>-<sp/>2025-03-06</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>this<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>the<sp/>Intel<sp/>Oneapi<sp/>Fortran<sp/>compiler<sp/>(ifx)<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>causing<sp/>false<sp/>positives<sp/>when<sp/>using<sp/>external<sp/>libraries.<sp/>If<sp/>using<sp/>the<sp/>`-check<sp/>all`<sp/>flag,<sp/>`-check<sp/>all,nouninit`<sp/>should<sp/>be<sp/>used<sp/>instead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Change<sp/>name<sp/>of<sp/>yaml<sp/>output<sp/>file<sp/>to<sp/>include<sp/>the<sp/>root<sp/>PE<sp/>number<sp/>at<sp/>the<sp/>end<sp/>in<sp/>order<sp/>to<sp/>prevent<sp/>overwrites<sp/>(#1654)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.01.01]<sp/>-<sp/>2025-02-26</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>this<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>the<sp/>Intel<sp/>Oneapi<sp/>Fortran<sp/>compiler<sp/>(ifx)<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>causing<sp/>false<sp/>positives<sp/>when<sp/>using<sp/>external<sp/>libraries.<sp/>If<sp/>using<sp/>the<sp/>`-check<sp/>all`<sp/>flag,<sp/>`-check<sp/>all,nouninit`<sp/>should<sp/>be<sp/>used<sp/>instead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Change<sp/>name<sp/>of<sp/>yaml<sp/>output<sp/>file<sp/>from<sp/>&quot;diag_out.yaml&quot;<sp/>to<sp/>&quot;diag_manifest.yaml&quot;<sp/>(#1646)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Added<sp/>field<sp/>to<sp/>the<sp/>yaml<sp/>output<sp/>file<sp/>to<sp/>specify<sp/>the<sp/>number<sp/>of<sp/>time<sp/>levels<sp/>written<sp/>to<sp/>a<sp/>given<sp/>file<sp/>(#1648)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2025.01]<sp/>-<sp/>2025-01-30</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>this<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>the<sp/>Intel<sp/>Oneapi<sp/>Fortran<sp/>compiler<sp/>(ifx)<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>causing<sp/>false<sp/>positives<sp/>when<sp/>using<sp/>external<sp/>libraries.<sp/>If<sp/>using<sp/>the<sp/>`-check<sp/>all`<sp/>flag,<sp/>`-check<sp/>all,nouninit`<sp/>should<sp/>be<sp/>used<sp/>instead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ENSEMBLE<sp/>YAML<sp/>SUPPORT:<sp/>Adds<sp/>functionality<sp/>to<sp/>the<sp/>diag_manager,<sp/>field_manager,<sp/>and<sp/>data_override<sp/>to<sp/>support<sp/>unique<sp/>yaml<sp/>tables<sp/>for<sp/>each<sp/>member<sp/>of<sp/>an<sp/>ensemble<sp/>or<sp/>nest.<sp/>More<sp/>information<sp/>can<sp/>be<sp/>found<sp/>in<sp/>in<sp/>the<sp/>[diag_manager](diag_manager/README.md)<sp/>and<sp/>[data_override](data_override/README.MD)<sp/>README<sp/>files<sp/>(#1585)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD:<sp/>Adds<sp/>options<sp/>to<sp/>set<sp/>`PORTABLE_KINDS`<sp/>macro<sp/>in<sp/>CMake<sp/>and<sp/>autotools<sp/>builds<sp/>(#1572)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(autotools):<sp/>Adds<sp/>check<sp/>for<sp/>cray<sp/>compiler<sp/>.mod<sp/>file<sp/>capitalization<sp/>and<sp/>will<sp/>now<sp/>run<sp/>a<sp/>previously<sp/>added,<sp/>but<sp/>unused,<sp/>m4<sp/>check<sp/>for<sp/>`newunit`<sp/>support.<sp/>(#1561)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(cmake):<sp/>Adds<sp/>CMake<sp/>functionality<sp/>to<sp/>generate<sp/>a<sp/>pkgconfig<sp/>file<sp/>(#1565)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Modifies<sp/>`diag_field_add_attribute`<sp/>to<sp/>accept<sp/>both<sp/>r4<sp/>and<sp/>r8<sp/>values<sp/>(#1625)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO/FMS_IO:<sp/>A<sp/>deprecation<sp/>warning<sp/>will<sp/>now<sp/>be<sp/>output<sp/>when<sp/>using<sp/>these<sp/>modules<sp/>or<sp/>enabling<sp/>the<sp/>`-Duse_deprecated_io`<sp/>flag<sp/>via<sp/>the<sp/>build<sp/>systems.<sp/>Usage<sp/>of<sp/>these<sp/>modules<sp/>will<sp/>be<sp/>deprecated<sp/>in<sp/>the<sp/>next<sp/>release.<sp/>(#1609)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Made<sp/>changes<sp/>to<sp/>the<sp/>reduction<sp/>routine<sp/>to<sp/>improve<sp/>performance<sp/>of<sp/>loop<sp/>and<sp/>to<sp/>reduce<sp/>unnecessary<sp/>calls<sp/>if<sp/>there<sp/>isn&apos;t<sp/>any<sp/>new<sp/>data<sp/>to<sp/>process<sp/>(#1634)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC/GRID_UTILS:<sp/>The<sp/>`mosaic`<sp/>directory<sp/>has<sp/>been<sp/>refactored<sp/>and<sp/>is<sp/>now<sp/>called<sp/>`grid_utils`.<sp/>(#1626)<sp/>As<sp/>part<sp/>of<sp/>these<sp/>updates:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`create_xgrid.c/h`<sp/>files<sp/>have<sp/>been<sp/>moved<sp/>to<sp/>the<sp/>`horiz_interp/include`<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Any<sp/>any<sp/>unused<sp/>`.c`/`.h`<sp/>files<sp/>or<sp/>functions<sp/>from<sp/>`mosaic`<sp/>have<sp/>been<sp/>removed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>C<sp/>functions<sp/>have<sp/>been<sp/>moved<sp/>between<sp/>the<sp/>`grid_utils.c`,<sp/>`tree_utils.c`<sp/>and<sp/>`create_xgrid.c`<sp/>files<sp/>depending<sp/>on<sp/>the<sp/>functions<sp/>usage</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Changes<sp/>`fms_diag_accept_data`<sp/>from<sp/>a<sp/>function<sp/>to<sp/>a<sp/>subroutine<sp/>(#1610)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>functionality<sp/>of<sp/>the<sp/>`new_file_freq`,<sp/>`start_time`,<sp/>and<sp/>`file_duration`<sp/>keys<sp/>in<sp/>the<sp/>diag_manager.<sp/>(#1633)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC2:<sp/>Fixes<sp/>argument<sp/>intent<sp/>for<sp/>`calc_mosaic_grid_area`<sp/>and<sp/>makes<sp/>changes<sp/>to<sp/>the<sp/>test<sp/>to<sp/>avoid<sp/>divide-by-zero<sp/>errors<sp/>(#1597)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>YAML_PARSER:<sp/>Fixes<sp/>incorrect<sp/>argument<sp/>type<sp/>in<sp/>c-binding<sp/>causing<sp/>type<sp/>mismatch<sp/>errors<sp/>with<sp/>the<sp/>cray<sp/>compiler<sp/>(#1580)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(CMake):<sp/>Removes<sp/>usage<sp/>of<sp/>hardcoded<sp/>`lib`<sp/>directory<sp/>path<sp/>(#1589)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>HORIZ_INTERP:<sp/>Adds<sp/>allocation<sp/>checks<sp/>before<sp/>checking<sp/>fields<sp/>for<sp/>`horiz_interp_type_eq`<sp/>(#1584)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD:<sp/>Fixed<sp/>syntax<sp/>error<sp/>in<sp/>`column_diagnostics`<sp/>Makefile.am<sp/>(#1598)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Adds<sp/>a<sp/>workaround<sp/>for<sp/>a<sp/>cray<sp/>compiler<sp/>bug<sp/>where<sp/>the<sp/>`NULL()`<sp/>intrinsic<sp/>causes<sp/>a<sp/>type<sp/>mismatch<sp/>when<sp/>passed<sp/>in<sp/>as<sp/>an<sp/>argument<sp/>(#1560)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Adds<sp/>missed<sp/>`f2c_string`<sp/>routine<sp/>to<sp/>libFMS.F90<sp/>(#1601)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(autotools):<sp/>Fixes<sp/>false<sp/>`./configure`<sp/>failures<sp/>when<sp/>using<sp/>intel<sp/>compilers<sp/>and<sp/>the<sp/>`-warn`<sp/>flag<sp/>(#1583)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BLOCK_CONTROL:<sp/>Updates<sp/>non-uniform<sp/>block<sp/>size<sp/>warning<sp/>to<sp/>only<sp/>output<sp/>on<sp/>the<sp/>root<sp/>pe<sp/>(#1588)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixes<sp/>z-axis<sp/>domain<sp/>reads<sp/>when<sp/>edge<sp/>lengths<sp/>and<sp/>corners<sp/>are<sp/>specified<sp/>(#1620)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixes<sp/>temporary<sp/>array<sp/>compiler<sp/>warning<sp/>during<sp/>`mpp_init`<sp/>(#1628)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SAT_VAPOR_PRES:<sp/>Fixes<sp/>bad<sp/>temperature<sp/>output<sp/>not<sp/>printing<sp/>on<sp/>non-root<sp/>pe&apos;s<sp/>(#1619)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ASTRONOMY:<sp/>Adds<sp/>allocation<sp/>checks<sp/>for<sp/>module<sp/>variables<sp/>before<sp/>being<sp/>deallocated<sp/>in<sp/>`astronomy_end`<sp/>(#1629)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Fixes<sp/>multiple<sp/>unit<sp/>test<sp/>failures,<sp/>including<sp/>any<sp/>failing<sp/>tests<sp/>when<sp/>compiled<sp/>with<sp/>GNU<sp/>debug<sp/>flags<sp/>(#1575,<sp/>#1595,<sp/>#1579,<sp/>#1607,<sp/>#1622)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Fixes<sp/>multiple<sp/>compilation<sp/>and<sp/>runtime<sp/>errors<sp/>from<sp/>the<sp/>unit<sp/>tests<sp/>when<sp/>compiled<sp/>with<sp/>the<sp/>cray<sp/>compiler<sp/>(#1599,<sp/>#1602,<sp/>#1603,<sp/>#1604,<sp/>#1605)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Replaces<sp/>usage<sp/>of<sp/>`fms_platform.h`<sp/>includes<sp/>with<sp/>`platform_mod`<sp/>in<sp/>mpp<sp/>unit<sp/>tests<sp/>(#1616)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Add<sp/>workaround<sp/>for<sp/>ifx<sp/>failures<sp/>in<sp/>`diag_integral`<sp/>and<sp/>`topography`<sp/>tests<sp/>(#1606)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.01-beta1<sp/><sp/>15ec0c735cba2780d3da37f4e1e3b5d4a969b4ff</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2025.01-alpha1<sp/>95c02333387e673c33ec66e9e78042ef4772cf3a</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2024.03]<sp/>-<sp/>2024-08-22</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>this<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTEL:<sp/>The<sp/>`-check<sp/>uninit`<sp/>flag<sp/>for<sp/>the<sp/>Intel<sp/>Oneapi<sp/>Fortran<sp/>compiler<sp/>(ifx)<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>causing<sp/>false<sp/>positives<sp/>when<sp/>using<sp/>external<sp/>libraries.<sp/>If<sp/>using<sp/>the<sp/>`-check<sp/>all`<sp/>flag,<sp/>`-check<sp/>all,nouninit`<sp/>should<sp/>be<sp/>used<sp/>instead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Adds<sp/>a<sp/>namelist<sp/>flag<sp/>`use_center_grid_points`<sp/>which,<sp/>if<sp/>true,<sp/>enables<sp/>reading<sp/>the<sp/>centroid<sp/>values<sp/>from<sp/>the<sp/>grid<sp/>spec<sp/>for<sp/>ocean<sp/>and<sp/>ice<sp/>models.<sp/>This<sp/>fixes<sp/>issues<sp/>with<sp/>grid<sp/>files<sp/>that<sp/>have<sp/>longitudes<sp/>ranges<sp/>from<sp/>0:180<sp/>and<sp/>then<sp/>-180:0,<sp/>but<sp/>will<sp/>cause<sp/>answer<sp/>changes<sp/>if<sp/>enabled.<sp/>(#1566)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Adds<sp/>support<sp/>for<sp/>reading<sp/>external<sp/>weight<sp/>files.<sp/>Currently<sp/>only<sp/>supported<sp/>for<sp/>fregrid<sp/>generated<sp/>files<sp/>while<sp/>using<sp/>the<sp/>bilinear<sp/>interpolation<sp/>method.<sp/>Documentation<sp/>for<sp/>this<sp/>feature<sp/>can<sp/>be<sp/>found<sp/>in<sp/>`data_override/README.md`.<sp/>(#1556)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PLATFORM:<sp/>Adds<sp/>two<sp/>constants<sp/>`FMS_PATH_LEN`<sp/>and<sp/>`FMS_FILE_LEN`<sp/>and<sp/>uses<sp/>it<sp/>across<sp/>the<sp/>code<sp/>for<sp/>any<sp/>file<sp/>path<sp/>or<sp/>file<sp/>name<sp/>character<sp/>strings.<sp/>They<sp/>default<sp/>to<sp/>1024<sp/>and<sp/>255<sp/>but<sp/>can<sp/>also<sp/>be<sp/>set<sp/>by<sp/>the<sp/>`FMS_MAX_PATH_LEN`<sp/>and<sp/>`FMS_MAX_FILE_LEN`<sp/>CPP<sp/>macros.<sp/>(#1567)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Adds<sp/>Cmake<sp/>option<sp/>to<sp/>support<sp/>building<sp/>shared<sp/>libraries<sp/>(#1559)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Simplifies<sp/>the<sp/>diag_table.yaml<sp/>format<sp/>by<sp/>allowing<sp/>`module`,<sp/>`reduction`,<sp/>and<sp/>`kind`<sp/>to<sp/>be<sp/>set<sp/>on<sp/>a<sp/>file<sp/>level,<sp/>with<sp/>the<sp/>ability<sp/>to<sp/>override<sp/>for<sp/>a<sp/>specific<sp/>field.<sp/>(#1545)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD_MANAGER:<sp/>Updated<sp/>and<sp/>refactored<sp/>the<sp/>`fm_yaml_mod`<sp/>module<sp/>for<sp/>a<sp/>new<sp/>table<sp/>format<sp/>to<sp/>remove<sp/>the<sp/>`subparams`<sp/>key.<sp/>(#1547)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Updates<sp/>the<sp/>yaml<sp/>format<sp/>to<sp/>be<sp/>improve<sp/>readablity<sp/>and<sp/>to<sp/>be<sp/>more<sp/>consistent<sp/>in<sp/>key<sp/>names.<sp/>Additional<sp/>documentation<sp/>for<sp/>the<sp/>new<sp/>format<sp/>can<sp/>be<sp/>found<sp/>in<sp/>`data_override/README.md`.<sp/>(#1556)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PARSER:<sp/>Adds<sp/>error<sp/>code<sp/>checks<sp/>to<sp/>the<sp/>yaml<sp/>parser<sp/>to<sp/>prevent<sp/>code<sp/>from<sp/>hanging<sp/>on<sp/>invalid<sp/>yamls<sp/>(#1563)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PARSER:<sp/>Adds<sp/>ability<sp/>to<sp/>read<sp/>in<sp/>generic<sp/>blocks<sp/>to<sp/>support<sp/>`field_manager`<sp/>updates.<sp/>(#1519)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CRAY<sp/>COMPILER<sp/>SUPPORT:<sp/>Updated<sp/>any<sp/>multi-line<sp/>string<sp/>literals<sp/>to<sp/>be<sp/>compatible<sp/>with<sp/>the<sp/>cray<sp/>compiler.<sp/>(#1554)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Removed<sp/>diag_table<sp/>schemas<sp/>from<sp/>FMS<sp/>and<sp/>moved<sp/>them<sp/>to<sp/>the<sp/>`gfdl_msd_schemas`<sp/>repository,<sp/>and<sp/>updates<sp/>the<sp/>`diag_manager`<sp/>documentation<sp/>markdowns.<sp/>(#1543)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.03-beta1<sp/>a5de6a54abeb00be2443db4cf07aa267b7faa724</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2024.02]<sp/>-<sp/>2024-07-11</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:<sp/>See<sp/>[below](#20240102---2024-06-14)<sp/>for<sp/>known<sp/>output<sp/>file<sp/>differences<sp/>regarding<sp/>the<sp/>new<sp/>diag<sp/>manager.<sp/>The<sp/>new<sp/>diag_manager<sp/>is<sp/>disabled<sp/>by<sp/>default,<sp/>so<sp/>this<sp/>differences<sp/>will<sp/>only<sp/>be<sp/>present<sp/>if<sp/>`use_modern_diag`<sp/>is<sp/>set<sp/>to<sp/>true<sp/>in<sp/>the<sp/>`diag_manager_nml`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.<sp/>FPE<sp/>traps<sp/>are<sp/>turned<sp/>on<sp/>when<sp/>using<sp/>the<sp/>debug<sp/>target<sp/>in<sp/>mkmf.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>Enables<sp/>use<sp/>of<sp/>`verbose`<sp/>option<sp/>in<sp/>`time_interp_external2`<sp/>calls<sp/>from<sp/>`data_override`.<sp/>The<sp/>option<sp/>is<sp/>enabled<sp/>in<sp/>`data_override_nml`<sp/>by<sp/>setting<sp/>`debug_data_override`<sp/>to<sp/>true.<sp/>(#1516)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>COUPLER:<sp/>Adds<sp/>optional<sp/>argument<sp/>to<sp/>`coupler_types_send_data`<sp/>routine<sp/>that<sp/>contains<sp/>the<sp/>return<sp/>statuses<sp/>for<sp/>any<sp/>calls<sp/>made<sp/>to<sp/>the<sp/>diag_manager&apos;s<sp/>`send_data`<sp/>routine.<sp/>(#1530)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Adds<sp/>a<sp/>separate<sp/>error<sp/>log<sp/>file<sp/>`warnfile.&lt;root<sp/>pe<sp/>num&gt;.out`<sp/>that<sp/>only<sp/>holds<sp/>output<sp/>from<sp/>any<sp/>`mpp_error`<sp/>calls<sp/>made<sp/>during<sp/>a<sp/>run<sp/>(#1544)</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>The<sp/>`diag_field_log.out`<sp/>output<sp/>file<sp/>of<sp/>all<sp/>registered<sp/>fields<sp/>will<sp/>now<sp/>include<sp/>the<sp/>PE<sp/>number<sp/>of<sp/>the<sp/>root<sp/>PE<sp/>at<sp/>the<sp/>time<sp/>of<sp/>writing<sp/>(ie.<sp/>diag_field_log.out.0).<sp/>This<sp/>is<sp/>to<sp/>prevent<sp/>overwriting<sp/>the<sp/>file<sp/>in<sp/>cases<sp/>where<sp/>the<sp/>root<sp/>PE<sp/>may<sp/>change.<sp/>(#1497)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixes<sp/>real<sp/>kind<sp/>flags<sp/>being<sp/>overwritten<sp/>when<sp/>using<sp/>the<sp/>Debug<sp/>release<sp/>type<sp/>(#1532)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>HORIZ_INTERP:<sp/>Fixes<sp/>allocation<sp/>issues<sp/>when<sp/>using<sp/>method-specific<sp/>horiz_interp_new<sp/>routines<sp/>(such<sp/>as<sp/>`horiz_interp_bilinear_new`)<sp/>by<sp/>setting<sp/>`is_allocated`<sp/>and<sp/>the<sp/>`method_type`<sp/>during<sp/>initialization<sp/>for<sp/>each<sp/>method.<sp/>(#1538)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.02-alpha1<sp/>5757c7813f1170efd28f5a4206395534894095b4</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.02-alpha2<sp/>5757c7813f1170efd28f5a4206395534894095b4</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.02-beta1<sp/><sp/>ca592ef8f47c246f4dc56d348d62235bd0ceaa9d</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.02-beta2<sp/><sp/>ca592ef8f47c246f4dc56d348d62235bd0ceaa9d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2024.01.02]<sp/>-<sp/>2024-06-14</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Expected<sp/>output<sp/>file<sp/>changes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>model<sp/>run<sp/>time<sp/>is<sp/>less<sp/>than<sp/>the<sp/>output<sp/>frequency,<sp/>old<sp/>diag_manager<sp/>would<sp/>write<sp/>a<sp/>specific<sp/>value<sp/>(9.96921e+36).<sp/>The<sp/>new<sp/>diag_manager<sp/>will<sp/>not,<sp/>so<sp/>only<sp/>fill<sp/>values<sp/>will<sp/>be<sp/>present.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>A<sp/>`scalar_axis`<sp/>dimension<sp/>will<sp/>not<sp/>be<sp/>added<sp/>to<sp/>scalar<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`average_*`<sp/>variables<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>as<sp/>they<sp/>are<sp/>non-standard<sp/>conventions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Attributes<sp/>added<sp/>via<sp/>`diag_field_add_attributes`<sp/>in<sp/>the<sp/>old<sp/>code<sp/>were<sp/>saved<sp/>as<sp/>`NF90_FLOAT`<sp/>regardless<sp/>of<sp/>precision,<sp/>but<sp/>will<sp/>now<sp/>be<sp/>written<sp/>as<sp/>the<sp/>precision<sp/>that<sp/>is<sp/>passed<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Subregional<sp/>output<sp/>will<sp/>have<sp/>a<sp/>global<sp/>attribute<sp/>`is_subregional<sp/>=<sp/>True`<sp/>set<sp/>for<sp/>non-global<sp/>history<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`grid_type`<sp/>and<sp/>`grid_tile`<sp/>global<sp/>attributes<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>for<sp/>all<sp/>files,<sp/>and<sp/>some<sp/>differences<sp/>may<sp/>be<sp/>seen<sp/>in<sp/>the<sp/>exact<sp/>order<sp/>of<sp/>the<sp/>`associated_files`<sp/>attribute</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>When<sp/>using<sp/>the<sp/>`do_diag_field_log`<sp/>nml<sp/>option,<sp/>the<sp/>output<sp/>log<sp/>file<sp/>may<sp/>be<sp/>ovewritten<sp/>if<sp/>using<sp/>a<sp/>multiple<sp/>root<sp/>pe&apos;s</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>incorrect<sp/>dates<sp/>being<sp/>appended<sp/>to<sp/>static<sp/>file<sp/>names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2024.01.01]<sp/>-<sp/>2024-05-30</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Expected<sp/>output<sp/>file<sp/>changes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>model<sp/>run<sp/>time<sp/>is<sp/>less<sp/>than<sp/>the<sp/>output<sp/>frequency,<sp/>old<sp/>diag_manager<sp/>would<sp/>write<sp/>a<sp/>specific<sp/>value<sp/>(9.96921e+36).<sp/>The<sp/>new<sp/>diag_manager<sp/>will<sp/>not,<sp/>so<sp/>only<sp/>fill<sp/>values<sp/>will<sp/>be<sp/>present.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>A<sp/>`scalar_axis`<sp/>dimension<sp/>will<sp/>not<sp/>be<sp/>added<sp/>to<sp/>scalar<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`average_*`<sp/>variables<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>as<sp/>they<sp/>are<sp/>non-standard<sp/>conventions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Attributes<sp/>added<sp/>via<sp/>`diag_field_add_attributes`<sp/>in<sp/>the<sp/>old<sp/>code<sp/>were<sp/>saved<sp/>as<sp/>`NF90_FLOAT`<sp/>regardless<sp/>of<sp/>precision,<sp/>but<sp/>will<sp/>now<sp/>be<sp/>written<sp/>as<sp/>the<sp/>precision<sp/>that<sp/>is<sp/>passed<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Subregional<sp/>output<sp/>will<sp/>have<sp/>a<sp/>global<sp/>attribute<sp/>`is_subregional<sp/>=<sp/>True`<sp/>set<sp/>for<sp/>non-global<sp/>history<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`grid_type`<sp/>and<sp/>`grid_tile`<sp/>global<sp/>attributes<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>for<sp/>all<sp/>files,<sp/>and<sp/>some<sp/>differences<sp/>may<sp/>be<sp/>seen<sp/>in<sp/>the<sp/>exact<sp/>order<sp/>of<sp/>the<sp/>`associated_files`<sp/>attribute</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>When<sp/>using<sp/>the<sp/>`do_diag_field_log`<sp/>nml<sp/>option,<sp/>the<sp/>output<sp/>log<sp/>file<sp/>may<sp/>be<sp/>ovewritten<sp/>if<sp/>using<sp/>a<sp/>multiple<sp/>root<sp/>pe&apos;s</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC:<sp/>version<sp/>14.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>a<sp/>bug<sp/>with<sp/>strings<sp/>that<sp/>has<sp/>come<sp/>up<sp/>previously<sp/>in<sp/>earlier<sp/>versions.<sp/>This<sp/>will<sp/>be<sp/>caught<sp/>by<sp/>the<sp/>configure<sp/>script,<sp/>but<sp/>will<sp/>cause<sp/>compilation<sp/>errors<sp/>if<sp/>using<sp/>other<sp/>build<sp/>systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Implements<sp/>`flush_nc_files`<sp/>functionality<sp/>from<sp/>legacy<sp/>diag_manager.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Changed<sp/>`register_unlimited_compressed_axis`<sp/>to<sp/>use<sp/>a<sp/>collective<sp/>gather<sp/>rather<sp/>than<sp/>send<sp/>and<sp/>receives<sp/>to<sp/>improve<sp/>efficiency<sp/>when<sp/>reading<sp/>in<sp/>iceberg<sp/>restarts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>0<sp/>day<sp/>output<sp/>frequencies<sp/>causing<sp/>error<sp/>stating<sp/>a<sp/>time_step<sp/>was<sp/>skipped.<sp/>Also<sp/>adds<sp/>checks<sp/>to<sp/>crash<sp/>if<sp/>averaged<sp/>fields<sp/>have<sp/>-1<sp/>or<sp/>0<sp/>day<sp/>frequencies<sp/>or<sp/>if<sp/>mixing<sp/>averaged<sp/>and<sp/>non-averaged<sp/>fields<sp/>in<sp/>the<sp/>same<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>issue<sp/>with<sp/>the<sp/>weight<sp/>argument<sp/>not<sp/>getting<sp/>passed<sp/>through<sp/>to<sp/>reduction<sp/>methods.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Allocation<sp/>errors<sp/>when<sp/>using<sp/>two<sp/>empty<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>`time`<sp/>and<sp/>`time_bnds`<sp/>being<sp/>larger<sp/>than<sp/>expected<sp/>when<sp/>running<sp/>for<sp/>1<sp/>day<sp/>and<sp/>using<sp/>daily<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Allows<sp/>for<sp/>mixing<sp/>static<sp/>and<sp/>non-static<sp/>fields<sp/>when<sp/>frequency<sp/>is<sp/>0<sp/>days.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Fixes<sp/>compile<sp/>failure<sp/>with<sp/>ifort<sp/>2024.01<sp/>from<sp/>test_mpp_gatscat.F90.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>The<sp/>`mix_snapshot_average_fields`<sp/>option<sp/>is<sp/>deprecated<sp/>for<sp/>the<sp/>rewritten<sp/>diag_manager<sp/>only.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01.01-beta2<sp/>c00367fa810960e87610162f0f012c5da724c5a9</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01.01-beta1<sp/>42f8506512e1b5b43982320f5b9d4ca1ca9cbebd</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2024.01]<sp/>-<sp/>2024-05-03</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Diag<sp/>Manager<sp/>Rewrite:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>If<sp/>two<sp/>empty<sp/>files<sp/>are<sp/>present<sp/>in<sp/>the<sp/>diag_table.yaml<sp/>file<sp/>the<sp/>code<sp/>will<sp/>crash<sp/>with<sp/>a<sp/>allocation<sp/>error<sp/>(#1506)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Setting<sp/>an<sp/>output<sp/>frequency<sp/>of<sp/>&apos;0<sp/>days&apos;<sp/>does<sp/>not<sp/>work<sp/>as<sp/>expected<sp/>and<sp/>may<sp/>cause<sp/>an<sp/>error<sp/>stating<sp/>a<sp/>time_step<sp/>has<sp/>been<sp/>skipped<sp/>(#1502)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`flush_nc_files`<sp/>and<sp/>`mix_snapshot_average_fields`<sp/>nml<sp/>options<sp/>are<sp/>not<sp/>yet<sp/>functional.<sp/>The<sp/>`mix_snapshot_average_fields`<sp/>option<sp/>is<sp/>planned<sp/>to<sp/>be<sp/>deprecated<sp/>(for<sp/>the<sp/>rewritten<sp/>diag_manager<sp/>only).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Expected<sp/>output<sp/>file<sp/>changes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>model<sp/>run<sp/>time<sp/>is<sp/>less<sp/>than<sp/>the<sp/>output<sp/>frequency,<sp/>old<sp/>diag_manager<sp/>would<sp/>write<sp/>a<sp/>specific<sp/>value<sp/>(9.96921e+36).<sp/>The<sp/>new<sp/>diag_manager<sp/>will<sp/>not,<sp/>so<sp/>only<sp/>fill<sp/>values<sp/>will<sp/>be<sp/>present.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>A<sp/>`scalar_axis`<sp/>dimension<sp/>will<sp/>not<sp/>be<sp/>added<sp/>to<sp/>scalar<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`average_*`<sp/>variables<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>as<sp/>they<sp/>are<sp/>non-standard<sp/>conventions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Attributes<sp/>added<sp/>via<sp/>`diag_field_add_attributes`<sp/>in<sp/>the<sp/>old<sp/>code<sp/>were<sp/>saved<sp/>as<sp/>`NF90_FLOAT`<sp/>regardless<sp/>of<sp/>precision,<sp/>but<sp/>will<sp/>now<sp/>be<sp/>written<sp/>as<sp/>the<sp/>precision<sp/>that<sp/>is<sp/>passed<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Subregional<sp/>output<sp/>will<sp/>have<sp/>a<sp/>global<sp/>attribute<sp/>`is_subregional<sp/>=<sp/>True`<sp/>set<sp/>for<sp/>non-global<sp/>history<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`grid_type`<sp/>and<sp/>`grid_tile`<sp/>global<sp/>attributes<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>added<sp/>for<sp/>all<sp/>files,<sp/>and<sp/>some<sp/>differences<sp/>may<sp/>be<sp/>seen<sp/>in<sp/>the<sp/>exact<sp/>order<sp/>of<sp/>the<sp/>`associated_files`<sp/>attribute</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>When<sp/>using<sp/>the<sp/>`do_diag_field_log`<sp/>nml<sp/>option,<sp/>the<sp/>output<sp/>log<sp/>file<sp/>may<sp/>be<sp/>ovewritten<sp/>if<sp/>using<sp/>a<sp/>multiple<sp/>root<sp/>pe&apos;s</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>`test_mpp_gatscat.F90`<sp/>fails<sp/>to<sp/>compile<sp/>with<sp/>the<sp/>Intel<sp/>Oneapi<sp/>2024.01&apos;s<sp/>version<sp/>of<sp/>ifort</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD(HDF5):<sp/>HDF5<sp/>version<sp/>1.14.3<sp/>generates<sp/>floating<sp/>point<sp/>exceptions,<sp/>and<sp/>will<sp/>cause<sp/>errors<sp/>if<sp/>FMS<sp/>is<sp/>built<sp/>with<sp/>FPE<sp/>traps<sp/>enabled.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>The<sp/>diag<sp/>manager<sp/>has<sp/>been<sp/>rewritten<sp/>with<sp/>a<sp/>object<sp/>oriented<sp/>design.<sp/>The<sp/>old<sp/>diag_manager<sp/>code<sp/>has<sp/>been<sp/>kept<sp/>intact<sp/>and<sp/>will<sp/>be<sp/>used<sp/>by<sp/>default.<sp/>The<sp/>rewritten<sp/>diag<sp/>manager<sp/>can<sp/>be<sp/>enabled<sp/>via<sp/>`use_modern_diag<sp/>=<sp/>.true.`<sp/>to<sp/>your<sp/>`diag_manager_nml`.<sp/>New<sp/>features<sp/>include:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Self-describing<sp/>YAML<sp/>formatting<sp/>for<sp/>diag_table&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Allows<sp/>4d<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Support<sp/>defining<sp/>subregions<sp/>with<sp/>indices</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>More<sp/>flexibility<sp/>when<sp/>adding<sp/>metadata<sp/>and<sp/>defining<sp/>output<sp/>frequency</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>support<sp/>for<sp/>collective<sp/>parallel<sp/>reads<sp/>to<sp/>improve<sp/>model<sp/>startup<sp/>time.<sp/>The<sp/>collective<sp/>reads<sp/>are<sp/>disabled<sp/>by<sp/>default<sp/>and<sp/>enabled<sp/>via<sp/>the<sp/>`use_collective`<sp/>flag<sp/>in<sp/>`netcdf_io_mod`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Adds<sp/>option<sp/>to<sp/>use<sp/>multiple<sp/>data<sp/>files<sp/>for<sp/>one<sp/>field<sp/>within<sp/>data_override<sp/>in<sp/>order<sp/>to<sp/>use<sp/>annual<sp/>data<sp/>files<sp/>in<sp/>yearly<sp/>runs<sp/>without<sp/>having<sp/>to<sp/>append/prepend<sp/>timesteps<sp/>from<sp/>previous<sp/>and<sp/>next<sp/>year.<sp/>With<sp/>the<sp/>legacy<sp/>data_table,<sp/>filenames<sp/><sp/>can<sp/>be<sp/>set<sp/>in<sp/>order<sp/>and<sp/>separated<sp/>with<sp/>`:`<sp/>ie.<sp/>`prev_year.nc:curr_year.nc:next_year.nc`.<sp/>With<sp/>the<sp/>data_table.yaml<sp/>format,<sp/>the<sp/>key<sp/>`is_multi_file`<sp/>enables<sp/>the<sp/>functionality<sp/>and<sp/>`prev_file_name`<sp/>and<sp/>`next_file_name`<sp/>sets<sp/>the<sp/>file<sp/>paths.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR:<sp/>Adds<sp/>support<sp/>for<sp/>yearly/annual<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Adds<sp/>support<sp/>for<sp/>monotonically<sp/>decreasing<sp/>arrays<sp/>for<sp/>`nearest_index`,<sp/>`axis_edges`,<sp/>`horiz_interp`(bilinear),<sp/>and<sp/>`data_override`<sp/>(#1388)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Add<sp/>documentation<sp/>for<sp/>the<sp/>exchange<sp/>grid<sp/>(xgrid_mod)<sp/>and<sp/>update<sp/>the<sp/>contribution<sp/>guide<sp/>to<sp/>add<sp/>a<sp/>section<sp/>on<sp/>code<sp/>reviews</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>MPI<sp/>sub-communicators<sp/>for<sp/>domains<sp/>are<sp/>now<sp/>accessible<sp/>via<sp/>`mpp_get_domain_tile_commid`<sp/>and<sp/>`mpp_get_domain_commid`<sp/>in<sp/>`mpp_domains_mod`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Changes<sp/>behavior<sp/>to<sp/>crash<sp/>if<sp/>both<sp/>data_table<sp/>and<sp/>data_table.yaml<sp/>are<sp/>present<sp/>and<sp/>adds<sp/>error<sp/>checking<sp/>when<sp/>reading<sp/>in<sp/>yaml<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD_MANAGER:<sp/>Changes<sp/>behavior<sp/>to<sp/>crash<sp/>if<sp/>both<sp/>field_table<sp/>and<sp/>field_table.yaml<sp/>are<sp/>present<sp/>as<sp/>well<sp/>as<sp/>adds<sp/>a<sp/>namelist<sp/>flag<sp/>(`use_field_table_yaml`)<sp/>to<sp/>enable<sp/>support<sp/>for<sp/>the<sp/>yaml<sp/>input.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Fixes<sp/>allocation<sp/>error<sp/>with<sp/>scalar<sp/>routine<sp/>and<sp/>replaces<sp/>pointers<sp/>with<sp/>allocatables</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR:<sp/>Increase<sp/>max<sp/>string<sp/>size<sp/>for<sp/>file<sp/>paths</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AXIS_UTILS:<sp/>Improves<sp/>performance<sp/>of<sp/>`nearest_index`<sp/>routine</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixes<sp/>macOS<sp/>linking<sp/>issues<sp/>with<sp/>OpenMP</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-beta5<sp/><sp/>d3bab5a84b6a51eddd46ab6fb65eaa532830c6c7</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-beta4<sp/><sp/>ac363ddfd3075637cecae30ddfbae7a78751197b</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha6<sp/>2ace94564a08aec4d7ab7eca0e57c0289e52d5b1</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha5<sp/>5ed0bd373cc59a9681052fa837cb83a67169d102</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha4<sp/>8dd90d72b58f0de3632dc62920f8adfb996b2265</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-beta3<sp/><sp/>f71405a075102aef42f5811dc09e239ddd002637</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-beta2<sp/><sp/>bb6de937f70a08a440f5e63b8553b047c1921509</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-beta1<sp/><sp/>913f8aaecca374d5e10280056de862d5e4a7a668</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha3<sp/>085c6bfc945a6f1c586b842ca6268fca442884d8</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha2<sp/>38bfde30e1cb8bf5222410a9c37e71529567bf69</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2024.01-alpha1<sp/>ac0d086296ea8b9196552463655cb9a848db39fe</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.04]<sp/>-<sp/>2023-12-04</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>9<sp/>and<sp/>below<sp/>as<sp/>well<sp/>as<sp/>GCC<sp/>11.1.0<sp/>are<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues.<sp/>See<sp/>prior<sp/>releases<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`NO_QUAD_PRECISION`<sp/>macro<sp/>is<sp/>no<sp/>longer<sp/>set<sp/>by<sp/>FMS,<sp/>the<sp/>`ENABLE_QUAD_PRECISION`<sp/>macro<sp/>has<sp/>replaced<sp/>prior<sp/>usage<sp/>of<sp/>`NO_QUAD_PRECISION`.<sp/>`-DENABLE_QUAD_PRECISION`<sp/>should<sp/>be<sp/>set<sp/>if<sp/>quad<sp/>precision<sp/>is<sp/>to<sp/>be<sp/>used,<sp/>otherwise<sp/>FMS<sp/>will<sp/>not<sp/>use<sp/>quad<sp/>precision<sp/>reals<sp/>where<sp/>applicable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>A<sp/>new<sp/>namelist<sp/>flag<sp/>`use_data_table_yaml`<sp/>has<sp/>been<sp/>added<sp/>to<sp/>enable<sp/>usage<sp/>of<sp/>the<sp/>yaml<sp/>format<sp/>data_override<sp/>tables.<sp/>This<sp/>allows<sp/>an<sp/>executable<sp/>built<sp/>with<sp/>yaml<sp/>support<sp/>be<sp/>able<sp/>to<sp/>accept<sp/>either<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>RESERVED<sp/>KEYWORD<sp/>CHANGES:<sp/>Various<sp/>routines<sp/>in<sp/>FMS<sp/>have<sp/>been<sp/>updated<sp/>to<sp/>not<sp/>use<sp/>fortran<sp/>keywords<sp/>for<sp/>variable<sp/>names.<sp/>The<sp/>names<sp/>changed<sp/>were:<sp/>`data`,<sp/>`unit`,<sp/>and<sp/>`value`.<sp/>This<sp/>may<sp/>affect<sp/>usage<sp/>of<sp/>external<sp/>code<sp/>if<sp/>argument<sp/>names<sp/>are<sp/>explicitly<sp/>used.<sp/>Only<sp/>required<sp/>arguement<sp/>names<sp/>were<sp/>changed<sp/>to<sp/>mitigate<sp/>any<sp/>breaking<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Changes<sp/>the<sp/>testing<sp/>scripts<sp/>to<sp/>allow<sp/>for<sp/>the<sp/>`MPI_LAUNCHER`<sp/>environment<sp/>variable<sp/>override<sp/>to<sp/>work<sp/>with<sp/>any<sp/>provided<sp/>arguments.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixed<sp/>build<sp/>issue<sp/>with<sp/>CMake<sp/>where<sp/>precision<sp/>default<sp/>flags<sp/>were<sp/>being<sp/>overwritten<sp/>when<sp/>using<sp/>GNU<sp/>and<sp/>MPICH.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AUTOTOOLS:<sp/>Fixes<sp/>issue<sp/>affecting<sp/>installs<sp/>where<sp/>the<sp/>global<sp/>libFMS.F90<sp/>module<sp/>was<sp/>not<sp/>being<sp/>installed<sp/>correctly<sp/>and<sp/>adds<sp/>post-install<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>issue<sp/>with<sp/>incorrect<sp/>start_time<sp/>functionality<sp/>(from<sp/>the<sp/>2023.02.01<sp/>patch)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.04-beta1<sp/>be1856c45accfe2fb15953c5f51e0d58a8816882</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.03]<sp/>-<sp/>2023-10-27</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>9<sp/>and<sp/>below<sp/>as<sp/>well<sp/>as<sp/>GCC<sp/>11.1.0<sp/>are<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues.<sp/>See<sp/>prior<sp/>releases<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`NO_QUAD_PRECISION`<sp/>macro<sp/>is<sp/>no<sp/>longer<sp/>set<sp/>by<sp/>FMS,<sp/>the<sp/>`ENABLE_QUAD_PRECISION`<sp/>macro<sp/>has<sp/>replaced<sp/>prior<sp/>usage<sp/>of<sp/>`NO_QUAD_PRECISION`.<sp/>`-DENABLE_QUAD_PRECISION`<sp/>should<sp/>be<sp/>set<sp/>if<sp/>quad<sp/>precision<sp/>is<sp/>to<sp/>be<sp/>used,<sp/>otherwise<sp/>FMS<sp/>will<sp/>not<sp/>use<sp/>quad<sp/>precision<sp/>reals<sp/>where<sp/>applicable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>UNIT_TESTS:<sp/>New<sp/>unit<sp/>tests<sp/>have<sp/>been<sp/>created<sp/>or<sp/>and<sp/>existing<sp/>ones<sp/>expanded<sp/>on<sp/>for<sp/>any<sp/>modules<sp/>utilizing<sp/>mixed<sp/>precision<sp/>support.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MIXED<sp/>PRECISION:<sp/>Most<sp/>subroutines<sp/>and<sp/>functions<sp/>in<sp/>FMS<sp/>have<sp/>been<sp/>updated<sp/>to<sp/>simultaneously<sp/>accept<sp/>both<sp/>4<sp/>byte<sp/>and<sp/>8<sp/>byte<sp/>reals<sp/>as<sp/>arguments.<sp/>This<sp/>deprecates<sp/>the<sp/>`--enable-mixed-mode`<sp/>option,<sp/>which<sp/>enabled<sp/>similar<sp/>functionality<sp/>but<sp/>was<sp/>limited<sp/>to<sp/>certain<sp/>directories<sp/>and<sp/>was<sp/>not<sp/>enabled<sp/>by<sp/>default.<sp/>To<sp/>facilitate<sp/>easier<sp/>testing<sp/>of<sp/>these<sp/>code<sp/>changes,<sp/>the<sp/>CMake<sp/>precision<sp/>options<sp/>for<sp/>default<sp/>real<sp/>size<sp/>were<sp/>left<sp/>in<sp/>(along<sp/>with<sp/>an<sp/>equivalent<sp/>`--disable-r8-default`<sp/>flag<sp/>for<sp/>autotools).<sp/>The<sp/>resulting<sp/>libraries<sp/>will<sp/>support<sp/>mixed-precision<sp/>real<sp/>kinds<sp/>regardless<sp/>of<sp/>default<sp/>real<sp/>size.<sp/>It<sp/>should<sp/>also<sp/>be<sp/>noted<sp/>that<sp/>many<sp/>routines<sp/>that<sp/>accept<sp/>real<sp/>arguments<sp/>have<sp/>been<sp/>moved<sp/>to<sp/>include<sp/>files<sp/>along<sp/>with<sp/>headers<sp/>in<sp/>order<sp/>to<sp/>be<sp/>compiled<sp/>with<sp/>both<sp/>kinds.<sp/>Most<sp/>module<sp/>level<sp/>variables<sp/>were<sp/>explicitly<sp/>declared<sp/>as<sp/>r8_kind<sp/>for<sp/>these<sp/>updates.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>type/module<sp/>changes<sp/>were<sp/>made<sp/>to<sp/>facilitate<sp/>mixed<sp/>precision<sp/>support.<sp/>They<sp/>are<sp/>**intended**<sp/>to<sp/>have<sp/>minimal<sp/>impact<sp/>to<sp/>other<sp/>codebases:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>COUPLER_TYPES:<sp/>In<sp/>coupler_types.F90,<sp/><sp/>`coupler_nd_field_type`<sp/>and<sp/>`coupler_nd_values_type`<sp/>have<sp/>been<sp/>renamed<sp/>to<sp/>indicate<sp/>real<sp/>kind<sp/>value:<sp/>`coupler_nd_real4/8_field_type`<sp/>and<sp/>`coupler_nd_real4/8_values_type`.<sp/>The<sp/>`bc`<sp/>field<sp/>within<sp/>`coupler_nd_bc_type`<sp/>was<sp/>modified<sp/>to<sp/>use<sp/>r8_kind<sp/>within<sp/>the<sp/>value<sp/>and<sp/>field<sp/>types,<sp/>and<sp/>an<sp/>additional<sp/>field<sp/>added<sp/>`bc_r4`<sp/>to<sp/>use<sp/>r4_kind<sp/>values.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>TRIDIAGONAL:<sp/>Module<sp/>state<sp/>between<sp/>r4<sp/>and<sp/>r8<sp/>calls<sp/>are<sp/>distinct<sp/>(ie.<sp/>subsequent<sp/>calls<sp/>will<sp/>only<sp/>be<sp/>affected<sp/>by<sp/>calls<sp/>of<sp/>the<sp/>same<sp/>precision).<sp/>This<sp/>behaviour<sp/>can<sp/>be<sp/>changed<sp/>via<sp/>the<sp/>`save_both_kinds`<sp/>optional<sp/>argument<sp/>to<sp/>`tri_invert`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CODE_STYLE:<sp/>has<sp/>been<sp/>updated<sp/>to<sp/>reflect<sp/>the<sp/>formatting<sp/>used<sp/>for<sp/>the<sp/>mixed<sp/>precision<sp/>support<sp/>updates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Tile<sp/>number<sp/>(ie.<sp/>tileX)<sp/>will<sp/>now<sp/>be<sp/>added<sp/>to<sp/>filenames<sp/>for<sp/>sub-regional<sp/>diagnostics.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Bug<sp/>affecting<sp/>non-intel<sp/>compilers<sp/>coming<sp/>from<sp/>uninitialized<sp/>pointer<sp/>in<sp/>the<sp/>`nest_domain_type`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Bug<sp/>fix<sp/>for<sp/>unallocated<sp/>field<sp/>causing<sp/>seg<sp/>faults<sp/>in<sp/>`mpp_check_field`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixed<sp/>segfault<sp/>occuring<sp/>from<sp/>use<sp/>of<sp/>cray<sp/>pointer<sp/>remapping<sp/>along<sp/>with<sp/>mpp_scatter/gather</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TEST_FMS:<sp/>Added<sp/>various<sp/>fixes<sp/>for<sp/>different<sp/>compilers<sp/>within<sp/>test<sp/>programs<sp/>for<sp/>fms2_io,<sp/>mpp,<sp/>diag_manager,<sp/>parser,<sp/>and<sp/>sat_vapor_pres.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR:<sp/>Deallocates<sp/>fields<sp/>in<sp/>the<sp/>type<sp/>that<sp/>were<sp/>previously<sp/>left<sp/>out<sp/>in<sp/>`interpolator_end`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CPP<sp/>MACROS:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`no_4byte_reals`<sp/>was<sp/>removed<sp/>and<sp/>will<sp/>not<sp/>set<sp/>any<sp/>additional<sp/>macros<sp/>if<sp/>used.<sp/>`no_8byte_integers`<sp/>is<sp/>still<sp/>functional.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`NO_QUAD_PRECISION`<sp/>was<sp/>removed.<sp/>It<sp/>was<sp/>conditionally<sp/>set<sp/>if<sp/>ENABLE_QUAD_PRECISION<sp/>was<sp/>undefined.<sp/>ENABLE_QUAD_PRECISION<sp/>should<sp/>be<sp/>used<sp/>in<sp/>model<sp/>components<sp/>instead<sp/>(logic<sp/>is<sp/>flipped)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`use_netCDF`<sp/>was<sp/>set<sp/>by<sp/>autotools<sp/>previously<sp/>but<sp/>wasn&apos;t<sp/>consistently<sp/>used<sp/>in<sp/>the<sp/>code.<sp/>FMS<sp/>should<sp/>always<sp/>be<sp/>compiled<sp/>with<sp/>netcdf<sp/>installed<sp/>so<sp/>this<sp/>was<sp/>removed<sp/>with<sp/>the<sp/>exception<sp/>of<sp/>its<sp/>use<sp/>in<sp/>deprecated<sp/>IO<sp/>modules.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DRIFTERS:<sp/>The<sp/>drifters<sp/>subdirectory<sp/>has<sp/>been<sp/>deprecated.<sp/>It<sp/>will<sp/>only<sp/>be<sp/>compiled<sp/>if<sp/>using<sp/>the<sp/>`-Duse_drifters`<sp/>CPP<sp/>flag.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.03-beta1<sp/><sp/>06b94a7f574e7794684b8584391744ded68e2989</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.03-alpha3<sp/>b25a7c52a27dfd52edc10bc0ebe12776af0f03df</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.03-alpha2<sp/>9983ce308e62e9f7215b04c227cebd30fd75e784</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.03-alpha1<sp/>a46bd94fd8dd1f6f021501e29179003ff28180ec</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.02.01]<sp/>-<sp/>2023-10-13</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>issue<sp/>with<sp/>incorrect<sp/>start_time<sp/>functionality</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.02]<sp/>-<sp/>2023-07-27</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>select<sp/>type.<sp/>The<sp/>issue<sp/>is<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>outputting<sp/>sub-region<sp/>diagnostics,<sp/>the<sp/>current<sp/>diag_manager<sp/>does<sp/>not<sp/>add<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>when<sp/>using<sp/>a<sp/>cube<sp/>sphere.<sp/>This<sp/>leads<sp/>to<sp/>trouble<sp/>when<sp/>trying<sp/>to<sp/>combine<sp/>the<sp/>files<sp/>and<sp/>regrid<sp/>them<sp/>(if<sp/>the<sp/>region<sp/>is<sp/>in<sp/>two<sp/>different<sp/>tiles)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>10<sp/>and<sp/>greater<sp/>causing<sp/>io<sp/>issues<sp/>when<sp/>compiled<sp/>using<sp/>O2<sp/>optimization<sp/>flags</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GNU<sp/>compilers<sp/>prior<sp/>to<sp/>the<sp/>GCC<sp/>9.0<sp/>release<sp/>are<sp/>unsupported<sp/>for<sp/>this<sp/>release<sp/>due<sp/>to<sp/>lack<sp/>of<sp/>support<sp/>for<sp/>the<sp/>findloc<sp/>intrinsic<sp/>function.<sp/>This<sp/>will<sp/>result<sp/>in<sp/>an<sp/>error<sp/>saying<sp/>&apos;findloc&apos;<sp/>has<sp/>no<sp/>IMPLICIT<sp/>type<sp/>and<sp/>can<sp/>be<sp/>resolved<sp/>by<sp/>compiling<sp/>with<sp/>gcc<sp/>version<sp/>9.0<sp/>or<sp/>greater.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP/EXCHANGE:<sp/>Adds<sp/>association<sp/>checks<sp/>before<sp/>pointer<sp/>deallocations<sp/>in<sp/>mpp<sp/>includes<sp/>and<sp/>xgrid</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>The<sp/>libFMS.F90<sp/>file<sp/>(module<sp/>name<sp/>`fms`)<sp/>meant<sp/>to<sp/>provide<sp/>global<sp/>access<sp/>has<sp/>been<sp/>updated<sp/>to<sp/>include<sp/>&apos;fms&apos;<sp/>and<sp/>it&apos;s<sp/>module/subdirectory<sp/>name<sp/>as<sp/>prefixes<sp/>for<sp/>all<sp/>names.<sp/>This<sp/>will<sp/>only<sp/>affect<sp/>external<sp/>codes<sp/>that<sp/>are<sp/>already<sp/>using<sp/>the<sp/>global<sp/>module<sp/>(via<sp/>`use<sp/>fms`)<sp/>and<sp/>not<sp/>individual<sp/>modules.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MIXED<sp/>PRECISION:<sp/>Updates<sp/>the<sp/>axis_utils2,<sp/>horiz_interp,<sp/>sat_vapor_pressure,<sp/>and<sp/>axis_utils<sp/>subdirectories<sp/>to<sp/>support<sp/>mixed<sp/>precision<sp/>real<sp/>values.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>in<sp/>mpp_scatter<sp/>and<sp/>mpp_gather<sp/>performance<sp/>changes<sp/>from<sp/>the<sp/>2023.01.01<sp/>patch.<sp/>See<sp/>below<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Improved<sp/>error<sp/>messages<sp/>to<sp/>give<sp/>more<sp/>debugging<sp/>information</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_MOD:<sp/>Changed<sp/>fms_init<sp/>to<sp/>include<sp/>a<sp/>system<sp/>call<sp/>to<sp/>set<sp/>the<sp/>stack<sp/>size<sp/>to<sp/>unlimited,<sp/>removed<sp/>previously<sp/>added<sp/>stack<sp/>size<sp/>fixes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MONIN_OBUKHOV:<sp/>Restructures<sp/>the<sp/>subroutines<sp/>in<sp/>`stable_mix`<sp/>interface<sp/>so<sp/>that<sp/>1d<sp/>calls<sp/>the<sp/>underlying<sp/>implementation,<sp/>and<sp/>2<sp/>and<sp/>3d<sp/>call<sp/>it<sp/>on<sp/>1d<sp/>slices<sp/>of<sp/>the<sp/>data<sp/>as<sp/>opposed<sp/>to<sp/>passing<sp/>in<sp/>mismatched<sp/>arrays.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Updates<sp/>from<sp/>JEDI<sp/>for<sp/>ajoint<sp/>version<sp/>the<sp/>mpp<sp/>halo<sp/>filling<sp/>(mpp_do_update_ad.fh),<sp/>adds<sp/>checkpoint<sp/>for<sp/>forward<sp/>buffer<sp/>information.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>mpp_broadcast<sp/>causing<sp/>an<sp/>unintended<sp/>error<sp/>message<sp/>due<sp/>to<sp/>checking<sp/>the<sp/>wrong<sp/>pe<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Added<sp/>workaround<sp/>for<sp/>GCC<sp/>12<sp/>issues<sp/>causing<sp/>errors<sp/>with<sp/>string<sp/>lengths<sp/>in<sp/>fms2_io</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixed<sp/>support<sp/>for<sp/>&apos;packed&apos;<sp/>data<sp/>when<sp/>using<sp/>NF_SHORT<sp/>variables.<sp/>Scale_factor<sp/>and<sp/>add_offset<sp/>attributes<sp/>will<sp/>now<sp/>be<sp/>applied<sp/>if<sp/>present.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Improved<sp/>doxygen<sp/>comments<sp/>for<sp/>tranlon,<sp/>updated<sp/>deployment<sp/>action<sp/>for<sp/>site</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Workaround<sp/>added<sp/>for<sp/>ICE<sp/>coming<sp/>from<sp/>mpp_alltoall<sp/>test<sp/>with<sp/>intel<sp/>2022.3,<sp/>and<sp/>fixes<sp/>for<sp/>any<sp/>test<sp/>scripts<sp/>missing<sp/>input.nml<sp/>creation.<sp/>Fixes<sp/>for<sp/>mpp/test_global_array<sp/>failures.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>Fixes<sp/>crashes<sp/>when<sp/>calling<sp/>with<sp/>a<sp/>non-existant<sp/>field</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>a<sp/>module<sp/>dependency<sp/>issue<sp/>causing<sp/>failures<sp/>during<sp/>parallel<sp/>builds</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AXIS_UTILS2:<sp/>Fixes<sp/>an<sp/>out<sp/>of<sp/>bounds<sp/>memory<sp/>index</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO/MPP_IO:<sp/>The<sp/>two<sp/>older<sp/>io<sp/>modules,<sp/>fms_io_mod<sp/>and<sp/>mpp_io_mod,<sp/>have<sp/>been<sp/>deprecated<sp/>and<sp/>will<sp/>not<sp/>be<sp/>compiled<sp/>by<sp/>default.<sp/>If<sp/>you<sp/>wish<sp/>to<sp/>compile<sp/>these<sp/>modules,<sp/>you<sp/>must<sp/>use<sp/>the<sp/>-Duse_deprecated_io<sp/>CPP<sp/>flag<sp/>or<sp/>the<sp/>--enable-deprecated-io<sp/>configure<sp/>option<sp/>if<sp/>building<sp/>with<sp/>autotools.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.02-beta1<sp/><sp/>2be8aa452ad3e5f43e92c38a64f12d1ae6c43fb8</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.02-alpha3<sp/>8c73bd18dc1d580f2ee524c37cf903ff54d40501</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.02-alpha2<sp/>783019fdec89a8db2b26247c2f63d4782e1495c0</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.02-alpga1<sp/>419c66be31f82ebb13a91ea5e837c707eb54473b</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.01.01]<sp/>-<sp/>2023-06-06</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Performance<sp/>changes<sp/>for<sp/>domain_reads_2d<sp/>and<sp/>domain_reads_3d:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Root<sp/>pe<sp/>reads<sp/>the<sp/>data</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Uses<sp/>mpp_scatter<sp/>to<sp/>send<sp/>the<sp/>data<sp/>to<sp/>the<sp/>other<sp/>pes</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Added<sp/>unit<sp/>tests<sp/>to<sp/>test<sp/>all<sp/>of<sp/>the<sp/>domain_read/domain_write<sp/>interfaces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Performance<sp/>changes<sp/>for<sp/>compressed_writes_1d/2d/3d</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Uses<sp/>mpp_gather<sp/>to<sp/>get<sp/>data<sp/>for<sp/>write</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Added<sp/>unit<sp/>tests<sp/>to<sp/>test<sp/>all<sp/>of<sp/>the<sp/>compressed<sp/>writes<sp/>interfaces</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Compressed_writes_4d/5d<sp/>were<sp/>unchanged</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Extended<sp/>mpp_scatter<sp/>and<sp/>mpp_gather<sp/>to<sp/>work<sp/>for<sp/>int8;<sp/>added<sp/>a<sp/>kludge<sp/>for<sp/>scatter<sp/>since<sp/>the<sp/>data<sp/>is<sp/>assumed<sp/>to<sp/>be<sp/>(x,y,z)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2023.01]<sp/>-<sp/>2023-04-03</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>using<sp/>GCC<sp/>10<sp/>or<sp/>higher<sp/>as<sp/>well<sp/>as<sp/>MPICH,<sp/>compilation<sp/>errors<sp/>will<sp/>occur<sp/>unless<sp/>`-fallow-argument-mismatch`<sp/>is<sp/>included<sp/>in<sp/>the<sp/>Fortran<sp/>compiler<sp/>flags(the<sp/>flag<sp/>will<sp/>now<sp/>be<sp/>added<sp/>automatically<sp/>if<sp/>building<sp/>with<sp/>autotools<sp/>or<sp/>CMake).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>select<sp/>type.<sp/>The<sp/>issue<sp/>is<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>outputting<sp/>sub-region<sp/>diagnostics,<sp/>the<sp/>current<sp/>diag_manager<sp/>does<sp/>not<sp/>add<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>when<sp/>using<sp/>a<sp/>cube<sp/>sphere.<sp/>This<sp/>leads<sp/>to<sp/>trouble<sp/>when<sp/>trying<sp/>to<sp/>combine<sp/>the<sp/>files<sp/>and<sp/>regrid<sp/>them<sp/>(if<sp/>the<sp/>region<sp/>is<sp/>in<sp/>two<sp/>different<sp/>tiles)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Added<sp/>code<sp/>refactored<sp/>as<sp/>part<sp/>of<sp/>larger<sp/>diag_manager<sp/>rewrite<sp/>for<sp/>the<sp/>send_data<sp/>routines.<sp/>The<sp/>refactored<sp/>code<sp/>is<sp/>disabled<sp/>by<sp/>default<sp/>and<sp/>enabled<sp/>by<sp/>setting<sp/><sp/>`use_refactored_send`<sp/>to<sp/>true<sp/>in<sp/>the<sp/>diag_manager_nml,<sp/>and<sp/>should<sp/>mirror<sp/>current<sp/>behaviour.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>the<sp/>ability<sp/>to<sp/>set<sp/>deflate_level<sp/>and<sp/>shuffle<sp/>netcdf<sp/>options<sp/>in<sp/>`fms2_io_nml`.<sp/>Also<sp/>added<sp/>functionality<sp/>for<sp/>registering<sp/>dimensions<sp/>as<sp/>unlimited<sp/>compressed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>YAML_PARSER:<sp/>Added<sp/>support<sp/>for<sp/>emitting<sp/>multiple<sp/>tabbed<sp/>section<sp/>keys<sp/>to<sp/>allow<sp/>diag<sp/>manager<sp/>yaml<sp/>output</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>STRING_UTILS:<sp/>Extended<sp/>the<sp/>`string`<sp/>interface<sp/>in<sp/>fms_string_utils_mod<sp/>to<sp/>accept<sp/>reals<sp/>of<sp/>4<sp/>or<sp/>8<sp/>kind,<sp/>as<sp/>well<sp/>as<sp/>1,<sp/>2,<sp/>and<sp/>3<sp/>dimensional<sp/>real<sp/>arrays</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Changed<sp/>the<sp/>`log_diag_field_info`<sp/>routine<sp/>to<sp/>allow<sp/>for<sp/>specifying<sp/>seperator</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR(s):<sp/>In<sp/>horiz_interp,<sp/>amip_interp<sp/>and<sp/>interpolator,<sp/>changed<sp/>pointers<sp/>arrays<sp/>into<sp/>allocatables</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TRIDIAGONAL:<sp/>Added<sp/>OMP<sp/>directives<sp/>to<sp/>prevent<sp/>race<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Added<sp/>`diag_send_data`<sp/>routine<sp/>to<sp/>fix<sp/>class(\*)<sp/>related<sp/>compiler<sp/>issues<sp/>from<sp/>the<sp/>refactor<sp/>update</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SAT_VAPOR_PRES_K:<sp/>Removed<sp/>implied<sp/>saves<sp/>causing<sp/>issues<sp/>with<sp/>class(\*)<sp/>type<sp/>checking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>Fixed<sp/>naming<sp/>conflicts<sp/>between<sp/>module<sp/>level<sp/>and<sp/>local<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>YAML_PARSER:<sp/>Fixed<sp/>typo<sp/>in<sp/>variable<sp/>name,<sp/>rename<sp/>variables<sp/>to<sp/>avoid<sp/>fortran<sp/>keywords</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Fixed<sp/>incorrect<sp/>serial<sp/>build<sp/>instructions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>COMPILER<sp/>SUPPORT:<sp/>Fixed<sp/>compilation<sp/>errors<sp/>with<sp/>Intel&apos;s<sp/>llvm-based<sp/>compiler<sp/>and<sp/>added<sp/>support<sp/>for<sp/>the<sp/>CMake<sp/>build.<sp/>Also<sp/>fixed<sp/>mpp_checksum<sp/>unit<sp/>test<sp/>failures<sp/>with<sp/>openmpi<sp/>and<sp/>nvhpc<sp/>compilation<sp/>issues.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_MANAGER:<sp/>Fixed<sp/>an<sp/>bug<sp/>from<sp/>PR<sp/>#1169<sp/>that<sp/>was<sp/>causing<sp/>answer<sp/>changes<sp/>in<sp/>land<sp/>models</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-beta4<sp/><sp/><sp/><sp/><sp/>(63626578cb8ed4bed1ce670b88acd6a1ec438e32)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-beta3<sp/><sp/><sp/><sp/><sp/>(0ff254e409b74d7d17ab234abe5ecd985967256c)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-beta2<sp/><sp/><sp/><sp/><sp/>(74d8e734bd43b0ce043003da74896e5d747afc2f)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-beta1<sp/><sp/><sp/><sp/><sp/>(6255971af28381fad22547bdc2c538fc3ea2e8bf)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-alpha4<sp/><sp/><sp/><sp/>(4526cc94a3e19fe8fa151f54b0db432e1fb2f7d0)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-alpha3<sp/><sp/><sp/><sp/>(f0e8cab3d8e58195f7c2663b84fd0bed12fa8b64)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-alpha2<sp/><sp/><sp/><sp/>(91e732473f7cffce070f9ce239f8ffa22c081261)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2023.01-alpha1<sp/><sp/><sp/><sp/>(203c8bf464ff26fe0fe39b1451caedd026bbce55)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2022.04]<sp/>-<sp/>2022-10-13</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>using<sp/>GCC<sp/>10<sp/>or<sp/>higher<sp/>as<sp/>well<sp/>as<sp/>MPICH,<sp/>compilation<sp/>errors<sp/>will<sp/>occur<sp/>unless<sp/>`-fallow-argument-mismatch`<sp/>is<sp/>included<sp/>in<sp/>the<sp/>Fortran<sp/>compiler<sp/>flags(the<sp/>flag<sp/>will<sp/>now<sp/>be<sp/>added<sp/>automatically<sp/>if<sp/>building<sp/>with<sp/>autotools<sp/>or<sp/>CMake).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>select<sp/>type.<sp/>The<sp/>issue<sp/>is<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>outputting<sp/>sub-region<sp/>diagnostics,<sp/>the<sp/>current<sp/>diag_manager<sp/>does<sp/>not<sp/>add<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>when<sp/>using<sp/>a<sp/>cube<sp/>sphere.<sp/>This<sp/>leads<sp/>to<sp/>trouble<sp/>when<sp/>trying<sp/>to<sp/>combine<sp/>the<sp/>files<sp/>and<sp/>regrid<sp/>them<sp/>(if<sp/>the<sp/>region<sp/>is<sp/>in<sp/>two<sp/>different<sp/>tiles)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FIELD<sp/>MANAGER:<sp/>Adds<sp/>support<sp/>for<sp/>reading<sp/>field<sp/>tables<sp/>in<sp/>the<sp/>yaml<sp/>format<sp/>(field_table.yaml).</highlight></codeline>
+<codeline><highlight class="normal"><sp/>Yaml<sp/>input<sp/>only<sp/>be<sp/>used<sp/>if<sp/>compiled<sp/>with<sp/>`-Duse_yaml`<sp/>preprocessor<sp/>flag,<sp/>otherwise<sp/>it<sp/>will<sp/>default</highlight></codeline>
+<codeline><highlight class="normal"><sp/>to<sp/>previous<sp/>behaviour.<sp/>The<sp/>converter<sp/>script<sp/>to<sp/>convert<sp/>current<sp/>field<sp/>tables<sp/>to<sp/>the<sp/>new<sp/>format<sp/>is</highlight></codeline>
+<codeline><highlight class="normal"><sp/>publicly<sp/>available<sp/>[here](https://github.com/NOAA-GFDL/fms_yaml_tools/)<sp/>although<sp/>the<sp/>conversions<sp/>will<sp/>also<sp/>be<sp/>done<sp/>automatically<sp/>in<sp/>FRE.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>options<sp/>to<sp/>enable<sp/>data<sp/>compression<sp/>and<sp/>chunking<sp/>for<sp/>netcdf<sp/>output<sp/>in<sp/>`register_restart_field`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD:<sp/>Improves<sp/>the<sp/>configuration<sp/>check<sp/>for<sp/>the<sp/>MPICH/GCC<sp/>10+<sp/>argument<sp/>mismatch<sp/>bug<sp/>by<sp/>replacing</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>with<sp/>a<sp/>m4<sp/>compile<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Compiler<sp/>Support:<sp/>allows<sp/>for<sp/>compilation<sp/>via<sp/>the<sp/>Cray/HP<sp/>CCE<sp/>compilers<sp/>by<sp/>fixing<sp/>string<sp/>concatenation<sp/>compilation<sp/>errors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-beta2<sp/><sp/><sp/>163cb3e434dba05933c3d2151dea5d770758a2f3</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-beta1<sp/><sp/><sp/>1099a2890a06d279df0abe1f383b71279643bcdd</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-alpha4<sp/><sp/>8036d8d8448b0da8416a76ee0820314da27d5711</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-alpha3<sp/><sp/>7fafa4f7fb7a89c6f22da7ae19dc4e61a8073451</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-alpha2<sp/><sp/>0c4b3cc98f4bce5b39c6e9f6404ea32f5bf719e5</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.04-alpha1<sp/><sp/>ec57a48aeefb62b475a11cad7e30ebe460fa0d9f</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2022.03]<sp/>-<sp/>2022-08-01</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>using<sp/>GCC<sp/>10<sp/>or<sp/>higher<sp/>as<sp/>well<sp/>as<sp/>MPICH,<sp/>compilation<sp/>errors<sp/>will<sp/>occur<sp/>unless<sp/>`-fallow-argument-mismatch`<sp/>is<sp/>included<sp/>in<sp/>the<sp/>Fortran<sp/>compiler<sp/>flags(the<sp/>flag<sp/>will<sp/>now<sp/>be<sp/>added<sp/>automatically<sp/>if<sp/>building<sp/>with<sp/>autotools<sp/>or<sp/>CMake).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>select<sp/>type.<sp/>The<sp/>issue<sp/>is<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>outputting<sp/>sub-region<sp/>diagnostics,<sp/>the<sp/>current<sp/>diag_manager<sp/>does<sp/>not<sp/>add<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>when<sp/>using<sp/>a<sp/>cube<sp/>sphere.<sp/>This<sp/>leads<sp/>to<sp/>trouble<sp/>when<sp/>trying<sp/>to<sp/>combine<sp/>the<sp/>files<sp/>and<sp/>regrid<sp/>them<sp/>(if<sp/>the<sp/>region<sp/>is<sp/>in<sp/>two<sp/>different<sp/>tiles)</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>BUILD:<sp/>Adds<sp/>checks<sp/>to<sp/>autotools<sp/>and<sp/>cmake<sp/>build<sp/>files<sp/>to<sp/>solve<sp/>compilation<sp/>issues<sp/>with<sp/>GCC<sp/>10<sp/>and<sp/>greater.<sp/>Also<sp/>adds<sp/>a<sp/>debug<sp/>build<sp/>type<sp/>for<sp/>CMake<sp/>to<sp/>allow<sp/>for<sp/>overriding<sp/>compiler<sp/>flags,<sp/>and<sp/>individual<sp/>override<sp/>flags<sp/>for<sp/>mixed<sp/>precision<sp/>routines.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Additional<sp/>information<sp/>added<sp/>for<sp/>building<sp/>and<sp/>testing<sp/>FMS<sp/>with<sp/>the<sp/>build<sp/>systems;<sp/>renamed<sp/>and<sp/>moved<sp/>autotools<sp/>build<sp/>document.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>YAML:<sp/>Adds<sp/>support<sp/>for<sp/>writing<sp/>yaml<sp/>files<sp/>through<sp/>the<sp/>`fms_yaml_output_mod`<sp/>module</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MIXED<sp/>MODE:<sp/>Expands<sp/>support<sp/>for<sp/>mixed<sp/>precision<sp/>reals<sp/>to<sp/>the<sp/>constants<sp/>files,<sp/>diag_manager,<sp/>sat_vapor_pres,<sp/>time_manager,<sp/>and<sp/>tracer_manager</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO:<sp/>Increased<sp/>the<sp/>character<sp/>length<sp/>for<sp/>restart<sp/>file<sp/>names<sp/>to<sp/>allow<sp/>for<sp/>longer<sp/>paths</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>COUPLER:<sp/>Fixes<sp/>global<sp/>checksum<sp/>being<sp/>written<sp/>to<sp/>stdout<sp/>by<sp/>every<sp/>core<sp/>instead<sp/>of<sp/>just<sp/>the<sp/>root</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Fixed<sp/>parsing<sp/>issues<sp/>with<sp/>include<sp/>and<sp/>header<sp/>files,<sp/>adds<sp/>class<sp/>diagrams<sp/>and<sp/>layout<sp/>improvements</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.03-alpha1<sp/>62588548a5ecbdce7dbf857542ed272f7b2c971f</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.03-beta1<sp/><sp/>8a4ad847122c7cc597a1f2626290b46af44b143a</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2022.02]<sp/>-<sp/>2022-04-29</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>using<sp/>GCC<sp/>10<sp/>or<sp/>higher<sp/>as<sp/>well<sp/>as<sp/>MPICH,<sp/>compilation<sp/>errors<sp/>will<sp/>occur<sp/>unless<sp/>`-fallow-argument-mismatch`<sp/>is<sp/>included<sp/>in<sp/>the<sp/>Fortran<sp/>compiler<sp/>flags</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>select<sp/>type.<sp/>The<sp/>issue<sp/>is<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Current<sp/>diag_manager<sp/>does<sp/>not<sp/>add<sp/>&quot;tileX&quot;<sp/>to<sp/>the<sp/>filename<sp/>when<sp/>using<sp/>a<sp/>cube<sp/>sphere,<sp/>which<sp/>leads<sp/>to<sp/>trouble<sp/>when<sp/>trying<sp/>to<sp/>combine<sp/>the<sp/>files<sp/>and<sp/>regrid<sp/>them<sp/>(if<sp/>the<sp/>region<sp/>is<sp/>in<sp/>two<sp/>different<sp/>tiles)</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>STRING_UTILS:<sp/>Adds<sp/>a<sp/>module,<sp/>`fms_string_utils_mod`,<sp/>for<sp/>common<sp/>string<sp/>operations<sp/>throughout<sp/>FMS</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>makes<sp/>recently<sp/>added<sp/>routines<sp/>available<sp/>through<sp/>the<sp/>global<sp/>`fms`<sp/>module</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Adds<sp/>build<sp/>option<sp/>for<sp/>position<sp/>independent<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CONSTANTS:<sp/>Adds<sp/>macros<sp/>to<sp/>load<sp/>constants<sp/>for<sp/>different<sp/>modeling<sp/>systems/uses<sp/>between<sp/>GFDL,<sp/>GEOS<sp/>and<sp/>GFS.<sp/>Can<sp/>be<sp/>selected<sp/>in<sp/>cmake<sp/>with<sp/>`-DCONSTANTS=&lt;GEOS|GFDL|GFS&gt;`</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>STRING_UTILS:<sp/>Refactored<sp/>string<sp/>routine<sp/>definitions<sp/>from<sp/>fms_mod<sp/>and<sp/>fms2_io_mod<sp/>to<sp/>be<sp/>located<sp/>in<sp/>fms_string_utils_mod</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CONSTANTS:<sp/>Makes<sp/>fmsconstants.F90<sp/>contain<sp/>the<sp/>constant<sp/>definitions,<sp/>with<sp/>constants_mod<sp/>refactored<sp/>to<sp/>hold<sp/>the<sp/>same<sp/>values</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC2:<sp/>changes<sp/>grid<sp/>&apos;version&apos;<sp/>names<sp/>and<sp/>documentation<sp/>to<sp/>be<sp/>more<sp/>descriptive</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_MOD:<sp/>Removes<sp/>fms_c.c<sp/>and<sp/>fms_c.h<sp/>files<sp/>from<sp/>the<sp/>fms<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixed<sp/>bug<sp/>casuing<sp/>non-root<sp/>pe&apos;s<sp/>to<sp/>fail<sp/>during<sp/>the<sp/>flush_file<sp/>routine</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.02-alpha1<sp/>270c2a4e1a94229a2ae6b1e431c473589b6e15c3</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.02-alpha2<sp/>7768ad1d4941b92ec8f40d34b1b517f5bde3df4e</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.02-beta1<sp/><sp/>689579eea6bf7a25c64e8b823551ec588be90984</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2022.01]<sp/>-<sp/>2022-03-25</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>MPICH<sp/>MPI<sp/>implementation<sp/>is<sp/>unsupported<sp/>when<sp/>used<sp/>alongside<sp/>GCC<sp/>10<sp/>or<sp/>11<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>the<sp/>mixed<sp/>precision<sp/>reals.<sp/>MPICH<sp/>can<sp/>still<sp/>be<sp/>used<sp/>to<sp/>compile<sp/>FMS<sp/>with<sp/>GCC<sp/>9<sp/>or<sp/>earlier,<sp/>or<sp/>with<sp/>other<sp/>compilers.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>`select<sp/>type`.<sp/>The<sp/>issue<sp/>appears<sp/>to<sp/>be<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>a<sp/>macro<sp/>`MAX_NUM_RESTART_VARS_`<sp/>to<sp/>allow<sp/>the<sp/>max<sp/>amount<sp/>of<sp/>restart<sp/>variables<sp/>to<sp/>be<sp/>set<sp/>at<sp/>compile<sp/>time</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTING:<sp/>Adds<sp/>a<sp/>configure<sp/>option,<sp/>`--enable-code-coverage`,<sp/>to<sp/>build<sp/>a<sp/>code<sp/>coverage<sp/>report<sp/>using<sp/>intel&apos;s<sp/>codecov</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AFFINITY:<sp/>Adds<sp/>an<sp/>initialization<sp/>check<sp/>to<sp/>`fms_affinity_set`,<sp/>and<sp/>updates<sp/>test<sp/>program<sp/>with<sp/>init/end<sp/>routines</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>an<sp/>optional<sp/>argument<sp/>to<sp/>ignore<sp/>embedded<sp/>checksum<sp/>checks<sp/>when<sp/>reading<sp/>restart<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTING:<sp/>Changes<sp/>the<sp/>testing<sp/>suite<sp/>scripts<sp/>for<sp/>various<sp/>improvements<sp/>such<sp/>improved<sp/>output,<sp/>tests<sp/>with<sp/>input<sp/>files,<sp/>and<sp/>adding/fixing<sp/>new<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Change<sp/>variable<sp/>names<sp/>in<sp/>mpp<sp/>to<sp/>use<sp/>more<sp/>inclusive<sp/>language</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Updates<sp/>to<sp/>correct<sp/>branch<sp/>name<sp/>and<sp/>doxygen<sp/>guide<sp/>for<sp/>functions,<sp/>and<sp/>adds<sp/>CI<sp/>information<sp/>page</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixes<sp/>compilation<sp/>warnings<sp/>throughout<sp/>the<sp/>code,<sp/>mainly<sp/>for<sp/>uninitialized<sp/>or<sp/>unused<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>any<sp/>code<sp/>not<sp/>adhering<sp/>to<sp/>the<sp/>projects<sp/>style<sp/>guide<sp/>(mainly<sp/>line<sp/>length<sp/>fixes)<sp/>so<sp/>that<sp/>all<sp/>future<sp/>changes<sp/>can<sp/>be<sp/>checked<sp/>with<sp/>a<sp/>linter</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC2:<sp/>Adds<sp/>`r8_kind`<sp/>casts<sp/>to<sp/>calls<sp/>to<sp/>C<sp/>routines<sp/>in<sp/>order<sp/>match<sp/>precision<sp/>of<sp/>doubles</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TESTS:<sp/>Fixes<sp/>crashes<sp/>in<sp/>fms2_io<sp/>tests<sp/>from<sp/>namelist<sp/>read<sp/>errors</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.01-alpha1<sp/>516a5efa681e5ae954c11c0c90677b4444e28ec4</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.01-beta1<sp/><sp/>12da12884f8dc8bde47b478c997b0e5d49260a1c</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.01-alpha2<sp/>28e8e3e751a6d5d81b640fb779304329f3edb82d</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2022.01-beta2<sp/><sp/>7b78a73a5ba7acf5d3d932ecfe081e5040e2c778</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>[2021.04]<sp/>-<sp/>2021-12-23</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GCC<sp/>11.1.0<sp/>is<sp/>unsupported<sp/>due<sp/>to<sp/>compilation<sp/>issues<sp/>with<sp/>`select<sp/>type`.<sp/>The<sp/>issue<sp/>appears<sp/>to<sp/>be<sp/>resolved<sp/>in<sp/>later<sp/>GCC<sp/>releases</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PARSER:<sp/>Adds<sp/>a<sp/>parser<sp/>using<sp/>the<sp/>libyaml<sp/>C<sp/>library<sp/>to<sp/>support<sp/>yaml<sp/>format<sp/>input<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Currently<sp/>implemented<sp/>in<sp/>data<sp/>override<sp/>and<sp/>can<sp/>be<sp/>enabled<sp/>with<sp/>the<sp/>configure<sp/>option<sp/><sp/>`--with-yaml`<sp/>or<sp/>with<sp/>CMake<sp/>option<sp/>`-DWITH_YAML`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS:<sp/>Adds<sp/>an<sp/>interface,<sp/>`fms_c2f_string`,<sp/>to<sp/>convert<sp/>C<sp/>strings<sp/>and<sp/>C<sp/>pointers<sp/>to<sp/>Fortran<sp/>strings</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Adds<sp/>a<sp/>routine<sp/>`mpp_shift_nest_domains`<sp/>and<sp/>a<sp/>field<sp/>to<sp/>`nest_domain_type`<sp/>to<sp/>allow<sp/>for<sp/>modifying<sp/>the<sp/>position<sp/>of<sp/>a<sp/>given<sp/>nest<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Reintroduces<sp/>the<sp/>option<sp/>to<sp/>flush_nc_files<sp/>with<sp/>fms2_io</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Cleans<sp/>up<sp/>IO<sp/>code<sp/>and<sp/>replaces<sp/>any<sp/>remaining<sp/>dependencies<sp/>to<sp/>mpp_io<sp/>with<sp/>fms2_io</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO:<sp/>Changes<sp/>to<sp/>allow<sp/>for<sp/>custom<sp/>paths<sp/>for<sp/>namelists,<sp/>field_table,<sp/>and<sp/>the<sp/>INPUT<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>EXCHANGE:<sp/>Changes<sp/>real<sp/>sizes<sp/>in<sp/>xgrid<sp/>and<sp/>gradient<sp/>modules<sp/>to<sp/>be<sp/>explicitly<sp/>r8_kind<sp/>to<sp/>prevent<sp/>runtime<sp/>issues<sp/>with<sp/>mixed<sp/>precision</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Deprecated</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>`get_unit`<sp/>has<sp/>been<sp/>deperecated<sp/>in<sp/>favor<sp/>of<sp/>the<sp/>Fortran<sp/>intrinsic<sp/>`newunit`<sp/>and<sp/>will<sp/>now<sp/>generate<sp/>a<sp/>warning<sp/>if<sp/>used</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_MANAGER:<sp/>Removes<sp/>deprecated<sp/>array-based<sp/>gregorian<sp/>calender<sp/>calculations<sp/>that<sp/>were<sp/>replaced<sp/>in<sp/>2021.02</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixes<sp/>issues<sp/>with<sp/>3D<sp/>diurnal<sp/>diagnostic<sp/>output<sp/>and<sp/>removes<sp/>a<sp/>redundant<sp/>write_data<sp/>call</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_INTERP:<sp/>Fixes<sp/>load_record<sp/>read_data<sp/>call<sp/>for<sp/>3d<sp/>variables<sp/>with<sp/>fms2_io<sp/>and<sp/>eliminates<sp/>redundant<sp/>data<sp/>loading<sp/>and<sp/>validity<sp/>checking<sp/>for<sp/>on-grid<sp/>interpolations.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixed<sp/>a<sp/>bug<sp/>with<sp/>non-blocking<sp/>domain<sp/>updates<sp/>failing<sp/>on<sp/>GNU<sp/>compilers<sp/>from<sp/>uninitialized<sp/>values</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixed<sp/>issues<sp/>with<sp/>the<sp/>`mpp_type_free`<sp/>function<sp/>causing<sp/>errors<sp/>and<sp/>memory<sp/>leaks<sp/>when<sp/>freeing<sp/>the<sp/>`mpp_byte`<sp/>type</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.04-alpha1<sp/>(e0b998321611f80f2d0c587a13b8c03c173d5520)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.04-alpha2<sp/>(ab1b0a4cb2beac72d889d94a628e0d02092723b2)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.04-alpha3<sp/>(90583aeb369831b01296ab4b0e7e6a1b69ed91b1)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.04-beta1<sp/><sp/>(6d179fcdc189070f74d49e0025d072fa304e96d6)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2021.03]<sp/>-<sp/>2021-08-16</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>3D<sp/>diurnal<sp/>diagnostic<sp/>variables<sp/>are<sp/>not<sp/>supported<sp/>in<sp/>this<sp/>version<sp/>of<sp/>FMS</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Documentation<sp/>was<sp/>added<sp/>for<sp/>FMS2_io<sp/>to<sp/>help<sp/>users<sp/>convert<sp/>from<sp/>fms_io/mpp_io</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>The<sp/>error<sp/>messages<sp/>in<sp/>FMS2_io<sp/>were<sp/>updated<sp/>to<sp/>give<sp/>more<sp/>useful<sp/>information</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TEST_FMS:<sp/>The<sp/>unit<sp/>tests<sp/>in<sp/>mosaic,<sp/>axis_utils,<sp/>and<sp/>time_interp_external<sp/>were<sp/>updated<sp/>to<sp/>use<sp/>the<sp/>FMS2_io<sp/>version<sp/>of<sp/>these<sp/>routines<sp/>and<sp/>are<sp/>no<sp/>longer<sp/>skipped</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>The<sp/>doxygen<sp/>generated<sp/>documentation<sp/>has<sp/>been<sp/>improved<sp/>with<sp/>more<sp/>doxygen<sp/>comments<sp/>added<sp/>and<sp/>a<sp/>more<sp/>cohesive<sp/>layout</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TEST_FMS:<sp/>Unit<sp/>tests<sp/>for<sp/>time_manager<sp/>were<sp/>updated<sp/>to<sp/>use<sp/>the<sp/>new<sp/>get/set_date_gregorian<sp/>routines</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO:<sp/>The<sp/>namelist<sp/>variable<sp/>use_mpp_io<sp/>was<sp/>removed<sp/>from<sp/>interpolator,<sp/>amip_interp,<sp/>diag_manager,<sp/>topography,<sp/>xgrid,<sp/>and<sp/>data_override</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO:<sp/>Any<sp/>remaining<sp/>fms_io/mpp_io<sp/>calls<sp/>from<sp/>the<sp/>source<sp/>and<sp/>test<sp/>code<sp/>were<sp/>removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS:<sp/>Removes<sp/>the<sp/>hardcoded<sp/>path<sp/>for<sp/>input.nml,<sp/>path<sp/>now<sp/>may<sp/>be<sp/>specified<sp/>in<sp/>the<sp/>call<sp/>to<sp/>`fms_init`</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixes<sp/>algorithm<sp/>used<sp/>with<sp/>nested<sp/>grid<sp/>updates<sp/>to<sp/>properly<sp/>coalesce<sp/>x-dir<sp/>and<sp/>y-dir<sp/>pelists<sp/>for<sp/>vector<sp/>quantities</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE/AUTOTOOLS:<sp/>Fixes<sp/>for<sp/>minor<sp/>issues<sp/>with<sp/>filenames<sp/>in<sp/>both<sp/>the<sp/>CMake<sp/>and<sp/>autotools<sp/>build<sp/>systems</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Restored<sp/>deleted<sp/>pset<sp/>functionality<sp/>needed<sp/>by<sp/>GFDL<sp/>SCM<sp/>by<sp/>reinstating<sp/>mpp_pset.F90</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixed<sp/>uninitialized<sp/>variables<sp/>for<sp/>data<sp/>domains<sp/>in<sp/>mpp<sp/>domains<sp/>broadcast<sp/>routines</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Minor<sp/>memory<sp/>leaks<sp/>from<sp/>deallocating<sp/>domains</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AXIS_UTILS:<sp/>Fix<sp/>PGI<sp/>related<sp/>error<sp/>with<sp/>string<sp/>length<sp/>sizes</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.03-alpha1<sp/>(87d945d8dba6341f1f56631047ae5d3e5b4ab828)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.03-beta1<sp/><sp/>(6d6ff9595ede12ea0a342ae014442708a27041d2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2021.02]<sp/>-<sp/>2021-05-20</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>fms2_io<sp/>support<sp/>for<sp/>boundary<sp/>condition<sp/>restarts.<sp/>`register_restart_region_2d`<sp/>and<sp/>`register_restart_region_3d`<sp/>were<sp/>added<sp/>to<sp/>fms2_io’s<sp/>`register_restart_field`<sp/>interface<sp/>and<sp/>`read_restart_bc`<sp/>and<sp/>`write_restart_bc`<sp/>subroutines<sp/>were<sp/>added<sp/>to<sp/>read<sp/>and<sp/>write<sp/>boundary<sp/>conditions<sp/>restarts.<sp/>See<sp/>[test_fms/fms2_io/test_bc_restart.F90](https://github.com/NOAA-GFDL/FMS/blob/9d55115a331685e4c6e01f2dfb3b770a9f80fa37/test_fms/fms2_io/test_bc_restart.F90)<sp/>for<sp/>sample<sp/>usage.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>fms2_io’s<sp/>version<sp/>of<sp/>set_filename_appendix.<sp/>The<sp/>string<sp/>sent<sp/>in<sp/>will<sp/>be<sp/>appended<sp/>to<sp/>the<sp/>filename<sp/>of<sp/>a<sp/>restart/history<sp/>file<sp/>before<sp/>the<sp/>*.nc<sp/>or<sp/>before<sp/>*.tile<sp/>if<sp/>tile<sp/>is<sp/>in<sp/>the<sp/>filename.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Added<sp/>workarounds<sp/>to<sp/>get<sp/>fms2_io<sp/>code<sp/>working<sp/>with<sp/>pgi</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>COUPLER_TYPES:<sp/>Added<sp/>fms2_io’s<sp/>version<sp/>of<sp/>`register_restarts_2/3d`<sp/>and<sp/>`CT_restore_state_2/3d`<sp/>to<sp/>the<sp/>`coupler_type_register_restarts`<sp/>and<sp/>`coupler_type_restore_state`<sp/>interfaces<sp/>in<sp/>coupler_types.<sp/>The<sp/>fms_io’s<sp/>versions<sp/>were<sp/>renamed<sp/>as<sp/>mpp_io_*<sp/>and<sp/>both<sp/>versions<sp/>may<sp/>still<sp/>be<sp/>used.<sp/>See<sp/>[test_fms/coupler/test_coupler_*d.F90](https://github.com/NOAA-GFDL/FMS/tree/9d55115a331685e4c6e01f2dfb3b770a9f80fa37/test_fms/coupler)<sp/>for<sp/>sample<sp/>usage.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_DOMAINS:<sp/>Added<sp/>a<sp/>subroutine<sp/>`mpp_create_super_grid_domain`,<sp/>which<sp/>sets<sp/>the<sp/>indices<sp/>of<sp/>the<sp/>input<sp/>domain<sp/>to<sp/>match<sp/>the<sp/>supergrid<sp/>domain.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC2/GRID2:<sp/>Added<sp/>a<sp/>version<sp/>of<sp/>grid.F90<sp/>that<sp/>is<sp/>suitable<sp/>for<sp/>use<sp/>with<sp/>fms2_io<sp/>called<sp/>grid2.F90,<sp/>and<sp/>moved<sp/>it<sp/>into<sp/>the<sp/>mosaic2<sp/>folder<sp/>along<sp/>with<sp/>mosaic2.F90</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_MOD:<sp/>Added<sp/>grid_init<sp/>and<sp/>grid_end<sp/>calls<sp/>for<sp/>use<sp/>with<sp/>grid2.F90</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TIME_MANAGER:<sp/>New<sp/>`set_date_gregorian`<sp/>and<sp/>`get_date_gregorian`<sp/>function/subroutine<sp/>that<sp/>do<sp/>not<sp/>use<sp/>coded_date<sp/>and<sp/>date_to_day<sp/>arrays<sp/>are<sp/>added<sp/>and<sp/>set<sp/>as<sp/>default.<sp/><sp/>The<sp/>original<sp/>get_date_gregorian<sp/>and<sp/>set_date_gregorian<sp/>have<sp/>been<sp/>renamed<sp/>to<sp/>`get_date_gregorian_old`<sp/>and<sp/>`set_date_gregorian_old`<sp/>and<sp/>can<sp/>be<sp/>used<sp/>by<sp/>adding<sp/>`old_method=.true.`<sp/>optional<sp/>argument<sp/>to<sp/>set_date<sp/>and<sp/>get_date<sp/>subroutine<sp/>calls.<sp/><sp/>This<sp/>is<sp/>the<sp/>first<sp/>step<sp/>out<sp/>of<sp/>three<sp/>to<sp/>remove<sp/>the<sp/>memory-consuming<sp/>`coded_date`<sp/>and<sp/>`date_to_day`<sp/>arrays<sp/>from<sp/>the<sp/>time_manager_mod.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS<sp/>GLOBAL<sp/>MODULE:<sp/>Adds<sp/>a<sp/>new<sp/>module<sp/>(libFMS.F90)<sp/>to<sp/>be<sp/>used<sp/>as<sp/>a<sp/>global<sp/>import<sp/>for<sp/>all<sp/>supported<sp/>routines/types/variables<sp/>within<sp/>FMS.<sp/>Also<sp/>adds<sp/>a<sp/>separate<sp/>module<sp/>(fmsconstants.F90)<sp/>to<sp/>be<sp/>used<sp/>for<sp/>constant<sp/>values<sp/>from<sp/>`constants_mod`.</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>logic<sp/>so<sp/>that<sp/>the<sp/>domain<sp/>decomposition<sp/>variable<sp/>attribute<sp/>is<sp/>only<sp/>added<sp/>if<sp/>the<sp/>io_layout<sp/>is<sp/>not<sp/>1,1.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO:<sp/>Moved<sp/>get_great_circle_algorithm<sp/>from<sp/>fms_io<sp/>to<sp/>grid2.F90</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO:<sp/>Moved<sp/>routines<sp/>and<sp/>submodules<sp/>that<sp/>were<sp/>not<sp/>IO<sp/>related<sp/>to<sp/>fms_mod</highlight></codeline>
+<codeline><highlight class="normal">###Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Removed<sp/>the<sp/>variable<sp/>attributes<sp/>`_FillValue`<sp/>and<sp/>`missing_value`<sp/>from<sp/>the<sp/>`time_bounds`<sp/>variable<sp/>to<sp/>be<sp/>cf<sp/>compliant</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FV3GFS:<sp/>Removes<sp/>the<sp/>unused<sp/>fv3gfs<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC/GRID:<sp/>Removed<sp/>references<sp/>in<sp/>grid.F90<sp/>to<sp/>fms_mod(replaced<sp/>with<sp/>mpp_mod<sp/>direct<sp/>calls)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MOSAIC/GRID:<sp/>Moved<sp/>mosaic/mosaic2.F90<sp/>to<sp/>mosaic2<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">###Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixed<sp/>a<sp/>bug<sp/>where<sp/>the<sp/>variable<sp/>type<sp/>of<sp/>`Time`<sp/>and<sp/>`Time_bounds`<sp/>were<sp/>different<sp/>(float<sp/>vs<sp/>double)<sp/>when<sp/>compiling<sp/>with<sp/>32<sp/>bit<sp/>reals</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixed<sp/>a<sp/>bug<sp/>where<sp/>the<sp/>code<sp/>was<sp/>crashing<sp/>when<sp/>you<sp/>were<sp/>trying<sp/>to<sp/>read/write<sp/>scalar<sp/>variables<sp/>with<sp/>the<sp/>domain<sp/>decomposed<sp/>fileobj</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.02-alpha1<sp/>(1a653fcb86a826251e6c8d0a90db897377acc49e)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.02-alpha2<sp/>(81a5b6ea2559e2c31edbcab32a3230dfc31287be)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.02-beta1<sp/>(d7e564adee07073febeb263b89158f768d665689)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.02-beta2<sp/>(9d55115a331685e4c6e01f2dfb3b770a9f80fa37)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2021.01]<sp/>-<sp/>2021-03-08</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>A<sp/>counter<sp/>for<sp/>timers<sp/>to<sp/>report<sp/>how<sp/>many<sp/>times<sp/>a<sp/>timer<sp/>section<sp/>is<sp/>run</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Adds<sp/>missing<sp/>interfaces<sp/>to<sp/>be<sp/>consistent<sp/>with<sp/>interfaces<sp/>that<sp/>use<sp/>the<sp/>OVERLOAD<sp/>and<sp/>no_8byte_integer<sp/>macros<sp/>in<sp/>order<sp/>to<sp/>allow<sp/>building<sp/>without<sp/>MPI</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Extends<sp/>interfaces<sp/>for<sp/>read<sp/>and<sp/>write<sp/>routines<sp/>to<sp/>include<sp/>32-bit<sp/>and<sp/>64-bit<sp/>real<sp/>data<sp/>arrays</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Adds<sp/>unit<sp/>tests<sp/>for<sp/>mpp<sp/>and<sp/>mpp_io<sp/>for<sp/>all<sp/>public<sp/>routines<sp/>with<sp/>mixed-precision<sp/>interfaces<sp/>and<sp/>expands<sp/>on<sp/>existing<sp/>tests<sp/>for<sp/>mixed-precision</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Adds<sp/>an<sp/>.editorconfig<sp/>file<sp/>with<sp/>the<sp/>project&apos;s<sp/>preferred<sp/>editor<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>A<sp/>variable<sp/>MODDIR<sp/>in<sp/>configure.ac<sp/>for<sp/>use<sp/>in<sp/>Makefiles<sp/>to<sp/>find<sp/>required<sp/>Fortran<sp/>module<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Adds<sp/>FMS<sp/>description<sp/>web<sp/>page<sp/>as<sp/>a<sp/>markdown<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DOCS:<sp/>Updates<sp/>various<sp/>modules<sp/>to<sp/>doxygen<sp/>style<sp/>comments<sp/>and<sp/>makes<sp/>adjustments<sp/>to<sp/>correctly<sp/>generate<sp/>doxygen<sp/>documentation<sp/>through<sp/>the<sp/>build<sp/>system</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PLATFORM:<sp/>changes<sp/>usage<sp/>of<sp/>platform.h<sp/>to<sp/>platform_mod<sp/>and<sp/>it&apos;s<sp/>associated<sp/>data<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Changes<sp/>all<sp/>previous<sp/>uses<sp/>of<sp/>flush<sp/>subroutine<sp/>calls<sp/>to<sp/>function<sp/>calls</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Changes<sp/>travis<sp/>CI<sp/>to<sp/>Github<sp/>actions<sp/>CI<sp/>and<sp/>removed<sp/>all<sp/>trailing<sp/>whitespace</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>Fixed<sp/>a<sp/>bug<sp/>causing<sp/>mpp_get_UG_domain_tile_pe_inf<sp/>to<sp/>seg<sp/>fault<sp/>from<sp/>the<sp/>incorrect<sp/>assignment<sp/>of<sp/>an<sp/>optional<sp/>argument</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS:<sp/>Fixes<sp/>issues<sp/>with<sp/>FMS<sp/>unit<sp/>tests<sp/>failing<sp/>from<sp/>pointer<sp/>allocations<sp/>by<sp/>reworking<sp/>deallocate_unstruct_pass_type</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO:<sp/>Fixes<sp/>unintentional<sp/>printing<sp/>of<sp/>file<sp/>attributes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>An<sp/>issue<sp/>with<sp/>the<sp/>automake<sp/>build<sp/>system<sp/>causing<sp/>unnecessary<sp/>rebuilds<sp/>of<sp/>source<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixes<sp/>CMake<sp/>build<sp/>of<sp/>the<sp/>FMS<sp/>library<sp/>to<sp/>install<sp/>configuration<sp/>files<sp/>in<sp/>the<sp/>appropriate<sp/>directories;<sp/>and<sp/>for<sp/>OpenMP<sp/>dependencies<sp/>to<sp/>the<sp/>private</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.01-alpha1<sp/>(dbe8a1060fb33167c2d12239484226b40fb01fd0)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.01-alpha2<sp/>(b94eb18fe8e686c5958cbbacc4cf9130873afc85)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2021.01-beta1<sp/><sp/>(4dcc9a795d9ba0cc959ebd93dda5be5f8473545c)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2020.04]<sp/>-<sp/>2020-12-07</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_io`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>A<sp/>check<sp/>is<sp/>added<sp/>before<sp/>a<sp/>time<sp/>axis<sp/>is<sp/>registered<sp/>to<sp/>check<sp/>if<sp/>the<sp/>time<sp/>axis<sp/>is<sp/>registered<sp/>as<sp/>a<sp/>variable</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>A<sp/>unit<sp/>test<sp/>was<sp/>added<sp/>to<sp/>test<sp/>the<sp/>optional<sp/>`new_file_freq`<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>XGRID:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_io`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/><sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>INTERPOLATOR:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_io`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>AMIP_INTERP:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_io`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>TOPOGRAPHY:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_io`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`use_mpp_bug`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>will<sp/>use<sp/>mpp_io.<sp/>The<sp/>default<sp/>is<sp/>.false.<sp/>and<sp/>will<sp/>use<sp/>fms2_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>A<sp/>namelist<sp/>flag<sp/>called<sp/>`reproduce_null_char_bug_flag`<sp/>if<sp/>set<sp/>to<sp/>.true.<sp/>and<sp/>fms2_io<sp/>is<sp/>being<sp/>used,<sp/>it<sp/>will<sp/>reproduce<sp/>the<sp/>mpp_io<sp/>bug<sp/>where<sp/>the<sp/>axis<sp/>bounds<sp/>were<sp/>calculated<sp/>instead<sp/>of<sp/>read.<sp/>The<sp/>default<sp/>is<sp/>.false.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>unit<sp/>test<sp/>was<sp/>added<sp/>to<sp/>test<sp/>the<sp/>functionality<sp/>of<sp/>`get_grid_version_1`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>A<sp/>unit<sp/>test<sp/>was<sp/>added<sp/>to<sp/>test<sp/>the<sp/>functionality<sp/>of<sp/>`get_valid`<sp/>and<sp/>`is_valid`</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>autotools<sp/>build<sp/>has<sp/>been<sp/>changed<sp/>to<sp/>copy<sp/>each<sp/>subdirectory<sp/>module<sp/>(.mod)<sp/>files<sp/>to<sp/>a<sp/>common<sp/>.mod<sp/>directory<sp/>located<sp/>at<sp/>the<sp/>top<sp/>of<sp/>the<sp/>source<sp/>directory.<sp/><sp/>This<sp/>change<sp/>simplifies<sp/>the<sp/>include<sp/>path<sp/>specifications.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>F90<sp/>module<sp/>files<sp/>for<sp/>external<sp/>libraries<sp/>(MPI<sp/>and<sp/>NetCDF)<sp/>for<sp/>improved<sp/>interface<sp/>checking,<sp/>thereby<sp/>removing<sp/>the<sp/>reliance<sp/>on<sp/>library<sp/>header<sp/>include<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Changed<sp/>how<sp/>nest<sp/>file<sp/>names<sp/>are<sp/>created<sp/>to<sp/>be<sp/>consistent<sp/>with<sp/>mpp_io</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Changed<sp/>visibility<sp/>of<sp/>FMS<sp/>OpenMP<sp/>libraries<sp/>to<sp/>private<sp/>in<sp/>order<sp/>to<sp/>avoid<sp/>conflicts<sp/>with<sp/>model<sp/>libraries</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>The<sp/>flag<sp/>-Duse_mpp_io<sp/>should<sp/>not<sp/>be<sp/>used<sp/>and<sp/>will<sp/>cause<sp/>a<sp/>crash</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Macros<sp/>and<sp/>logic<sp/>for<sp/>interfacing<sp/>to<sp/>the<sp/>Flexible<sp/>File<sp/>I/O<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Macros<sp/>for<sp/>SGI<sp/>MIPSpro<sp/>compilers,<sp/>including:<sp/>mpp_node<sp/>function<sp/>and<sp/>SGI<sp/>Irix<sp/>specific<sp/>high<sp/>resolution<sp/>timer</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Macros<sp/>for<sp/>IBM<sp/>AIX<sp/>compilers</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Files<sp/>in<sp/>mpp<sp/>supporting<sp/>the<sp/>CRAY<sp/>SHMEM<sp/>communications<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LIBFMS:<sp/>Files<sp/>in<sp/>mpp<sp/>for<sp/>the<sp/>SGI<sp/>PSET<sp/>approach<sp/>for<sp/>communication<sp/>via<sp/>GSM</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO:<sp/>removed<sp/>left<sp/>over<sp/>#ifdefs<sp/>from<sp/>backwards<sp/>compatibility<sp/>changes</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Fixed<sp/>a<sp/>bug<sp/>in<sp/>`get_grid_version_1`<sp/>where<sp/>the<sp/>variable_size<sp/>calls<sp/>were<sp/>not<sp/>correct</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Fixed<sp/>a<sp/>bug<sp/>in<sp/>`get_valid`<sp/>where<sp/>the<sp/>mpp_broadcast<sp/>calls<sp/>were<sp/>done<sp/>inside<sp/>`if<sp/>(root_pe)`<sp/>blocks</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>fms2_io<sp/>unit<sp/>tests<sp/>were<sp/>modified<sp/>so<sp/>they<sp/>can<sp/>work<sp/>with<sp/>the<sp/>AOCC<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>XGRID:<sp/>Fixed<sp/>a<sp/>bug<sp/>in<sp/>`load_xgrid`<sp/>by<sp/>checking<sp/>if<sp/>a<sp/>dimension<sp/>exists<sp/>before<sp/>calling<sp/>`get_dimension_size`<sp/>to<sp/>avoid<sp/>`FATAL:<sp/>NetCDF:<sp/>Invalid<sp/>dimension<sp/>ID<sp/>or<sp/>name`<sp/>crashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Fixed<sp/>a<sp/>bug<sp/>where<sp/>files<sp/>were<sp/>getting<sp/>written<sp/>with<sp/>redundant<sp/>time_bounds<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixed<sp/>a<sp/>bug<sp/>causing<sp/>the<sp/>build<sp/>to<sp/>fail<sp/>on<sp/>latest<sp/>versions<sp/>of<sp/>Ubuntu</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>Fixed<sp/>a<sp/>bug<sp/>that<sp/>caused<sp/>the<sp/>build<sp/>to<sp/>fail<sp/>from<sp/>incorrect<sp/>source<sp/>paths</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.04-alpha1<sp/>(2428bb182133b8062432ee1b15974739753ca470)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.04-alpha2<sp/>(ad9915d83a2f34610cd748fd85889ba1f0f1fc02)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.04-alpha3<sp/>(e7e48839ab25cc9405abe5d8418e1b6ee6fb2d69)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.04-beta1<sp/>(6d3ac620423e7ede412e4bb1b36c338775d95193)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2020.03]<sp/>-<sp/>2020-10-08</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>header_buffer_val<sp/>to<sp/>the<sp/>fms2io<sp/>namelist<sp/>which<sp/>sets<sp/>the<sp/>netcdf<sp/>header<sp/>size<sp/>in<sp/>bytes.<sp/>The<sp/>default<sp/>value<sp/>is<sp/>16kb</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>netcdf_default_format<sp/>to<sp/>the<sp/>fms2io<sp/>namelist<sp/>which<sp/>allows<sp/>the<sp/>user<sp/>to<sp/>change<sp/>the<sp/>netcdf<sp/>file<sp/>type.<sp/>The<sp/>default<sp/>value<sp/>is<sp/>64bit.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>support<sp/>to<sp/>read<sp/>netcdf<sp/>string<sp/>global<sp/>attributes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>an<sp/>optional<sp/>argument<sp/>to<sp/>open_file,<sp/>`dont_add_res_to_filename`,<sp/>which<sp/>indicates<sp/>that<sp/>the<sp/>filename<sp/>should<sp/>not<sp/>be<sp/>modified<sp/>(default<sp/>adds<sp/>.res<sp/>to<sp/>restart<sp/>file<sp/>name)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Modifies<sp/>the<sp/>`register_variable_attribute`<sp/>and<sp/>`register_global_attribute`<sp/>interfaces<sp/>by<sp/>adding<sp/>str_len<sp/>as<sp/>an<sp/>argument.<sp/>This<sp/>is<sp/>a<sp/>workaround<sp/>to<sp/>get<sp/>fms2io<sp/>to<sp/>work<sp/>with<sp/>PGI<sp/>because<sp/>they<sp/>don&apos;t<sp/>support<sp/>class<sp/>(*)<sp/>with<sp/>len=*.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>unit<sp/>test<sp/>that<sp/>tests<sp/>`write_data`<sp/>and<sp/>`read_data`<sp/>when<sp/>using<sp/>a<sp/>domain<sp/>with<sp/>a<sp/>mask<sp/>table</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>fms2io’s<sp/>version<sp/>of<sp/>get_mosaic_tile_grid</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_IO:<sp/>Adds<sp/>`-Duse_mpp_io`<sp/>compile<sp/>option<sp/>for<sp/>data_override,<sp/>interpolator,<sp/>amip_interp,<sp/>diag_manager,<sp/>topography,<sp/>and<sp/>xgrid<sp/>to<sp/>select<sp/>using<sp/>mpp_io<sp/>instead<sp/>of<sp/>fms2_io</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_INIT:<sp/>Adds<sp/>unit<sp/>tests<sp/>for<sp/>routines/functions<sp/>that<sp/>are<sp/>called<sp/>in<sp/>mpp_init</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMAKE:<sp/>A<sp/>cmake<sp/>build<sp/>system<sp/>has<sp/>been<sp/>added<sp/>with<sp/>a<sp/>CI<sp/>build<sp/>using<sp/>cmake</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Improves<sp/>performance<sp/>of<sp/>previous<sp/>release<sp/>by<sp/>gathering<sp/>the<sp/>domain<sp/>decomposed<sp/>data<sp/>into<sp/>one<sp/>global<sp/>buffer<sp/>and<sp/>doing<sp/>one<sp/>write<sp/>rather<sp/>than<sp/>doing<sp/>multiple<sp/>reads</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE:<sp/>Changes<sp/>line<sp/>in<sp/>time_interp_external2<sp/>to<sp/>enable<sp/>3D<sp/>overrides</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DATA_OVERRIDE[2]:<sp/>Fixes<sp/>a<sp/>crash<sp/>when<sp/>doing<sp/>ongrid<sp/>data_override<sp/>calls<sp/>with<sp/>a<sp/>domain<sp/>with<sp/>halos</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER[2]:<sp/>Fixes<sp/>an<sp/>issue<sp/>where<sp/>time_bnds<sp/>were<sp/>written<sp/>incorrectly<sp/>for<sp/>the<sp/>last<sp/>time<sp/>stamp</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/>Regional<sp/>diagnostics<sp/>with<sp/>a<sp/>mask<sp/>table<sp/>now<sp/>work</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Unit<sp/>test<sp/>includes<sp/>fms2io_init<sp/>call<sp/>to<sp/>improve<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP:<sp/>BOZ<sp/>literals<sp/>that<sp/>are<sp/>used<sp/>in<sp/>variable<sp/>declaration<sp/>are<sp/>converted<sp/>to<sp/>integers<sp/>using<sp/>the<sp/>int()<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_DOMAINS2:<sp/>Fixed<sp/>unit<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS_IO:<sp/>Changes<sp/>the<sp/>logic<sp/>in<sp/>get_tile_string<sp/>to<sp/>fix<sp/>bug<sp/>where<sp/>tile<sp/>numbers<sp/>9<sp/>and<sp/>99<sp/>produce<sp/>an<sp/>inappropriate<sp/>error</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.03-beta4<sp/>(4d38679c1e18e920feb03d69f8a9762eb6a047aa)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.03-beta3<sp/>(521a15135a99d1f2da7d82f238353945f82ce1dd)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.03-beta2<sp/>(3dae0dfa405d555ecc09bbd2d60a1be24461f69e)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.03-beta1<sp/>(f7f1c1c73c1f478a53e84caee6aff2fa840ad086)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.03-alpha1<sp/>(2dd30b7ca0ac75a4a38b969e4a6d446eb395b4dd)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2020.02]<sp/>-<sp/>2020-05-01</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/><sp/>An<sp/>fms2_io_nml<sp/>namelist<sp/>has<sp/>been<sp/>created.<sp/><sp/>It<sp/>includes<sp/>the<sp/>variable<sp/>ncchksz.<sp/>This<sp/>is<sp/>the<sp/>replacement<sp/>for<sp/>the<sp/>environment<sp/>variable<sp/>NC_BLKSZ<sp/>set<sp/>in<sp/>model<sp/>run<sp/>scripts<sp/>and<sp/>used<sp/>by<sp/>mpp_io.<sp/><sp/>The<sp/>default<sp/>value<sp/>is<sp/>64<sp/>KB.<sp/><sp/>Any<sp/>time<sp/>a<sp/>file<sp/>is<sp/>opened<sp/>in<sp/>fms2_io<sp/>(nf90_open<sp/>or<sp/>nf90_create),<sp/>the<sp/>optional<sp/>argument<sp/>`chunksize=ncchksz`<sp/>is<sp/>passed<sp/>to<sp/>the<sp/>NetCDF<sp/>library.<sp/><sp/>NetCDF<sp/>attempts<sp/>to<sp/>use<sp/>this<sp/>value<sp/>to<sp/>control<sp/>the<sp/>blocksize<sp/>utilized<sp/>for<sp/>reads<sp/>and<sp/>writes<sp/>of<sp/>data<sp/>from<sp/>the<sp/>filesystem.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/>Adds<sp/>support<sp/>to<sp/>`compute_global_cheksum.inc`<sp/>for<sp/>`real32`,<sp/>assuming<sp/>the<sp/>flag<sp/>`-DOVERLOAD_R4`<sp/>is<sp/>used<sp/>when<sp/>compiling.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_DOMAINS<sp/>-<sp/>nesting:<sp/><sp/>The<sp/>logic<sp/>supporting<sp/>nested<sp/>domains<sp/>for<sp/>mosaic<sp/>grids<sp/>has<sp/>been<sp/>overhauled<sp/>and<sp/>extended.<sp/><sp/>FMS<sp/>now<sp/>supports<sp/>multiple<sp/>nests<sp/>and<sp/>telescoping<sp/>nests<sp/>(nest<sp/>embedded<sp/>within<sp/>a<sp/>nest).<sp/><sp/>The<sp/>requirement<sp/>for<sp/>a<sp/>nest<sp/>to<sp/>lie<sp/>wholly<sp/>within<sp/>a<sp/>single<sp/>tile<sp/>has<sp/>been<sp/>relaxed<sp/>and<sp/>a<sp/>first-level<sp/>nest<sp/>may<sp/>cross<sp/>tile<sp/>boundaries,<sp/>but<sp/>may<sp/>not<sp/>contain<sp/>a<sp/>tile<sp/>corner.<sp/><sp/>Communications<sp/>for<sp/>two-way<sp/>nesting<sp/>have<sp/>also<sp/>been<sp/>improved.<sp/><sp/>The<sp/>2019<sp/>December<sp/>Public<sp/>Release<sp/>and<sp/>2020.02<sp/>GFDL<sp/>Release<sp/>within<sp/>the<sp/><sp/>[GFDL_atmos_cubed_sphere]<sp/>(https://github.com/NOAA-GFDL/GFDL_atmos_cubed_sphere)<sp/>have<sp/>been<sp/>updated<sp/>and<sp/>are<sp/>compatible<sp/>with<sp/>this<sp/>release<sp/>of<sp/>FMS.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FMS2_IO:<sp/><sp/>The<sp/>intent<sp/>of<sp/>fileobj<sp/>is<sp/>changed<sp/>from<sp/>(in)<sp/>to<sp/>(inout)<sp/>in<sp/>netcdf_restore_state_wrap,<sp/>restore_domain_state,<sp/>and<sp/>netcdf_restore_state<sp/>because<sp/>the<sp/>file<sp/>object<sp/>type<sp/>has<sp/>a<sp/>pointer<sp/>that<sp/>is<sp/>being<sp/>reassigned<sp/>in<sp/>one<sp/>of<sp/>the<sp/>routines<sp/>lower<sp/>in<sp/>the<sp/>call<sp/>stack.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Deprecated</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MPP_DOMAINS<sp/>-<sp/>nesting:<sp/><sp/>The<sp/>initial<sp/>nesting<sp/>implementation<sp/>is<sp/>no<sp/>longer<sp/>supported.<sp/><sp/>Please<sp/>see<sp/>the<sp/>Changed::MPP_DOMAINS<sp/>sub-entry<sp/>under.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GENERAL:<sp/><sp/>References<sp/>to<sp/>the<sp/>macro<sp/>_ALLOCATABLE<sp/>have<sp/>been<sp/>replaced<sp/>with<sp/>“allocatable”,<sp/>_ALLOCATED<sp/>has<sp/>been<sp/>replaced<sp/>with<sp/>“allocated”,<sp/>and<sp/>_NULL<sp/>has<sp/>been<sp/>removed.<sp/><sp/>It<sp/>is<sp/>now<sp/>assumed<sp/>that<sp/>all<sp/>compilers<sp/>support<sp/>the<sp/>Fortran<sp/>2003<sp/>standard.<sp/><sp/>The<sp/>macros<sp/>still<sp/>exist<sp/>in<sp/>fms_platforms.h<sp/>for<sp/>compatibility<sp/>within<sp/>other<sp/>components.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DIAG_MANAGER:<sp/><sp/>“fms_platform.h”<sp/>is<sp/>no<sp/>longer<sp/>included<sp/>in<sp/>any<sp/>of<sp/>the<sp/>diag_manager<sp/>routines.<sp/><sp/>Instead,<sp/>fms_platform_mod<sp/>is<sp/>now<sp/>being<sp/>use-associated<sp/>where<sp/>necessary.<sp/><sp/>This<sp/>fixes<sp/>an<sp/>issue<sp/>for<sp/>debuggers<sp/>not<sp/>providing<sp/>correct<sp/>line<sp/>numbers.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.02-beta1<sp/>(bbc6f8d33cfb75a411bbcd3f8423fa74b8b7cdfd)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.02-beta2<sp/>(6242941a632f6e261234f3a575e59efa1bfb1b36)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.02-beta3<sp/>(e6fd03b070eb1ba8ffbca740fd69681ee16d6be7)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2020.01]<sp/>-<sp/>2020-03-13</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Adds<sp/>the<sp/>modules<sp/>`axis_utils2`,<sp/>`mosaic2`,<sp/>and<sp/>`time_interp_external2`<sp/>that<sp/>use<sp/>`fms2_io`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Adds<sp/>unit<sp/>tests<sp/>for<sp/>thread<sp/>affinity<sp/>in<sp/>test_fms/affinity</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Autotools<sp/>unit<sp/>tests<sp/>are<sp/>now<sp/>run<sp/>with<sp/>`srun,<sp/>mpirun`,<sp/>or<sp/>`aprun`<sp/>(whichever<sp/>is<sp/>present<sp/>on<sp/>your<sp/>system)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`fms2_io`<sp/>provides<sp/>three<sp/>new<sp/>derived<sp/>types,<sp/>which<sp/>target<sp/>the<sp/>different<sp/>I/O<sp/>paradigms<sp/>used<sp/>in<sp/>GFDL<sp/>GCMs:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>type(FmsNetcdfFile_t)<sp/>-<sp/>This<sp/>type<sp/>provides<sp/>a<sp/>thin<sp/>wrapper<sp/>over<sp/>the<sp/>netCDF4<sp/>library,<sp/>but<sp/>allows<sp/>the<sp/>user<sp/>to<sp/>assign<sp/>a<sp/>“pelist”<sp/>to<sp/>the<sp/>file.<sp/><sp/>If<sp/>a<sp/>pelist<sp/>is<sp/>assigned,<sp/>only<sp/>the<sp/>first<sp/>rank<sp/>on<sp/>the<sp/>list<sp/>directly<sp/>interacts<sp/>with<sp/>the<sp/>netCDF<sp/>library,<sp/>and<sp/>performs<sp/>broadcasts<sp/>to<sp/>relay<sp/>the<sp/>information<sp/>to<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>ranks<sp/>on<sp/>the<sp/>list.<sp/><sp/>This<sp/>derived<sp/>type<sp/>also<sp/>allows<sp/>the<sp/>user<sp/>to<sp/>perform<sp/>“compressed”<sp/>reads/writes<sp/>and<sp/>restart<sp/>variable<sp/>“registration”<sp/>(i.e.<sp/>the<sp/>ability<sp/>to<sp/>store<sp/>pointers<sp/>to<sp/>user-defined/allocated<sp/>buffers)<sp/>and<sp/>reads/writes<sp/>in<sp/>a<sp/>manner<sp/>similar<sp/>to<sp/>the<sp/>existing<sp/>calls<sp/>in<sp/>fms_io.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>type(FmsNetcdfUnstructuredDomainFile_t)<sp/>-<sp/>This<sp/>type<sp/>extends<sp/>the<sp/>FmsNetcdfFile_t<sp/>type<sp/>to<sp/>support<sp/>“domain-decomposed”<sp/>reads/writes<sp/>on<sp/>a<sp/>user<sp/>defined<sp/>mpp_domains<sp/>unstructured<sp/>grid.<sp/><sp/>Users<sp/>are<sp/>required<sp/>to<sp/>inform<sp/>the<sp/>FMS2_io<sp/>module<sp/>which<sp/>dimensions<sp/>correspond<sp/>to<sp/>the<sp/>unstructured<sp/>grid<sp/>using<sp/>the<sp/>appropriate<sp/>`register_axis`<sp/>call<sp/>before<sp/>any<sp/>domain-decomposed<sp/>reads/writes<sp/>can<sp/>be<sp/>performed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>type(FmsNetcdfDomainFile_t)<sp/>-<sp/>This<sp/>type<sp/>extends<sp/>the<sp/>FmsNetcdfFile_t<sp/>type<sp/>to<sp/>support<sp/>“domain-decomposed”<sp/>reads/writes<sp/>on<sp/>a<sp/>user-defined<sp/>`mpp_domains`<sp/>two-dimensional<sp/>lon-lat<sp/>or<sp/>cubed-sphere<sp/>grid.<sp/><sp/>Users<sp/>are<sp/>required<sp/>to<sp/>inform<sp/>the<sp/>`fms2_io`<sp/>module<sp/>which<sp/>dimensions<sp/>(‘x’<sp/>or<sp/>‘y’)<sp/>correspond<sp/>to<sp/>the<sp/>two-dimensional<sp/>grid<sp/>using<sp/>the<sp/>appropriate<sp/>`register_axis`<sp/>calls<sp/>before<sp/>any<sp/>domain-decomposed<sp/>reads/writes<sp/>can<sp/>be<sp/>performed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`fms2_io`<sp/>requires<sp/>the<sp/>user<sp/>to<sp/>manage<sp/>objects<sp/>of<sp/>the<sp/>types<sp/>described<sp/>above.<sp/><sp/>Calls<sp/>to<sp/>`open_file`<sp/>(`close_file`)<sp/>act<sp/>as<sp/>constructors<sp/>(destructors)<sp/>for<sp/>each<sp/>of<sp/>the<sp/>objects,<sp/>and<sp/>must<sp/>be<sp/>explicitly<sp/>made<sp/>by<sp/>the<sp/>user.<sp/><sp/>Each<sp/>object<sp/>must<sp/>be<sp/>constructed<sp/>before<sp/>any<sp/>I/O<sp/>can<sp/>be<sp/>performed.<sp/><sp/>Examples<sp/>describing<sp/>how<sp/>to<sp/>use<sp/>these<sp/>new<sp/>types<sp/>are<sp/>available<sp/>in<sp/>[test_fms/fms2_io](https://github.com/NOAA-GFDL/FMS/tree/master/test_fms/fms2_io)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`fms2_io`<sp/>treats<sp/>*_FillValue*<sp/>attributes<sp/>as<sp/>*valid_max*<sp/>or<sp/>*valid_min*<sp/>range<sp/>specifiers<sp/>if<sp/>none<sp/>of<sp/>*valid_range*,<sp/>*valid_min*,<sp/>and<sp/>*valid_max*<sp/>are<sp/>specified<sp/>as<sp/>described<sp/>in<sp/>these<sp/>[netcdf<sp/>conventions](https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Changed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>`diag_manager`<sp/>IO<sp/>is<sp/>handled<sp/>by<sp/>fms2_io<sp/>instead<sp/>of<sp/>mpp_io.<sp/>Default<sp/>behavior<sp/>assumes<sp/>that<sp/>the<sp/>mpp_io<sp/>namelist<sp/>variable<sp/>is<sp/>set<sp/>to<sp/>*cf_compliant<sp/>=<sp/>.true.*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>user<sp/>must<sp/>specify<sp/>the<sp/>diagnostic<sp/>attributes<sp/>that<sp/>they<sp/>want<sp/>to<sp/>write<sp/>to<sp/>the<sp/>output<sp/>files.<sp/><sp/>Example:<sp/>If<sp/>there<sp/>is<sp/>no<sp/>*units*<sp/>attribute,<sp/>then<sp/>the<sp/>variable<sp/>metadata<sp/>will<sp/>not<sp/>include<sp/>*units*,<sp/>and<sp/>it<sp/>will<sp/>not<sp/>automatically<sp/>add<sp/>*units<sp/>=<sp/>“none”*.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Calls<sp/>to<sp/>`register_diag_axis`<sp/>for<sp/>an<sp/>X<sp/>or<sp/>Y<sp/>axis<sp/>that<sp/>is<sp/>shifted<sp/>from<sp/>the<sp/>*CENTER*<sp/>position<sp/>need<sp/>to<sp/>include<sp/>the<sp/>optional<sp/>argument<sp/>*domain_position*<sp/>and<sp/>should<sp/>be<sp/>equal<sp/>to<sp/>*EAST*<sp/>or<sp/>*NORTH*<sp/>based<sp/>on<sp/>the<sp/>position<sp/>relative<sp/>to<sp/>the<sp/>domain.<sp/>EAST<sp/>and<sp/>*NORTH*<sp/>are<sp/>exposed<sp/>through<sp/>`diag_manager_mod`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Changed<sp/>the<sp/>handling<sp/>of<sp/>*average_T*<sp/>and<sp/>*time_bnds*<sp/>variables<sp/>so<sp/>that<sp/>they<sp/>are<sp/>set<sp/>to<sp/>values<sp/>that<sp/>are<sp/>sent<sp/>in<sp/>and<sp/>are<sp/>not<sp/>manipulated<sp/>as<sp/>was<sp/>the<sp/>case<sp/>in<sp/>mpp_io.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`interpolator`,<sp/>`xgrid`,<sp/>`data_override`,<sp/>and<sp/>`amip_interp`<sp/>now<sp/>call<sp/><sp/>`fms2_io`<sp/>routines</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Support<sp/>for<sp/>enabling/disabling<sp/>quad-precision<sp/>(used<sp/>in<sp/>certain<sp/>calculations)<sp/>has<sp/>been<sp/>changed<sp/>to<sp/>a<sp/>hard<sp/>on/off<sp/>switch.<sp/><sp/>Default<sp/>behavior<sp/>is<sp/>quad-precision<sp/>disabled.<sp/>To<sp/>enable,<sp/>add<sp/>the<sp/>following<sp/>CPP<sp/>macro<sp/>-DENABLE_QUAD_PRECISION.<sp/><sp/>This<sp/>change<sp/>was<sp/>necessary<sp/>to<sp/>remove<sp/>guessing<sp/>at<sp/>the<sp/>proper<sp/>setting<sp/>via<sp/>a<sp/>mix<sp/>of<sp/>compiler<sp/>vendor<sp/>and<sp/>system-defined<sp/>environment<sp/>variables<sp/>which<sp/>resulted<sp/>in<sp/>different<sp/>behaviors<sp/>on<sp/>machines<sp/>unbeknownst<sp/>to<sp/>the<sp/>user.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Deprecated</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>fms2_io<sp/>does<sp/>**NOT**<sp/>use<sp/>the<sp/>*scale_factor*,<sp/>*add_offset*,<sp/>or<sp/>other<sp/>attributes<sp/>to<sp/>manipulate<sp/>the<sp/>data.<sp/><sp/>The<sp/>variable/data<sp/>is<sp/>returned<sp/>to<sp/>the<sp/>caller<sp/>as<sp/>it<sp/>appears<sp/>in<sp/>the<sp/>file.<sp/><sp/>All<sp/>post-read<sp/>data<sp/>manipulations<sp/>should<sp/>be<sp/>handled<sp/>by<sp/>the<sp/>caller.</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removes<sp/>the<sp/>use<sp/>of<sp/>bats<sp/>when<sp/>running<sp/>unit<sp/>tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Tag<sp/>Commit<sp/>Hashes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.01-alpha1<sp/>(09dc8e9e0f1c852e9e9190834176d16943cd3729)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.01-beta1<sp/>(e1c0d9d01d844938adc0d18afa09532f336bcdfe)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2020.01-beta2<sp/>(b68de5382a5ce631ddd6167de8d85f7c9ae54351)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[2019.01]<sp/>-<sp/>2019-11-26</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Added</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>switch<sp/>from<sp/>&quot;city&quot;<sp/>versioning<sp/>style<sp/>to<sp/>`yyyy.&lt;2_digit_version_number&gt;[.&lt;2-digit-patch<sp/>number&gt;]`<sp/>style</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>main<sp/>development<sp/>branch<sp/>is<sp/>`master`<sp/>instead<sp/>of<sp/>`dev/master`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>affinity<sp/>handling<sp/>moved<sp/>to<sp/>the<sp/>affinity<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>support<sp/>for<sp/>building<sp/>with<sp/>autotools</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[fms_platform.h](include/fms_platform.h)<sp/>contains<sp/>directives<sp/>that<sp/>support<sp/>building<sp/>on<sp/>macOS</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>unit<sp/>and<sp/>build<sp/>tests<sp/>are<sp/>available<sp/>in<sp/>the<sp/>[test_fms](test_fms)<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>updated<sp/>[fv3gfs/makefile](fv3gfs/makefile)<sp/>for<sp/>use<sp/>with<sp/>current<sp/>EMC<sp/>build<sp/>system</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Fixed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>`time_interp_missing`<sp/>parameter<sp/>in<sp/>[time_interp/time_interp_external.F90](time_interp/time_interp_external.F90)<sp/>to<sp/>be<sp/>within<sp/>range<sp/>when<sp/>compiled<sp/>in<sp/>mixed-mode.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>reverted<sp/>`QUAD_PRECISION`<sp/>cpp<sp/>macro<sp/>behavior<sp/>to<sp/>pre-Xanadu<sp/>behavior<sp/>in<sp/>[include/fms_platform.h](include/fms_platform.h)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>a<sp/>GNU<sp/>compiler<sp/>issue<sp/>with<sp/>the<sp/>logical<sp/>check<sp/>to<sp/>set<sp/>the<sp/>netCDF<sp/>fill<sp/>value<sp/>in<sp/>`mpp_io_write`<sp/>by<sp/>separating<sp/>the<sp/>logical<sp/>`.AND.`<sp/>into<sp/>nested<sp/>`if`<sp/>statements.</highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/CHANGELOG.md"/>
+  </compounddef>
+</doxygen>

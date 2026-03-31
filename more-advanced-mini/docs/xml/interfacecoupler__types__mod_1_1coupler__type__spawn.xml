@@ -1,0 +1,892 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacecoupler__types__mod_1_1coupler__type__spawn" kind="interface" language="Fortran" prot="private">
+    <compoundname>coupler_types_mod::coupler_type_spawn</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1aab10264610fb7525a443cc20f3c5c685" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_1d_2d</definition>
+        <argsstring>(var_in, var, idim, jdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_1d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 1-D to 2-D version for generic <ref refid="interfacecoupler__types__mod_1_1coupler__type__spawn" kindref="compound">coupler_type_spawn</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="722" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="723" bodyend="865"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1a1fb3ca2460e76fcb046c3113f33fc9ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_1d_3d</definition>
+        <argsstring>(var_in, var, idim, jdim, kdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_1d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>kdim</type>
+          <defname>kdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 1-D to 3-D version for generic CT_spawn. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array extents of the third dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="877" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="878" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1a94073251c92220631af6b9951790b1c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_2d_2d</definition>
+        <argsstring>(var_in, var, idim, jdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_2d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 2-D to 2-D version for generic CT_spawn. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1039" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1040" bodyend="1180"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1aad0c8ca807d756d984c3d73d0eb06328" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_2d_3d</definition>
+        <argsstring>(var_in, var, idim, jdim, kdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_2d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>kdim</type>
+          <defname>kdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 2-D to 3-D version for generic CT_spawn. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered k-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array extents of the third dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1193" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1194" bodyend="1342"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1a0073a41645895d5955bace02ef674761" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_3d_2d</definition>
+        <argsstring>(var_in, var, idim, jdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_3d_2d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 3-D to 2-D version for generic CT_spawn. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1354" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1355" bodyend="1497"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecoupler__types__mod_1_1coupler__type__spawn_1a6f879844902aaf07c8bb08c037516340" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine ct_spawn_3d_3d</definition>
+        <argsstring>(var_in, var, idim, jdim, kdim, suffix, as_needed)</argsstring>
+        <name>ct_spawn_3d_3d</name>
+        <param>
+          <type>var_in</type>
+          <defname>var_in</defname>
+        </param>
+        <param>
+          <type>var</type>
+          <defname>var</defname>
+        </param>
+        <param>
+          <type>idim</type>
+          <defname>idim</defname>
+        </param>
+        <param>
+          <type>jdim</type>
+          <defname>jdim</defname>
+        </param>
+        <param>
+          <type>kdim</type>
+          <defname>kdim</defname>
+        </param>
+        <param>
+          <type>suffix</type>
+          <defname>suffix</defname>
+        </param>
+        <param>
+          <type>as_needed</type>
+          <defname>as_needed</defname>
+        </param>
+        <briefdescription>
+<para>Generate one coupler type using another as a template. 3-D to 3-D version for generic CT_spawn. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The output type has already been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>The parent type has not been initialized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered i-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered j-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>Disordered k-dimension index bound list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc already assocated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FATAL</parametername>
+<parametername>var%bc(&apos;n&apos;)%field(&apos;m&apos;)%values already associated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">var_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure from which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure into which to copy information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the first dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">jdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data and computational domain extents of the second dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">kdim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array extents of the third dimension in a non-decreasing list</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional suffix to make the name identifier unique</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">as_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Only do the spawn if the target type (var) is not set and the parent type (var_in) is set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="1510" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="1511" bodyend="1660"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the interface to spawn one coupler_bc_type into another. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" line="386" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/coupler/coupler_types.F90" bodystart="386" bodyend="388"/>
+    <listofallmembers>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1aab10264610fb7525a443cc20f3c5c685" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_1d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1a1fb3ca2460e76fcb046c3113f33fc9ee" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_1d_3d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1a94073251c92220631af6b9951790b1c7" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_2d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1aad0c8ca807d756d984c3d73d0eb06328" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_2d_3d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1a0073a41645895d5955bace02ef674761" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_3d_2d</name></member>
+      <member refid="interfacecoupler__types__mod_1_1coupler__type__spawn_1a6f879844902aaf07c8bb08c037516340" prot="private" virt="non-virtual"><scope>coupler_types_mod::coupler_type_spawn</scope><name>ct_spawn_3d_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

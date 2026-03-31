@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="diag__integral_8inc" kind="file" language="Fortran">
+    <compoundname>diag_integral.inc</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="diag__integral_8inc_1ab63a715856b3b7bc94e6f220946a323d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine sum_field_2d_</definition>
+        <argsstring>(name, field_data2d, is, js)</argsstring>
+        <name>sum_field_2d_</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_data2d</type>
+          <defname>field_data2d</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <briefdescription>
+<para>Perform a 2 dimensional summation of named field. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">sum_field_2d<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>js)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data2d(:,:)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is,<sp/>js</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;field_data2d&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;is</parametername>
+<parametername direction="in">js&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data2d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting j indices over which summation is to occur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" bodystart="49" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="diag__integral_8inc_1ab6b0119fa133cc0bef867a648425bfd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine sum_field_2d_hemi_</definition>
+        <argsstring>(name, field_data2d, is, ie, js, je)</argsstring>
+        <name>sum_field_2d_hemi_</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_data2d</type>
+          <defname>field_data2d</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>ie</type>
+          <defname>ie</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <param>
+          <type>je</type>
+          <defname>je</defname>
+        </param>
+        <briefdescription>
+<para>Perform a 2 dimensional hemispherical summation of named field. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">sum_field_2d_hemi<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data2d(:,:)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is,<sp/>js,<sp/>ie,<sp/>je</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;field_data2d&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;is</parametername>
+<parametername direction="in">js</parametername>
+<parametername direction="in">ie</parametername>
+<parametername direction="in">je&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data2d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">je</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting/ending i,j indices over which summation is to occur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" line="325" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" bodystart="326" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="diag__integral_8inc_1a675720d8cb227d9d928732b9aca83ac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine sum_field_3d_</definition>
+        <argsstring>(name, field_data3d, is, js)</argsstring>
+        <name>sum_field_3d_</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_data3d</type>
+          <defname>field_data3d</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <briefdescription>
+<para>Perform a 3 dimensional summation of named field. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">sum_field_3d<sp/>(name,<sp/>field_data3d,<sp/>is,<sp/>js)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data3d(:,:,:)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is,<sp/>js</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;field_data3d&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;is</parametername>
+<parametername direction="in">js&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data3d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i,j indices over which summation is to occur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" line="134" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" bodystart="135" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="diag__integral_8inc_1a0d7d226b95dc4befa3c2c9170f058a20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine sum_field_wght_3d_</definition>
+        <argsstring>(name, field_data3d, wt, is, js)</argsstring>
+        <name>sum_field_wght_3d_</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>field_data3d</type>
+          <defname>field_data3d</defname>
+        </param>
+        <param>
+          <type>wt</type>
+          <defname>wt</defname>
+        </param>
+        <param>
+          <type>is</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type>js</type>
+          <defname>js</defname>
+        </param>
+        <briefdescription>
+<para>Perform a 3 dimensional weighted summation of named field. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold> Template: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keyword">call<sp/></highlight><highlight class="normal">sum_field_wght_3d<sp/>(name,<sp/>field_data3d,<sp/>wt,<sp/>is,<sp/>js)</highlight></codeline>
+</programlisting></para><para><bold> Parameters: </bold></para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data3d(:,:,:),<sp/>wt(:,:,:)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is,<sp/>js</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;name&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;field_data3d&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;wt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the weight function to be evaluated at summation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;is</parametername>
+<parametername direction="in">js&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i,j indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the field to be integrated</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">field_data3d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>field of integrands to be summed over</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">wt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the weight function to be evaluated at summation</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting i indices over which summation is to occur</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">js</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting j indices over which summation is to occur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" line="230" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc" bodystart="231" bodyend="296"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>diag_integral_mod<sp/>diag_integral_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>diag_integral</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>@author<sp/>Fei<sp/>Liu<sp/>&lt;Fei.Liu@noaa.gov&gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>@brief<sp/>This<sp/>module<sp/>computes<sp/>and<sp/>outputs<sp/>global<sp/>and<sp/>/<sp/>or<sp/>hemispheric<sp/>physics</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>integrals.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">!&gt;<sp/>@brief<sp/>Perform<sp/>a<sp/>2<sp/>dimensional<sp/>summation<sp/>of<sp/>named<sp/>field</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">!!<sp/>@implements<sp/>sum_diag_integral_field</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Template:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">!!<sp/>call<sp/>sum_field_2d<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Parameters:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">!!<sp/>character(len=*),<sp/><sp/>intent(in)<sp/>::<sp/>name</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">!!<sp/>real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intent(in)<sp/>::<sp/>field_data2d(:,:)</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">!!<sp/>integer,<sp/>optional,<sp/>intent(in)<sp/>::<sp/>is,<sp/>js</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;name&gt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;field_data2d&gt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;is,<sp/>js&gt;<sp/>starting<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">sum_field_2d_<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight><highlight class="comment"><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_DI_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data2d(:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>i<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">!<sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>field</highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!&lt;<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j1</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i2</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j2</highlight><highlight class="comment"><sp/><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>be<sp/>sure<sp/>module<sp/>has<sp/>been<sp/>initialized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;module<sp/>has<sp/>not<sp/>been<sp/>initialized&apos;</highlight><highlight class="normal">,<sp/>fatal<sp/>)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>obtain<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>integral.<sp/>make<sp/>certain<sp/>it<sp/>is<sp/>valid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field<sp/>=<sp/>get_field_index(name)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(field<sp/>==<sp/>0)<sp/><sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;field<sp/>does<sp/>not<sp/>exist&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>define<sp/>the<sp/>processor-global<sp/>indices<sp/>of<sp/>the<sp/>current<sp/>data.<sp/>use<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>value<sp/>1<sp/>for<sp/>the<sp/>initial<sp/>grid<sp/>points,<sp/>if<sp/>is<sp/>and<sp/>js<sp/>are<sp/>not<sp/>input.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(is))<sp/>i1<sp/>=<sp/>is</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>j1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(js))<sp/>j1<sp/>=<sp/>js</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>j2<sp/>=<sp/>j1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,2)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>increment<sp/>the<sp/>count<sp/>of<sp/>points<sp/>toward<sp/>this<sp/>integral<sp/>and<sp/>add<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>values<sp/>at<sp/>this<sp/>set<sp/>of<sp/>grid<sp/>points<sp/>to<sp/>the<sp/>accumulation<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_count(field)<sp/>=<sp/>field_count(field)<sp/>+<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,1)*</highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,2)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_sum(field)<sp/>=<sp/>field_sum(field)<sp/>+<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum(</highlight><highlight class="keywordtype">real(field_data2d,r8_kind)</highlight><highlight class="normal"><sp/>*<sp/>area(i1:i2,j1:j2))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>END<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">sum_field_2d_</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">!&gt;<sp/>@brief<sp/>Perform<sp/>a<sp/>3<sp/>dimensional<sp/>summation<sp/>of<sp/>named<sp/>field</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">!!<sp/>@implements<sp/>sum_diag_integral_field</highlight></codeline>
+<codeline lineno="115"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="116"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Template:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="117"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="119"><highlight class="comment">!!<sp/>call<sp/>sum_field_3d<sp/>(name,<sp/>field_data3d,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="120"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="121"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="122"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Parameters:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="123"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="125"><highlight class="comment">!!<sp/>character(len=*),<sp/><sp/>intent(in)<sp/>::<sp/>name</highlight></codeline>
+<codeline lineno="126"><highlight class="comment">!!<sp/>real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intent(in)<sp/>::<sp/>field_data3d(:,:,:)</highlight></codeline>
+<codeline lineno="127"><highlight class="comment">!!<sp/>integer,<sp/>optional,<sp/>intent(in)<sp/>::<sp/>is,<sp/>js</highlight></codeline>
+<codeline lineno="128"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;name&gt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight></codeline>
+<codeline lineno="131"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;field_data3d&gt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight></codeline>
+<codeline lineno="132"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;is,<sp/>js&gt;<sp/>starting<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight></codeline>
+<codeline lineno="133"><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">sum_field_3d_<sp/>(name,<sp/>field_data3d,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight><highlight class="comment"><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_DI_KIND_)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data3d(:,:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">!<sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>data2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>field<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>i1,<sp/>j1,<sp/>i2,<sp/>j2<sp/><sp/>!<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension<sp/>(size(field_data3d,1),<sp/><sp/>&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size(field_data3d,2))</highlight><highlight class="normal"><sp/>::<sp/>data2</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>field</highlight><highlight class="comment"><sp/>!&lt;<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>be<sp/>sure<sp/>module<sp/>has<sp/>been<sp/>initialized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;module<sp/>has<sp/>not<sp/>been<sp/>initialized&apos;</highlight><highlight class="normal">,<sp/>fatal<sp/>)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>obtain<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>integral.<sp/>make<sp/>certain<sp/>it<sp/>is<sp/>valid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field<sp/>=<sp/>get_field_index(name)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(field<sp/>==<sp/>0)<sp/><sp/><sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;field<sp/>does<sp/>not<sp/>exist&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>define<sp/>the<sp/>processor-global<sp/>indices<sp/>of<sp/>the<sp/>current<sp/>data.<sp/>use<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>value<sp/>1<sp/>for<sp/>the<sp/>initial<sp/>grid<sp/>points,<sp/>if<sp/>is<sp/>and<sp/>js<sp/>are<sp/>not<sp/>input.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(is))<sp/>i1<sp/>=<sp/>is</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(js))<sp/>j1<sp/>=<sp/>js</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j2<sp/>=<sp/>j1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,2)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>increment<sp/>the<sp/>count<sp/>of<sp/>points<sp/>toward<sp/>this<sp/>integral.<sp/>sum<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>in<sp/>the<sp/>vertical<sp/>and<sp/>then<sp/>add<sp/>the<sp/>values<sp/>at<sp/>this<sp/>set<sp/>of<sp/>grid<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>to<sp/>the<sp/>accumulation<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_count(field)<sp/>=<sp/>field_count(field)<sp/>+<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,1)*</highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,2)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>data2<sp/>=<sp/>sum(</highlight><highlight class="keywordtype">real(field_data3d,r8_kind)</highlight><highlight class="normal">,3)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_sum(field)<sp/>=<sp/>field_sum(field)<sp/>+<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum(data2<sp/>*<sp/>area(i1:i2,j1:j2))</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>END<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">sum_field_3d_</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="206"><highlight class="comment">!&gt;<sp/>@brief<sp/>Perform<sp/>a<sp/>3<sp/>dimensional<sp/>weighted<sp/>summation<sp/>of<sp/>named<sp/>field</highlight></codeline>
+<codeline lineno="207"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="208"><highlight class="comment">!!<sp/>@implements<sp/>sum_diag_integral_field</highlight></codeline>
+<codeline lineno="209"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="210"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Template:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="211"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="212"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="213"><highlight class="comment">!!<sp/>call<sp/>sum_field_wght_3d<sp/>(name,<sp/>field_data3d,<sp/>wt,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="214"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="215"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="216"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Parameters:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="217"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="218"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="219"><highlight class="comment">!!<sp/>character(len=*),<sp/><sp/>intent(in)<sp/>::<sp/>name</highlight></codeline>
+<codeline lineno="220"><highlight class="comment">!!<sp/>real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intent(in)<sp/>::<sp/>field_data3d(:,:,:),<sp/>wt(:,:,:)</highlight></codeline>
+<codeline lineno="221"><highlight class="comment">!!<sp/>integer,<sp/>optional,<sp/>intent(in)<sp/>::<sp/>is,<sp/>js</highlight></codeline>
+<codeline lineno="222"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="223"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="224"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;name&gt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight></codeline>
+<codeline lineno="225"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;field_data3d&gt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight></codeline>
+<codeline lineno="226"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;wt&gt;<sp/>the<sp/>weight<sp/>function<sp/>to<sp/>be<sp/>evaluated<sp/>at<sp/>summation</highlight></codeline>
+<codeline lineno="227"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;is,<sp/>js&gt;<sp/>starting<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight></codeline>
+<codeline lineno="228"><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">sum_field_wght_3d_<sp/>(name,<sp/>field_data3d,<sp/>wt,<sp/>is,<sp/>js)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight><highlight class="comment"><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_DI_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data3d(:,:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_DI_KIND_)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>wt(:,:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>the<sp/>weight<sp/>function<sp/>to<sp/>be<sp/>evaluated<sp/>at<sp/>summation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>i<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting<sp/>j<sp/>indices<sp/>over<sp/>which<sp/>summation<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment">!<sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>data2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>field<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>i1,<sp/>j1,<sp/>i2,<sp/>j2<sp/><sp/>!<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension<sp/>(size(field_data3d,1),size(field_data3d,2))</highlight><highlight class="normal"><sp/>::<sp/>data2</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>field</highlight><highlight class="comment"><sp/>!&lt;<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>be<sp/>sure<sp/>module<sp/>has<sp/>been<sp/>initialized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;module<sp/>has<sp/>not<sp/>been<sp/>initialized&apos;</highlight><highlight class="normal">,<sp/>fatal<sp/>)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>obtain<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>integral.<sp/>make<sp/>certain<sp/>it<sp/>is<sp/>valid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field<sp/>=<sp/>get_field_index(name)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(field<sp/>==<sp/>0)<sp/><sp/><sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;field<sp/>does<sp/>not<sp/>exist&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>define<sp/>the<sp/>processor-global<sp/>indices<sp/>of<sp/>the<sp/>current<sp/>data.<sp/>use<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/>value<sp/>1<sp/>for<sp/>the<sp/>initial<sp/>grid<sp/>points,<sp/>if<sp/>is<sp/>and<sp/>js<sp/>are<sp/>not<sp/>input.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(is))<sp/>i1<sp/>=<sp/>is</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j1<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(js))<sp/>j1<sp/>=<sp/>js</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j2<sp/>=<sp/>j1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,2)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>increment<sp/>the<sp/>count<sp/>of<sp/>points<sp/>toward<sp/>this<sp/>integral.<sp/>sum<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>in<sp/>the<sp/>vertical<sp/>(including<sp/>a<sp/>vertical<sp/>weighting<sp/>factor)<sp/>and<sp/>then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>add<sp/>the<sp/>values<sp/>at<sp/>this<sp/>set<sp/>of<sp/>grid<sp/>points<sp/>to<sp/>the<sp/>accumulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_count(field)<sp/>=<sp/>field_count(field)<sp/>+<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,1)*</highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data3d,2)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>data2<sp/>=<sp/>vert_diag_integral(</highlight><highlight class="keywordtype">real(field_data3d,r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(wt,r8_kind))</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_sum(field)<sp/>=<sp/>field_sum(field)<sp/>+<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum(data2<sp/>*<sp/>area(i1:i2,j1:j2))</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>END<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">sum_field_wght_3d_</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">!###############################################################################</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="301"><highlight class="comment">!&gt;<sp/>@brief<sp/>Perform<sp/>a<sp/>2<sp/>dimensional<sp/>hemispherical<sp/>summation<sp/>of<sp/>named<sp/>field</highlight></codeline>
+<codeline lineno="302"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="303"><highlight class="comment">!!<sp/>@implements<sp/>sum_diag_integral_field</highlight></codeline>
+<codeline lineno="304"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="305"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Template:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="306"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="307"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="308"><highlight class="comment">!!<sp/>call<sp/>sum_field_2d_hemi<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)</highlight></codeline>
+<codeline lineno="309"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="310"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="311"><highlight class="comment">!!<sp/>&lt;b&gt;<sp/>Parameters:<sp/>&lt;/b&gt;</highlight></codeline>
+<codeline lineno="312"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="313"><highlight class="comment">!!<sp/>@code{.f90}</highlight></codeline>
+<codeline lineno="314"><highlight class="comment">!!<sp/>character(len=*),<sp/><sp/>intent(in)<sp/>::<sp/>name</highlight></codeline>
+<codeline lineno="315"><highlight class="comment">!!<sp/>real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intent(in)<sp/>::<sp/>field_data2d(:,:)</highlight></codeline>
+<codeline lineno="316"><highlight class="comment">!!<sp/>integer,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intent(in)<sp/>::<sp/>is,<sp/>js,<sp/>ie,<sp/>je</highlight></codeline>
+<codeline lineno="317"><highlight class="comment">!!<sp/>@endcode</highlight></codeline>
+<codeline lineno="318"><highlight class="comment">!!</highlight></codeline>
+<codeline lineno="319"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;name&gt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight></codeline>
+<codeline lineno="320"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;field_data2d&gt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight></codeline>
+<codeline lineno="321"><highlight class="comment">!!<sp/>@param<sp/>[in]<sp/>&lt;is,<sp/>js,<sp/>ie,<sp/>je&gt;<sp/>starting/ending<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation</highlight></codeline>
+<codeline lineno="322"><highlight class="comment">!!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>to<sp/>occur</highlight></codeline>
+<codeline lineno="323"><highlight class="comment">!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">sum_field_2d_hemi_<sp/>(name,<sp/>field_data2d,<sp/>is,<sp/>ie,<sp/>js,<sp/>je)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="keywordtype">character(len=*)</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>name</highlight><highlight class="comment"><sp/>!&lt;<sp/>Name<sp/>of<sp/>the<sp/>field<sp/>to<sp/>be<sp/>integrated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keywordtype">real(FMS_DI_KIND_)</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>field_data2d(:,:)</highlight><highlight class="comment"><sp/>!&lt;<sp/>field<sp/>of<sp/>integrands<sp/>to<sp/>be<sp/>summed<sp/>over</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>is</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting/ending<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>js</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting/ending<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>ie</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting/ending<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation</highlight></codeline>
+<codeline lineno="333"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>je</highlight><highlight class="comment"><sp/>!&lt;<sp/>starting/ending<sp/>i,j<sp/>indices<sp/>over<sp/>which<sp/>summation</highlight></codeline>
+<codeline lineno="335"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>is<sp/>to<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="comment">!<sp/>local<sp/>variables:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>field<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/>i1,<sp/>j1,<sp/>i2,<sp/>j2<sp/><sp/>!<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>field</highlight><highlight class="comment"><sp/>!&lt;<sp/>index<sp/>of<sp/>desired<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="345"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j1</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="347"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>i2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>j2</highlight><highlight class="comment"><sp/>!&lt;<sp/>location<sp/>indices<sp/>of<sp/>current<sp/>data<sp/>in</highlight></codeline>
+<codeline lineno="351"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!!<sp/>processor-global<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>be<sp/>sure<sp/>module<sp/>has<sp/>been<sp/>initialized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(.not.<sp/>module_is_initialized<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;module<sp/>has<sp/>not<sp/>been<sp/>initialized&apos;</highlight><highlight class="normal">,<sp/>fatal<sp/>)</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>obtain<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>integral.<sp/>make<sp/>certain<sp/>it<sp/>is<sp/>valid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field<sp/>=<sp/>get_field_index(name)</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(field<sp/>==<sp/>0)<sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref><sp/>(</highlight><highlight class="stringliteral">&apos;diag_integral_mod&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;field<sp/>does<sp/>not<sp/>exist&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>define<sp/>the<sp/>processor-global<sp/>indices<sp/>of<sp/>the<sp/>current<sp/>data.<sp/>this<sp/>form</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>is<sp/>needed<sp/>to<sp/>handle<sp/>case<sp/>of<sp/>2d<sp/>domain<sp/>decomposition<sp/>with<sp/>physics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>window<sp/>smaller<sp/>than<sp/>processor<sp/>domain<sp/>size.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i1<sp/>=<sp/>mod(<sp/>(is-1),<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,1)<sp/>)<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i2<sp/>=<sp/>i1<sp/>+<sp/></highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,1)<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>for<sp/>a<sp/>hemispheric<sp/>sum,<sp/>sum<sp/>one<sp/>jrow<sp/>at<sp/>a<sp/>time<sp/>in<sp/>case<sp/>a<sp/>processor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>has<sp/>data<sp/>from<sp/>both<sp/>hemispheres.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j1<sp/>=<sp/>mod(<sp/>(js-1)<sp/>,</highlight><highlight class="keyword">size</highlight><highlight class="normal">(field_data2d,2)<sp/>)<sp/>+<sp/>1</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j2<sp/>=<sp/>j1</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>increment<sp/>the<sp/>count<sp/>of<sp/>points<sp/>toward<sp/>this<sp/>integral.<sp/>include<sp/>hemi-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>spheric<sp/>factor<sp/>of<sp/>2<sp/>in<sp/>field_count.<sp/>add<sp/>the<sp/>data<sp/>values<sp/>at<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/><sp/><sp/>set<sp/>of<sp/>grid<sp/>points<sp/>to<sp/>the<sp/>accumulation<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="comment">!-------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_count(field)<sp/>=<sp/>field_count(field)<sp/>+<sp/>2*<sp/>(i2-i1+1)*(j2-j1+1)</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>field_sum(field)<sp/>=<sp/>field_sum(field)<sp/>+<sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum(<sp/></highlight><highlight class="keywordtype">real(field_data2d(i1:i2,j1:j2),r8_kind)</highlight><highlight class="normal"><sp/>*<sp/>area(is:ie,js:je))</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="comment">!$OMP<sp/>END<sp/>CRITICAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">sum_field_2d_hemi_</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="400"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_integral/include/diag_integral.inc"/>
+  </compounddef>
+</doxygen>

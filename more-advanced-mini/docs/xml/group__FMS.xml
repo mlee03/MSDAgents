@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__FMS" kind="group">
+    <compoundname>FMS</compoundname>
+    <title>FMS</title>
+    <innernamespace refid="namespacefms">fms</innernamespace>
+    <briefdescription>
+<para>A convenience module to use any FMS routines, functions, values. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ryan Mulhall</para></simplesect>
+<simplesect kind="date"><para>2/2021</para></simplesect>
+Imports all supported FMS modules so that any public interfaces, variables or routines can be used via this module. Excludes mpp_io modules and routines. Overloaded type operators/assignments cannot be imported individually (ie. <computeroutput>use fms, only: OPERATOR(*)</computeroutput> includes any defined &apos;*&apos; operators within FMS).</para><para>Renaming scheme: Routines and variables: fms_&lt;module_name&gt;_routine_name Types: FmsModuleNameTypeName</para><para>Exceptions (mainly for rep:<itemizedlist>
+<listitem><para>Parameter values are kept their original names</para></listitem><listitem><para>If module name is already included (like in init routines) only fms prefix will be added.</para></listitem><listitem><para>Similarly if theres a redundant module name included already included it will not be repeated (ie. mpp_update_domains =&gt; fms_mpp_domains_update_domains)</para></listitem><listitem><para>Override interfaces for operators and assignment are provided</para></listitem></itemizedlist>
+</para><para>Remappings due to name conflicts: <verbatim>      ZERO from interpolator_mod(mpp_parameter)  =&gt; INTERPOLATOR_ZERO
+
+      version from fms_mod                       =&gt; version_FMS
+</verbatim></para><para>Not in this module: <verbatim>                axis_utils_mod, fms_io_mod, time_interp_external_mod
+                get_grid_version_mpp_mod, mpp_io_mod, mosaic_mod, &amp;
+                fms_mod(partial, old io excluded), drifters modules
+                constants_mod (FMSconstants should be used externally)
+                grid_mod, mosaic_mod
+</verbatim></para><para>A full list of supported interfaces and public types intended for use via this module is provided in the ../../supported_interfaces.md &quot;supported_interfaces.md&quot; file. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

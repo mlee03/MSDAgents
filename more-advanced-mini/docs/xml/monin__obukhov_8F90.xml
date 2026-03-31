@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="monin__obukhov_8F90" kind="file" language="Fortran">
+    <compoundname>monin_obukhov.F90</compoundname>
+    <includes refid="file__version_8h" local="no">file_version.h</includes>
+    <includes local="yes">monin_obukhov_r4.fh</includes>
+    <includes local="yes">monin_obukhov_r8.fh</includes>
+    <incdepgraph>
+      <node id="447">
+        <label>monin_obukhov_r4.fh</label>
+      </node>
+      <node id="448">
+        <label>monin_obukhov_r8.fh</label>
+      </node>
+      <node id="446">
+        <label>file_version.h</label>
+        <link refid="file__version_8h_source"/>
+      </node>
+      <node id="445">
+        <label>/home/Ryan.Mulhall/FMS-1/monin_obukhov/monin_obukhov.F90</label>
+        <link refid="monin__obukhov_8F90"/>
+        <childnode refid="446" relation="include">
+        </childnode>
+        <childnode refid="447" relation="include">
+        </childnode>
+        <childnode refid="448" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__derivative__m" prot="private">monin_obukhov_mod::mo_derivative_m</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__derivative__t" prot="private">monin_obukhov_mod::mo_derivative_t</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__diff" prot="private">monin_obukhov_mod::mo_diff</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__drag" prot="private">monin_obukhov_mod::mo_drag</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__integral__m" prot="private">monin_obukhov_mod::mo_integral_m</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__integral__tq" prot="private">monin_obukhov_mod::mo_integral_tq</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1mo__profile" prot="private">monin_obukhov_mod::mo_profile</innerclass>
+    <innerclass refid="interfacemonin__obukhov__mod_1_1stable__mix" prot="private">monin_obukhov_mod::stable_mix</innerclass>
+    <innernamespace refid="namespacemonin__obukhov__mod">monin_obukhov_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!***********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Apache<sp/>License<sp/>2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>GFDL<sp/>Flexible<sp/>Modeling<sp/>System<sp/>(FMS).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>FMS<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!*<sp/>governing<sp/>permissions<sp/>and<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">!***********************************************************************</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">!&gt;<sp/>@defgroup<sp/>monin_obukhov_mod<sp/>monin_obukhov_mod</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>monin_obukhov</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!&gt;<sp/>@brief<sp/>Routines<sp/>for<sp/>computing<sp/>surface<sp/>drag<sp/>coefficients</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">!!<sp/>from<sp/>data<sp/>at<sp/>the<sp/>lowest<sp/>model<sp/>level</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">!!<sp/>and<sp/>for<sp/>computing<sp/>the<sp/>profile<sp/>of<sp/>fields</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">!!<sp/>between<sp/>the<sp/>lowest<sp/>model<sp/>level<sp/>and<sp/>the<sp/>ground</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">!!<sp/>using<sp/>Monin-Obukhov<sp/>scaling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/>monin_obukhov_mod</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">constants_mod,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>grav,<sp/>vonkarm</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">mpp_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>input_nml_file</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fms_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>,<sp/>fatal,<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>,<sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>,<sp/>mpp_root_pe,<sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">monin_obukhov_inter,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="interfacemonin__obukhov__inter_1_1monin__obukhov__diff" kindref="compound">monin_obukhov_diff</ref>,<sp/><ref refid="interfacemonin__obukhov__inter_1_1monin__obukhov__drag__1d" kindref="compound">monin_obukhov_drag_1d</ref>,<sp/>&amp;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacemonin__obukhov__inter_1_1monin__obukhov__profile__1d" kindref="compound">monin_obukhov_profile_1d</ref>,<sp/><ref refid="interfacemonin__obukhov__inter_1_1monin__obukhov__stable__mix" kindref="compound">monin_obukhov_stable_mix</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">platform_mod,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>r4_kind,<sp/>r8_kind</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/>monin_obukhov_init</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/>monin_obukhov_end</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__drag" kindref="compound">mo_drag</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__profile" kindref="compound">mo_profile</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__diff" kindref="compound">mo_diff</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="interfacemonin__obukhov__mod_1_1stable__mix" kindref="compound">stable_mix</ref></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">!&gt;<sp/>@brief<sp/>Compute<sp/>surface<sp/>drag<sp/>coefficients</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>monin_obukhov_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="interfacemonin__obukhov__mod_1_1mo__drag" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__drag" kindref="compound">mo_drag</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_drag_0d_r4,<sp/>mo_drag_0d_r8</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_drag_1d_r4,<sp/>mo_drag_1d_r8</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_drag_2d_r4,<sp/>mo_drag_2d_r8</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="57"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>monin_obukhov_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="interfacemonin__obukhov__mod_1_1mo__profile" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__profile" kindref="compound">mo_profile</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_0d_r4,<sp/>mo_profile_0d_r8</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_1d_r4,<sp/>mo_profile_1d_r8</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_2d_r4,<sp/>mo_profile_2d_r8</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_0d_n_r4,<sp/>mo_profile_0d_n_r8</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_1d_n_r4,<sp/>mo_profile_1d_n_r8</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_profile_2d_n_r4,<sp/>mo_profile_2d_n_r8</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>monin_obukhov_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="interfacemonin__obukhov__mod_1_1mo__diff" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__diff" kindref="compound">mo_diff</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_0d_n_r4,<sp/>mo_diff_0d_n_r8</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_0d_1_r4,<sp/>mo_diff_0d_1_r8</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_1d_n_r4,<sp/>mo_diff_1d_n_r8</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_1d_1_r4,<sp/>mo_diff_1d_1_r8</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_2d_n_r4,<sp/>mo_diff_2d_n_r8</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_diff_2d_1_r4,<sp/>mo_diff_2d_1_r8</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment">!&gt;<sp/>@ingroup<sp/>monin_obukhov_mod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="interfacemonin__obukhov__mod_1_1stable__mix" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1stable__mix" kindref="compound">stable_mix</ref></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>stable_mix_0d_r4,<sp/>stable_mix_0d_r8</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>stable_mix_1d_r4,<sp/>stable_mix_1d_r8</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>stable_mix_2d_r4,<sp/>stable_mix_2d_r8</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>stable_mix_3d_r4,<sp/>stable_mix_3d_r8</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="interfacemonin__obukhov__mod_1_1mo__integral__m" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__integral__m" kindref="compound">mo_integral_m</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_integral_m_r4,<sp/>mo_integral_m_r8</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacemonin__obukhov__mod_1_1mo__integral__m" kindref="compound">mo_integral_m</ref></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="interfacemonin__obukhov__mod_1_1mo__integral__tq" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__integral__tq" kindref="compound">mo_integral_tq</ref></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_integral_tq_r4,<sp/>mo_integral_tq_r8</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacemonin__obukhov__mod_1_1mo__integral__tq" kindref="compound">mo_integral_tq</ref></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="interfacemonin__obukhov__mod_1_1mo__derivative__m" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__derivative__m" kindref="compound">mo_derivative_m</ref></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_derivative_m_r4,<sp/>mo_derivative_m_r8</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacemonin__obukhov__mod_1_1mo__derivative__m" kindref="compound">mo_derivative_m</ref></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="interfacemonin__obukhov__mod_1_1mo__derivative__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfacemonin__obukhov__mod_1_1mo__derivative__t" kindref="compound">mo_derivative_t</ref></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/>mo_derivative_t_r4,<sp/>mo_derivative_t_r8</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfacemonin__obukhov__mod_1_1mo__derivative__t" kindref="compound">mo_derivative_t</ref></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment">!&gt;<sp/>@addtogroup<sp/>monin_obukhov_mod</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">!&gt;<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">!<sp/>version<sp/>number<sp/>of<sp/>this<sp/>module</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Include<sp/>variable<sp/>&quot;version&quot;<sp/>to<sp/>be<sp/>written<sp/>to<sp/>log<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;file_version.h&gt;</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>DEFAULT<sp/>VALUES<sp/>OF<sp/>NAMELIST<sp/>PARAMETERS:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>rich_crit<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2.0_r8_kind</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>drag_min_heat<sp/><sp/>=<sp/>1.0e-05_r8_kind</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>drag_min_moist<sp/>=<sp/>1.0e-05_r8_kind</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>drag_min_mom<sp/><sp/><sp/>=<sp/>1.0e-05_r8_kind</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>neutral<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>stable_option<sp/><sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/>::<sp/>zeta_trans<sp/><sp/><sp/><sp/><sp/>=<sp/>0.5_r8_kind</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>new_mo_option<sp/><sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">namelist<sp/>/monin_obukhov_nml/<sp/>rich_crit,<sp/>neutral,<sp/>drag_min_heat,<sp/>&amp;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drag_min_moist,<sp/>drag_min_mom,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stable_option,<sp/>zeta_trans,<sp/>new_mo_option<sp/></highlight><highlight class="comment">!miz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">!<sp/><sp/>MODULE<sp/>VARIABLES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>small<sp/><sp/>=<sp/>1.0e-04_r8_kind</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>b_stab,<sp/>r_crit,<sp/>lambda,<sp/>rich_trans</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">real(kind=r8_kind)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>sqrt_drag_min_heat,<sp/>sqrt_drag_min_moist,<sp/>sqrt_drag_min_mom</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>module_is_initialized<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">monin_obukhov_init</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ierr,<sp/>io,<sp/>logunit</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">!-------------------<sp/>read<sp/>namelist<sp/>input<sp/>-------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">read</highlight><highlight class="normal"><sp/>(input_nml_file,<sp/>nml=monin_obukhov_nml,<sp/>iostat=io)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/><ref refid="group__fms__mod_1ga05e7686befc1e49d2be9bdb81d479a76" kindref="member">check_nml_error</ref>(io,</highlight><highlight class="stringliteral">&quot;monin_obukhov_nml&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">!----------<sp/>output<sp/>namelist<sp/>to<sp/>log-------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="group__mpp__mod_1gacfeba7de56f9dd6000b3fd78f9d56c50" kindref="member">mpp_pe</ref>()<sp/>==<sp/>mpp_root_pe()<sp/>)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1ga0c093df98a75dbd9e0f3add67aa6c23a" kindref="member">write_version_number</ref>(</highlight><highlight class="stringliteral">&apos;MONIN_OBUKOV_MOD&apos;</highlight><highlight class="normal">,<sp/>version)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logunit<sp/>=<sp/><ref refid="group__mpp__mod_1ga8e5518df9532bae0241f53ab542294a2" kindref="member">stdlog</ref>()</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal"><sp/>(logunit,<sp/>nml=monin_obukhov_nml)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">!----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rich_crit.le.0.25_r8_kind)<sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;rich_crit<sp/>in<sp/>monin_obukhov_mod<sp/>must<sp/>be<sp/>&gt;<sp/>0.25&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_heat.le.0.0_r8_kind)<sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;drag_min_heat<sp/>in<sp/>monin_obukhov_mod<sp/>must<sp/>be<sp/>&gt;=<sp/>0.0&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_moist.le.0.0_r8_kind)<sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;drag_min_moist<sp/>in<sp/>monin_obukhov_mod<sp/>must<sp/>be<sp/>&gt;=<sp/>0.0&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_mom.le.0.0_r8_kind)<sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;drag_min_mom<sp/>in<sp/>monin_obukhov_mod<sp/>must<sp/>be<sp/>&gt;=<sp/>0.0&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stable_option<sp/>&lt;<sp/>1<sp/>.or.<sp/>stable_option<sp/>&gt;<sp/>2)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;the<sp/>only<sp/>allowable<sp/>values<sp/>of<sp/>stable_option<sp/>are<sp/>1<sp/>and<sp/>2&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stable_option<sp/>==<sp/>2<sp/>.and.<sp/>zeta_trans<sp/>&lt;<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="group__fms__mod_1gae5c7420e421293e2be14717dd7b3d97f" kindref="member">error_mesg</ref>(<sp/>&amp;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MONIN_OBUKHOV_INIT<sp/>in<sp/>MONIN_OBUKHOV_MOD&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;zeta_trans<sp/>must<sp/>be<sp/>positive&apos;</highlight><highlight class="normal">,<sp/>fatal)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal">b_stab<sp/>=<sp/>1.0_r8_kind/rich_crit</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">r_crit<sp/>=<sp/>0.95_r8_kind*rich_crit<sp/><sp/></highlight><highlight class="comment">!<sp/>convergence<sp/>can<sp/>get<sp/>slow<sp/>if<sp/>one<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>close<sp/>to<sp/>rich_crit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">sqrt_drag_min_heat<sp/>=<sp/>0.0_r8_kind</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_heat.ne.0.0_r8_kind)<sp/>sqrt_drag_min_heat<sp/>=<sp/>sqrt(drag_min_heat)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">sqrt_drag_min_moist<sp/>=<sp/>0.0_r8_kind</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_moist.ne.0.0_r8_kind)<sp/>sqrt_drag_min_moist<sp/>=<sp/>sqrt(drag_min_moist)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">sqrt_drag_min_mom<sp/>=<sp/>0.0_r8_kind</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drag_min_mom.ne.0.0_r8_kind)<sp/>sqrt_drag_min_mom<sp/>=<sp/>sqrt(drag_min_mom)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">lambda<sp/><sp/><sp/><sp/><sp/>=<sp/>1.0_r8_kind<sp/>+<sp/>(5.0_r8_kind<sp/>-<sp/>b_stab)*zeta_trans<sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>used<sp/>only<sp/>if<sp/>stable_option<sp/>=<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">rich_trans<sp/>=<sp/>zeta_trans/(1.0_r8_kind<sp/>+<sp/>5.0_r8_kind*zeta_trans)<sp/></highlight><highlight class="comment">!<sp/>used<sp/>only<sp/>if<sp/>stable_option<sp/>=<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">module_is_initialized<sp/>=<sp/>.true.</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">monin_obukhov_init</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal">monin_obukhov_end</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal">module_is_initialized<sp/>=<sp/>.false.</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal">monin_obukhov_end</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">!=======================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;monin_obukhov_r4.fh&quot;</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;monin_obukhov_r8.fh&quot;</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">monin_obukhov_mod</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="218"><highlight class="comment">!&gt;<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="comment">!<sp/>close<sp/>documentation<sp/>grouping</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/monin_obukhov/monin_obukhov.F90"/>
+  </compounddef>
+</doxygen>

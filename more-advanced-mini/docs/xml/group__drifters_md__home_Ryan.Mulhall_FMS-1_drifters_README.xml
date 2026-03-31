@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__drifters_md__home_Ryan.Mulhall_FMS-1_drifters_README" kind="page">
+    <compoundname>md__home_Ryan.Mulhall_FMS-1_drifters_README</compoundname>
+    <title>README</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="1">Drifters</heading>
+</para><para><ulink url="mailto:Alexander.Pletzer@noaa.gov">Alexander.Pletzer@noaa.gov</ulink></para><para><heading level="2">Overview:</heading>
+</para><para><orderedlist>
+<listitem><para><ulink url="#1-what-are-drifters">What are drifters?</ulink></para></listitem><listitem><para><ulink url="#2-the-drifters-module">The drifters&apos; module</ulink></para></listitem><listitem><para><ulink url="#3-what-the-drifters-module-can-and-cannot-do">What the drifters&apos; module can and cannot do?</ulink></para></listitem><listitem><para><ulink url="#4-how-to-invoke-the-drifters-module-in-your-code">How to invoke the drifters&apos; module in your code</ulink></para></listitem><listitem><para><ulink url="#5-pre-and-post-processing">Pre- and post-processing</ulink></para></listitem><listitem><para><ulink url="#6-loose-ends">Loose ends</ulink></para></listitem></orderedlist>
+</para><para><heading level="2">1. What are drifters?</heading>
+</para><para>Drifters are idealized point particles with positions that evolve in time according to a prescribed velocity field, starting from some initial conditions. Drifters have no mass, no energy, no size, and no friction and therefore have no impact on the dynamics of the underlying system. The only feature that distinguishes a drifter from another is its trajectory. This makes drifters ideal for tracking pollution clouds and probing fields (e.g. temperature, salinity) along ocean currents. Drifters can mimic real experiments such as the Argo floats <ulink url="http://www.metoffice.com/research/ocean/argo/ukfloats.html">http://www.metoffice.com/research/ocean/argo/ukfloats.html</ulink>.</para><para><heading level="2">2. The drifters&apos; module</heading>
+</para><para>The drifters&apos; module (drifters_mod) is a Fortran module built on top of low level kernels. The code was designed to run in parallel within a coupled FMS model.</para><para>The general layout is:</para><para><heading level="5">Top layer:</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="drifters_8F90_source" kindref="compound">drifters.F90</ref>: exposes the API</para></listitem></itemizedlist>
+</para><para><heading level="5">Some low level kernels:</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="cloud__interpolator_8F90_source" kindref="compound">cloud_interpolator.F90</ref>: (linear) interpolation of a structured field at random positions</para></listitem><listitem><para><ref refid="drifters__comm_8F90_source" kindref="compound">drifters_comm.F90</ref>: updates positions across processor (PE) domains</para></listitem><listitem><para><ref refid="drifters__core_8F90_source" kindref="compound">drifters_core.F90</ref>: handles the mechanics for adding/removing drifters</para></listitem><listitem><para><ref refid="drifters__input_8F90_source" kindref="compound">drifters_input.F90</ref>: imports initial positions from a NetCDF file</para></listitem><listitem><para><ref refid="drifters__io_8F90_source" kindref="compound">drifters_io.F90</ref>: saves data for postprocessing and restart</para></listitem></itemizedlist>
+</para><para><heading level="2">3. What the drifters&apos; module can and cannot do?</heading>
+</para><para>The drifters&apos; module will handle all the communication necessary to keep track of positions within PE domains. This will involve adding/removing drifters when they enter/leave a PE domain. As the number of drifters can vary greatly both between PE domains and in the course of a simulation, the drifters&apos; module will also manage dynamically the memory for you.</para><para>The drifters&apos; code was written to run efficiently by avoiding unnecessary data copies. There is no software limit as to the maximum number of drifters and their distribution. The drifters&apos; module is ideally suited for long runs where the amount of data required to advect particles is large, making it impractical to use a post-processing approach. Such a situation occurs, in particular, when the velocity fields must be saved at high sampling rate in order to compute accurately the drifters&apos; positions.</para><para>Although a Runge-Kutta method is provided to push drifters, users may want to implement their own time-integration scheme in some cases. It is moreover possible to combine time integration along some axes while prescribing the evolution in the third axis, as would be the case for robotic floats that move up and down in predetermined way, for instance.</para><para>There are a number of basic assumptions which could make the drifters&apos; module ill-suited for some tasks. First and foremost, it is assumed that the motion of drifters is not erratic but follows deterministic trajectories. Furthermore, drifters should not cross both compute and data domain boundaries within less than a time step. This limitation is imposed by the Runge-Kutta integration scheme, which must be able to complete, within a time step, a trajectory calculation that starts inside the compute domain. Therefore, the drifters, as they are presently modeled, are unlikely to work for very fast objects. This constraint also puts a upper limit to the domain decomposition, although it can often be remedied by increasing the number of ghost nodes.</para><para>Another fundamental assumption is that the (e.g. velocity) fields are structured, on a per PE domain basis. There is no support for locally nested or unstructured meshes. Meshes need not be smooth and continuous across PE domains, however.</para><para>If the higher level module drifters_mod cannot do what you need, the chances are the kernels will be able to. For instance, the upper level assumes, at present, two-dimensional (x,y) positions, and a two-dimension domain decomposition. The cloud_interpolator kernel on the other hand makes no such assumption; it can be used to interpolate structured data in arbitrary number of dimensions and with no dependence on FMS code.</para><para><heading level="2">4. How to invoke the drifters&apos; module in your code</heading>
+</para><para>In order to implement drifters in your code, you will need to get access to the velocity fields at all times. You will also need to settle on a definition of a position, which could be the longitude, latitude, elevation/depth triplet. The drifters&apos; code does not care what your choice of position is. Typically, you will want, however, to choose positions that are aligned to the velocity axes, and to your coordinate system. It is perfectly fine to use a warped coordinate system (e.g. tripolar), which avoids the problem of geometric singularity (pole).</para><para>Naturally, it is important for the velocity field&apos;s units to be consistent with both positions and time. Often, some metric coefficients are required for this transformation. The drifters&apos; module does not have any support for specific meshes per se. Each component of the velocity can sit on different nodes, as in the case of Arakawa C and D meshes.</para><para>You will also need to know what the boundaries of your &quot;compute&quot; and &quot;data&quot; domains are, when running in parallel. Your compute domain, expressed in terms of <computeroutput>xcmin</computeroutput>, <computeroutput>xcmax</computeroutput>, <computeroutput>ycmin</computeroutput> and <computeroutput>ycmax</computeroutput> should densely cover the entire domain; that is <programlisting filename=".Fortran"><codeline><highlight class="normal">xcmin[pe_east]<sp/><sp/>=<sp/>xcmax[pe]</highlight></codeline>
+<codeline><highlight class="normal">ycmin[pe_north]<sp/>=<sp/>ycmax[pe]</highlight></codeline>
+<codeline><highlight class="normal">etc.</highlight></codeline>
+</programlisting></para><para>The data domain should be larger than the compute domain. The larger the velocities or the larger the time steps, the more ghost nodes are required. You should also pay attention to the fact that <emphasis>all</emphasis> components of your velocity need to fall inside the data domain. If you&apos;re using a staggered grid (Arakawa&apos;s B, C grids) you should reduce the max data domain by <computeroutput>dx</computeroutput>, resp. <computeroutput>dy</computeroutput>, in every direction.</para><para>The implementation of drifters involves typically the following steps, which will be assumed to run on different PEs:</para><para><programlisting filename=".Fortran"><codeline><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">drifters_mod</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>declare<sp/>drifters<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(drifters_type)<sp/>::<sp/>drfts<sp/></highlight><highlight class="comment">!<sp/>drifters&apos;<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_new(drfts,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>input_file<sp/>=</highlight><highlight class="stringliteral">&apos;INPUT/drifters_inp.nc&apos;</highlight><highlight class="normal"><sp/><sp/>,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>output_file=</highlight><highlight class="stringliteral">&apos;drifters_out.nc&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>initial<sp/>time<sp/>and<sp/>dt</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">drfts%time<sp/>=<sp/>t0</highlight></codeline>
+<codeline><highlight class="normal">drfts%dt<sp/><sp/><sp/>=<sp/>dt</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>PE<sp/>domain<sp/>boundaries.<sp/>Xmin_comp/ymin_comp,<sp/>xmax_comp/ymax_comp</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>refer<sp/>to<sp/>the<sp/>&quot;compute&quot;<sp/>domain,<sp/>which<sp/>should<sp/>cover<sp/>densily<sp/>the<sp/>domain:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>xcmax[pe]<sp/>=<sp/>xcmin[pe_east]</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>ycmax[pe]<sp/>=<sp/>ycmin[pe_north]</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Xmin_data/ymin_data,<sp/>xmax_data/ymax_data<sp/>refer<sp/>to<sp/>the<sp/>&quot;data&quot;<sp/>domain,<sp/>which</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>should<sp/>be<sp/>larger<sp/>than<sp/>the<sp/>compute<sp/>domain<sp/>and<sp/>therefore<sp/>overlap:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>xdmax[pe]<sp/>&gt;<sp/>xdmin[pe_east]</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>ydmax[pe]<sp/>&gt;<sp/>ydmin[pe_north]</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Particles<sp/>in<sp/>the<sp/>overlap<sp/>regions<sp/>are<sp/>tracked<sp/>by<sp/>several<sp/>PEs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_domain(drfts,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_comp=xcmin,<sp/>xmax_comp=xcmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_comp=ycmin,<sp/>ymax_comp=ycmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_data=xdmin,<sp/>xmax_data=xdmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ymin_data=ydmin,<sp/>ymax_data=ydmax,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>xmin_glob=xmin<sp/>,<sp/>xmax_glob=xmax,<sp/><sp/>&amp;<sp/></highlight><highlight class="comment">!<sp/>this<sp/>will<sp/>set<sp/>periodicity<sp/>in<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>set<sp/>neighboring<sp/>PEs<sp/>[domain2d<sp/>is<sp/>of<sp/>type(domain2d)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_pe_neighbors(drfts,<sp/>domain=<ref refid="structmpp__domains__mod_1_1domain2d" kindref="compound">domain2d</ref>,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>set<sp/>the<sp/>velocities<sp/>axes.<sp/>Each<sp/>velocity<sp/>can<sp/>have<sp/>different<sp/>axes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_v_axes(drfts,<sp/>component=</highlight><highlight class="stringliteral">&apos;u&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x_u,<sp/>y=y_u,<sp/>z=z_u,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_v_axes(drfts,<sp/>component=</highlight><highlight class="stringliteral">&apos;v&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x=x_v,<sp/>y=y_v,<sp/>z=z_v,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Distribute<sp/>the<sp/>drifters<sp/>across<sp/>PEs</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_distribute(drfts,<sp/>ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Push<sp/>the<sp/>drifters.<sp/>u_comp,<sp/>v_comp<sp/>etc<sp/>are<sp/>provided<sp/>by<sp/>the<sp/>host<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_push(drfts,<sp/>u=u_comp,<sp/>v=v_comp,<sp/>w=w_comp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(time<sp/>&lt;<sp/>time_end)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Update<sp/>the<sp/>velocities</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">....</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>Push<sp/>the<sp/>drifters</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_push(drfts,<sp/>u=u_comp,<sp/>v=v_comp,<sp/>w=w_comp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>check<sp/>if<sp/>RK4<sp/>integration<sp/>is<sp/>complete</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(drfts%rk4_step==1)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>interpolate<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_set_field(drfts,<sp/>index_field=1,<sp/>x=x1,<sp/>y=y1,<sp/>z=z1,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/>data=temp,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>....<sp/></highlight><highlight class="comment">!<sp/>set<sp/>other<sp/>fields<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>save<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_save(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">enddo</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>write<sp/>restart<sp/>file,<sp/>optionally<sp/>with<sp/>lon/lat<sp/>data<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_write_restart(drfts,<sp/>filename=</highlight><highlight class="stringliteral">&apos;RESTART/drifters_inp.nc&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x1=x_u,<sp/>y1=y_v,<sp/>geolon1=grid%geolonq,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>x2=x_u,<sp/>y2=y_v,<sp/>geolat2=grid%geolatq,<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>ermesg=ermesg)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">!<sp/>destroy</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">drifters_del(drfts,<sp/>ermesg=ermesg)</highlight></codeline>
+</programlisting></para><para><heading level="2">5. Pre- and post-processing</heading>
+</para><para>A typical NetCDF input file contains:</para><para><programlisting><codeline><highlight class="normal">netcdf<sp/>drifters_inp<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nd<sp/>=<sp/>2<sp/>;<sp/>//<sp/>number<sp/>of<sp/>dimensions<sp/>(2<sp/>or<sp/>3)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>np<sp/>=<sp/>5<sp/>;<sp/>//<sp/>number<sp/>of<sp/>particles</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>positions(np,<sp/>nd)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:names<sp/>=<sp/>&quot;i<sp/>j&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:units<sp/>=<sp/>&quot;-<sp/>-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>ids(np)<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>global<sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:velocity_names<sp/>=<sp/>&quot;u<sp/>v&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:field_names<sp/>=<sp/>&quot;lon<sp/>lat<sp/>temp<sp/>salt&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:field_units<sp/>=<sp/>&quot;deg_N<sp/>deg_E<sp/>Celsius<sp/>ppu&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:time_units<sp/>=<sp/>&quot;seconds&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:title<sp/>=<sp/>&quot;example<sp/>of<sp/>input<sp/>data<sp/>for<sp/>drifters&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">data:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>positions<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>100,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>110,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>120,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>130,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>240,<sp/>140<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>ids<sp/>=<sp/>1,<sp/>2,<sp/>3,<sp/>4,<sp/>5<sp/>;<sp/>//<sp/>must<sp/>range<sp/>from<sp/>1<sp/>to<sp/>np,<sp/>in<sp/>any<sp/>order</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>In this case, the 2-d initial conditions consist of 5 particles at positions (240,100), (240, 110), .... Here, the positions are defined as i, j global indices. The fields to interpolate are the longitudes, latitudes, temperature and salinity.</para><para>The output files have names <computeroutput>&lt;output&gt;.nc.&lt;PE&gt;</computeroutput> where PE ranges 0...number of domains-1. Each PE writes to an independent NetCDF file. These files contain a history of positions and field values:</para><para><programlisting><codeline><highlight class="normal">netcdf<sp/>drifters_out.nc<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>it_id<sp/>=<sp/>UNLIMITED<sp/>;<sp/>//<sp/>(10<sp/>currently)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nf<sp/>=<sp/>4<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>nd<sp/>=<sp/>2<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>index_time(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>time(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>int<sp/>ids(it_id)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>positions(it_id,<sp/>nd)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:name_1<sp/>=<sp/>&quot;i&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:name_2<sp/>=<sp/>&quot;j&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:unit_1<sp/>=<sp/>&quot;-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>positions:unit_2<sp/>=<sp/>&quot;-&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>double<sp/>fields(it_id,<sp/>nf)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_1<sp/>=<sp/>&quot;lon&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_2<sp/>=<sp/>&quot;lat&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_3<sp/>=<sp/>&quot;temp&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:name_4<sp/>=<sp/>&quot;salt&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_1<sp/>=<sp/>&quot;deg_N&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_2<sp/>=<sp/>&quot;deg_E&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_3<sp/>=<sp/>&quot;Celsius&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>fields:unit_4<sp/>=<sp/>&quot;ppu&quot;<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>global<sp/>attributes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:time_units<sp/>=<sp/>&quot;seconds&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">data:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>index_time<sp/>=<sp/>0,<sp/>0,<sp/>1,<sp/>1,<sp/>2,<sp/>2,<sp/>3,<sp/>3,<sp/>4,<sp/>4<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>time<sp/>=<sp/>17280,<sp/>17280,<sp/>34560,<sp/>34560,<sp/>51840,<sp/>51840,<sp/>69120,<sp/>69120,<sp/>86400,<sp/>86400<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>ids<sp/>=<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2,<sp/>1,<sp/>2<sp/>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>positions<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>239.992427824695,<sp/>99.9982201799336,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>239.992780388996,<sp/>110.000731652201,</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"><sp/>fields<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-52.5075721753049,<sp/>11.5056520209176,<sp/>26.5841099585423,<sp/>35.4729937970157,</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>A tool, drifters_combine, has been written to combine all the NetCDF files into a single file, which contains all the drifters data and is suitable for post-processing, including visualization using Ncvtk 1.7 or later.</para><para><heading level="2">6. Loose ends</heading>
+</para><para><itemizedlist>
+<listitem><para>What to do with fields that are outside the valid_range (e.g. on continents in the case of floats). Use piece-wise linear interpolation or fill with missing values?</para></listitem><listitem><para>How to make the drifters Mosaic compliant?</para></listitem><listitem><para>Allow drifters to turn on/off at specific time? A predetermined life cycle?</para></listitem><listitem><para>Extract initial positions from databases.</para></listitem><listitem><para>How best to visualize drifters? </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

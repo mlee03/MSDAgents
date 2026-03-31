@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacefms2__io__mod_1_1register__field" kind="interface" language="Fortran" prot="private">
+    <compoundname>fms2_io_mod::register_field</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacefms2__io__mod_1_1register__field_1a958d4c826aeb84c0c30c84a2cea29379" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>netcdf_add_variable_wrap</definition>
+        <argsstring></argsstring>
+        <name>netcdf_add_variable_wrap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefms2__io__mod_1_1register__field_1a04b4b8c280bc00e285720c4107b006dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>register_domain_variable</definition>
+        <argsstring></argsstring>
+        <name>register_domain_variable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacefms2__io__mod_1_1register__field_1a8b980647370bf8fba36dbf1b64de32dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>register_unstructured_domain_variable</definition>
+        <argsstring></argsstring>
+        <name>register_unstructured_domain_variable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a new field/variable within the given file. After a variable is registered, users can write data to the file via <ref refid="interfacefms2__io__mod_1_1write__data" kindref="compound">write_data</ref>. <linebreak/>
+Example usage: </para>    </briefdescription>
+    <detaileddescription>
+<para>call <ref refid="interfacefms2__io__mod_1_1register__field" kindref="compound">register_field</ref>(fileobj, &quot;lon&quot;, &quot;double&quot;, (/&quot;lon&quot;/) )</para><para>Adds a floating point double precision (kind=8) variable named &quot;lon&quot; to the given file, corresponding to the list of dimension names (which must be previously registered in the fileobj with <ref refid="interfacefms2__io__mod_1_1register__axis" kindref="compound">register_axis</ref>). The dimension name list corresponds to the dimensions of the field. <linebreak/>
+Example: <verbatim>         call register_field(fileobj, &quot;variable_2d&quot;, &quot;double&quot;, (/&quot;lon&quot;, &quot;lat&quot;/))
+</verbatim></para><para><simplesect kind="note"><para>For individual documentation on the listed routines, please see the appropriate helper module. For netcdf files with a structured domain: <ref refid="group__fms__netcdf__domain__io__mod" kindref="compound">fms_netcdf_domain_io_mod</ref>. For netcdf files with an unstructured domain: <ref refid="group__fms__netcdf__unstructured__domain__io__mod" kindref="compound">fms_netcdf_unstructured_domain_io_mod</ref>. For generic netcdf: <ref refid="group__netcdf__io__mod" kindref="compound">netcdf_io_mod</ref>. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" line="282" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms2_io.F90" bodystart="282" bodyend="285"/>
+    <listofallmembers>
+      <member refid="interfacefms2__io__mod_1_1register__field_1a958d4c826aeb84c0c30c84a2cea29379" prot="private" virt="non-virtual"><scope>fms2_io_mod::register_field</scope><name>netcdf_add_variable_wrap</name></member>
+      <member refid="interfacefms2__io__mod_1_1register__field_1a04b4b8c280bc00e285720c4107b006dc" prot="private" virt="non-virtual"><scope>fms2_io_mod::register_field</scope><name>register_domain_variable</name></member>
+      <member refid="interfacefms2__io__mod_1_1register__field_1a8b980647370bf8fba36dbf1b64de32dc" prot="private" virt="non-virtual"><scope>fms2_io_mod::register_field</scope><name>register_unstructured_domain_variable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacempp__efp__mod" kind="namespace" language="Fortran">
+    <compoundname>mpp_efp_mod</compoundname>
+    <innerclass refid="interfacempp__efp__mod_1_1assignment_07_0A_08" prot="private">mpp_efp_mod::assignment(=)</innerclass>
+    <innerclass refid="structmpp__efp__mod_1_1mpp__efp__type" prot="public">mpp_efp_mod::mpp_efp_type</innerclass>
+    <innerclass refid="interfacempp__efp__mod_1_1mpp__reproducing__sum" prot="private">mpp_efp_mod::mpp_reproducing_sum</innerclass>
+    <innerclass refid="interfacempp__efp__mod_1_1operator_07_09_08" prot="public">mpp_efp_mod::operator(+)</innerclass>
+    <innerclass refid="interfacempp__efp__mod_1_1operator_07-_08" prot="private">mpp_efp_mod::operator(-)</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga10ad802b9b18b53988493d3b9e8412a0" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+<para>Making this true enables debugging output. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="59" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga4696110edb714152f39942dd50ee9adf" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(numint), parameter</type>
+        <definition>real(r8_kind), dimension(numint), parameter i_pr</definition>
+        <argsstring></argsstring>
+        <name>i_pr</name>
+        <initializer>= (/ 1.0_8/r_prec**2, 1.0_8/r_prec, 1.0_8, r_prec, r_prec**2, r_prec**3 /)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="55" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="55" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga2a076ce361be6e58a8a7783befc84ca7" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter i_prec</definition>
+        <argsstring></argsstring>
+        <name>i_prec</name>
+        <initializer>=1.0_8/(2.0_8**NUMBIT)</initializer>
+        <briefdescription>
+<para>The inverse of prec. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="48" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga000546b66806919cb9216fb501b72e91" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_count_prec</definition>
+        <argsstring></argsstring>
+        <name>max_count_prec</name>
+        <initializer>=2**(63-NUMBIT)-1</initializer>
+        <briefdescription>
+<para>The number of values that can be added together with the current value of prec before there will be roundoff problems. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="49" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga620ea40fe8c2289657419a100b071750" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical nan_error</definition>
+        <argsstring></argsstring>
+        <name>nan_error</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="58" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mpp__efp_8F90_1aefe3c5918a872f0ab08b50937c10849b" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter numbit</definition>
+        <argsstring></argsstring>
+        <name>numbit</name>
+        <initializer>= 46</initializer>
+        <briefdescription>
+<para>number of bits used in the 64-bit signed integer representation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="42" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga718044ce8342be611146a16b36057789" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter numint</definition>
+        <argsstring></argsstring>
+        <name>numint</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>The number of long integers to use to represent a real number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga4899440e8c2cfea1236a13a7a7cb9f52" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical overflow_error</definition>
+        <argsstring></argsstring>
+        <name>overflow_error</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="58" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga146a073f9a864eecc3798b851d14e328" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), dimension(numint), parameter</type>
+        <definition>real(r8_kind), dimension(numint), parameter pr</definition>
+        <argsstring></argsstring>
+        <name>pr</name>
+        <initializer>= (/ r_prec**2, r_prec, 1.0_8, 1.0_8/r_prec, 1.0_8/r_prec**2, 1.0_8/r_prec**3 /)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="53" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga78b2e744fa266e55658e1530f62f88fc" prot="private" static="no" mutable="no">
+        <type>integer(i8_kind), parameter</type>
+        <definition>integer(i8_kind), parameter prec</definition>
+        <argsstring></argsstring>
+        <name>prec</name>
+        <initializer>=2_8**NUMBIT</initializer>
+        <briefdescription>
+<para>The precision of each integer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="46" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__mpp__efp__mod_1ga6756bc06eb4e5c362a007af14dae0d2f" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter r_prec</definition>
+        <argsstring></argsstring>
+        <name>r_prec</name>
+        <initializer>=2.0_8**NUMBIT</initializer>
+        <briefdescription>
+<para>A real version of prec. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="47" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="47" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga28a92c674e06c0c182bab3d99da2e43b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine mpp_efp_mod::carry_overflow</definition>
+        <argsstring>(int_sum, prec_error)</argsstring>
+        <name>carry_overflow</name>
+        <param>
+          <type>int_sum</type>
+          <defname>int_sum</defname>
+        </param>
+        <param>
+          <type>prec_error</type>
+          <defname>prec_error</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine handles carrying of the overflow. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="531" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="532" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga840aa384f8460c4bb246273a9546eaa7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine mpp_efp_mod::increment_ints</definition>
+        <argsstring>(int_sum, int2, prec_error)</argsstring>
+        <name>increment_ints</name>
+        <param>
+          <type>int_sum</type>
+          <defname>int_sum</defname>
+        </param>
+        <param>
+          <type>int2</type>
+          <defname>int2</defname>
+        </param>
+        <param>
+          <type>prec_error</type>
+          <defname>prec_error</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine increments a number with another, both using the integer representation in real_to_ints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="478" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="479" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga005daf4948e408e35a7fbaebd4bce601" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine mpp_efp_mod::increment_ints_faster</definition>
+        <argsstring>(int_sum, r, max_mag_term)</argsstring>
+        <name>increment_ints_faster</name>
+        <param>
+          <type>int_sum</type>
+          <defname>int_sum</defname>
+        </param>
+        <param>
+          <type>r</type>
+          <defname>r</defname>
+        </param>
+        <param>
+          <type>max_mag_term</type>
+          <defname>max_mag_term</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine increments a number with another, both using the integer representation in real_to_ints, but without doing any carrying of overflow. The entire operation is embedded in a single call for greater speed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="508" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="509" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gabe34117f25f06e03a969136ad25f33ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function</type>
+        <definition>real(r8_kind) function mpp_efp_mod::ints_to_real</definition>
+        <argsstring>(ints)</argsstring>
+        <name>ints_to_real</name>
+        <param>
+          <type>ints</type>
+          <defname>ints</defname>
+        </param>
+        <briefdescription>
+<para>This function reverses the conversion in real_to_ints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="466" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="467" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga05b59488b8d4b728b4f07028cda08e63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine mpp_efp_mod::mpp_efp_assign</definition>
+        <argsstring>(EFP1, EFP2)</argsstring>
+        <name>mpp_efp_assign</name>
+        <param>
+          <type>EFP1</type>
+          <defname>EFP1</defname>
+        </param>
+        <param>
+          <type>EFP2</type>
+          <defname>EFP2</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine assigns all components of the extended fixed point type variable on the RHS (EFP2) to the components of the variable on the LHS (EFP1). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="616" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="617" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gaed7cd16825b75d99783dc8e206cff192" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public mpp_efp_mod::mpp_efp_list_sum_across_pes</definition>
+        <argsstring>(EFPs, nval, errors)</argsstring>
+        <name>mpp_efp_list_sum_across_pes</name>
+        <param>
+          <type>EFPs</type>
+          <defname>EFPs</defname>
+        </param>
+        <param>
+          <type>nval</type>
+          <defname>nval</defname>
+        </param>
+        <param>
+          <type>errors</type>
+          <defname>errors</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine does a sum across PEs of a list of EFP variables, returning the sums in place, with all overflows carried. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="666" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="667" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gae61e4566e5991b8260649893ee822462" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__efp__mod_1_1mpp__efp__type" kindref="compound">mpp_efp_type</ref>) function, public</type>
+        <definition>type(mpp_efp_type) function, public mpp_efp_mod::mpp_efp_minus</definition>
+        <argsstring>(EFP1, EFP2)</argsstring>
+        <name>mpp_efp_minus</name>
+        <param>
+          <type>EFP1</type>
+          <defname>EFP1</defname>
+        </param>
+        <param>
+          <type>EFP2</type>
+          <defname>EFP2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="603" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="604" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga586ef216ec8b4a8c304aa91113feb697" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__efp__mod_1_1mpp__efp__type" kindref="compound">mpp_efp_type</ref>) function, public</type>
+        <definition>type(mpp_efp_type) function, public mpp_efp_mod::mpp_efp_plus</definition>
+        <argsstring>(EFP1, EFP2)</argsstring>
+        <name>mpp_efp_plus</name>
+        <param>
+          <type>EFP1</type>
+          <defname>EFP1</defname>
+        </param>
+        <param>
+          <type>EFP2</type>
+          <defname>EFP2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="594" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="595" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga64c96a4b9b3067dfbf0d82df37791bb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, public</type>
+        <definition>real(r8_kind) function, public mpp_efp_mod::mpp_efp_real_diff</definition>
+        <argsstring>(EFP1, EFP2)</argsstring>
+        <name>mpp_efp_real_diff</name>
+        <param>
+          <type>EFP1</type>
+          <defname>EFP1</defname>
+        </param>
+        <param>
+          <type>EFP2</type>
+          <defname>EFP2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="632" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="633" bodyend="640"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga4bd112321a2bb8918ec4818ecc32089f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function, public</type>
+        <definition>real(r8_kind) function, public mpp_efp_mod::mpp_efp_to_real</definition>
+        <argsstring>(EFP1)</argsstring>
+        <name>mpp_efp_to_real</name>
+        <param>
+          <type>EFP1</type>
+          <defname>EFP1</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="624" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="625" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga361c73e06c0e574a83f1b5a45933f34f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public mpp_efp_mod::mpp_query_efp_overflow_error</definition>
+        <argsstring>()</argsstring>
+        <name>mpp_query_efp_overflow_error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="585" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="586" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gaa519a7d3c74c54a910ec04b0dac6448e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structmpp__efp__mod_1_1mpp__efp__type" kindref="compound">mpp_efp_type</ref>) function, public</type>
+        <definition>type(mpp_efp_type) function, public mpp_efp_mod::mpp_real_to_efp</definition>
+        <argsstring>(val, overflow)</argsstring>
+        <name>mpp_real_to_efp</name>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>overflow</type>
+          <defname>overflow</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="643" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="644" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gaae61b36b5dae2b919bb1045ccf9c2eb7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r4_kind) function</type>
+        <definition>real(r4_kind) function mpp_efp_mod::mpp_reproducing_sum_r4_2d</definition>
+        <argsstring>(array, isr, ier, jsr, jer, EFP_sum, reproducing, overflow_check, err)</argsstring>
+        <name>mpp_reproducing_sum_r4_2d</name>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>isr</type>
+          <defname>isr</defname>
+        </param>
+        <param>
+          <type>ier</type>
+          <defname>ier</defname>
+        </param>
+        <param>
+          <type>jsr</type>
+          <defname>jsr</defname>
+        </param>
+        <param>
+          <type>jer</type>
+          <defname>jer</defname>
+        </param>
+        <param>
+          <type>EFP_sum</type>
+          <defname>EFP_sum</defname>
+        </param>
+        <param>
+          <type>reproducing</type>
+          <defname>reproducing</defname>
+        </param>
+        <param>
+          <type>overflow_check</type>
+          <defname>overflow_check</defname>
+        </param>
+        <param>
+          <type>err</type>
+          <defname>err</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="242" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="244" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga59d28cce7ffe6b22bc599df5bcb7e74c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function</type>
+        <definition>real(r8_kind) function mpp_efp_mod::mpp_reproducing_sum_r8_2d</definition>
+        <argsstring>(array, isr, ier, jsr, jer, EFP_sum, reproducing, overflow_check, err)</argsstring>
+        <name>mpp_reproducing_sum_r8_2d</name>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>isr</type>
+          <defname>isr</defname>
+        </param>
+        <param>
+          <type>ier</type>
+          <defname>ier</defname>
+        </param>
+        <param>
+          <type>jsr</type>
+          <defname>jsr</defname>
+        </param>
+        <param>
+          <type>jer</type>
+          <defname>jer</defname>
+        </param>
+        <param>
+          <type>EFP_sum</type>
+          <defname>EFP_sum</defname>
+        </param>
+        <param>
+          <type>reproducing</type>
+          <defname>reproducing</defname>
+        </param>
+        <param>
+          <type>overflow_check</type>
+          <defname>overflow_check</defname>
+        </param>
+        <param>
+          <type>err</type>
+          <defname>err</defname>
+        </param>
+        <briefdescription>
+<para>Calculates a reproducing sum for a 2D, 8-byte real array. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="101" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="103" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga7da14bf2f3b870bef04ccee6054af77e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function</type>
+        <definition>real(r8_kind) function mpp_efp_mod::mpp_reproducing_sum_r8_3d</definition>
+        <argsstring>(array, isr, ier, jsr, jer, sums, EFP_sum, err)</argsstring>
+        <name>mpp_reproducing_sum_r8_3d</name>
+        <param>
+          <type>array</type>
+          <defname>array</defname>
+        </param>
+        <param>
+          <type>isr</type>
+          <defname>isr</defname>
+        </param>
+        <param>
+          <type>ier</type>
+          <defname>ier</defname>
+        </param>
+        <param>
+          <type>jsr</type>
+          <defname>jsr</defname>
+        </param>
+        <param>
+          <type>jer</type>
+          <defname>jer</defname>
+        </param>
+        <param>
+          <type>sums</type>
+          <defname>sums</defname>
+        </param>
+        <param>
+          <type>EFP_sum</type>
+          <defname>EFP_sum</defname>
+        </param>
+        <param>
+          <type>err</type>
+          <defname>err</defname>
+        </param>
+        <briefdescription>
+<para>Reproducing sum for 3d arrays of 8-bit reals. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function uses a conversion to an integer representation of real numbers to give order-invariant sums that will reproduce across PE count. This idea comes from R. Hallberg and A. Adcroft.</para><para><simplesect kind="return"><para>Result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="268" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="270" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gad4eeebd208d95a3746dc0b340acb48fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public mpp_efp_mod::mpp_reset_efp_overflow_error</definition>
+        <argsstring>()</argsstring>
+        <name>mpp_reset_efp_overflow_error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="590" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="591" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1ga48ed89e445931be1f0e0e2aac5a12ad7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer(i8_kind) function, dimension(numint)</type>
+        <definition>integer(i8_kind) function, dimension(numint) mpp_efp_mod::real_to_ints</definition>
+        <argsstring>(r, prec_error, overflow)</argsstring>
+        <name>real_to_ints</name>
+        <param>
+          <type>r</type>
+          <defname>r</defname>
+        </param>
+        <param>
+          <type>prec_error</type>
+          <defname>prec_error</defname>
+        </param>
+        <param>
+          <type>overflow</type>
+          <defname>overflow</defname>
+        </param>
+        <briefdescription>
+<para>This function converts a real number to an equivalent representation using several long integers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="431" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="432" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mpp__efp__mod_1gadebe5df2da2cbb24a0281c7ce6f4515c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine mpp_efp_mod::regularize_ints</definition>
+        <argsstring>(int_sum)</argsstring>
+        <name>regularize_ints</name>
+        <param>
+          <type>int_sum</type>
+          <defname>int_sum</defname>
+        </param>
+        <briefdescription>
+<para>This subroutine carries the overflow, and then makes sure that all integers are of the same sign as the overall value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="550" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" bodystart="551" bodyend="582"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/mpp/mpp_efp.F90" line="28" column="1"/>
+  </compounddef>
+</doxygen>

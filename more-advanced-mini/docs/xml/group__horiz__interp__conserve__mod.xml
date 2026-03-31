@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__horiz__interp__conserve__mod" kind="group">
+    <compoundname>horiz_interp_conserve_mod</compoundname>
+    <title>horiz_interp_conserve_mod</title>
+    <innerclass refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve__new" prot="private">horiz_interp_conserve_mod::horiz_interp_conserve_new</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1ga8f09dffd1d295d3cfc4a2bc5f76ff2e8" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical great_circle_algorithm</definition>
+        <argsstring></argsstring>
+        <name>great_circle_algorithm</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="141" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .FALSE.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="139" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1ga8a5f299eef1abe4c0df23ebd220ce83e" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer pe</definition>
+        <argsstring></argsstring>
+        <name>pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="135" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__horiz__interp__conserve__mod_1gab96da8c443f9c55ebfefe033da98ab47" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer root_pe</definition>
+        <argsstring></argsstring>
+        <name>root_pe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="135" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1gab022e28de4dab54eb5d244a8e33ad883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine data_sum_</definition>
+        <argsstring>(grid_data, area, facis, facie, facjs, facje, dwtsum, wtsum, arsum, mask)</argsstring>
+        <name>data_sum_</name>
+        <param>
+          <type>grid_data</type>
+          <defname>grid_data</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>facis</type>
+          <defname>facis</defname>
+        </param>
+        <param>
+          <type>facie</type>
+          <defname>facie</defname>
+        </param>
+        <param>
+          <type>facjs</type>
+          <defname>facjs</defname>
+        </param>
+        <param>
+          <type>facje</type>
+          <defname>facje</defname>
+        </param>
+        <param>
+          <type>dwtsum</type>
+          <defname>dwtsum</defname>
+        </param>
+        <param>
+          <type>wtsum</type>
+          <defname>wtsum</defname>
+        </param>
+        <param>
+          <type>arsum</type>
+          <defname>arsum</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <briefdescription>
+<para>sums up the data and weights for a single output grid box </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="880" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="882" bodyend="920"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga35628360b303ba8f83085d534577b447" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose, mask_in, mask_out)</argsstring>
+        <name>horiz_interp_conserve_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <briefdescription>
+<para>Subroutine for performing the horizontal interpolation between two grids. </para>        </briefdescription>
+        <detaileddescription>
+<para>Subroutine for performing the horizontal interpolation between two grids. horiz_interp_conserve_new must be called before calling this routine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input data on source grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output data on destination grid</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 = no output; 1 = min,max,means; 2 = max output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input mask, must be the same size as the input data. The real value of mask_in must be in the range (0.,1.). Set mask_in=0.0 for data points that should not be used or have missing data. mask_in will be applied only when horiz_interp_conserve_new_1d is called. mask_in will be passed into horiz_interp_conserve_new_2d</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">mask_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output mask that specifies whether data was computed. mask_out will be computed only when horiz_interp_conserve_new_1d is called. mask_out will be computed in horiz_interp_conserve_new_2d </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="607" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="609" bodyend="640"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1gaae5bc9b6efb0f13f8edab86497797547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_conserve_mod::horiz_interp_conserve_del</definition>
+        <argsstring>(Interp)</argsstring>
+        <name>horiz_interp_conserve_del</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <briefdescription>
+<para>Deallocates memory used by &quot;HI_KIND_TYPE&quot; variables. Must be called before reinitializing with horiz_interp_new. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">interp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A derived-type variable returned by previous call to horiz_interp_new. The input variable must have allocated arrays. The returned variable will contain deallocated arrays. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="159" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="160" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga35f55bcdce44e601e1b23e6da4d0d2c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public horiz_interp_conserve_mod::horiz_interp_conserve_init</definition>
+        <argsstring></argsstring>
+        <name>horiz_interp_conserve_init</name>
+        <briefdescription>
+<para>Writes version number to logfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" line="146" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/horiz_interp_conserve.F90" bodystart="147" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga6bfed533ffa2d5bb787fd46d81fa6679" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_new_1dx1d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, verbose)</argsstring>
+        <name>horiz_interp_conserve_new_1dx1d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="20" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="21" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga922d8106bbb42fd1fc7d4a0baea64b9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_new_1dx2d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, mask_in, mask_out, verbose)</argsstring>
+        <name>horiz_interp_conserve_new_1dx2d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="224" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="226" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga26b9905f43c53ad9395e72341ccf831f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_new_2dx1d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, mask_in, mask_out, verbose)</argsstring>
+        <name>horiz_interp_conserve_new_2dx1d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="391" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="393" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga4a16b8ea213249d16e3bc8455596ecc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_new_2dx2d_</definition>
+        <argsstring>(Interp, lon_in, lat_in, lon_out, lat_out, mask_in, mask_out, verbose)</argsstring>
+        <name>horiz_interp_conserve_new_2dx2d_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>lon_in</type>
+          <defname>lon_in</defname>
+        </param>
+        <param>
+          <type>lat_in</type>
+          <defname>lat_in</defname>
+        </param>
+        <param>
+          <type>lon_out</type>
+          <defname>lon_out</defname>
+        </param>
+        <param>
+          <type>lat_out</type>
+          <defname>lat_out</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="498" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="500" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga4f22ca7f3c2f406ad714ff57a11ae911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_version1_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose, mask_in, mask_out)</argsstring>
+        <name>horiz_interp_conserve_version1_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>mask_in</type>
+          <defname>mask_in</defname>
+        </param>
+        <param>
+          <type>mask_out</type>
+          <defname>mask_out</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="644" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="646" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga8302079f921aeb418a96e1c459008ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine horiz_interp_conserve_version2_</definition>
+        <argsstring>(Interp, data_in, data_out, verbose)</argsstring>
+        <name>horiz_interp_conserve_version2_</name>
+        <param>
+          <type>Interp</type>
+          <defname>Interp</defname>
+        </param>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <param>
+          <type>data_out</type>
+          <defname>data_out</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="793" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="794" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="group__horiz__interp__conserve__mod_1ga5258137e17a2761f264dfff95ed80629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine stats_</definition>
+        <argsstring>(dat, area, asum, dsum, wsum, low, high, miss, mask)</argsstring>
+        <name>stats_</name>
+        <param>
+          <type>dat</type>
+          <defname>dat</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>asum</type>
+          <defname>asum</defname>
+        </param>
+        <param>
+          <type>dsum</type>
+          <defname>dsum</defname>
+        </param>
+        <param>
+          <type>wsum</type>
+          <defname>wsum</defname>
+        </param>
+        <param>
+          <type>low</type>
+          <defname>low</defname>
+        </param>
+        <param>
+          <type>high</type>
+          <defname>high</defname>
+        </param>
+        <param>
+          <type>miss</type>
+          <defname>miss</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+        </param>
+        <briefdescription>
+<para>This statistics is for conservative scheme. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" line="814" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/horiz_interp/include/horiz_interp_conserve.inc" bodystart="815" bodyend="874"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Performs spatial interpolation between grids using conservative interpolation. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Bruce Wyman, Zhi Liang</para></simplesect>
+This module can conservatively interpolate data from any logically rectangular grid to any rectangular grid. The interpolation scheme is area-averaging conservative scheme. There is an optional mask field for missing input data in both horiz_interp__conserveinit and <ref refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve" kindref="compound">horiz_interp_conserve</ref>. For efficiency purpose, mask should only be kept in horiz_interp_init (will remove the mask in horiz_interp in the future). There are 1-D and 2-D version of horiz_interp_conserve_init for 1-D and 2-D grid. There is a optional argument mask in horiz_interp_conserve_init_2d and no mask should to passed into horiz_interp_conserv. optional argument mask will not be passed into horiz_interp_conserve_init_1d and optional argument mask may be passed into <ref refid="interfacehoriz__interp__conserve__mod_1_1horiz__interp__conserve" kindref="compound">horiz_interp_conserve</ref> (For the purpose of reproduce Memphis??? results). An optional output mask field may be used in conjunction with the input mask to show where output data exists. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

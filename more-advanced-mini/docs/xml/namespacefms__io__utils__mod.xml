@@ -1,0 +1,821 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacefms__io__utils__mod" kind="namespace" language="Fortran">
+    <compoundname>fms_io_utils_mod</compoundname>
+    <innerclass refid="interfacefms__io__utils__mod_1_1allocate__array" prot="private">fms_io_utils_mod::allocate_array</innerclass>
+    <innerclass refid="structfms__io__utils__mod_1_1char__linked__list" prot="private">fms_io_utils_mod::char_linked_list</innerclass>
+    <innerclass refid="interfacefms__io__utils__mod_1_1get__array__section" prot="private">fms_io_utils_mod::get_array_section</innerclass>
+    <innerclass refid="interfacefms__io__utils__mod_1_1get__data__type__string" prot="private">fms_io_utils_mod::get_data_type_string</innerclass>
+    <innerclass refid="interfacefms__io__utils__mod_1_1get__mosaic__tile__file" prot="private">fms_io_utils_mod::get_mosaic_tile_file</innerclass>
+    <innerclass refid="interfacefms__io__utils__mod_1_1parse__mask__table" prot="private">fms_io_utils_mod::parse_mask_table</innerclass>
+    <innerclass refid="interfacefms__io__utils__mod_1_1put__array__section" prot="private">fms_io_utils_mod::put_array_section</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fms__io__utils_8F90_1a2ab027d1684dae60d93197395daa91df" prot="private" static="no" mutable="no">
+        <type>character(len=32), save</type>
+        <definition>character(len=32), save filename_appendix</definition>
+        <argsstring></argsstring>
+        <name>filename_appendix</name>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+<para>Appendix added to the restart filename. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="39" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="39" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gac9a7307571d33a595a3309cb62ed17cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::append_to_list</definition>
+        <argsstring>(list, string)</argsstring>
+        <name>append_to_list</name>
+        <param>
+          <type>list</type>
+          <defname>list</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Add node to character linked list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Linked list.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="337" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="338" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga280e37a08d8e1b1f8ccfa2121f05a9a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::ascii_read</definition>
+        <argsstring>(ascii_filename, ascii_var, num_lines, max_length)</argsstring>
+        <name>ascii_read</name>
+        <param>
+          <type>ascii_filename</type>
+          <defname>ascii_filename</defname>
+        </param>
+        <param>
+          <type>ascii_var</type>
+          <defname>ascii_var</defname>
+        </param>
+        <param>
+          <type>num_lines</type>
+          <defname>num_lines</defname>
+        </param>
+        <param>
+          <type>max_length</type>
+          <defname>max_length</defname>
+        </param>
+        <briefdescription>
+<para>Read the ascii text from filename <computeroutput>ascii_filename</computeroutput>into string array <computeroutput>ascii_var</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ascii_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name to be read</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ascii_var</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string array</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_lines</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional argument to return number of lines in file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">max_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional argument to return max_length of line in file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="525" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="526" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gabdd7edc61896f408eed84bdb7af8f350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::destroy_list</definition>
+        <argsstring>(list)</argsstring>
+        <name>destroy_list</name>
+        <param>
+          <type>list</type>
+          <defname>list</defname>
+        </param>
+        <briefdescription>
+<para>Deallocate all nodes on a character linked list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Linked list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="360" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="361" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gaf84858127441447c6dbfafbb581116e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::domain_tile_filepath_mangle</definition>
+        <argsstring>(dest, source, domain_tile_id)</argsstring>
+        <name>domain_tile_filepath_mangle</name>
+        <param>
+          <type>dest</type>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>source</type>
+          <defname>source</defname>
+        </param>
+        <param>
+          <type>domain_tile_id</type>
+          <defname>domain_tile_id</defname>
+        </param>
+        <briefdescription>
+<para>Add the domain tile id to an input filepath. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output filepath.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input filepath.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain_tile_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Domain tile id. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="412" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="413" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga72465fafa808bb56795bf3336785f803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::error</definition>
+        <argsstring>(mesg)</argsstring>
+        <name>error</name>
+        <param>
+          <type>mesg</type>
+          <defname>mesg</defname>
+        </param>
+        <briefdescription>
+<para>Print a message to stderr, then stop the program. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mesg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message that will be printed to stderr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="253" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="254" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga54d10377075164c3c5b7ba657c571229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_io_utils_mod::file_exists</definition>
+        <argsstring>(path)</argsstring>
+        <name>file_exists</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Determine if a file exists. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the file exists.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="264" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="266" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga8744678dc4c7869d86fc76f1bc31e26c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::get_filename_appendix</definition>
+        <argsstring>(string_out)</argsstring>
+        <name>get_filename_appendix</name>
+        <param>
+          <type>string_out</type>
+          <defname>string_out</defname>
+        </param>
+        <briefdescription>
+<para>Writes filename appendix to &quot;string_out&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">string_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to write the filename_appendix to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="842" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="843" bodyend="846"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga1970ce77c383f6aa80ea2a8e23ef4f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::get_instance_filename</definition>
+        <argsstring>(name_in, name_out)</argsstring>
+        <name>get_instance_filename</name>
+        <param>
+          <type>name_in</type>
+          <defname>name_in</defname>
+        </param>
+        <param>
+          <type>name_out</type>
+          <defname>name_out</defname>
+        </param>
+        <briefdescription>
+<para>Adds the filename_appendix to name_in and sets it as name_out. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to add the filename_appendix to</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">name_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name_in with the filename_appendix </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="872" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="873" bodyend="905"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gab3fa1ad3d5a02de89643ef7c1b4cbe83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_io_utils_mod::get_mosaic_tile_file_sg</definition>
+        <argsstring>(file_in, file_out, is_no_domain, domain, tile_count)</argsstring>
+        <name>get_mosaic_tile_file_sg</name>
+        <param>
+          <type>file_in</type>
+          <defname>file_in</defname>
+        </param>
+        <param>
+          <type>file_out</type>
+          <defname>file_out</defname>
+        </param>
+        <param>
+          <type>is_no_domain</type>
+          <defname>is_no_domain</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <param>
+          <type>tile_count</type>
+          <defname>tile_count</defname>
+        </param>
+        <briefdescription>
+<para>Determine tile_file for structured grid based on filename and current tile on mpp_domain (this is mostly used for ongrid data_overrides) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of &apos;base&apos; file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of tile_file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_no_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>are we providing a domain</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>domain provided</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tile_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tile count </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="741" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="742" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga28ed451e1d1187837e02c41872dbe741" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_io_utils_mod::get_mosaic_tile_file_ug</definition>
+        <argsstring>(file_in, file_out, domain)</argsstring>
+        <name>get_mosaic_tile_file_ug</name>
+        <param>
+          <type>file_in</type>
+          <defname>file_in</defname>
+        </param>
+        <param>
+          <type>file_out</type>
+          <defname>file_out</defname>
+        </param>
+        <param>
+          <type>domain</type>
+          <defname>domain</defname>
+        </param>
+        <briefdescription>
+<para>Determine tile_file for unstructured grid based on filename and current tile on mpp_domain (this is mostly used for ongrid data_overrides) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of base file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of tile file</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>domain provided </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="802" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="803" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gabfd7e015f2fe22c0fe82f7dc422cb364" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_io_utils_mod::has_domain_tile_string</definition>
+        <argsstring>(string)</argsstring>
+        <name>has_domain_tile_string</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Determine if the &quot;domain tile string&quot; (.tilex.) exists in the input filename. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="378" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="380" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga24e57dde3203d2598f5f34f7074c3d20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_io_utils_mod::has_io_domain_tile_string</definition>
+        <argsstring>(string)</argsstring>
+        <name>has_io_domain_tile_string</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Determine if the &quot;I/O domain tile string&quot; (.nc.xxxx) exists in the input filename. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="434" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="436" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga769af7e60c5dc78ab735ee2f2edad72a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function fms_io_utils_mod::has_restart_string</definition>
+        <argsstring>(string)</argsstring>
+        <name>has_restart_string</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+<para>Determine if the &quot;restart string&quot; (.res.) exists in the input filename. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="476" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="478" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga798050c4f68eb35e0a957fef0fb85eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::io_domain_tile_filepath_mangle</definition>
+        <argsstring>(dest, source, io_domain_tile_id)</argsstring>
+        <name>io_domain_tile_filepath_mangle</name>
+        <param>
+          <type>dest</type>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>source</type>
+          <defname>source</defname>
+        </param>
+        <param>
+          <type>io_domain_tile_id</type>
+          <defname>io_domain_tile_id</defname>
+        </param>
+        <briefdescription>
+<para>Add the I/O domain tile id to an input filepath. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output filepath.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input filepath.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">io_domain_tile_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I/O domain tile id. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="460" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="461" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gafa200fd798b9db522dae4c95b230adef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_io_utils_mod::is_in_list</definition>
+        <argsstring>(list, string, ignore_case)</argsstring>
+        <name>is_in_list</name>
+        <param>
+          <type>list</type>
+          <defname>list</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>ignore_case</type>
+          <defname>ignore_case</defname>
+        </param>
+        <briefdescription>
+<para>Determine if a string exists in a character linked list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the string is found in the list.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Linked list.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ignore_case</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag to ignore case. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="313" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="315" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga784c502c3411ad5c52176012de9c1539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::nullify_filename_appendix</definition>
+        <argsstring>()</argsstring>
+        <name>nullify_filename_appendix</name>
+        <briefdescription>
+<para>Clears the filename_appendix module variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="850" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="851" bodyend="853"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga729bc1d0452894a454a91df8c4123938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::open_check</definition>
+        <argsstring>(flag, fname)</argsstring>
+        <name>open_check</name>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="509" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="510" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gad276ce09e4a55bc2e95da7e03cc478cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::openmp_thread_trap</definition>
+        <argsstring>()</argsstring>
+        <name>openmp_thread_trap</name>
+        <briefdescription>
+<para>Catch OpenMP parallel machines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="277" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="278" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga5e14d1913053ce17a0fd3194685e9ee6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_io_utils_mod::parse_mask_table_2d</definition>
+        <argsstring>(mask_table, maskmap, modelname)</argsstring>
+        <name>parse_mask_table_2d</name>
+        <param>
+          <type>mask_table</type>
+          <defname>mask_table</defname>
+        </param>
+        <param>
+          <type>maskmap</type>
+          <defname>maskmap</defname>
+        </param>
+        <param>
+          <type>modelname</type>
+          <defname>modelname</defname>
+        </param>
+        <briefdescription>
+<para>Populate 2D maskmap from mask_table given a model. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask table to be read in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">maskmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D Mask output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modelname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model to which this applies </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="542" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="543" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1gab30638a23fea863dbca2978ff1ac8f80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fms_io_utils_mod::parse_mask_table_3d</definition>
+        <argsstring>(mask_table, maskmap, modelname)</argsstring>
+        <name>parse_mask_table_3d</name>
+        <param>
+          <type>mask_table</type>
+          <defname>mask_table</defname>
+        </param>
+        <param>
+          <type>maskmap</type>
+          <defname>maskmap</defname>
+        </param>
+        <param>
+          <type>modelname</type>
+          <defname>modelname</defname>
+        </param>
+        <briefdescription>
+<para>Populate 3D maskmap from mask_table given a model. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask_table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask table to be read in</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">maskmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2D Mask output</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modelname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model to which this applies </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="638" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="639" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga341c74a8c8df5190de10e05dc4092550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::restart_filepath_mangle</definition>
+        <argsstring>(dest, source)</argsstring>
+        <name>restart_filepath_mangle</name>
+        <param>
+          <type>dest</type>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>source</type>
+          <defname>source</defname>
+        </param>
+        <briefdescription>
+<para>Add &quot;.res&quot; to an input file path. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="487" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="488" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga899ffaee79bff8effd01a7cf6f23940b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public fms_io_utils_mod::set_filename_appendix</definition>
+        <argsstring>(string_in)</argsstring>
+        <name>set_filename_appendix</name>
+        <param>
+          <type>string_in</type>
+          <defname>string_in</defname>
+        </param>
+        <briefdescription>
+<para>Save &quot;string_in&quot; as a module variable that will added to the filename of the restart files. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String that will be saved as a module variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="858" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="859" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fms__io__utils__mod_1ga903b8517432214a95f6c4abc57756fac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public fms_io_utils_mod::string_compare</definition>
+        <argsstring>(string1, string2, ignore_case)</argsstring>
+        <name>string_compare</name>
+        <param>
+          <type>string1</type>
+          <defname>string1</defname>
+        </param>
+        <param>
+          <type>string2</type>
+          <defname>string2</defname>
+        </param>
+        <param>
+          <type>ignore_case</type>
+          <defname>ignore_case</defname>
+        </param>
+        <briefdescription>
+<para>Compare strings. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Flag telling if the strings are the same. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="289" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" bodystart="291" bodyend="307"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/fms2_io/fms_io_utils.F90" line="24" column="1"/>
+  </compounddef>
+</doxygen>

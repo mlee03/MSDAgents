@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="diag__manager_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">The<sp/>purpose<sp/>of<sp/>this<sp/>document<sp/>is<sp/>to<sp/>document<sp/>the<sp/>differences<sp/>between<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>and<sp/>the<sp/>new<sp/>(modern)<sp/>diag<sp/>manager.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[1.<sp/>Diag<sp/>Table<sp/>Format](README.md#1-diag-table-format)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[2.<sp/>Scalar<sp/>Axis](README.md#2-scalar-axis)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[3.<sp/>Average<sp/>Time<sp/>Variables](README.md#3-average-time-variables)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[4.<sp/>Subregional<sp/>Files](README.md#4-subregional-files)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[5.<sp/>Global<sp/>attributes](README.md#5-global-attributes)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[6.<sp/>Real<sp/>attributes<sp/>from<sp/>diag_field_add_attribute<sp/>calls](README.md#6-real-attributes-from-diag_field_add_attribute-calls)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[7.<sp/>History<sp/>files<sp/>data<sp/>output<sp/>&quot;changes&quot;](README.md#7-history-files-data-output-changes)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Diag<sp/>Table<sp/>Format</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>modern<sp/>diag<sp/>manager<sp/>uses<sp/>a<sp/>YAML<sp/>format<sp/>instead<sp/>of<sp/>the<sp/>legacy<sp/>ascii<sp/>table.<sp/>A<sp/>description<sp/>of<sp/>the<sp/>YAML<sp/>diag<sp/>table<sp/>can</highlight></codeline>
+<codeline><highlight class="normal">be<sp/>found<sp/>[here](diag_yaml_format.md).<sp/>A<sp/>formal<sp/>specification,<sp/>in<sp/>the<sp/>form<sp/>of<sp/>a<sp/>JSON<sp/>schema,<sp/>can<sp/>be<sp/>found<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[gfdl_msd_schemas](https://github.com/NOAA-GFDL/gfdl_msd_schemas)<sp/>repository<sp/>on<sp/>Github.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Scalar<sp/>Axis</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>old<sp/>diag<sp/>manager<sp/>was<sp/>adding<sp/>a<sp/>`scalar_axis`<sp/>dimension<sp/>of<sp/>size<sp/>1<sp/>for<sp/>scalar<sp/>variables</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">dimensions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scalar_axis<sp/>=<sp/>1<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">variables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>p700(scalar_axis)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p700:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p700:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>no<sp/>longer<sp/>have<sp/>a<sp/>dummy<sp/>scalar<sp/>axis<sp/>dimension.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Average<sp/>Time<sp/>Variables</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>old<sp/>diag<sp/>manager<sp/>includes<sp/>time<sp/>bounds<sp/>metadata<sp/>in<sp/>a<sp/>non-standard<sp/>convention<sp/>(i.e.<sp/>`average_T1`,<sp/>`average_T2`,<sp/>and<sp/>`average_DT`)</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>`average_T1`<sp/>is<sp/>the<sp/>start<sp/>time<sp/>for<sp/>the<sp/>averaging<sp/>period<sp/>(in<sp/>the<sp/>same<sp/>time<sp/>units<sp/>as<sp/>time)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>`average_T2`<sp/>is<sp/>the<sp/>end<sp/>time<sp/>for<sp/>the<sp/>averaging<sp/>period</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>`average_DT`<sp/>is<sp/>the<sp/>length<sp/>of<sp/>the<sp/>averaging<sp/>period,<sp/>in<sp/>days</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>average_T1(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T1:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T1:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T1:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T1:long_name<sp/>=<sp/>&quot;Start<sp/>time<sp/>for<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>average_T2(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T2:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T2:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T2:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_T2:long_name<sp/>=<sp/>&quot;End<sp/>time<sp/>for<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>average_DT(time)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_DT:_FillValue<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_DT:missing_value<sp/>=<sp/>1.e+20<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_DT:units<sp/>=<sp/>&quot;days&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_DT:long_name<sp/>=<sp/>&quot;Length<sp/>of<sp/>average<sp/>period&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>3<sp/>variables<sp/>are<sp/>referenced<sp/>as<sp/>a<sp/>variable<sp/>attribute<sp/>in<sp/>each<sp/>diagnostic.<sp/>e.g.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dis_liq:time_avg_info<sp/>=<sp/>&quot;average_T1,average_T2,average_DT&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>not<sp/>be<sp/>using<sp/>these<sp/>non<sp/>standard<sp/>variables.<sp/>Instead<sp/>the<sp/>time<sp/>bounds<sp/>information<sp/>will<sp/>be<sp/>specified<sp/>in<sp/>CF<sp/>standards.<sp/>One<sp/>time_bounds<sp/>variable,<sp/>with<sp/>an<sp/>extra<sp/>nv<sp/>dimension,<sp/>that<sp/>species<sp/>both<sp/>average_T1<sp/>and<sp/>average_T2.<sp/>The<sp/>average_DT<sp/>information<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>the<sp/>time_bnds<sp/>variable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>nv(nv)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nv:long_name<sp/>=<sp/>&quot;vertex<sp/>number&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>time_bnds(time,<sp/>nv)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_bnds:units<sp/>=<sp/>&quot;days<sp/>since<sp/>1979-01-01<sp/>00:00:00&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_bnds:long_name<sp/>=<sp/>&quot;time<sp/>axis<sp/>boundaries&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>time_bounds<sp/>variable<sp/>is<sp/>refernced<sp/>as<sp/>a<sp/>variable<sp/>attribute<sp/>of<sp/>time:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time:bounds<sp/>=<sp/>&quot;time_bnds&quot;<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>4.<sp/>Subregional<sp/>Files</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>A.<sp/>`is_subregional`<sp/>global<sp/>attribute:</highlight></codeline>
+<codeline><highlight class="normal">Subregional<sp/>files<sp/>will<sp/>have<sp/>a<sp/>global<sp/>NetCDF<sp/>attribute<sp/>`is_subregional<sp/>=<sp/>True`<sp/>set<sp/>for<sp/>non-global<sp/>history<sp/>files.<sp/>This<sp/>attribute<sp/>will<sp/>be<sp/>used<sp/>in<sp/>PP<sp/>tools.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>B.<sp/>Subregional<sp/>dimension<sp/>names:</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>some<sp/>cases,<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>was<sp/>adding<sp/>`sub0X`<sp/>to<sp/>the<sp/>dimension<sp/>names<sp/>where<sp/>X<sp/>is<sp/>a<sp/>number<sp/>greater<sp/>than<sp/>1.<sp/>This<sp/>was<sp/>causing<sp/>problems<sp/>in<sp/>PP<sp/>tools<sp/>that<sp/>were<sp/>expecting<sp/>the<sp/>dimension<sp/>to<sp/>have<sp/>`sub01`<sp/>in<sp/>the<sp/>name.<sp/>The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>not<sp/>have<sp/>this<sp/>problem.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>C.<sp/>Corner<sp/>and<sp/>center<sp/>diagnostics:</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>old<sp/>diag<sp/>manager,<sp/>if<sp/>mixing<sp/>variables<sp/>that<sp/>are<sp/>corner<sp/>variables,<sp/>such<sp/>as<sp/>velocities={uo,vo,umo,vmo}<sp/>and<sp/>center<sp/>variables,<sp/>such<sp/>as<sp/>tracers={thetao,so,volcello}<sp/>you<sp/>sometimes<sp/>ended<sp/>up<sp/>with<sp/>a<sp/>different<sp/>number<sp/>of<sp/>variables<sp/>per<sp/>file.<sp/>The<sp/>extra<sp/>files<sp/>had<sp/>duplicate<sp/>data<sp/>for<sp/>the<sp/>corner<sp/>velocities<sp/>because<sp/>the<sp/>two<sp/>PEs<sp/>shared<sp/>the<sp/>point<sp/>at<sp/>the<sp/>edge.<sp/>This<sp/>happened<sp/>with<sp/>some<sp/>grid/layouts/masks/subregion<sp/>combinations<sp/>and<sp/>it<sp/>caused<sp/>problems<sp/>with<sp/>the<sp/>combiner.<sp/>The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>not<sp/>have<sp/>this<sp/>problem.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>5.<sp/>Global<sp/>attributes</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>A.<sp/>Grid<sp/>type<sp/>and<sp/>grid<sp/>tile:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>old<sp/>diag<sp/>manager<sp/>was<sp/>adding<sp/>the<sp/>global<sp/>attributes<sp/>grid_type<sp/>=<sp/>&quot;regular&quot;<sp/>and<sp/>grid_tile<sp/>=<sp/>&quot;N/A&quot;<sp/>for<sp/>all<sp/>files<sp/>regardless<sp/>of<sp/>what<sp/>the<sp/>grid_type<sp/>and<sp/>the<sp/>grid_title<sp/>actually<sp/>were.<sp/>The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>no<sp/>longer<sp/>be<sp/>doing<sp/>this<sp/>as<sp/>they<sp/>are<sp/>not<sp/>correct<sp/>and<sp/>don’t<sp/>seem<sp/>to<sp/>be<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>B.<sp/>Associated_files<sp/>global<sp/>attribute:</highlight></codeline>
+<codeline><highlight class="normal">We<sp/>were<sp/>unable<sp/>to<sp/>reproduce<sp/>the<sp/>exact<sp/>order<sp/>of<sp/>the<sp/>associated_files<sp/>global<sp/>attribute,<sp/>so<sp/>users<sp/>may<sp/>see<sp/>differences<sp/>like</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">lake_area:<sp/>19790101.land_static.nc<sp/>soil_area:<sp/>19790101.land_static.nc<sp/>land_area:<sp/>19790101.land_static.nc<sp/>&lt;&gt;<sp/>land_area:<sp/>19790101.land_static.nc<sp/>soil_area:<sp/>19790101.land_static.nc<sp/>lake_area:<sp/>19790101.land_static.nc</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>6.<sp/>Real<sp/>attributes<sp/>from<sp/>diag_field_add_attribute<sp/>calls</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>real<sp/>attributes<sp/>were<sp/>added<sp/>to<sp/>the<sp/>file<sp/>via<sp/>a<sp/>diag_field_add_attribute<sp/>call,<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>is<sp/>always<sp/>saving<sp/>it<sp/>as<sp/>NF90_FLOAT<sp/>regardless<sp/>of<sp/>the<sp/>precision<sp/>the<sp/>data<sp/>was<sp/>[passed<sp/>in](https://github.com/NOAA-GFDL/FMS/blob/ebb32649efa395ea14598f74c8d49e74d1408579/diag_manager/diag_manager.F90#L4532-L4543)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>new<sp/>diag<sp/>manager<sp/>is<sp/>going<sp/>to<sp/>write<sp/>the<sp/>attribute<sp/>as<sp/>it<sp/>is<sp/>passed<sp/>in.<sp/>This<sp/>will<sp/>cause<sp/>differences<sp/>when<sp/>the<sp/>model<sp/>component<sp/>was<sp/>compiled<sp/>with<sp/>r8<sp/>as<sp/>it<sp/>will<sp/>write<sp/>the<sp/>attribute<sp/>as<sp/>r8<sp/>instead<sp/>of<sp/>r4.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>7.<sp/>History<sp/>files<sp/>data<sp/>output<sp/>&quot;changes&quot;</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>the<sp/>model<sp/>run<sp/>time<sp/>is<sp/>less<sp/>than<sp/>then<sp/>the<sp/>output<sp/>frequency<sp/>(i.e<sp/>if<sp/>the<sp/>module<sp/>run<sp/>time<sp/>is<sp/>2<sp/>days<sp/>and<sp/>you<sp/>are<sp/>writing<sp/>monthly<sp/>diagnostics),<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>was<sp/>writing<sp/>9.96921e+36.<sp/>The<sp/>new<sp/>diag<sp/>manager<sp/>is<sp/>not<sp/>going<sp/>to<sp/>write<sp/>anything<sp/>for<sp/>this<sp/>cases,<sp/>so<sp/>if<sp/>you<sp/>ncdump<sp/>the<sp/>output<sp/>from<sp/>the<sp/>new<sp/>diag<sp/>manager,<sp/>you<sp/>will<sp/>get:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>wa<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>_,<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Similarly,<sp/>when<sp/>a<sp/>variable<sp/>was<sp/>registered,<sp/>but<sp/>send_data<sp/>was<sp/>never<sp/>called,<sp/>the<sp/>old<sp/>diag<sp/>manager<sp/>was<sp/>outputting<sp/>the<sp/>warning<sp/>like</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">WARNING<sp/>from<sp/>PE<sp/><sp/><sp/><sp/><sp/>0:<sp/>diag_manager_mod::closing_file:<sp/>module/output_field<sp/>soil/soil_fgw,<sp/>skip<sp/>one<sp/>time<sp/>level,<sp/>maybe<sp/>send_data<sp/>never<sp/>called</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>writing<sp/>out<sp/>`9.96921e+36`<sp/>for<sp/>the<sp/>variable.<sp/>The<sp/>new<sp/>diag<sp/>manager<sp/>will<sp/>also<sp/>be<sp/>outputting<sp/>the<sp/>warning,<sp/>but<sp/>it<sp/>will<sp/>not<sp/>write<sp/>out<sp/>anything.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="/home/Ryan.Mulhall/FMS-1/diag_manager/README.md"/>
+  </compounddef>
+</doxygen>

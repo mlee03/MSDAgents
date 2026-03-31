@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfaceastronomy__mod_1_1half__day" kind="interface" language="Fortran" prot="private">
+    <compoundname>astronomy_mod::half_day</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1half__day_1a2bd9c681e6f4395f35672c1e1413670e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>half_day_0d_r4</definition>
+        <argsstring></argsstring>
+        <name>half_day_0d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1half__day_1ae492a4e5a574146165bb5e9055400948" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>half_day_0d_r8</definition>
+        <argsstring></argsstring>
+        <name>half_day_0d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1half__day_1a4fc839236d463e306e62bc13dcfa2601" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>half_day_2d_r4</definition>
+        <argsstring></argsstring>
+        <name>half_day_2d_r4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceastronomy__mod_1_1half__day_1ab4ceda66163dd5f7a948cb0610e09eaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>half_day_2d_r8</definition>
+        <argsstring></argsstring>
+        <name>half_day_2d_r8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="" line="1" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private interface for internal use by dirunal_solar and <ref refid="interfaceastronomy__mod_1_1daily__mean__solar" kindref="compound">daily_mean_solar</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Example usage: <programlisting filename=".f90"><codeline><highlight class="normal">half_day(latitude,<sp/>dec)<sp/>result(h)</highlight></codeline>
+</programlisting></para><para>Separate routines exist within this interface for scalar, or 2D input and output fields:</para><para><programlisting filename=".f90"><codeline><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(:,:)</highlight><highlight class="normal"><sp/>::<sp/>latitude</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>latitude</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">dimension(size(latitude,1),size(latitude,2))</highlight><highlight class="normal"><sp/><sp/>::<sp/>h</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>h</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;latitude&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latitudes of model grid points [radians] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">&lt;dec&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solar declination [radians] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">&lt;h&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Half of the length of daylight at the given latitude and orbital position (dec); value ranges between 0 (all darkness) and pi (all daylight) [dimensionless] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" line="341" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/astronomy/astronomy.F90" bodystart="341" bodyend="343"/>
+    <listofallmembers>
+      <member refid="interfaceastronomy__mod_1_1half__day_1a2bd9c681e6f4395f35672c1e1413670e" prot="private" virt="non-virtual"><scope>astronomy_mod::half_day</scope><name>half_day_0d_r4</name></member>
+      <member refid="interfaceastronomy__mod_1_1half__day_1ae492a4e5a574146165bb5e9055400948" prot="private" virt="non-virtual"><scope>astronomy_mod::half_day</scope><name>half_day_0d_r8</name></member>
+      <member refid="interfaceastronomy__mod_1_1half__day_1a4fc839236d463e306e62bc13dcfa2601" prot="private" virt="non-virtual"><scope>astronomy_mod::half_day</scope><name>half_day_2d_r4</name></member>
+      <member refid="interfaceastronomy__mod_1_1half__day_1ab4ceda66163dd5f7a948cb0610e09eaa" prot="private" virt="non-virtual"><scope>astronomy_mod::half_day</scope><name>half_day_2d_r8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

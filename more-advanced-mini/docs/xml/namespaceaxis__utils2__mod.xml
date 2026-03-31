@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceaxis__utils2__mod" kind="namespace" language="Fortran">
+    <compoundname>axis_utils2_mod</compoundname>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1axis__edges" prot="private">axis_utils2_mod::axis_edges</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1find__index" prot="private">axis_utils2_mod::find_index</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1frac__index" prot="private">axis_utils2_mod::frac_index</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1interp__1d" prot="private">axis_utils2_mod::interp_1d</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1interp__1d__cubic__spline" prot="private">axis_utils2_mod::interp_1d_cubic_spline</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1interp__1d__linear" prot="private">axis_utils2_mod::interp_1d_linear</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1lon__in__range" prot="private">axis_utils2_mod::lon_in_range</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1nearest__index" prot="private">axis_utils2_mod::nearest_index</innerclass>
+    <innerclass refid="interfaceaxis__utils2__mod_1_1tranlon" prot="private">axis_utils2_mod::tranlon</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__axis__utils2__mod_1gab6f349b06bd4f9743357fd73b39fbf97" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter epsln</definition>
+        <argsstring></argsstring>
+        <name>epsln</name>
+        <initializer>= 1.e-10_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="42" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__axis__utils2__mod_1ga38b65255456e46b052e8dd528dc64d33" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter f360</definition>
+        <argsstring></argsstring>
+        <name>f360</name>
+        <initializer>= 360.0_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__axis__utils2__mod_1gacf713b5ceb083ceeb5730d92b8b53ac3" prot="private" static="no" mutable="no">
+        <type>real(r8_kind), parameter</type>
+        <definition>real(r8_kind), parameter fp5</definition>
+        <argsstring></argsstring>
+        <name>fp5</name>
+        <initializer>= 0.5_r8_kind</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="43" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="variable" id="axis__utils2_8F90_1aedcb192cbc21872c4366ba81b37b93d1" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter maxatts</definition>
+        <argsstring></argsstring>
+        <name>maxatts</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="41" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="41" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga66e6c18dfe1a034cec361cfdf195b2d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public axis_utils2_mod::get_axis_cart</definition>
+        <argsstring>(fileobj, axisname, cart)</argsstring>
+        <name>get_axis_cart</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <param>
+          <type>cart</type>
+          <defname>cart</defname>
+        </param>
+        <briefdescription>
+<para>Returns X,Y,Z or T cartesian attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file object to read from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axisname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of axis to retrieve</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returned attribute axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="103" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="104" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1ga8cb644e05d76c629b12f6f9d9dfabb05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public axis_utils2_mod::get_axis_modulo</definition>
+        <argsstring>(fileobj, axisname)</argsstring>
+        <name>get_axis_modulo</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <briefdescription>
+<para>Checks if &apos;modulo&apos; variable exists for a given axis. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if modulo variable exists in fileobj for the given axis name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="178" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="179" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="group__axis__utils2__mod_1gae94bc29c04cf8d166261bbaa7a3301c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public axis_utils2_mod::get_axis_modulo_times</definition>
+        <argsstring>(fileobj, axisname, tbeg, tend)</argsstring>
+        <name>get_axis_modulo_times</name>
+        <param>
+          <type>fileobj</type>
+          <defname>fileobj</defname>
+        </param>
+        <param>
+          <type>axisname</type>
+          <defname>axisname</defname>
+        </param>
+        <param>
+          <type>tbeg</type>
+          <defname>tbeg</defname>
+        </param>
+        <param>
+          <type>tend</type>
+          <defname>tend</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if modulo_beg and modulo_end exist in fileobj with the given axis, and returns their values in tbeg and tend. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="188" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" bodystart="189" bodyend="212"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/axis_utils/axis_utils2.F90" line="26" column="1"/>
+  </compounddef>
+</doxygen>

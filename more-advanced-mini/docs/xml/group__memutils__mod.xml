@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__memutils__mod" kind="group">
+    <compoundname>memutils_mod</compoundname>
+    <title>memutils_mod</title>
+    <innernamespace refid="namespacememutils__mod">memutils_mod</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__memutils__mod_1ga254fc4a57b84b735b95cbb2612a1a69e" prot="private" static="no" mutable="no">
+        <type>logical, private</type>
+        <definition>logical, private print_memory_usage</definition>
+        <argsstring></argsstring>
+        <name>print_memory_usage</name>
+        <initializer>=.FALSE.</initializer>
+        <briefdescription>
+<para>Default behavior of <ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" line="40" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" bodystart="40" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__memutils__mod_1ga2389796d387861f09a060ae7c645aed2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public memutils_mod::memutils_init</definition>
+        <argsstring>(print_flag)</argsstring>
+        <name>memutils_init</name>
+        <param>
+          <type>print_flag</type>
+          <defname>print_flag</defname>
+        </param>
+        <briefdescription>
+<para>Initialize the memutils module. </para>        </briefdescription>
+        <detaileddescription>
+<para>memutils_init initializes the print_memory_usage and memutils_initialized module variables when called. This configures if <ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats()</ref> should print the memory statistics when called. memutils_init, at present, can be called multiple times, and potentially change the behavior of <ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>print_flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicate if memory statistics should be printed by default </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" line="53" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public memutils_mod::print_memuse_stats</definition>
+        <argsstring>(text, unit, always)</argsstring>
+        <name>print_memuse_stats</name>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>unit</type>
+          <defname>unit</defname>
+        </param>
+        <param>
+          <type>always</type>
+          <defname>always</defname>
+        </param>
+        <briefdescription>
+<para>Print memory usage stats to stdout, or a particular file. </para>        </briefdescription>
+        <detaileddescription>
+<para>API to allow external user code to print memory statistics to stderr, or an optional file (Fortran file unit). The module variable <computeroutput>print_memory_usage</computeroutput> will control the default behavior (set when memutils_init is called). The default behavior can be modified passing in the optional <computeroutput>always</computeroutput> (logical) parameter. If <computeroutput>always.eqv..TRUE.</computeroutput>, <ref refid="group__memutils__mod_1ga3333e249d12f33dbf81cccac0edd9860" kindref="member">print_memuse_stats()</ref> will print the memory statistics.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to be printed before the memory statistics</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fortran file unit to where memory statistics should be recorded</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">always</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>.TRUE.</computeroutput>, force memory statistics to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" line="69" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/memutils/memutils.F90" bodystart="70" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Module to expose the memory printing API. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>V. Balaji</para></simplesect>
+Module to expose the memory printing API</para><para>Model components at times desire to print the memory statics to stderr, or another file (e.g. the log file). This can be useful in debugging. This module exposes the print_memuse_stat and memutils_init calls for use in external user code. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

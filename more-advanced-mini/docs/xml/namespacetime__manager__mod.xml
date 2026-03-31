@@ -1,0 +1,3090 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacetime__manager__mod" kind="namespace" language="Fortran">
+    <compoundname>time_manager_mod</compoundname>
+    <innerclass refid="interfacetime__manager__mod_1_1assignment_07_0A_08" prot="private">time_manager_mod::assignment(=)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_5_08" prot="private">time_manager_mod::operator(*)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_09_08" prot="private">time_manager_mod::operator(+)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07-_08" prot="private">time_manager_mod::operator(-)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_2_08" prot="private">time_manager_mod::operator(/)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_2_2_08" prot="private">time_manager_mod::operator(//)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_2_0A_08" prot="private">time_manager_mod::operator(/=)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_3_08" prot="private">time_manager_mod::operator(&lt;)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_3_0A_08" prot="private">time_manager_mod::operator(&lt;=)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_0A_0A_08" prot="private">time_manager_mod::operator(==)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_4_08" prot="private">time_manager_mod::operator(&gt;)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1operator_07_4_0A_08" prot="private">time_manager_mod::operator(&gt;=)</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1real__to__time__type" prot="private">time_manager_mod::real_to_time_type</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1set__date" prot="private">time_manager_mod::set_date</innerclass>
+    <innerclass refid="interfacetime__manager__mod_1_1set__time" prot="private">time_manager_mod::set_time</innerclass>
+    <innerclass refid="structtime__manager__mod_1_1time__type" prot="private">time_manager_mod::time_type</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__time__manager__mod_1ga2a835cbcc9bb49db08189c00eb4ec8b0" prot="private" static="no" mutable="no">
+        <type>integer, private</type>
+        <definition>integer, private calendar_type</definition>
+        <argsstring></argsstring>
+        <name>calendar_type</name>
+        <initializer>= NO_CALENDAR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="125" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gaa90f23df128449b5f86be8cc0d1f5467" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter days_in_400_year_period</definition>
+        <argsstring></argsstring>
+        <name>days_in_400_year_period</name>
+        <initializer>= 146097</initializer>
+        <briefdescription>
+<para>Used only for gregorian. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="131" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gacf6e1f65ec1f125152cb25b35cfc9199" prot="private" static="no" mutable="no">
+        <type>integer, dimension(12), private</type>
+        <definition>integer, dimension(12), private days_per_month</definition>
+        <argsstring></argsstring>
+        <name>days_per_month</name>
+        <initializer>= (/31,28,31,30,31,30,31,31,30,31,30,31/)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="129" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga3c8383be7fa222dd7387837e438734d1" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter do_floor</definition>
+        <argsstring></argsstring>
+        <name>do_floor</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="132" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gadd0ae614850bf11db1acb89df7648af2" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter do_nearest</definition>
+        <argsstring></argsstring>
+        <name>do_nearest</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="133" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga7c6fbe4cafa7aa7a5fe63ad6be3461d8" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public gregorian</definition>
+        <argsstring></argsstring>
+        <name>gregorian</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gad8f0d1a6392d9a58c15a5599f0bb07f6" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public invalid_calendar</definition>
+        <argsstring></argsstring>
+        <name>invalid_calendar</name>
+        <initializer>=-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gab555af44ce416ca3503d7c689bf49c1e" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public julian</definition>
+        <argsstring></argsstring>
+        <name>julian</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga55a3c66e26b9791551b82e2f225a403e" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter max_type</definition>
+        <argsstring></argsstring>
+        <name>max_type</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="126" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="126" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1gad369225c254bc7bda087334ca5d13096" prot="private" static="no" mutable="no">
+        <type>logical</type>
+        <definition>logical module_is_initialized</definition>
+        <argsstring></argsstring>
+        <name>module_is_initialized</name>
+        <initializer>= .false.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="265" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="265" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga9d220a231746f79d9d715b43bd9806aa" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public no_calendar</definition>
+        <argsstring></argsstring>
+        <name>no_calendar</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga2a9613fd84e6603bc9a1dec1fbc17bc0" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public noleap</definition>
+        <argsstring></argsstring>
+        <name>noleap</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga6476fd8d4044f16399a460847d490ae0" prot="private" static="no" mutable="no">
+        <type>integer, parameter</type>
+        <definition>integer, parameter seconds_per_day</definition>
+        <argsstring></argsstring>
+        <name>seconds_per_day</name>
+        <initializer>= rseconds_per_day</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="130" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="variable" id="time__manager_8F90_1a8fe6bac3a831351c47f4114cc306da5f" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public thirty_day_months</definition>
+        <argsstring></argsstring>
+        <name>thirty_day_months</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="122" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__time__manager__mod_1ga632f7102049b9bc386dad6f9980ba0aa" prot="private" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer ticks_per_second</definition>
+        <argsstring></argsstring>
+        <name>ticks_per_second</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="272" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="272" bodyend="272"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__time__manager__mod_1ga6e7d1651936914df3bd29b0342b1611f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=19) function</type>
+        <definition>character(len=19) function time_manager_mod::convert_integer_date_to_char</definition>
+        <argsstring>(year, month, day, hour, minute, second)</argsstring>
+        <name>convert_integer_date_to_char</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1866" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1867" bodyend="1873"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaa0e088352a4d5277a68760ba2483ba06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=256) function</type>
+        <definition>character(len=256) function time_manager_mod::cut0</definition>
+        <argsstring>(string)</argsstring>
+        <name>cut0</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1268" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1269" bodyend="1281"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga3d16305bd99a9dc1db550c26c0d754df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=15) function, public</type>
+        <definition>character(len=15) function, public time_manager_mod::date_to_string</definition>
+        <argsstring>(time, err_msg)</argsstring>
+        <name>date_to_string</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Get the a character string that represents the time. The format will be yyyymmdd.hhmmss. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2618" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2619" bodyend="2633"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga13dda4f6856e059cab21dd0f0881e600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public time_manager_mod::day_of_year</definition>
+        <argsstring>(time)</argsstring>
+        <name>day_of_year</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Returns number of day in year for given time. Jan 1st is day 1, not zero! </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2367" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2368" bodyend="2376"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga92f8585eafca73420566a92fbcd6b51a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public time_manager_mod::days_in_month</definition>
+        <argsstring>(Time, err_msg)</argsstring>
+        <name>days_in_month</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Given a time, computes the corresponding date given the selected date time mapping algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>number of days in month given the current selected calendar type</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2135" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2136" bodyend="2157"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga083f4565260231b8f851df7a26f7704c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_month_gregorian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_month_gregorian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in a gregorian month. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2163" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2164" bodyend="2171"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga79fc176469b2da812fef8106dd06059e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_month_julian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_month_julian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in a julian month. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2177" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2178" bodyend="2185"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab9d7a125fade527b232e9888419de3db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_month_no_leap</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_month_no_leap</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in a 365 day year month. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2203" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2204" bodyend="2210"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga8ba497bb42c9da53f99320287f20a715" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_month_thirty</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_month_thirty</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in a thirty day month (needed for transparent changes to calendar type). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2192" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2193" bodyend="2197"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga462dc68f1995e86d41808fb5526bf9bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public time_manager_mod::days_in_year</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_year</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in the calendar year corresponding to the date represented by time for the default calendar. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of days in this year for the default calendar type.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A time interval </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2382" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2383" bodyend="2402"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gae7204e379f41ba3abcc2394341f37e6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_year_gregorian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_year_gregorian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2418" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2419" bodyend="2428"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaefb35cd3c506dda170129e7f604a066f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_year_julian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_year_julian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2432" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2433" bodyend="2442"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga42f4bdc3dc89a78c5e6cde63dc70df6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_year_no_leap</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_year_no_leap</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2447" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2448" bodyend="2453"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga10c3c037accc4176da03c13356e86f45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::days_in_year_thirty</definition>
+        <argsstring>(Time)</argsstring>
+        <name>days_in_year_thirty</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2407" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2408" bodyend="2413"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga418d40feee902faeb58ef54c2367cae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::decrement_date</definition>
+        <argsstring>(Time, years, months, days, hours, minutes, seconds, ticks, err_msg, allow_neg_inc)</argsstring>
+        <name>decrement_date</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>years</type>
+          <defname>years</defname>
+        </param>
+        <param>
+          <type>months</type>
+          <defname>months</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>hours</type>
+          <defname>hours</defname>
+        </param>
+        <param>
+          <type>minutes</type>
+          <defname>minutes</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_neg_inc</type>
+          <defname>allow_neg_inc</defname>
+        </param>
+        <briefdescription>
+<para>Given a time and some date decrement, computes a new time. Depending on the mapping algorithm from date to time, it may be possible to specify undefined decrements (i.e. if one decrements by 68 days and 3 months in a Julian calendar, it matters which order these operations are done and we don&apos;t want to deal with stuff like that, make it an error). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>For all but the thirty_day_months calendar, decrements to months and years must be made separately from other units because of the non-associative nature of addition. If the result is a negative time (i.e. date before the base date) it is considered a fatal error.</para></simplesect>
+<simplesect kind="return"><para>Time after the given decrement is applied</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to decrement</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>amount of time to decrement by units should not exceed next largest unit (ie. 61 seconds should be 1 min 1 sec ) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2088" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2089" bodyend="2128"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga1479e62dcf63419f83ba7dbe33e0f03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::decrement_time</definition>
+        <argsstring>(Time, seconds, days, ticks, err_msg, allow_neg_inc)</argsstring>
+        <name>decrement_time</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_neg_inc</type>
+          <defname>allow_neg_inc</defname>
+        </param>
+        <briefdescription>
+<para>Decrements a time by seconds and days. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a time and a decrement of days and seconds, returns a time that subtracts this decrement from an input time. <simplesect kind="return"><para>A time that suvtracts this decrement from an input time. A negative result is a fatal error.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A time interval</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Decrement of seconds</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Decrement of days and ticks</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Present and non-blank when a fatal error has occurred, holds the error message.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allow_neg_inc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Throws fatal warning when set to false if negative values are used to decrement. Default is true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="599" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="600" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab592dd15307abf3f792cf72a772d7118" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::error_handler</definition>
+        <argsstring>(routine, err_msg_local, err_msg)</argsstring>
+        <name>error_handler</name>
+        <param>
+          <type>routine</type>
+          <defname>routine</defname>
+        </param>
+        <param>
+          <type>err_msg_local</type>
+          <defname>err_msg_local</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>The purpose of this routine is to prevent the addition of an excessive amount of code in order to implement the error handling scheme involving an optional error flag of type character. It allows one line of code to accomplish what would otherwise require 6 lines. A value of .true. for this function is a flag to the caller that it should immediately return to it&apos;s caller. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2489" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2490" bodyend="2503"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gad4d5cb71942ebf3f1bb9d4a29a6d9a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public time_manager_mod::get_calendar_type</definition>
+        <argsstring>()</argsstring>
+        <name>get_calendar_type</name>
+        <briefdescription>
+<para>Returns default calendar type for mapping from time to date. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1104" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1105" bodyend="1109"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga42ca904e0ef4d8cd59deab75ea8bc048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::get_date</definition>
+        <argsstring>(time, year, month, day, hour, minute, second, tick, err_msg)</argsstring>
+        <name>get_date</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Gets the date for different calendar types. Given a time_interval, returns the corresponding date under the selected calendar. When err_msg present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: <linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>if(err_msg /= &apos;&apos;) call error_mesg(&apos;my_routine&apos;,&apos;additional info: &apos;//trim(err_msg),FATAL) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1144" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1145" bodyend="1183"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga598caa0b76f256ade3f0fe120f6a5c91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine time_manager_mod::get_date_gregorian</definition>
+        <argsstring>(time, year, month, day, hour, minute, second, tick)</argsstring>
+        <name>get_date_gregorian</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+<para>Gets the date on a Gregorian calendar. Computes the year, month, day on the fly from the quantity timedays. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1190" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1191" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga3aa4943a023df517bc3cbc3403a152f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::get_date_julian</definition>
+        <argsstring>(time, year, month, day, hour, minute, second)</argsstring>
+        <name>get_date_julian</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1333" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1334" bodyend="1343"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga7cc9c01c1da138c3be10f266127fa5d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine time_manager_mod::get_date_julian_private</definition>
+        <argsstring>(time, year, month, day, hour, minute, second, tick)</argsstring>
+        <name>get_date_julian_private</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+<para>Base date for Julian calendar is year 1 with all multiples of 4 years being leap years. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1287" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1288" bodyend="1329"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga5825b92972e868baa71dcef0d8355d7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::get_date_no_leap</definition>
+        <argsstring>(time, year, month, day, hour, minute, second)</argsstring>
+        <name>get_date_no_leap</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1407" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1408" bodyend="1417"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga997da280574735ac58cb1ab941e6fe59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine time_manager_mod::get_date_no_leap_private</definition>
+        <argsstring>(time, year, month, day, hour, minute, second, tick)</argsstring>
+        <name>get_date_no_leap_private</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1376" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1377" bodyend="1403"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga929753ba3905cdc9914e391331b39d08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine time_manager_mod::get_date_thirty</definition>
+        <argsstring>(time, year, month, day, hour, minute, second, tick)</argsstring>
+        <name>get_date_thirty</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+<para>Computes date corresponding to time interval for 30 day months, 12 month years. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1350" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1351" bodyend="1372"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab3208262d5edf03c24c322516ba64ef8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::get_tick_from_string</definition>
+        <argsstring>(string, err_msg, allow_rounding, tick)</argsstring>
+        <name>get_tick_from_string</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_rounding</type>
+          <defname>allow_rounding</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="439" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="440" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga07edc2aeb8850b3371e504f83d0285d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function, public</type>
+        <definition>integer function, public time_manager_mod::get_ticks_per_second</definition>
+        <argsstring>()</argsstring>
+        <name>get_ticks_per_second</name>
+        <briefdescription>
+<para>Returns the number of ticks per second. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1125" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1126" bodyend="1129"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga2b9c941f38e33eba67ee151fe3bd8ee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::get_time</definition>
+        <argsstring>(Time, seconds, days, ticks, err_msg)</argsstring>
+        <name>get_time</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns days and seconds ( &lt; 86400 ) corresponding to a time. <computeroutput>err_msg</computeroutput> should be checked for any errors. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> interval to get days and seconds from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of seconds </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">days</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of seconds </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of ticks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains an error message on failure <linebreak/>
+Example usage: <programlisting filename=".F90"><codeline><highlight class="normal">get_time(time,<sp/>seconds,<sp/>days,<sp/>ticks,<sp/>err_msg)<sp/></highlight></codeline>
+</programlisting> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="490" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="491" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf78bfbc6fd1fddda301361d182e657b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::increment_date</definition>
+        <argsstring>(Time, years, months, days, hours, minutes, seconds, ticks, err_msg, allow_neg_inc)</argsstring>
+        <name>increment_date</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>years</type>
+          <defname>years</defname>
+        </param>
+        <param>
+          <type>months</type>
+          <defname>months</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>hours</type>
+          <defname>hours</defname>
+        </param>
+        <param>
+          <type>minutes</type>
+          <defname>minutes</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_neg_inc</type>
+          <defname>allow_neg_inc</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1927" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1928" bodyend="1976"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gae9dc6f6193f2d1f499fcf7079ea5da60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::increment_date_private</definition>
+        <argsstring>(Time, years, months, days, hours, minutes, seconds, ticks, Time_out, err_msg)</argsstring>
+        <name>increment_date_private</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>years</type>
+          <defname>years</defname>
+        </param>
+        <param>
+          <type>months</type>
+          <defname>months</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>hours</type>
+          <defname>hours</defname>
+        </param>
+        <param>
+          <type>minutes</type>
+          <defname>minutes</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Given a time and some date increment, computes a new time. Depending on the mapping algorithm from date to time, it may be possible to specify undefined increments (i.e. if one increments by 68 days and 3 months in a Julian calendar, it matters which order these operations are done and we don&apos;t want to deal with stuff like that, make it an error). </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine operates in one of two modes.<orderedlist>
+<listitem><para>days, hours, minutes, seconds, ticks are incremented, years and months must be zero or absent arguments.</para></listitem><listitem><para>years and/or months are incremented, other time increments must be zero or absent arguments.</para></listitem></orderedlist>
+</para><para>Negative increments are always allowed in the private version of this routine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1992" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1993" bodyend="2072"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga4ae4f2e68d2cf722dd93aa5cd8cdc56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::increment_time</definition>
+        <argsstring>(Time, seconds, days, ticks, err_msg, allow_neg_inc)</argsstring>
+        <name>increment_time</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_neg_inc</type>
+          <defname>allow_neg_inc</defname>
+        </param>
+        <briefdescription>
+<para>Increments a time by seconds and days. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a time and an increment of days and seconds, returns a new <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> that represents the given time after the given increment. <simplesect kind="return"><para>incremented <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A time interval</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Increment of seconds</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Increment of days and ticks</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present and non-blank, a fatal error condition has been detected, with the string itself as the error message.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allow_neg_inc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When false, negative increments give fatal errors Defaults to true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="531" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="532" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga9b0857bd488fa558d55a9e51cb12746b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::increment_time_private</definition>
+        <argsstring>(Time_in, seconds, days, ticks, Time_out, err_msg)</argsstring>
+        <name>increment_time_private</name>
+        <param>
+          <type>Time_in</type>
+          <defname>Time_in</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Increments a time by seconds, days and ticks. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="566" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="567" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gabd5f3b7a1ac6fab11649aca606fdbb8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public time_manager_mod::interval_alarm</definition>
+        <argsstring>(time, time_interval, alarm, alarm_interval)</argsstring>
+        <name>interval_alarm</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>time_interval</type>
+          <defname>time_interval</defname>
+        </param>
+        <param>
+          <type>alarm</type>
+          <defname>alarm</defname>
+        </param>
+        <param>
+          <type>alarm_interval</type>
+          <defname>alarm_interval</defname>
+        </param>
+        <briefdescription>
+<para>Supports a commonly used type of test on times for models. Given the current time, and a time for an alarm, determines if this is the closest time to the alarm time given a time step of time_interval. If this is the closest time (alarm - time &lt;= time_interval/2), the function returns true and the alarm is incremented by the alarm_interval. Watch for problems if the new alarm time is less than time + time_interval. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a specialized operation that is frequently performed in models. Given a time, and a time interval, this function is true if this is the closest time step to the alarm time. The actual computation is:</para><para>if((alarm_time - time) &amp;#60;&amp;#61; (time_interval / 2))</para><para>If the function is true, the alarm time is incremented by the alarm_interval; WARNING, this is a featured side effect. Otherwise, the function is false and there are no other effects. CAUTION: if the alarm_interval is smaller than the time_interval, the alarm may fail to return true ever again. Watch for problems if the new alarm time is less than time + time_interval</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alarm_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">alarm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An alarm time, which is incremented by the alarm_interval if the function is true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="999" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1000" bodyend="1013"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga0cd42a0c4bcdd97f4ad94d585adf775c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public time_manager_mod::leap_year</definition>
+        <argsstring>(Time, err_msg)</argsstring>
+        <name>leap_year</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if the year corresponding to the input time is a leap year (for default calendar). Always returns false for THIRTY_DAY_MONTHS and NOLEAP. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval to check if leap year </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2215" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2216" bodyend="2234"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga5dac357240e7e8782183465be4f4d5d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::leap_year_gregorian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>leap_year_gregorian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2239" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2240" bodyend="2249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga0541d9f209f3a8081961259fab7eac73" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::leap_year_gregorian_int</definition>
+        <argsstring>(year)</argsstring>
+        <name>leap_year_gregorian_int</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2254" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2255" bodyend="2261"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga5513f199e50312eaf59665a1f02cc5b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::leap_year_julian</definition>
+        <argsstring>(Time)</argsstring>
+        <name>leap_year_julian</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Returns the number of days in a julian month. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2267" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2268" bodyend="2274"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab9c5d24c6c0e63e2c3dec33938195279" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::leap_year_no_leap</definition>
+        <argsstring>(Time)</argsstring>
+        <name>leap_year_no_leap</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>Another tough one; no leap year returns false for leap year inquiry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2291" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2292" bodyend="2296"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga37a1a167b8fe72646421131a281ca751" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::leap_year_thirty</definition>
+        <argsstring>(Time)</argsstring>
+        <name>leap_year_thirty</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <briefdescription>
+<para>No leap years in thirty day months, included for transparency. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2280" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2281" bodyend="2285"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga071679d086f0cdd422f151dcc3dcab3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::length_of_year</definition>
+        <argsstring>()</argsstring>
+        <name>length_of_year</name>
+        <briefdescription>
+<para>Returns the mean length of the year in the default calendar setting. </para>        </briefdescription>
+        <detaileddescription>
+<para>There are no arguments in this function. It returns the mean length of the year for the default calendar. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2303" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2304" bodyend="2321"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaca88dbcabe680b42ba2e4494975aef4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::length_of_year_gregorian</definition>
+        <argsstring>()</argsstring>
+        <name>length_of_year_gregorian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2336" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2337" bodyend="2341"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga9db346d761084f3ac65c24800055923a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::length_of_year_julian</definition>
+        <argsstring>()</argsstring>
+        <name>length_of_year_julian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2346" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2347" bodyend="2351"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga2e01c2190a88d0a9d761edcea165df3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::length_of_year_no_leap</definition>
+        <argsstring>()</argsstring>
+        <name>length_of_year_no_leap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2356" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2357" bodyend="2361"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf159de23628fb235f219e331ead89f92" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::length_of_year_thirty</definition>
+        <argsstring>()</argsstring>
+        <name>length_of_year_thirty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2326" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2327" bodyend="2331"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaab287095b1c4324697bcf2278512ede0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=9) function, public</type>
+        <definition>character (len=9) function, public time_manager_mod::month_name</definition>
+        <argsstring>(n)</argsstring>
+        <name>month_name</name>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Returns a character string containing the name of the month corresponding to month number n. </para>        </briefdescription>
+        <detaileddescription>
+<para>Definition is the same for all calendar types. <simplesect kind="return"><para>The character string associated with a month. All calendars have 12 months and return full month names, not abreviations.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Month number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2464" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2465" bodyend="2480"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga56c87c0e8dd197bb93aa694fdc327eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::print_date</definition>
+        <argsstring>(Time, str, unit)</argsstring>
+        <name>print_date</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <defname>str</defname>
+        </param>
+        <param>
+          <type>unit</type>
+          <defname>unit</defname>
+        </param>
+        <briefdescription>
+<para>Prints the time to standard output (or optional unit) as a date. </para>        </briefdescription>
+        <detaileddescription>
+<para>Prints the given <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> argument as a date (using year, month, day, hour, minutes, seconds and ticks). NOTE: there is no check for PE number.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time that will be printed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character string that precedes the printed time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unit number for printed output, defaults to stdout </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2558" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2559" bodyend="2579"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gad9a5f9ab6f649da9aafe32b22b1be0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::print_time</definition>
+        <argsstring>(Time, str, unit)</argsstring>
+        <name>print_time</name>
+        <param>
+          <type>Time</type>
+          <defname>Time</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <defname>str</defname>
+        </param>
+        <param>
+          <type>unit</type>
+          <defname>unit</defname>
+        </param>
+        <briefdescription>
+<para>Prints the given <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> argument as a time (using days, seconds and ticks) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>There is no check for PE number.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time that will be printed</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character string that precedes the printed time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unit number for printed output, defaults to stdout </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2523" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2524" bodyend="2551"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga92ce7d3273c697e57bae91dfb9eba45e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::real4_to_time_type</definition>
+        <argsstring>(x, err_msg)</argsstring>
+        <name>real4_to_time_type</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of seconds</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="909" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="910" bodyend="913"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaae8271a97051aff7a23cba9f8dbf433b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::real8_to_time_type</definition>
+        <argsstring>(x, err_msg)</argsstring>
+        <name>real8_to_time_type</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Convert a real number of seconds into a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A filled time type variable, and an error message if an error occurs.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of seconds.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="884" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="885" bodyend="906"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaba77face96aefbbb2c754b5830938793" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function, public</type>
+        <definition>logical function, public time_manager_mod::repeat_alarm</definition>
+        <argsstring>(time, alarm_frequency, alarm_length)</argsstring>
+        <name>repeat_alarm</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>alarm_frequency</type>
+          <defname>alarm_frequency</defname>
+        </param>
+        <param>
+          <type>alarm_length</type>
+          <defname>alarm_length</defname>
+        </param>
+        <briefdescription>
+<para>Repeat_alarm supports an alarm that goes off with alarm_frequency and lasts for alarm_length. If the nearest occurence of an alarm time is less than half an alarm_length from the input time, repeat_alarm is true. For instance, if the alarm_frequency is 1 day, and the alarm_length is 2 hours, then repeat_alarm is true from time 2300 on day n to time 0100 on day n + 1 for all n. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alarm_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval for time in between alarm activations</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alarm_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval for amount of time alarm is active for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1024" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1025" bodyend="1038"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaaf3ed18ce9c9142e0f038189c4ac6a21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::safe_rtoi</definition>
+        <argsstring>(rval, mode)</argsstring>
+        <name>safe_rtoi</name>
+        <param>
+          <type>rval</type>
+          <defname>rval</defname>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+        </param>
+        <briefdescription>
+<para>Convert a floating point value to an integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The integer value, using the input rounding mode.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A floating point value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rouding mode (either &quot;do_floor&quot; or &quot;do_nearest&quot;) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="918" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="919" bodyend="937"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga48c9db18080295254bd46b0908598a5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::scalar_time_mult</definition>
+        <argsstring>(n, time)</argsstring>
+        <name>scalar_time_mult</name>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Returns time multipled by integer factor n. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>factor to mulitply by </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="799" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="800" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gae4ed023b8077a6f14fffb764d642e55a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::set_calendar_type</definition>
+        <argsstring>(type, err_msg)</argsstring>
+        <name>set_calendar_type</name>
+        <param>
+          <type>type</type>
+          <defname>type</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Sets calendar_type for mapping an interval to a date. For the Gregorian calendar, negative years and the proleptic calendar are not used; and the discontinuity of days in October 1582 (when the Gregorian calendar was adopted by select groups in Europe) is also not taken into account. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant parameter value (ie. one NO_CALENDAR, ) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1073" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1074" bodyend="1098"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga28e8bf9214639c7358f165f71fe87954" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::set_date_c</definition>
+        <argsstring>(string, zero_year_warning, err_msg, allow_rounding)</argsstring>
+        <name>set_date_c</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>zero_year_warning</type>
+          <defname>zero_year_warning</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_rounding</type>
+          <defname>allow_rounding</defname>
+        </param>
+        <briefdescription>
+<para>Calls set_date_private for different calendar types when given a string input. Examples of acceptable forms of string: </para>        </briefdescription>
+        <detaileddescription>
+<para>1980-01-01 00:00:00 1980-01-01 00:00:00.50 1980-1-1 0:0:0 1980-1-1</para><para>year number must occupy 4 spaces. months, days, hours, minutes, seconds may occupy 1 or 2 spaces year, month and day must be separated by a &apos;-&apos; hour, minute, second must be separated by a &apos;:&apos; hour, minute, second are optional. If not present then zero is assumed. second may be a real number.</para><para>zero_year_warning: If the year number is zero, it will be silently changed to one, unless zero_year_warning=.true., in which case a WARNING message will also be issued </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1507" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1508" bodyend="1604"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga7f34ca591384ab30f3451c2ee7e28d31" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_date_gregorian</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, Time_out, err_msg)</argsstring>
+        <name>set_date_gregorian</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Sets Time_outdays on a Gregorian calendar Computes the total number of days between 1/1/0001 to the current month/day/year. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1611" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1612" bodyend="1690"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga0f0f8fdbd98353961df0e31b8d4f9eb6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::set_date_i</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, err_msg)</argsstring>
+        <name>set_date_i</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Calls set_date_private to set days for different calendar types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1464" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1465" bodyend="1484"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaefd031208df0a94fe6bcf85bff298cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::set_date_julian</definition>
+        <argsstring>(year, month, day, hour, minute, second)</argsstring>
+        <name>set_date_julian</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1744" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1745" bodyend="1756"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga01c0a809fe5c930fd263bbcaaad7af94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_date_julian_private</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, Time_out, err_msg)</argsstring>
+        <name>set_date_julian_private</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1695" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1696" bodyend="1740"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf380f80b8acc85a17cfff5f38d7232ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function, public</type>
+        <definition>type(time_type) function, public time_manager_mod::set_date_no_leap</definition>
+        <argsstring>(year, month, day, hour, minute, second)</argsstring>
+        <name>set_date_no_leap</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1824" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1825" bodyend="1836"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga4b2f3ce837ddf6270c6f5ec8e3f4b5a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_date_no_leap_private</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, Time_out, err_msg)</argsstring>
+        <name>set_date_no_leap_private</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1790" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1791" bodyend="1820"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga8164c23fbef5e970f2905fa073860202" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_date_private</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, Time_out, err_msg)</argsstring>
+        <name>set_date_private</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Sets days for different calendar types. Given an input date in year, month, days, etc., creates a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> that represents this time interval from the internally defined base date. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>that it is possible to specify any number of illegal dates; these are checked for and generate errors as appropriate.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error message, if non-empty an error has occurred </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1429" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1430" bodyend="1458"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf9c4a56f6049b43b75517fe925e63ed5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_date_thirty</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, Time_out, err_msg)</argsstring>
+        <name>set_date_thirty</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1760" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1761" bodyend="1785"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga3f9d6b19f82929805f6983974e93e462" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::set_ticks_per_second</definition>
+        <argsstring>(tps)</argsstring>
+        <name>set_ticks_per_second</name>
+        <param>
+          <type>tps</type>
+          <defname>tps</defname>
+        </param>
+        <briefdescription>
+<para>Sets the number of ticks per second. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1115" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1116" bodyend="1119"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga24009b65496108d890cce8e9d5f49b69" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::set_time_c</definition>
+        <argsstring>(string, err_msg, allow_rounding)</argsstring>
+        <name>set_time_c</name>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <param>
+          <type>allow_rounding</type>
+          <defname>allow_rounding</defname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> set to the given amount of time via a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains days and seconds separated by a single blank. days must be integer, seconds may be integer or real. Examples: &apos;100 43200&apos; &apos;100 43200.50&apos;</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: if(err_msg /= &apos;&apos;) call error_mesg(&apos;my_routine&apos;,&apos;additional info: &apos;//trim(err_msg),FATAL)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allow_rounding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When .true., any fractions of a second will be rounded off to the nearest tick. When .false., it is a fatal error if the second fraction cannot be exactly represented by a number of ticks. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="359" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="360" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga6e4eefaac997bf1ead90175efb43442e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::set_time_i</definition>
+        <argsstring>(seconds, days, ticks, err_msg)</argsstring>
+        <name>set_time_i</name>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> set to the given amount of time via integer amounts. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of seconds</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">days</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of days</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ticks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of ticks</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When present, and when non-blank, a fatal error condition as been detected. The string itself is an error message. It is recommended that, when err_msg is present in the call to this routine, the next line of code should be something similar to this: if(err_msg /= &apos;&apos;) call error_mesg(&apos;my_routine&apos;,&apos;additional info: &apos;//trim(err_msg),FATAL) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="331" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="332" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaa5ef4371bd20e2d0976a63cd5a96d775" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::set_time_private</definition>
+        <argsstring>(seconds, days, ticks, Time_out, err_msg)</argsstring>
+        <name>set_time_private</name>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>days</type>
+          <defname>days</defname>
+        </param>
+        <param>
+          <type>ticks</type>
+          <defname>ticks</defname>
+        </param>
+        <param>
+          <type>Time_out</type>
+          <defname>Time_out</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns a time interval corresponding to this number of days, seconds, and ticks. days, seconds and ticks may be negative, but resulting time must be positive. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="281" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="282" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaa5b77870a71375dc460f34d862f49325" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine time_manager_mod::time_assignment</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_assignment</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Assigns all components of the <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> variable on RHS to same components of <ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> variable on LHS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="860" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="861" bodyend="865"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gad42e283bb36efd703751796d30f07275" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>integer function</type>
+        <definition>integer function time_manager_mod::time_divide</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_divide</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns the largest integer, n, for which time1 &gt;= time2 * n. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval (dividend)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval (divisor) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="812" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="813" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gafca552274dee81ec7094cfb0c10ccabb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_eq</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_eq</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 == time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="700" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="701" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga15429b4b71ac03e1f528ca91f724e0f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_ge</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_ge</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 &gt;= time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="658" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="659" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga5fcc77f0861723f917c0a1fb91a16245" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_gt</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_gt</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 &gt; time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="638" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="639" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga68e8eb8c14b3a8e2a5c00b87b263650d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_le</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_le</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 &lt;= time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="688" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="689" bodyend="694"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf822bea03a375fc7a3f1d8d1fd82e187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::time_list_error</definition>
+        <argsstring>(T, Terr)</argsstring>
+        <name>time_list_error</name>
+        <param>
+          <type>T</type>
+          <defname>T</defname>
+        </param>
+        <param>
+          <type>Terr</type>
+          <defname>Terr</defname>
+        </param>
+        <briefdescription>
+<para>This routine converts the integer tdays to a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Tom Robinson <ulink url="mailto:thomas.robinson@noaa.gov">thomas.robinson@noaa.gov</ulink></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref> input</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>terr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String holding the tdays </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Allocate the string</para><para>Write the integer to the string </para>        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2638" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2639" bodyend="2644"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gadf905a5c08c5c536f1c096c7f185c2dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_lt</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_lt</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 &lt; time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="670" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="671" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga7cd4532f00e5dee5fa8ea45296c85675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine, public</type>
+        <definition>subroutine, public time_manager_mod::time_manager_init</definition>
+        <argsstring>()</argsstring>
+        <name>time_manager_init</name>
+        <briefdescription>
+<para>Initialization routine. Writes the version information to the log file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2509" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2510" bodyend="2515"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab0abd73a9fb0897d92398afff8b743d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::time_minus</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_minus</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns difference of two time_types. WARNING: a time type is positive so by definition time1 - time2 is the same as time2 - time1. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to subtract</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to subtract </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="742" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="743" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gaf038eafffcbfd654b42dcc74b6b110c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::time_ne</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_ne</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns true if time1 /= time2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to compare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="715" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="716" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga2805ba04b464c0143fe0bdd63065c3b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::time_plus</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_plus</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns sum of two time_types. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to add</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="727" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="728" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga4a46a8bcc5cdfd2deffa174b72c20bbd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(r8_kind) function</type>
+        <definition>real(r8_kind) function time_manager_mod::time_real_divide</definition>
+        <argsstring>(time1, time2)</argsstring>
+        <name>time_real_divide</name>
+        <param>
+          <type>time1</type>
+          <defname>time1</defname>
+        </param>
+        <param>
+          <type>time2</type>
+          <defname>time2</defname>
+        </param>
+        <briefdescription>
+<para>Returns the double precision quotient of two times. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval (dividend)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a time interval (divisor) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="837" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="838" bodyend="853"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga2a56c17818481570d86051158811ed91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::time_scalar_divide</definition>
+        <argsstring>(time, n)</argsstring>
+        <name>time_scalar_divide</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Returns the largest time, t, for which n * t &lt;= time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to divide</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>divisor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="943" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="944" bodyend="977"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga330ff6e3e8408cd8c0d3d703d56b3fa4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type(<ref refid="structtime__manager__mod_1_1time__type" kindref="compound">time_type</ref>) function</type>
+        <definition>type(time_type) function time_manager_mod::time_scalar_mult</definition>
+        <argsstring>(time, n)</argsstring>
+        <name>time_scalar_mult</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Returns time multiplied by integer factor n. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time interval to multply</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>factor to multiply by </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="760" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="761" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1gab6936a9b92f42646ca5942c3de01cc6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real(kind=r8_kind) function, public</type>
+        <definition>real(kind=r8_kind) function, public time_manager_mod::time_type_to_real</definition>
+        <argsstring>(time)</argsstring>
+        <name>time_type_to_real</name>
+        <param>
+          <type>time</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Converts time to seconds and returns it as a real number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="869" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="870" bodyend="878"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga40ba58ef6e1c86616e5f8d7e8ebefca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>character(len=24) function, public</type>
+        <definition>character(len=24) function, public time_manager_mod::valid_calendar_types</definition>
+        <argsstring>(ncal, err_msg)</argsstring>
+        <name>valid_calendar_types</name>
+        <param>
+          <type>ncal</type>
+          <defname>ncal</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+<para>Returns a character string that describes the calendar type corresponding to the input integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A character string describing the calendar type</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ncal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer corresponding to a valid calendar type</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">err_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Holds an error message when present </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="2588" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="2589" bodyend="2611"/>
+      </memberdef>
+      <memberdef kind="function" id="group__time__manager__mod_1ga5b059fb8c45b5205f3ef60ba83b7678d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function time_manager_mod::valid_increments</definition>
+        <argsstring>(year, month, day, hour, minute, second, tick, err_msg)</argsstring>
+        <name>valid_increments</name>
+        <param>
+          <type>year</type>
+          <defname>year</defname>
+        </param>
+        <param>
+          <type>month</type>
+          <defname>month</defname>
+        </param>
+        <param>
+          <type>day</type>
+          <defname>day</defname>
+        </param>
+        <param>
+          <type>hour</type>
+          <defname>hour</defname>
+        </param>
+        <param>
+          <type>minute</type>
+          <defname>minute</defname>
+        </param>
+        <param>
+          <type>second</type>
+          <defname>second</defname>
+        </param>
+        <param>
+          <type>tick</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>err_msg</type>
+          <defname>err_msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="1841" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" bodystart="1842" bodyend="1861"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/time_manager/time_manager.F90" line="61" column="1"/>
+  </compounddef>
+</doxygen>

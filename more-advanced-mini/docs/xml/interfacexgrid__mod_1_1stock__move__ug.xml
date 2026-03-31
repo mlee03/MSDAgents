@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="interfacexgrid__mod_1_1stock__move__ug" kind="interface" language="Fortran" prot="private">
+    <compoundname>xgrid_mod::stock_move_ug</compoundname>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="interfacexgrid__mod_1_1stock__move__ug_1ae209dd8600eed0c9f9cf370752d5e173" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine stock_move_ug_3d</definition>
+        <argsstring>(from, to, grid_index, stock_ug_data3d, xmap, delta_t, from_side, to_side, radius, verbose, ier)</argsstring>
+        <name>stock_move_ug_3d</name>
+        <param>
+          <type>from</type>
+          <defname>from</defname>
+        </param>
+        <param>
+          <type>to</type>
+          <defname>to</defname>
+        </param>
+        <param>
+          <type>grid_index</type>
+          <defname>grid_index</defname>
+        </param>
+        <param>
+          <type>stock_ug_data3d</type>
+          <defname>stock_ug_data3d</defname>
+        </param>
+        <param>
+          <type>xmap</type>
+          <defname>xmap</defname>
+        </param>
+        <param>
+          <type>delta_t</type>
+          <defname>delta_t</defname>
+        </param>
+        <param>
+          <type>from_side</type>
+          <defname>from_side</defname>
+        </param>
+        <param>
+          <type>to_side</type>
+          <defname>to_side</defname>
+        </param>
+        <param>
+          <type>radius</type>
+          <defname>radius</defname>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+        </param>
+        <param>
+          <type>ier</type>
+          <defname>ier</defname>
+        </param>
+        <briefdescription>
+<para>this version takes rank 3 data, it can be used to compute the flux on anything but the first grid, which typically is on the atmos side. note that &quot;from&quot; and &quot;to&quot; are optional, the stocks will be subtracted, resp. added, only if these are present. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">grid_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>grid index</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stock_ug_data3d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data array is 3d</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">from_side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ISTOCK_TOP, ISTOCK_BOTTOM, or ISTOCK_SIDE</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">to_side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ISTOCK_TOP, ISTOCK_BOTTOM, or ISTOCK_SIDE</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>earth radius </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="4608" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="4610" bodyend="4663"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" line="487" column="1" bodyfile="/home/Ryan.Mulhall/FMS-1/exchange/xgrid.F90" bodystart="487" bodyend="488"/>
+    <listofallmembers>
+      <member refid="interfacexgrid__mod_1_1stock__move__ug_1ae209dd8600eed0c9f9cf370752d5e173" prot="private" virt="non-virtual"><scope>xgrid_mod::stock_move_ug</scope><name>stock_move_ug_3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

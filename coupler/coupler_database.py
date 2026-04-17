@@ -26,41 +26,57 @@ class XMLsoup():
     def get_modname(self):
         modname_obj = self.soup.find("compoundname")
         if modname_obj is None:
-            raise RuntimeError(f"cannot find tag 'compoundname' to set the module name in \n{self.soup}")
+            raise RuntimeError(f"cannot find tag 'compoundname' to set name in \n{self.soup}")
         return modname_obj.text.strip()
 
     
 class f90XMLsoup(XMLsoup):
 
-    def __init__(self, codebase: str, xmldir: str|Path = "./docs/xml", xmlfile: str|Path = None):
+    def __init__(self,
+                 codebase: str,
+                 prog_or_mod: Literal["module", "program"] = "module",
+                 xmldir: str|Path = "./docs/xml",
+                 xmlfile: str|Path = None):
         super().__init__(codebase, xmldir, xmlfile)
+        self.prog_or_mod = prog_or_mod
         self.documents = None
         self.metadatas = None
         self.ids = None
-        self.description = self.get_module_doc()
+        self.description = self.get_toplevel_doc()
 
-    def get_module_doc(self):
+    def get_introduction(self):
+        self.introduction = xml.soup.parblock.text.strip()
+
+    def get_toplevel_doc(self):
         
         briefdescription_obj = self.soup.briefdescription
-        detaileddescription_obj = self.sooup.detaileddescription
+        detaileddescription_obj = self.soup.detaileddescription
 
+        self.description = f"{self.modname} is a {self.prog_or_mod} in {self.codebase}"
+        
         if briefdescription_obj is not None:
             briefdescription = briefdescription_obj.text.strip()
+            if briefdescription:
+                self.description += briefdescription
 
         if detaileddescription_obj is not None:
-            detaileddescription = detaileddescription_obj.text.strip()
-
-        self.description = f"{self.modname} is a module in {self.codebase}"
-        if briefdescription+detaileddescription:
-            self.description += "{briefdescription} {detaileddescription}"
-        else:
-            self.description += "There are no additional description for module {self.modname}"
+            parblock_obj = detaileddescription_obj.parblock
+            if parblock_obj is not None:
+                detaileddescription = detaileddescription_obj.text.strip()
+                if detaileddescription:
+                    self.description += detaileddescription
 
 
 class namespaceXMLsoup(XMLsoup):
 
-    def __init__(self, codebase: str, xmldir: str|Path = "./docs/xml", xmlfile: str|Path = None):
+    def __init__(self,
+                 codebase: str,
+                 prog_or_mod: Literal["module", "program"] = "module",                                                                               
+                 xmldir: str|Path = "./docs/xml",
+                 xmlfile: str|Path = None):
         super().__init__(codebase, xmldir, xmlfile)
+
+        self.prog_or_mod = prog_or_mod
         self.vardocs = {}
         self.procdocs = {}
 
@@ -74,7 +90,7 @@ class namespaceXMLsoup(XMLsoup):
             
             varname = self.get_name(variable)
             vartype = self.get_type(variable)
-            var_introsentence = f"{varname} is a module variable of type {vartype} in {self.modname}."
+            var_introsentence = f"{varname} is a {self.prog_or_mod} variable of type {vartype} in {self.modname}."
 
             vardef_sentence = self.get_briefdescription_as_sentence(variable, varname)
             
@@ -203,26 +219,10 @@ class namespaceXMLsoup(XMLsoup):
 
         return "There are no details about what happens in {name}."
 
-
-class programXMLsoup(XMLsoup):
-
-    def __init__(self, codebase: str, xmldir: str|Path = "./docs/xml", xmlfile: str|Path = None):
-
-        super().__init__(codebase, xmldir, xmlfile)
-        self.doctdict = {}
-
-    def get_introduction(self):
-
-        self.introduction = xml.soup.parblock.text.strip()
                     
-modxml = namespaceXMLsoup(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
-modxml.set_variable_docs()
-modxml.set_procedure_docs()
-for variable, vardict in modxml.vardocs.items():
-    print(vardict["document"])
-
-#xml = programXMLsoup(codebase="FMSCoupler", xmlfile="full_2coupler__main_8_f90.xml")
-#xml.get_introduction()
-#print(xml.introduction)
-
+#modxml = namespaceXMLsoup(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
+#modxml.set_variable_docs()
+#modxml.set_procedure_docs()
+#for variable, vardict in modxml.vardocs.items():
+#    print(vardict["document"])
 

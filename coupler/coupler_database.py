@@ -12,22 +12,90 @@ class XMLsoup():
         self.xmldir = Path(xmldir)
         self.xmlfile = Path(xmlfile)
         self.soup = self.get_xmlsoup()
-        self.modname = self.get_modname()
+        self.toplevel_name = self.get_name(toplevel=True)
         
     def get_xmlsoup(self):
 
         xmlfile = self.xmldir/self.xmlfile
+
         if xmlfile.exists():
             with open(xmlfile, "r") as openedfile:
                 return BeautifulSoup(openedfile, "lxml-xml")
         else:
             raise IOERrror("xml file '{xmlfile}' in directory '{xmldir}' does not exist")        
+
+        
+    def get_name(self, soup = None, toplevel = False):
+        
+        if soup is None:
+            soup = self.soup
+
+        tag = "name"
+        if toplevel:
+            tag = "compoundname"
+
+        name = self.get_tag(tag, soup)
+
+        if name is None:
+            raise RuntimeError(f"cannot find tag 'compoundname' to set name in {self.soup}")
                 
-    def get_modname(self):
-        modname_obj = self.soup.find("compoundname")
-        if modname_obj is None:
-            raise RuntimeError(f"cannot find tag 'compoundname' to set name in \n{self.soup}")
-        return modname_obj.text.strip()
+        print(name)
+        return name
+
+    
+    def get_tag(self, tag, soup = None):
+
+        if soup is None:
+            soup = self.soup
+
+        tagobj = soup.find(tag)                
+        
+        if tagobj is not None:
+            tagstr = tagobj.text.strip()
+            if tagstr:
+                return tagstr
+            
+        return None
+
+
+    def get_parameters_description(self, soup = None):
+
+        if soup is None:
+            soup = self.soup
+                
+        parameter_item_objs = soup.find_all("parameteritem")
+        
+        if parameter_item_objs is None:
+            return None
+
+        parameters_description = ""
+        for parameter_item_obj in parameter_item_objs:
+            description = self.get_parameter_description(parameter_item_obj)
+            if description is not None:
+                parameters_description += description
+            
+        return parameters_description
+    
+        
+    def get_parameter_description(self, parameter_item_obj):
+
+        parameter_namelist_obj = parameter_item_obj.parameternamelist
+        if parameter_namelist_obj is None:
+            return None
+
+        inout = parameter_namelist_obj.get("direction")
+        if inout is None: inout = "inout"
+        
+        parameter_name = parameter_namelist_obj.text.split()
+
+        description = f"{parameter_name} is an intent({inout}) variable."
+        
+        parameter_description = self.get_tag("parameterdescription", parameter_item_obj)
+        if parameter_description is not None:
+            description += f"{parameter_name} {parameter_description}"
+
+        return description
+
 
     
 class f90XMLsoup(XMLsoup):
@@ -37,36 +105,29 @@ class f90XMLsoup(XMLsoup):
                  prog_or_mod: Literal["module", "program"] = "module",
                  xmldir: str|Path = "./docs/xml",
                  xmlfile: str|Path = None):
+
         super().__init__(codebase, xmldir, xmlfile)
         self.prog_or_mod = prog_or_mod
-        self.documents = None
-        self.metadatas = None
-        self.ids = None
-        self.description = self.get_toplevel_doc()
+        self.overview = self.document_overview()
 
-    def get_introduction(self):
-        self.introduction = xml.soup.parblock.text.strip()
-
-    def get_toplevel_doc(self):
         
-        briefdescription_obj = self.soup.briefdescription
-        detaileddescription_obj = self.soup.detaileddescription
-
-        self.description = f"{self.modname} is a {self.prog_or_mod} in {self.codebase}"
+    def document_overview(self):
         
-        if briefdescription_obj is not None:
-            briefdescription = briefdescription_obj.text.strip()
-            if briefdescription:
-                self.description += briefdescription
+        briefdescription = self.get_tag("briefdescription")
+        detaileddescription = self.get_tag("parblock")
+        
+        overview = f"{self.toplevel_name} is a {self.prog_or_mod} in {self.codebase}."
+        
+        if briefdescription is not None:
+            overview += briefdescription
 
-        if detaileddescription_obj is not None:
-            parblock_obj = detaileddescription_obj.parblock
-            if parblock_obj is not None:
-                detaileddescription = detaileddescription_obj.text.strip()
-                if detaileddescription:
-                    self.description += detaileddescription
+        if detaileddescription is not None:
+            overview += detaileddescription
 
-
+        print(overview)
+        return overview
+                    
+    
 class namespaceXMLsoup(XMLsoup):
 
     def __init__(self,
@@ -77,152 +138,91 @@ class namespaceXMLsoup(XMLsoup):
         super().__init__(codebase, xmldir, xmlfile)
 
         self.prog_or_mod = prog_or_mod
-        self.vardocs = {}
-        self.procdocs = {}
+        self.documents = {
+            "variables": {},
+            "procedures": {}
+        }
 
         
-    def set_variable_docs(self):
+    def document_variables(self):
 
         variables_obj = self.soup.find_all("memberdef", {"kind": "variable"})
-        if variables_obj is None: return
 
+        if variables_obj is None:
+            return
+        
+        documents = {}        
         for variable in variables_obj:
             
             varname = self.get_name(variable)
-            vartype = self.get_type(variable)
-            var_introsentence = f"{varname} is a {self.prog_or_mod} variable of type {vartype} in {self.modname}."
+            vartype = self.get_tag("type", variable)
+            briefdescription = self.get_tag("briefdescription", variable)
 
-            vardef_sentence = self.get_briefdescription_as_sentence(variable, varname)
+            var_description = f"{varname} is a {self.prog_or_mod} variable in {self.toplevel_name}"
+
+            if vartype is not None:
+                var_description += f"{varname} is a {vartype}."
+
+            if briefdescription is not None:
+                var_description += f"{varname} {briefdescription}."
             
-            self.vardocs[varname] = {
-                "document": f"{var_introsentence} {vardef_sentence}",
-                "metadata": {"source": self.modname, "name": varname, "identity": "variable"}
+            documents[varname] = {
+                "document": var_description,
+                "metadata": {"source": self.toplevel_name, "name": varname, "identity": "variable"},
+                "id": varname
             }
+
+        self.documents["variables"] = documents
             
             
-    def set_procedure_docs(self):
+    def document_procedures(self):
 
         procedures_obj = self.soup.find_all("memberdef", {"kind": "function"})
         if procedures_obj is None: return
-                
+
+        documents = {}
         for procedure in procedures_obj:
             
             procname = self.get_name(procedure)
-            proctype = self.get_type(procedure)
-            proc_introsentence= f"{procname} is a {proctype} in {self.modname}."
+            proctype = self.get_tag("type", procedure)
+            argsstring = self.get_tag("argsstring", procedure)
+            parameters_description = self.get_parameters_description(procedure)
+            briefdescription = self.get_tag("briefdescription", procedure)
+            detaileddescription = self.get_tag("parblock", procedure)            
+            inbodydescription = self.get_tag("inbodydescription", procedure)
+            
+            if proctype is None:
+                proctype = "procedure"
 
-            argsstring = self.get_argsstring(procedure, procname)            
-            proc_description = self.get_parblock_sentences(procedure, procname)
-            args = self.get_params_as_sentences(procedure, procname)
-            inbodydescription = self.get_inbodydescription_as_sentences(procedure, procname)
-                                    
-            self.procdocs[procname] = {
-                "document": f"{proc_introsentence} {proc_description} {argsstring} {args} {inbodydescription}",
-                "metadata": {"source": self.modname, "name": procname, "identity": proctype}
+            procedure_description= f"{procname} is a {proctype} in {self.toplevel_name}."
+            
+            if argsstring is None:
+                procedure_description += f"{procname} does not have any {proctype} arguments"
+            else:
+                procedure_description += f"{procname} has these {proctype} arguments:  {argsstring}"
+
+            if parameters_description is not None:
+                procedure_description += parameters_description
+
+            if briefdescription is not None:
+                procedure_description += briefdescription
+
+            if detaileddescription is not None:
+                procedure_description += detaileddescription
+
+            if inbodydescription is not None:
+                procedure_description += f"Inside {procname}, the following occurs: {inbodydescription}"
+                
+            documents[procname] = {
+                "document": procedure_description,
+                "metadata": {"source": self.toplevel_name, "name": procname, "identity": proctype},
+                "id": procname
             }
 
-                    
-    def get_name(self, tagobj):
-
-        name_obj = tagobj.find("name")
-
-        if name_obj is None:
-            raise RuntimeError(f"Cannot find name in \n{tagobj}")
-
-        name = name_obj.text.strip()
-        print(name)
-        return name
-
-    
-    def get_type(self, tagobj):
-
-        type_obj = tagobj.find("type")                
-
-        if type_obj is None:
-            raise RuntimeError(f"Cannot find type in \n{tagobj}")
-
-        return type_obj.text.strip()
-
-    
-    def get_briefdescription_as_sentence(self, tagobj, name):
-
-        briefdescription_obj = tagobj.briefdescription
-        if briefdescription_obj is not None:
-            briefdescription = briefdescription_obj.text.strip()
-            if briefdescription:
-                return f"{name} {briefdescription}."
-
-        return f"There is no description for {name}."
-
-        
-    def get_argsstring(self, tagobj, name):
-
-        argsstring_obj = tagobj.argsstring
-        
-        if argsstring_obj is not None:
-            argsstring = argsstring_obj.text.strip()
-            if argsstring:
-                return f"{name} has the following arguments: {argsstring}."
-
-            return f"There are no arguments for {name}."
-        
-
-    def get_parblock_sentences(self, tabobj, name):
-
-        parblock_obj = tabobj.parblock
-
-        if parblock_obj is not None:
-            parblock = parblock_obj.text.strip()
-            if parblock:
-                return parblock
-
-        return f"There is no description for {name}."
-
-
-    def get_params_as_sentences(self, tabobj, name):
-
-        paramitem_objs = tabobj.find_all("parameteritem")
-        if paramitem_objs is None: return f"There are are arguments for {name}"
-
-        paramdoc = ""
-        for paramitem_obj in paramitem_objs:
-            paramdoc += self.get_paramitem(paramitem_obj, name)
-
-        return paramdoc
-                        
-        
-    def get_paramitem(self, tagobj, name):
-
-        paramnamelist_obj = tagobj.parameternamelist
-        if paramnamelist_obj is None: raise RuntimeError(f"Cannot get parameternamelist from \n{tagobj}")
-
-        paramname = paramnamelist_obj.text.split()
-        inout = paramnamelist_obj["direction"] if "direction" in paramnamelist_obj.attrs else "inout"
-
-        paramdef_obj = tagobj.parameterdescription
-        if paramdef_obj is not None:
-            paramdef = paramdef_obj.text.strip()
-            if paramdef:
-                return f"{paramname} is an intent({inout}) variable. {paramname} {paramdef}."
-
-        return f"There is no definition for argument {paramname}."
-
-
-    def get_inbodydescription_as_sentences(self, tagobj, name):
-
-        inbodydescription_obj = tagobj.inbodydescription
-
-        if inbodydescription_obj is not None:
-            inbodydescription = inbodydescription_obj.text.strip()
-            if inbodydescription:
-                return  f"The following occurs in {name}: {inbodydescription}"
-
-        return "There are no details about what happens in {name}."
-
+        self.documents["procedures"] = documents
+            
                     
 #modxml = namespaceXMLsoup(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
-#modxml.set_variable_docs()
-#modxml.set_procedure_docs()
-#for variable, vardict in modxml.vardocs.items():
-#    print(vardict["document"])
-
+#modxml.document_variables()
+#modxml.document_procedures()
+#print(modxml.documents["procedures"])

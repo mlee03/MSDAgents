@@ -7,7 +7,7 @@ import chromadb
 llama = ChatOllama(model="llama3.2:latest", k=1)
 embedding_model = OllamaEmbeddings(model="llama3.2:latest")
 
-use_retriever = False
+use_retriever = True
 
 client = chromadb.PersistentClient("./testdb")
 collection_vectorstore = Chroma(
@@ -26,8 +26,8 @@ if use_retriever:
 else:
     retrieved = collection_vectorstore.similarity_search_with_score(query)
 
-for (document, score) in retrieved:
-    print( "SIMILARITY SCORE", score, "DOCUMENT:", document.page_content)
+#for (document, score) in retrieved:
+#    print( "SIMILARITY SCORE", score, "DOCUMENT:", document.page_content)
 
 response = llama.invoke([SystemMessage("Be poetic."), human_message.format(query=query, content=retrieved)])
 print(response.content)

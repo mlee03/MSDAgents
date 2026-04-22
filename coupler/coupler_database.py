@@ -92,7 +92,7 @@ class XMLsoup():
         
         parameter_description = self.get_tag("parameterdescription", parameter_item_obj)
         if parameter_description is not None:
-            description += f"{parameter_name} {parameter_description}"
+            description += f"{parameter_name} {parameter_description}."
 
         return description
 
@@ -158,7 +158,7 @@ class namespaceXMLsoup(XMLsoup):
             vartype = self.get_tag("type", variable)
             briefdescription = self.get_tag("briefdescription", variable)
 
-            var_description = f"{varname} is a {self.prog_or_mod} variable in {self.toplevel_name}"
+            var_description = f"{varname} is a {self.prog_or_mod} variable in {self.toplevel_name}."
 
             if vartype is not None:
                 var_description += f"{varname} is a {vartype}."
@@ -197,9 +197,9 @@ class namespaceXMLsoup(XMLsoup):
             procedure_description= f"{procname} is a {proctype} in {self.toplevel_name}."
             
             if argsstring is None:
-                procedure_description += f"{procname} does not have any {proctype} arguments"
+                procedure_description += f"{procname} does not have any {proctype} arguments."
             else:
-                procedure_description += f"{procname} has these {proctype} arguments:  {argsstring}"
+                procedure_description += f"{procname} has these {proctype} arguments:  {argsstring}."
 
             if parameters_description is not None:
                 procedure_description += parameters_description
@@ -219,10 +219,13 @@ class namespaceXMLsoup(XMLsoup):
                 "id": procname
             }
 
+            print(documents)
+            exit()
         self.documents["procedures"] = documents
             
                     
-#modxml = namespaceXMLsoup(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
-#modxml.document_variables()
-#modxml.document_procedures()
-#print(modxml.documents["procedures"])
+modxml = namespaceXMLsoup(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
+modxml.document_variables()
+modxml.document_procedures()
+print(modxml.documents["variables"])
+print(modxml.documents["procedures"])

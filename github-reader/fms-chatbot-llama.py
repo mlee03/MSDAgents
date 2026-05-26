@@ -1,4 +1,3 @@
-# Ryan Mulhall
 # llama_index based chatbot that uses the GithubReader to parse code
 # to run must have a token set up for pulling from github, stored as GITHUB_TOKEN
 

@@ -187,12 +187,10 @@ class ModuleBodyDocument(XMLsoup):
             if briefdescription is not None:
                 var_description += f"{varname} {briefdescription}.  "
             
-            self.variables[varname] = {
-                Document(
+            self.variables[varname] = Document(
                     page_content=var_description,
                     metadata={"source": self.toplevel_name, "name": varname},
                 )
-            }            
 
                     
     def document_procedures(self):
@@ -266,8 +264,8 @@ class ModuleBodyDocument(XMLsoup):
                 metadata={"source": self.toplevel_name, "name": procname},
             )
                     
-#modxml = ModuleBodyDocument(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
-#modxml.document_module_variables()
-#modxml.document_procedures()
-#print(modxml.variable_docs)
-#print(modxml.procedures_doc)
+modxml = ModuleBodyDocument(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
+modxml.document_module_variables()
+modxml.document_procedures()
+print(modxml.variables)
+print(modxml.procedures)

@@ -21,8 +21,13 @@ from langchain_core.retrievers import BaseRetriever
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from pydantic import Field
 
-# --- Dynamic Import for Colleague's Parser ---
+# --- Dynamic Import for FreDatabase/Parser ---
 try:
+    parent_dir = Path(__file__).resolve().parents[1]
+    parser_path = parent_dir / "documentation-parsers" / "fre_parser"
+    if str(parser_path) not in sys.path:
+        sys.path.append(str(parser_path))
+        
     from fre_database import FreDatabase
 except ImportError:
     FreDatabase = None

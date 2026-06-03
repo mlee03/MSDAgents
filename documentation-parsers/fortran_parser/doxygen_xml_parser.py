@@ -263,9 +263,10 @@ class ModuleBodyDocument(XMLsoup):
                 page_content=procedure_description,
                 metadata={"source": self.toplevel_name, "name": procname},
             )
-                    
-modxml = ModuleBodyDocument(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
-modxml.document_module_variables()
-modxml.document_procedures()
-print(modxml.variables)
-print(modxml.procedures)
+
+def test():                   
+    modxml = ModuleBodyDocument(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
+    modxml.document_module_variables()
+    modxml.document_procedures()
+    print(modxml.variables)
+    print(modxml.procedures)

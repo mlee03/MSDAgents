@@ -8,23 +8,25 @@ from langchain_core.documents import Document
 
 class XMLsoup():
 
-    def __init__(self, codebase: str, xmldir: str|Path = "./", xmlfile: str|Path = "None"):
+    def __init__(self, xmldir: str|Path = "./", xmlfile: str|Path = None):
 
-        self.codebase = codebase
-        self.xmldir = Path(xmldir)
-        self.xmlfile = Path(xmlfile)
+        self.xmldir = xmldir
+        self.xmlfile = xmlfile
         self.soup = self.get_xmlsoup()
         self.toplevel_name = self.get_name(toplevel=True)
         
     def get_xmlsoup(self):
 
-        xmlfile = self.xmldir/self.xmlfile
+        if self.xmlfile is None:
+            raise IOError("xmlfile not specified")
+
+        xmlfile = Path(self.xmldir)/Path(self.xmlfile)
 
         if xmlfile.exists():
             with open(xmlfile, "r") as openedfile:
                 return BeautifulSoup(openedfile, "lxml-xml")
         else:
-            raise IOError(f"xml file '{self.xmlfile}' in directory '{self.xmldir}' does not exist")        
+            raise FileNotFoundError(f"xml file '{self.xmlfile}' in directory '{self.xmldir}' does not exist")        
 
         
     def get_name(self, soup = None, toplevel = False):
@@ -38,12 +40,14 @@ class XMLsoup():
 
         name = self.get_tag(tag, soup)
 
-        if name is None:
-            raise RuntimeError(f"cannot find tag 'compoundname' to set name in {self.soup}.  ")
-                
-        print(name)
-        return name
+        if name is not None:
+            namstr = name.strip()
+            if namstr:
+                return namstr
 
+        raise RuntimeError(f"cannot find tag '{tag}' to set name in {self.soup}.  ")
+    
+                
     
     def get_tag(self, tag, soup = None):
 
@@ -67,7 +71,7 @@ class XMLsoup():
                 
         parameter_item_objs = soup.find_all("parameteritem")
         
-        if parameter_item_objs is None:
+        if not parameter_item_objs:
             return None
 
         parameters_description = ""
@@ -103,13 +107,23 @@ class XMLsoup():
 class ModuleTopLevelDocument(XMLsoup):
 
     def __init__(self,
-                 codebase: str,
-                 prog_or_mod: Literal["module", "program"] = "module",
                  xmldir: str|Path = "./docs/xml",
                  xmlfile: str|Path = None):
 
-        super().__init__(codebase, xmldir, xmlfile)
-        self.prog_or_mod = prog_or_mod
+        """
+        Parses top-level documentation in files like atm__land__ice_flux__exchange__f90.xml
+        to append to documentation from namespaceatm__land_ice_flux_exchange__f90.xml.
+        Overview is expected to for example be:
+        !! @brief Module atm_land_ice_flux_exchange_mod is responsible for exchanging 
+        !! fluxes between the atmosphere, land, and ice components.
+        !! @parblock
+        !! Module atm_land_ice_flux_exchange_mod contains this and that
+        !! @endparblock
+        !! module atm_land_ice_flux_exchange
+        !! ..
+        !! end module atm_land_ice_flux_exchange
+        """
+        super().__init__(xmldir, xmlfile)
         self.overview = self.document_overview()
 
         
@@ -118,33 +132,29 @@ class ModuleTopLevelDocument(XMLsoup):
         briefdescription = self.get_tag("briefdescription")
         detaileddescription = self.get_tag("parblock")
         
-        overview = f"{self.toplevel_name} is a {self.prog_or_mod} in {self.codebase}.  "
-        
+        overview = ""
         if briefdescription is not None:
             overview += f"{briefdescription}.  "
 
         if detaileddescription is not None:
             overview += f"{detaileddescription}.  "
         
-        return {
-            "id": self.toplevel_name,
-            "source": self.toplevel_name,
-            "type": "overview",
-            "description": overview,
-        }
-                    
+        return overview                    
     
 class ModuleBodyDocument(XMLsoup):
 
     def __init__(self,
-                 codebase: str,
-                 prog_or_mod: Literal["module", "program"] = "module",                                                                               
                  xmldir: str|Path = "./docs/xml",
-                 xmlfile: str|Path = None):
-        super().__init__(codebase, xmldir, xmlfile=xmlfile)
-        self.bodyxmlfile = xmlfile
+                 xmlfile: str|Path = None,
+                 append_overview: bool = True):
 
-        self.prog_or_mod = prog_or_mod
+        super().__init__(xmldir, xmlfile=xmlfile)
+        self.bodyxmlfile = xmlfile
+        self.append_overview = append_overview
+        if append_overview: 
+            overviewfile = xmlfile.replace("namespace","").replace("__mod.xml", "_8_f90.xml")
+            self.overview = ModuleTopLevelDocument(xmldir, overviewfile).overview
+
         self.variables = {}
         self.procedures = {}
 
@@ -170,16 +180,20 @@ class ModuleBodyDocument(XMLsoup):
 
         variables_obj = self.soup.find_all("memberdef", {"kind": "variable"})
 
-        if variables_obj is None:
+        if not variables_obj:
             return "There are no module variables in this module.  "
-        
+
         for variable in variables_obj:
             
             varname = self.get_name(variable)
             vartype = self.get_tag("type", variable)
             briefdescription = self.get_tag("briefdescription", variable)
 
-            var_description = f"{varname} is a {self.prog_or_mod} variable in {self.toplevel_name}.  "
+            var_description = ""
+            if self.append_overview:
+                var_description = self.overview
+            
+            var_description += f"{varname} is a variable in {self.toplevel_name}.  "
 
             if vartype is not None:
                 var_description += f"{varname} is a {vartype}.  "
@@ -198,9 +212,9 @@ class ModuleBodyDocument(XMLsoup):
         Documents procedures.  For example, parses
           module this_module
             contains
-              !> \parblock
+              !> @parblock
               !! Subroutine this_subroutine is an example.
-              !> \endparblock
+              !> @endparblock
               subroutine this_subroutine(arg1, arg2)
                 real(8), intent(in) :: arg1 !< is just an example variable
                 integer, intent(out) :: arg2 !< is an another example variable
@@ -223,10 +237,9 @@ class ModuleBodyDocument(XMLsoup):
         """
 
         procedures_obj = self.soup.find_all("memberdef", {"kind": "function"})
-        if procedures_obj is None:
+        if not procedures_obj:
             return "There are no procedures in this module"
 
-        documents = {}
         for procedure in procedures_obj:
             
             procname = self.get_name(procedure) 
@@ -239,6 +252,10 @@ class ModuleBodyDocument(XMLsoup):
             
             if proctype is None:
                 proctype = "procedure"
+
+            procedure_description = ""
+            if self.append_overview:
+                procedure_description += self.overview
 
             procedure_description= f"{procname} is a {proctype} in {self.toplevel_name}.  "
             
@@ -265,8 +282,11 @@ class ModuleBodyDocument(XMLsoup):
             )
 
 def test():                   
-    modxml = ModuleBodyDocument(codebase="FMSCoupler", xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml")
+    modxml = ModuleBodyDocument(xmlfile="namespaceatm__land__ice__flux__exchange__mod.xml", append_overview=True)
     modxml.document_module_variables()
     modxml.document_procedures()
     print(modxml.variables)
     print(modxml.procedures)
+    
+if __name__ == "__main__":
+    test()

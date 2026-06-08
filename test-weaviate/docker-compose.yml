@@ -1,0 +1,26 @@
+services: 
+  weaviate: #container name
+    userrns_mod: "keep-id"
+    command:
+      - --host
+      - 0.0.0.0
+      - --port
+      - '8080'
+      - --scheme
+      - http
+    image: cr.weaviate.io/semitechnologies/weaviate:1.37.2
+    ports:
+    - 8080:8080
+    - 50051:50051 
+    restart: on-failure:0
+    volumes:
+    - ./coupler_weaviate_database:/var/lib/weaviate:z
+    environment:
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate' 
+      DEFAULT_VECTORIZER_MODULE: 'text2vec-ollama'
+      ENABLE_MODULES: 'text2vec-ollama,generative-ollama'
+      ENABLE_GRPC: 'true'
+      CLUSTER_HOSTNAME: 'node1'
+      OLLAMA_API_ENDPOINT: 'http://localhost:11434'
+

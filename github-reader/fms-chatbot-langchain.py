@@ -7,11 +7,21 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import GitLoader
 from langchain_ollama import OllamaEmbeddings
 
+LOCAL_DB_PATH="./.fms_langchain_db"
+
+def text_file_filter(file_path: str) -> bool:
+    # Ignore anything in the hidden .git directory completely
+    if ".git/" in file_path or ".github/" in file_path:
+        return False
+    # Only read standard code/text extensions
+    return file_path
+
 # Initialize the loader
 loader = GitLoader(
     clone_url="https://github.com/noaa-gfdl/fms",
     repo_path="./.fms_clone/",  # Local directory to clone into
-    branch="main"                 # Optional: defaults to master/main
+    branch="main",                 # Optional: defaults to master/main
+    file_filter=text_file_filter,
 )
 
 # Load the repository files into LangChain Documents
@@ -28,7 +38,7 @@ chunks = text_splitter.split_documents(documents)
 
 # 2. Embed and store in a local Vector DB using Ollama embeddings
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
-vector_store = Chroma.from_documents(chunks, embeddings)
+vector_store = Chroma.from_documents(chunks, embeddings, persist_directory=LOCAL_DB_PATH)
 retriever = vector_store.as_retriever()
 
 # 3. Set up your local Ollama LLM

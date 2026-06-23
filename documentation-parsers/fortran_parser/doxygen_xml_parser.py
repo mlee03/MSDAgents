@@ -30,6 +30,11 @@ class XMLsoup():
 
         
     def get_name(self, soup = None, toplevel = False):
+
+        """
+        Retrieves the name tag.
+        The module name is a special case: <compoundname>atm_land_ice_flux_exchange.F90</compoundname>
+        """
         
         if soup is None:
             soup = self.soup
@@ -38,7 +43,7 @@ class XMLsoup():
         if toplevel:
             tag = "compoundname"
 
-        name = self.get_tag(tag, soup)
+        name = self.get_tag_to_string(tag, soup)
 
         if name is not None:
             namstr = name.strip()
@@ -49,7 +54,13 @@ class XMLsoup():
     
                 
     
-    def get_tag(self, tag, soup = None):
+    def get_tag_to_string(self, tag, soup = None):
+
+        """
+        Returns the text of the tag
+        For example, returns the text in
+        <parblock> text </parblock>
+        """
 
         if soup is None:
             soup = self.soup
@@ -64,7 +75,25 @@ class XMLsoup():
         return ""
 
 
-    def get_parameters_description(self, soup = None):
+    def get_parameters_description(self, soup = None, subroutine_name = None):
+
+        """
+        Returns the parameters for a subroutine as tables by parsing
+        <parameterlist>
+            <parameteritem>
+                <parameternamelist>
+                    <parametername direction="in">time</parametername>
+                </parameternamelist>
+                <parameterdescription>
+                    <para>is the current model time</para>
+                </parameterdescription>
+            </parameteritem>
+        </parameterlist>
+        into 
+        | Name | Type | Subroutine | Definition |
+        |------|------|------------|------------|
+        | time | intent(in) | subroutine_name | is the current model time |        
+        """
 
         if soup is None:
             soup = self.soup
@@ -74,23 +103,32 @@ class XMLsoup():
         if not parameter_item_objs:
             return None
 
-        markdown = ""
+        table = "| Name | Type | Subroutine | Definition |\n|------|------|------------|------------|\n"
         for parameter_item_obj in parameter_item_objs:
             parameter_namelist_obj = parameter_item_obj.parameternamelist
             if parameter_namelist_obj is None:
                 raise RuntimeError(f"cannot find parameter namelist in {parameter_item_obj}")
 
             inout = parameter_namelist_obj.get("direction", "inout")
-
             parameter_name = parameter_namelist_obj.text.split()[0].strip()
-            parameter_description = self.get_tag("parameterdescription", parameter_item_obj)
+            parameter_description = self.get_tag_to_string("parameterdescription", parameter_item_obj)
 
-            markdown += f"argument {parameter_name}, intent({inout}), {parameter_description}."
-            markdown += "  "
+            table += f"| {parameter_name} | intent({inout}) | {subroutine_name or ''} | {parameter_description} |\n"
 
-        return markdown
+        return table
 
     def get_inbodydescription(self, soup = None):
+        
+        """
+        Parses
+        <inbodydescription>
+        <para><parblock><para>INITIALIZE MODULE-LEVEL VARIABLES. </para></parblock></para>
+        <para><parblock><para>GET FILE UNIT FOR STDOUT AND STDLOG FOR INTERNAL LOGGING PURPOSES </para></parblock></para>
+        </inbodydescription>
+        into
+        Step 1: INITIALIZE MODULE-LEVEL VARIABLES.
+        Step 2: GET FILE UNIT FOR STDOUT AND STDLOG FOR INTERNAL LOGGING PURPOSES
+        """
 
         if soup is None:
             soup = self.soup
@@ -110,6 +148,11 @@ class XMLsoup():
 
 
 class ModuleTopLevelDocument(XMLsoup):
+    """Parse module-level documentation from Doxygen XML files.
+    
+    Extracts overview information from Fortran module documentation,
+    combining brief descriptions and detailed descriptions from parblocks.
+    """
 
     def __init__(self,
                  xmldir: str|Path = "./docs/xml",
@@ -125,7 +168,6 @@ class ModuleTopLevelDocument(XMLsoup):
         !! Module atm_land_ice_flux_exchange_mod contains this and that
         !! @endparblock
         !! module atm_land_ice_flux_exchange
-        !! ..
         !! end module atm_land_ice_flux_exchange
         """
         super().__init__(xmldir, xmlfile)
@@ -176,12 +218,12 @@ class ModuleBodyDocument(XMLsoup):
             integer :: var2 !< is another variable
           end module this module
         
-        and returns       
-          ## variable var1
-          var1, a real(8) variable in this_module, is an integer variable in this_module.
-          ## variable var2
-          var2, a integer variable in this_module, is an another variable in this_module.
-
+        and returns               
+          ## this_module variables
+          | Name | Type | Definition |
+          |------|------|------------|
+          | var1 | real(8) | is a variable |
+          | var2 | integer | is another variable |
         All variable descriptions are assumed to be less than ~400 tokens.
         """
 
@@ -190,44 +232,20 @@ class ModuleBodyDocument(XMLsoup):
         if not variables_obj:
             return "There are no module variables in this module.  "
 
+        self.variables_md.append(f"## {self.toplevel_name} variables\n")
+        self.variables_md.append("| Name | Type | Definition |\n|------|------|------------|")
         for variable in variables_obj:
-            
             varname = self.get_name(variable)
-            vartype = self.get_tag("type", variable)
-            briefdescription = self.get_tag("briefdescription", variable)
+            vartype = self.get_tag_to_string("type", variable)
+            briefdescription = self.get_tag_to_string("briefdescription", variable)
+            self.variables_md.append(f"| {varname} | {vartype} | {briefdescription} |")
 
-            description = f"## variable::{varname}\n"
-            if self.append_overview:
-                description += f"{self.overview}  "
-            description += f"{varname}, a fortran {vartype} variable in {self.toplevel_name}, {briefdescription}.\n"
-            self.variables_md.append(description)
-
+        self.variables_md.append("\n")
         self.mdfile.extend(self.variables_md)
                                
     def document_procedures(self):
         """
-        Documents procedures.  For example, parses
-       
-          module this_module
-            contains
-              !> @parblock
-              !! Subroutine this_subroutine is an example.
-              !> @endparblock
-              subroutine this_subroutine(arg1, arg2)
-                real(8), intent(in) :: arg1 !< is just an example variable
-                integer, intent(out) :: arg2 !< is an another example variable
-                !> checks if arg1 > 10
-                if(arg1 < 10) call mpp_error(...)
-                !> assigns arg2
-                arg2 = arg1
-              end subroutine this_subroutine
-          end module this_module
-        
-        and returns
-          
-          ## subroutine this_subroutine
-          ### description
-          this_subroutine is an example.
+        Documents procedures. 
         """
 
         procedures_obj = self.soup.find_all("memberdef", {"kind": "function"})
@@ -237,11 +255,11 @@ class ModuleBodyDocument(XMLsoup):
         for procedure in procedures_obj:
             
             procname = self.get_name(procedure) 
-            proctype = self.get_tag("type", procedure).split(",")[0].strip() #subroutine or function
-            argsstring = self.get_tag("argsstring", procedure)
-            parameters_description = self.get_parameters_description(procedure)
-            briefdescription = self.get_tag("briefdescription", procedure)
-            detaileddescription = self.get_tag("parblock", procedure)            
+            proctype = self.get_tag_to_string("type", procedure).split(",")[0].strip() #subroutine or function
+            argsstring = self.get_tag_to_string("argsstring", procedure)
+            parameters_description = self.get_parameters_description(procedure, subroutine_name=procname)
+            briefdescription = self.get_tag_to_string("briefdescription", procedure)
+            detaileddescription = self.get_tag_to_string("parblock", procedure)            
             inbodydescription = self.get_inbodydescription(procedure)
 
             if briefdescription and briefdescription[-1] != ".":
@@ -256,7 +274,7 @@ class ModuleBodyDocument(XMLsoup):
             markdown += f"{procname} is a {proctype} in {self.toplevel_name}.\n"
             markdown += f"### description\n"
             markdown += f"{briefdescription}  {detaileddescription}\n"
-            markdown += f"Arguments for {procname} are:  {parameters_description}\n"
+            markdown += f"### Arguments for {procname}:\n{parameters_description}\n"
             markdown += f"### flowchart\n"
             markdown += f"{procname} does the following:  \n{inbodydescription}\n"
             self.procedures_md.append(markdown)

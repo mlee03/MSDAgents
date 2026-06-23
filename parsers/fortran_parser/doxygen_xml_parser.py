@@ -175,8 +175,8 @@ class ModuleTopLevelDocument(XMLsoup):
   
     def document_overview(self):
         
-        briefdescription = self.get_tag("briefdescription")
-        detaileddescription = self.get_tag("parblock")
+        briefdescription = self.get_tag_to_string("briefdescription")
+        detaileddescription = self.get_tag_to_string("parblock")
         
         return f"{briefdescription}  {detaileddescription}".strip()
     
@@ -186,14 +186,18 @@ class ModuleBodyDocument(XMLsoup):
     def __init__(self,
                  xmldir: str|Path = "./docs/xml",
                  xmlfile: str|Path = None,
-                 append_overview: bool = True):
+                 append_overview: bool = True,
+                 include_flowchart: bool = True):
 
         super().__init__(xmldir, xmlfile=xmlfile)
         self.bodyxmlfile = xmlfile
         self.append_overview = append_overview
+        self.include_flowchart = include_flowchart
         self.overview = ""
         self.variables_md = []
+        self.variable_names = []  # Track individual variable names for metadata
         self.procedures_md = []
+        self.procedure_names = []  # Track individual procedure names for metadata
         
         self.mdfile = [f"# {self.toplevel_name}\n"]
 
@@ -238,7 +242,9 @@ class ModuleBodyDocument(XMLsoup):
             varname = self.get_name(variable)
             vartype = self.get_tag_to_string("type", variable)
             briefdescription = self.get_tag_to_string("briefdescription", variable)
-            self.variables_md.append(f"| {varname} | {vartype} | {briefdescription} |")
+            var_row = f"| {varname} | {vartype} | {briefdescription} |"
+            self.variables_md.append(var_row)
+            self.variable_names.append(varname)  # Track name separately
 
         self.variables_md.append("\n")
         self.mdfile.extend(self.variables_md)
@@ -275,9 +281,11 @@ class ModuleBodyDocument(XMLsoup):
             markdown += f"### description\n"
             markdown += f"{briefdescription}  {detaileddescription}\n"
             markdown += f"### Arguments for {procname}:\n{parameters_description}\n"
-            markdown += f"### flowchart\n"
-            markdown += f"{procname} does the following:  \n{inbodydescription}\n"
+            if self.include_flowchart:
+                markdown += f"### flowchart\n"
+                markdown += f"{procname} does the following:  \n{inbodydescription}\n"
             self.procedures_md.append(markdown)
+            self.procedure_names.append(procname)  # Track name separately for metadata
 
         self.mdfile.extend(self.procedures_md)
     

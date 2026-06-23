@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+import logging
+
+# Suppress gRPC debug logs (too_many_pings warnings)
+logging.getLogger("grpc").setLevel(logging.WARNING)
+
 import re
 from pathlib import Path
 from typing import Any
@@ -31,6 +36,7 @@ def _keyword_score(query: str, record: dict[str, Any]) -> int:
       str(record.get("source", "")),
       str(record.get("kind", "")),
       str(record.get("xml_file", "")),
+      str(record.get("markdown_file", "")),
       str(record.get("text", "")),
     ]
   ).lower()
@@ -43,14 +49,14 @@ def fetch_context(client: MilvusClient, query: str, limit: int = TOP_K) -> str:
   try:
     candidates = client.query(
       collection_name=COLLECTION_NAME,
-      output_fields=["text", "name", "source", "kind", "xml_file"],
+      output_fields=["text", "name", "source", "kind", "xml_file", "markdown_file"],
       limit=MAX_CANDIDATES,
     )
   except TypeError:
     candidates = client.query(
       collection_name=COLLECTION_NAME,
       filter="",
-      output_fields=["text", "name", "source", "kind", "xml_file"],
+      output_fields=["text", "name", "source", "kind", "xml_file", "markdown_file"],
       limit=MAX_CANDIDATES,
     )
   except Exception as exc:
@@ -71,6 +77,7 @@ def fetch_context(client: MilvusClient, query: str, limit: int = TOP_K) -> str:
         f"kind: {props.get('kind', '')}\n"
         f"source: {props.get('source', '')}\n"
         f"xml_file: {props.get('xml_file', '')}\n"
+        f"markdown_file: {props.get('markdown_file', '')}\n"
         f"text: {props.get('text', '')}"
       )
     )
@@ -94,10 +101,15 @@ def main() -> None:
 
     system_message = SystemMessage(
       content=(
-        "FMS is a Fortran library used for scientific computing in climate simulations. You are an FMS coding assistant"
+        "FMS is the Flexible Modeling System, a Fortran library used for scientific computing in climate simulations."
+        "You are an FMS coding assistant to answer questions about FMS routines and modules. "
         "Only answer questions using the retrieved context. "
         "If context is insufficient, say you do not have enough information "
         "from the indexed FMS docs."
+        "Ensure that any code examples you provide are valid Fortran code. "
+        "FMS contains many interfaces to provide generic interfaces to different data types, "
+        "which should be used instead of calling their routines directly. "
+        "If a routine belongs to a generic interface, provide the name of the generic interface in your answer first. "
       )
     )
 
@@ -150,4 +162,4 @@ def main() -> None:
 
 if __name__ == "__main__":
   main()
-               
+

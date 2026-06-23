@@ -48,15 +48,15 @@ class RAGChatbot:
         )
 
         # Deduplicate by parent
-        parents = list(set(doc.metadata.get("parent") for doc, _ in docs_and_scores))
+        #parents = list(set(doc.metadata.get("parent") for doc, _ in docs_and_scores))
 
         # Aggregate sibling chunks for each parent
-        for parent in parents:
-            expr = f'parent == "{parent}"'
-            siblings = self.vectorstore.col.query(expr=expr, output_fields=["text", "ichunk"])
-            if siblings:
-                siblings_sorted = sorted(siblings, key=lambda r: r.get("ichunk", 1))
-                doc.page_content = "  ".join(r["text"] for r in siblings_sorted)
+        #for parent in parents:
+        #    expr = f'parent == "{parent}"'
+        #    siblings = self.vectorstore.col.query(expr=expr, output_fields=["text", "ichunk"])
+        #    if siblings:
+        #        siblings_sorted = sorted(siblings, key=lambda r: r.get("ichunk", 1))
+        #        doc.page_content = "  ".join(r["text"] for r in siblings_sorted)
 
         return docs_and_scores
 

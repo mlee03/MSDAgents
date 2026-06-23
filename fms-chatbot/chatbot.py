@@ -1,31 +1,69 @@
 from __future__ import annotations
 
+import re
+from pathlib import Path
 from typing import Any
 
-import weaviate
+from pymilvus import MilvusClient
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_ollama import ChatOllama
 
 
 LLM_MODEL = "llama3.2"
-WEAVIATE_HOST = "localhost"
-WEAVIATE_PORT = 8080
+MILVUS_DB_PATH = Path("/home/Ryan.Mulhall/msdagents/fms-chatbot/local_storage/fms_milvus.db")
 COLLECTION_NAME = "fms"
-TOP_K = 5
+TOP_K = 15
+MAX_CANDIDATES = 2000
 
 
-def fetch_context(collection: Any, query: str, limit: int = TOP_K) -> str:
-  """Retrieve top matching docs from Weaviate and format them as context."""
-  result = collection.query.bm25(
-    query=query,
-    query_properties=["text", "name", "source"],
-    limit=limit,
-    return_properties=["text", "name", "source", "kind", "xml_file"],
-  )
+def _tokenize(text: str) -> list[str]:
+  return re.findall(r"[a-zA-Z0-9_]+", text.lower())
+
+
+def _keyword_score(query: str, record: dict[str, Any]) -> int:
+  tokens = [t for t in _tokenize(query) if len(t) > 1]
+  if not tokens:
+    return 0
+
+  searchable = " ".join(
+    [
+      str(record.get("name", "")),
+      str(record.get("source", "")),
+      str(record.get("kind", "")),
+      str(record.get("xml_file", "")),
+      str(record.get("text", "")),
+    ]
+  ).lower()
+  return sum(searchable.count(token) for token in tokens)
+
+
+def fetch_context(client: MilvusClient, query: str, limit: int = TOP_K) -> str:
+  """Retrieve matching docs from Milvus and format them as context."""
+  # Pull a bounded candidate set from Milvus, then rank by simple keyword overlap.
+  try:
+    candidates = client.query(
+      collection_name=COLLECTION_NAME,
+      output_fields=["text", "name", "source", "kind", "xml_file"],
+      limit=MAX_CANDIDATES,
+    )
+  except TypeError:
+    candidates = client.query(
+      collection_name=COLLECTION_NAME,
+      filter="",
+      output_fields=["text", "name", "source", "kind", "xml_file"],
+      limit=MAX_CANDIDATES,
+    )
+  except Exception as exc:
+    return f"Failed to query Milvus collection '{COLLECTION_NAME}': {exc}"
+
+  scored_rows = [(_keyword_score(query, row), row) for row in candidates]
+  scored_rows.sort(key=lambda item: item[0], reverse=True)
+  top_rows = [row for score, row in scored_rows if score > 0][:limit]
+  if not top_rows:
+    top_rows = [row for _, row in scored_rows[:limit]]
 
   chunks: list[str] = []
-  for idx, obj in enumerate(result.objects, start=1):
-    props = obj.properties or {}
+  for idx, props in enumerate(top_rows, start=1):
     chunks.append(
       (
         f"Context {idx}:\n"
@@ -38,7 +76,7 @@ def fetch_context(collection: Any, query: str, limit: int = TOP_K) -> str:
     )
 
   if not chunks:
-    return "No relevant context was found in the FMS Weaviate collection."
+    return "No relevant context was found in the FMS Milvus collection."
 
   return "\n\n".join(chunks)
 
@@ -46,18 +84,17 @@ def fetch_context(collection: Any, query: str, limit: int = TOP_K) -> str:
 def main() -> None:
   chatbot = ChatOllama(model=LLM_MODEL, microstat_tau=2.0)
 
-  client = weaviate.connect_to_local(host=WEAVIATE_HOST, port=WEAVIATE_PORT)
+  MILVUS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+  client = MilvusClient(uri=str(MILVUS_DB_PATH))
   try:
-    if not client.collections.exists(COLLECTION_NAME):
+    if not client.has_collection(collection_name=COLLECTION_NAME):
       raise RuntimeError(
         f"Collection '{COLLECTION_NAME}' not found. Run create_fms_database.py first."
       )
 
-    collection = client.collections.get(COLLECTION_NAME)
-
     system_message = SystemMessage(
       content=(
-        "FMS is a Fortran library used for scientific computing. You are an FMS coding assistant. "
+        "FMS is a Fortran library used for scientific computing in climate simulations. You are an FMS coding assistant"
         "Only answer questions using the retrieved context. "
         "If context is insufficient, say you do not have enough information "
         "from the indexed FMS docs."
@@ -65,7 +102,7 @@ def main() -> None:
     )
 
     intro_query = "Introduce yourself. Ask how may I assist you?"
-    intro_context = fetch_context(collection, intro_query)
+    intro_context = fetch_context(client, intro_query)
     intro = chatbot.invoke(
       [
         system_message,
@@ -91,7 +128,7 @@ def main() -> None:
         print("Goodbye.")
         break
 
-      context = fetch_context(collection, query)
+      context = fetch_context(client, query)
       answer = chatbot.invoke(
         [
           system_message,
@@ -107,7 +144,8 @@ def main() -> None:
       print(answer.content)
       print(">", end=" ")
   finally:
-    client.close()
+    if hasattr(client, "close"):
+      client.close()
 
 
 if __name__ == "__main__":

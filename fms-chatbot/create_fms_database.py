@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-import argparse
+from datetime import datetime, timezone
 import sys
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import urlparse
 
 from langchain_core.documents import Document
-from weaviate.classes.config import DataType, Property
-import weaviate
+from pymilvus import DataType, MilvusClient
 
 from doxygen_xml_parser import ModuleBodyDocument
 
@@ -73,24 +71,24 @@ def _parse_single_module(xml_dir: Path, xml_name: str) -> list[Document]:
     return out_docs
 
 
-def ensure_collection(client: weaviate.WeaviateClient, collection_name: str, recreate: bool) -> None:
+def ensure_collection(client: MilvusClient, collection_name: str, recreate: bool) -> None:
     """Create collection if missing, or recreate if requested."""
-    exists = client.collections.exists(collection_name)
+    exists = client.has_collection(collection_name=collection_name)
     if exists and recreate:
-        client.collections.delete(collection_name)
+        client.drop_collection(collection_name=collection_name)
         exists = False
 
     if not exists:
-        client.collections.create(
-            name=collection_name,
-            properties=[
-                Property(name="text", data_type=DataType.TEXT),
-                Property(name="source", data_type=DataType.TEXT),
-                Property(name="name", data_type=DataType.TEXT),
-                Property(name="kind", data_type=DataType.TEXT),
-                Property(name="xml_file", data_type=DataType.TEXT),
-            ],
-        )
+        schema = client.create_schema(auto_id=True, enable_dynamic_field=False)
+        schema.add_field(field_name="id", datatype=DataType.INT64, is_primary=True, auto_id=True)
+        schema.add_field(field_name="text", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="source", datatype=DataType.VARCHAR, max_length=1024)
+        schema.add_field(field_name="name", datatype=DataType.VARCHAR, max_length=1024)
+        schema.add_field(field_name="kind", datatype=DataType.VARCHAR, max_length=128)
+        schema.add_field(field_name="xml_file", datatype=DataType.VARCHAR, max_length=1024)
+        schema.add_field(field_name="embedding", datatype=DataType.FLOAT_VECTOR, dim=2)
+
+        client.create_collection(collection_name=collection_name, schema=schema)
 
 
 def batch_chunks(items: list[Document], chunk_size: int) -> Iterable[list[Document]]:
@@ -98,49 +96,91 @@ def batch_chunks(items: list[Document], chunk_size: int) -> Iterable[list[Docume
         yield items[i : i + chunk_size]
 
 
+def write_markdown_export(documents: list[Document], markdown_path: Path) -> None:
+    """Write parsed XML-derived documents to markdown for human review."""
+    markdown_path.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).isoformat()
+
+    lines: list[str] = [
+        "# FMS Parsed XML Export",
+        "",
+        f"Generated UTC: {timestamp}",
+        f"Document count: {len(documents)}",
+        "",
+        "---",
+    ]
+
+    for idx, doc in enumerate(documents, start=1):
+        metadata = dict(doc.metadata)
+        lines.extend(
+            [
+                "",
+                f"## Document {idx}",
+                "",
+                f"- name: {metadata.get('name', '')}",
+                f"- kind: {metadata.get('kind', '')}",
+                f"- source: {metadata.get('source', '')}",
+                f"- xml_file: {metadata.get('xml_file', '')}",
+                "",
+                "### Text",
+                "",
+                "```text",
+                doc.page_content,
+                "```",
+                "",
+                "---",
+            ]
+        )
+
+    markdown_path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def ingest_documents(
-    client: weaviate.WeaviateClient,
+    client: MilvusClient,
     collection_name: str,
     documents: list[Document],
     batch_size: int,
 ) -> int:
-    """Insert parsed documents into Weaviate."""
-    collection = client.collections.get(collection_name)
+    """Insert parsed documents into Milvus."""
     inserted = 0
+    default_embedding = [0.0, 0.0]
 
     for chunk in batch_chunks(documents, batch_size):
-        with collection.batch.dynamic() as batch:
-            for doc in chunk:
-                metadata = dict(doc.metadata)
-                batch.add_object(
-                    properties={
-                        "text": doc.page_content,
-                        "source": metadata.get("source", ""),
-                        "name": metadata.get("name", ""),
-                        "kind": metadata.get("kind", ""),
-                        "xml_file": metadata.get("xml_file", ""),
-                    }
-                )
+        rows: list[dict[str, str]] = []
+        for doc in chunk:
+            metadata = dict(doc.metadata)
+            rows.append(
+                {
+                    "text": doc.page_content,
+                    "source": str(metadata.get("source", "")),
+                    "name": str(metadata.get("name", "")),
+                    "kind": str(metadata.get("kind", "")),
+                    "xml_file": str(metadata.get("xml_file", "")),
+                    "embedding": default_embedding,
+                }
+            )
+
+        client.insert(collection_name=collection_name, data=rows)
 
         inserted += len(chunk)
 
     return inserted
 
 
-def connect_client(weaviate_url: str) -> weaviate.WeaviateClient:
-    """Connect to a local/self-hosted Weaviate instance via URL."""
-    parsed = urlparse(weaviate_url)
-    host = parsed.hostname or "localhost"
-    port = parsed.port or 8080
-    return weaviate.connect_to_local(host=host, port=port)
+def connect_client(milvus_db_path: Path) -> MilvusClient:
+    """Connect to a local Milvus Lite database file."""
+    milvus_db_path.parent.mkdir(parents=True, exist_ok=True)
+    return MilvusClient(uri=str(milvus_db_path))
 
 
 def main() -> int:
-    weviate_url = "http://localhost:8080"
+    milvus_db_path = Path("/home/Ryan.Mulhall/msdagents/fms-chatbot/local_storage/fms_milvus.db")
     collection_name = "fms"
     xml_dir = "/home/Ryan.Mulhall/msdagents/fms/build_docs/docs/xml"
+    markdown_export = "/home/Ryan.Mulhall/msdagents/fms-chatbot/parsed_fms_docs.md"
     batch_size = 100
     recreate_collection = True
+
     if not Path(xml_dir).exists() or not Path(xml_dir).is_dir():
         Path(xml_dir).mkdir(parents=True, exist_ok=True)
     if batch_size <= 0:
@@ -152,16 +192,21 @@ def main() -> int:
         print("No parseable module XML files found (expected namespace*__mod.xml files).")
         return 1
 
-    client = connect_client(weviate_url)
+    write_markdown_export(documents=docs, markdown_path=Path(markdown_export))
+
+    client = connect_client(milvus_db_path)
     try:
         ensure_collection(client, collection_name, recreate_collection)
         inserted = ingest_documents(client, collection_name, docs, batch_size)
     finally:
-        client.close()
+        if hasattr(client, "close"):
+            client.close()
 
     print(f"Parsed documents: {len(docs)}")
+    print(f"Markdown export: {markdown_export}")
     print(f"Inserted documents: {inserted}")
     print(f"Collection: {collection_name}")
+    print(f"Milvus DB: {milvus_db_path}")
     return 0
 
 

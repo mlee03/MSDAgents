@@ -1,87 +1,76 @@
 """
-Creates FMSCoupler database
-
-Usage:
-python create_database.py  
+Ingest FMSCoupler READMEs into Milvus.
+Requires Milvus standalone on localhost:19530.
 """
 
 from pathlib import Path
-import subprocess
-import shutil
-from collections import Counter
+from parsers.fortran_parser import doxygen_xml_parser
+import parsers.markdownfile_parser as markdownfile_parser
 
-import document_readmes
-import document_code
-from document_utils import create_milvus_database, test_collection
+from shared.client import newCollection
+from shared.utils import git_clone, run_doxygen
 
+FMSCOUPLER_DIR = Path("./fmscoupler")
+DOCS_DIR = FMSCOUPLER_DIR/"full/docs"
+DOXYGEN_DIR = FMSCOUPLER_DIR/"docs"
+XML_DIR = DOXYGEN_DIR/"xml"
+MARKDOWN_DIR = FMSCOUPLER_DIR / "markdowns"
 COLLECTION_NAME = "FMSCoupler"
-LOG_FILE = "create_database.log"
-DOCS_DIR = Path("fmscoupler/full/docs")
-CODE_MODS_DIR = Path("fmscoupler/docs")
+
+DOC_FILES = [
+    "README.md",
+    "FLUX.md",
+    "AtmosDataType.md",
+    "IceDataType.md",
+    "LandDataType.md",
+    "OceanPublicType.md",
+    "AtmosIceBoundaryType.md",
+    "AtmosLandBoundaryType.md",
+    "IceOceanBoundaryType.md",
+    "LandIceAtmosBoundaryType.md",
+    "OceanIceBoundaryType.md",
+    "IceOceanDriverType.md",
+]
+
+XMLFILES = [
+    "group__atm__land__ice__flux__exchange__mod.xml",
+    "group__atmos__ocean__dep__fluxes__calc__mod.xml",
+    "group__atmos__ocean__fluxes__calc__mod.xml",
+    "group__flux__exchange__mod.xml",
+    "group__full__coupler__mod.xml",
+    "group__ice__ocean__flux__exchange__mod.xml",
+    "group__land__ice__flux__exchange__mod.xml",    
+]
 
 
-def clone_repository_and_run_doxygen(repository_path: str, repository_name: str, branch: str) -> Path:
-    """Clone a repository branch and run doxygen in the cloned directory."""
-    
-    repo_dir = Path(repository_name)
-    if repo_dir.exists():
-        print(f"Removing existing directory: {repo_dir}")
-        shutil.rmtree(repo_dir)
+# clone
+git_clone("https://github.com/mlee03/FMScoupler.git", "doc/all-round1", FMSCOUPLER_DIR)
 
-    print(f"Cloning {repository_name} from {repository_path} on branch {branch}...")
-    clone_result = subprocess.run(
-        ["git", "clone", "-b", branch, f"{repository_path}/{repository_name}.git"]
-    )
-    if clone_result.returncode != 0:
-        raise RuntimeError(
-            f"Failed to clone '{repository_name}' on branch '{branch}'."
-        )
+# run doxygen
+run_doxygen(FMSCOUPLER_DIR)
 
-    # hack
-    for dirname in ("simple", "shared", "SHiELD"):
-        target_dir = repo_dir / dirname
-        if target_dir.exists():
-            shutil.rmtree(target_dir)
-            print(f"Removed directory: {target_dir}")
+all_collection_data = []
 
-    print(f"Running doxygen in {repository_name}...")
-    doxygen_result = subprocess.run(["doxygen"], cwd=repository_name)
-    if doxygen_result.returncode != 0:
-        raise RuntimeError(f"doxygen command failed")
+# parse code documentation
+for xmlfile in XMLFILES:
+    print(f"Processing {xmlfile}...")
+    modxml = doxygen_xml_parser.GroupModuleDocument(XML_DIR, xmlfile)
+    modxml.populate()
+    mdfile = modxml.write_markdown(output_dir=MARKDOWN_DIR)
+    collection_data = markdownfile_parser.parse(MARKDOWN_DIR, mdfile)
+    all_collection_data.extend(collection_data)
 
-    return repository_name
+for mdfile in DOC_FILES:
+    print(f"parsing {mdfile}...", end=" ")
+    docs = markdownfile_parser.parse(DOCS_DIR, mdfile)
+    all_collection_data.extend(docs)
 
-if __name__ == "__main__":
-    print("=" * 72)
-    print("Building unified FMSCoupler collection")
-    print("=" * 72)
-    
-    clone_repository_and_run_doxygen("https://github.com/mlee03", "fmscoupler", "doc/all-round1")
+print(f"\nTotal: {len(all_collection_data)} collection data")
 
-    # Get documents from both sources without creating separate databases
-    print("parse Gathering readmes...")
-    readme_docs, readme_ids = document_readmes.build(docs_dir=DOCS_DIR, create_database=False)
-    print(f"  -> {len(readme_docs)} documents from readmes")
-    
-    print("parse module documentation...")
-    code_docs, code_ids = document_code.build(code_mods_dir=CODE_MODS_DIR, create_database=False)
-    print(f"  -> {len(code_docs)} documents from code modules")
-    
-    # Combine all documents and ids
-    all_documents = readme_docs + code_docs
-    all_ids = readme_ids + code_ids
+# Create the unified database
+database = newCollection(COLLECTION_NAME, connect=True)
+database.create_collection()
+database.add_data(data=all_collection_data)
+database.test_collection()
 
-    print(f"Total: {len(all_documents)} documents")
-
-    print("checking duplicate document IDs...")    
-    if duplicates := [item for item, count in Counter(all_ids).items() if count > 1]:
-        raise RuntimeError(f"Duplicate document IDs found: {duplicates}")
-    
-    # Create the unified database
-    print("\nCreating Milvus database...")
-    create_milvus_database(all_documents, all_ids, COLLECTION_NAME)
-    
-    print(f"\nTesting collection...")
-    test_collection(COLLECTION_NAME, LOG_FILE)
-    
-    print("\nDatabase creation and testing completed successfully.")
+print("\nDatabase creation and testing completed successfully.")
